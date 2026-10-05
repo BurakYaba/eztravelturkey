@@ -1,5 +1,3 @@
 # Ignore artifacts:
 .next/
-lib
-# Ignore specific files:
-yarn.lock
+public/ornaments/

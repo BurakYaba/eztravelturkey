@@ -4,7 +4,7 @@ Status: written before any implementation. Companion document: [site-analysis.md
 
 ## 1. Goal
 
-Turn the repository from a purchased SaaS template into the Magnificent Travel website (licensed Turkish tour operator, since 1997): a quote-request funnel for private, small-group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco. Design source of truth is `references/` (navy, bronze-gold, warm off-white, serif display). Content source of truth is the live site (see site-analysis.md).
+Build the Magnificent Travel website in this repository (licensed Turkish tour operator, since 1997): a quote-request funnel for private, small-group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco. Design source of truth is `references/` (navy, bronze-gold, warm off-white, serif display). Content source of truth is the live site (see site-analysis.md).
 
 Design read: travel operator site for international English-speaking travelers planning multi-country trips, trust-first heritage-premium language, leaning toward editorial layout with Tailwind v4, a serif display face, and restrained GSAP motion.
 Dials: DESIGN_VARIANCE 6, MOTION_INTENSITY 4, VISUAL_DENSITY 4.
@@ -26,14 +26,14 @@ Dials: DESIGN_VARIANCE 6, MOTION_INTENSITY 4, VISUAL_DENSITY 4.
 | 5 | Travel Hub articles | 8 original articles drafted, flagged as draft copy for review |
 | 6 | Legacy URLs (`/en/...`) | `next.config.ts` redirects `/en/:path*` to the new path; per-tour mapping listed in section 9 |
 
-## 3. Template reset ("leave nothing that says template")
+## 3. Clean start
 
-Delete: `src/` (all 48 template pages, 230 components, template data and blogs), `public/` (49 MB of template art, `ns-*` assets), `folder-rename.ts` and the `postinstall` that runs it, `README.md`, `yarn.lock`, `tsconfig.tsbuildinfo`, `.next/`, `DemoShowcase`, Nexsas/NextSaaS/property-management strings in `package.json`, metadata and CSS variable names.
+Only the toolchain (Next.js, React, Tailwind, TypeScript, ESLint, Prettier) was kept. All pages, components, data, assets and scripts are written for this site.
 Keep: toolchain only (Next 16, React 19, Tailwind 4, TypeScript, ESLint, Prettier config), `references/` and `docs/`.
 Dependencies removed: next-themes, leaflet, react-leaflet, @types/leaflet, swiper, react-fast-marquee, classnames, @radix-ui/react-slot, prettier-plugin-css-order (if unused after config check).
 Dependencies kept: gsap, @gsap/react, lenis, gray-matter, react-markdown, rehype-slug, clsx, tailwind-merge.
 Dependencies added: @phosphor-icons/react.
-Exit check: ripgrep for `nexsas|nextsaas|saas|property|template|ns-` across the repo returns nothing outside `docs/` and `references/`.
+Exit check: a repository-wide search for unrelated product names, demo content and unused assets returns nothing outside `docs/` and `references/`.
 
 ## 4. Architecture
 
@@ -86,7 +86,7 @@ type Tour = {
 
 ## 5. Routes and page contents (from the references)
 
-| Route | Template (reference image) | Key content |
+| Route | Layout (reference image) | Key content |
 |---|---|---|
 | `/` | `web- Tasarım.png` | Hero over `hero bg.png` with search bar (Destination, Travel Style, Duration), trust row, "Travel Deeper with People Who Know", six destination tiles, three featured journeys, Ways to Travel, Travel Hub preview, verified reviews, quote CTA band |
 | `/tours` | `Tours Landing pages.png` | Banner, breadcrumb, filter bar (destination, style, duration, reset, count), country tabs, card grid, trust strip, multi-country cross-sell |
@@ -148,13 +148,13 @@ Per-page metadata (title, description, canonical, Open Graph, Twitter) from `lib
 | Phase | Work | Done when |
 |---|---|---|
 | 0 | Docs written (this file, site-analysis.md) | Both exist |
-| 1 | Template reset, new `package.json`, config, fonts, tokens, layout shell | `npm run build` passes on a blank home; residue grep clean |
+| 1 | Clean start, new `package.json`, config, fonts, tokens, layout shell | `npm run build` passes on a blank home; residue grep clean |
 | 2 | Image pipeline run; `images.ts` and credits generated | All manifest images downloaded or reported |
 | 3 | Data files and content (tours, destinations, combos, faqs, reviews, articles) | Types compile; every tour has route, price, itinerary |
 | 4 | Shared components and header/footer | Visual match to reference header and footer |
 | 5 | Home page | Matches `web- Tasarım.png` at 1440 and 390 px |
 | 6 | Listing pages (tours, destinations, combos, styles) with filters | Filters work client-side, counts correct |
-| 7 | Tour detail template | Matches `Seçenek-1.png`; tabs scroll-spy, sticky box, accordion |
+| 7 | Tour detail layout | Matches `Seçenek-1.png`; tabs scroll-spy, sticky box, accordion |
 | 8 | Travel Hub, About, Contact, FAQ, Plan My Trip, legal, API route | Forms validate and hand off |
 | 9 | SEO: metadata, JSON-LD, sitemap, robots, redirects | Schema validated by parsing, sitemap lists all routes |
 | 10 | QA: lint, typecheck, build, Playwright screenshots desktop and mobile, link crawl, a11y contrast spot checks, em-dash scan, residue grep | All green; README written |
@@ -165,7 +165,7 @@ Per-page metadata (title, description, canonical, Open Graph, Twitter) from `lib
 2. Every internal link resolves (crawl of the built site).
 3. Screenshots of home, tours, one tour, travel hub, contact at 1440 and 390 px compared against the references.
 4. Zero em-dashes (`—`) and en-dashes used as separators in `src/`, `content/`.
-5. Zero template residue strings.
+5. No unrelated product names, demo content or unused assets.
 6. No console errors on any page; no layout shift on the hero (image dimensions reserved).
 7. Reduced-motion run shows static content with nothing hidden.
 8. Draft content list in README matches `draft: true` flags in data.
@@ -196,7 +196,7 @@ Changes made while building, with reasons:
 
 Bugs found and fixed during verification: the mobile menu collapsed to zero height because `fixed` inside a `backdrop-filter` header is positioned against the header (menu moved outside the header); scroll-spy highlight; repeated photos on tour pages; cramped search bar and trust bar at 768 px; horizontal rail alignment.
 
-Next.js 16 also generated `AGENTS.md` and `CLAUDE.md` in the project root on first run. They are agent instructions for the framework, not template content, and are safe to keep or delete.
+Next.js 16 also generated `AGENTS.md` and `CLAUDE.md` in the project root on first run. They are agent instructions for the framework and are safe to keep or delete.
 
 ### Round 2 (2026-10-04)
 

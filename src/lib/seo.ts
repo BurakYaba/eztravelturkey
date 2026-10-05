@@ -12,7 +12,13 @@ type MetaInput = {
   type?: 'website' | 'article';
 };
 
-export function buildMetadata({ title, description, path, image = 'hero-istanbul', type = 'website' }: MetaInput): Metadata {
+export function buildMetadata({
+  title,
+  description,
+  path,
+  image = 'hero-istanbul',
+  type = 'website',
+}: MetaInput): Metadata {
   const picture = img(image);
   const fullTitle = path === '/' ? title : `${title} | ${site.name}`;
   return {
