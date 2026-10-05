@@ -1,0 +1,242 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-navy-950: #0a2038;
+  --color-navy-900: #0f2d4a;
+  --color-navy-800: #163c5f;
+  --color-navy-700: #234e76;
+  --color-navy-100: #dfe7ef;
+
+  --color-gold-500: #b07d2e;
+  --color-gold-600: #9a6a22;
+  --color-gold-700: #85591a;
+  --color-gold-100: #f2e6cf;
+
+  --color-cream-50: #fbf8f3;
+  --color-cream-100: #f4ede1;
+  --color-cream-200: #e6dcc9;
+
+  --color-ink: #1b2b3c;
+  --color-muted: #55657a;
+
+  --font-display: var(--font-playfair), 'Georgia', serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(15 45 74 / 0.06), 0 8px 24px -12px rgb(15 45 74 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(15 45 74 / 0.08), 0 18px 40px -16px rgb(15 45 74 / 0.28);
+
+  --breakpoint-xs: 30rem;
+}
+
+/* Cream veil that lets text sit on a photo; fades out quickly so the photo owns most of the width. */
+@utility fade-left {
+  background-image: linear-gradient(
+    90deg,
+    var(--veil, var(--color-cream-50)) 0%,
+    color-mix(in srgb, var(--veil, var(--color-cream-50)) 80%, transparent) 18%,
+    transparent 50%
+  );
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-cream-50);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy-900);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    font-variant-numeric: lining-nums;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-600);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-gold-100);
+    color: var(--color-navy-950);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 40rem) {
+    .container-x {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 64rem) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Full-bleed content row for the header, hero sections and footer. Starts at the left edge of the page. */
+  .container-wide {
+    width: 100%;
+    padding-inline: clamp(1rem, 4.2vw, 4.75rem);
+  }
+
+  .section-y {
+    padding-block: 3.5rem;
+  }
+  @media (min-width: 48rem) {
+    .section-y {
+      padding-block: 5rem;
+    }
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-gold-700);
+  }
+
+  .h-display {
+    font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+  }
+  .h-section {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  }
+  .h-card {
+    font-size: 1.3rem;
+  }
+
+  .font-display {
+    font-variant-numeric: lining-nums;
+  }
+}
+
+/* Hero entrance: pure CSS so server-rendered content is visible from first paint. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--d, 0) * 1ms);
+  }
+}
+
+/* Scroll reveal: scroll-driven where supported, otherwise content is simply visible. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+/* Accordion: grid-rows transition keeps height animation off layout properties. */
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.acc-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+.acc-panel > div {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Article body typography */
+.prose-article {
+  max-width: 44rem;
+}
+.prose-article h2 {
+  font-size: 1.75rem;
+  margin: 2.5rem 0 0.9rem;
+}
+.prose-article h3 {
+  font-size: 1.3rem;
+  margin: 1.8rem 0 0.6rem;
+}
+.prose-article p {
+  margin: 0 0 1.1rem;
+  color: var(--color-ink);
+}
+.prose-article ul {
+  margin: 0 0 1.2rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+.prose-article li {
+  margin-bottom: 0.4rem;
+}
+.prose-article a {
+  color: var(--color-gold-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,308 @@
+{
+  "istanbul-skyline": {
+    "alt": "Beautiful Istanbul skyline over water at twilight with mosques in view.",
+    "photographer": "Mathias Reding",
+    "photographerUrl": "https://www.pexels.com/@matreding",
+    "pexelsUrl": "https://www.pexels.com/photo/illuminated-city-with-mosques-at-waterfront-12625341/",
+    "width": 6186,
+    "height": 4124,
+    "avgColor": "#81645C"
+  },
+  "istanbul-bosphorus": {
+    "alt": "A ferry sails on the Bosphorus in Istanbul with a cityscape background under a clear blue sky.",
+    "photographer": "Sami TÜRK",
+    "photographerUrl": "https://www.pexels.com/@trksami",
+    "pexelsUrl": "https://www.pexels.com/photo/a-ship-on-sea-19730133/",
+    "width": 9504,
+    "height": 6336,
+    "avgColor": "#5B859D"
+  },
+  "hagia-sophia": {
+    "alt": "Hagia Sophia with its iconic domes and minarets under a cloudy sky in Istanbul, Turkey.",
+    "photographer": "Zeynep Sude  Emek",
+    "photographerUrl": "https://www.pexels.com/@zeynep-sude-emek-193601188",
+    "pexelsUrl": "https://www.pexels.com/photo/hagia-sophia-against-cloudy-sky-in-istanbul-turkey-20655030/",
+    "width": 6240,
+    "height": 4160,
+    "avgColor": "#6F725D"
+  },
+  "istanbul-bazaar": {
+    "alt": "Colorful Turkish lamps hanging in a Grand Bazaar shop in İstanbul, creating a warm, inviting glow.",
+    "photographer": "Deniz Karbaş",
+    "photographerUrl": "https://www.pexels.com/@deniz-karbas-721197515",
+    "pexelsUrl": "https://www.pexels.com/photo/vibrant-turkish-mosaic-lamps-in-istanbul-bazaar-35729493/",
+    "width": 6240,
+    "height": 4160,
+    "avgColor": "#67533B"
+  },
+  "cappadocia-balloons": {
+    "alt": "A stunning view of numerous hot air balloons floating over Cappadocia's unique rock formations at sunrise.",
+    "photographer": "Sena",
+    "photographerUrl": "https://www.pexels.com/@sena-1959966536",
+    "pexelsUrl": "https://www.pexels.com/photo/vibrant-hot-air-balloons-over-cappadocia-landscape-30370450/",
+    "width": 6160,
+    "height": 4640,
+    "avgColor": "#696F7B"
+  },
+  "cappadocia-valley": {
+    "alt": "Landscape of uneven rocky formations near dry rough hills and bushes with plants in Turkey in Cappadocia region under gray cloudy sky in highlands in summer day",
+    "photographer": "Meruyert Gonullu",
+    "photographerUrl": "https://www.pexels.com/@meruyert-gonullu",
+    "pexelsUrl": "https://www.pexels.com/photo/stony-formations-near-mountains-and-plants-in-valley-in-cappadocia-6243303/",
+    "width": 6720,
+    "height": 4480,
+    "avgColor": "#8C827A"
+  },
+  "pamukkale": {
+    "alt": "A stunning aerial view of Pamukkale's travertine terraces in Turkey during the day with shadows and sunlight.",
+    "photographer": "ROMAN ODINTSOV",
+    "photographerUrl": "https://www.pexels.com/@roman-odintsov",
+    "pexelsUrl": "https://www.pexels.com/photo/dry-lake-on-plains-5319469/",
+    "width": 6720,
+    "height": 4480,
+    "avgColor": "#878174"
+  },
+  "ephesus": {
+    "alt": "Explore the stunning Library of Celsus, a masterpiece of ancient architecture in Ephesus, Turkey.",
+    "photographer": "Selman Arif Golbasi",
+    "photographerUrl": "https://www.pexels.com/@selman-arif-golbasi-322737964",
+    "pexelsUrl": "https://www.pexels.com/photo/library-of-celsus-selcuk-turkey-14474360/",
+    "width": 6123,
+    "height": 4082,
+    "avgColor": "#847669"
+  },
+  "turkish-tea": {
+    "alt": "Close-up of an assorted Turkish meal spread with salad, cake, sauces, and tea on a wooden table.",
+    "photographer": "Emine Gizem",
+    "photographerUrl": "https://www.pexels.com/@emine-gizem-806264421",
+    "pexelsUrl": "https://www.pexels.com/photo/salad-and-tea-and-cake-23996502/",
+    "width": 6240,
+    "height": 3943,
+    "avgColor": "#8F735D"
+  },
+  "santorini-domes": {
+    "alt": "Iconic blue dome church in Santorini with a stunning view of the Aegean Sea.",
+    "photographer": "Diego F. Parra",
+    "photographerUrl": "https://www.pexels.com/@diego-f-parra-33199",
+    "pexelsUrl": "https://www.pexels.com/photo/church-on-santorinin-in-greece-15532995/",
+    "width": 7360,
+    "height": 4912,
+    "avgColor": "#649FC7"
+  },
+  "santorini-sunset": {
+    "alt": "A stunning aerial view of the Greek islands in Fira at sunset. Serene seascape and sky.",
+    "photographer": "K",
+    "photographerUrl": "https://www.pexels.com/@kelly",
+    "pexelsUrl": "https://www.pexels.com/photo/aerial-view-of-greek-islands-at-sunset-37844496/",
+    "width": 12288,
+    "height": 6912,
+    "avgColor": "#746C6A"
+  },
+  "mykonos": {
+    "alt": "Captivating view of Mykonos windmills overlooking the Aegean Sea, highlighted by a beautiful sunset.",
+    "photographer": "K",
+    "photographerUrl": "https://www.pexels.com/@kelly",
+    "pexelsUrl": "https://www.pexels.com/photo/scenic-aerial-view-of-mykonos-windmills-at-sunset-37844814/",
+    "width": 12288,
+    "height": 6912,
+    "avgColor": "#555145"
+  },
+  "athens-acropolis": {
+    "alt": "Close-up of the Parthenon columns in Athens, Greece, against a clear summer sky.",
+    "photographer": "Diego F. Parra",
+    "photographerUrl": "https://www.pexels.com/@diego-f-parra-33199",
+    "pexelsUrl": "https://www.pexels.com/photo/greek-ancient-temple-15238795/",
+    "width": 7360,
+    "height": 4912,
+    "avgColor": "#99A0A8"
+  },
+  "greek-island-boat": {
+    "alt": "Aerial view of sailboats on the serene blue waters near Voula, Greece under a clear summer sky.",
+    "photographer": "Nikos B",
+    "photographerUrl": "https://www.pexels.com/@nikos-b-554391302",
+    "pexelsUrl": "https://www.pexels.com/photo/sailboat-on-sea-coast-18431531/",
+    "width": 9248,
+    "height": 6944,
+    "avgColor": "#7F9AB5"
+  },
+  "naxos": {
+    "alt": "Capture of the iconic Portara gate in Naxos, Greece with charming Naxos Town in the background.",
+    "photographer": "Efrem  Efre",
+    "photographerUrl": "https://www.pexels.com/@efrem-efre-2786187",
+    "pexelsUrl": "https://www.pexels.com/photo/ancient-portara-gate-with-naxos-town-in-view-32414116/",
+    "width": 6960,
+    "height": 4640,
+    "avgColor": "#728486"
+  },
+  "greek-food": {
+    "alt": "Picturesque Greek taverna in Kos, showcasing colorful decor and traditional Mediterranean architecture.",
+    "photographer": "Wolfgang Weiser",
+    "photographerUrl": "https://www.pexels.com/@wolfgang-weiser-467045605",
+    "pexelsUrl": "https://www.pexels.com/photo/charming-greek-taverna-in-kos-with-vibrant-decor-37448699/",
+    "width": 6381,
+    "height": 4259,
+    "avgColor": "#7E7B72"
+  },
+  "giza-pyramids": {
+    "alt": "Camels with riders passing by the pyramids in Giza, Egypt, under a clear sky.",
+    "photographer": "hayriyenur .",
+    "photographerUrl": "https://www.pexels.com/@hayriyenur-351892318",
+    "pexelsUrl": "https://www.pexels.com/photo/camels-in-front-of-egyptian-pyramids-29712188/",
+    "width": 6445,
+    "height": 4672,
+    "avgColor": "#BCA38F"
+  },
+  "sphinx": {
+    "alt": "The Great Sphinx of Giza against a backdrop of pyramids and a partly cloudy sky.",
+    "photographer": "Tito Zzzz",
+    "photographerUrl": "https://www.pexels.com/@tizzy",
+    "pexelsUrl": "https://www.pexels.com/photo/great-sphinx-of-giza-under-partially-cloudy-skies-35549749/",
+    "width": 6240,
+    "height": 4160,
+    "avgColor": "#C5AEA0"
+  },
+  "nile-cruise": {
+    "alt": "A picturesque view of a traditional sailboat on the Nile River near city waterfronts.",
+    "photographer": "Zihang Feng",
+    "photographerUrl": "https://www.pexels.com/@dannyfeng",
+    "pexelsUrl": "https://www.pexels.com/photo/sailing-boat-passing-waterfront-in-istanbul-20954992/",
+    "width": 7008,
+    "height": 4672,
+    "avgColor": "#90ABB4"
+  },
+  "karnak": {
+    "alt": "Sunlit ancient columns in the historic Karnak Temple Complex in Luxor, Egypt.",
+    "photographer": "AXP Photography",
+    "photographerUrl": "https://www.pexels.com/@axp-photography-500641970",
+    "pexelsUrl": "https://www.pexels.com/photo/monuments-in-karnak-temple-complex-in-luxor-egypt-18934722/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#8C5C1C"
+  },
+  "abu-simbel": {
+    "alt": "Explore the magnificent carvings at the entrance of the ancient Egyptian temple in Abu Simbel.",
+    "photographer": "AXP Photography",
+    "photographerUrl": "https://www.pexels.com/@axp-photography-500641970",
+    "pexelsUrl": "https://www.pexels.com/photo/an-ancient-temple-18991590/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#B18B74"
+  },
+  "petra-treasury": {
+    "alt": "Explore the ancient rock-carved Al-Khazneh treasury in Petra, Jordan, a UNESCO World Heritage Site.",
+    "photographer": "Mihaela Claudia  Puscas",
+    "photographerUrl": "https://www.pexels.com/@mihaela-claudia-puscas-836545137",
+    "pexelsUrl": "https://www.pexels.com/photo/low-angle-shot-of-the-al-khazneh-in-petra-jordan-23124659/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#9E6A55"
+  },
+  "petra-siq": {
+    "alt": "Explore the stunning rock formations of Petra's canyon, featuring smooth, wind-carved walls and natural light.",
+    "photographer": "Yasir Gürbüz",
+    "photographerUrl": "https://www.pexels.com/@yasirgurbuz",
+    "pexelsUrl": "https://www.pexels.com/photo/brown-rock-formation-in-close-up-photography-11195783/",
+    "width": 6000,
+    "height": 4002,
+    "avgColor": "#7E624D"
+  },
+  "wadi-rum": {
+    "alt": "Explore the majestic sandstone formations in the desert landscapes of Wadi Rum, Jordan.",
+    "photographer": "Andrea Imre",
+    "photographerUrl": "https://www.pexels.com/@andrea-imre-151632551",
+    "pexelsUrl": "https://www.pexels.com/photo/view-of-sandstone-formations-in-wadi-rum-jordan-17472767/",
+    "width": 6028,
+    "height": 4019,
+    "avgColor": "#776C68"
+  },
+  "dead-sea": {
+    "alt": "A striking aerial view of the Dead Sea's salt formations and blue waters.",
+    "photographer": "u h",
+    "photographerUrl": "https://www.pexels.com/@u-h-448257719",
+    "pexelsUrl": "https://www.pexels.com/photo/aerial-view-of-the-dead-sea-shoreline-30645989/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#737E84"
+  },
+  "jerash": {
+    "alt": "Ruins of ancient Roman columns in Jerash, Jordan, showcasing historical architecture.",
+    "photographer": "AXP Photography",
+    "photographerUrl": "https://www.pexels.com/@axp-photography-500641970",
+    "pexelsUrl": "https://www.pexels.com/photo/colonnade-in-ancient-ruins-in-amman-18717601/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#7E7D7B"
+  },
+  "marrakech-souk": {
+    "alt": "Colorful market scene with traditional Moroccan architecture and merchandise on display in a sunlit alley.",
+    "photographer": "Christophe RASCLE",
+    "photographerUrl": "https://www.pexels.com/@christophe-rascle-159591525",
+    "pexelsUrl": "https://www.pexels.com/photo/market-in-an-old-town-18487314/",
+    "width": 8192,
+    "height": 5464,
+    "avgColor": "#7A7B8D"
+  },
+  "marrakech-koutoubia": {
+    "alt": "A bustling crowd gathers under the iconic Koutoubia Mosque tower at sunset in Marrakesh, Morocco.",
+    "photographer": "Valentin Vesa",
+    "photographerUrl": "https://www.pexels.com/@adspedia",
+    "pexelsUrl": "https://www.pexels.com/photo/sunset-at-koutoubia-mosque-in-marrakesh-36595610/",
+    "width": 5828,
+    "height": 4371,
+    "avgColor": "#68543B"
+  },
+  "chefchaouen": {
+    "alt": "Explore the vibrant blue architecture of Chefchaouen, Morocco, a stunning travel destination.",
+    "photographer": "Diego F. Parra",
+    "photographerUrl": "https://www.pexels.com/@diego-f-parra-33199",
+    "pexelsUrl": "https://www.pexels.com/photo/blue-house-in-chefchaouen-morocco-25070537/",
+    "width": 7360,
+    "height": 4912,
+    "avgColor": "#808FA4"
+  },
+  "sahara-camels": {
+    "alt": "Tourists ride camels across the scenic sand dunes of Merzouga, Morocco.",
+    "photographer": "Zakaria HANIF",
+    "photographerUrl": "https://www.pexels.com/@zakariahanif",
+    "pexelsUrl": "https://www.pexels.com/photo/people-riding-on-camels-on-a-desert-12214734/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#E6B99A"
+  },
+  "travelers-couple": {
+    "alt": "A woman in a floral dress and sun hat explores ancient stone ruins on a sunny day.",
+    "photographer": "Joel Zar",
+    "photographerUrl": "https://www.pexels.com/@joel-zar-307187367",
+    "pexelsUrl": "https://www.pexels.com/photo/back-view-of-a-woman-holding-a-palm-leaf-13570714/",
+    "width": 7008,
+    "height": 4672,
+    "avgColor": "#696559"
+  },
+  "small-group-tour": {
+    "alt": "Group of tourists exploring ancient ruins with scenic mountain backdrop.",
+    "photographer": "Matheus Bertelli",
+    "photographerUrl": "https://www.pexels.com/@bertellifotografia",
+    "pexelsUrl": "https://www.pexels.com/photo/three-men-standing-on-a-rocky-hill-with-a-cell-phone-15141453/",
+    "width": 6720,
+    "height": 4480,
+    "avgColor": "#ABA8A3"
+  },
+  "travel-planning": {
+    "alt": "Top view of a woman's hands planning a trip with a map, camera, and travel items.",
+    "photographer": "Vlada Karpovich",
+    "photographerUrl": "https://www.pexels.com/@vlada-karpovich",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-looking-at-a-map-with-a-pen-in-her-hand-7368300/",
+    "width": 6720,
+    "height": 4480,
+    "avgColor": "#978879"
+  },
+  "greek-ruins-columns": {
+    "alt": "Captivating view of the Parthenon at sunset, showcasing ancient Greek architecture in Athens.",
+    "photographer": "Uiliam Nörnberg",
+    "photographerUrl": "https://www.pexels.com/@uiliamnornberg",
+    "pexelsUrl": "https://www.pexels.com/photo/the-sun-is-setting-over-the-parthenon-28300999/",
+    "width": 6000,
+    "height": 4000,
+    "avgColor": "#906F4C"
+  }
+}
