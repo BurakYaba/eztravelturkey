@@ -10,6 +10,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
 import { site, whatsappLink } from '@/data/site';
+import { cn } from '@/lib/utils';
 import { Logo } from './Logo';
 
 const explore = [
@@ -36,6 +37,7 @@ const socials = [
 ];
 
 const linkClass = 'text-white/75 transition hover:text-white';
+const webcraft = 'https://www.webcraft.tr';
 
 export function Footer() {
   return (
@@ -55,8 +57,8 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="hover:border-gold-500 grid size-10 place-items-center rounded-lg border border-white/20 text-white/85 transition hover:text-white">
-                  <Icon size={20} aria-hidden />
+                  className="hover:bg-gold-600 focus-visible:ring-gold-500 grid size-11 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/15 transition hover:ring-transparent focus-visible:ring-2">
+                  <Icon size={22} weight="fill" aria-hidden />
                 </a>
               </li>
             ))}
@@ -132,11 +134,11 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-wide flex flex-col gap-3 py-6 text-sm text-white/65 md:flex-row md:items-center md:justify-between">
+        <div className="container-wide flex flex-col gap-3 py-6 text-sm text-white/65 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-8">
           <p>
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:justify-center">
             <li>
               <a href={site.tursabUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 TURSAB member
@@ -149,6 +151,19 @@ export function Footer() {
             </li>
             <li>Visa and Mastercard accepted</li>
           </ul>
+          <p className="lg:text-right">
+            <a href={`${webcraft}/hizmetler/web-tasarim`} target="_blank" rel="noopener" className={linkClass}>
+              Web tasarım
+            </a>{' '}
+            ve{' '}
+            <a href={`${webcraft}/hizmetler/seo-hizmeti`} target="_blank" rel="noopener" className={linkClass}>
+              SEO
+            </a>
+            :{' '}
+            <a href={`${webcraft}/`} target="_blank" rel="noopener" className={cn(linkClass, 'font-semibold')}>
+              Webcraft
+            </a>
+          </p>
         </div>
       </div>
     </footer>

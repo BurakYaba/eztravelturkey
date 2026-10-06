@@ -73,6 +73,6 @@ Old `/en/...` addresses from the previous website redirect permanently to the ne
 - **Prices** are the "from" prices published on the previous website. Confirm they are current.
 - **Morocco** has no fixed tours or prices on the previous site, so it is presented as planned to order. Israel is not included.
 - **Legal text.** The privacy policy is a plain-language starting point and should be reviewed by someone qualified. Terms and cancellation tables follow the previous site.
-- **Logo.** The header uses a typographic wordmark. Add your artwork in `src/components/layout/Logo.tsx` and replace `src/app/icon.svg`.
+- **Logo and icons.** The logo is `public/mtlogo.png` (see Logo above). The browser icons (`src/app/icon.png`, `apple-icon.png`, `favicon.ico`) are cut from its emblem by `npm run favicon`; rerun it if the logo changes.
 - **Domain.** Set `NEXT_PUBLIC_SITE_URL` to the final address.
 - **Reviews.** Review excerpts are those shown on the previous home page. Keep them in sync with Tripadvisor.

@@ -51,7 +51,7 @@ export const travelAgencyJsonLd = () => ({
   name: site.name,
   legalName: site.legalName,
   url: site.url,
-  logo: absoluteUrl('/icon.svg'),
+  logo: absoluteUrl('/mtlogo.png'),
   image: absoluteUrl(img('hero-istanbul').src),
   description: `Licensed Turkish tour operator (License No. ${site.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco since ${site.founded}.`,
   foundingDate: String(site.founded),

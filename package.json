@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "images": "node scripts/fetch-images.mjs",
-    "ornaments": "node scripts/build-ornaments.mjs"
+    "ornaments": "node scripts/build-ornaments.mjs",
+    "favicon": "node scripts/build-favicon.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
