@@ -18,7 +18,7 @@ type Props = {
 };
 
 // Horseshoe arches narrow toward the base, so their caption needs more side room.
-const captionInset: Partial<Record<CountryId, string>> = { morocco: 'px-[13%]' };
+const captionInset: Partial<Record<CountryId, string>> = { morocco: 'inset-x-[14%]' };
 
 /**
  * Tile whose outline follows the architecture of its destination: pointed Ottoman arch, Doric pediment,
@@ -37,7 +37,7 @@ export function ShapedTile({
 }: Props) {
   const mask = `url(/ornaments/shape-${country}.svg)`;
   return (
-    <div className={cn('group', className)} style={{ filter: `drop-shadow(0 14px 18px ${shadow})` }}>
+    <div className={cn('group @container', className)} style={{ filter: `drop-shadow(0 14px 18px ${shadow})` }}>
       <Link
         href={href}
         className="bg-navy-900 relative block aspect-[4/5] overflow-hidden transition duration-300 group-hover:-translate-y-1"
@@ -55,12 +55,17 @@ export function ShapedTile({
           className="from-navy-950/90 via-navy-950/25 absolute inset-0 bg-gradient-to-t to-transparent"
         />
         <span
-          className={cn('absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4', captionInset[country])}>
-          <span>
-            <span className="font-display block text-2xl font-semibold text-white">{title}</span>
-            <span className="block text-sm text-white/90">{note}</span>
+          className={cn(
+            'absolute bottom-0 flex items-end justify-between gap-2 p-3 @[15rem]:p-5',
+            captionInset[country] ?? 'inset-x-0',
+          )}>
+          <span className="min-w-0">
+            <span className="font-display block text-lg leading-tight font-semibold text-white @[15rem]:text-2xl">
+              {title}
+            </span>
+            <span className="mt-1 hidden text-sm text-white/90 @[15rem]:line-clamp-3 @[15rem]:block">{note}</span>
           </span>
-          <span className="group-hover:bg-gold-600 grid size-9 shrink-0 place-items-center rounded-lg bg-white/15 text-white backdrop-blur-sm transition">
+          <span className="group-hover:bg-gold-600 hidden size-9 shrink-0 place-items-center rounded-lg bg-white/15 text-white backdrop-blur-sm transition @[15rem]:grid">
             <ArrowRight size={18} weight="bold" aria-hidden />
           </span>
         </span>

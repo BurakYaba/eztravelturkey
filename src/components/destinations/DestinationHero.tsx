@@ -3,7 +3,7 @@ import type { Destination } from '@/data/types';
 import type { DestinationTheme } from '@/data/destination-themes';
 import { Breadcrumbs, type Crumb } from '../shared/Breadcrumbs';
 import { Photo } from '../shared/Photo';
-import { Ornament } from './Ornament';
+import { Ornament, ornamentUrl } from './Ornament';
 
 type Props = {
   destination: Destination;
@@ -13,7 +13,7 @@ type Props = {
 };
 
 /** Skyline height shared by the hero padding and the silhouette so the text never sits on the rooftops. */
-const SKYLINE = 'clamp(96px, 11.6vw, 280px)';
+const SKYLINE = 'clamp(96px, 12.5vw, 340px)';
 
 /**
  * Destination page header: text from the left edge, photo bleeding in from the right, a tile pattern faintly
@@ -36,8 +36,8 @@ export function DestinationHero({ destination: d, theme, crumbs, actions }: Prop
         opacity={0.1}
         className="absolute inset-y-0 left-0 -z-10 w-full [mask-composite:intersect] lg:w-[48%]"
         style={{
-          maskImage: `url(/ornaments/${d.id}-tile.svg), linear-gradient(90deg, #000 20%, transparent 100%)`,
-          WebkitMaskImage: `url(/ornaments/${d.id}-tile.svg), linear-gradient(90deg, #000 20%, transparent 100%)`,
+          maskImage: `url(${ornamentUrl(d.id, 'tile')}), linear-gradient(90deg, #000 20%, transparent 100%)`,
+          WebkitMaskImage: `url(${ornamentUrl(d.id, 'tile')}), linear-gradient(90deg, #000 20%, transparent 100%)`,
           maskSize: `${theme.tileSize}px ${theme.tileSize}px, 100% 100%`,
           WebkitMaskSize: `${theme.tileSize}px ${theme.tileSize}px, 100% 100%`,
           maskRepeat: 'repeat, no-repeat',

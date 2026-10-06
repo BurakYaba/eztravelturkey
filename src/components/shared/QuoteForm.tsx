@@ -186,11 +186,19 @@ export function QuoteForm({ variant = 'page', tour, defaultDestinations = [], cl
       </div>
 
       <div className={cn('grid gap-4', !compact && 'sm:grid-cols-2')}>
-        {!compact && (
-          <Field label="Phone or WhatsApp (optional)" htmlFor={id('phone')}>
-            <input id={id('phone')} name="phone" type="tel" autoComplete="tel" className={cn(fieldBase, 'h-12')} />
-          </Field>
-        )}
+        <Field label={compact ? 'Mobile phone' : 'Phone or WhatsApp (optional)'} htmlFor={id('phone')}>
+          <input
+            id={id('phone')}
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            required={compact}
+            minLength={compact ? 7 : undefined}
+            placeholder={compact ? '+1 555 123 4567' : undefined}
+            className={cn(fieldBase, 'h-12')}
+          />
+        </Field>
         {!isContact && (
           <Field label="Number of travelers" htmlFor={id('travelers')}>
             <select id={id('travelers')} name="travelers" defaultValue="2" className={cn(fieldBase, 'h-12')}>

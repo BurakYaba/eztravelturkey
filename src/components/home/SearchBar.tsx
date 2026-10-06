@@ -75,7 +75,7 @@ export function SearchBar() {
       <form
         onSubmit={onSubmit}
         aria-label="Find a tour"
-        className="bg-navy-900 shadow-lift grid max-w-[74rem] gap-4 rounded-lg p-4 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-center lg:divide-x lg:divide-white/15 lg:p-5">
+        className="bg-navy-900 shadow-lift mx-auto grid max-w-[74rem] gap-4 rounded-lg p-4 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-center lg:divide-x lg:divide-white/15 lg:p-5">
         <Select label="Destination" id={`${uid}-d`} name="destination" icon={<MapPin size={26} />}>
           <option value="">Where would you like to go?</option>
           {destinations.map((d) => (

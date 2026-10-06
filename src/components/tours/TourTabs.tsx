@@ -1,79 +1,141 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type ReactNode,
+} from 'react';
 import { cn } from '@/lib/utils';
 
 export type TabItem = { id: string; label: string };
 
-const LINE = 213;
+type TabsState = { active: string; select: (id: string) => void };
 
-/** Sticky section tabs with a scroll-spy highlight, built on IntersectionObserver. */
-export function TourTabs({ tabs }: { tabs: TabItem[] }) {
-  const [active, setActive] = useState(tabs[0]?.id);
-  const locked = useRef(false);
-  const refresh = useRef<() => void>(() => undefined);
+const TabsContext = createContext<TabsState | null>(null);
+
+/** The tab currently shown on large screens. Panels outside a provider behave as always visible. */
+export const useActiveTab = () => useContext(TabsContext);
+
+/** Height of the site header plus the sticky tab strip. A tab change scrolls back up to this line if needed. */
+const STICKY_OFFSET = 138;
+
+/**
+ * Holds which tour tab is selected. From lg up only that tab's panel is shown; below lg the same panels are
+ * accordions and this state is not used. The selection follows the URL hash so a tab can be linked to.
+ */
+export function TourTabsProvider({ tabs, children }: { tabs: TabItem[]; children: ReactNode }) {
+  const [active, setActive] = useState(tabs[0]?.id ?? '');
 
   useEffect(() => {
-    const sections = tabs.map((t) => document.getElementById(t.id)).filter((el): el is HTMLElement => Boolean(el));
-    const update = () => {
-      if (locked.current) {
-        return;
+    const fromHash = () => {
+      const id = window.location.hash.slice(1);
+      if (tabs.some((t) => t.id === id)) {
+        setActive(id);
       }
-      let current = tabs[0]?.id;
-      for (const section of sections) {
-        if (section.getBoundingClientRect().top <= LINE) {
-          current = section.id;
-        }
-      }
-      setActive(current);
     };
-    refresh.current = update;
-    // A thin band just under the sticky bars. A section entering or leaving it re-evaluates the current tab.
-    const bottomInset = Math.max(0, window.innerHeight - LINE + 5);
-    const observer = new IntersectionObserver(update, {
-      rootMargin: `-158px 0px -${bottomInset}px 0px`,
-      threshold: [0, 1],
-    });
-    update();
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+    return () => window.removeEventListener('hashchange', fromHash);
   }, [tabs]);
 
-  // While the page glides to a clicked tab, keep that tab highlighted and re-check once the scroll settles.
-  const onTabClick = (id: string) => {
-    locked.current = true;
+  const select = useCallback((id: string) => {
     setActive(id);
-    window.setTimeout(() => {
-      locked.current = false;
-      refresh.current();
-    }, 1100);
+    window.history.replaceState(null, '', `#${id}`);
+    // If the visitor is deep in a long tab, bring the top of the new tab into view under the sticky bars.
+    const panels = document.getElementById('tour-panels');
+    if (panels) {
+      const top = panels.getBoundingClientRect().top + window.scrollY - STICKY_OFFSET;
+      if (window.scrollY > top) {
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  }, []);
+
+  return <TabsContext.Provider value={{ active, select }}>{children}</TabsContext.Provider>;
+}
+
+/** Sticky tab strip, shown from lg up. Phones use the accordion panels instead. */
+export function TourTabs({ tabs }: { tabs: TabItem[] }) {
+  const state = useContext(TabsContext);
+  const listRef = useRef<HTMLUListElement>(null);
+  const active = state?.active ?? tabs[0]?.id;
+
+  // Keep the selected tab inside the strip when the tabs overflow (narrow desktop windows).
+  useEffect(() => {
+    const list = listRef.current;
+    const tab = list?.querySelector<HTMLElement>('[aria-selected="true"]');
+    if (list && tab) {
+      const left = tab.offsetLeft - 24;
+      const right = tab.offsetLeft + tab.offsetWidth + 24;
+      if (left < list.scrollLeft) {
+        list.scrollTo({ left, behavior: 'smooth' });
+      } else if (right > list.scrollLeft + list.clientWidth) {
+        list.scrollTo({ left: right - list.clientWidth, behavior: 'smooth' });
+      }
+    }
+  }, [active]);
+
+  const onKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
+    const index = tabs.findIndex((t) => t.id === active);
+    let next = -1;
+    if (e.key === 'ArrowRight') {
+      next = (index + 1) % tabs.length;
+    } else if (e.key === 'ArrowLeft') {
+      next = (index - 1 + tabs.length) % tabs.length;
+    } else if (e.key === 'Home') {
+      next = 0;
+    } else if (e.key === 'End') {
+      next = tabs.length - 1;
+    }
+    if (next >= 0) {
+      e.preventDefault();
+      state?.select(tabs[next].id);
+      listRef.current?.querySelectorAll<HTMLElement>('[role="tab"]')[next]?.focus();
+    }
   };
 
   return (
-    <div className="border-cream-200 bg-cream-50/95 sticky top-[80px] z-30 border-b backdrop-blur">
+    <div className="border-cream-200 bg-cream-50/95 sticky top-20 z-30 hidden border-b backdrop-blur lg:block">
       <nav aria-label="Tour sections" className="container-x">
-        <ul className="no-scrollbar flex gap-1 overflow-x-auto">
-          {tabs.map((tab) => (
-            <li key={tab.id} className="shrink-0">
-              <a
-                href={`#${tab.id}`}
-                onClick={() => onTabClick(tab.id)}
-                aria-current={active === tab.id ? 'true' : undefined}
-                className={cn(
-                  'relative block px-4 py-4 text-[0.95rem] font-semibold transition-colors',
-                  active === tab.id ? 'text-gold-700' : 'text-navy-900 hover:text-gold-700',
-                )}>
-                {tab.label}
-                <span
-                  aria-hidden
+        <ul
+          ref={listRef}
+          role="tablist"
+          aria-label="Tour sections"
+          onKeyDown={onKeyDown}
+          className="no-scrollbar flex gap-0.5 overflow-x-auto xl:gap-1">
+          {tabs.map((tab) => {
+            const selected = active === tab.id;
+            return (
+              <li key={tab.id} role="presentation" className="shrink-0">
+                <button
+                  type="button"
+                  role="tab"
+                  id={`tab-${tab.id}`}
+                  aria-selected={selected}
+                  aria-controls={tab.id}
+                  tabIndex={selected ? 0 : -1}
+                  onClick={() => state?.select(tab.id)}
                   className={cn(
-                    'bg-gold-600 absolute inset-x-4 bottom-0 h-0.5 transition-opacity',
-                    active === tab.id ? 'opacity-100' : 'opacity-0',
-                  )}
-                />
-              </a>
-            </li>
-          ))}
+                    'relative block px-3 py-4 text-[0.95rem] font-semibold whitespace-nowrap transition-colors xl:px-4',
+                    selected ? 'text-gold-700' : 'text-navy-900 hover:text-gold-700',
+                  )}>
+                  {tab.label}
+                  <span
+                    aria-hidden
+                    className={cn(
+                      'bg-gold-600 absolute inset-x-3 bottom-0 h-0.5 transition-opacity xl:inset-x-4',
+                      selected ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>

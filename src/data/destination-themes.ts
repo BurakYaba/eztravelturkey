@@ -69,7 +69,7 @@ export const destinationThemes: Record<CountryId, DestinationTheme> = {
     ink: '#1c6b52',
     onDeep: '#e2c277',
     tint: '#e9f1ec',
-    tileSize: 72,
+    tileSize: 190,
     motif: 'Zellige stars and kasbah walls',
     eyebrow: 'Imperial cities',
   },

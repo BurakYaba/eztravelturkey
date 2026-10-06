@@ -4,6 +4,10 @@ import { cn } from '@/lib/utils';
 
 type Kind = 'tile' | 'band' | 'skyline';
 
+/** The Moroccan star lattice is a PNG mask; everything else is SVG. */
+export const ornamentUrl = (country: CountryId, kind: Kind) =>
+  `/ornaments/${country}-${kind}.${country === 'morocco' && kind === 'tile' ? 'png' : 'svg'}`;
+
 type Props = {
   country: CountryId;
   kind: Kind;
@@ -22,10 +26,10 @@ type Props = {
  * Purely decorative, so it is hidden from assistive technology.
  */
 export function Ornament({ country, kind, color, className, height, tileSize = 72, opacity, style }: Props) {
-  const url = `url(/ornaments/${country}-${kind}.svg)`;
+  const url = `url(${ornamentUrl(country, kind)})`;
   const size = kind === 'tile' ? `${tileSize}px ${tileSize}px` : 'auto 100%';
   const repeat = kind === 'tile' ? 'repeat' : 'repeat-x';
-  const position = kind === 'tile' ? '0 0' : kind === 'skyline' ? '40% 100%' : 'center';
+  const position = kind === 'tile' ? '0 0' : kind === 'skyline' ? '50% 100%' : 'center';
   return (
     <div
       aria-hidden

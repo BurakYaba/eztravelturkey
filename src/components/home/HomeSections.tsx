@@ -65,9 +65,10 @@ export function WhyTravel() {
           <Photo id="travelers-couple" sizes="(min-width: 1024px) 40vw, 100vw" />
         </div>
         <div>
-          <h2 className="h-section">Travel deeper with people who know</h2>
+          <h2 className="h-section">Local Expertise. Personal Attention</h2>
           <p className="text-muted mt-3 max-w-xl text-lg">
-            From planning to the final day, we make your journey seamless, meaningful and uniquely yours.
+            Based in Istanbul, Magnificent Travel has been organizing journeys since 1997. We help you choose the right
+            route, hotels and travel pace with support from planning to your final day.
           </p>
           <ul className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
             {reasons.map(({ icon: Icon, title, text }) => (
@@ -92,7 +93,7 @@ export function DestinationsRow() {
       <div className="container-x">
         <SectionHeading
           title="Explore our destinations"
-          description="Extraordinary cultures. Timeless history. Unforgettable experiences."
+          description="Find your next journey through ancient cities, island landscapes and remarkable cultures."
           link={{ href: '/destinations', label: 'View all destinations' }}
         />
         <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
@@ -181,8 +182,8 @@ export function FeaturedTours() {
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
         <SectionHeading
-          title="Inspiring tours, unforgettable moments"
-          description="Handpicked journeys loved by our travelers."
+          title="Find your Perfect Tour"
+          description="Choose a private journey, a small group adventure, or a personalized multi-country itinerary."
           link={{ href: '/tours', label: 'View all tours' }}
         />
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -202,8 +203,8 @@ export function MultiCountryRail() {
     <section className="section-y">
       <div className="container-x">
         <SectionHeading
-          title="Several countries, one journey"
-          description="Multi-country itineraries across Turkey, Greece, Egypt and Jordan, coordinated by a single team."
+          title="Multi-Country Tours - Seamlessly Planned"
+          description="Discover more in one journey, with hotels, guides, transfers and transport coordinated by one team."
           link={{ href: '/multi-country-tours', label: 'See all combinations' }}
         />
       </div>
@@ -225,8 +226,8 @@ export function HubPreview() {
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
         <SectionHeading
-          title="From the Travel Hub"
-          description="Practical guides and inspiration for planning your trip."
+          title="Plan Your Trip with Local Insights"
+          description="Find practical tips, destination inspiration and travel advice from our local team."
           link={{ href: '/travel-hub', label: 'Explore the Travel Hub' }}
         />
         <div className="grid gap-6 lg:grid-cols-5">

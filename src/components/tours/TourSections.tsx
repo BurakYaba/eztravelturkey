@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -20,8 +21,10 @@ import {
 import type { Icon } from '@phosphor-icons/react';
 import { countryName } from '@/data/destinations';
 import { img } from '@/data/images';
+import { cancellationTables, paymentSteps } from '@/data/policies';
 import { site } from '@/data/site';
 import type { Tour } from '@/data/types';
+import { cn } from '@/lib/utils';
 import { Accordion } from '../shared/Accordion';
 import { Photo } from '../shared/Photo';
 import { ReviewCards } from '../shared/ReviewCards';
@@ -113,8 +116,8 @@ export function WhyChoose({ tour }: { tour: Tour }) {
 
 export function ItinerarySection({ tour }: { tour: Tour }) {
   return (
-    <section id="itinerary" className="scroll-mt-40 pt-14">
-      <SectionHeading title="Day-by-day itinerary" as="h2" className="mb-6" />
+    <>
+      <SectionHeading title="Day-by-day itinerary" as="h2" className="mb-6 max-lg:hidden" />
       <Accordion
         size="lg"
         defaultOpen={[tour.itinerary[0] ? 'day-0' : '']}
@@ -147,14 +150,14 @@ export function ItinerarySection({ tour }: { tour: Tour }) {
           ),
         }))}
       />
-    </section>
+    </>
   );
 }
 
 export function InclusionsSection({ tour }: { tour: Tour }) {
   return (
-    <section id="inclusions" className="scroll-mt-40 pt-14">
-      <SectionHeading title="Inclusions and exclusions" as="h2" className="mb-6" />
+    <>
+      <SectionHeading title="Inclusions and exclusions" as="h2" className="mb-6 max-lg:hidden" />
       <div className="grid gap-5 md:grid-cols-2">
         <div className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
           <h3 className="flex items-center gap-2 font-sans text-lg font-semibold tracking-normal">
@@ -185,7 +188,7 @@ export function InclusionsSection({ tour }: { tour: Tour }) {
           </ul>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
@@ -214,8 +217,8 @@ const requirementIcon = (title: string): Icon => {
 
 export function RequirementsSection({ tour }: { tour: Tour }) {
   return (
-    <section id="requirements" className="scroll-mt-40 pt-14">
-      <SectionHeading title="Trip requirements and practical information" as="h2" className="mb-6" />
+    <>
+      <SectionHeading title="Trip requirements and practical information" as="h2" className="mb-6 max-lg:hidden" />
       <ul className="grid gap-4 sm:grid-cols-2">
         {tour.requirements.map((r) => {
           const Glyph = requirementIcon(r.title);
@@ -230,13 +233,13 @@ export function RequirementsSection({ tour }: { tour: Tour }) {
           );
         })}
       </ul>
-    </section>
+    </>
   );
 }
 
 export function TourFaqs({ tour }: { tour: Tour }) {
   return (
-    <section id="faqs" className="scroll-mt-40 pt-14">
+    <>
       <SectionHeading
         title="Frequently asked questions"
         as="h2"
@@ -244,15 +247,15 @@ export function TourFaqs({ tour }: { tour: Tour }) {
         link={{ href: '/faq', label: 'View all FAQs' }}
       />
       <Accordion items={tour.faqs.map((f, i) => ({ id: `q-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
-    </section>
+    </>
   );
 }
 
 export function TourReviews() {
   const picture = img('ephesus');
   return (
-    <section id="reviews" className="scroll-mt-40 pt-14">
-      <SectionHeading title="Reviews" as="h2" className="mb-6" />
+    <>
+      <SectionHeading title="Reviews" as="h2" className="mb-6 max-lg:hidden" />
       <div className="border-cream-200 shadow-card relative overflow-hidden rounded-lg border bg-white">
         <div className="grid items-center md:grid-cols-[1fr_1fr]">
           <div className="p-6 md:p-8">
@@ -281,7 +284,101 @@ export function TourReviews() {
       <div className="mt-6">
         <ReviewCards />
       </div>
-    </section>
+    </>
+  );
+}
+
+export function RouteMapSection({ tour, mapSrc }: { tour: Tour; mapSrc: string | null }) {
+  return (
+    <>
+      <SectionHeading title="Route map" as="h2" className="mb-6 max-lg:hidden" />
+      {mapSrc && (
+        <div className="border-cream-200 shadow-card bg-cream-100 relative aspect-[4/3] overflow-hidden rounded-lg border">
+          <Image
+            src={mapSrc}
+            alt={`Route map of the ${tour.title}: ${tour.route.join(', ')}`}
+            fill
+            sizes="(min-width: 1024px) 760px, 100vw"
+            className="object-contain"
+          />
+        </div>
+      )}
+      <ol className={cn('relative space-y-4', mapSrc && 'mt-8')}>
+        {tour.route.map((stop, i) => (
+          <li key={stop} className="flex items-center gap-4">
+            <span className="relative flex flex-col items-center self-stretch">
+              <span className="bg-navy-900 font-display grid size-9 shrink-0 place-items-center rounded-full text-sm font-semibold text-white">
+                {i + 1}
+              </span>
+              {i < tour.route.length - 1 && (
+                <span aria-hidden className="border-gold-500/70 absolute top-9 -bottom-4 border-l-2 border-dashed" />
+              )}
+            </span>
+            <span className="text-navy-900 text-lg font-semibold">{stop}</span>
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+}
+
+export function PaymentSection() {
+  return (
+    <>
+      <SectionHeading title="Payment summary" as="h2" className="mb-6 max-lg:hidden" />
+      <ul className="grid gap-4 sm:grid-cols-3">
+        {paymentSteps.map((step) => (
+          <li key={step.label} className="bg-cream-100 rounded-lg p-5">
+            <p className="text-gold-700 text-sm font-semibold">{step.label}</p>
+            <p className="font-display text-navy-900 mt-1 text-2xl leading-tight font-semibold">{step.value}</p>
+            <p className="text-muted mt-2 text-[0.95rem]">{step.text}</p>
+          </li>
+        ))}
+      </ul>
+      <p className="text-muted mt-4 text-sm">
+        There is no online payment. We confirm your itinerary and price first, then send payment instructions.
+      </p>
+    </>
+  );
+}
+
+const isCruisePackage = (tour: Tour) =>
+  /cruise/.test(tour.slug) && (tour.countries.includes('greece') || tour.countries.includes('turkey'));
+
+export function CancellationSection({ tour }: { tour: Tour }) {
+  const tables = cancellationTables.filter((t) => isCruisePackage(tour) || !t.title.includes('cruise'));
+  return (
+    <>
+      <SectionHeading title="Trip cancellation terms" as="h2" className="mb-6 max-lg:hidden" />
+      <p className="text-ink/90 max-w-2xl">
+        Cancellations must be sent to us in writing by email. The charge depends on how many days remain before your
+        arrival.
+      </p>
+      <div className="mt-6 grid gap-5 md:grid-cols-2">
+        {tables.map((table) => (
+          <div key={table.title} className="border-cream-200 shadow-card overflow-hidden rounded-lg border bg-white">
+            <h3 className="bg-cream-100 px-4 py-3 font-sans text-base font-semibold tracking-normal">{table.title}</h3>
+            <dl className="divide-cream-200 divide-y">
+              {table.rows.map(([when, charge]) => (
+                <div key={when} className="flex items-baseline justify-between gap-4 px-4 py-3 text-[0.95rem]">
+                  <dt className="text-ink">{when}</dt>
+                  <dd className="text-navy-900 shrink-0 text-right font-semibold">{charge}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+      <p className="text-muted mt-5 text-sm">
+        Domestic flights and ferries are non-refundable once issued. Read the{' '}
+        <Link
+          href="/terms-conditions"
+          className="text-navy-900 decoration-gold-500/60 font-semibold underline underline-offset-4">
+          full terms and conditions
+        </Link>
+        .
+      </p>
+    </>
   );
 }
 

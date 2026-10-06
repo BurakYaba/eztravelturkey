@@ -25,17 +25,19 @@ export function DestinationTile({
     <Link
       href={href}
       className={cn(
-        'group bg-navy-900 shadow-card hover:shadow-lift relative block aspect-[3/4] overflow-hidden rounded-lg transition duration-300 hover:-translate-y-1',
+        'group bg-navy-900 shadow-card hover:shadow-lift @container relative block aspect-[3/4] overflow-hidden rounded-lg transition duration-300 hover:-translate-y-1',
         className,
       )}>
       <Photo id={image} sizes={sizes} className="transition duration-700 group-hover:scale-105" />
       <span aria-hidden className="from-navy-950/90 via-navy-950/25 absolute inset-0 bg-gradient-to-t to-transparent" />
-      <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4">
-        <span>
-          <span className="font-display block text-2xl font-semibold text-white">{title}</span>
-          <span className="block text-sm text-white/85">{note}</span>
+      <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3 @[15rem]:p-4">
+        <span className="min-w-0">
+          <span className="font-display block text-lg leading-tight font-semibold text-white @[15rem]:text-2xl">
+            {title}
+          </span>
+          <span className="mt-1 hidden text-sm text-white/85 @[15rem]:block">{note}</span>
         </span>
-        <span className="group-hover:bg-gold-600 grid size-9 shrink-0 place-items-center rounded-lg bg-white/15 text-white backdrop-blur-sm transition">
+        <span className="group-hover:bg-gold-600 hidden size-9 shrink-0 place-items-center rounded-lg bg-white/15 text-white backdrop-blur-sm transition @[15rem]:grid">
           <ArrowRight size={18} weight="bold" aria-hidden />
         </span>
       </span>

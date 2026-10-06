@@ -41,6 +41,13 @@ export async function POST(request: Request) {
   if (!emailOk(email)) {
     return NextResponse.json({ ok: false, error: 'Please enter a valid email address.' }, { status: 400 });
   }
+  // Requests sent from a tour page must include a phone number the team can call or message.
+  if (type === 'quote' && clean(body.tour, 200) && clean(body.phone, 40).replace(/\D/g, '').length < 7) {
+    return NextResponse.json(
+      { ok: false, error: 'Please enter a mobile phone number we can reach you on.' },
+      { status: 400 },
+    );
+  }
   if (type !== 'newsletter' && clean(body.name, 120).length < 2) {
     return NextResponse.json({ ok: false, error: 'Please enter your name.' }, { status: 400 });
   }

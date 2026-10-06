@@ -92,9 +92,9 @@ export default async function CountryPage({ params }: { params: Promise<Params> 
             <h2 className="h-section text-white">Highlights of {d.name}</h2>
             <p className="mx-auto mt-3 max-w-xl text-lg text-white/80">{d.tagline}</p>
           </div>
-          <ul className="grid grid-cols-2 gap-x-5 gap-y-8 lg:grid-cols-4">
+          <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-6 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-5 sm:gap-y-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
             {d.highlights.map((h) => (
-              <li key={h.name} className="reveal">
+              <li key={h.name} className="reveal w-[70%] min-w-60 shrink-0 snap-start sm:w-auto sm:min-w-0">
                 <ShapedTile
                   href={path}
                   title={h.name}

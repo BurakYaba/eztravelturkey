@@ -28,6 +28,16 @@ export const cancellationTables = [
   },
 ] as const;
 
+export const paymentSteps = [
+  { label: 'Deposit', value: '50%', text: 'Due when your booking is confirmed.' },
+  { label: 'Balance', value: '50%', text: 'Due 15 days before your arrival.' },
+  {
+    label: 'Accepted payments',
+    value: 'Visa, Mastercard',
+    text: 'Or bank transfer. Your travel specialist sends the details.',
+  },
+] as const;
+
 export const termsSections = [
   {
     title: 'Passports, visas and travel documents',

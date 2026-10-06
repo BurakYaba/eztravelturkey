@@ -42,7 +42,16 @@ Destination photos were downloaded once from Pexels with `npm run images` (needs
 
 Each country page has its own look (colors in `src/data/destination-themes.ts`): Turkey uses Iznik tile and an Ottoman skyline with pointed-arch tiles, Greece a Greek key frieze, a Doric temple skyline and pediment tiles, Egypt a lotus frieze, pyramids and stepped tiles, Jordan Nabataean steps, the carved Treasury facade and merlon tiles, Morocco zellige stars, kasbah walls and horseshoe-arch tiles.
 
-The ornaments in `public/ornaments/` are drawn from geometry by `scripts/build-ornaments.mjs` (`npm run ornaments` rebuilds them), so they are original work with no third-party license. They are black SVGs that the site recolors with CSS masks. To change a motif, edit the generator and rebuild.
+The ornaments in `public/ornaments/` are black masks that the site recolors with CSS. Two sources:
+
+- Generated: `scripts/build-ornaments.mjs` (`npm run ornaments`) writes the tiles, the other bands and the Greece, Egypt (pyramid) and Morocco (horseshoe) card outlines from geometry. It does not touch the purchased-art files below.
+- Purchased Vecteezy Pro artwork (no attribution required): the five `*-skyline.svg` composites, `greece-band.svg` (Greek key), `egypt-band.svg` (lotus frieze) and `shape-turkey.svg` and `shape-jordan.svg` (card outlines cut from the purchased Islamic arch silhouette sheet), `morocco-tile.png` (star lattice, a PNG alpha mask because the source vector was clip-dependent). The raw EPS/JPG downloads live in `design-assets/`, which is gitignored (license files stay with the buyer). `scripts/eps-to-svg.mjs` converts EPS to SVG and needs Ghostscript and Inkscape (`GS_PATH`, `INKSCAPE_PATH`). The cleaning step (white backgrounds removed, multi-color art reduced to one color, skylines composed on a 2400x300 canvas) was done with one-off scripts and is not part of the build; the cleaned results are what is committed in `public/ornaments/`.
+
+Not used: the Santorini and Wadi Rum EPS files contain only embedded raster images, so there is no vector to extract.
+
+## Tour route maps
+
+Each tour page has a Route Map section. Until a picture exists it shows the numbered list of stops. To add a map, save the image as `public/images/route-maps/<tour-slug>.webp` (or `.png` / `.jpg`; 4:3, about 800x600 works well). The file name is the tour slug from `src/data/tours.ts`, for example `8-day-turkey-express-istanbul-to-ephesus.webp`. It is picked up at the next build.
 
 ## Logo
 

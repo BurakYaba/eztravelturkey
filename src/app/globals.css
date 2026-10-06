@@ -204,6 +204,24 @@
   overflow: hidden;
 }
 
+/* Tour sections are accordion panels below lg only. A closed panel is also taken out of the tab order. */
+@media (max-width: 63.999rem) {
+  .tour-panel > div {
+    transition: visibility 0s linear 0.3s;
+  }
+  .tour-panel[data-open='false'] > div {
+    visibility: hidden;
+  }
+}
+@media (min-width: 64rem) {
+  .tour-panel {
+    display: block;
+  }
+  .tour-panel > div {
+    overflow: visible;
+  }
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }
