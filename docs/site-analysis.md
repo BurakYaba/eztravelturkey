@@ -1,5 +1,7 @@
 # magnificenttravel.com Site Analysis
 
+> **Outdated, see [project-plan.md](project-plan.md).** This document describes the first, English-only build. The plan supersedes it wherever they disagree. Known corrections: the live site **does have fixed Morocco tours** (about 11 tour pages under `/en/destinations/morocco-tours/`), the live URL tree is richer than the sitemap below (duration and package categories, combo tours under each combo, blog under `/en/blog/<country>/`, author pages), and the previous "Morocco has no tours" statements are wrong. Israel is dropped.
+
 Source: https://www.magnificenttravel.com/en/ (crawled 2026-10-03).
 Scope: home, about, destinations hub, one country page (Turkey), one combo page (Turkey and Greece), four tour detail pages (Turkey, Greece, Egypt, Jordan), contact, blog, FAQ, videos.
 Not crawled in detail: Morocco and Israel country pages, remaining combo pages, search, individual blog posts, Mesafeli Satis Sozlesmesi. Where this document says "not verified", the page was not read.
