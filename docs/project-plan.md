@@ -104,8 +104,8 @@ Bu belge projenin tek yol haritasıdır. `docs/implementation-plan.md` ve `docs/
 | Faz | Başlık | Efor | Bağımlılık | Durum |
 |---|---|---|---|---|
 | P0 | Hazırlık ve kararlar | S | – | ☑ (P0.5d, P0.6, P0.9 paralel sürer) |
-| P1 | Scrape altyapısı + EN içerik çekimi | L | P0 | ◐ aktif |
-| P2 | Çok dilli altyapı + URL/bilgi mimarisi paritesi (EN) | L | P0 (P1 ile paralel) | ☐ |
+| P1 | Scrape altyapısı + EN içerik çekimi | L | P0 | ☑ (P1.9 teslim, P1.10 Blob, P1.12 zh/jp açık) |
+| P2 | Çok dilli altyapı + URL/bilgi mimarisi paritesi (EN) | L | P0 (P1 ile paralel) | ◐ sıradaki |
 | P3 | Sayfa yapısı uyumu + içerik güçlendirme | L | P1, P2 | ☐ |
 | P4 | **Mock yayını + müşteri onayı (kapı)** | S | P3 | ☐ |
 | P5 | Çince ve Japonca scrape + dil eşleştirme | L | P4 | ☐ |
@@ -118,7 +118,7 @@ Bu belge projenin tek yol haritasıdır. `docs/implementation-plan.md` ve `docs/
 Efor: S = birkaç saat, M = 1-3 gün, L = 3+ gün (tahmini, takvim değil).
 Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'dan sonra paralel yürüyebilir.
 
-**Durum (2026-10-07):** P0 kapandı (P0.5d, P0.6, P0.9 engelleyici değil, paralel sürer). **P1 aktif.** D8, D17, D18, D19, D22 ve D26 varsayılanları kullanıcı tarafından onaylandı. D23'ün eksik ekleri (5 Ekim H1/H2 görselleri, 3 Ekim dosyası) P3'ten önce `chat/müşteri talepleri/` içine konulmalıdır.
+**Durum (2026-10-07):** P0 ve P1 kapandı (P0.5d, P0.6, P0.9, P1.9 teslim, P1.10, P1.12 engelleyici değil, paralel sürer). **P2 sıradaki.** D8, D17, D18, D19, D22 ve D26 varsayılanları kullanıcı tarafından onaylandı. D23'ün eksik ekleri (5 Ekim H1/H2 görselleri, 3 Ekim dosyası) P3'ten önce `chat/müşteri talepleri/` içine konulmalıdır.
 
 **Çapraz iş akışları** (fazlara yayılır, §4 sonunda tanımlı):
 - **S: İçerik ve on-page SEO** (araştırma P0-P1, strateji P3, uygulama P3/P6, yayın sonrası P10)
@@ -663,6 +663,7 @@ Yöntem: canlı EN sitenin sitemap'inden sayfa türlerine göre ayrılmış 56 s
 - `noindex` yok, canonical kendine ve eğik çizgili, tutarlı.
 - JSON-LD: tur sayfalarında `Product` + `AggregateRating` + `Offer` + `MerchantReturnPolicy` + `OfferShippingDetails` + `TouristTrip`; `Organization` türü aynı sayfada birden fazla kez geçiyor.
 - Tur sayfasında `<main>` landmark'ı yok.
+- Tur sayfalarında SSS blokları `Question`/`Answer` mikro veri işaretlemesi taşıyor (D16 için not: eski sayfalarda SSS işaretlemesi zaten var). Tüm turlarda "Last Updated" 15-16 Eylül 2026 (toplu güncelleme), galeri tam 5 görsel, fiyatlar EUR, 99/118 turda rota haritası var (P1.5).
 - Sayfa başına ham kelime sayısı 2.400-3.300 (yasal modal metinleri dahil, ana içerik ayrı ölçülmedi, P1.11 yapacak).
 - Blog: 520 yazı. Dağılım: Türkiye 127, Yunanistan 110, Mısır 85, Ürdün 75, Fas 69, **Israel 60**. Slug'ların ≈250'si (%48) ay/hava/en iyi zaman kalıbında ve çoğunda "a-comprehensive-guide" eki var (örn. `istanbul-weather-in-september-a-comprehensive-guide`). Örneklemdeki yazı görsellerinde alt eksikliği ≈ %7 (17/240).
 - Bot koruması: `robots.txt` adresi python varsayılan istemcisine 403 verdi.
@@ -693,6 +694,7 @@ Satırlar **yeniden eskiye** sıralıdır (en güncel kayıt en üstte).
 
 | Tarih | Yapılanlar | Kararlar | Engeller | Sonraki adım |
 |---|---|---|---|---|
+| 2026-10-07 (P1) | **P1 yapıldı** (branch `docs/project-plan`, commit 93539d2 ve 80617db): `scripts/scrape/` hattı; EN arşivi 617 sayfa (hepsi 200, engellenme yok); 118 tur + 43 sayfa JSON; 9.566 metin parçası canlı sayfada birebir doğrulandı; SEO envanteri (617 satır) ve gerçek kelime sayıları; 842 görsel → 753 benzersiz dosya; attribute ilk hesabı 108 (limit 2.000). | – | P1.10 için Vercel Blob mağazası ve token (kullanıcı); P0.5d, P0.6 açık | **P2:** çok dilli altyapı ve URL paritesi. Önce D18, D19, D26 uygulaması; `app/[lang]/` taşıması |
 | 2026-10-07 (P0) | **P0 yapıldı:** plan ve `docs/baseline/` commit'lendi (branch `docs/project-plan`), eski docs'lara "outdated" notu ve Morocco düzeltmesi eklendi (P0.1), `.gitignore`'a `!.env.example` eklendi ve `.env.example` takibe alındı (P0.2), lint/tsc/build yeşil, Lighthouse baseline kaydedildi: LCP ≈ 4,8-5,1 sn (hedefin iki katı, kötümser yerel ölçüm), CLS 0 (P0.4). `npm ci` bilinçli çalıştırılmadı. | D8, D17, D18, D19, D22, D26 onaylandı | P0.5d (GA4/GTM içeriği, kullanıcının Analytics erişimi gerekir), P0.6 (müşteriye giden mesaj), P0.9 (AI görünürlük kaydı) açık | **P1:** scrape iskeleti, URL envanteri, EN ham arşiv |
 | 2026-10-07 (son kontrol) | Plan baştan sona okundu, eskimiş maddeler düzeltildi (P2.11 ve P4.1 `noindex`, P6.1 rol, P0 bitti ölçütü, Ek E, Ek F, Ek I). Açık kararlara varsayılanlar eklendi (D8, D17, D18, D19, D22, D26). P0.11 (çalışma düzeni) eklendi. Günlük sıralaması düzeltildi. | D37 verildi (sabit sayfa yapısı), varsayılanlar: D17, D18, D19, D22, D26 | D23 ekleri (5 Ekim H1/H2 görselleri, 3 Ekim dosyası) bizde yok | **P0 ve P1'e başla.** P2'den önce D18, D19, D26 varsayılanlarına itiraz var mı sor |
 | 2026-10-07 (dördüncü) | Kullanıcı kararları işlendi: `vercel.app` noindex gereksiz (P0.0/D33), silinmiş sayfalar ertelendi (D34, P0.5b-c, P7.14), blog kapsamı netleşti: biz yalnızca 5 Map of X yazısını taşırız, gerisini müşteri girer (D12, D35, D36), GSC/GA4/GTM yayın öncesi zorunlu (P8.5, P8.6, P10.1). Yeni görev: CMS'te yönlendirme yöneticisi (P6.14). GA4/GTM kanıtı: canlı EN HTML'inde `G-E8XLPNE302` ve `GTM-55HWFMHR` var. | D12, D33-D36 güncellendi | EN GA4'ün veri toplayıp toplamadığı doğrulanmadı | P0.1-P0.4 (plan commit, docs notları, yerel ortam, baseline Lighthouse), ardından P1 |
