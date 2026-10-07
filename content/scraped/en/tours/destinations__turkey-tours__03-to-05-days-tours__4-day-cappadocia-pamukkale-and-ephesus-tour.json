@@ -1,0 +1,488 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/4-day-cappadocia-pamukkale-and-ephesus-tour/",
+  "path": "destinations/turkey-tours/03-to-05-days-tours/4-day-cappadocia-pamukkale-and-ephesus-tour",
+  "slug": "4-day-cappadocia-pamukkale-and-ephesus-tour",
+  "parent": "turkey-tours",
+  "category": "03-to-05-days-tours",
+  "title": "4-Day Turkey Express Tour: Three Iconic Regions",
+  "metaTitle": "Turkey Highlights in 4 Days | Express Tour",
+  "metaDescription": "See Cappadocia, Pamukkale and Ephesus in four days on a flight-focused Turkey tour designed to connect three iconic regions in limited time.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/4-day-cappadocia-pamukkale-and-ephesus-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "3–5 Day Turkey Tour Packages",
+    "4-Day Turkey Express Tour: Three Iconic Regions"
+  ],
+  "summary": "The 4-Day Cappadocia, Pamukkale & Ephesus Tour is designed for travelers who have limited time in Turkey but still want to experience three of the country’s most important regions. In Cappadocia, explore its rock formations, valleys and fairy chimneys before continuing to Pamukkale for the white travertine terraces and ancient Hierapolis. The journey finishes at Ephesus, one of the best-preserved ancient cities in the Mediterranean.\nYou can start the tour on your preferred date, with adjustments possible to fit your travel plans. The package includes 4-star hotel accommodation with breakfast, English-speaking local guides, three domestic flights, airport transfers, entrance fees and the guided sightseeing listed in the itinerary.",
+  "facts": {
+    "duration": "03 Nights / 04 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, 3 Domestic flights",
+    "startingPrice": "€ 1,045 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 3,
+  "days": 4,
+  "price": {
+    "amount": 1045,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,045 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Cappadocia",
+    "Pamukkale",
+    "Ephesus"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-Map-of-Cappadocia-Ephesus-Pamukkale.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "4-Day Turkey Express Tour: Three Iconic Regions Roadmap"
+    },
+    "intro": "Explore Cappadocia, Pamukkale, and Ephesus in four days with three domestic flights, maximizing your time at Turkey’s most iconic destinations."
+  },
+  "highlights": [
+    "03 Nights / 04 Days",
+    "Cappadocia • Pamukkale • Ephesus",
+    "Three Domestic Flights Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Flight to Kayseri or Nevsehir- North Cappadocia Tour",
+      "text": "At 03:45, transfer to Istanbul Airport for your flight to Nevsehir at 06:35.\nUpon arrival at 08:00, begin a full-day tour of North Cappadocia. Visit Uchisar Castle, Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the towns of Urgup and Avanos, known for traditional pottery-making. Optional visit to a Turkish rug and carpet workshop. Overnight in Cappadocia.",
+      "meals": "Lunch"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "South Cappadocia Tour - Flight to Izmir",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nfter breakfast at 09:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. After the tour, transfer to Kayseri Airport for your flight to Izmir at 22:50. Upon arrival at 00:20, meet and transfer to Kusadasi. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Full day Ephesus Tour",
+      "text": "After breakfast at 09:00, enjoy a guided tour of Ephesus, one of the best-preserved ancient cities in the world. Enter through the Magnesia Gate and walk past remarkable landmarks including the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the impressive Great Theatre, where Saint Paul once preached. Continue to the ruins of the Temple of Artemis, one of the Seven Wonders of the Ancient World. After lunch, visit the sacred House of the Virgin Mary. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Pamukklae Tour- Flight to Istanbul",
+      "text": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces, known as the “Cotton Castle,” and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, transfer to Denizli Airport for your flight to Istanbul at 21:15. Upon arrival at 22:35, meet and transfer to your hotel. End of our service.",
+      "meals": "Breakfast and Lunch"
+    }
+  ],
+  "included": [
+    "3 nights accommodation at a 4-star hotel with breakfast",
+    "4-day regular small group tour with English-speaking guide",
+    "Entrance fees, lunch, and transportation during tours",
+    "One-way domestic flight from Istanbul to Cappadocia",
+    "One-way domestic flight from Kayseri to Izmir",
+    "One-way domestic flight from Pamukkale to Istanbul",
+    "All airport, hotel, and port transfers within Turkey"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Tips for driver and guide",
+    "Meals not mentioned in the itinerary",
+    "Drinks during meals",
+    "Hot air balloon ride in Cappadocia",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year.",
+    "Prices are per person, based on a minimum of 2 adults.",
+    "The tour can be customized upon request.",
+    "Transfers include 1 luggage per person.",
+    "Domestic flight tickets cannot be changed once issued. A 100% cancellation fee applies.",
+    "Domestic flight schedules are subject to change."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable. A 100% cancellation fee applies once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellations made 30–21 days before arrival: 25% cancellation fee.",
+    "Cancellations made 20–14 days before arrival: 50% cancellation fee.",
+    "Cancellations made 13 days or less before arrival, or in case of no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour--Cappadocia-Balloon.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "4-Day Turkey Express Tour: Three Iconic Regions"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour---Ephesus-6.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Remarkable ruins of Ephesus near Kusadasi Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour--Efes-library.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Library of Celsus in the ancient city of Ephesus"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour---Pamukkale-Cotton-Castle.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "White travertine terraces of Pamukkale Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour---Istanbul-Haghia-Sophia.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "UNESCO-listed Hagia Sophia in the heart of Istanbul"
+    }
+  ],
+  "related": [
+    {
+      "title": "5-Day Istanbul & Ephesus City and History Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-istanbul-and-ephesus-tour/"
+    },
+    {
+      "title": "6-Day Istanbul & Cappadocia Discovery Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/6-day-istanbul-and-cappadocia-tour/"
+    },
+    {
+      "title": "6-Day Southwest Turkey Adventure: Coast to Cappadocia",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/6-day-ephesus-pamukkale-antalya-and-cappadocia-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the 4-Day Cappadocia, Pamukkale and Ephesus tour and what does it cover?",
+      "a": "The 4-Day Cappadocia, Pamukkale and Ephesus tour is a guided small group trip that combines three of Turkey's most famous destinations in a single itinerary. Starting from Istanbul, you fly to Cappadocia to see the fairy chimneys and cave dwellings, visit the ancient city of Ephesus and the Temple of Artemis, and relax at Pamukkale's white travertine terraces and thermal pools. The package runs for 3 nights and 4 days and is available daily all year round."
+    },
+    {
+      "q": "How much does the 4-Day Cappadocia, Pamukkale and Ephesus tour cost?",
+      "a": "The tour starts from 1,045 euros per person, based on 2026 season prices. The rate covers accommodation, three domestic flights, guided tours, entrance fees, lunches during tours, and transfers. The exact price depends on your travel dates, hotel category, and group size, and the itinerary can be customized on request."
+    },
+    {
+      "q": "Are domestic flights included in the 4-day Turkey tour?",
+      "a": "Yes, three one-way domestic flights are included: Istanbul to Cappadocia, Kayseri to Izmir, and Pamukkale to Istanbul. These internal flights keep the long distances between regions short, so you spend more time sightseeing and less time on the road."
+    },
+    {
+      "q": "How many nights of accommodation are included and what hotels are used?",
+      "a": "The package includes 3 nights at a 4-star hotel with daily breakfast. Hotels are selected for comfort and convenient locations near the main sights, and all airport, hotel, and port transfers within Turkey are arranged for you."
+    },
+    {
+      "q": "Are meals included in the 4-day tour?",
+      "a": "Lunch is included on the guided touring days, along with daily breakfast at your hotel. Dinners, drinks during meals, and any meals not listed in the itinerary are not included, so you are free to explore local restaurants in the evenings."
+    },
+    {
+      "q": "How physically demanding is this tour?",
+      "a": "The physical difficulty is rated moderate. You should be comfortable walking on uneven ground and climbing some stairs at sites such as Ephesus, Pamukkale, and the Cappadocia valleys. The pace suits most travelers in reasonable health, and there are no strenuous hikes required."
+    },
+    {
+      "q": "Is the Cappadocia hot air balloon ride part of the package?",
+      "a": "The hot air balloon ride in Cappadocia is not included in the standard package. It is a popular optional activity that you can add separately, weather permitting, and our team can help you arrange it before or during your trip."
+    },
+    {
+      "q": "What is the best time of year to take this tour?",
+      "a": "This tour runs all year round, so any season works. Spring and autumn offer mild weather and fewer crowds, summer brings warm days ideal for Pamukkale, and winter gives Cappadocia a quiet, snow-dusted charm. Each season offers a different but rewarding experience."
+    },
+    {
+      "q": "What is the cancellation policy for the 4-day tour?",
+      "a": "The tour offers free cancellation up to 30 days before the start date. Cancelling within 30 days may incur charges according to the trip cancellation policy, so we recommend confirming your dates early and considering travel insurance."
+    },
+    {
+      "q": "Can the 4-Day Cappadocia, Pamukkale and Ephesus tour be customized?",
+      "a": "Yes, the tour can be customized to fit your preferences. You can adjust hotel categories, add nights in Istanbul, include the Cappadocia balloon ride, or change the pace. Contact Magnificent Travel with your dates and group size for a personalized quote."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "4-Day Turkey Express Tour: Three Iconic Regions",
+          "description": "See Cappadocia, Pamukkale and Ephesus in four days on a flight-focused Turkey tour designed to connect three iconic regions in limited time.",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/4-day-cappadocia-pamukkale-and-ephesus-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/08/677e4025a7780/4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour--Cappadocia-Balloon.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "3 nights accommodation at a 4-star hotel with breakfast, 4-day regular small group tour with English-speaking guide, Entrance fees, lunch, and transportation during tours, One-way domestic flight from Istanbul to Cappadocia, One-way domestic flight from Kayseri to Izmir, One-way domestic flight from Pamukkale to Istanbul, All airport, hotel, and port transfers within Turkey"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Personal expenses, Tips for driver and guide, Meals not mentioned in the itinerary, Drinks during meals, Hot air balloon ride in Cappadocia, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Kayseri or Nevsehir- North Cappadocia Tour",
+              "description": "At 03:45, transfer to Istanbul Airport for your flight to Nevsehir at 06:35. \nUpon arrival at 08:00, begin a full-day tour of North Cappadocia. Visit Uchisar Castle, Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the towns of Urgup and Avanos, known for traditional pottery-making. Optional visit to a Turkish rug and carpet workshop.  Overnight in Cappadocia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Meals: Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "South Cappadocia Tour - Flight to Izmir",
+              "description": "Optional: Early morning hot air balloon ride over Cappadocia.\nfter breakfast at 09:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. After the tour, transfer to Kayseri Airport for your flight to Izmir at 22:50. Upon arrival at 00:20, meet and transfer to Kusadasi. Overnight in Kusadasi.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Full day Ephesus Tour",
+              "description": "After breakfast at 09:00, enjoy a guided tour of Ephesus, one of the best-preserved ancient cities in the world. Enter through the Magnesia Gate and walk past remarkable landmarks including the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the impressive Great Theatre, where Saint Paul once preached. Continue to the ruins of the Temple of Artemis, one of the Seven Wonders of the Ancient World. After lunch, visit the sacred House of the Virgin Mary. Overnight in Kusadasi. ",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Pamukklae Tour- Flight to Istanbul",
+              "description": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces, known as the “Cotton Castle,” and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, transfer to Denizli Airport for your flight to Istanbul at 21:15.  Upon arrival at 22:35, meet and transfer to your hotel.  End of our service.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "4-day-cappadocia-pamukkale-and-ephesus-tour",
+          "name": "4-Day Turkey Express Tour: Three Iconic Regions",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "4-Day Turkey Express Tour: Three Iconic Regions",
+          "description": "See Cappadocia, Pamukkale and Ephesus in four days on a flight-focused Turkey tour designed to connect three iconic regions in limited time.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/08/677e4025a7780/4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour--Cappadocia-Balloon.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "4-Day Turkey Express Tour: Three Iconic Regions",
+          "productID": "669a7202336365d72400002c",
+          "sku": "669a7202336365d72400002c",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/08/677e4025a7780/4-Day-Cappadocia-Pamukkale-and-Ephesus-Tour--Cappadocia-Balloon.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "See Cappadocia, Pamukkale and Ephesus in four days on a flight-focused Turkey tour designed to connect three iconic regions in limited time.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1045",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/4-day-cappadocia-pamukkale-and-ephesus-tour",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

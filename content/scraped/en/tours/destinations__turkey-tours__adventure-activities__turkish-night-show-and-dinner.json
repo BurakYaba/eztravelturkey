@@ -1,0 +1,412 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/turkish-night-show-and-dinner/",
+  "path": "destinations/turkey-tours/adventure-activities/turkish-night-show-and-dinner",
+  "slug": "turkish-night-show-and-dinner",
+  "parent": "turkey-tours",
+  "category": "adventure-activities",
+  "title": "Bosphorus Dinner Cruise",
+  "metaTitle": "Book Turkish Night Show with Dinner | Folk & Belly Dance",
+  "metaDescription": "Experience a lively Turkish night with dinner, traditional costumes, folk dances, and captivating belly dance performances. Perfect cultural evening!",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/turkish-night-show-and-dinner/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "Turkey Activities & Experiences",
+    "Bosphorus Dinner Cruise"
+  ],
+  "summary": "Seeing Istanbul from the Bosphorus after dark is quite different from exploring it during the day. A dinner cruise travels between the city’s European and Asian shores, passing illuminated Ottoman palaces, waterfront mansions and other landmarks while dinner is served on board. Evening programs typically include live entertainment and traditional performances, with the cruise lasting several hours rather than operating",
+  "facts": {
+    "duration": "Two Hrs",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 75 / Per person",
+    "cancellation": "Cancellation 30+ days before arrival: No fee.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": null,
+  "days": null,
+  "price": {
+    "amount": 75,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €75 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Turkish Night Show with Dinner",
+      "text": "DINNER, TURKISH NIGHT SHOW, ANATOLIAN FOLK DANCE, BELLY DANCER, LIVE MUSIC,\nPick up from the hotel or cruise ship port.\nTake a short night drive to the restaurant, where you will enjoy an evening with a delicious full course meal of fine Turkish cuisine featuring class acts of music and dance in traditional surroundings. Enjoy the Turkish Belly Dancers and Turkish Traditional Folkshows while you are having your full course dinner. Drop off to hotel or cruise ship port.\nFIX DINNER MENU:\nCOLD STARTERS - Seasonal stuffed vine leaves, Haydari (yoghurt, garlic and mint), Acili Ezme (tomato dip with pepper and onions), Tabule (wheat, tomato, garlic, parsley, fresh onion and mint, lemon, olive oil), Humus, Turkish white cheese, Pilaki (white beans in olive oil), tomato and cucumber\nHOT APPETIZER - Cheese Pastry or Special of the day\nSALAD - Mediterranean Salad\nMAIN COURSE - Grilled Chicken Breast with mashed potato, grilled vegetables and rice\nDESSERT - Turkish Pudding with top of fruits\nDRINKS - 35 cl Wine or 1 glass of Local Alcohol or 2 Soft Drinks\nDrop off to hotel at end of dinner.",
+      "meals": "Pick up from the hotel and Drop off to hotel"
+    }
+  ],
+  "included": [
+    "Hotel pick-up and drop-off service is available only from centrally located hotels",
+    "Dinner included",
+    "Unlimited local drinks included"
+  ],
+  "excluded": [
+    "Enjoy an unforgettable Turkish Night Show in Istanbul.",
+    "Watch belly dancing and traditional folk performances.",
+    "Experience colorful costumes and live music.",
+    "Taste authentic Turkish cuisine and local drinks.",
+    "Discover Türkiye’s rich culture and traditions."
+  ],
+  "importantNotes": [
+    "Drinks included: 35 cl wine, or 1 glass of local alcoholic drink, or 2 soft drinks"
+  ],
+  "cancellationPolicy": [
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% cancellation fee applies.",
+    "Cancellation 20–14 days before arrival: 50% cancellation fee applies.",
+    "Cancellation 13 days or less before arrival, or no-show: 100% cancellation fee applies.y"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Belly-dance-5.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "Bosphorus Dinner Cruise"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Belly-dance-3.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Professional belly dancer performing in Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Belly-dance-4.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Turkish cultural entertainment featuring belly dancing"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Belly-dance-1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Belly dancer performing at a Turkish night show"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Belly-dance-2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Live belly dance entertainment in Turkey"
+    }
+  ],
+  "related": [
+    {
+      "title": "4-Day Istanbul Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/istanbul-travel-packages/4-day-best-of-istanbul-tour/"
+    },
+    {
+      "title": "Whirling Dervishes Performance",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/whirling-dervishes/"
+    },
+    {
+      "title": "Fethiye Paragliding Adventure",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/paragliding-in-fethiye/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is included in the Bosphorus Dinner Cruise?",
+      "a": "The Bosphorus Dinner Cruise includes an evening cruise along the Bosphorus Strait, dinner onboard, live entertainment performances, and stunning nighttime views of Istanbul. Guests can enjoy illuminated landmarks, traditional Turkish shows, music, and a memorable dining experience between Europe and Asia."
+    },
+    {
+      "q": "How much does the Bosphorus Dinner Cruise cost?",
+      "a": "The Bosphorus Dinner Cruise starts from €75 per person for the 2026 season. Prices may vary depending on menu selection, seating category, special events, and seasonal demand. Advance reservations are recommended."
+    },
+    {
+      "q": "How long does the Bosphorus Dinner Cruise last?",
+      "a": "The cruise lasts approximately 2 to 3 hours, providing plenty of time to enjoy dinner, entertainment, and panoramic views of Istanbul's waterfront attractions illuminated at night."
+    },
+    {
+      "q": "What landmarks can I see during the cruise?",
+      "a": "During the cruise, you can enjoy views of iconic landmarks such as the Blue Mosque, Hagia Sophia, Topkapi Palace, Dolmabahçe Palace, Bosphorus Bridge, Maiden's Tower, Ortaköy Mosque, waterfront mansions, and historic fortresses lining the Bosphorus."
+    },
+    {
+      "q": "Is dinner included in the cruise package?",
+      "a": "Yes, dinner is included in the standard package. Guests are served a multi-course meal featuring Turkish and international cuisine. Menu options may vary depending on the cruise operator and package selected."
+    },
+    {
+      "q": "What entertainment is offered during the cruise?",
+      "a": "The evening typically includes traditional Turkish folk dances, belly dancing performances, live music, cultural shows, and DJ entertainment. The performances showcase Turkey's rich cultural heritage and create a lively atmosphere onboard."
+    },
+    {
+      "q": "Is hotel pickup and drop-off included?",
+      "a": "Hotel pickup and drop-off may be included depending on the selected package and hotel location. Private transfer upgrades are often available for added convenience. Please check the specific package details when booking."
+    },
+    {
+      "q": "Is the Bosphorus Dinner Cruise suitable for families and couples?",
+      "a": "Yes, the cruise is suitable for couples, families, groups of friends, and solo travelers. It is especially popular with couples seeking a romantic evening and visitors looking for a unique way to experience Istanbul after dark."
+    },
+    {
+      "q": "What is the cancellation policy for the Bosphorus Dinner Cruise?",
+      "a": "You can usually cancel free of charge up to 24 to 48 hours before the cruise, depending on the operator's policy. Cancellations made closer to departure may incur charges. Travel insurance is recommended for additional flexibility."
+    },
+    {
+      "q": "When is the best time to take a Bosphorus Dinner Cruise?",
+      "a": "The cruise operates throughout the year and offers a unique experience in every season. Summer evenings provide warm weather and outdoor viewing opportunities, while spring, autumn, and winter cruises offer beautiful illuminated city views and a cozy onboard atmosphere."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "Bosphorus Dinner Cruise",
+          "description": "Experience a lively Turkish night with dinner, traditional costumes, folk dances, and captivating belly dance performances. Perfect cultural evening!",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/turkish-night-show-and-dinner",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67825e48754b5/Belly-dance-5.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "Hotel pick-up and drop-off service is available only from centrally located hotels, Dinner included, Unlimited local drinks included"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Enjoy an unforgettable Turkish Night Show in Istanbul., Watch belly dancing and traditional folk performances., Experience colorful costumes and live music., Taste authentic Turkish cuisine and local drinks., Discover Türkiye’s rich culture and traditions."
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Turkish Night Show with Dinner",
+              "description": "DINNER, TURKISH NIGHT SHOW, ANATOLIAN FOLK DANCE, BELLY DANCER, LIVE MUSIC,\n\nPick up from the hotel or cruise ship port.\nTake a short  night drive to the restaurant, where you will enjoy an evening with a delicious full course meal of fine Turkish cuisine featuring class acts of music and dance in traditional surroundings. Enjoy the Turkish Belly Dancers and Turkish Traditional Folkshows while you are having your full course dinner.  Drop off to hotel or cruise ship port.\n\nFIX DINNER MENU:\n\nCOLD STARTERS - Seasonal stuffed vine leaves, Haydari (yoghurt, garlic and mint), Acili Ezme (tomato dip with pepper and onions), Tabule (wheat, tomato, garlic, parsley, fresh onion and mint, lemon, olive oil), Humus, Turkish white cheese, Pilaki (white beans in olive oil), tomato and cucumber\n\nHOT APPETIZER - Cheese Pastry or Special of the day\n\nSALAD - Mediterranean Salad\n\nMAIN COURSE - Grilled Chicken Breast with mashed potato, grilled vegetables and rice\n\nDESSERT - Turkish Pudding with top of fruits\n\nDRINKS - 35 cl Wine or 1 glass of Local Alcohol or 2 Soft Drinks \n\nDrop off to hotel at end of dinner.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "Pick up from the hotel and Drop off to hotel"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "turkish-night-show-and-dinner",
+          "name": "Bosphorus Dinner Cruise",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "Bosphorus Dinner Cruise",
+          "description": "Experience a lively Turkish night with dinner, traditional costumes, folk dances, and captivating belly dance performances. Perfect cultural evening!",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67825e48754b5/Belly-dance-5.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "Bosphorus Dinner Cruise",
+          "productID": "669d1f5f3363656250000012",
+          "sku": "669d1f5f3363656250000012",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67825e48754b5/Belly-dance-5.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Experience a lively Turkish night with dinner, traditional costumes, folk dances, and captivating belly dance performances. Perfect cultural evening!",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "75",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/turkish-night-show-and-dinner",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

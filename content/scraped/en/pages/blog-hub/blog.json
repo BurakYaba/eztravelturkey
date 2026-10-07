@@ -1,0 +1,366 @@
+{
+  "locale": "en",
+  "kind": "blog-hub",
+  "sourceUrl": "https://www.magnificenttravel.com/en/blog/",
+  "path": "blog",
+  "metaTitle": "Travel Guides & Trip Planning Advice",
+  "metaDescription": "Plan your trip with practical travel guides for Turkey, Greece, Egypt, Jordan and Morocco, including itineraries, destination advice and first-time travel tips.",
+  "canonical": "https://www.magnificenttravel.com/en/blog/",
+  "robots": "",
+  "h1": "Travel Guides for Better-Planned Trips",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Home",
+    "Travel Guides for Better-Planned Trips"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Hot-air-ballon-in-cappadocia---5.jpg",
+          "alt": "Turkey"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Turkey",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Santorini-10-.jpg",
+          "alt": "Greece"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Greece",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Cairo-10.jpg",
+          "alt": "Egypt"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Egypt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Wadi-Rum-01.jpg",
+          "alt": "Jordan"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Jordan",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-morocco.jpg",
+          "alt": "Morocco"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Morocco",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Nazareth---02.jpg",
+          "alt": "Israel"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Israel",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A good trip starts with knowing what fits — and what doesn’t. After nearly three decades of planning journeys across the region, we know that adding more places doesn’t always make a better itinerary. The right route, realistic travel times and knowing where to slow down can make all the difference."
+        },
+        {
+          "type": "p",
+          "text": "Explore practical travel guides for Turkey, Greece, Egypt, Jordan, Morocco and Israel, with destination advice and itinerary ideas designed to help you plan your time well — whether it’s your first visit or a return journey."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Turkey Travel Guides",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turkey offers far more than most travelers can comfortably fit into one trip. Our guides help you understand how places such as Istanbul, Cappadocia, Ephesus, Pamukkale and the Mediterranean coast fit together, how much time to allow and where it makes sense to slow down."
+        },
+        {
+          "type": "p",
+          "text": "Explore Turkey Travel Guides →"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Greece Travel Guides",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Choosing where to go in Greece is often harder than finding places worth visiting. Explore practical advice for planning time in Athens, the Greek islands and the mainland, with guidance on routes, travel times and building a trip that doesn't feel rushed."
+        },
+        {
+          "type": "p",
+          "text": "Explore Greece Travel Guides →"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Egypt Travel Guides",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "From Cairo and the Pyramids of Giza to Luxor, Aswan and the Nile, Egypt is much easier to experience with the right route. Our guides cover the practical decisions behind planning a first trip, choosing what to see and making the most of your time."
+        },
+        {
+          "type": "p",
+          "text": "Explore Egypt Travel Guides →"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Jordan Travel Guides",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Discover how Amman, Petra, Wadi Rum and the Dead Sea can work together in one journey. Our Jordan guides focus on realistic routes, trip length and the practical details that help you plan your days well."
+        },
+        {
+          "type": "p",
+          "text": "Explore Jordan Travel Guides →"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Morocco Travel Guides",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "From Marrakech and Fes to the Atlas Mountains and Sahara, Morocco offers very different experiences within a single journey. Our guides help you understand the distances, choose a sensible route and decide what deserves a place in your itinerary."
+        },
+        {
+          "type": "p",
+          "text": "Explore Morocco Travel Guides →"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Israel Travel Guides",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Planning a trip to Israel often comes down to deciding where to spend your time. Jerusalem and Tel Aviv offer very different experiences, while the Dead Sea and Galilee can change both the route and pace of a journey. Our Israel guides look at these choices practically, helping you understand what fits together and what to consider before building your itinerary."
+        },
+        {
+          "type": "p",
+          "text": "Explore Israel Travel Guides →"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Planning Your Trip",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Not sure how long to stay, where to start or how much you can realistically see? Browse our itinerary planning, first-time visitor and trip-length guides for straightforward answers to the questions that come up before a journey takes shape."
+        }
+      ]
+    }
+  ],
+  "cards": [],
+  "faqs": [],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "BlogPosting"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "https://www.magnificenttravel.com/en",
+          "name": "Travel Guides for Better-Planned Trips",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "Travel Guides for Better-Planned Trips",
+          "description": "Plan your trip with practical travel guides for Turkey, Greece, Egypt, Jordan and Morocco, including itineraries, destination advice and first-time travel tips.",
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Article",
+          "id": "https://www.magnificenttravel.com/en/blog/#Article",
+          "url": "https://www.magnificenttravel.com/en/blog/",
+          "mainEntityOfPage": "https://www.magnificenttravel.com/en/blog/",
+          "inLanguage": "en_US",
+          "headline": "Travel Guides for Better-Planned Trips",
+          "articleBody": "<p data-start=\"230\" data-end=\"530\">A good trip starts with knowing what fits &mdash; and what doesn&rsquo;t. After nearly three decades of planning journeys across the region, we know that adding more places doesn&rsquo;t always make a better itinerary. The right route, realistic travel times and knowing where to slow down can make all the difference.</p>\n<p data-start=\"535\" data-end=\"763\">Explore practical travel guides for <strong data-start=\"571\" data-end=\"624\">Turkey, Greece, Egypt, Jordan, Morocco and Israel</strong>, with destination advice and itinerary ideas designed to help you plan your time well &mdash; whether it&rsquo;s your first visit or a return journey.</p>\n<h2 data-section-id=\"gropcg\" data-start=\"831\" data-end=\"854\">Turkey Travel Guides</h2>\n<p data-start=\"856\" data-end=\"1132\">Turkey offers far more than most travelers can comfortably fit into one trip. Our guides help you understand how places such as <strong data-start=\"984\" data-end=\"1056\">Istanbul, Cappadocia, Ephesus, Pamukkale and the Mediterranean coast</strong> fit together, how much time to allow and where it makes sense to slow down.</p>\n<p data-start=\"1134\" data-end=\"1168\"><a href=\"/en/blog/turkey/\">Explore Turkey Travel Guides</a><strong data-start=\"1134\" data-end=\"1168\"> &rarr;</strong></p>\n<h2 data-section-id=\"19rq3if\" data-start=\"1170\" data-end=\"1193\">Greece Travel Guides</h2>\n<p data-start=\"1195\" data-end=\"1455\">Choosing where to go in Greece is often harder than finding places worth visiting. Explore practical advice for planning time in <strong data-start=\"1324\" data-end=\"1370\">Athens, the Greek islands and the mainland</strong>, with guidance on routes, travel times and building a trip that doesn't feel rushed.</p>\n<p data-start=\"1457\" data-end=\"1491\"><a href=\"/en/blog/greece/\">Explore Greece Travel Guides </a><strong data-start=\"1457\" data-end=\"1491\">&rarr;</strong></p>\n<h2 data-section-id=\"r9nhhn\" data-start=\"1493\" data-end=\"1515\">Egypt Travel Guides</h2>\n<p data-start=\"1517\" data-end=\"1769\">From <strong data-start=\"1522\" data-end=\"1585\">Cairo and the Pyramids of Giza to Luxor, Aswan and the Nile</strong>, Egypt is much easier to experience with the right route. Our guides cover the practical decisions behind planning a first trip, choosing what to see and making the most of your time.</p>\n<p data-start=\"1771\" data-end=\"1804\"><a href=\"/en/blog/egypt/\">Explore Egypt Travel Guides</a><strong data-start=\"1771\" data-end=\"1804\"> &rarr;</strong></p>\n<h2 data-section-id=\"1krl4nc\" data-start=\"1806\" data-end=\"1829\">Jordan Travel Guides</h2>\n<p data-start=\"1831\" data-end=\"2039\">Discover how <strong data-start=\"1844\" data-end=\"1887\">Amman, Petra, Wadi Rum and the Dead Sea</strong> can work together in one journey. Our Jordan guides focus on realistic routes, trip length and the practical details that help you plan your days well.</p>\n<p data-start=\"2041\" data-end=\"2075\"><a href=\"/en/blog/jordan/\">Explore Jordan Travel Guides</a><strong data-start=\"2041\" data-end=\"2075\"> &rarr;</strong></p>\n<h2 data-section-id=\"u4fn5w\" data-start=\"2077\" data-end=\"2101\">Morocco Travel Guides</h2>\n<p data-start=\"2103\" data-end=\"2353\">From <strong data-start=\"2108\" data-end=\"2163\">Marrakech and Fes to the Atlas Mountains and Sahara</strong>, Morocco offers very different experiences within a single journey. Our guides help you understand the distances, choose a sensible route and decide what deserves a place in your itinerary.</p>\n<p data-start=\"2355\" data-end=\"2390\"><a href=\"/en/blog/morocco/\">Explore Morocco Travel Guides</a><strong data-start=\"2355\" data-end=\"2390\"> &rarr;</strong></p>\n<h2 data-section-id=\"15v8vkn\" data-start=\"538\" data-end=\"562\">Israel Travel Guides</h2>\n<p data-start=\"564\" data-end=\"937\">Planning a trip to Israel often comes down to deciding where to spend your time. <strong data-start=\"645\" data-end=\"671\">Jerusalem and Tel Aviv</strong> offer very different experiences, while the <strong data-start=\"716\" data-end=\"740\">Dead Sea and Galilee</strong> can change both the route and pace of a journey. Our Israel guides look at these choices practically, helping you understand what fits together and what to consider before building your itinerary.</p>\n<p data-start=\"939\" data-end=\"973\"><a href=\"/en/blog/israel/\">Explore Israel Travel Guides</a> &rarr;</p>\n<h2 data-section-id=\"dlmsom\" data-start=\"2392\" data-end=\"2413\">Planning Your Trip</h2>\n<p data-start=\"2415\" data-end=\"2660\">Not sure how long to stay, where to start or how much you can realistically see? Browse our <strong data-start=\"2507\" data-end=\"2572\">itinerary planning, first-time visitor and trip-length guides</strong> for straightforward answers to the questions that come up before a journey takes shape.</p>",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/09/05/66d9b90a7dcd8/magnificent-card.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "author": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "publisher": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "editor": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

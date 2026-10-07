@@ -1,0 +1,579 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days/",
+  "path": "destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days",
+  "slug": "tour-of-greece-in-10-days",
+  "parent": "greece-tours",
+  "category": "greece-travel-packages",
+  "title": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+  "metaTitle": "Athens to Rhodes | 10-Day Greece Discovery Tour",
+  "metaDescription": "Journey from Athens to Santorini and Rhodes in 10 days, blending classical history, volcanic landscapes and the medieval character of Rhodes.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Travel Packages 2026–2027 | Islands & Athens",
+    "10-Day Greece Tour: Athens, Santorini & Rhodes"
+  ],
+  "summary": "The Tour of Greece in 10 Days focuses on Athens, Santorini and Rhodes, allowing more time in each destination than a fast-paced island-hopping itinerary. Explore the Acropolis and the historic heart of Athens before continuing to Santorini, where volcanic landscapes and the caldera shape much of the island experience. Rhodes follows with a distinctly different setting, combining its fortified Medieval City, archaeological heritage and Aegean coastline.\nThis itinerary is arranged between April and October, when seasonal island connections operate. Travel logistics include two domestic flights and speed ferry tickets, alongside selected 4-star hotels with breakfast, English-speaking local guides, airport and port transfers, and scheduled sightseeing.",
+  "facts": {
+    "duration": "09 Nights / 10 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 2,245 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 9,
+  "days": 10,
+  "price": {
+    "amount": 2245,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,245 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Santorini",
+    "Rhodes"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-10-Day-Greece-Discovery-Tour.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "10-Day Greece Tour: Athens, Santorini & Rhodes Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "09 Nights / 10 Days",
+    "Athens • Santorini • Rhodes",
+    "Two Domestic Flights & Speed Ferry Tickets Included",
+    "Small Group or Private Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Half Day Morning Athens City tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Ferry to Santorini",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. The remainder of the day is at leisure. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Free Day in Santorini",
+      "text": "Breakfast at the hotel.\nEnjoy a free day in Santorini with an optional half-day cruise to Nea Kameni, Palea Kameni, and Thirassia. Enjoy swimming in the hot springs and admire the volcanic scenery of the caldera. Later, visit Fira and explore its whitewashed houses, narrow streets, and cliffside cafés. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Free Day in Santorini",
+      "text": "Breakfast at the hotel. Enjoy a free day in Santorini. Explore the villages of Fira and Oia, known for their scenic views, local shops, and cliffside cafés. Relax on Santorini’s famous black, red, and golden sand beaches.\nOptional tours and excursions are available upon request. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Flight to Rhodes",
+      "text": "Breakfast and check-out from the hotel.\nDepart for Rhodes by ferry or domestic flight via Athens, depending on the travel season and schedules.\nUpon arrival, transfer to your hotel. Overnight in Rhodes.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Free Day in Rhodes",
+      "text": "Breakfast at the hotel. Enjoy a free day in Rhodes to relax on the island’s beaches or explore local shops and cafés. Visit the Medieval Old Town and the Palace of the Grand Master of the Knights of Rhodes. In the evening, enjoy Rhodes’ lively nightlife and local atmosphere. Overnight in Rhodes.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Free Day in Rhodes",
+      "text": "Breakfast at the hotel.\nEnjoy a free day in Rhodes to explore the Medieval Old Town or visit the impressive Acropolis of Lindos. Relax on the island’s beautiful beaches or enjoy local cafés, shops, and seaside restaurants. In the evening, experience traditional Greek cuisine at a local tavern. Overnight in Rhodes.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Flight to Athens",
+      "text": "Breakfast and check-out from the hotel.\nDepart on the most suitable domestic flight to Athens.\nUpon arrival, meet and transfer to your hotel. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Departure from Athens",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "09 nights hotel accommodation in the selected category",
+    "Half-day Athens city tour with English-speaking guide",
+    "Entrance fees and transportation during the tour",
+    "Ferry tickets:",
+    "Port of Piraeus – Santorini",
+    "All airport, port, and hotel transfers in Athens, Santorini, and Rhodes"
+  ],
+  "excluded": [
+    "Domestic Flights Santorini – Rhodes, Rhodes – Athens",
+    "Items of a personal nature",
+    "Gratuities for Driver & Guide",
+    "Meals not mentioned",
+    "Drinks of any kind",
+    "Travel Insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily from 01 April to 15 October",
+    "The itinerary can be customized upon request"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferries are non-refundable once issued (100% cancellation fees apply)",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens--18.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "10-Day Greece Tour: Athens, Santorini & Rhodes"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Rhodes-1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Coastal landscapes and azure waters of Mykonos"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-10.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Scenic pathways through charming Santorini villages Greece"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-12.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Cultural treasures of Athens and ancient Greece"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Rhodes-Island-Greece.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Beautiful Rhodes Island with medieval architecture today"
+    }
+  ],
+  "related": [
+    {
+      "title": "10-Day Greece Tour: Athens, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/10-day-greece-tour/"
+    },
+    {
+      "title": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour/"
+    },
+    {
+      "title": "10-Day Turkey & Greek Islands Discovery Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/10-day-best-of-turkey-and-greece-trip/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 10-Day Greece Discovery Tour?",
+      "a": "The 10-Day Greece Discovery Tour covers Athens, Rhodes, and Santorini. You will explore Athens' ancient monuments, discover the medieval heritage of Rhodes, and experience Santorini's breathtaking caldera views, whitewashed villages, and famous sunsets. The tour runs for 9 nights and 10 days."
+    },
+    {
+      "q": "How much does the 10-Day Greece Discovery Tour cost?",
+      "a": "The tour starts from €2,245 per person for the 2026 season. The price includes accommodation, two domestic flights, speed ferry tickets, guided sightseeing tours, selected meals, and all airport, hotel, and port transfers specified in the itinerary. Final pricing may vary depending on travel dates and hotel availability."
+    },
+    {
+      "q": "Are domestic flights and ferry tickets included in this itinerary?",
+      "a": "Yes, the package includes two domestic flights and all required speed ferry tickets between destinations. These transportation arrangements provide a convenient and comfortable way to travel between Athens and the Greek islands."
+    },
+    {
+      "q": "Are international flights included in the package?",
+      "a": "No, international flights are not included in the tour price. Travelers are responsible for arranging their own flights to and from Greece. Magnificent Travel can assist with travel planning and recommendations if required."
+    },
+    {
+      "q": "Does the 10-day Greece Discovery Tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical insights, cultural information, and local expertise throughout the journey."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to combine Greece's rich history with its most beautiful islands. It offers an excellent balance of archaeology, culture, scenic landscapes, and leisure time."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through archaeological sites, historic towns, ferry ports, and island villages. Most travelers in average health can comfortably participate throughout the itinerary."
+    },
+    {
+      "q": "What are the highlights of Rhodes and Santorini?",
+      "a": "Rhodes is famous for its UNESCO-listed Medieval Old Town, Palace of the Grand Master, charming harbor, and beautiful beaches. Santorini is renowned for its dramatic volcanic caldera, whitewashed villages, blue-domed churches, spectacular sunsets, and stunning Aegean Sea views."
+    },
+    {
+      "q": "What is the cancellation policy for the Greece Discovery Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, transportation conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 10-Day Greece Discovery Tour available all year and can it be customized?",
+      "a": "The tour operates throughout the year, subject to seasonal ferry schedules and flight availability. You can extend your stay in Athens, Rhodes, or Santorini, upgrade hotel categories, add optional excursions, or modify the itinerary according to your preferences. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+          "description": "Journey from Athens to Santorini and Rhodes in 10 days, blending classical history, volcanic landscapes and the medieval character of Rhodes.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/67836dbf9b5fa/Athens--18.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "09 nights hotel accommodation in the selected category, Half-day Athens city tour with English-speaking guide, Entrance fees and transportation during the tour, Ferry tickets:, Port of Piraeus – Santorini, All airport, port, and hotel transfers in Athens, Santorini, and Rhodes"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Domestic Flights Santorini – Rhodes, Rhodes – Athens, Items of a personal nature, Gratuities for Driver & Guide, Meals not mentioned, Drinks of any kind, Travel Insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Athens  ",
+              "description": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Half Day Morning Athens City tour   ",
+              "description": "Breakfast at the hotel. \nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Santorini",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel.  The remainder of the day is at leisure. Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Santorini ",
+              "description": "Breakfast at the hotel. \nEnjoy a free day in Santorini with an optional half-day cruise to Nea Kameni, Palea Kameni, and Thirassia. Enjoy swimming in the hot springs and admire the volcanic scenery of the caldera. Later, visit Fira and explore its whitewashed houses, narrow streets, and cliffside cafés. Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Santorini ",
+              "description": "Breakfast at the hotel.  Enjoy a free day in Santorini. Explore the villages of Fira and Oia, known for their scenic views, local shops, and cliffside cafés. Relax on Santorini’s famous black, red, and golden sand beaches. \nOptional tours and excursions are available upon request.  Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Rhodes",
+              "description": "Breakfast and check-out from the hotel.\nDepart for Rhodes by ferry or domestic flight via Athens, depending on the travel season and schedules.\nUpon arrival, transfer to your hotel. Overnight in Rhodes.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Rhodes ",
+              "description": "Breakfast at the hotel. Enjoy a free day in Rhodes to relax on the island’s beaches or explore local shops and cafés. Visit the Medieval Old Town and the Palace of the Grand Master of the Knights of Rhodes. In the evening, enjoy Rhodes’ lively nightlife and local atmosphere. Overnight in Rhodes.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Rhodes",
+              "description": "Breakfast at the hotel. \nEnjoy a free day in Rhodes to explore the Medieval Old Town or visit the impressive Acropolis of Lindos. Relax on the island’s beautiful beaches or enjoy local cafés, shops, and seaside restaurants. In the evening, experience traditional Greek cuisine at a local tavern. Overnight in Rhodes.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Athens",
+              "description": "Breakfast and check-out from the hotel.\nDepart on the most suitable domestic flight to Athens.\nUpon arrival, meet and transfer to your hotel. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Athens",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "tour-of-greece-in-10-days",
+          "name": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+          "description": "Journey from Athens to Santorini and Rhodes in 10 days, blending classical history, volcanic landscapes and the medieval character of Rhodes.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/67836dbf9b5fa/Athens--18.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+          "productID": "669e591233636555680003cd",
+          "sku": "669e591233636555680003cd",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/67836dbf9b5fa/Athens--18.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Journey from Athens to Santorini and Rhodes in 10 days, blending classical history, volcanic landscapes and the medieval character of Rhodes.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "2245",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

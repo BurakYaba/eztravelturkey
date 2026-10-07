@@ -1,0 +1,586 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/10-days-in-turkey/",
+  "path": "destinations/turkey-tours/10-to-14-days-tours/10-days-in-turkey",
+  "slug": "10-days-in-turkey",
+  "parent": "turkey-tours",
+  "category": "10-to-14-days-tours",
+  "title": "10-Day Turkey Heritage Tour: Troy to Cappadocia",
+  "metaTitle": "Turkey Heritage Route | Troy, Ephesus & Cappadocia",
+  "metaDescription": "Journey through Istanbul, Troy, Pergamon, Ephesus, Pamukkale and Cappadocia on a 10-day heritage route connecting Turkey's legendary historic sites.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/10-days-in-turkey/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "10–14 Day Turkey Tours & Itineraries",
+    "10-Day Turkey Heritage Tour: Troy to Cappadocia"
+  ],
+  "summary": "The 10-Day Turkey Heritage Tour: Troy to Cappadocia follows a route shaped by very different periods of Anatolian history. Starting in Istanbul, travel to the Gallipoli battlefields before exploring ancient Troy and the hilltop Acropolis of Pergamon. Continue south to Ephesus, Pamukkale and Hierapolis, then finish in Cappadocia, where rock-cut settlements, valleys and fairy chimneys reveal another side of Turkey’s past.\nTravel is possible throughout the year, with dates chosen to fit your plans. We arrange selected 4-star hotels with breakfast, English-speaking local guides, airport transfers, scheduled sightseeing and the domestic flight specified in the itinerary.",
+  "facts": {
+    "duration": "9 Nights / 10 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, One Domestic Flight",
+    "startingPrice": "€ 1,795 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 9,
+  "days": 10,
+  "price": {
+    "amount": 1795,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,795 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Cappadocia",
+    "Pamukkale",
+    "Ephesus",
+    "Pergamon",
+    "Troy"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-10-Day-Turkey-Vacation-Package.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "10-Day Turkey Heritage Tour: Troy to Cappadocia Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "09 Nights / 10 Days",
+    "Istanbul • Cappadocia • Antalya • Pamukkale • Ephesus",
+    "Two Domestic Flights Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Istanbul",
+      "text": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Istanbul Old City Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Bosphorus Cruise & Flight to Cappadocia",
+      "text": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable Bosphorus cruise, sailing between Europe and Asia along one of the world’s most scenic waterways. After the tour, transfer to the airport at 15:00 for your flight to Nevsehir at 18:45. Upon arrival at 20:10, and transfer to your hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "North Cappadocia Tour",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "South Cappadocia Tour & Overnight Coach to Pamukkale",
+      "text": "After breakfast at 10:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, Mustafapaşa, Sobesos Ancient City, and Soganli Valley. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most remarkable underground settlements. At 20:00, depart by overnight intercity coach to Pamukkale.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Pamukkale Tour & Transfer to Kusadasi",
+      "text": "At 06:00, arrival in Pamukkale, meet and transfer to your hotel for breakfast and half-day check-in.\nAt 10:30, visit the famous white travertine terraces and explore the ancient city of Hierapolis. Guests may also swim at the Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, continue to Kusadasi. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Ephesus Ancient City",
+      "text": "After breakfast at 09:00, enjoy a guided tour of Ephesus, visiting highlights such as the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the Great Theatre. Continue to the ruins of the Temple of Artemis, followed by lunch and a visit to the House of the Virgin Mary. Overnight in Kusadasi",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Tour to Pergamon & Canakkale",
+      "text": "After breakfast at 09:00, depart for Pergamon and explore its impressive Acropolis, including the Temple of Athena, ancient Library, Altar of Zeus, Temple of Trajan, and the world’s steepest ancient theatre. Enjoy views of the Red Basilica before lunch in town. After the tour, continue to Canakkale. Overnight in Canakkale.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Tour to Troy, Gallipoli & Istanbul",
+      "text": "Visit the ancient city of Troy, including the famous Trojan Horse and key ruins. Continue to Eceabat for lunch before the guided Gallipoli campaign Battlefields Tour, visiting Anzac Cove, Lone Pine Memorial, The Nek, and Chunuk Bair. After the tour, transfer to Istanbul. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Departure from Istanbul",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport according to your flight departure time..",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "09 nights 4-star hotel accommodation with daily breakfast",
+    "08-day regular small group tours with English-speaking guide",
+    "Entrance fees, lunches, and transportation included",
+    "One-way domestic flight from Istanbul to Kayseri",
+    "All airport, hotel, and transfer services within Turkiye"
+  ],
+  "excluded": [
+    "Items of a personal nature",
+    "Gratuities for driver and tour guide",
+    "Meals not mentioned in the itinerary",
+    "Drinks and beverages",
+    "Hot air balloon ride in Cappadocia",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year",
+    "Prices are per person, based on a minimum of 2 adults",
+    "Tour itinerary can be customized upon request",
+    "Transfers include 1 luggage allowance per person",
+    "Once domestic flight tickets are issued, they cannot be changed or refunded",
+    "A 100% cancellation fee applies for issued domestic flight tickets",
+    "Domestic flight schedules are subject to change by the airline"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% fee.",
+    "Cancellation 20–14 days before arrival: 50% fee.",
+    "Cancellation 13 days or less before arrival, or no-show: 100% fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Oludeniz-4.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "10-Day Turkey Heritage Tour: Troy to Cappadocia"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Istanbul-7.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Traditional Turkish goods at the Grand Bazaar"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hot-Air-Ballon-Cappadocia.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Sunrise balloon experience in Cappadocia Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hierapolis-Pamukkale-1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic Roman ruins near Pamukkale terraces"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Sirince-.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Sirince village hillside houses in Turkey"
+    }
+  ],
+  "related": [
+    {
+      "title": "10-Day Central Turkey Tour: Cappadocia to Didyma",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/10-day-istanbul-cappadocia-pamukkale-and-ephesus-tour/"
+    },
+    {
+      "title": "11-Day Best of Turkey Tour: Cappadocia to Antalya",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/11-day-best-of-turkey-tour/"
+    },
+    {
+      "title": "12-Day Turkey Highlights Tour: Cappadocia & Antalya",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/12-day-turkey-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 10-Day Turkey Vacation Package?",
+      "a": "The 10-Day Turkey Vacation Package covers Istanbul, Gallipoli, Troy, Pergamon, Ephesus, Pamukkale, and Cappadocia. You will explore Istanbul's historic landmarks, visit the famous battlefields of Gallipoli, discover the legendary city of Troy, tour the ancient Acropolis of Pergamon, walk through the remarkable ruins of Ephesus, experience Pamukkale's white travertine terraces, and explore the unique landscapes of Cappadocia. The tour runs for 9 nights and 10 days."
+    },
+    {
+      "q": "How much does the 10-Day Turkey Vacation Package cost?",
+      "a": "The tour starts from €1,795 per person for the 2026 season. The price includes accommodation, one domestic flight, guided sightseeing tours, entrance fees, selected meals, airport transfers, and hotel transfers. Final pricing may vary depending on travel dates, hotel category, and availability."
+    },
+    {
+      "q": "Is a domestic flight included in this itinerary?",
+      "a": "Yes, the package includes one domestic flight as specified in the itinerary. This flight helps reduce travel time between regions and allows you to comfortably experience Turkey's most important historical and cultural attractions."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 9 nights at carefully selected 4-star hotels and boutique accommodations with daily breakfast. Hotels are chosen for their comfort, service quality, and convenient locations near major attractions. All airport and hotel transfers throughout the tour are included."
+    },
+    {
+      "q": "Does the 10-day Turkey Vacation Package include a guide?",
+      "a": "Yes, professional English-speaking guides are included during all scheduled sightseeing tours. As part of the small-group experience, your guide will provide historical insights, cultural information, and local expertise while ensuring a smooth and enjoyable journey."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Turkey?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to explore Turkey's most famous historical sites and natural wonders. It combines ancient civilizations, World War I history, UNESCO-listed attractions, and Cappadocia's unique landscapes into one well-rounded itinerary."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historic districts, and areas with uneven terrain. Gallipoli, Troy, Pergamon, Ephesus, Pamukkale, and Cappadocia all involve moderate walking, but most travelers in average health can comfortably participate."
+    },
+    {
+      "q": "Can I add a hot air balloon ride in Cappadocia?",
+      "a": "The Cappadocia hot air balloon ride is not included in the standard package but can be arranged as an optional activity. Since balloon flights are weather-dependent and highly popular, advance reservations are strongly recommended."
+    },
+    {
+      "q": "What is the cancellation policy for the 10-Day Turkey Vacation Package?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 10-Day Turkey Vacation Package available all year and can it be customized?",
+      "a": "Yes, the tour operates throughout the year and can be customized according to your preferences. You can add extra nights, upgrade hotel categories, include optional excursions, or modify the itinerary to suit your travel interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "10-Day Turkey Heritage Tour: Troy to Cappadocia",
+          "description": "Journey through Istanbul, Troy, Pergamon, Ephesus, Pamukkale and Cappadocia on a 10-day heritage route connecting Turkey's legendary historic sites.",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/10-days-in-turkey",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/10/67811f6640b26/Oludeniz-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "09 nights 4-star hotel accommodation with daily breakfast, 08-day regular small group tours with English-speaking guide, Entrance fees, lunches, and transportation included, One-way domestic flight from Istanbul to Kayseri, All airport, hotel, and transfer services within Turkiye"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Items of a personal nature, Gratuities for driver and tour guide, Meals not mentioned in the itinerary, Drinks and beverages, Hot air balloon ride in Cappadocia, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Istanbul",
+              "description": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel. \nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Istanbul Old City Walking Tour",
+              "description": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Bosphorus Cruise & Flight to Cappadocia",
+              "description": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable Bosphorus cruise, sailing between Europe and Asia along one of the world’s most scenic waterways. After the tour, transfer to the airport at 15:00 for your flight to Nevsehir at 18:45.  Upon arrival at 20:10, and transfer to your hotel. Overnight in Cappadocia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "North Cappadocia Tour",
+              "description": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "South Cappadocia Tour & Overnight Coach to Pamukkale",
+              "description": "After breakfast at 10:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, Mustafapaşa, Sobesos Ancient City, and Soganli Valley. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most remarkable underground settlements. At 20:00, depart by overnight intercity coach to Pamukkale.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Pamukkale Tour & Transfer to Kusadasi",
+              "description": "At 06:00, arrival in Pamukkale, meet and transfer to your hotel for breakfast and half-day check-in. \nAt 10:30, visit the famous white travertine terraces and explore the ancient city of Hierapolis. Guests may also swim at the Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, continue to Kusadasi. Overnight in Kusadasi.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ephesus Ancient City",
+              "description": "After breakfast at 09:00, enjoy a guided tour of Ephesus, visiting highlights such as the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the Great Theatre. Continue to the ruins of the Temple of Artemis, followed by lunch and a visit to the House of the Virgin Mary. Overnight in Kusadasi",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Tour to Pergamon & Canakkale ",
+              "description": "After breakfast at 09:00, depart for Pergamon and explore its impressive Acropolis, including the Temple of Athena, ancient Library, Altar of Zeus, Temple of Trajan, and the world’s steepest ancient theatre. Enjoy views of the Red Basilica before lunch in town. After the tour, continue to Canakkale.  Overnight in Canakkale.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Tour to Troy, Gallipoli & Istanbul",
+              "description": "Visit the ancient city of Troy, including the famous Trojan Horse and key ruins. Continue to Eceabat for lunch before the guided Gallipoli campaign Battlefields Tour, visiting Anzac Cove, Lone Pine Memorial, The Nek, and Chunuk Bair.  After the tour, transfer to Istanbul. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Istanbul",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport according to your flight departure time..",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "  (Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "10-days-in-turkey",
+          "name": "10-Day Turkey Heritage Tour: Troy to Cappadocia",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "10-Day Turkey Heritage Tour: Troy to Cappadocia",
+          "description": "Journey through Istanbul, Troy, Pergamon, Ephesus, Pamukkale and Cappadocia on a 10-day heritage route connecting Turkey's legendary historic sites.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/10/67811f6640b26/Oludeniz-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "10-Day Turkey Heritage Tour: Troy to Cappadocia",
+          "productID": "669bc68c336365675c000363",
+          "sku": "669bc68c336365675c000363",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/10/67811f6640b26/Oludeniz-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Journey through Istanbul, Troy, Pergamon, Ephesus, Pamukkale and Cappadocia on a 10-day heritage route connecting Turkey's legendary historic sites.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1795",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/10-days-in-turkey",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

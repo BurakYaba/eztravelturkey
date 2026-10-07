@@ -1,0 +1,364 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/14-day-best-of-greece-and-egypt-tour/",
+  "path": "destinations/greece-and-egypt-tours/14-day-best-of-greece-and-egypt-tour",
+  "slug": "14-day-best-of-greece-and-egypt-tour",
+  "parent": "greece-and-egypt-tours",
+  "category": null,
+  "title": "14-Day Greek Islands & Egypt Nile Cruise Journey",
+  "metaTitle": "Santorini to the Nile | 14-Day Greece Egypt Tour",
+  "metaDescription": "Explore Athens, Mykonos and Santorini before Cairo, Aswan and Luxor on a 14-day journey combining Greek island life with Egypt and a Nile Cruise.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/14-day-best-of-greece-and-egypt-tour/",
+  "lastUpdated": "2026-09-16",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece & Egypt Tours & Vacation Packages 2026–2027",
+    "14-Day Greek Islands & Egypt Nile Cruise Journey"
+  ],
+  "summary": "The 14-Day Best of Greece & Egypt Tour gives Greece’s classical sites and Cycladic islands their own stage before continuing into Egypt for a Nile journey. Begin in Athens, then travel to Mykonos and Santorini before flying to Cairo. After exploring the capital and the Pyramids of Giza, continue south to Aswan for a three-night full-board cruise toward Luxor, with guided visits to major temples and monuments along the river.\nThe escorted itinerary operates from April to October and includes selected 4-star hotels, breakfast, cruise meals, professional local guides, entrance fees, airport transfers and three domestic flights. The longer format allows both island stays and Upper Egypt to be covered without adding a third country.",
+  "facts": {
+    "duration": "13 Nights / 14 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Three Domestic Flights",
+    "startingPrice": "€ 3,175 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 13,
+  "days": 14,
+  "price": {
+    "amount": 3175,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €3,175 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Mykonos",
+    "Santorini",
+    "Cairo",
+    "Aswan",
+    "Luxor"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-14-Day-Greece-and-Egypt-Tour.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "14-Day Greek Islands & Egypt Nile Cruise Journey Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "13 Nights / 14 Days",
+    "Athens • Mykonos • Santorini • Cairo • Aswan • Luxor",
+    "Three Domestic Flights Included",
+    "Small Group Tour",
+    "Carefully Selected 4-Star Hotels & 3-Night Nile Cruise",
+    "April–October Departures",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel in Athens.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Half day Athens City tour",
+      "text": "Breakfast at the hotel. Start a city tour of Athens, including visits to the Acropolis of Athens, the Acropolis Museum, and the famous Parthenon. Continue to see the Hellenic Parliament, the Tomb of the Unknown Soldier, and the National Library. Visit the Presidential Mansion to watch the Evzones Guards, then continue to the Panathenaic Stadium, the Temple of Olympian Zeus, and Hadrian's Arch. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Athens to Mykonos By Ferry",
+      "text": "Breakfast at the hotel. Check out and transfer to the port for the Seajets ferry to Mykonos.\nUpon arrival, transfer to the hotel. The remainder of the day is at leisure. Overnight in Mykonos.\nDomestic flights to Mykonos are also available upon request.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Free Day in Mykonos",
+      "text": "Breakfast at the hotel. Full day free at leisure to explore Mykonos and Mykonos Town.\nEnjoy the beaches, local cafés, boutique shops, and the island’s famous nightlife. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Mykonos to Santorini by Ferry",
+      "text": "Breakfast at the hotel. Check out and transfer to the port for the Seajets ferry to Santorini.\nUpon arrival, transfer to the hotel. The remainder of the day is at leisure. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Free Day in Santorini",
+      "text": "Breakfast at the hotel. Full day free at leisure in Santorini to relax on the island’s beautiful beaches or explore the charming town of Fira. Optional boat and bus tours are available to visit the volcano and ancient ruins. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Santorini to Cairo via Athens By flight",
+      "text": "Breakfast at the hotel. Transfer to Santorini International Airport for the flight to Cairo.\nArrival at Cairo International Airport, meet and transfer to the hotel.\nThe remainder of the day is at leisure. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Visit Egyptian Museum, Old Cairo",
+      "text": "Breakfast at the hotel. Visit the impressive Grand Egyptian Museum, home to one of the world’s most important collections of ancient Egyptian artifacts. Continue to the historic Cairo Citadel and visit the beautiful Mosque of Muhammad Ali, also known as the Alabaster Mosque. Proceed to Old Cairo to explore Church of Saints Sergius and Bacchus and the famous The Hanging Church, two of the city’s most important Christian landmarks. Later, enjoy free time at the lively Khan el-Khalili Bazaar,. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Visit Giza -Pyramids and Sphinx",
+      "text": "Breakfast. Meet your tour guide and begin the day’s sightseeing tour. Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramesses II. Continue to Saqqara to explore the famous Step Pyramid of Djoser, considered the world’s oldest major stone structure. Later, visit the legendary Giza pyramid complex, including the Great Pyramids and the iconic Great Sphinx of Giza. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Flight to Aswan- Nile Cruise",
+      "text": "Breakfast box from the hotel. Transfer to the domestic terminal for your flight to Aswan. Upon arrival, meet and transfer to board your 3-night Nile Cruise before lunch. After lunch, visit the Aswan High Dam and the beautiful Philae Temple located on Agilkia Island. Overnight onboard the Nile Cruise.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 11",
+      "title": "Nile Cruise - Visit Kom Ombo and Edfu",
+      "text": "Breakfast onboard the cruise. Sail to Kom Ombo and visit the remarkable Temple of Kom Ombo, dedicated to the crocodile god Sobek and Haroeris. Return to the cruise and continue sailing to Edfu. Visit the impressive Temple of Horus, one of the best-preserved ancient temples in Egypt. Overnight onboard the Nile Cruise.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 12",
+      "title": "Nile Cruise - Visit Luxor",
+      "text": "Breakfast onboard the cruise. Sail to Esna and continue to Luxor. Visit the West Bank of the Nile, including the famous Valley of the Kings and Valley of the Queens. Continue to the impressive Mortuary Temple of Hatshepsut and the iconic Colossi of Memnon. Overnight onboard the Nile Cruise.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 13",
+      "title": "Luxor to Cairo/ By flight",
+      "text": "Breakfast onboard the cruise, then disembark. Meet your guide for a morning tour of Luxor Temple and the impressive Karnak Temple Complex. Later, transfer to the airport for your flight to Cairo. Upon arrival, meet and transfer to your hotel. Evening at leisure. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 14",
+      "title": "Transfer to Cairo airport",
+      "text": "Breakfast at the hotel.\nCheck out and transfer to Cairo International Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "10 nights' accommodation in 4-star hotels, including daily breakfast",
+    "03 nights on board a 5-star Nile River Cruise from Aswan to Luxor on a full-board basis",
+    "Included Services",
+    "7-day regular small group tours with a professional English-speaking guide",
+    "Entrance fees, lunches, and transportation included during the guided tours",
+    "Fast ferry: Santorini → Mykonos (Economy Class, numbered seats)",
+    "Fast ferry: Mykonos → Piraeus (Economy Class, numbered seats)",
+    "One-way domestic flight: Cairo → Aswan",
+    "One-way domestic flight: Luxor → Cairo",
+    "All airport, hotel, and port transfers throughout Greece and Egypt"
+  ],
+  "excluded": [
+    "International airfare and air ticket from Santorini to Cairo",
+    "Items of a personal nature",
+    "Gratuities for drivers and guides",
+    "Meals not mentioned in the itinerary",
+    "Drinks of any kind",
+    "Travel insurance"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [
+    "Domestic Flights & Ferries",
+    "Domestic flights and ferry tickets are non-refundable",
+    "100% cancellation fees apply once booked and confirmed",
+    "Land Portion",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation between 30–21 days before arrival: 25% cancellation fee",
+    "Cancellation between 20–14 days before arrival: 50% cancellation fee",
+    "Cancellation 13 days or less before arrival, or in case of no-show: 100% cancellation fee applies"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Naxos--4.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "14-Day Greek Islands & Egypt Nile Cruise Journey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hurghada--3.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning coral reefs in Sharm El Sheikh today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Mykonos-09.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Traditional Cycladic charm throughout Mykonos Greece destination"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pyramid--1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Incredible architecture of the Giza Pyramids today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens---18.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous Parthenon standing proudly above Athens city skyline"
+    }
+  ],
+  "related": [
+    {
+      "title": "13-Day Greek Islands & Jordan Desert Journey",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-and-jordan-tours/13-day-greece-and-jordan-tour/"
+    },
+    {
+      "title": "14-Day Best of Turkey & Greece: Complete Highlights",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/14-day-best-of-turkey-and-greece-tour/"
+    },
+    {
+      "title": "15-Day Best of Turkey & Egypt: Cappadocia to the Nile",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/15-days-best-of-turkey-and-egypt-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 14-Day Greece and Egypt Tour?",
+      "a": "The 14-Day Greece and Egypt Tour covers Athens, Mykonos, and Santorini in Greece, along with Cairo, Luxor, and Aswan in Egypt. This carefully designed itinerary combines the beauty of the Greek Islands with the timeless wonders of ancient Egypt, offering an unforgettable Mediterranean and Nile Valley experience. The tour runs for 13 nights and 14 days."
+    },
+    {
+      "q": "How much does the 14-Day Greece and Egypt Tour cost?",
+      "a": "The tour starts from €3,175 per person for the 2026 season. The price includes accommodation, guided sightseeing tours, selected meals, airport and hotel transfers, domestic transportation, and three domestic flights. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "Are flights included in the package?",
+      "a": "Yes, three domestic flights are included within the itinerary. These flights help maximize sightseeing time and provide comfortable travel between destinations in Greece and Egypt. International flights are not included unless specifically stated."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation in carefully selected hotels throughout Greece and Egypt. Daily breakfast is included, and additional meals may be provided according to the itinerary. Hotels are chosen for their comfort, quality service, and convenient locations."
+    },
+    {
+      "q": "Does the tour include guides?",
+      "a": "Yes, professional English-speaking guides accompany the scheduled sightseeing tours in both Greece and Egypt. Your guides will provide fascinating insights into the history, archaeology, culture, and traditions of each destination."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece and Egypt?",
+      "a": "Yes, this tour is ideal for first-time visitors. It combines the most famous highlights of both countries, offering a perfect balance of island relaxation, ancient history, cultural discovery, and spectacular landscapes."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historic city centers, museums, island towns, and uneven terrain. Most visitors with average fitness levels can comfortably participate throughout the itinerary."
+    },
+    {
+      "q": "What are the highlights of the tour?",
+      "a": "Highlights include the Acropolis and historic sites of Athens, the charming streets and beaches of Mykonos, the spectacular caldera views of Santorini, the Pyramids of Giza and Egyptian Museum in Cairo, the Valley of the Kings and Karnak Temple in Luxor, and the beautiful Nile scenery and ancient temples of Aswan."
+    },
+    {
+      "q": "What is the cancellation policy for the 14-Day Greece and Egypt Tour?",
+      "a": "Free cancellation is available up to 60 days before the tour departure date. Cancellations made within 60 days may be subject to fees according to the booking terms, airline conditions, and cancellation policy. Travel insurance is strongly recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the 14-Day Greece and Egypt Tour be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights, upgrade hotel categories, include a Nile Cruise, add Red Sea resorts, extend your stay on the Greek Islands, or modify the itinerary to suit your travel interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "14-Day Greek Islands & Egypt Nile Cruise Journey",
+          "description": "Explore Athens, Mykonos and Santorini before Cairo, Aswan and Luxor on a 14-day journey combining Greek island life with Egypt and a Nile Cruise.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/19/678c9ee0a8df6/Naxos--4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "14-day-best-of-greece-and-egypt-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "14-day-best-of-greece-and-egypt-tour",
+          "name": "14-Day Greek Islands & Egypt Nile Cruise Journey",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "14-Day Greek Islands & Egypt Nile Cruise Journey",
+          "description": "Explore Athens, Mykonos and Santorini before Cairo, Aswan and Luxor on a 14-day journey combining Greek island life with Egypt and a Nile Cruise.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/19/678c9ee0a8df6/Naxos--4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

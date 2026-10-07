@@ -1,0 +1,404 @@
+{
+  "locale": "en",
+  "kind": "blog-category",
+  "sourceUrl": "https://www.magnificenttravel.com/en/blog/greece/",
+  "path": "blog/greece",
+  "metaTitle": "Explore Greece: Travel Tips & Itineraries",
+  "metaDescription": "Explore Greece with our travel blog, featuring top destinations, cultural insights, travel tips, and itinerary ideas for an unforgettable Greek adventure",
+  "canonical": "https://www.magnificenttravel.com/en/blog/greece/",
+  "robots": "",
+  "h1": "Greece",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Home",
+    "Travel Guides for Better-Planned Trips",
+    "Greece"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Crete-1.jpg",
+          "alt": "Greece Currency: Cash, Cards and Paying During Your Trip"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Greece Currency: Cash, Cards and Paying During Your Trip",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Santorini-26.jpg",
+          "alt": "Santorini Weather in November: After the Season Ends"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Santorini Weather in November: After the Season Ends",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Mykonos-17.jpg",
+          "alt": "Mykonos Greece: Where You Stay Changes the Entire Trip"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Mykonos Greece: Where You Stay Changes the Entire Trip",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Santorini-8.jpg",
+          "alt": "Three Days in Greece: How Far Should You Go Beyond Athens?"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Three Days in Greece: How Far Should You Go Beyond Athens?",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-aegina-greece-.jpg",
+          "alt": "Greece in 5 Days: How to Experience the Best of Greece"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Greece in 5 Days: How to Experience the Best of Greece",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Ancient-ruins-and-historic-columns-of-Delphi-Greece.jpg",
+          "alt": "Where to Go on Holiday in October: Choose the Right Escape"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Where to Go on Holiday in October: Choose the Right Escape",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Temple-of-Olympian-Zeus-in-Athens.jpg",
+          "alt": "Private or Group Greece Tours: Which Travel Style Fits You?"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Private or Group Greece Tours: Which Travel Style Fits You?",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Santorini-Aegean-Sea-View-from-the-Cliffs.jpg",
+          "alt": "Greece Honeymoon: Plan Romance Without Rushing the Journey"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Greece Honeymoon: Plan Romance Without Rushing the Journey",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Rhodes.jpg",
+          "alt": "Rhodes Greece: How to Experience the Island Beyond the Old Town"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Rhodes Greece: How to Experience the Island Beyond the Old Town",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Beautiful-coastline-and-villages-in-Crete-Greece.jpg",
+          "alt": "Crete Greece: Choose the Right Region Before Planning the Trip"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Crete Greece: Choose the Right Region Before Planning the Trip",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Kos-Island-Sea-and-Nature-Greece.jpg",
+          "alt": "Kos Greece: An Island That Makes Exploring Surprisingly Easy"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Kos Greece: An Island That Makes Exploring Surprisingly Easy",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Paros-White-Streets-and-Blue-Door-Houses.jpg",
+          "alt": "Paros Greece: How to Find the Island’s Best Rhythm"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Paros Greece: How to Find the Island’s Best Rhythm",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Greece-Seaside-Restaurants-and-Blue-Sea-Views.jpg",
+          "alt": "Milos Greece: How to Explore an Island Shaped by the Sea"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Milos Greece: How to Explore an Island Shaped by the Sea",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Zakynthos-Coastal-Churches-and-Colorful-Nature-Greece.jpg",
+          "alt": "Zakynthos Greece: Choosing the Right Coast Changes the Trip"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Zakynthos Greece: Choosing the Right Coast Changes the Trip",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Meteora-Monasteries-and-Mountain-Views-Greece.jpg",
+          "alt": "Meteora Greece: Plan the Landscape, Not Just the Monasteries"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Meteora Greece: Plan the Landscape, Not Just the Monasteries",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "»"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "heading": "Categories",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Turkey",
+            "Greece",
+            "Egypt",
+            "Jordan",
+            "Morocco",
+            "Israel"
+          ]
+        }
+      ]
+    }
+  ],
+  "cards": [],
+  "faqs": [],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "BlogPosting"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "greece",
+          "name": "Greece",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "Greece",
+          "description": "Explore Greece with our travel blog, featuring top destinations, cultural insights, travel tips, and itinerary ideas for an unforgettable Greek adventure",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/24/67931fbd1c313/Santorini-10-.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Article",
+          "id": "https://www.magnificenttravel.com/en/blog/greece/#Article",
+          "url": "https://www.magnificenttravel.com/en/blog/greece/",
+          "mainEntityOfPage": "https://www.magnificenttravel.com/en/blog/greece/",
+          "inLanguage": "en_US",
+          "headline": "Greece",
+          "datePublished": "2024-07-11T13:56:00+0300",
+          "dateModified": "2024-07-11T13:56:00+0300",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/24/67931fbd1c313/Santorini-10-.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "author": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "publisher": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "editor": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

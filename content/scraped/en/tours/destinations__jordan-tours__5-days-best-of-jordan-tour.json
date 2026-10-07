@@ -1,0 +1,308 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/jordan-tours/5-days-best-of-jordan-tour/",
+  "path": "destinations/jordan-tours/5-days-best-of-jordan-tour",
+  "slug": "5-days-best-of-jordan-tour",
+  "parent": "jordan-tours",
+  "category": null,
+  "title": "5-Day Jordan Highlights: Petra & King’s Highway",
+  "metaTitle": "Jordan Highlights in 5 Days | Petra & Madaba",
+  "metaDescription": "Explore Amman, Jerash, Madaba and Petra in five days, traveling along the historic King’s Highway through Jordan's archaeological and biblical landscapes.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/jordan-tours/5-days-best-of-jordan-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Jordan Tours & Vacation Packages 2026–2027",
+    "5-Day Jordan Highlights: Petra & King’s Highway"
+  ],
+  "summary": "The 5-Day Best of Jordan Tour concentrates the country’s essential historical and natural sites into a short overland journey. Begin in Amman and explore the Roman ruins of Jerash before continuing to Madaba and Mount Nebo. Time at the Dead Sea adds a change of pace before the route turns south to Petra, where the rock-cut Nabataean monuments form the main archaeological focus. The journey then continues into the desert landscapes of Wadi Rum.\nWith five days available, the itinerary prioritizes Jordan’s key stops rather than adding the Red Sea coast. The package operates year-round with selected 4-star hotels, breakfast, English-speaking local guides, private transportation, transfers, entrance fees and scheduled sightseeing.",
+  "facts": {
+    "duration": "04 Nights / 05 Days",
+    "guideLanguages": "English-speaking local guides in Jerash and Petra only",
+    "groupType": "Private",
+    "flights": "None",
+    "startingPrice": "€ 995 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 4,
+  "days": 5,
+  "price": {
+    "amount": 1375,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €995 €1,375 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Amman",
+    "Petra",
+    "Madaba",
+    "Jerash",
+    "King’s Highway"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-5-Day-Jordan-Tour-Package.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "5-Day Jordan Highlights: Petra & King’s Highway Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "04 Nights / 05 Days",
+    "Amman • Jerash • Madaba • Mount Nebo • Dead Sea • Petra • Wadi Rum",
+    "Private Land Transportation Included",
+    "Private Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Amman",
+      "text": "Arrival at Queen Alia International Airport. Meet and transfer to your hotel in Amman.\nHotel check-in after 14:00. The remainder of the day is at leisure. Overnight in Amman.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Tour to Amman - Madaba - Mt Nebo - Dead Sea",
+      "text": "Visit Madaba and see the famous mosaic map at the Saint George Church. Continue to Mount Nebo, where Prophet Moses viewed the Promised Land. Drive to the Dead Sea, the lowest point on Earth, and enjoy free time to swim, float in the salty waters, and try the mineral-rich mud. Return to Amman. Overnight in Amman.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Amman to Petra and Petra Sightseeing",
+      "text": "Drive south to Petra via the Desert Highway. Explore Petra, the famous red-rose city of the Nabataeans, and walk through the Siq to reach the impressive Al-Khazneh (Treasury). Continue to visit the Royal Tombs, Roman Theater, High Place of Sacrifice, and other ancient tombs and monuments. Overnight in Petra.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Petra - Wadi Rum - Amman",
+      "text": "Drive to Wadi Rum, one of Jordan’s most spectacular desert landscapes. Enjoy a 4x4 jeep safari through canyons, sand dunes, and dramatic rock formations. Experience the breathtaking desert scenery made famous by T. E. Lawrence before driving back to Amman. Overnight in Amman.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Transfer to Amman Airport",
+      "text": "Breakfast at the hotel and check-out\nTransfer to Queen Alia International Airport for your departure flight",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "04 nights' hotel accommodation in the selected hotel category",
+    "Included Services",
+    "Meet and assist upon arrival and departure by a Magnificent Travel representative",
+    "Private transportation in a modern air-conditioned vehicle",
+    "English-speaking driver throughout the Jordan tour",
+    "Local English-speaking guide in Petra (from the Visitor Center to the Treasury)",
+    "Entrance fees to all sites mentioned in the itinerary",
+    "2-hour 4×4 Jeep safari in Wadi Rum",
+    "One complimentary bottle of mineral water per person per day during the Jordan tour",
+    "Portage service at hotels",
+    "Jordan entry visa for eligible non-restricted nationalities"
+  ],
+  "excluded": [
+    "Lunches, dinners, and drinks not mentioned above",
+    "Tour guide except where mentioned",
+    "International and domestic flight tickets",
+    "Personal expenses and optional activities",
+    "Tips for driver, guide, and hotel staff",
+    "Anything not specifically mentioned under “Package Includes”"
+  ],
+  "importantNotes": [
+    "All tour and transportation by modern A/C private Car"
+  ],
+  "cancellationPolicy": [
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee.",
+    "20–14 days before arrival: 50% cancellation fee.",
+    "13 days or less before arrival, or no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Jerash-door-Amman.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "5-Day Jordan Highlights: Petra & King’s Highway"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Wadi-rum.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Beautiful desert sunsets in Wadi Rum Jordan"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Dead-sea-Jordan.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning views across the Dead Sea today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Petra-2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "UNESCO World Heritage Site Petra Jordan destination"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Jerash-Amman--.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient landmarks throughout Jerash archaeological site today"
+    }
+  ],
+  "related": [
+    {
+      "title": "6-Day Jordan Tour: Petra & Aqaba Red Sea Escape",
+      "url": "https://www.magnificenttravel.com/en/destinations/jordan-tours/6-days-amman-petra-and-dead-sea-tour/"
+    },
+    {
+      "title": "7-Day Classic Jordan Tour: Petra, Wadi Rum & Dead Sea",
+      "url": "https://www.magnificenttravel.com/en/destinations/jordan-tours/7-days-jordan-tour/"
+    },
+    {
+      "title": "3-Day Amman & Petra Short Break",
+      "url": "https://www.magnificenttravel.com/en/destinations/jordan-tours/3-days-amman-and-petra-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 5-Day Jordan Tour Package?",
+      "a": "The 5-Day Jordan Tour Package covers Amman, Jerash, Madaba, the King's Highway, and Petra. This private itinerary offers a wonderful introduction to Jordan's history, culture, biblical heritage, and archaeological treasures, including the world-famous city of Petra. The tour runs for 4 nights and 5 days."
+    },
+    {
+      "q": "How much does the 5-Day Jordan Tour Package cost?",
+      "a": "The tour starts from €995 per person for the 2026 season. The price includes accommodation, private land transportation, an English-speaking driver, entrance fees according to the itinerary, selected meals, and airport and hotel transfers. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "Is transportation included throughout the tour?",
+      "a": "Yes, private land transportation is included throughout the entire journey. You will travel in a comfortable private vehicle with an English-speaking driver, ensuring flexibility and convenience while exploring Jordan."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation in carefully selected hotels with daily breakfast. Hotels are chosen for their comfort, quality service, and convenient locations near the destinations visited during the tour."
+    },
+    {
+      "q": "Is a guide included in the tour?",
+      "a": "This package includes an English-speaking driver rather than a full-time tour guide. Local guides can be arranged at major attractions such as Petra upon request. Your driver will assist with transportation, logistics, and general travel information throughout the trip."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Jordan?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to experience Jordan's most important historical and cultural attractions within a short itinerary while enjoying the comfort of private transportation."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historic towns, and uneven terrain. Petra involves several kilometers of walking and is the most physically demanding part of the itinerary."
+    },
+    {
+      "q": "What are the highlights of Jerash, Madaba, the King's Highway, and Petra?",
+      "a": "Jerash is one of the best-preserved Roman cities in the world, featuring impressive colonnaded streets and ancient monuments. Madaba is famous for its Byzantine mosaics and the historic Madaba Map. The King's Highway offers spectacular scenery and centuries of history. Petra is Jordan's most famous UNESCO World Heritage Site, renowned for the Treasury and extraordinary rock-carved architecture."
+    },
+    {
+      "q": "What is the cancellation policy for the 5-Day Jordan Tour Package?",
+      "a": "You can generally cancel free of charge up to 30 days before the tour departure date. Cancellations made within the applicable cancellation period may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the 5-Day Jordan Tour Package be customized?",
+      "a": "Yes, the tour can be fully customized according to your preferences. You can add extra nights, upgrade hotel categories, include destinations such as the Dead Sea or Wadi Rum, arrange local guides, or modify the itinerary to suit your interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "5-Day Jordan Highlights: Petra & King’s Highway",
+          "description": "Explore Amman, Jerash, Madaba and Petra in five days, traveling along the historic King’s Highway through Jordan's archaeological and biblical landscapes.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/14/678649837c19f/Jerash-door-Amman.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "5-days-best-of-jordan-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "5-days-best-of-jordan-tour",
+          "name": "5-Day Jordan Highlights: Petra & King’s Highway",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "5-Day Jordan Highlights: Petra & King’s Highway",
+          "description": "Explore Amman, Jerash, Madaba and Petra in five days, traveling along the historic King’s Highway through Jordan's archaeological and biblical landscapes.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/14/678649837c19f/Jerash-door-Amman.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

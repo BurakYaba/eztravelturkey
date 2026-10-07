@@ -1,0 +1,517 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/6-day-istanbul-and-cappadocia-tour/",
+  "path": "destinations/turkey-tours/06-to-09-days-tours/6-day-istanbul-and-cappadocia-tour",
+  "slug": "6-day-istanbul-and-cappadocia-tour",
+  "parent": "turkey-tours",
+  "category": "06-to-09-days-tours",
+  "title": "6-Day Istanbul & Cappadocia Discovery Tour",
+  "metaTitle": "Istanbul & Cappadocia in 6 Days | Turkey Tour",
+  "metaDescription": "Combine Istanbul's historic landmarks with Cappadocia's valleys and cave landscapes on a six-day journey connecting two of Turkey's signature destinations.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/6-day-istanbul-and-cappadocia-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "6–9 Day Turkey Tour Packages",
+    "6-Day Istanbul & Cappadocia Discovery Tour"
+  ],
+  "summary": "The 6-Day Istanbul & Cappadocia Tour gives you enough time to experience two very different sides of Turkey without turning the journey into a rushed highlights trip. In Istanbul, discover Hagia Sophia, the Blue Mosque and Topkapi Palace, then see the city from the Bosphorus. A short domestic flight takes you to Cappadocia, where underground cities, rock-cut valleys and fairy chimneys reveal an entirely different landscape.\nYou can travel on the dates that work for you, with adjustments possible where needed. We arrange selected 4-star hotels with breakfast, English-speaking local guides, two domestic flights, airport transfers, entrance fees and the guided sightseeing included in your itinerary.",
+  "facts": {
+    "duration": "5 Nights / 6 days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Two Domestic Flights",
+    "startingPrice": "€ 1,095 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 5,
+  "days": 6,
+  "price": {
+    "amount": 1095,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,095 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Cappadocia"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-Istanbul--Cappadocia--6-days.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "6-Day Istanbul & Cappadocia Discovery Tour Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "05 Nights / 06 Days",
+    "Istanbul • Cappadocia",
+    "Two Domestic Flights Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "Day 01",
+      "title": "Arrival in Istanbul",
+      "text": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "Day 02",
+      "title": "Istanbul Old City Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "Day 03",
+      "title": "Bosphorus Cruise & Flight to Cappadocia",
+      "text": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable Bosphorus cruise, sailing between Europe and Asia along one of the world’s most scenic waterways. After the tour, return to the hotel to collect your luggage and transfer to the airport at 15:00 for your flight to Nevsehir at 18:45. Upon arrival at 20:10, meet our representative and transfer to your hotel. Overnight in Cappadocia.",
+      "meals": "(Melas: Breakfast"
+    },
+    {
+      "dayLabel": "Day 04",
+      "title": "North Cappadocia Tour",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "Day 05",
+      "title": "South Cappadocia Tour & Flight to Istanbul",
+      "text": "After breakfast at 09:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. After the tour, transfer to Kayseri Airport for your flight to Istanbul at 18:30. Upon arrival at 20:000, meet and transfer to hotel. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "Day 06",
+      "title": "Departure from Istanbul",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport for your departure flight.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "5 nights accommodation at 4-star hotels with breakfast",
+    "4-day regular small group tour with English-speaking guide",
+    "Entrance fees, lunch, and transportation during tours",
+    "One-way domestic flight from Istanbul to Kayseri",
+    "One-way domestic flight from Kayseri to Istanbul",
+    "All airport, hotel, and port transfers within Turkey"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Tips for driver and guide",
+    "Meals not mentioned in the itinerary",
+    "Drinks during meals",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year.",
+    "Prices are per person, based on a minimum of 2 adults.",
+    "The tour can be customized.",
+    "Transfers include 1 luggage per person.",
+    "Domestic flight tickets cannot be changed once issued. A 100% cancellation fee applies.",
+    "Domestic flight and ferry schedules are subject to change."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee.",
+    "20–14 days before arrival: 50% cancellation fee.",
+    "13 days or less before arrival, or no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cappadocia-Ballon-2.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "6-Day Istanbul & Cappadocia Discovery Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cappadocia--Derinkuyu-Underground.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Derinkuyu underground city entrance, carved cave dwellings in Cappadocia Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cappadocia--1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Unforgettable Cappadocia balloon ride with Magnificent Travel"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hipodrome.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Hagia Sophia interior dome and Byzantine mosaics, Istanbul guided tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Bosphorus-Bridge.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Bosphorus Bridge connecting Europe and Asia in Istanbul"
+    }
+  ],
+  "related": [
+    {
+      "title": "7-Day Best of Turkey Tour: Four Iconic Destinations",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour/"
+    },
+    {
+      "title": "8-Day Turkey Express Tour: Istanbul to Ephesus",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/8-day-istanbul-cappadocia-ephesus-and-pamukkale-tour/"
+    },
+    {
+      "title": "8-Day Western Turkey Tour: Aegean Highlights",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/8-day-tour-in-turkey/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 6-Day Istanbul & Cappadocia Tour?",
+      "a": "The 6-Day Istanbul & Cappadocia Tour covers two of Turkey's most iconic destinations: Istanbul and Cappadocia. You will discover Istanbul's historic landmarks, including Hagia Sophia, the Blue Mosque, Topkapi Palace, and the Grand Bazaar, before exploring Cappadocia's fairy chimneys, underground cities, cave churches, and breathtaking valleys. The tour runs for 5 nights and 6 days."
+    },
+    {
+      "q": "How much does the 6-Day Istanbul & Cappadocia Tour cost?",
+      "a": "The tour starts from 1,095 euros per person for the 2026 season. The price includes accommodation, two domestic flights, guided sightseeing tours, entrance fees, selected meals, airport transfers, and hotel transfers. Final pricing may vary depending on travel dates, hotel category, and availability."
+    },
+    {
+      "q": "Are domestic flights included in this 6-day itinerary?",
+      "a": "Yes, the package includes two domestic flights. One flight operates from Istanbul to Cappadocia and the second flight returns from Cappadocia to Istanbul. These flights help maximize sightseeing time and provide a comfortable travel experience between destinations."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 5 nights at carefully selected 4-star hotels and boutique accommodations with daily breakfast. Hotels are chosen for their comfort, service quality, and convenient locations. All airport and hotel transfers throughout the itinerary are included."
+    },
+    {
+      "q": "Does the 6-day Istanbul and Cappadocia tour include a guide?",
+      "a": "Yes, the tour includes professional English-speaking guides during the scheduled sightseeing tours. As a small-group experience, it allows for a more personal atmosphere while your guide shares historical insights, cultural information, and local knowledge."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Turkey?",
+      "a": "Yes, this tour is one of the best options for first-time visitors to Turkey. It combines the country's most famous city with its most unique natural region, offering a balanced introduction to Turkey's history, culture, architecture, and landscapes."
+    },
+    {
+      "q": "How fit do I need to be for the 6-day tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through historic districts, museums, valleys, and archaeological areas. Cappadocia includes some walking on uneven terrain, but no strenuous hiking is required. Most travelers in average health can comfortably participate."
+    },
+    {
+      "q": "Can I add a hot air balloon ride in Cappadocia?",
+      "a": "The Cappadocia hot air balloon ride is not included in the standard package but can be arranged as an optional activity. It is one of Turkey's most popular experiences and offers spectacular views of the region's unique landscape. Early booking is highly recommended."
+    },
+    {
+      "q": "What is the cancellation policy for the Istanbul & Cappadocia Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional protection and flexibility."
+    },
+    {
+      "q": "Is the 6-Day Istanbul & Cappadocia Tour available all year and can it be customized?",
+      "a": "Yes, the tour operates throughout the year and can be customized according to your preferences. You can add extra nights in Istanbul or Cappadocia, upgrade hotel categories, include optional activities, or adjust the itinerary. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "6-Day Istanbul & Cappadocia Discovery Tour",
+          "description": "Combine Istanbul's historic landmarks with Cappadocia's valleys and cave landscapes on a six-day journey connecting two of Turkey's signature destinations.",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/6-day-istanbul-and-cappadocia-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/08/677e80491b897/Cappadocia-Ballon-2.jpg",
+            "width": 745,
+            "height": 549
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "5 nights accommodation at 4-star hotels with breakfast, 4-day regular small group tour with English-speaking guide, Entrance fees, lunch, and transportation during tours, One-way domestic flight from Istanbul to Kayseri, One-way domestic flight from Kayseri to Istanbul, All airport, hotel, and port transfers within Turkey"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Personal expenses, Tips for driver and guide, Meals not mentioned in the itinerary, Drinks during meals, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Istanbul",
+              "description": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel. \nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.\n\n",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Istanbul Old City  Walking Tour",
+              "description": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Bosphorus Cruise & Flight to Cappadocia",
+              "description": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable Bosphorus cruise, sailing between Europe and Asia along one of the world’s most scenic waterways. After the tour, return to the hotel to collect your luggage and transfer to the airport at 15:00 for your flight to Nevsehir at 18:45. Upon arrival at 20:10, meet our representative and transfer to your hotel. Overnight in Cappadocia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Melas: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "North Cappadocia Tour",
+              "description": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "South Cappadocia Tour & Flight to Istanbul",
+              "description": "After breakfast at 09:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. After the tour, transfer to Kayseri Airport for your flight to Istanbul at 18:30.  Upon arrival at 20:000, meet and transfer to hotel. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Istanbul",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport for your departure flight.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "6-day-istanbul-and-cappadocia-tour",
+          "name": "6-Day Istanbul & Cappadocia Discovery Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "6-Day Istanbul & Cappadocia Discovery Tour",
+          "description": "Combine Istanbul's historic landmarks with Cappadocia's valleys and cave landscapes on a six-day journey connecting two of Turkey's signature destinations.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/08/677e80491b897/Cappadocia-Ballon-2.jpg",
+            "width": 745,
+            "height": 549
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "6-Day Istanbul & Cappadocia Discovery Tour",
+          "productID": "669aa225336365fc0c0002b3",
+          "sku": "669aa225336365fc0c0002b3",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/08/677e80491b897/Cappadocia-Ballon-2.jpg",
+            "width": 745,
+            "height": 549
+          },
+          "description": "Combine Istanbul's historic landmarks with Cappadocia's valleys and cave landscapes on a six-day journey connecting two of Turkey's signature destinations.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1095",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/6-day-istanbul-and-cappadocia-tour",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

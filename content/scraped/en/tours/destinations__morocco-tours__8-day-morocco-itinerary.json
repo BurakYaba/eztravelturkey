@@ -1,0 +1,323 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-day-morocco-itinerary/",
+  "path": "destinations/morocco-tours/8-day-morocco-itinerary",
+  "slug": "8-day-morocco-itinerary",
+  "parent": "morocco-tours",
+  "category": null,
+  "title": "8-Day Classic Morocco Tour: Four Imperial Cities",
+  "metaTitle": "Morocco Imperial Cities | Classic 8-Day Tour",
+  "metaDescription": "Discover Casablanca, Rabat, Fez and Marrakech in 8 days on a classic Morocco route focused on historic medinas, royal heritage and imperial city culture.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-day-morocco-itinerary/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Best Morocco Tours & Holidays 2026–2027",
+    "8-Day Classic Morocco Tour: Four Imperial Cities"
+  ],
+  "summary": "The 11-Day Grand Morocco Coach Tour follows a small-group route from Marrakech through Morocco’s Atlantic cities, imperial centers and desert regions. Visit Essaouira, Casablanca, Rabat, Fez and Roman Volubilis before the journey turns south through Erfoud, Todra Gorge, Zagora and Ouarzazate. Ten nights allow these contrasting regions to be explored within one organized overland circuit.\nGuaranteed departures operate every Friday, with deluxe coach transportation connecting the route and carefully selected hotels used throughout the journey. While the core 11-day program follows a scheduled small-group format, private pre- and post-tour extensions can be customized around your arrival plans, interests or additional destinations in Morocco.",
+  "facts": {
+    "duration": "07 Nights / 08 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 1,675 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": 1675,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,675 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Casablanca",
+    "Fez",
+    "Marrakech",
+    "Rabat"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-Morocco-Vacation-Package--8-Days.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "8-Day Classic Morocco Tour: Four Imperial Cities Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "Explore the vibrant souks and historic landmarks of Marrakech",
+    "Discover the famous blue streets of Chefchaouen",
+    "Experience the ancient medina and rich history of Fez",
+    "Enjoy an unforgettable Sahara Desert experience near Erg Chebbi",
+    "Travel through stunning mountain landscapes and traditional Berber villages"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Casablanca",
+      "text": "Arrival at Airport and meet with our representative. Transfer to your hotel in Casablanca.\nHotel check-in after 14:00. The remainder of the day is at leisure. Overnight in Casablanca.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Casablanca to Fes (300 km)",
+      "text": "Explore Casablanca, Morocco’s economic capital. Visit the Habous District, Royal Palace, Mohammed V Square, and the Anfa residential area. See the exterior of the Hassan II Mosque. Optional lunch during the tour before continuing to Fez. Overnight in Fez.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Fez sightseeing",
+      "text": "Full-day tour of Fez, Morocco’s spiritual capital. Explore the Medieval Medina and traditional souks. Visit the Royal Palace of Fez, Bou Inania Madrasa or Attarine Medersa, and the Nejjarine Fountain. See the exterior of the University of al-Qarawiyyin Mosque. Optional lunch, dinner,, Overnight in Fez.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Fez, Volubilis, Meknes, Rabat (260km)",
+      "text": "Stop for a panoramic view of Moulay Idriss Zerhoun and visit the Roman ruins of Volubilis. Continue to Meknes, the Ismaili capital of Morocco. Optional lunch during the tour. Visit Bab Mansour, the Royal Stables, and the Jewish Quarter before continuing to Rabat. Overnight in Rabat.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Rabat to Marrakech (330km)",
+      "text": "Explore Rabat, the administrative capital of Morocco. Visit the Royal Palace of Rabat (Mechouar), Kasbah of the Udayas and its gardens, and the Hassan Tower. Optional lunch during the tour before continuing to Marrakech via highway. Overnight in Marrakech.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Marrakech",
+      "text": "Full-day tour of Marrakech, known as the “Ochre City.” Visit the Menara Gardens, Saadian Tombs, Bahia Palace, Koutoubia Mosque, and Dar Si Said Museum. Optional lunch during the tour. Explore the traditional souks and handicraft quarters before visiting the famous Jemaa el-Fnaa square with its lively entertainment. Optional dinner with traditional show. Overnight in Marrakech",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Marrakech to Agafay",
+      "text": "After breakfast, drive to the stone desert of Agafay Desert. Optional lunch during the tour. Optional activities including camel ride and quad biking are available. Dinner, Overnight under a desert tent in Agafay Desert.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Agafay Marrakech Departure",
+      "text": "Breakfast at the hotel and check-out\nTransfer to Marrakech Menara Airport for your return flight home",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "07 nights' hotel accommodation in the selected hotel category",
+    "Included Services",
+    "Deluxe air-conditioned transportation throughout the tour",
+    "For 1–4 participants: Private minivan with an English- or Spanish-speaking driver",
+    "For 5–10 participants: Private Mercedes Sprinter minibus with driver",
+    "Professional guided sightseeing tours throughout the itinerary",
+    "For 1–4 participants: Local English- or Spanish-speaking guides in Casablanca, Rabat, Meknes, Fez, and Marrakech",
+    "For 5–10 participants: Professional English- or Spanish-speaking guide throughout the entire tour",
+    "Entrance fees to all monuments and attractions mentioned in the itinerary",
+    "All applicable VAT and hotel stay taxes included"
+  ],
+  "excluded": [
+    "International and domestic flight tickets",
+    "Travel insurance",
+    "Personal expenses",
+    "Meals and drinks during meals unless mentioned",
+    "Optional lunches and dinners",
+    "Tips for luggage porters, restaurant staff, guide, and driver"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee.",
+    "20–14 days before arrival: 50% cancellation fee.",
+    "13 days or less before arrival, or no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Marrakech-11.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "8-Day Classic Morocco Tour: Four Imperial Cities"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Fez-1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning views across Tangier and Mediterranean Sea"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Marrakech-7.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning city views across Marrakech Morocco today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Essaouira--Morocco--.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous medieval city of Fez Morocco today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Casablanca-4.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic Casablanca city in Morocco today destination"
+    }
+  ],
+  "related": [
+    {
+      "title": "11-Day Grand Morocco Tour: Cities, Desert & Coast",
+      "url": "https://www.magnificenttravel.com/en/destinations/morocco-tours/11-days-morocco-coach-tour/"
+    },
+    {
+      "title": "9-Day Morocco Tour: Imperial Cities & Sahara",
+      "url": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-days-morocco-vacation-package/"
+    },
+    {
+      "title": "8-Day Morocco Group Tour: Cities & Atlantic Coast",
+      "url": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-days-morocco-group-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the Morocco Vacation Package – 8 Days?",
+      "a": "The Morocco Vacation Package – 8 Days covers Casablanca, Rabat, Fez, and Marrakech. This itinerary takes travelers through Morocco's most famous imperial cities, offering a perfect blend of history, culture, architecture, and authentic Moroccan experiences. The tour runs for 7 nights and 8 days."
+    },
+    {
+      "q": "How much does the Morocco Vacation Package – 8 Days cost?",
+      "a": "The tour starts from €1,675 per person for the 2026 season. The price includes accommodation, private land transportation, guided sightseeing tours, selected meals, and transfers according to the itinerary. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "Is transportation included throughout the tour?",
+      "a": "Yes, private land transportation is included throughout the journey. Comfortable vehicles are used for transfers and sightseeing, ensuring a convenient and enjoyable travel experience between destinations."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation in carefully selected hotels and traditional Moroccan riads with daily breakfast. Properties are chosen for their comfort, service quality, and authentic Moroccan atmosphere."
+    },
+    {
+      "q": "Does the tour include a guide?",
+      "a": "Yes, professional English-speaking guides accompany the scheduled sightseeing tours. Your guide will provide fascinating insights into Morocco's history, culture, architecture, and local traditions throughout the tour."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Morocco?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to explore Morocco's most important cultural and historical destinations. It provides an excellent introduction to the country's imperial cities and rich heritage."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through medinas, historical sites, local markets, and city centers. Most visitors with average fitness levels can comfortably participate."
+    },
+    {
+      "q": "What are the highlights of Casablanca, Rabat, Fez, and Marrakech?",
+      "a": "Casablanca is home to the magnificent Hassan II Mosque and Morocco's modern commercial center. Rabat offers beautiful historical monuments and coastal charm as the nation's capital. Fez is famous for its UNESCO-listed medieval medina, traditional craftsmanship, and ancient universities. Marrakech captivates visitors with its colorful souks, palaces, gardens, and lively Jemaa el-Fnaa Square."
+    },
+    {
+      "q": "What is the cancellation policy for the Morocco Vacation Package – 8 Days?",
+      "a": "Free cancellation is available up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the Morocco Vacation Package – 8 Days be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights, upgrade accommodations, include Chefchaouen, Essaouira, or a Sahara Desert extension, or modify the itinerary to suit your interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "8-Day Classic Morocco Tour: Four Imperial Cities",
+          "description": "Discover Casablanca, Rabat, Fez and Marrakech in 8 days on a classic Morocco route focused on historic medinas, royal heritage and imperial city culture.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/15/67879ba27e1d0/Marrakech-11.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "8-day-morocco-itinerary",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "8-day-morocco-itinerary",
+          "name": "8-Day Classic Morocco Tour: Four Imperial Cities",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "8-Day Classic Morocco Tour: Four Imperial Cities",
+          "description": "Discover Casablanca, Rabat, Fez and Marrakech in 8 days on a classic Morocco route focused on historic medinas, royal heritage and imperial city culture.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/15/67879ba27e1d0/Marrakech-11.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

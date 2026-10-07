@@ -1,0 +1,364 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-and-jordan-tours/13-day-turkey-and-jordan-tour/",
+  "path": "destinations/turkey-and-jordan-tours/13-day-turkey-and-jordan-tour",
+  "slug": "13-day-turkey-and-jordan-tour",
+  "parent": "turkey-and-jordan-tours",
+  "category": null,
+  "title": "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea",
+  "metaTitle": "Grand Turkey & Jordan | 13-Day Complete Journey",
+  "metaDescription": "Explore Istanbul, Cappadocia, Ephesus and Pamukkale before Petra, Wadi Rum and the Dead Sea on a 13-day journey across Turkey and Jordan.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-and-jordan-tours/13-day-turkey-and-jordan-tour/",
+  "lastUpdated": "2026-09-16",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey & Jordan Tours & Vacation Packages 2026–2027",
+    "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea"
+  ],
+  "summary": "The 13-Day Turkey & Jordan Tour gives Turkey a broader western route before continuing into Jordan’s archaeological heartland. Explore Istanbul and Cappadocia, then travel west to Pamukkale and ancient Ephesus before flying to Amman. The Jordan section continues to Petra, followed by an overnight desert camp in Wadi Rum and time at the Dead Sea. This combination adds Turkey’s Aegean heritage to Jordan’s historic and desert landscapes without introducing additional countries.\nThe escorted program includes selected 4-star hotels, one night in a desert camp, breakfast, guided sightseeing, entrance fees, airport transfers, three domestic flights and private transportation throughout Jordan.",
+  "facts": {
+    "duration": "12 Nights / 13 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Grop",
+    "flights": "Yes, Three Domestic Flights",
+    "startingPrice": "€ 2,875 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 12,
+  "days": 13,
+  "price": {
+    "amount": 2875,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,875 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Cappadocia",
+    "Pamukkale",
+    "Ephesus",
+    "Amman",
+    "Petra",
+    "Wadi rum",
+    "Dead Sea"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-Turkey--Jordan-Tour-13-Days.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "12 Nights / 13 Days",
+    "Istanbul • Cappadocia • Pamukkale • Ephesus • Amman • Petra • Wadi Rum • Dead Sea",
+    "Three Domestic Flights Included",
+    "Small Group Tour",
+    "Carefully Selected 4-Star Hotels & Desert Camp",
+    "Year-Round Departures",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 1",
+      "title": "Arrival to Istanbul",
+      "text": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Istanbul Oldcity Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Bosphorus Cruise - Flight to Cappadocia",
+      "text": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable Bosphorus cruise, sailing between Europe and Asia along one of the world’s most scenic waterways. Transfer to the airport at 15:00 for your flight to Nevsehir at 18:45. Upon arrival at 20:10, and transfer to your hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "North Cappadocia Tour",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast and Lunch, "
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "South Cappadocia tour- Flight to Izmir",
+      "text": "After breakfast at 09:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. After the tour, transfer to Kayseri Airport for your flight to Izmir at 22:50. Upon arrival at 00:20, meet and transfer to Kusadasi. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Full day Ephesus tour",
+      "text": "After breakfast at 09:00, enjoy a guided tour of Ephesus, one of the best-preserved ancient cities in the world. Enter through the Magnesia Gate and walk past remarkable landmarks including the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the impressive Great Theatre, where Saint Paul once preached. Continue to the ruins of the Temple of Artemis, one of the Seven Wonders of the Ancient World. After lunch, visit the sacred House of the Virgin Mary. Overnight in Kusadasi",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Pamukkale tour - Flight to Istanbul.",
+      "text": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces, known as the “Cotton Castle,” and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, transfer to Denizli Airport for your flight to Istanbul at 21:15. Upon arrival at 22:35, meet and transfer to your hotel. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Istanbul to Amman By Flight",
+      "text": "Breakfast. Check out and transfer to the airport for your flight to Amman.\nUpon arrival Amman Airport, meet our representative and transfer to your hotel.\nHotel check-in after 14:00. The remainder of the day is at leisure. Overnight in Amman.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Visit Amman, Jerash and Aljoun",
+      "text": "Breakfast at the hotel in Amman. Enjoy a panoramic city tour, including visits to the Amman Citadel, Roman Theatre, and the Folklore Museum. Continue to Ajloun Castle before visiting the ancient Roman city of Jerash, including Hadrian’s Arch, the Hippodrome, the Forum, and its famous colonnaded streets. Return to Amman. Overnight in Amman.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Madaba, Mt Nebo and Kerak",
+      "text": "Visit St. George’s Church in Madaba and see the famous mosaic map of the Holy Land. Continue to Mount Nebo for panoramic views over the Jordan Valley. Drive along the scenic Wadi Mujib route to visit Kerak Castle before continuing to Petra. Overnight in Petra.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 11",
+      "title": "Visit Petra and Wadi Rum",
+      "text": "Breakfast at the hotel in Petra. Explore the ancient city of Petra, including the Siq, the famous Al-Khazneh (Treasury), the Street of Facades, Royal Tombs, and Pharaoh’s Castle. An optional horse ride is available at the entrance of Petra. Continue to Wadi Rum and enjoy a 4x4 jeep safari through the desert landscape. Overnight at a desert camp in Wadi Rum.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 12",
+      "title": "Visit Dead Seaand then return to Amman",
+      "text": "Breakfast at the desert camp in Wadi Rum. Proceed to the Dead Sea, the lowest point on Earth.\nEnjoy free time to relax and float in its mineral-rich waters before continuing to Amman. Overnight in Amman.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 13",
+      "title": "Transfer to Amman Airport",
+      "text": "Breakfast at the hotel in Amman\nCheck-out and transfer to Queen Alia International Airport for your return flight",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "11 nights' accommodation in 4-star hotels on a bed & breakfast basis",
+    "01 night in a traditional Bedouin desert camp in Wadi Rum, including breakfast",
+    "Turkey Included Services",
+    "6-day regular small group tour with a professional English-speaking guide",
+    "Entrance fees, lunches, and transportation included during the guided tours",
+    "Domestic flights: Istanbul → Cappadocia, Kayseri → Izmir, and Pamukkale → Istanbul",
+    "All airport, hotel, and transfer services within Turkey",
+    "Jordan Included Services",
+    "Meet and assist service upon arrival and departure",
+    "Private transportation in a modern air-conditioned vehicle with an English-speaking driver throughout the Jordan tour",
+    "Local English-speaking guides in Petra and Jerash",
+    "Entrance fees to all sites mentioned in the itinerary",
+    "Complimentary 600-metre horse ride in Petra (from the Visitor Center to the entrance of the Siq)",
+    "2-hour 4×4 Jeep safari in Wadi Rum",
+    "One complimentary bottle of mineral water per person per day during the Jordan tour",
+    "All airport, hotel, and transfer services within Jordan"
+  ],
+  "excluded": [
+    "International flight: Istanbul → Amman",
+    "Personal expenses",
+    "Gratuities for driver and guide",
+    "Meals not mentioned",
+    "Drinks of any kind",
+    "Hot air balloon ride in Cappadocia",
+    "Travel insurance"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% fee.",
+    "Cancellation 20–14 days before arrival: 50% fee.",
+    "Cancellation 13 days or less before arrival, or no-show: 100% fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Umm-Qais--10.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Kusadasi--3.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Istanbul waterfront landmarks viewed from the Bosphorus"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Wadi-Rum--1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous filming location in Wadi Rum desert"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cappadocia-hot-air-balloon-.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Turkey travel experience in Cappadocia hot air balloons"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Istanbul--14.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Bosphorus shoreline featuring iconic Istanbul attractions"
+    }
+  ],
+  "related": [
+    {
+      "title": "11-Day Turkey & Petra Cultural Heritage Journey",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-jordan-tours/11-day-turkey-and-jordan-tour/"
+    },
+    {
+      "title": "9-Day Istanbul, Petra & Wadi Rum Heritage Journey",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-jordan-tours/9-day-turkey-and-jordan-trip/"
+    },
+    {
+      "title": "9-Day Cappadocia, Petra & Wadi Rum Adventure",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-jordan-tours/9-day-best-of-turkey-and-jordan-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the Turkey & Jordan Tour – 13 Days?",
+      "a": "The 13-Day Turkey & Jordan Tour combines the highlights of Turkey and Jordan. The itinerary includes Istanbul, Cappadocia, Pamukkale, and Ephesus in Turkey, along with Amman, Petra, Wadi Rum, and the Dead Sea in Jordan. This journey offers a perfect blend of ancient civilizations, stunning landscapes, cultural heritage, and world-famous archaeological sites. The tour runs for 12 nights and 13 days."
+    },
+    {
+      "q": "How much does the Turkey & Jordan Tour – 13 Days cost?",
+      "a": "The tour starts from €2,875 per person for the 2026 season. The price includes accommodation, guided sightseeing tours, selected meals, airport and hotel transfers, domestic transportation, and four domestic flights. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "Are flights included in the package?",
+      "a": "Yes, four domestic flights are included within the itinerary. These flights help maximize sightseeing time and ensure comfortable travel between major destinations. International flights are not included unless specifically stated."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation in carefully selected hotels throughout Turkey and Jordan. Daily breakfast is included, and additional meals may be provided according to the itinerary. Hotels are chosen for their comfort, service quality, and convenient locations."
+    },
+    {
+      "q": "Does the tour include guides?",
+      "a": "Yes, professional English-speaking guides accompany the scheduled sightseeing tours in both Turkey and Jordan. Your guides will provide expert insights into the history, archaeology, culture, and traditions of each destination."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Turkey and Jordan?",
+      "a": "Yes, this tour is ideal for first-time visitors. It combines the most famous attractions of both countries, providing an excellent introduction to the region's rich history, culture, and natural beauty."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historical districts, desert landscapes, and uneven terrain. Petra requires a considerable amount of walking, while most other sightseeing is suitable for visitors with average fitness levels."
+    },
+    {
+      "q": "What are the highlights of the tour?",
+      "a": "Highlights include the Hagia Sophia, Blue Mosque, Grand Bazaar, and Bosphorus in Istanbul; the fairy chimneys of Cappadocia; the white travertine terraces of Pamukkale; the ancient city of Ephesus; the Roman ruins of Amman; the spectacular rose-red city of Petra; the dramatic desert scenery of Wadi Rum; and the unique floating experience in the Dead Sea."
+    },
+    {
+      "q": "What is the cancellation policy for the Turkey & Jordan Tour – 13 Days?",
+      "a": "Free cancellation is available up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, airline conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the Turkey & Jordan Tour – 13 Days be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights, upgrade hotel categories, include additional destinations such as Aqaba or Jerash, or modify the itinerary to suit your travel interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea",
+          "description": "Explore Istanbul, Cappadocia, Ephesus and Pamukkale before Petra, Wadi Rum and the Dead Sea on a 13-day journey across Turkey and Jordan.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/18/678bb6ce6a7a7/Umm-Qais--10.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "13-day-turkey-and-jordan-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "13-day-turkey-and-jordan-tour",
+          "name": "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea",
+          "description": "Explore Istanbul, Cappadocia, Ephesus and Pamukkale before Petra, Wadi Rum and the Dead Sea on a 13-day journey across Turkey and Jordan.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/18/678bb6ce6a7a7/Umm-Qais--10.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

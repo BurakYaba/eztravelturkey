@@ -1,0 +1,617 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour/",
+  "path": "destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour",
+  "slug": "12-days-athens-mykonos-santorini-and-crete-tour",
+  "parent": "greece-tours",
+  "category": "greece-travel-packages",
+  "title": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+  "metaTitle": "Athens to Crete | 12-Day Greek Islands Journey",
+  "metaDescription": "Explore Athens, Mykonos, Santorini and Crete in 12 days, combining classical history, famous Cycladic islands and the distinctive culture of Crete.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Travel Packages 2026–2027 | Islands & Athens",
+    "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete"
+  ],
+  "summary": "The 12-Day Athens, Mykonos, Santorini & Crete Tour moves from the Greek capital through the Cyclades before finishing on the country’s largest island. Start in Athens with the Acropolis and historic center, then continue to Mykonos for its beaches and lively towns, followed by Santorini and its volcanic caldera. Crete adds another dimension, with a deeper local history, distinctive cuisine and a landscape that feels quite different from the Cycladic islands.\nThe journey is scheduled between April and October to suit seasonal connections. Included are selected 4-star hotels with breakfast, English-speaking local guides, one domestic flight, speed ferry tickets, airport and port transfers, and scheduled sightseeing.",
+  "facts": {
+    "duration": "11 Nights / 12 days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 2,495 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 11,
+  "days": 12,
+  "price": {
+    "amount": 2495,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,495 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Mykonos",
+    "Santorini",
+    "Crete"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-12-Day-Greece-Island--Athens-Tour.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "11 Nights / 12 Days",
+    "Athens • Mykonos • Santorini • Crete",
+    "One Domestic Flight & Speed Ferry Tickets Included",
+    "Small Group or Private Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Half day Morning Athens City tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Ferry to Mykonos",
+      "text": "Breakfast and check-out from the hotel.\nTransfer to the port for your Seajet ferry to Mykonos.\nArrival and transfer to your hotel. Rest of the day at leisure. Overnight in Mykonos.\nOptional:Domestic flights to Mykonos are available upon request.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Free day in Mykonos",
+      "text": "Breakfast at the hotel. Free day in Mykonos.\nRelax on the island’s beautiful beaches or explore Mykonos Town.\nOptional visit to Delos, one of Greece’s most important archaeological islands.\nEnjoy Mykonos’ famous nightlife in the evening. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Free day in Mykonos",
+      "text": "Breakfast at the hotel. Enjoy a free day in Mykonos.\nRelax on the beaches, explore Mykonos Town, or visit nearby Delos.\nIn the evening, experience the island’s famous nightlife. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Ferry to Santorini",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. Rest of the day at leisure. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Free in Santorini",
+      "text": "Breakfast at the hotel. Free day in Santorini.\nRelax on the island’s famous black, red, or golden sand beaches.\nExplore Fira or join optional boat and volcano excursions available on the island.\nOvernight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Free in Santorini",
+      "text": "Breakfast at the hotel. Free day in Santorini.\nExplore the villages of Fira and Oia. Enjoy scenic views, local shops, and cliffside cafes.\nRelax on Santorini’s famous black, red, and golden sand beaches.\nOptional tours and excursions are available upon request.\nOvernight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Ferry to Heraklion (Crete)",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Crete.\nArrival and transfer to your hotel. Rest of the day at leisure. Overnight in Crete.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Free day in Heraklion",
+      "text": "Breakfast at the hotel.\nEnjoy a free day in Heraklion, the capital of Crete. We recommend visiting the famous Palace of Knossos and the Heraklion Archaeological Museum. You may also explore the city’s local cafés, shops, and seaside promenade. Overnight in Heraklion.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 11",
+      "title": "Flight to Athens",
+      "text": "Breakfast and check-out from the hotel. Free time at leisure until transfer to the airport for your domestic flight to Athens.\nUpon arrival, meet and transfer to your hotel. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 12",
+      "title": "Departure from Athens",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "3 nights accommodation in Athens",
+    "3 nights accommodation in Mykonos",
+    "3 nights accommodation in Santorini",
+    "2 nights accommodation in Heraklion",
+    "Half-day Athens sightseeing tour including the Acropolis of Athens",
+    "Ferry tickets:",
+    "Port of Piraeus – Mykonos",
+    "Mykonos – Santorini",
+    "Santorini – Heraklion (Crete)",
+    "Entrance fees during guided sightseeing tours",
+    "All airport, port, and hotel transfers in Athens and the islands"
+  ],
+  "excluded": [
+    "Air tickets from Heraklion to Athens",
+    "Personal expenses",
+    "Driver and guide gratuities",
+    "Meals not mentioned",
+    "Drinks and beverages",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily from 01 April to 15 October",
+    "The itinerary can be customized upon request"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferries are non-refundable once issued (100% cancellation fees apply)",
+    "Cancellation 30+ days before arrival: No fee",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-4.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Crete-4.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Popular Greek island destination Mykonos during summer"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Mykonos-17.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning coastline across Crete Island Greece destination"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-13.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning sunset views from Oia Santorini Greece"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-8.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient civilization preserved in Athens Greece destination"
+    }
+  ],
+  "related": [
+    {
+      "title": "12-Day Greek Island Hopping: Mykonos, Paros & Santorini",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-greece-trip-package/"
+    },
+    {
+      "title": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/9-days-greece-tour/"
+    },
+    {
+      "title": "10-Day Greece Tour: Athens, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/10-day-greece-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 12-Day Greece Island & Athens Tour?",
+      "a": "The 12-Day Greece Island & Athens Tour covers Athens, Mykonos, Crete, and Santorini. You will explore Athens' ancient landmarks, enjoy the cosmopolitan atmosphere of Mykonos, discover the rich history and diverse landscapes of Crete, and experience Santorini's world-famous sunsets and caldera views. The tour runs for 11 nights and 12 days."
+    },
+    {
+      "q": "How much does the 12-Day Greece Island & Athens Tour cost?",
+      "a": "The tour starts from €2,495 per person for the 2026 season. The price includes accommodation, domestic speed ferry tickets, guided sightseeing tours, selected meals, and all airport, hotel, and port transfers specified in the itinerary. Final pricing may vary depending on travel dates and hotel availability."
+    },
+    {
+      "q": "Are ferry tickets included in this Greece island-hopping itinerary?",
+      "a": "Yes, all required domestic speed ferry tickets between Athens, Mykonos, Crete, and Santorini are included. These ferry journeys offer a comfortable and scenic way to travel between some of Greece's most popular islands."
+    },
+    {
+      "q": "Are international flights included in the package?",
+      "a": "No, international flights are not included in the tour price. Travelers are responsible for arranging their own flights to and from Greece. Magnificent Travel can assist with travel planning and recommendations if needed."
+    },
+    {
+      "q": "Does the 12-day Greece Island & Athens Tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical insights, cultural information, and local expertise while helping you discover Greece's most famous destinations."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece?",
+      "a": "Yes, this tour is ideal for first-time visitors seeking a combination of ancient history, island culture, beautiful beaches, and spectacular scenery. It offers an excellent introduction to both mainland Greece and the Greek islands."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through archaeological sites, island villages, ferry ports, and historic districts. Most travelers in average health can comfortably participate in the itinerary."
+    },
+    {
+      "q": "What are the highlights of Mykonos, Crete, and Santorini?",
+      "a": "Mykonos is famous for its whitewashed streets, beaches, windmills, and lively atmosphere. Crete offers fascinating archaeological sites, traditional villages, beautiful beaches, and authentic Greek culture. Santorini is renowned for its dramatic caldera views, blue-domed churches, volcanic landscapes, and unforgettable sunsets."
+    },
+    {
+      "q": "What is the cancellation policy for the Greece Island & Athens Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, ferry conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 12-Day Greece Island & Athens Tour available all year and can it be customized?",
+      "a": "The tour operates throughout the year, subject to seasonal ferry schedules. You can extend your stay in Athens, Mykonos, Crete, or Santorini, upgrade hotel categories, add optional excursions, or modify the itinerary according to your preferences. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+          "description": "Explore Athens, Mykonos, Santorini and Crete in 12 days, combining classical history, famous Cycladic islands and the distinctive culture of Crete.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/6782c88c93f60/Santorini-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "3 nights accommodation in Athens, 3 nights accommodation in Mykonos, 3 nights accommodation in Santorini, 2 nights accommodation in Heraklion, Half-day Athens sightseeing tour including the Acropolis of Athens, Ferry tickets:, Port of Piraeus – Mykonos, Mykonos – Santorini, Santorini – Heraklion (Crete), Entrance fees during guided sightseeing tours, All airport, port, and hotel transfers in Athens and the islands"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Air tickets from Heraklion to Athens, Personal expenses, Driver and guide gratuities, Meals not mentioned, Drinks and beverages, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Athens  ",
+              "description": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Half day Morning Athens City tour   ",
+              "description": "Breakfast at the hotel. \nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Mykonos",
+              "description": "Breakfast and check-out from the hotel.\nTransfer to the port for your Seajet ferry to Mykonos.\nArrival and transfer to your hotel. Rest of the day at leisure. Overnight in Mykonos.\nOptional:Domestic flights to Mykonos are available upon request.\n\n",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free day in Mykonos   ",
+              "description": "Breakfast at the hotel. Free day in Mykonos. \nRelax on the island’s beautiful beaches or explore Mykonos Town.\nOptional visit to Delos, one of Greece’s most important archaeological islands.\nEnjoy Mykonos’ famous nightlife in the evening.  Overnight in Mykonos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free day in Mykonos",
+              "description": "Breakfast at the hotel. Enjoy a free day in Mykonos. \nRelax on the beaches, explore Mykonos Town, or visit nearby Delos.\nIn the evening, experience the island’s famous nightlife.  Overnight in Mykonos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Santorini",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. Rest of the day at leisure.  Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free in Santorini ",
+              "description": "Breakfast at the hotel. Free day in Santorini. \nRelax on the island’s famous black, red, or golden sand beaches.\nExplore Fira or join optional boat and volcano excursions available on the island.\nOvernight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": " Free in Santorini",
+              "description": "Breakfast at the hotel. Free day in Santorini.\nExplore the villages of Fira and Oia.  Enjoy scenic views, local shops, and cliffside cafes.\nRelax on Santorini’s famous black, red, and golden sand beaches.\nOptional tours and excursions are available upon request.\nOvernight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Heraklion (Crete)",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Crete.\nArrival and transfer to your hotel.  Rest of the day at leisure. Overnight in Crete.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free day in Heraklion  ",
+              "description": "Breakfast at the hotel.\nEnjoy a free day in Heraklion, the capital of Crete. We recommend visiting the famous Palace of Knossos and the Heraklion Archaeological Museum. You may also explore the city’s local cafés, shops, and seaside promenade. Overnight in Heraklion.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Athens",
+              "description": "Breakfast and check-out from the hotel. Free time at leisure until transfer to the airport for your domestic flight to Athens. \nUpon arrival, meet and transfer to your hotel. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Athens",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "12-days-athens-mykonos-santorini-and-crete-tour",
+          "name": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+          "description": "Explore Athens, Mykonos, Santorini and Crete in 12 days, combining classical history, famous Cycladic islands and the distinctive culture of Crete.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/6782c88c93f60/Santorini-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+          "productID": "669e5618336365529400019f",
+          "sku": "669e5618336365529400019f",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/6782c88c93f60/Santorini-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Explore Athens, Mykonos, Santorini and Crete in 12 days, combining classical history, famous Cycladic islands and the distinctive culture of Crete.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "2495",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

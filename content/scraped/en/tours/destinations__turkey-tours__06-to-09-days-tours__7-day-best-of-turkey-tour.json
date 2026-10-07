@@ -1,0 +1,537 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour/",
+  "path": "destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour",
+  "slug": "7-day-best-of-turkey-tour",
+  "parent": "turkey-tours",
+  "category": "06-to-09-days-tours",
+  "title": "7-Day Best of Turkey Tour: Four Iconic Destinations",
+  "metaTitle": "One Week in Turkey | 7-Day Classic Itinerary",
+  "metaDescription": "Spend one week exploring Istanbul, Cappadocia, Pamukkale and Ephesus on a compact journey connecting four of Turkey's most celebrated destinations.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "6–9 Day Turkey Tour Packages",
+    "7-Day Best of Turkey Tour: Four Iconic Destinations"
+  ],
+  "summary": "The 7-Day Best of Turkey Tour covers Istanbul, Cappadocia, Pamukkale and Ephesus in a week, making it well suited to travelers who want to see Turkey’s major highlights within a limited schedule. Explore Istanbul’s Ottoman and Byzantine heritage, experience Cappadocia’s valleys and fairy chimneys, walk along Pamukkale’s white travertine terraces and discover the ancient streets of Ephesus.\nThe tour operates year-round and can be adapted around your preferred travel dates. Accommodation is arranged in selected 4-star hotels with breakfast, with English-speaking local guides leading the included visits. Two domestic flights, one overnight coach, airport transfers and scheduled sightseeing are also included.",
+  "facts": {
+    "duration": "6 Nights / 7 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Two Domestic Flights",
+    "startingPrice": "€ 1,275 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 6,
+  "days": 7,
+  "price": {
+    "amount": 1275,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,275 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Cappadocia",
+    "Pamukkale",
+    "Ephesus"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-7Day-Best-Turkey-Tour.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "7-Day Best of Turkey Tour: Four Iconic Destinations Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "06 Nights / 07 Days",
+    "Istanbul • Cappadocia • Pamukkale • Ephesus",
+    "Two Domestic Flights & Overnight Coach Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Istanbul",
+      "text": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Istanbul Old City Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Flight to Nevsehir & North Cappadocia Tour",
+      "text": "At 03:45, transfer to Istanbul Airport for your flight to Nevsehir at 06:35.\nUpon arrival at 08:00, begin a full-day tour of North Cappadocia. Visit Uchisar Castle, Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the towns of Urgup and Avanos, known for traditional pottery-making. Optional visit to a Turkish rug and carpet workshop. Overnight in Cappadocia.",
+      "meals": "Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Cappadocia Tour & Overnight Coach to Pamukkale",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast between 10:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the historic village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch in Soğanlı Village. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most impressive underground settlements.\nAt 20:00, depart by overnight intercity coach to Pamukkale.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Pamukkale Tour & Transfer to Kusadasi",
+      "text": "At 06:00, arrival in Pamukkale, meet and transfer to your hotel for half-day check-in and breakfast. At 10:30, visit the famous white travertine terraces of Pamukkale and explore the ancient city of Hierapolis. Guests may also swim at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). Please note that the drive to/from Pamukkale is approximately 3 hours each way. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Ephesus Tour & Flight to Istanbul",
+      "text": "After breakfast at 09:00, enjoy a guided tour of Ephesus, visiting highlights such as the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the Great Theatre. Continue to the ruins of the Temple of Artemis, followed by lunch and a visit to the House of the Virgin Mary. After the tour, transfer to Izmir Airport for your evening flight to Istanbul at 19:00. Upon arrival at 20:00, meet and transfer to your hotel. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Departure from Istanbul",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "6 nights accommodation at 4-star hotels with breakfast",
+    "1 night overnight intercity coach from Cappadocia to Pamukkale",
+    "5-day regular small group tour with English-speaking guide",
+    "Entrance fees, lunch, and transportation during tours",
+    "One-way domestic flight from Istanbul to Kayseri",
+    "One-way domestic flight from Izmir to Istanbul",
+    "All airport, hotel, and port transfers within Turkey"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Tips for driver and guide",
+    "Meals not mentioned in the itinerary",
+    "Drinks during meals",
+    "Hot air balloon ride in Cappadocia",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year.",
+    "Prices are per person, based on a minimum of 2 adults.",
+    "The tour can be customized.",
+    "Transfers include 1 luggage per person.",
+    "Domestic flight tickets cannot be changed once issued. A 100% cancellation fee applies.",
+    "Domestic flight and ferry schedules are subject to change."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee.",
+    "20–14 days before arrival: 50% cancellation fee.",
+    "13 days or less before arrival, or no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Ephesus-4.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "7-Day Best of Turkey Tour: Four Iconic Destinations"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Galata-Tower-istanbul.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Beautiful view of Suleymaniye Mosque in Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hot-Air-Ballon-Cappadocia.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Iconic Cappadocia landscape with morning balloon flights"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale-7.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "White travertine terraces of Pamukkale Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hot-Air-Balloon-Capadocia.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Cappadocia valleys from hot air balloon ride in Turkey"
+    }
+  ],
+  "related": [
+    {
+      "title": "8-Day Turkey Express Tour: Istanbul to Ephesus",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/8-day-istanbul-cappadocia-ephesus-and-pamukkale-tour/"
+    },
+    {
+      "title": "8-Day Western Turkey Tour: Aegean Highlights",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/8-day-tour-in-turkey/"
+    },
+    {
+      "title": "10-Day Central Turkey Tour: Cappadocia to Didyma",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/10-day-istanbul-cappadocia-pamukkale-and-ephesus-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 7 Day Best Turkey Tour?",
+      "a": "The 7 Day Best Turkey Tour covers Istanbul, Cappadocia, Pamukkale, and Ephesus. You will explore Istanbul's world-famous landmarks, discover Cappadocia's fairy chimneys and underground cities, visit Pamukkale's spectacular white travertine terraces, and walk through the ancient city of Ephesus, one of the best-preserved archaeological sites in the Mediterranean. The tour runs for 6 nights and 7 days."
+    },
+    {
+      "q": "How much does the 7 Day Best Turkey Tour cost?",
+      "a": "The tour starts from €1,275 per person for the 2026 season. The price includes accommodation, two domestic flights, guided sightseeing tours, entrance fees, selected meals, airport transfers, and hotel transfers. Final pricing may vary depending on travel dates, hotel category, and availability."
+    },
+    {
+      "q": "Are domestic flights included in this 7-day itinerary?",
+      "a": "Yes, the package includes two domestic flights. These flights reduce travel time between destinations and allow you to spend more time exploring Turkey's most famous historical and natural attractions."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 6 nights at carefully selected 4-star hotels and boutique accommodations with daily breakfast. Hotels are chosen for their comfort, service quality, and convenient locations near major attractions. All airport and hotel transfers throughout the itinerary are included."
+    },
+    {
+      "q": "Does the 7 Day Best Turkey Tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during all scheduled sightseeing tours. As part of the small-group experience, your guide will provide historical insights, cultural background, and local expertise while ensuring a smooth and enjoyable journey."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Turkey?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to experience Turkey's most iconic destinations in a single trip. It combines history, culture, archaeology, and natural beauty, making it one of the most comprehensive introductions to Turkey."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historic districts, and areas with uneven terrain. Sites such as Ephesus, Pamukkale, and Cappadocia require moderate walking, but most travelers in average health can comfortably participate."
+    },
+    {
+      "q": "Can I add a hot air balloon ride in Cappadocia?",
+      "a": "The Cappadocia hot air balloon ride is not included in the standard package but can be arranged as an optional activity. Since balloon flights are weather-dependent and highly popular, advance reservations are strongly recommended."
+    },
+    {
+      "q": "What is the cancellation policy for the 7 Day Best Turkey Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 7 Day Best Turkey Tour available all year and can it be customized?",
+      "a": "Yes, the tour operates throughout the year and can be customized according to your preferences. You can extend your stay in Istanbul, Cappadocia, Pamukkale, or Ephesus, upgrade hotel categories, add optional excursions, or modify the itinerary. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "7-Day Best of Turkey Tour: Four Iconic Destinations",
+          "description": "Spend one week exploring Istanbul, Cappadocia, Pamukkale and Ephesus on a compact journey connecting four of Turkey's most celebrated destinations.",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/09/677fa15eee4ed/Ephesus-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "6 nights accommodation at 4-star hotels with breakfast, 1 night overnight intercity coach from Cappadocia to Pamukkale, 5-day regular small group tour with English-speaking guide, Entrance fees, lunch, and transportation during tours, One-way domestic flight from Istanbul to Kayseri, One-way domestic flight from Izmir to Istanbul, All airport, hotel, and port transfers within Turkey"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Personal expenses, Tips for driver and guide, Meals not mentioned in the itinerary, Drinks during meals, Hot air balloon ride in Cappadocia, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Istanbul",
+              "description": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel. \nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Istanbul Old City Walking Tour",
+              "description": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Nevsehir & North Cappadocia Tour",
+              "description": "At 03:45, transfer to Istanbul Airport for your flight to Nevsehir at 06:35. \nUpon arrival at 08:00, begin a full-day tour of North Cappadocia. Visit Uchisar Castle, Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the towns of Urgup and Avanos, known for traditional pottery-making. Optional visit to a Turkish rug and carpet workshop.  Overnight in Cappadocia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Meals: Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Cappadocia Tour & Overnight Coach to Pamukkale",
+              "description": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast between 10:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the historic village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch in Soğanlı Village. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most impressive underground settlements. \nAt 20:00, depart by overnight intercity coach to Pamukkale.\n",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Pamukkale Tour & Transfer to Kusadasi",
+              "description": "At 06:00, arrival in Pamukkale, meet and transfer to your hotel for half-day check-in and breakfast. At 10:30, visit the famous white travertine terraces of Pamukkale and explore the ancient city of Hierapolis. Guests may also swim at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). Please note that the drive to/from Pamukkale is approximately 3 hours each way. Overnight in Kusadasi.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ephesus Tour & Flight to Istanbul",
+              "description": "After breakfast at 09:00, enjoy a guided tour of Ephesus, visiting highlights such as the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the Great Theatre. Continue to the ruins of the Temple of Artemis, followed by lunch and a visit to the House of the Virgin Mary. After the tour, transfer to Izmir Airport for your evening flight to Istanbul at 19:00.  Upon arrival at 20:00, meet and transfer to your hotel. Overnight in Istanbul.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Istanbul",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport according to your flight departure time.\n",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "  (Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "7-day-best-of-turkey-tour",
+          "name": "7-Day Best of Turkey Tour: Four Iconic Destinations",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "7-Day Best of Turkey Tour: Four Iconic Destinations",
+          "description": "Spend one week exploring Istanbul, Cappadocia, Pamukkale and Ephesus on a compact journey connecting four of Turkey's most celebrated destinations.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/09/677fa15eee4ed/Ephesus-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "7-Day Best of Turkey Tour: Four Iconic Destinations",
+          "productID": "669b986a33636541890000bc",
+          "sku": "669b986a33636541890000bc",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/09/677fa15eee4ed/Ephesus-4.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Spend one week exploring Istanbul, Cappadocia, Pamukkale and Ephesus on a compact journey connecting four of Turkey's most celebrated destinations.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1275",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour",
+            "priceValidUntil": "2026-10-10",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

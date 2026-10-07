@@ -1,0 +1,337 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-tour/",
+  "path": "destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-tour",
+  "slug": "11-day-turkey-and-egypt-tour",
+  "parent": "turkey-and-egypt-tours",
+  "category": null,
+  "title": "11-Day Istanbul & Egypt Nile Cruise Journey",
+  "metaTitle": "Istanbul & Nile Cruise | 11-Day Turkey Egypt Tour",
+  "metaDescription": "Combine Istanbul with Cairo, Aswan and Luxor on an 11-day journey featuring imperial landmarks, the Pyramids and a three-night Nile Cruise.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey & Egypt Tours & Vacation Packages 2026–2027",
+    "11-Day Istanbul & Egypt Nile Cruise Journey"
+  ],
+  "summary": "The 11-Day Turkey & Egypt Tour links Istanbul and Cappadocia with Cairo and a three-night Nile cruise through Upper Egypt. Begin in Istanbul before flying to Cappadocia, where distinctive valleys and rock formations provide a different landscape. Continue to Cairo for the Pyramids and other scheduled visits, then fly south to Aswan to board the cruise toward Luxor. The sailing adds visits along the Nile before the journey concludes in Luxor.\nThe escorted program includes selected 4-star hotels, a 3-night full-board Nile cruise, breakfast, professional local guides, airport transfers, entrance fees, scheduled sightseeing and flights between the destinations.",
+  "facts": {
+    "duration": "10 Nights / 11 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Three Domestic Flights",
+    "startingPrice": "€ 2,575 / Per person",
+    "cancellation": "Cancellation 60+ days before arrival: No fee.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 10,
+  "days": 11,
+  "price": {
+    "amount": 2575,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,575 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Cairo",
+    "Aswan",
+    "Luxor"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-11-Days-in-Turkey--Egypt.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "11-Day Istanbul & Egypt Nile Cruise Journey Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "10 Nights / 11 Days",
+    "Istanbul • Cappadocia • Cairo • Aswan • Luxor",
+    "Flights Included",
+    "Small Group Tour",
+    "Carefully Selected 4-Star Hotels & 3-Night Nile Cruise",
+    "Year-Round Departures",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival Istanbul",
+      "text": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Istanbul Oldcity Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Bosphorus Cruise and Asia",
+      "text": "After breakfast, visit the historic Spice Bazaar, one of the city’s most colorful and lively markets. Continue with a scenic cruise along the Bosphorus, sailing between Europe and Asia while enjoying views of palaces, mosques, and waterfront mansions. Cross the Bosphorus Bridge to Çamlıca Hill for panoramic views over the city, then visit the elegant Beylerbeyi Palace, the former summer residence of Ottoman sultans. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Istanbul to Cairo/ Flight.",
+      "text": "Breakfast. Check-out and transfer to Istanbul Airport for your flight to Cairo (14:00–15:15).\nUpon arrival, transfer to your hotel. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Visit Pyramids and Sphinx.",
+      "text": "Meet your guide and visit Memphis, the ancient capital of Egypt, and see the impressive statue of Ramesses II. Continue to Saqqara to explore the famous Pyramid of Djoser. Afterwards, visit the legendary Giza pyramid complex and admire the iconic Great Sphinx of Giza. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Egyptian Museum, Old Cairo",
+      "text": "Breakfast at the hotel in Cairo. Visit the impressive Grand Egyptian Museum and the historic Cairo Citadel, including the beautiful Mosque of Muhammad Ali. Continue to explore Old Cairo with visits to the The Hanging Church and Saints Sergius and Bacchus Church (Abu Serga Church). End the day at the famous Khan el-Khalili Bazaar. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Flight to Aswan and Nile Cruise",
+      "text": "Early breakfast box and transfer to the airport for your morning flight from Cairo to Aswan (06:30–07:50). Upon arrival, meet your guide and transfer to board your 3-night Nile River cruise before lunch. Begin sightseeing in Aswan with a visit to the impressive Aswan High Dam, followed by the beautiful Philae Temple located on Agilkia Island and dedicated to the goddess Isis. Return to the cruise ship for dinner. Overnight on board the Nile cruise.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Nile Cruise- Kom Ombo and Edfu Tour",
+      "text": "Sail to Kom Ombo and visit the Temple of Kom Ombo, dedicated to the crocodile god Sobek. Continue sailing to Edfu and explore the remarkably preserved Temple of Edfu, dedicated to the falcon god Horus. Return to the cruise ship and continue sailing along the Nile River. Overnight on board the Nile cruise.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Nile Cruise and Luxor Sightseeing",
+      "text": "Sail along the Nile River to Esna and continue onward to Luxor. Begin exploring the West Bank of Luxor with a visit to the legendary Valley of the Kings, burial site of many ancient pharaohs. Continue to the magnificent Mortuary Temple of Hatshepsut, dedicated to Egypt’s famous female pharaoh. End the tour with a stop at the impressive Colossi of Memnon. Return to the cruise ship for dinner. Overnight on board the Nile cruise.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Luxor to Cairo By flight",
+      "text": "Breakfast onboard and disembark in Luxor. Visit the magnificent Luxor Temple and the vast Karnak Temple Complex, one of the largest religious sites in the world. Enjoy some free time before transfer to the airport for your flight to Cairo. Upon arrival, transfer to your hotel. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 11",
+      "title": "Transfer to Cairo Airport",
+      "text": "Breakfast at the hotel in Cairo\nCheck-out and transfer to Cairo International Airport according to your flight schedule",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "07 nights' accommodation in 4-star hotels on a bed & breakfast basis",
+    "03 nights on board a 5-star Nile River Cruise from Aswan to Luxor on a full-board basis",
+    "Included Services",
+    "7-day regular small group tour with a professional English-speaking guide",
+    "Entrance fees, lunches, and transportation included during the guided tours",
+    "Flights: Istanbul → Cairo, Cairo → Aswan, and Luxor → Cairo",
+    "All airport, hotel, and Nile cruise transfers throughout Turkey and Egypt"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Gratuities for driver and guide",
+    "Meals not mentioned",
+    "Drinks of any kind",
+    "Travel insurance"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 60+ days before arrival: No fee.",
+    "60–31 days before departure: 25% cancellation fee",
+    "30–16 days before departure: 50% cancellation fee",
+    "15 days or less before departure, or in case of no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cairo-Sultan-Hassan-Mosque---1.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "11-Day Istanbul & Egypt Nile Cruise Journey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Istanbul-Bosphorus--04.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Bosphorus Cruise passing under the Bosphorus Bridge"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hot-Air-Balloon-Capadocia-03.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Colorful hot air balloons flying over Cappadocia at sunrise"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Abu-Simbel--3.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient temple complex at Abu Simbel today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Alexandria--2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning archaeological wonders in Luxor Egypt today"
+    }
+  ],
+  "related": [
+    {
+      "title": "7-Day Istanbul & Cairo Two-Country Escape",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/7-day-turkey-and-egypt-tour/"
+    },
+    {
+      "title": "11-Day Turkey & Egypt Ancient Wonders Route",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-trip/"
+    },
+    {
+      "title": "13-Day Turkey & Egypt Explorer: Cappadocia and the Nile",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/13-day-explore-turkey-and-egypt/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does the 11-Day Turkey and Egypt tour include?",
+      "a": "This 11-day tour combines the highlights of Turkey and Egypt in one journey. You explore Istanbul with Hagia Sophia and the Blue Mosque, discover the Pyramids of Giza and the Egyptian Museum in Cairo, and enjoy a Nile River cruise from Aswan to Luxor visiting ancient temples along the way. The trip runs for 10 nights and 11 days."
+    },
+    {
+      "q": "How much does the 11-Day Turkey and Egypt tour cost?",
+      "a": "The tour starts from 2,675 euros per person for the 2026 season. The price includes accommodation, a Nile cruise, guided tours, entrance fees, lunches on tour days, internal flights, and transfers. The final rate depends on dates, hotel and cruise category, and group size."
+    },
+    {
+      "q": "Does the tour include a Nile River cruise?",
+      "a": "Yes, the package includes 3 nights on a 5-star Nile cruise with full board between Aswan and Luxor. The cruise is a highlight of the trip, letting you sail past timeless landscapes while visiting temples such as Kom Ombo and Edfu en route."
+    },
+    {
+      "q": "Are flights included in the Turkey and Egypt tour?",
+      "a": "Yes, several flights are included: Istanbul to Cairo, Cairo to Aswan, and Luxor to Cairo. These flights connect the distant regions efficiently so you can make the most of your time at each destination. International flights to Istanbul and from Cairo are not included."
+    },
+    {
+      "q": "What kind of accommodation is provided on this 11-day tour?",
+      "a": "The package includes 7 nights at 4-star hotels on a bed and breakfast basis, plus 3 nights on a 5-star Nile cruise with full board. All airport, port, and hotel transfers in both Turkey and Egypt are arranged for you."
+    },
+    {
+      "q": "Which ancient sites will I see in Egypt?",
+      "a": "In Egypt you visit the Pyramids of Giza and the Sphinx, the Egyptian Museum, Old Cairo, and the temples of Kom Ombo, Edfu, and Luxor during the Nile cruise portion. Combined with Istanbul's landmarks, the tour covers some of the most famous monuments in the world."
+    },
+    {
+      "q": "How physically demanding is the Turkey and Egypt tour?",
+      "a": "The physical difficulty is moderate. There is regular walking at archaeological sites and museums, sometimes in warm weather, along with a few early starts and internal flights. Travelers in reasonable health generally find the pace manageable, with the cruise offering relaxing downtime."
+    },
+    {
+      "q": "Are meals included on the 11-day tour?",
+      "a": "Lunches are included on guided tour days, breakfast is provided at hotels, and the Nile cruise is full board with all meals included. Dinners outside the cruise, drinks, and meals not mentioned in the itinerary are not included."
+    },
+    {
+      "q": "What is the cancellation policy for the Turkey and Egypt tour?",
+      "a": "Cancellation follows the trip cancellation policy provided at booking. Because the tour includes flights and a cruise, we recommend confirming your dates early and considering travel insurance to protect against unexpected changes."
+    },
+    {
+      "q": "Can the 11-Day Turkey and Egypt tour be customized?",
+      "a": "Yes, the tour can be customized. You can upgrade your hotels or cruise, add nights in Istanbul or Cairo, or adjust the pace. Contact Magnificent Travel with your dates and group size for a tailored quote."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "11-Day Istanbul & Egypt Nile Cruise Journey",
+          "description": "Combine Istanbul with Cairo, Aswan and Luxor on an 11-day journey featuring imperial landmarks, the Pyramids and a three-night Nile Cruise.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/18/678b7c87d02ea/Cairo-Sultan-Hassan-Mosque---1.jpg",
+            "width": 487,
+            "height": 349
+          },
+          "url": "11-day-turkey-and-egypt-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "11-day-turkey-and-egypt-tour",
+          "name": "11-Day Istanbul & Egypt Nile Cruise Journey",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "11-Day Istanbul & Egypt Nile Cruise Journey",
+          "description": "Combine Istanbul with Cairo, Aswan and Luxor on an 11-day journey featuring imperial landmarks, the Pyramids and a three-night Nile Cruise.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/18/678b7c87d02ea/Cairo-Sultan-Hassan-Mosque---1.jpg",
+            "width": 487,
+            "height": 349
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

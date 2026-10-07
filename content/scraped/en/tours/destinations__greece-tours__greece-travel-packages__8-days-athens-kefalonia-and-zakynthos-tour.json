@@ -1,0 +1,545 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-kefalonia-and-zakynthos-tour/",
+  "path": "destinations/greece-tours/greece-travel-packages/8-days-athens-kefalonia-and-zakynthos-tour",
+  "slug": "8-days-athens-kefalonia-and-zakynthos-tour",
+  "parent": "greece-tours",
+  "category": "greece-travel-packages",
+  "title": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos",
+  "metaTitle": "Kefalonia & Zakynthos | 8-Day Greece Tour",
+  "metaDescription": "Travel from Athens to Kefalonia and Zakynthos on an 8-day Ionian adventure featuring coastal landscapes, island experiences and guided sightseeing.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-kefalonia-and-zakynthos-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Travel Packages 2026–2027 | Islands & Athens",
+    "8-Day Ionian Greece Tour: Kefalonia & Zakynthos"
+  ],
+  "summary": "The 8-Day Athens, Kefalonia & Zakynthos Tour pairs time in the Greek capital with two Ionian islands known for very different coastal landscapes. Begin in Athens with the Acropolis and the city’s ancient heritage, then fly to Kefalonia for its beaches, mountain scenery and small seaside villages. Continue by ferry to Zakynthos, where the coastline is shaped by sea caves, limestone cliffs and clear Ionian waters.\nOperating from April to October, the journey follows seasonal island connections. The program covers selected 4-star hotels with breakfast, English-speaking local guides, two domestic flights, ferry tickets, airport and port transfers, and scheduled sightseeing.",
+  "facts": {
+    "duration": "07 Nights / 08 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Two Domestic Flights",
+    "startingPrice": "€ 1,975 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": 1975,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,975 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Kefalonia",
+    "Zakynthos"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-8-Day-Tour-Athens-Kefalonia--Zakynthos.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "07 Nights / 08 Days",
+    "Athens • Kefalonia • Zakynthos",
+    "Two Domestic Flights & Ferry Tickets Included",
+    "Small Group or Private Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 13:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Half day Athens City tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Flight to Kefalonia",
+      "text": "Breakfast at the hotel. Transfer to the airport for your flight to Kefalonia.\nUpon arrival, meet and transfer to your hotel. Rest of the day at leisure. Overnight in Kefalonia.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Free Day in Kefalonia",
+      "text": "Breakfast at the hotel. Enjoy a free day in Kefalonia. Visit the Melissani Cave and its beautiful underground lake, relax at Myrtos Beach, and explore the traditional villages of Fiskardo and Assos. Overnight in Kefalonia.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Ferry to Zakynthos",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Zakynthos.\nArrival and transfer to your hotel. Rest of the day at leisure. Overnight in Zakynthos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Free Day in Zakynthos",
+      "text": "Breakfast at the hotel. Enjoy a free morning in Zakynthos. We recommend visiting the famous Navagio Beach with its iconic shipwreck, or exploring the beautiful Blue Caves near Cape Skinari. Overnight in Zakynthos..",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Flight to Athens",
+      "text": "Breakfast at the hotel. Transfer to the airport for your flight to Athens.\nUpon arrival, meet and transfer to your hotel. Rest of the day at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Departure from Athens",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "07 nights hotel accommodation in the selected category",
+    "Half-day Athens sightseeing tour including the Acropolis of Athens",
+    "English-speaking guide, entrance fees, and transportation during the Athens city tour",
+    "Ferry tickets from Kefalonia to Zakynthos",
+    "All airport, port, and hotel transfers in Athens and the islands"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Driver and guide gratuities",
+    "Meals not mentioned",
+    "Drinks and beverages",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily from 01 April to 15 October",
+    "The itinerary can be customized upon request"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferries are non-refundable once issued (100% cancellation fees apply)",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Zakynthos-1.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Zakynthos-Greece-.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Crystal-clear waters surrounding Kefalonia beaches and bays"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens--20.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient Greek architecture in Athens city center"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "UNESCO World Heritage Site Acropolis of Athens"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-21.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous archaeological sites throughout Athens Greece today"
+    }
+  ],
+  "related": [
+    {
+      "title": "12-Day Greek Island Hopping: Mykonos, Paros & Santorini",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-greece-trip-package/"
+    },
+    {
+      "title": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days/"
+    },
+    {
+      "title": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/9-days-greece-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 8-Day Tour Athens, Kefalonia & Zakynthos?",
+      "a": "The 8-Day Tour Athens, Kefalonia & Zakynthos covers Athens and two of Greece's most beautiful Ionian Islands, Kefalonia and Zakynthos. You will explore Athens' ancient landmarks, discover Kefalonia's stunning beaches and charming villages, and experience Zakynthos' famous turquoise waters, dramatic cliffs, and picturesque coastline. The tour runs for 7 nights and 8 days."
+    },
+    {
+      "q": "How much does the 8-Day Tour Athens, Kefalonia & Zakynthos cost?",
+      "a": "The tour starts from €1,975 per person for the 2026 season. The price includes accommodation, domestic flights, speed ferry tickets, guided sightseeing tours, selected meals, and all airport, hotel, and port transfers specified in the itinerary. Final pricing may vary depending on travel dates and hotel availability."
+    },
+    {
+      "q": "Are domestic flights and ferry tickets included in this itinerary?",
+      "a": "Yes, the package includes domestic flights and speed ferry tickets between destinations as outlined in the itinerary. These transportation arrangements provide a convenient and efficient way to explore Athens and the beautiful Ionian Islands."
+    },
+    {
+      "q": "Are international flights included in the package?",
+      "a": "No, international flights are not included in the tour price. Travelers are responsible for arranging their own flights to and from Greece. Magnificent Travel can assist with itinerary planning and travel recommendations if needed."
+    },
+    {
+      "q": "Does the 8-day Greece tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical insights, cultural information, and local expertise while helping you make the most of your Greek island holiday."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece?",
+      "a": "Yes, this tour is ideal for travelers seeking a combination of history, island scenery, and relaxation. It offers an excellent introduction to Athens while showcasing the natural beauty and laid-back atmosphere of Kefalonia and Zakynthos."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through historic districts, coastal villages, ferry ports, and sightseeing areas. Most travelers in average health can comfortably participate in the itinerary."
+    },
+    {
+      "q": "What are the highlights of Kefalonia and Zakynthos?",
+      "a": "Kefalonia is famous for Myrtos Beach, Melissani Cave, picturesque fishing villages, and stunning coastal scenery. Zakynthos is renowned for Navagio (Shipwreck) Beach, the Blue Caves, crystal-clear waters, sea turtles, and beautiful seaside landscapes that make it one of Greece's most popular islands."
+    },
+    {
+      "q": "What is the cancellation policy for the Athens, Kefalonia & Zakynthos Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, transportation conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 8-Day Tour Athens, Kefalonia & Zakynthos available all year and can it be customized?",
+      "a": "The tour operates throughout the year, subject to seasonal ferry schedules and flight availability. You can extend your stay in Athens, Kefalonia, or Zakynthos, upgrade hotel categories, add optional excursions, or modify the itinerary. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos",
+          "description": "Travel from Athens to Kefalonia and Zakynthos on an 8-day Ionian adventure featuring coastal landscapes, island experiences and guided sightseeing.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-kefalonia-and-zakynthos-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67828abb28618/Zakynthos-1.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "07 nights hotel accommodation in the selected category, Half-day Athens sightseeing tour including the Acropolis of Athens, English-speaking guide, entrance fees, and transportation during the Athens city tour, Ferry tickets from Kefalonia to Zakynthos, All airport, port, and hotel transfers in Athens and the islands"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Personal expenses, Driver and guide gratuities, Meals not mentioned, Drinks and beverages, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Athens  ",
+              "description": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 13:00. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Half day Athens City tour   ",
+              "description": "Breakfast at the hotel. \nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight  to Kefalonia",
+              "description": "Breakfast at the hotel. Transfer to the airport for your flight to Kefalonia.\nUpon arrival, meet and transfer to your hotel.  Rest of the day at leisure. Overnight in Kefalonia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in  Kefalonia",
+              "description": "Breakfast at the hotel.  Enjoy a free day in Kefalonia. Visit the Melissani Cave and its beautiful underground lake, relax at Myrtos Beach, and explore the traditional villages of Fiskardo and Assos. Overnight in Kefalonia.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Zakynthos",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Zakynthos.\nArrival and transfer to your hotel.  Rest of the day at leisure. Overnight in Zakynthos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Zakynthos",
+              "description": "Breakfast at the hotel.  Enjoy a free morning in Zakynthos. We recommend visiting the famous Navagio Beach with its iconic shipwreck, or exploring the beautiful Blue Caves near Cape Skinari.  Overnight in Zakynthos..",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Athens",
+              "description": "Breakfast at the hotel. Transfer to the airport for your flight to Athens.\nUpon arrival, meet and transfer to your hotel.  Rest of the day at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Athens",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "8-days-athens-kefalonia-and-zakynthos-tour",
+          "name": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos",
+          "description": "Travel from Athens to Kefalonia and Zakynthos on an 8-day Ionian adventure featuring coastal landscapes, island experiences and guided sightseeing.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67828abb28618/Zakynthos-1.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos",
+          "productID": "669e5e183363655a340001e9",
+          "sku": "669e5e183363655a340001e9",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67828abb28618/Zakynthos-1.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Travel from Athens to Kefalonia and Zakynthos on an 8-day Ionian adventure featuring coastal landscapes, island experiences and guided sightseeing.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1975",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-kefalonia-and-zakynthos-tour",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

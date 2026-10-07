@@ -1,0 +1,67 @@
+{
+  "locale": "en",
+  "kind": "author",
+  "sourceUrl": "https://www.magnificenttravel.com/en/authors/kenan-ungur/",
+  "path": "authors/kenan-ungur",
+  "metaTitle": "Kenan Ungur - Tailor-Made Travel & Operations Specialist",
+  "metaDescription": "A travel professional specializing in tailor-made travel planning, guest experience management, and multi-destination tourism operations.",
+  "canonical": "https://www.magnificenttravel.com/en/authors/kenan-ungur/",
+  "robots": "",
+  "h1": "Kenan Ungur",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Home",
+    "Authors",
+    "Kenan Ungur"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.magnificenttravel.com/public/thumbs/128x128-bestFit-kenan-ungur-profile.jpg",
+          "alt": "Kenan Ungur"
+        },
+        {
+          "type": "p",
+          "text": "A travel professional specializing in tailor-made travel planning, guest experience management, and multi-destination tourism operations."
+        },
+        {
+          "type": "p",
+          "text": "With over 23 years of experience in the travel industry, he designs and manages private and cultural tours for international travelers across Türkiye, Greece, Egypt, Jordan, Morocco, and other destinations."
+        },
+        {
+          "type": "p",
+          "text": "He has strong expertise in both online and face-to-face guest communication, sales processes, and end-to-end travel operations."
+        },
+        {
+          "type": "p",
+          "text": "Working closely with hotels, travel agencies, and local partners, he ensures smooth coordination and high-quality travel experiences at every stage of the journey."
+        },
+        {
+          "type": "p",
+          "text": "His focus is on delivering personalized, reliable, and seamless travel experiences for international guests worldwide."
+        }
+      ]
+    }
+  ],
+  "cards": [],
+  "faqs": [],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kenan Ungur",
+      "url": "https://www.magnificenttravel.com/en/authors/kenan-ungur/",
+      "image": "https://www.magnificenttravel.com/public/thumbs/256x256-bestFit-kenan-ungur-profile.jpg",
+      "sameAs": [
+        "https://www.instagram.com/magnificenttourism",
+        "https://www.linkedin.com/company/magnificent-travel-tours/",
+        "https://x.com/Magnificentours",
+        "https://www.facebook.com/Magnificenttravel"
+      ]
+    }
+  ]
+}

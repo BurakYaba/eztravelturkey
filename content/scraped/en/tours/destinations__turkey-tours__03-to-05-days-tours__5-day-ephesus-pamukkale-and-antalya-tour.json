@@ -1,0 +1,502 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-ephesus-pamukkale-and-antalya-tour/",
+  "path": "destinations/turkey-tours/03-to-05-days-tours/5-day-ephesus-pamukkale-and-antalya-tour",
+  "slug": "5-day-ephesus-pamukkale-and-antalya-tour",
+  "parent": "turkey-tours",
+  "category": "03-to-05-days-tours",
+  "title": "5-Day Aegean to Mediterranean Turkey Tour",
+  "metaTitle": "Ephesus to Antalya | 5-Day Coastal Turkey Tour",
+  "metaDescription": "Travel from Ephesus and Pamukkale to Antalya in five days, combining ancient landmarks, natural wonders and the relaxed scenery of Turkey's Mediterranean coast.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-ephesus-pamukkale-and-antalya-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "3–5 Day Turkey Tour Packages",
+    "5-Day Aegean to Mediterranean Turkey Tour"
+  ],
+  "summary": "The 5-Day Ephesus, Pamukkale & Antalya Tour travels from Turkey’s Aegean region to the Mediterranean coast. Explore Ephesus and its Library of Celsus and Great Theatre, see the white travertine terraces of Pamukkale and ancient Hierapolis, then continue to Antalya for Kaleiçi Old Town, Roman landmarks and the Mediterranean waterfront.\nTravel dates are flexible, and the itinerary can be adjusted when needed. We arrange selected 4-star hotels with breakfast, English-speaking local guides, two domestic flights, airport transfers, entrance fees and all guided sightseeing included in the program.",
+  "facts": {
+    "duration": "4 Nights / 5 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Two Domesitc Flights",
+    "startingPrice": "€ 1,050 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 4,
+  "days": 5,
+  "price": {
+    "amount": 1050,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,050 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Ephesus",
+    "Pamukkale",
+    "Antalya"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-Ephesus-Pamukkale--Antalya-Tour-2.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "5-Day Aegean to Mediterranean Turkey Tour Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "04 Nights / 05 Days",
+    "Ephesus • Pamukkale • Antalya",
+    "Two Domestic Flights Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Fllight to Izmir & Ephesus tour",
+      "text": "At 04:00, transfer to Istanbul Airport for your morning flight to Izmir at 07:00.\nUpon arrival at 08:10, meet your guide and continue to Ephesus, one of the best-preserved Greco-Roman ancient cities in the world. Explore its marble streets, the magnificent Library of Celsus, and the impressive Great Theatre. The tour also includes visits to the sacred House of the Virgin Mary and the remains of the Temple of Artemis. Overnight in Kusadasi.",
+      "meals": "Lunch"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Pamukkale tour",
+      "text": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces, known as the “Cotton Castle,” and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, Transfer to hotel. Overnight in Pamukkale.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Transfer to Antalya",
+      "text": "After breakfast, transfer to Denizli Bus Station.\nBoard the intercity coach to Antalya.\nApproximate journey time: 4 hours\nUpon arrival in Antalya, meet and transfer to your hotel.\nOvernight in Antalya.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Antalya Ancient Cities Tour",
+      "text": "After breakfast at 08:00, depart for a full-day tour of Antalya and the ancient Pamphylia region. Visit the remarkable ancient cities of Side, Perge, and Aspendos, famous for their impressive Roman ruins, including the well-preserved theatres and the largest stadium in Asia Minor. Continue to the scenic Manavgat Waterfall before returning to the hotel. Overnight in Antalya.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Flight to Istanbul",
+      "text": "After breakfast, check out from the hotel in Antalya.\nTransfer to Antalya Airport for your flight to Istanbul.\nUpon arrival in Istanbul, meet at the airport and transfer to your hotel.",
+      "meals": "(Melas: Breakfast"
+    }
+  ],
+  "included": [
+    "4 nights accommodation at 4-star hotels with breakfast",
+    "3-day regular small group tour with English-speaking guide",
+    "Entrance fees, lunch, and transportation during tours",
+    "One-way domestic flight from Istanbul to Izmir",
+    "One-way domestic flight from Antalya to Istanbul",
+    "All airport, hotel, and port transfers within Turkey"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Tips for driver and guide",
+    "Meals not mentioned in the itinerary",
+    "Drinks during meals",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year.",
+    "Prices are per person, based on a minimum of 2 adults.",
+    "The tour can be customized.",
+    "Transfers include 1 luggage per person.",
+    "Domestic flight tickets cannot be changed once issued. A 100% cancellation fee applies.",
+    "Domestic flight and ferry schedules are subject to change."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee.",
+    "20–14 days before arrival: 50% cancellation fee.",
+    "13 days or less before arrival, or no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Kekova-Antalya.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "5-Day Aegean to Mediterranean Turkey Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Pamukkale UNESCO World Heritage Site in Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Ephesus-2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Panoramic view of the ancient city of Ephesus"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale-Tripolis.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient city of Hierapolis overlooking Pamukkale"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Ormana-Village-Antalya.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Antalya city and harbor overlooking the Mediterranean"
+    }
+  ],
+  "related": [
+    {
+      "title": "5-Day Istanbul & Ephesus City and History Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-istanbul-and-ephesus-tour/"
+    },
+    {
+      "title": "4-Day Turkey Express Tour: Three Iconic Regions",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/4-day-cappadocia-pamukkale-and-ephesus-tour/"
+    },
+    {
+      "title": "5-Day Istanbul & Ephesus City and History Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-istanbul-and-ephesus-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the Ephesus, Pamukkale & Antalya Tour?",
+      "a": "The Ephesus, Pamukkale & Antalya Tour covers three of Turkey's most popular destinations: Ephesus, Pamukkale, and Antalya. You will explore the ancient city of Ephesus, visit Pamukkale's famous white travertine terraces and the ruins of Hierapolis, and discover Antalya's beautiful coastline, historic Old Town, and Mediterranean atmosphere. The tour includes 4 nights and 5 days of travel."
+    },
+    {
+      "q": "How much does the Ephesus, Pamukkale & Antalya Tour cost?",
+      "a": "The tour starts from €1,050 per person for the 2026 season. The price includes accommodation, two domestic flights, guided sightseeing tours, entrance fees, selected meals, airport transfers, and hotel transfers. Final pricing may vary depending on travel dates, hotel category, and availability."
+    },
+    {
+      "q": "Are domestic flights included in this itinerary?",
+      "a": "Yes, the package includes two domestic flights. These flights help reduce travel time between destinations, allowing you to maximize your sightseeing opportunities and enjoy a more comfortable travel experience."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 4 nights at carefully selected 4-star hotels and boutique accommodations with daily breakfast. Hotels are chosen for their comfort, service quality, and convenient locations near major attractions. All airport and hotel transfers are included throughout the tour."
+    },
+    {
+      "q": "Does the Ephesus, Pamukkale & Antalya Tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during all scheduled sightseeing tours. As part of the small-group experience, your guide will provide historical insights, cultural information, and local expertise throughout the journey."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Turkey?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to experience a combination of Turkey's ancient history, natural wonders, and Mediterranean charm. It offers an excellent introduction to some of the country's most famous attractions in a short timeframe."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "archaeological sites, historic districts, and areas with uneven terrain. Ephesus and Pamukkale involve moderate walking, but most travelers in average health can comfortably participate."
+    },
+    {
+      "q": "What are the highlights of Ephesus, Pamukkale, and Antalya?",
+      "a": "Highlights include the Library of Celsus and Great Theatre in Ephesus, the white travertine terraces and ancient city of Hierapolis in Pamukkale, and Antalya's charming Kaleiçi Old Town, scenic coastline, and beautiful Mediterranean views."
+    },
+    {
+      "q": "What is the cancellation policy for the Ephesus, Pamukkale & Antalya Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the Ephesus, Pamukkale & Antalya Tour available all year and can it be customized?",
+      "a": "Yes, the tour operates throughout the year and can be customized according to your preferences. You can extend your stay in Antalya, upgrade hotel categories, add optional excursions, or modify the itinerary. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "5-Day Aegean to Mediterranean Turkey Tour",
+          "description": "Travel from Ephesus and Pamukkale to Antalya in five days, combining ancient landmarks, natural wonders and the relaxed scenery of Turkey's Mediterranean coast.",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-ephesus-pamukkale-and-antalya-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/09/677f71ab056d3/Kekova-Antalya.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "4 nights accommodation at 4-star hotels with breakfast, 3-day regular small group tour with English-speaking guide, Entrance fees, lunch, and transportation during tours, One-way domestic flight from Istanbul to Izmir, One-way domestic flight from Antalya to Istanbul, All airport, hotel, and port transfers within Turkey"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Personal expenses, Tips for driver and guide, Meals not mentioned in the itinerary, Drinks during meals, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Fllight to Izmir & Ephesus tour  ",
+              "description": "At 04:00, transfer to Istanbul Airport for your morning flight to Izmir at 07:00. \nUpon arrival at 08:10, meet your guide and continue to Ephesus, one of the best-preserved Greco-Roman ancient cities in the world. Explore its marble streets, the magnificent Library of Celsus, and the impressive Great Theatre. The tour also includes visits to the sacred House of the Virgin Mary and the remains of the Temple of Artemis. Overnight in Kusadasi.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Meals: Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Pamukkale tour   ",
+              "description": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces, known as the “Cotton Castle,” and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, Transfer to hotel. Overnight in Pamukkale.\n\n",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Transfer to Antalya",
+              "description": "After breakfast, transfer to Denizli Bus Station.\nBoard the intercity coach to Antalya.\nApproximate journey time: 4 hours\nUpon arrival in Antalya, meet and transfer to your hotel.\nOvernight in Antalya.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Antalya Ancient Cities Tour",
+              "description": "After breakfast at 08:00, depart for a full-day tour of Antalya and the ancient Pamphylia region. Visit the remarkable ancient cities of Side, Perge, and Aspendos, famous for their impressive Roman ruins, including the well-preserved theatres and the largest stadium in Asia Minor. Continue to the scenic Manavgat Waterfall before returning to the hotel.  Overnight in Antalya.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Lunch)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Flight to Istanbul",
+              "description": "After breakfast, check out from the hotel in Antalya.\nTransfer to Antalya Airport for your flight to Istanbul.\nUpon arrival in Istanbul, meet at the airport and transfer to your hotel.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " (Melas: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "5-day-ephesus-pamukkale-and-antalya-tour",
+          "name": "5-Day Aegean to Mediterranean Turkey Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "5-Day Aegean to Mediterranean Turkey Tour",
+          "description": "Travel from Ephesus and Pamukkale to Antalya in five days, combining ancient landmarks, natural wonders and the relaxed scenery of Turkey's Mediterranean coast.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/09/677f71ab056d3/Kekova-Antalya.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "5-Day Aegean to Mediterranean Turkey Tour",
+          "productID": "669a7a82336365de1f000230",
+          "sku": "669a7a82336365de1f000230",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/09/677f71ab056d3/Kekova-Antalya.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Travel from Ephesus and Pamukkale to Antalya in five days, combining ancient landmarks, natural wonders and the relaxed scenery of Turkey's Mediterranean coast.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1050",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/5-day-ephesus-pamukkale-and-antalya-tour",
+            "priceValidUntil": "2026-10-09",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
