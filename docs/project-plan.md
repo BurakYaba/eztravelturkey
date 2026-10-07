@@ -87,7 +87,7 @@ Bu belge projenin tek yol haritasıdır. `docs/implementation-plan.md` ve `docs/
 | D25 | Yönlendirme sayısı Vercel'in 1.024 sınırını aşarsa mekanizma (Global Config / Redis / Bloom filter) | P7 |
 | D26 | Hero'daki GSAP parallax kaldırılsın mı? **Öneri: kaldır.** Müşteri ağır animasyon istemiyor, GSAP + ScrollTrigger yükü LCP/INP'ye gider, görsel katkısı küçük. **Karar: kaldır** (onaylandı 2026-10-07, P2.16'da uygulanır). | P2 |
 | D27 | Israel URL'leri (≈60 blog yazısı + 13 destinations/kombo URL'si) nereye gider? **Öneri:** backlink veya trafik alanlar ilgili blog/destinations hub'ına 301, geri kalanı 410. | P7 |
-| D28 | Para birimi ve fiyat gösterimi dil başına (EUR / USD / JPY / TWD?) ve `Offer.priceCurrency`. Eski zh/jp sitelerinin fiyat birimi P1/P5'te çıkarılır. | P3 |
+| D28 | Para birimi ve fiyat gösterimi dil başına ve `Offer.priceCurrency`. **Veri (2026-10-07):** üç sitede de fiyatlar EUR; varsayılan EUR. zh sitesi çoğu turda fiyat göstermiyor ("formu doldurun" uyarısı), jp ≈ üçte birinde "minimum fiyat" gösteriyor, bu yüzden **fiyat isteğe bağlı** olmalı (`docs/baseline/tour-overlap-2026-10-07.md`). | P3 |
 | D29 | Vercel planı: ticari kullanım koşulları ve **Image Optimization kotası** (900+ kaynak görsel). Gerekirse Sanity CDN dönüşümü. Güncel Vercel şartlarından doğrulanır. | P6, P9 |
 | D30 | Anahtar kelime, SERP ve GSC veri kaynağı: **OpenSEO MCP** (GSC performansı, URL denetimi, anahtar kelime, SERP, sıralama, AI görünürlüğü, GBP denetimi). **Bağlandı ve doğrulandı (2026-10-07):** `whoami` ve `list_projects` başarılı, 500 kredi, GSC mülkü (`https://www.magnificenttravel.com/`) bağlı ve veri veriyor. **GA4 bağlı değil** (OpenSEO ayarlarından bağlanmalı). zh-Hant ve ja için konum/dil desteği hâlâ doğrulanmadı. | S1 (P0-P1) |
 | D34 | **404 veren 26+ yüksek trafikli blog sayfası** (12 ayda ≈ 27.100 tıklama, `docs/baseline/gsc-en-baseline.md` §4). **Karar (kullanıcı, 2026-10-07): şimdilik göz ardı edilir.** Blogu müşteri yönetiyor; bu URL'ler P7.4'teki varsayılan kurala girer (taşınmayan eski blog URL'si → blog hub'ına 301). Müşteri isterse yeni yazıdaki "eski URL" alanıyla (P6.14) kendi hedefini tanımlar. Blog dışı 404'ler (eski turlar vb.) P7'de ele alınır. | P7 |
@@ -264,7 +264,7 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - [ ] P5.1 ZH (793 URL: `/zh/` 385, `/cn/` 391, geri kalanı statik) ve JA (441 URL) ham arşivi.
 - [ ] P5.2 Ayrıştırıcıları iki dile uyarla. Yapı EN'den farklı (Ek A.3). **Alt-URL'ler** (`/tour-itinerary/`, `/inclusion-rate/`, `/review/`, `/reviews/`, `/itinerary/`) tek tur kaydında birleştirilir. Japonca slug'lar yüzde-kodlu, Unicode olarak saklanır.
 - [ ] P5.3 `/cn/` yalnızca eşleme için arşivlenir (içeriği alınmaz, D10).
-- [ ] P5.4 **Dil eşleştirme:** aynı turun üç dildeki karşılıkları (tur kodu `T-xx`, görsel özeti, rota ve gün sayısı) → `data/mapping/translations.csv`. Müşteriye doğrulatılır. Karşılığı olmayanlar işaretlenir (D11).
+- [ ] P5.4 **Dil eşleştirme** (ön analiz yapıldı: `docs/baseline/tour-overlap-2026-10-07.md`, 118 EN turunun ≈ %52'sinin zh veya jp'de karşılığı var; jp'nin kendi ürün kodları var): aynı turun üç dildeki karşılıkları (tur kodu `T-xx`, görsel özeti, rota ve gün sayısı) → `data/mapping/translations.csv`. Müşteriye doğrulatılır. Karşılığı olmayanlar işaretlenir (D11).
 - [ ] P5.5 Yasal ve statik sayfalar (gizlilik, şartlar, hakkında, SSS, iletişim) zh ve jp için scrape'ten alınır, yeniden çevrilmez.
 - [ ] P5.6 Görseller P1.6/P1.10 hattından geçer.
 - [ ] P5.7 Arayüz sözlüklerinin (`zh.json`, `jp.json`) ana dili konuşan biri tarafından incelenmesi, terim listesi (Tur, Özel tur, Grup turu vb.).
@@ -507,7 +507,7 @@ Müşterinin şartnamesindeki alanlar (Ek D.2) + eski sitede çıkarılabilen al
 - **Kimlik:** `locale`, `slug` (dile özel), `path` (kategori + slug), `translationGroup`, `oldUrl`, `status`, `tourCode`
 - **Sınıflandırma:** `destinations[]`, `category`, `comboRef`, `styles[]` (private / small group), `tags[]`
 - **Özet:** `title`, `subtitle`, `nights`, `days`, `groupSize {min,max}`, `difficulty`, `guideLanguages[]`, `summary`, `overview`, `highlights[]`, `route[]`
-- **Fiyat ve uygunluk:** `fromPrice {amount, currency, basis}`, `seasons[] {name, dates, priceNote}`, `departureOptions[]` (günlük / sabit tarih / notlar)
+- **Fiyat ve uygunluk:** `fromPrice {amount, currency, basis}` (**isteğe bağlı**, zh/jp'de çoğu turda yok), `seasons[] {name, dates, priceNote}`, `departureOptions[]` (günlük / sabit tarih / notlar)
 - **Program:** `itinerary[] {dayLabel, title, text, meals, overnightCity, hotelName?}`
 - **Konaklama ve ulaşım:** `hotels[] {city, nights, name?, class}`, `flights`, `ferries`, `transfers`, `baggage`
 - **Listeler:** `included[]`, `excluded[]`, `requirements[]` (pasaport, sigorta, yürüyüş seviyesi)

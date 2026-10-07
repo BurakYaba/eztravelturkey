@@ -1,5 +1,5 @@
 // Archives the raw HTML of the old sites so parsing can be repeated without fetching again.
-// Usage: node scripts/scrape/archive.mjs --site en [--limit 20] [--kinds tour,category] [--include-israel]
+// Usage: node scripts/scrape/archive.mjs --site en [--limit 20] [--kinds tour,category] [--locales zh] [--include-israel]
 // Reads data/inventory/<site>.csv (run inventory.mjs first). Writes data/archive/<site>/<sha1>.html|json, an
 // append-only manifest.jsonl and report.csv. Safe to stop and re-run: finished URLs are skipped.
 // Israel pages are skipped by default: the client dropped Israel, so only their URLs matter (D4).
@@ -23,6 +23,7 @@ if (!siteId || !sites[siteId]) {
 const limit = option('--limit') ? Number(option('--limit')) : Infinity;
 const kinds = option('--kinds')?.split(',');
 const includeIsrael = args.includes('--include-israel');
+const locales = option('--locales')?.split(',');
 
 const inventoryFile = join(root, 'data', 'inventory', `${siteId}.csv`);
 if (!existsSync(inventoryFile)) {
@@ -34,7 +35,8 @@ const manifestFile = join(archiveDir, 'manifest.jsonl');
 
 const hash = (value) => createHash('sha1').update(value).digest('hex');
 const rows = parseCsv(readFileSync(inventoryFile, 'utf8')).filter(
-  (row) => (includeIsrael || row.israel !== 'true') && (!kinds || kinds.includes(row.kind)),
+  (row) =>
+    (includeIsrael || row.israel !== 'true') && (!kinds || kinds.includes(row.kind)) && (!locales || locales.includes(row.locale)),
 );
 const pending = rows.filter((row) => !existsSync(join(archiveDir, `${hash(row.url)}.json`)));
 const todo = pending.slice(0, limit);
