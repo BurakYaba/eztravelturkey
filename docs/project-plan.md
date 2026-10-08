@@ -95,6 +95,8 @@ Bu belge projenin tek yol haritasıdır. `docs/implementation-plan.md` ve `docs/
 | D36 | **Müşteriye netleştirilecek:** "20-25 yüksek trafikli blog yenilere 301" cümlesinde 301'i kimin kuracağı belirsiz (chat 25 Eylül ve 6 Ekim). **Tüm site yönlendirmeleri bizim işimizdir** (P7). Yalnızca müşterinin *sonradan yazacağı yeni yazılar* için eski → yeni eşlemesi açık: (A) müşteri listeyi (eski URL → yeni URL) bize gönderir, biz ekleriz; (B) müşteri yeni yazıda "eski URL" alanını doldurur, 301 otomatik oluşur (P6.14). **Öneri: B**, ama yalnızca blog için. Hangi yazıların seçileceği müşterinin kararı; veri için `docs/baseline/gsc-en-baseline.md`. | P6, P7 |
 | D31 | Hesap sahipliği matrisi: Vercel, Sanity, Resend, GA4, GTM, GSC, GitHub, DNS. Kim sahip, kim yönetici? | P6, P10 |
 | D32 | Geri dönüş: DNS geçişinden sonra eski hosting kaç gün açık kalacak? **Öneri: en az 30 gün** (eski ajansın sözleşme durumu müşteriyle netleşmeli). | P10 |
+| D38 | **Eski iki alan adı (`torukoryoko.com`, `eztravelturkey.com`) kapatılmamalı.** Müşteri "domain ve e-postalar kapanacak" dedi (2026-10-08), ama P7.5'teki yönlendirmeler (≈ 1.200 eski URL) bu alan adlarının DNS'inin yeni siteye bağlı kalmasına bağlı. **Öneri:** alan adları en az 12 ay kayıtlı kalır ve Vercel'e yönlendirilir; yalnızca eski sunucudaki e-posta kutuları kapatılır. Alan adlarının kaydı ve DNS'i kimde (bu ikisinin ad sunucuları `netportbilisim.com`) netleşmeli. | P7, P10 |
+| D39 | **E-posta barındırma.** Üç alan adının MX kaydı alan adının kendisine işaret ediyor (`MX = magnificenttravel.com`), yani e-posta kutuları web sitelerinin durduğu eski sunucuda (`31.210.57.126`/`.122`). Siteyi taşıyınca ve eski sunucu kapanınca e-posta da kapanır. Vercel e-posta kutusu barındırmaz. Müşteri en az 5 adres istiyor. Karar: hangi hizmet (Google Workspace, Microsoft 365 vb.), kim satın alır ve kurar, mevcut kutuların içeriği nasıl taşınır. | P9, P10 |
 | D33 | `magnificenttravel.vercel.app` şu an `index, follow`. **Karar: şimdi noindex gerekmez** (alan adı bağlı değil, adres özel). Yayında ana alan adına 301 (P7.10). | P7, P10 |
 
 ---
@@ -322,7 +324,7 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - [ ] P7.2 **GSC 404 sınıflandırması (EN):** (1) dış link veya trafik alan silinmiş sayfalar → en yakın sayfaya 301, (2) eğik çizgi/büyük-küçük harf varyantları → normalizasyon, (3) hayalet URL'ler → 404/410.
 - [ ] P7.3 Silinecek tur listesi (müşteri verecek) → üst kategoriye 301.
 - [ ] P7.4 **Blog (D12):** 5 Map of X aynı URL (yönlendirme gerekmez). Diğer tüm eski blog URL'leri (`/en/blog/<ülke>/<yazı>/`) varsayılan olarak blog hub'ına 301. Müşterinin CMS'ten eklediği özel yönlendirmeler (P6.14) varsayılandan önce gelir. Karşılığı olmayan ve trafiği/linki olmayan sayfalar için 410 tercih edilebilir, bu karar müşteride.
-- [ ] P7.5 zh/jp alan adı geçişi: `eztravelturkey.com/zh/*` → `magnificenttravel.com/zh/*`, `torukoryoko.com/jp/*` → `magnificenttravel.com/jp/*` kural bazlı (host + önek). `/cn/*` → karşılık gelen `/zh/*` (D10). Alt-URL'ler (`/tour-itinerary/` vb.) → tur sayfası. Eski kök sayfalar (`/`) → ilgili dilin ana sayfası.
+- [ ] P7.5 zh/jp alan adı geçişi (**eski alan adlarının DNS'i yeni siteye bağlı kalmalı, kapatılmamalı, D38; DNS şu an `netportbilisim.com` ad sunucularında, kontrol kimde netleşmeli**): `eztravelturkey.com/zh/*` → `magnificenttravel.com/zh/*`, `torukoryoko.com/jp/*` → `magnificenttravel.com/jp/*` kural bazlı (host + önek). `/cn/*` → karşılık gelen `/zh/*` (D10). Alt-URL'ler (`/tour-itinerary/` vb.) → tur sayfası. Eski kök sayfalar (`/`) → ilgili dilin ana sayfası.
 - [ ] P7.6 Mekanizma spike'ı (D25): kural sayısı ≤ 1.000 ise `redirects` + `has: host`; aksi halde `proxy.ts` + arama (Global Config / Redis / Bloom filter). Seçim ve gerekçe günlüğe yazılır.
 - [ ] P7.7 Otomatik test: tüm eski URL envanteri (≈1.900) için betik: durum kodu doğru mu, hedef 200 mü, zincir ≤ 1 mi.
 - [ ] P7.8 Normalizasyon: eğik çizgi, `www`, büyük/küçük harf.
@@ -371,13 +373,23 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - [ ] P9.10 Çerez bildirimi ve GTM yüklemesinin CLS/LCP'ye etkisi ölçülür (bildirim yerleşimi sayfayı kaydırmamalı).
 - [ ] P9.11 **Kişisel veri:** KVKK aydınlatma metni (Türk şirketi, formlardan kişisel veri toplanıyor), AB için GDPR, Japonya APPI, Tayvan PDPA gereklilikleri hukuki incelemeye gönderilir. Gizlilik sayfası taslağı "hukuki inceleme gerektirir" notuyla müşteriye sunulur.
 
-**Bitti sayılır:** üç dilde örnek sayfalar CWV hedeflerini önizlemede geçiyor; güvenlik başlıkları aktif; form uçtan uca teslim ediliyor; izleme ve yedek çalışıyor.
+- [ ] P9.12 **E-posta ve DNS (D39, kritik, yayın günü sırası belirleyici):**
+  - Envanter: üç alan adındaki mevcut kutular (ad, ne için kullanılıyor, şifre/panel erişimi), müşterinin istediği ≥ 5 adres ve amaçları (ör. bilgi, satış, destek).
+  - Hizmet seçimi (D39) ve kutuların kurulumu; mevcut e-postaların IMAP ile yeni kutulara taşınması (eski ajansın sunucusu kapanmadan önce).
+  - **Tuzak:** `MX = alan adının kendisi` olduğu için apex A kaydını Vercel'e çevirmek **e-postayı anında bozar**. Yeni MX kayıtları web geçişinden **önce** yürürlüğe girer; MX hiçbir zaman apex A kaydına bağlı kalmaz.
+  - SPF, DKIM, DMARC kayıtları (yeni e-posta hizmeti + Resend birlikte), eski sunucu IP'leri SPF'den çıkarılır.
+  - Form gönderimi: `no-reply@` gibi bir gönderen adresi (Resend, alan adı doğrulamalı), alıcı adres(ler) müşteriden, yanıt adresi ziyaretçinin e-postası (P9.3 ile birleşir).
+  - Teslim edilebilirlik testi (Gmail, Outlook, Yahoo): form e-postaları spam'e düşmemeli.
+  - Eski iki alan adındaki e-posta adresleri: ana alan adına yönlendirme veya kapatma kararı (müşteri); kapatmadan önce içerik yedeği.
+  - Panel (CMS) kullanıcıları: en az 3-4 kişi, her biri kendi e-postasıyla giriş yapar (Sanity Free'de hepsi Administrator, 20 koltuk).
+
+**Bitti sayılır:** üç dilde örnek sayfalar CWV hedeflerini önizlemede geçiyor; güvenlik başlıkları aktif; form uçtan uca teslim ediliyor; e-posta kutuları yeni hizmette çalışıyor ve geçiş sırası yazılı; izleme ve yedek çalışıyor.
 
 ---
 
 ### P10: Yayın, geçiş ve yayın sonrası
 - [ ] P10.1 Yayın öncesi kontrol listesi: tüm fazların "Bitti sayılır" kriterleri; **GSC (mülk + Domain property), GA4 ve GTM kurulu, önizlemede doğrulanmış ve yayın günü etkin** (kullanıcı kararı: bu üçü yayın şartı); içerik dondurma; **son scrape farkı** (yayın günü eski sitede değişen içerik var mı).
-- [ ] P10.2 DNS geçişi (müşteri DNS'i yönetiyor): TTL düşür, alan adlarını Vercel projesine ekle, SSL, `www` politikası, sıra (D21). Eski sunucuya erişim kesildiğinde yönlendirmelerin çalıştığı doğrulanır.
+- [ ] P10.2 DNS geçişi (müşteri DNS'i yönetiyor; **önce e-posta (P9.12), sonra web**; MX apex'e bağlı bırakılmaz; `magnificenttravel.com` DNS'i Cloudflare'de, `www` kaydı şu an Cloudflare proxy'li: Vercel için proxy'siz (DNS only) tercih edilir, yayında gözden geçirilir; eski iki alan adı en az 12 ay Vercel'e yönlendirilir, D38): TTL düşür, alan adlarını Vercel projesine ekle, SSL, `www` politikası, sıra (D21). Eski sunucuya erişim kesildiğinde yönlendirmelerin çalıştığı doğrulanır.
 - [ ] P10.3 Yayın günü: sitemap gönderimi, örnek URL denetimleri, canlı yönlendirme testi (P7.7 betiği canlı alan adlarına karşı), GA4 gerçek zamanlı, form testi.
 - [ ] P10.4 İlk 30 ve 90 gün: GSC'de 404 ve kapsam izleme, EN sıralama karşılaştırması (baseline: `docs/baseline/gsc-en-baseline.md`; OpenSEO ile aynı sorgular yeniden çekilir), zh/jp için yeni property'den başlangıç ölçümü.
 - [ ] P10.5 3 aylık SEO/AI arama programı başlangıcı (kapsam D24'e göre).
@@ -475,7 +487,11 @@ Amaç: Ek H kabul listesini elle değil otomatik doğrulamak ve gerilemeyi (regr
 - Görseller `/public/thumbs/<WxH>-<mod>-<ad>.jpg`: galeri 950x700 (`thumbnail`), **rota haritası 800x600 (`bestFit`)**, kart 648x425.
 - Teklif formu alanları: adults, children, agesofchildren, arrivaldate, departuredate, budget, hotels, nationality, currency, countrycode, phone, notes, reCAPTCHA.
 
-**A.5 Analytics durumu**
+**A.5 DNS ve e-posta durumu (2026-10-08)**
+- Üç alan adının MX kaydı alan adının kendisi: e-posta, web sitelerinin durduğu aynı eski sunucuda (`31.210.57.126`, `.122`; SPF bu IP'leri yetkilendiriyor).
+- `magnificenttravel.com` ad sunucuları Cloudflare (`jacob`/`aurora`); `torukoryoko.com` ve `eztravelturkey.com` ad sunucuları `ns11/ns12.netportbilisim.com`. Bu iki alan adının DNS'ini kimin yönettiği doğrulanmadı.
+
+**A.5b Analytics durumu**
 - EN: GA4 `G-E8XLPNE302`, GTM `GTM-55HWFMHR`.
 - ZH: yalnızca `UA-` (Universal Analytics kapandı, veri toplamıyor). JA: hiçbiri.
 - GSC: yalnızca magnificenttravel.com için erişimimiz var. torukoryoko.com aynı doğrulama koduna sahip (muhtemelen aynı hesap), eztravelturkey.com farklı hesapta. Müşteri DNS'i yönettiği için eski alan adlarını kendi hesabıyla doğrulayabilir (isteğe bağlı, geçmiş veri garanti değil).
@@ -559,6 +575,9 @@ Diğer tipler: kategori, ülke, kombo (giriş metni, eşleşme, lojistik, mevsim
 - [ ] Hangi dillerde hangi para birimiyle fiyat gösterilecek (D28)
 - [ ] Hesap sahipliği ve yönetici kişiler (D31): Vercel, Sanity, GitHub, GA4/GTM, GSC, DNS
 - [ ] Eski hosting'in geçişten sonra ne kadar açık kalacağı ve eski ajansla sözleşme durumu (D32)
+- [ ] **E-posta (D39):** bugün kullanılan kutuların listesi (üç alan adı için), her biri ne için, şifre/panel erişimi var mı; yeni sitede istenen ≥ 5 adres ve amaçları; hizmeti kim satın alacak
+- [ ] **Alan adları (D38):** `torukoryoko.com` ve `eztravelturkey.com` en az 12 ay kayıtlı kalacak ve yönlendirme için kullanılacak mı; kayıt şirketi ve DNS yönetimi kimde
+- [ ] **Panel kullanıcıları:** en az 3-4 kişinin adı ve e-postası (Sanity'de her biri kendi e-postasıyla girer)
 - [~] GSC "Not found (404)" dışa aktarımı: P7'de (blog dışı 404'ler için). Silinmiş blog sayfaları ertelendi (D34).
 - [ ] GA4/GTM kapsayıcısının içeriği ve veri toplayıp toplamadığı (P0.5d): müşterinin verdiği Analytics erişimiyle bakılır
 - [ ] Tripadvisor ve Google Business Profile **yönetici erişimi: yayın zamanı gerekir** (P10.10: web sitesi URL'sini yeni siteye güncellemek için). Denetim için şart değil, GBP "Performance" (arama, arama, yol tarifi) verisi başlangıç ölçümü için isteğe bağlı.
@@ -592,6 +611,9 @@ Diğer tipler: kategori, ülke, kombo (giriş metni, eşleşme, lojistik, mevsim
 | Kişisel veri ve çerez mevzuatı (KVKK, GDPR, APPI, PDPA) | Hukuki risk | P9.11, hukuki inceleme |
 | Geri dönüş planı yok, eski hosting kapanır | Sorun olursa dönüş yok | P10.7, D32 |
 | Teslim tarihleri ve sorumlular belgede yok | Takvim ve sorumluluk belirsiz | P0.8 |
+| E-posta kutuları web sitelerinin eski sunucusunda, MX apex'e bağlı | Web DNS'i değişince veya sunucu kapanınca e-posta anında kesilir | D39, P9.12: önce yeni e-posta hizmeti ve MX, sonra web geçişi |
+| Müşteri eski iki alan adını kapatmayı planlıyor | ≈ 1.200 eski URL'nin yönlendirmesi çalışmaz, zh/jp sıralaması ve linkleri kaybolur | D38: alan adlarını ≥ 12 ay yenile ve yönlendir, yalnızca e-postayı kapat |
+| Bu iki alan adının DNS'i `netportbilisim.com` ad sunucularında (muhtemelen eski ajans) | Yönlendirmeleri kuramayız, e-posta/DNS kontrolü bizde değil | Kayıt şirketi ve DNS erişimini müşteriden iste, DNS'i Cloudflare'e al |
 
 ### Ek G. Sık başvurulan Next.js 16.3 dokümanları (`node_modules/next/dist/docs/01-app/`)
 - `02-guides/internationalization.md` (`[lang]`, `proxy`, `next/root-params`)
