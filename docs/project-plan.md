@@ -127,6 +127,8 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - **S: İçerik ve on-page SEO** (araştırma P0-P1, strateji P3, uygulama P3/P6, yayın sonrası P10)
 - **T: Test ve otomasyon / CI** (P2'den itibaren, Ek H kabul listesini otomatik doğrular)
 
+**E-posta işleri en sona bırakıldı (kullanıcı kararı, 2026-10-12):** D39, P9.3'ün gönderen/alıcı kısmı ve P9.12 yayın öncesine kadar bekler. P2-P8 e-postadan bağımsızdır. Tek ön koşul: form teslimini uçtan uca denemek için Resend'de alan adı doğrulaması gerekir (P9.3); o zamana kadar form, geliştirme ortamında WhatsApp devri ve test alıcıyla çalışır.
+
 **Takvim:** teslim tarihleri ve sorumlular proje sahibi tarafından yönetilir, bu belgede tutulmaz. Efor sütunu yalnızca göreli büyüklüktür.
 
 **Mevcut repo durumu (2026-10-06):** Next.js 16.3.8, React 19, Tailwind 4; yalnızca İngilizce; 6 tur, 6 kombo, 5 ülke `src/data/*.ts` içinde; 9 Travel Hub yazısı `content/travel-hub/`; URL'ler yeni yapıda (`/tours/<slug>`, `/destinations/<ülke>`, `/travel-hub/<slug>`). `tsc` ve `lint` temiz. Analytics, güvenlik başlıkları, e-posta teslimi, i18n yok.
