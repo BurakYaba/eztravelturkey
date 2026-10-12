@@ -1,13 +1,20 @@
 import type { Metadata } from 'next';
 import { site } from '@/data/site';
 import { img, type ImageId } from '@/data/images';
+import { defaultLocale, hasLocale, htmlLang, locales, type Locale } from '@/i18n/config';
+import { localePath } from '@/i18n/paths';
 
+/** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. */
 export const absoluteUrl = (path = '/') => `${site.url}${path.startsWith('/') ? path : `/${path}`}`;
+
+const ogLocale: Record<Locale, string> = { en: 'en_US', zh: 'zh_TW', jp: 'ja_JP' };
 
 type MetaInput = {
   title: string;
   description: string;
+  /** Path without the language prefix, for example `/tours/some-tour`. */
   path: string;
+  lang?: Locale;
   image?: ImageId;
   type?: 'website' | 'article';
 };
@@ -16,21 +23,25 @@ export function buildMetadata({
   title,
   description,
   path,
+  lang = defaultLocale,
   image = 'hero-istanbul',
   type = 'website',
 }: MetaInput): Metadata {
   const picture = img(image);
-  const fullTitle = path === '/' ? title : `${title} | ${site.name}`;
+  const full = localePath(lang, path);
+  const isHome = path === '/';
+  const fullTitle = isHome ? title : `${title} | ${site.name}`;
   return {
-    title: path === '/' ? { absolute: title } : title,
+    title: isHome ? { absolute: title } : title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: full },
     openGraph: {
       type,
       siteName: site.name,
+      locale: ogLocale[lang],
       title: fullTitle,
       description,
-      url: absoluteUrl(path),
+      url: absoluteUrl(full),
       images: [{ url: absoluteUrl(picture.src), width: picture.width, height: picture.height, alt: picture.alt }],
     },
     twitter: {
@@ -42,7 +53,16 @@ export function buildMetadata({
   };
 }
 
+/** `generateMetadata` for a static page: reads the language from the route and builds the metadata for it. */
+export const localizedMetadata =
+  (input: Omit<MetaInput, 'lang'>) =>
+  async ({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> => {
+    const { lang } = await params;
+    return buildMetadata({ ...input, lang: hasLocale(lang) ? lang : defaultLocale });
+  };
+
 const organizationRef = { '@id': `${site.url}/#organization` };
+const websiteId = (lang: Locale) => `${site.url}/${lang}/#website`;
 
 export const travelAgencyJsonLd = () => ({
   '@context': 'https://schema.org',
@@ -68,39 +88,39 @@ export const travelAgencyJsonLd = () => ({
   sameAs: [site.social.facebook, site.social.linkedin, site.social.instagram, site.tripadvisorUrl],
 });
 
-export const websiteJsonLd = () => ({
+export const websiteJsonLd = (lang: Locale) => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': `${site.url}/#website`,
-  url: site.url,
+  '@id': websiteId(lang),
+  url: absoluteUrl(`/${lang}/`),
   name: site.name,
-  inLanguage: 'en',
+  inLanguage: htmlLang[lang],
   publisher: organizationRef,
 });
 
-export const webPageJsonLd = (name: string, path: string, type = 'WebPage', description?: string) => ({
+export const webPageJsonLd = (lang: Locale, name: string, path: string, type = 'WebPage', description?: string) => ({
   '@context': 'https://schema.org',
   '@type': type,
   name,
-  url: absoluteUrl(path),
-  inLanguage: 'en',
+  url: absoluteUrl(localePath(lang, path)),
+  inLanguage: htmlLang[lang],
   ...(description ? { description } : {}),
-  isPartOf: { '@id': `${site.url}/#website` },
+  isPartOf: { '@id': websiteId(lang) },
   about: organizationRef,
 });
 
-export const breadcrumbJsonLd = (items: { name: string; path: string }[]) => ({
+export const breadcrumbJsonLd = (lang: Locale, items: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: items.map((item, i) => ({
     '@type': 'ListItem',
     position: i + 1,
     name: item.name,
-    item: absoluteUrl(item.path),
+    item: absoluteUrl(localePath(lang, item.path)),
   })),
 });
 
-export const itemListJsonLd = (name: string, items: { name: string; path: string }[]) => ({
+export const itemListJsonLd = (lang: Locale, name: string, items: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name,
@@ -109,14 +129,15 @@ export const itemListJsonLd = (name: string, items: { name: string; path: string
     '@type': 'ListItem',
     position: i + 1,
     name: item.name,
-    url: absoluteUrl(item.path),
+    url: absoluteUrl(localePath(lang, item.path)),
   })),
 });
 
-export const collectionPageJsonLd = (name: string, path: string, description: string) =>
-  webPageJsonLd(name, path, 'CollectionPage', description);
+export const collectionPageJsonLd = (lang: Locale, name: string, path: string, description: string) =>
+  webPageJsonLd(lang, name, path, 'CollectionPage', description);
 
 type TripInput = {
+  lang: Locale;
   name: string;
   description: string;
   path: string;
@@ -125,35 +146,39 @@ type TripInput = {
   stops: string[];
 };
 
-export const touristTripJsonLd = ({ name, description, path, image, priceEUR, stops }: TripInput) => ({
-  '@context': 'https://schema.org',
-  '@type': 'TouristTrip',
-  name,
-  description,
-  url: absoluteUrl(path),
-  image: absoluteUrl(img(image).src),
-  touristType: 'Cultural tourism',
-  provider: organizationRef,
-  itinerary: {
-    '@type': 'ItemList',
-    numberOfItems: stops.length,
-    itemListElement: stops.map((stop, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      item: { '@type': 'Place', name: stop },
-    })),
-  },
-  offers: {
-    '@type': 'Offer',
-    url: absoluteUrl(path),
-    priceCurrency: 'EUR',
-    price: String(priceEUR),
-    description: 'Starting price per person, taxes included. Final price depends on dates, hotels and group size.',
-    seller: organizationRef,
-  },
-});
+export const touristTripJsonLd = ({ lang, name, description, path, image, priceEUR, stops }: TripInput) => {
+  const url = absoluteUrl(localePath(lang, path));
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name,
+    description,
+    url,
+    image: absoluteUrl(img(image).src),
+    touristType: 'Cultural tourism',
+    provider: organizationRef,
+    itinerary: {
+      '@type': 'ItemList',
+      numberOfItems: stops.length,
+      itemListElement: stops.map((stop, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: { '@type': 'Place', name: stop },
+      })),
+    },
+    offers: {
+      '@type': 'Offer',
+      url,
+      priceCurrency: 'EUR',
+      price: String(priceEUR),
+      description: 'Starting price per person, taxes included. Final price depends on dates, hotels and group size.',
+      seller: organizationRef,
+    },
+  };
+};
 
 type ArticleInput = {
+  lang: Locale;
   title: string;
   description: string;
   path: string;
@@ -161,16 +186,26 @@ type ArticleInput = {
   date: string;
 };
 
-export const blogPostingJsonLd = ({ title, description, path, image, date }: ArticleInput) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: title,
-  description,
-  url: absoluteUrl(path),
-  image: absoluteUrl(img(image).src),
-  datePublished: date,
-  dateModified: date,
-  author: { '@type': 'Organization', name: site.name, url: site.url },
-  publisher: organizationRef,
-  mainEntityOfPage: absoluteUrl(path),
-});
+export const blogPostingJsonLd = ({ lang, title, description, path, image, date }: ArticleInput) => {
+  const url = absoluteUrl(localePath(lang, path));
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    url,
+    image: absoluteUrl(img(image).src),
+    datePublished: date,
+    dateModified: date,
+    inLanguage: htmlLang[lang],
+    author: { '@type': 'Organization', name: site.name, url: site.url },
+    publisher: organizationRef,
+    mainEntityOfPage: url,
+  };
+};
+
+/** All language versions of a path, for hreflang. Pages that exist in only some languages pass `only`. */
+export function languageAlternates(path: string, only: readonly Locale[] = locales): Record<string, string> {
+  const entries = only.map((lang) => [htmlLang[lang], absoluteUrl(localePath(lang, path))] as const);
+  return Object.fromEntries([...entries, ['x-default', absoluteUrl(localePath(defaultLocale, path))]]);
+}

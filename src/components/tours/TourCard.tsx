@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/link';
 import { ArrowRight, Clock, UsersThree } from '@phosphor-icons/react/dist/ssr';
 import type { ImageId } from '@/data/images';
 import { cn, eur } from '@/lib/utils';

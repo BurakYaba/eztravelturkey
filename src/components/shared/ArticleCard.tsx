@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/link';
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { getTour } from '@/data/tours';
 import type { Article } from '@/lib/content';

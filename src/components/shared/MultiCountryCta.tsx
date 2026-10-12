@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/link';
 import { ArrowRight, Compass } from '@phosphor-icons/react/dist/ssr';
 import { combos } from '@/data/combos';
 import { ButtonLink } from './Button';

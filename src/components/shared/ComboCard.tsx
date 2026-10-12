@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/link';
 import { ArrowRight, Clock } from '@phosphor-icons/react/dist/ssr';
 import type { Combo } from '@/data/types';
 import { cn, eur } from '@/lib/utils';

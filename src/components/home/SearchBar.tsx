@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useId, type FormEvent, type ReactNode } from 'react';
 import { CalendarBlank, CaretDown, Compass, MapPin, MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
+import { useLocale } from '@/i18n/locale-context';
+import { localizeHref } from '@/i18n/paths';
 import { Button } from '../shared/Button';
 
 function Select({
@@ -50,6 +52,7 @@ function Select({
 /** Sends visitors to the tours listing with filters already applied. */
 export function SearchBar() {
   const router = useRouter();
+  const lang = useLocale();
   const uid = useId();
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -57,7 +60,7 @@ export function SearchBar() {
     const data = new FormData(e.currentTarget);
     const destination = String(data.get('destination') ?? '');
     if (destination === 'multi') {
-      router.push('/multi-country-tours');
+      router.push(localizeHref(lang, '/multi-country-tours'));
       return;
     }
     const params = new URLSearchParams();
@@ -67,7 +70,7 @@ export function SearchBar() {
         params.set(key, value);
       }
     }
-    router.push(`/tours${params.size ? `?${params}` : ''}`);
+    router.push(localizeHref(lang, `/tours${params.size ? `?${params}` : ''}`));
   }
 
   return (

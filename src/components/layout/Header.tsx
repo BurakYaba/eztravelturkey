@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/link';
 import { usePathname } from 'next/navigation';
+import { stripLocale } from '@/i18n/paths';
 import { useEffect, useRef, useState } from 'react';
 import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
@@ -111,7 +112,8 @@ function Dropdown({
 }
 
 export function Header() {
-  const pathname = usePathname();
+  const currentPath = usePathname();
+  const pathname = stripLocale(currentPath);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -120,7 +122,7 @@ export function Header() {
 
   useEffect(() => {
     setMenuOpen(false);
-  }, [pathname]);
+  }, [currentPath]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';

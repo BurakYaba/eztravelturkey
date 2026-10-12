@@ -9,6 +9,7 @@ import { TrustBar } from '../shared/TrustBar';
 import { ToursBrowser } from './ToursBrowser';
 import type { ImageId } from '@/data/images';
 import { tours } from '@/data/tours';
+import { getLocale } from '@/i18n/server';
 import type { Faq } from '@/data/types';
 import { breadcrumbJsonLd, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 import { toBrowsable } from '@/lib/tours';
@@ -24,7 +25,8 @@ type Props = {
   faqs: Faq[];
 };
 
-export function StylePage({ style, path, title, lead, description, image, points, faqs }: Props) {
+export async function StylePage({ style, path, title, lead, description, image, points, faqs }: Props) {
+  const lang = await getLocale();
   const list = tours.filter((t) => t.styles.includes(style));
   const crumbs = [
     { name: 'Home', path: '/' },
@@ -66,12 +68,13 @@ export function StylePage({ style, path, title, lead, description, image, points
       <QuoteBand />
       <JsonLd
         data={[
-          collectionPageJsonLd(title, path, description),
+          collectionPageJsonLd(lang, title, path, description),
           itemListJsonLd(
+            lang,
             title,
             list.map((t) => ({ name: `${t.title}: ${t.subtitle}`, path: `/tours/${t.slug}` })),
           ),
-          breadcrumbJsonLd(crumbs),
+          breadcrumbJsonLd(lang, crumbs),
         ]}
       />
     </>
