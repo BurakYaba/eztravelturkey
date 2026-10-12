@@ -360,7 +360,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/hydra-poros-and-aegina-one-day-cruise",
-            "priceValidUntil": "2026-10-09",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

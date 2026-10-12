@@ -38,3 +38,35 @@ Müşterinin verdiği sayılar 125 / 85 / 85'ti. Bizim sayımız zh ve jp'de bir
 - Her dilin kendi ürün listesi ve kategori ağacı korunur (ilke 8). zh/jp'ye "EN'deki bütün turları ekle" ya da tersi yapılmaz.
 - Tur şablonunda **fiyat isteğe bağlı** olmalı: zh/jp'de "fiyat için iletişime geçin" durumu olacak, `Offer` yapılandırılmış verisi yalnızca fiyat varsa üretilir.
 - D28 (para birimi): üç sitede de EUR kullanılıyor, varsayılan EUR.
+
+---
+
+## Güncelleme 2026-10-12: müşteri eski sitelerden tur sildi
+Müşteri Çince ve Japonca sitelerden tur sildi, İngilizce sitede **hiçbir fark yok** (118 tur, içerik aynı; tek fark, eski sitenin yapılandırılmış verisindeki haftalık kayan "fiyat geçerlilik" tarihi, bu artık saklanan kopyadan çıkarılıyor). Üç site yeniden arşivlendi (7 Ekim anlık görüntüsü `data/archive/*-2026-10-07` altında).
+
+| Site | URL (7 Ekim → 12 Ekim) | Silinen ana sayfa (tur ve kategori) |
+|---|---|---|
+| ZH | 793 → 462 | `/zh/`: Türkiye 23, Yunanistan 6, **Fas 10 (tamamı)**, Türkiye-Yunanistan gemi turu 5; `/cn/`: aynı sayfaların karşılıkları |
+| JP | 441 → 275 | Türkiye 40, Yunanistan 5, Mısır 2 |
+| EN | 690 → 690 | yok |
+
+Silinen URL'lerin tam listesi `data/inventory/removed-2026-10-12.csv` (497 satır), P7.3'te üst kategoriye 301 için kullanılacak.
+
+### Yeni sayılar (aynı yöntem)
+| | EN | ZH | JP |
+|---|---|---|---|
+| Tur sayısı | 118 | **53** (92'den) | **63** (103'ten) |
+| Türkiye | 32 | 21 | 20 |
+| Yunanistan | 28 | 6 | 5 |
+| Mısır | 8 | 6 | 6 |
+| Ürdün | 7 | 5 | 7 |
+| Fas | 12 | **0** | 8 |
+| Kombo | 31 | 15 | 17 |
+
+| Eşleşme (tahmini) | Güçlü | Kısmi | Karşılığı yok |
+|---|---|---|---|
+| ZH turları → EN | 17 | 28 | 8 (%85'inin EN'de karşılığı var) |
+| JP turları → EN | 32 | 23 | 8 (%87'sinin EN'de karşılığı var) |
+| ZH turları → JP | 16 | 24 | 13 |
+
+**Sonuç:** Silmelerden sonra Çince ve Japonca kataloglar büyük ölçüde İngilizce kataloğun alt kümesi gibi (silinenler çoğunlukla zh/jp'ye özgü Türkiye günübirlik ve kısa turları). Ama ters yön geçerli değil: **118 EN turunun yalnızca 50'sinin (%42) zh veya jp'de karşılığı var**, 68'i yalnızca İngilizce. Çince sitede artık **hiç Fas turu yok**, Japonca sitede 8 var.

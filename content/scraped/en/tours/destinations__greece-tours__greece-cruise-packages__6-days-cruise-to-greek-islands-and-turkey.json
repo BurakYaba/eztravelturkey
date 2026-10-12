@@ -465,7 +465,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/6-days-cruise-to-greek-islands-and-turkey",
-            "priceValidUntil": "2026-10-09",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

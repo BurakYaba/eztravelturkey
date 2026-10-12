@@ -356,7 +356,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/ancient-corinth-tour-half-day",
-            "priceValidUntil": "2026-10-09",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

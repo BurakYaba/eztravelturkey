@@ -402,7 +402,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-escorted-tours/3-days-olympia-delphi-and-corinth-tour",
-            "priceValidUntil": "2026-10-11",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

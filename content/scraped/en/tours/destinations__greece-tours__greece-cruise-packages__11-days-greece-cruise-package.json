@@ -551,7 +551,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/11-days-greece-cruise-package",
-            "priceValidUntil": "2026-10-09",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

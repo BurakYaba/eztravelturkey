@@ -609,7 +609,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/15-days-and-longer/15-days-istanbul-cappadocia-bodrum-antalya-ephesus-and-pamukkale-tour",
-            "priceValidUntil": "2026-10-09",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

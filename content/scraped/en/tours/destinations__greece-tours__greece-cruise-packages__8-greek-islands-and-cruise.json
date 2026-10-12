@@ -496,7 +496,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/8-greek-islands-and-cruise",
-            "priceValidUntil": "2026-10-10",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

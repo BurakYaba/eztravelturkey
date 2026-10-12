@@ -1,6 +1,7 @@
 // Parses an archived English tour page into the normalized shape of src/lib/schema/tour.ts (docs/project-plan.md P1.5).
 // The old tour template is regular, so selectors are explicit and every miss is reported instead of guessed.
 import * as cheerio from 'cheerio';
+import { stripRollingDates } from './lib/jsonld.mjs';
 import { EN_CATEGORIES } from './lib/classify.mjs';
 
 const squash = (value) => value.replace(/\s+/g, ' ').trim();
@@ -176,7 +177,7 @@ export function parseTour(html, sourceUrl) {
   const jsonLd = [];
   $('script[type="application/ld+json"]').each((_, script) => {
     try {
-      jsonLd.push(JSON.parse($(script).text()));
+      jsonLd.push(stripRollingDates(JSON.parse($(script).text())));
     } catch {
       issues.push('invalid JSON-LD block');
     }

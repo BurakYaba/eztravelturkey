@@ -6361,6 +6361,10 @@
     {
      "owner": "blog/egypt",
      "role": "page"
+    },
+    {
+     "owner": "blog/egypt/islamic-cairo",
+     "role": "page"
     }
    ]
   },
@@ -6927,6 +6931,14 @@
     {
      "owner": "blog/turkey",
      "role": "page"
+    },
+    {
+     "owner": "blog/turkey/canakkale-and-troy-a-journey-through-history-and-myth",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/turkish-art-and-architecture-a-journey-through-time",
+     "role": "page"
     }
    ]
   },
@@ -6997,6 +7009,10 @@
     {
      "owner": "blog/turkey",
      "role": "page"
+    },
+    {
+     "owner": "blog/turkey/can-i-do-turkey-and-greece-together-a-comprehensive-travel-guide",
+     "role": "page"
     }
    ]
   },
@@ -7017,6 +7033,10 @@
     {
      "owner": "blog/turkey",
      "role": "page"
+    },
+    {
+     "owner": "blog/turkey/fethiye-turkey-a-hidden-gem-on-the-turquoise-coast",
+     "role": "page"
     }
    ]
   },
@@ -7036,6 +7056,14 @@
    "usedBy": [
     {
      "owner": "blog/turkey",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/fethiye-turkey-a-hidden-gem-on-the-turquoise-coast",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/turkey-s-most-beautiful-beaches-a-paradise-for-sun-seekers",
      "role": "page"
     }
    ]
@@ -7119,7 +7147,47 @@
    "alt": "Kenan Ungur",
    "usedBy": [
     {
+     "owner": "blog/egypt/exploring-the-inside-of-the-egyptian-pyramids",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/how-many-days-do-you-need-to-tour-cairo",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/islamic-cairo",
+     "role": "page"
+    },
+    {
      "owner": "blog/egypt/map-of-egypt",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/what-are-the-rules-for-tourists-in-egypt",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/what-the-time-in-egypt-right-now",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/can-you-get-a-ferry-from-greece-to-egypt",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/currency-used-in-greece-a-comprehensive-guide",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/discovering-the-charms-of-mykonos-greece-s-island-gem",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/greek-art-and-architecture-a-timeless-legacy-of-beauty-and-innovation",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/how-many-days-in-mykonos-is-enough-the-ultimate-guide-for-your-stay",
      "role": "page"
     },
     {
@@ -7127,7 +7195,31 @@
      "role": "page"
     },
     {
+     "owner": "blog/greece/the-cheapest-month-to-go-to-greece-a-comprehensive-guide",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/what-the-time-in-greece-right-now",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/when-is-easter-a-comprehensive-guide-to-easter",
+     "role": "page"
+    },
+    {
+     "owner": "blog/jordan/how-long-to-spend-in-jordan-first-timer-itinerary",
+     "role": "page"
+    },
+    {
+     "owner": "blog/jordan/how-many-days-is-enough-for-petra-a-comprehensive-guide",
+     "role": "page"
+    },
+    {
      "owner": "blog/jordan/map-of-jordan",
+     "role": "page"
+    },
+    {
+     "owner": "blog/morocco/christmas-in-casablanca-morocco",
      "role": "page"
     },
     {
@@ -7135,7 +7227,59 @@
      "role": "page"
     },
     {
+     "owner": "blog/turkey/can-i-do-turkey-and-greece-together-a-comprehensive-travel-guide",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/canakkale-and-troy-a-journey-through-history-and-myth",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/discover-ormana-village-a-hidden-gem-in-turkey",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/discovering-the-wonders-of-salt-lake-turkey-s-natural-treasure",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/exploring-turkey-s-traditional-bazaars",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/fethiye-turkey-a-hidden-gem-on-the-turquoise-coast",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/golf-in-turkey-a-golfer-s-paradise",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/is-turkey-a-part-of-europe-or-asia",
+     "role": "page"
+    },
+    {
      "owner": "blog/turkey/map-of-turkey",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/the-blue-mosque-in-istanbul-a-majestic-symbol-of-ottoman-grandeur",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/the-essential-guide-to-do-s-and-don-ts-in-istanbul-a-comprehensive-guide",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/turkey-s-most-beautiful-beaches-a-paradise-for-sun-seekers",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/turkish-art-and-architecture-a-journey-through-time",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/when-is-ramadan-a-comprehensive-guide-to-ramadan",
      "role": "page"
     }
    ]
@@ -7146,6 +7290,14 @@
    "usedBy": [
     {
      "owner": "blog/egypt/map-of-egypt",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/what-are-the-rules-for-tourists-in-egypt",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/what-the-time-in-egypt-right-now",
      "role": "page"
     }
    ]
@@ -7197,6 +7349,10 @@
     {
      "owner": "blog/greece/map-of-greece",
      "role": "page"
+    },
+    {
+     "owner": "blog/greece/the-cheapest-month-to-go-to-greece-a-comprehensive-guide",
+     "role": "page"
     }
    ]
   },
@@ -7222,8 +7378,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Umm-Qais-5.jpg": {
    "sha1": "ee0ed3b163977bb10793cf4c3b50a49a3d0347cd",
-   "alt": "How to Travel Around Jordan Without Choosing the Wrong Transport",
+   "alt": "7 Days in Jordan: A One-Week Itinerary That Works",
    "usedBy": [
+    {
+     "owner": "blog/jordan/how-long-to-spend-in-jordan-first-timer-itinerary",
+     "role": "page"
+    },
     {
      "owner": "blog/jordan/map-of-jordan",
      "role": "page"
@@ -7292,6 +7452,10 @@
    "sha1": "98f626010efdce3bc291766ccb4bbccc611f6e84",
    "alt": "Turkey in December: When Winter Changes the Journey",
    "usedBy": [
+    {
+     "owner": "blog/turkey/discover-ormana-village-a-hidden-gem-in-turkey",
+     "role": "page"
+    },
     {
      "owner": "blog/turkey/map-of-turkey",
      "role": "page"
@@ -7462,8 +7626,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Mykonos--1.jpg": {
    "sha1": "9dcbe054a8c0fbd903bf3ab7a90bed59ddfee903",
-   "alt": "8-Day Best of Greece: Athens, Mykonos & Santorini",
+   "alt": "Mykonos Weather in May: Is Beach Season Here Yet?",
    "usedBy": [
+    {
+     "owner": "blog/greece/how-many-days-in-mykonos-is-enough-the-ultimate-guide-for-your-stay",
+     "role": "page"
+    },
     {
      "owner": "destinations/greece-tours/greece-travel-packages",
      "role": "card"
@@ -7492,8 +7660,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Zakynthos-1.jpg": {
    "sha1": "2a3580d4189e0b1587a29d5c82f3001b7727be14",
-   "alt": "8-Day Ionian Greece Tour: Kefalonia & Zakynthos",
+   "alt": "What Is the Best Way to Travel Around Greece? It Depends on the Route",
    "usedBy": [
+    {
+     "owner": "blog/greece/can-you-get-a-ferry-from-greece-to-egypt",
+     "role": "page"
+    },
     {
      "owner": "destinations/greece-tours/greece-travel-packages",
      "role": "card"
@@ -7726,8 +7898,16 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Turquaz-Yatching-Fethiye.jpg": {
    "sha1": "7d922f262707e1634feefba35900bba56b78d222",
-   "alt": "12-Day Turkey Tour with Mediterranean Gulet Cruise",
+   "alt": "Sailing in Turkey: Choosing the Right Coast and Cruise Style",
    "usedBy": [
+    {
+     "owner": "blog/turkey/fethiye-turkey-a-hidden-gem-on-the-turquoise-coast",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/turkey-s-most-beautiful-beaches-a-paradise-for-sun-seekers",
+     "role": "page"
+    },
     {
      "owner": "destinations/turkey-tours/10-to-14-days-tours",
      "role": "card"
@@ -8088,8 +8268,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Hot-air-ballon--3.jpg": {
    "sha1": "add8da95fbee81c5acc0574cd9f2f3370c2ff507",
-   "alt": "16-Day Mediterranean Discovery: Egypt, Greece & Turkey",
+   "alt": "What to Know Before Traveling to Turkey for the First Time",
    "usedBy": [
+    {
+     "owner": "blog/turkey/golf-in-turkey-a-golfer-s-paradise",
+     "role": "page"
+    },
     {
      "owner": "destinations/turkey-greece-and-egypt-tours",
      "role": "card"
@@ -8288,8 +8472,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Meteora-2.jpg": {
    "sha1": "53c4010e4e188b3f401e66fc6af1501ec767ca98",
-   "alt": "Greece Escorted Tours 2026–2027 | Guided Holidays",
+   "alt": "Athens in May: Warm Days, Open-Air Evenings",
    "usedBy": [
+    {
+     "owner": "blog/greece/when-is-easter-a-comprehensive-guide-to-easter",
+     "role": "page"
+    },
     {
      "owner": "destinations/greece-tours",
      "role": "page"
@@ -8418,8 +8606,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Marrakech--2.jpg": {
    "sha1": "231b40bb66f7605bb2622e4f7b33445ecd592fd4",
-   "alt": "5-Day Zagora Desert Escape from Marrakech",
+   "alt": "Casablanca or Marrakech: Which City Is Better for Your Trip?",
    "usedBy": [
+    {
+     "owner": "blog/morocco/christmas-in-casablanca-morocco",
+     "role": "page"
+    },
     {
      "owner": "destinations/morocco-tours",
      "role": "card"
@@ -8512,8 +8704,12 @@
   },
   "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Wadi-Rum-1.jpg": {
    "sha1": "2d5a0bf034f09457960087fabee0a0e9ced5a1ba",
-   "alt": "Jordan Tours & Vacation Packages 2026–2027",
+   "alt": "Can You Visit Petra Without a Tour? What to Know First",
    "usedBy": [
+    {
+     "owner": "blog/jordan/how-many-days-is-enough-for-petra-a-comprehensive-guide",
+     "role": "page"
+    },
     {
      "owner": "destinations",
      "role": "page"
@@ -8960,6 +9156,884 @@
    "usedBy": [
     {
      "owner": "about",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Pyramid-1.jpg": {
+   "sha1": "08b2c98f476739c22ea9273a9eecbfaa15d2b15b",
+   "alt": "Should You Actually Go Inside the Great Pyramid?",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/exploring-the-inside-of-the-egyptian-pyramids",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Abu-Simbel--5-.jpg": {
+   "sha1": "7daa438ef81aee572a4c6914516cbcf5141b1f2a",
+   "alt": "Six Ancient Wonders Disappeared. The Great Pyramid Did Not.",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/exploring-the-inside-of-the-egyptian-pyramids",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Luxor-2.jpg": {
+   "sha1": "e2aeae734fee7931e1d1a7177ce0c225d8c490c9",
+   "alt": "Temples and Tombs Were Never Meant to Tell the Same Story",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/exploring-the-inside-of-the-egyptian-pyramids",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Hurghada-1.jpg": {
+   "sha1": "d8f9815b9616da1b11e2c8993c68521f64f9a37d",
+   "alt": "Your First Egypt Trip Does Not Need Every Famous Destination",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/exploring-the-inside-of-the-egyptian-pyramids",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Aswan-2.jpg": {
+   "sha1": "63793bd8e02d6d8dd42986284c429c59c68f2f3a",
+   "alt": "Cairo Needs Fewer Days Than You Think—and More Time Than a Map Suggests",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/how-many-days-do-you-need-to-tour-cairo",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Cairo-6.jpg": {
+   "sha1": "6082c6a74982cb9886d29290bff653c60ba267d7",
+   "alt": "How Many Days Do You Need in Egypt? A Realistic Way to Decide",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/how-many-days-do-you-need-to-tour-cairo",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Cairo-4.jpg": {
+   "sha1": "dca8f8eaa75918c891789824e6b1dae390469d9b",
+   "alt": "Cairo in September: The Month That Changes While You're Watching",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/how-many-days-do-you-need-to-tour-cairo",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Hurghada---0.jpg": {
+   "sha1": "498409dc076c485ae102c838824b8f70c3c416a3",
+   "alt": "Best Places to Stay in Cairo: Choosing the Right Area",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/how-many-days-do-you-need-to-tour-cairo",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Cairo-Sultan-Hassan-Mosque--.jpg": {
+   "sha1": "f19bb55e3a28ba37aa3bcf07c8454c496491f2b5",
+   "alt": "Islamic Cairo: How to Understand the Historic City",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/islamic-cairo",
+     "role": "page"
+    },
+    {
+     "owner": "blog/egypt/what-the-time-in-egypt-right-now",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Luxor-11.jpg": {
+   "sha1": "57583f6f294a277bbded2d2daf6ad1fea51a7584",
+   "alt": "How Egypt’s Museums Change the Way You See Ancient Egypt",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/islamic-cairo",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Aswan-2.jpg": {
+   "sha1": "97446335f7d3765db457950863e87a6780d7229e",
+   "alt": "Cairo Needs Fewer Days Than You Think—and More Time Than a Map Suggests",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/islamic-cairo",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Alexandria-5.jpg": {
+   "sha1": "1f0faf8277450906b310d3de52e0a01119c1eccc",
+   "alt": "Egypt Tourist Rules: Essential Laws, Customs, and Travel Tips",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/what-are-the-rules-for-tourists-in-egypt",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Cairo-1.jpg": {
+   "sha1": "b0bdb324155464624ee96d0e9b959ca7de6ca2bc",
+   "alt": "You Probably Need Less Guiding in Egypt Than You Think",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/what-are-the-rules-for-tourists-in-egypt",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Sharm-El-Sheikh-5.jpg": {
+   "sha1": "a38b728045e74a7ac16db4887d8e034f8db2575f",
+   "alt": "Egypt Currency: Managing Cash Without Carrying Too Much",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/what-are-the-rules-for-tourists-in-egypt",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Alexandria-5.jpg": {
+   "sha1": "9d5331de818e9df5780cb2629352fd836b2a6325",
+   "alt": "Egypt Tourist Rules: Essential Laws, Customs, and Travel Tips",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/what-the-time-in-egypt-right-now",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Corfu-11.jpg": {
+   "sha1": "b32ec13555cbac79631e0f00c15dff9faa8aea0c",
+   "alt": "How to Travel from Greece to Egypt Without Complicating Your Trip",
+   "usedBy": [
+    {
+     "owner": "blog/egypt/what-the-time-in-egypt-right-now",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/can-you-get-a-ferry-from-greece-to-egypt",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Santorini-24.jpg": {
+   "sha1": "38b7ad38cbd774a1f65956486a2d0bd89ba1761a",
+   "alt": "Can You Get a Ferry from Greece to Egypt?",
+   "usedBy": [
+    {
+     "owner": "blog/greece/can-you-get-a-ferry-from-greece-to-egypt",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Paros-5.jpg": {
+   "sha1": "e079ee12c30805468f3ccc56d9eded5f0438549b",
+   "alt": "How to Travel to Greece: Choosing the Right Way to Arrive",
+   "usedBy": [
+    {
+     "owner": "blog/greece/can-you-get-a-ferry-from-greece-to-egypt",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Crete-1.jpg": {
+   "sha1": "1b0b5e034196bd2c5e2b1a9f0a7f0bd4e303574e",
+   "alt": "Greece Currency: Cash, Cards and Paying During Your Trip",
+   "usedBy": [
+    {
+     "owner": "blog/greece/currency-used-in-greece-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Athens-Budget-Travel-Guide-with-Historic-Landmarks.jpg": {
+   "sha1": "56db19cd289309fec7e350f4febcc3f56460c514",
+   "alt": "Greece Budget Travel: Save Money Without Cheapening the Experience",
+   "usedBy": [
+    {
+     "owner": "blog/greece/currency-used-in-greece-a-comprehensive-guide",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/the-cheapest-month-to-go-to-greece-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Athens-19-.jpg": {
+   "sha1": "d7b22b04a3eb538c4190e0ad1b27e1cea4e27e8a",
+   "alt": "Is Greece Expensive to Visit? Understand What You Are Actually Paying For",
+   "usedBy": [
+    {
+     "owner": "blog/greece/currency-used-in-greece-a-comprehensive-guide",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/the-cheapest-month-to-go-to-greece-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Samos_-Greece--00.jpg": {
+   "sha1": "5e90c365cd3cb96e4b9e3e645d2d09907f68f67f",
+   "alt": "The Cheapest Month to Go to Greece Is Not Always the Cheapest Trip",
+   "usedBy": [
+    {
+     "owner": "blog/greece/currency-used-in-greece-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Mykonos-17.jpg": {
+   "sha1": "1da5d9549e354cb408bd2b82d52b59de4021d0d9",
+   "alt": "Mykonos Greece: Where You Stay Changes the Entire Trip",
+   "usedBy": [
+    {
+     "owner": "blog/greece/discovering-the-charms-of-mykonos-greece-s-island-gem",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Mykonos--1--.jpg": {
+   "sha1": "b1f3dd737f68d0848c69ecffdfd5c4bb6fb7e43b",
+   "alt": "How Many Days in Mykonos Do You Really Need?",
+   "usedBy": [
+    {
+     "owner": "blog/greece/discovering-the-charms-of-mykonos-greece-s-island-gem",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Mykonos-14.jpg": {
+   "sha1": "c1b5f6928332a5b33d053a806be8cb1a40d9d98e",
+   "alt": "Mykonos Weather in September: When the Sea Outlasts Summer",
+   "usedBy": [
+    {
+     "owner": "blog/greece/discovering-the-charms-of-mykonos-greece-s-island-gem",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/how-many-days-in-mykonos-is-enough-the-ultimate-guide-for-your-stay",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Rhodes-1.jpg": {
+   "sha1": "a78588a93a9a158c5685a1d51b9e83baec3dedaa",
+   "alt": "Which Greek Island Matches Your Travel Style? (2026–2027)",
+   "usedBy": [
+    {
+     "owner": "blog/greece/discovering-the-charms-of-mykonos-greece-s-island-gem",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/how-many-days-in-mykonos-is-enough-the-ultimate-guide-for-your-stay",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Athens--19.jpg": {
+   "sha1": "b4862f4b06d02e18b58e1c9ccfc992e8cea2256e",
+   "alt": "Greek Art and Architecture: Learning to Read Greece as You Travel",
+   "usedBy": [
+    {
+     "owner": "blog/greece/greek-art-and-architecture-a-timeless-legacy-of-beauty-and-innovation",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Samos--Greece.jpg": {
+   "sha1": "da369b5a23f47607364455c457ab011886572a5d",
+   "alt": "Planning a Greek Mythology Journey Through Greece",
+   "usedBy": [
+    {
+     "owner": "blog/greece/greek-art-and-architecture-a-timeless-legacy-of-beauty-and-innovation",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/what-the-time-in-greece-right-now",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Meteora-7.jpg": {
+   "sha1": "f4a896e5ef80b680046c8ace2412707fe7a31b0e",
+   "alt": "UNESCO World Heritage Sites in Greece: Which Ones Belong in Your Trip?",
+   "usedBy": [
+    {
+     "owner": "blog/greece/greek-art-and-architecture-a-timeless-legacy-of-beauty-and-innovation",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Athens-7.jpg": {
+   "sha1": "d6e02369e55711d0f82612e2730b42747334f175",
+   "alt": "Athens & Acropolis: How to Experience the Heart of Ancient Athens",
+   "usedBy": [
+    {
+     "owner": "blog/greece/greek-art-and-architecture-a-timeless-legacy-of-beauty-and-innovation",
+     "role": "page"
+    },
+    {
+     "owner": "blog/greece/when-is-easter-a-comprehensive-guide-to-easter",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Mykonos--1--.jpg": {
+   "sha1": "42870681fe91c34ca6ea34da35819a2abcb03367",
+   "alt": "How Many Days in Mykonos Do You Really Need?",
+   "usedBy": [
+    {
+     "owner": "blog/greece/how-many-days-in-mykonos-is-enough-the-ultimate-guide-for-your-stay",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Samos_-Greece--00.jpg": {
+   "sha1": "6842317398eb61a1d90dd7b28fdc47a6c4f8ae96",
+   "alt": "The Cheapest Month to Go to Greece Is Not Always the Cheapest Trip",
+   "usedBy": [
+    {
+     "owner": "blog/greece/the-cheapest-month-to-go-to-greece-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Mykonos-8.jpg": {
+   "sha1": "5f54735bfead5a96c26346017d3efeae32dfbc71",
+   "alt": "Greece Time Zone Guide: Time Difference, Business Hours & Travel Planning (2026–2027)",
+   "usedBy": [
+    {
+     "owner": "blog/greece/what-the-time-in-greece-right-now",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/can-i-do-turkey-and-greece-together-a-comprehensive-travel-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Athens-22.jpg": {
+   "sha1": "33fed4e4641478486aa79c22d9f84904b1d09c92",
+   "alt": "Athens in July: Seeing the City When the Heat Is Real",
+   "usedBy": [
+    {
+     "owner": "blog/greece/what-the-time-in-greece-right-now",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Athens--19.jpg": {
+   "sha1": "56944c94a650cfd4dbf9a1b63820724c580a77af",
+   "alt": "Greek Art and Architecture: Learning to Read Greece as You Travel",
+   "usedBy": [
+    {
+     "owner": "blog/greece/what-the-time-in-greece-right-now",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Santorini-16.jpg": {
+   "sha1": "0d606deca0368c6c139c54037c6fc6f57605aa3e",
+   "alt": "When Is Easter in Greece? Get the Date Right Before You Book",
+   "usedBy": [
+    {
+     "owner": "blog/greece/when-is-easter-a-comprehensive-guide-to-easter",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-aegina-greece.jpg": {
+   "sha1": "071d1e4afb5ef56efe85c78b677fb570b0c08a48",
+   "alt": "Athens in June: How Summer Changes the Sightseeing Day",
+   "usedBy": [
+    {
+     "owner": "blog/greece/when-is-easter-a-comprehensive-guide-to-easter",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Month-Nebo-6.jpg": {
+   "sha1": "374e8007602527fecdf3c3c5a1c14f02b7900de9",
+   "alt": "How Long to Spend in Jordan? A Realistic Planning Guide",
+   "usedBy": [
+    {
+     "owner": "blog/jordan/how-long-to-spend-in-jordan-first-timer-itinerary",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Aqaba-11.jpg": {
+   "sha1": "fbac6f6c1bff9b8d84bdd7b4b4ce51608a4bdaf8",
+   "alt": "3 Days in Jordan: What to See and What to Skip",
+   "usedBy": [
+    {
+     "owner": "blog/jordan/how-long-to-spend-in-jordan-first-timer-itinerary",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Aqaba-2.jpg": {
+   "sha1": "31b58f3480892b647f678bb354d201f6fac7439d",
+   "alt": "5 Days in Jordan: A Realistic First-Time Itinerary",
+   "usedBy": [
+    {
+     "owner": "blog/jordan/how-long-to-spend-in-jordan-first-timer-itinerary",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Jerash-door-Amman.jpg": {
+   "sha1": "1801f8b9426b13ef5e2bf41cf844c3da5a73ca90",
+   "alt": "How Long Do You Need in Petra? A Realistic Time Guide",
+   "usedBy": [
+    {
+     "owner": "blog/jordan/how-many-days-is-enough-for-petra-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Petra-9.jpg": {
+   "sha1": "6c05ff49443ff8c3290eacfa8fba687250ab3628",
+   "alt": "Travel to Petra and Discover the City Beyond the Treasury",
+   "usedBy": [
+    {
+     "owner": "blog/jordan/how-many-days-is-enough-for-petra-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Casablanca-5.jpg": {
+   "sha1": "5335f50bced38186656a7f2a459be59872feb8d8",
+   "alt": "Christmas in Casablanca Feels Different From Christmas in a Christian-Majority City",
+   "usedBy": [
+    {
+     "owner": "blog/morocco/christmas-in-casablanca-morocco",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-asilah-6.jpg": {
+   "sha1": "add893c05dbc25fa59f8070c2419b954bf4ecc88",
+   "alt": "Casablanca in December: Your Jacket May Become the Most Annoying Thing You Carry",
+   "usedBy": [
+    {
+     "owner": "blog/morocco/christmas-in-casablanca-morocco",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Chefchaouen-5.jpg": {
+   "sha1": "8231e5477bea363171691766b508d62bd7c3bda0",
+   "alt": "Morocco in 3 Days: What Can You Realistically See?",
+   "usedBy": [
+    {
+     "owner": "blog/morocco/christmas-in-casablanca-morocco",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Bosphorus-2.jpg": {
+   "sha1": "8aca9fcb82279bcf977c29ad2d0755c468a7f67e",
+   "alt": "Is There a Ferry from Turkey to Greece? A Practical Route Guide",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/can-i-do-turkey-and-greece-together-a-comprehensive-travel-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Rumeli-Fortress-istanbul--.jpg": {
+   "sha1": "0e6c75140f7f3d86115d20b9983360aab7b3f1c6",
+   "alt": "What Is the Best Way to Travel from Turkey to Greece?",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/can-i-do-turkey-and-greece-together-a-comprehensive-travel-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Canakkale-2.jpg": {
+   "sha1": "7b5563d5d105e3d252599e2f4fd9ddf804eef7d3",
+   "alt": "Canakkale and Troy: Where Mythology Meets Real History",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/canakkale-and-troy-a-journey-through-history-and-myth",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Gobeklitepe.jpg": {
+   "sha1": "5f9299c39bfc8153e8ec86b9b9a1650aaf8c752a",
+   "alt": "Göbeklitepe Turkey: How to Understand the Site Before You Visit",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/canakkale-and-troy-a-journey-through-history-and-myth",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Temple-of-Trajan-Pergamon--.jpg": {
+   "sha1": "85a926d612d0cab41e0e050016bdf8de6f6918e1",
+   "alt": "Turkey at a Glance: Essential Facts Every Traveller Should Know (2026–2027)",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/canakkale-and-troy-a-journey-through-history-and-myth",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/is-turkey-a-part-of-europe-or-asia",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Ormana-Village-Antalya-01.jpg": {
+   "sha1": "7a17d5436359f9dc43c67381368a115c05a3bb1e",
+   "alt": "Ormana Village Turkey: Inside the Taurus Mountain Heritage",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discover-ormana-village-a-hidden-gem-in-turkey",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Ephesus---.jpg": {
+   "sha1": "edc223a247ec6e8a66d87f5ea8ab7e6eaeb9e1a4",
+   "alt": "Family-Friendly Travel Guide to Turkey with Kids",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discover-ormana-village-a-hidden-gem-in-turkey",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Galata-Tower-istanbul-.jpg": {
+   "sha1": "9c84e834cfa86a6bfac37a86664d1406ce1a521a",
+   "alt": "Istanbul Weather in January: Rain, Snow Chances & Winter Days",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discover-ormana-village-a-hidden-gem-in-turkey",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Saltlake--1.jpg": {
+   "sha1": "e574ceed9047d680b67da0811abccd811061273c",
+   "alt": "Lake Tuz Turkey: Is the Salt Lake Worth Visiting?",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discovering-the-wonders-of-salt-lake-turkey-s-natural-treasure",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Cappadocia-Balloon--.jpg": {
+   "sha1": "81a6dcafc794d0220f6dcbd4f22d8f62f9764ba9",
+   "alt": "What Is the Best Month to Visit Cappadocia?",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discovering-the-wonders-of-salt-lake-turkey-s-natural-treasure",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Cappadocia--1.jpg": {
+   "sha1": "91bcc716f747bf4fd7ec0f48d8e8bd44bb8aeb82",
+   "alt": "Best Time to Visit Turkey: Choose the Right Season for Your Trip",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discovering-the-wonders-of-salt-lake-turkey-s-natural-treasure",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Kayseri-Erciyes-view--.jpg": {
+   "sha1": "cf78c2fd37c011c00b3c76e9370fd86d19730d28",
+   "alt": "How to Travel Around Turkey: Choosing the Right Transport",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/discovering-the-wonders-of-salt-lake-turkey-s-natural-treasure",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Istanbul-Grand-Bazaar--.jpg": {
+   "sha1": "a537744c612a8c15d36cc47c80e9ddfa649b177f",
+   "alt": "Turkey’s Traditional Bazaars: How to Shop With Confidence",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/exploring-turkey-s-traditional-bazaars",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Istanbul-4.jpg": {
+   "sha1": "b9f1949b5ad802f6a9e6d9bc970973bfc9b193c7",
+   "alt": "Dos and Don’ts in Istanbul: What Visitors Should Know",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/exploring-turkey-s-traditional-bazaars",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Istanbul-Bosphorus--.jpg": {
+   "sha1": "bac75293218fa263361390991757f4adf9e775bb",
+   "alt": "How Long Should You Spend in Turkey? A Realistic Guide",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/exploring-turkey-s-traditional-bazaars",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Rumeli-Fortress--0.jpg": {
+   "sha1": "4f8530f93423895cd580bca65067fd89b1db81e8",
+   "alt": "How Long Should You Stay in Istanbul? A Realistic Guide",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/exploring-turkey-s-traditional-bazaars",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Oludeniz-Fethiye---.jpg": {
+   "sha1": "96925fa88eb963ee1c82d292bc69c01e08345d25",
+   "alt": "Fethiye Turkey Travel Guide: What to See, Where to Stay & How Long",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/fethiye-turkey-a-hidden-gem-on-the-turquoise-coast",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Oludeniz-1.jpg": {
+   "sha1": "8cd5f34176a4605689174513484196ba57be30e3",
+   "alt": "Golf in Turkey: How to Plan the Right Golf Holiday",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/golf-in-turkey-a-golfer-s-paradise",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Pamukkale---19.jpg": {
+   "sha1": "90e743e3bbf187d9f4a215adec54f3e8d3ae1aec",
+   "alt": "Turkey in October: When the Journey Turns Inland Again",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/golf-in-turkey-a-golfer-s-paradise",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Kas--0.jpg": {
+   "sha1": "465f65724bae198a742c94967f8fb17b672e00f7",
+   "alt": "Turkey in May: When the Days Begin to Feel Like Summer",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/golf-in-turkey-a-golfer-s-paradise",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Didym-Apollon-.jpg": {
+   "sha1": "abf022fff14a501c506efd6c68fda366cfa972e0",
+   "alt": "Is Turkey in Europe or Asia? The Geography Explained",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/is-turkey-a-part-of-europe-or-asia",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Turkey-Map--1.jpg": {
+   "sha1": "75890959d7b2aade7e52353100ed89d2cc157917",
+   "alt": "Map of Turkey: Understand the Country Before Planning Your Trip",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/is-turkey-a-part-of-europe-or-asia",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Hagia-Sophia-Istanbul--0.jpg": {
+   "sha1": "3e284e7dcd0d1b0b8a9e17a519bb18567a16ec4b",
+   "alt": "Planning Your First Turkey Trip: A Practical Travel Guide",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/is-turkey-a-part-of-europe-or-asia",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Blue-Mosque-10.jpg": {
+   "sha1": "49c4755f2e14e986bfce9df340a3e2b81ff9ef0e",
+   "alt": "Blue Mosque Istanbul: How to Experience Sultan Ahmed Mosque",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/the-blue-mosque-in-istanbul-a-majestic-symbol-of-ottoman-grandeur",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Ayasofya-1.jpg": {
+   "sha1": "9f873103f10b6bf1b5648ac3c1978e96e04d418c",
+   "alt": "The Hagia Sophia: The Building That Tells Istanbul's Story",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/the-blue-mosque-in-istanbul-a-majestic-symbol-of-ottoman-grandeur",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Maidens-Tower-istanbul-.jpg": {
+   "sha1": "23e1de616d815a8c686518fc391693543232391e",
+   "alt": "Istanbul Tourist Attractions: What Is Actually Worth Seeing?",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/the-blue-mosque-in-istanbul-a-majestic-symbol-of-ottoman-grandeur",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/the-essential-guide-to-do-s-and-don-ts-in-istanbul-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Suleymaniye-mosque--.jpg": {
+   "sha1": "3903ec7693b2d15f6af6b98e36b2d26ed658031d",
+   "alt": "The Best Areas to Stay in Istanbul",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/the-blue-mosque-in-istanbul-a-majestic-symbol-of-ottoman-grandeur",
+     "role": "page"
+    },
+    {
+     "owner": "blog/turkey/the-essential-guide-to-do-s-and-don-ts-in-istanbul-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Istanbul-4.jpg": {
+   "sha1": "c6c4ac107d4247ccc5893867b900db30ad1fe29b",
+   "alt": "Dos and Don’ts in Istanbul: What Visitors Should Know",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/the-essential-guide-to-do-s-and-don-ts-in-istanbul-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Galata-tower--1.jpg": {
+   "sha1": "679cfc515c1a17398e4a1e250ffe36d62880a654",
+   "alt": "Istanbul Weather in October: Autumn Light, Rain & Cooler Nights",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/the-essential-guide-to-do-s-and-don-ts-in-istanbul-a-comprehensive-guide",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Kas-Kaputas-Beach.jpg": {
+   "sha1": "f7c0fb71d3716c9e6809016f2bcb9ede8f6b37bd",
+   "alt": "Turkey’s Most Beautiful Beaches: Which Coast Is Right for You?",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/turkey-s-most-beautiful-beaches-a-paradise-for-sun-seekers",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Oludeniz-Fethiye---.jpg": {
+   "sha1": "8ff26619dc845f16067974057689d1d6b0cc720b",
+   "alt": "Fethiye Turkey Travel Guide: What to See, Where to Stay & How Long",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/turkey-s-most-beautiful-beaches-a-paradise-for-sun-seekers",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Gaziantep-zeugma-2.jpg": {
+   "sha1": "7c12361650122e3826ec8e41094b8226c319dba6",
+   "alt": "Turkish Art and Architecture: How to Read What You See",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/turkish-art-and-architecture-a-journey-through-time",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Uludag-Mountain-and-Bursa-City-View-Trkiye.jpg": {
+   "sha1": "0656f9db0868b62b2b612102ec2ef272e6214081",
+   "alt": "Bursa Turkey: How to Experience the First Ottoman Capital",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/turkish-art-and-architecture-a-journey-through-time",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Turkish-Hammam-and-Cultural-Experience-Trkiye.jpg": {
+   "sha1": "b61d88a9477e33c63b13e5f3d60ea32753239a72",
+   "alt": "Turkish Hammam: What to Expect on Your First Visit",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/turkish-art-and-architecture-a-journey-through-time",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/860x450-thumbnail-Istanbul-Haghia-Sophia--.jpg": {
+   "sha1": "15877d03ecdb5404fa185e30d4a53e90ac4e0cb5",
+   "alt": "When Is Ramadan? 2027 Dates and Why They Change Every Year",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/when-is-ramadan-a-comprehensive-guide-to-ramadan",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Suleymaniye-Mosques-Istanbul--.jpg": {
+   "sha1": "8354b2b4226aaea130d74f90dea5efe0810f7f8e",
+   "alt": "Visiting Turkey During Ramadan: What Travelers Should Know",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/when-is-ramadan-a-comprehensive-guide-to-ramadan",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Turk_kahvesi.jpg": {
+   "sha1": "eb87e9c7e980454f84ad5e352033c182d6a76be5",
+   "alt": "Turkish Coffee: How to Order, Drink and Understand It",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/when-is-ramadan-a-comprehensive-guide-to-ramadan",
+     "role": "page"
+    }
+   ]
+  },
+  "https://www.magnificenttravel.com/public/thumbs/680x450-thumbnail-Sirince-001.jpg": {
+   "sha1": "f2f9f7509c1cbd38c0992b64fb8c04dae3b8c11a",
+   "alt": "Customs in Turkey: Traditions Behind Everyday Turkish Life",
+   "usedBy": [
+    {
+     "owner": "blog/turkey/when-is-ramadan-a-comprehensive-guide-to-ramadan",
      "role": "page"
     }
    ]
@@ -13483,7 +14557,481 @@
    "bytes": 20663,
    "width": 648,
    "height": 425
+  },
+  "08b2c98f476739c22ea9273a9eecbfaa15d2b15b": {
+   "ext": ".jpg",
+   "bytes": 54212,
+   "width": 860,
+   "height": 450
+  },
+  "7daa438ef81aee572a4c6914516cbcf5141b1f2a": {
+   "ext": ".jpg",
+   "bytes": 55385,
+   "width": 680,
+   "height": 450
+  },
+  "e2aeae734fee7931e1d1a7177ce0c225d8c490c9": {
+   "ext": ".jpg",
+   "bytes": 66947,
+   "width": 680,
+   "height": 450
+  },
+  "d8f9815b9616da1b11e2c8993c68521f64f9a37d": {
+   "ext": ".jpg",
+   "bytes": 67831,
+   "width": 680,
+   "height": 450
+  },
+  "63793bd8e02d6d8dd42986284c429c59c68f2f3a": {
+   "ext": ".jpg",
+   "bytes": 63523,
+   "width": 860,
+   "height": 450
+  },
+  "6082c6a74982cb9886d29290bff653c60ba267d7": {
+   "ext": ".jpg",
+   "bytes": 54334,
+   "width": 680,
+   "height": 450
+  },
+  "dca8f8eaa75918c891789824e6b1dae390469d9b": {
+   "ext": ".jpg",
+   "bytes": 38804,
+   "width": 680,
+   "height": 450
+  },
+  "498409dc076c485ae102c838824b8f70c3c416a3": {
+   "ext": ".jpg",
+   "bytes": 65085,
+   "width": 680,
+   "height": 450
+  },
+  "f19bb55e3a28ba37aa3bcf07c8454c496491f2b5": {
+   "ext": ".jpg",
+   "bytes": 91761,
+   "width": 860,
+   "height": 450
+  },
+  "57583f6f294a277bbded2d2daf6ad1fea51a7584": {
+   "ext": ".jpg",
+   "bytes": 59969,
+   "width": 680,
+   "height": 450
+  },
+  "97446335f7d3765db457950863e87a6780d7229e": {
+   "ext": ".jpg",
+   "bytes": 56099,
+   "width": 680,
+   "height": 450
+  },
+  "1f0faf8277450906b310d3de52e0a01119c1eccc": {
+   "ext": ".jpg",
+   "bytes": 62459,
+   "width": 860,
+   "height": 450
+  },
+  "b0bdb324155464624ee96d0e9b959ca7de6ca2bc": {
+   "ext": ".jpg",
+   "bytes": 73167,
+   "width": 680,
+   "height": 450
+  },
+  "a38b728045e74a7ac16db4887d8e034f8db2575f": {
+   "ext": ".jpg",
+   "bytes": 87933,
+   "width": 680,
+   "height": 450
+  },
+  "9d5331de818e9df5780cb2629352fd836b2a6325": {
+   "ext": ".jpg",
+   "bytes": 59099,
+   "width": 680,
+   "height": 450
+  },
+  "b32ec13555cbac79631e0f00c15dff9faa8aea0c": {
+   "ext": ".jpg",
+   "bytes": 84552,
+   "width": 680,
+   "height": 450
+  },
+  "38b7ad38cbd774a1f65956486a2d0bd89ba1761a": {
+   "ext": ".jpg",
+   "bytes": 58641,
+   "width": 860,
+   "height": 450
+  },
+  "e079ee12c30805468f3ccc56d9eded5f0438549b": {
+   "ext": ".jpg",
+   "bytes": 63620,
+   "width": 680,
+   "height": 450
+  },
+  "1b0b5e034196bd2c5e2b1a9f0a7f0bd4e303574e": {
+   "ext": ".jpg",
+   "bytes": 73038,
+   "width": 860,
+   "height": 450
+  },
+  "56db19cd289309fec7e350f4febcc3f56460c514": {
+   "ext": ".jpg",
+   "bytes": 23076,
+   "width": 680,
+   "height": 450
+  },
+  "d7b22b04a3eb538c4190e0ad1b27e1cea4e27e8a": {
+   "ext": ".jpg",
+   "bytes": 26131,
+   "width": 680,
+   "height": 450
+  },
+  "5e90c365cd3cb96e4b9e3e645d2d09907f68f67f": {
+   "ext": ".jpg",
+   "bytes": 78103,
+   "width": 680,
+   "height": 450
+  },
+  "1da5d9549e354cb408bd2b82d52b59de4021d0d9": {
+   "ext": ".jpg",
+   "bytes": 85858,
+   "width": 860,
+   "height": 450
+  },
+  "b1f3dd737f68d0848c69ecffdfd5c4bb6fb7e43b": {
+   "ext": ".jpg",
+   "bytes": 70281,
+   "width": 680,
+   "height": 450
+  },
+  "c1b5f6928332a5b33d053a806be8cb1a40d9d98e": {
+   "ext": ".jpg",
+   "bytes": 59742,
+   "width": 680,
+   "height": 450
+  },
+  "a78588a93a9a158c5685a1d51b9e83baec3dedaa": {
+   "ext": ".jpg",
+   "bytes": 77320,
+   "width": 680,
+   "height": 450
+  },
+  "b4862f4b06d02e18b58e1c9ccfc992e8cea2256e": {
+   "ext": ".jpg",
+   "bytes": 28163,
+   "width": 860,
+   "height": 450
+  },
+  "da369b5a23f47607364455c457ab011886572a5d": {
+   "ext": ".jpg",
+   "bytes": 81457,
+   "width": 680,
+   "height": 450
+  },
+  "f4a896e5ef80b680046c8ace2412707fe7a31b0e": {
+   "ext": ".jpg",
+   "bytes": 74224,
+   "width": 680,
+   "height": 450
+  },
+  "d6e02369e55711d0f82612e2730b42747334f175": {
+   "ext": ".jpg",
+   "bytes": 55980,
+   "width": 680,
+   "height": 450
+  },
+  "42870681fe91c34ca6ea34da35819a2abcb03367": {
+   "ext": ".jpg",
+   "bytes": 89113,
+   "width": 860,
+   "height": 450
+  },
+  "6842317398eb61a1d90dd7b28fdc47a6c4f8ae96": {
+   "ext": ".jpg",
+   "bytes": 97471,
+   "width": 860,
+   "height": 450
+  },
+  "5f54735bfead5a96c26346017d3efeae32dfbc71": {
+   "ext": ".jpg",
+   "bytes": 79015,
+   "width": 860,
+   "height": 450
+  },
+  "33fed4e4641478486aa79c22d9f84904b1d09c92": {
+   "ext": ".jpg",
+   "bytes": 55578,
+   "width": 680,
+   "height": 450
+  },
+  "56944c94a650cfd4dbf9a1b63820724c580a77af": {
+   "ext": ".jpg",
+   "bytes": 26133,
+   "width": 680,
+   "height": 450
+  },
+  "0d606deca0368c6c139c54037c6fc6f57605aa3e": {
+   "ext": ".jpg",
+   "bytes": 61730,
+   "width": 860,
+   "height": 450
+  },
+  "374e8007602527fecdf3c3c5a1c14f02b7900de9": {
+   "ext": ".jpg",
+   "bytes": 58504,
+   "width": 860,
+   "height": 450
+  },
+  "fbac6f6c1bff9b8d84bdd7b4b4ce51608a4bdaf8": {
+   "ext": ".jpg",
+   "bytes": 39371,
+   "width": 680,
+   "height": 450
+  },
+  "31b58f3480892b647f678bb354d201f6fac7439d": {
+   "ext": ".jpg",
+   "bytes": 54692,
+   "width": 680,
+   "height": 450
+  },
+  "1801f8b9426b13ef5e2bf41cf844c3da5a73ca90": {
+   "ext": ".jpg",
+   "bytes": 79270,
+   "width": 860,
+   "height": 450
+  },
+  "6c05ff49443ff8c3290eacfa8fba687250ab3628": {
+   "ext": ".jpg",
+   "bytes": 94211,
+   "width": 680,
+   "height": 450
+  },
+  "5335f50bced38186656a7f2a459be59872feb8d8": {
+   "ext": ".jpg",
+   "bytes": 64185,
+   "width": 860,
+   "height": 450
+  },
+  "add893c05dbc25fa59f8070c2419b954bf4ecc88": {
+   "ext": ".jpg",
+   "bytes": 78289,
+   "width": 680,
+   "height": 450
+  },
+  "8231e5477bea363171691766b508d62bd7c3bda0": {
+   "ext": ".jpg",
+   "bytes": 100891,
+   "width": 680,
+   "height": 450
+  },
+  "8aca9fcb82279bcf977c29ad2d0755c468a7f67e": {
+   "ext": ".jpg",
+   "bytes": 51350,
+   "width": 680,
+   "height": 450
+  },
+  "0e6c75140f7f3d86115d20b9983360aab7b3f1c6": {
+   "ext": ".jpg",
+   "bytes": 81880,
+   "width": 680,
+   "height": 450
+  },
+  "7b5563d5d105e3d252599e2f4fd9ddf804eef7d3": {
+   "ext": ".jpg",
+   "bytes": 47080,
+   "width": 860,
+   "height": 450
+  },
+  "5f9299c39bfc8153e8ec86b9b9a1650aaf8c752a": {
+   "ext": ".jpg",
+   "bytes": 82255,
+   "width": 680,
+   "height": 450
+  },
+  "85a926d612d0cab41e0e050016bdf8de6f6918e1": {
+   "ext": ".jpg",
+   "bytes": 65595,
+   "width": 680,
+   "height": 450
+  },
+  "7a17d5436359f9dc43c67381368a115c05a3bb1e": {
+   "ext": ".jpg",
+   "bytes": 67287,
+   "width": 860,
+   "height": 450
+  },
+  "edc223a247ec6e8a66d87f5ea8ab7e6eaeb9e1a4": {
+   "ext": ".jpg",
+   "bytes": 70143,
+   "width": 680,
+   "height": 450
+  },
+  "e574ceed9047d680b67da0811abccd811061273c": {
+   "ext": ".jpg",
+   "bytes": 18844,
+   "width": 860,
+   "height": 450
+  },
+  "81a6dcafc794d0220f6dcbd4f22d8f62f9764ba9": {
+   "ext": ".jpg",
+   "bytes": 54360,
+   "width": 680,
+   "height": 450
+  },
+  "91bcc716f747bf4fd7ec0f48d8e8bd44bb8aeb82": {
+   "ext": ".jpg",
+   "bytes": 49899,
+   "width": 680,
+   "height": 450
+  },
+  "cf78c2fd37c011c00b3c76e9370fd86d19730d28": {
+   "ext": ".jpg",
+   "bytes": 52600,
+   "width": 680,
+   "height": 450
+  },
+  "a537744c612a8c15d36cc47c80e9ddfa649b177f": {
+   "ext": ".jpg",
+   "bytes": 116740,
+   "width": 860,
+   "height": 450
+  },
+  "b9f1949b5ad802f6a9e6d9bc970973bfc9b193c7": {
+   "ext": ".jpg",
+   "bytes": 74540,
+   "width": 680,
+   "height": 450
+  },
+  "bac75293218fa263361390991757f4adf9e775bb": {
+   "ext": ".jpg",
+   "bytes": 67132,
+   "width": 680,
+   "height": 450
+  },
+  "4f8530f93423895cd580bca65067fd89b1db81e8": {
+   "ext": ".jpg",
+   "bytes": 44195,
+   "width": 680,
+   "height": 450
+  },
+  "96925fa88eb963ee1c82d292bc69c01e08345d25": {
+   "ext": ".jpg",
+   "bytes": 86383,
+   "width": 860,
+   "height": 450
+  },
+  "8cd5f34176a4605689174513484196ba57be30e3": {
+   "ext": ".jpg",
+   "bytes": 60457,
+   "width": 860,
+   "height": 450
+  },
+  "90e743e3bbf187d9f4a215adec54f3e8d3ae1aec": {
+   "ext": ".jpg",
+   "bytes": 60651,
+   "width": 680,
+   "height": 450
+  },
+  "465f65724bae198a742c94967f8fb17b672e00f7": {
+   "ext": ".jpg",
+   "bytes": 47910,
+   "width": 680,
+   "height": 450
+  },
+  "abf022fff14a501c506efd6c68fda366cfa972e0": {
+   "ext": ".jpg",
+   "bytes": 79065,
+   "width": 860,
+   "height": 450
+  },
+  "75890959d7b2aade7e52353100ed89d2cc157917": {
+   "ext": ".jpg",
+   "bytes": 50089,
+   "width": 680,
+   "height": 450
+  },
+  "3e284e7dcd0d1b0b8a9e17a519bb18567a16ec4b": {
+   "ext": ".jpg",
+   "bytes": 54197,
+   "width": 680,
+   "height": 450
+  },
+  "49c4755f2e14e986bfce9df340a3e2b81ff9ef0e": {
+   "ext": ".jpg",
+   "bytes": 78071,
+   "width": 860,
+   "height": 450
+  },
+  "9f873103f10b6bf1b5648ac3c1978e96e04d418c": {
+   "ext": ".jpg",
+   "bytes": 57573,
+   "width": 680,
+   "height": 450
+  },
+  "c6c4ac107d4247ccc5893867b900db30ad1fe29b": {
+   "ext": ".jpg",
+   "bytes": 79191,
+   "width": 860,
+   "height": 450
+  },
+  "679cfc515c1a17398e4a1e250ffe36d62880a654": {
+   "ext": ".jpg",
+   "bytes": 100196,
+   "width": 680,
+   "height": 450
+  },
+  "f7c0fb71d3716c9e6809016f2bcb9ede8f6b37bd": {
+   "ext": ".jpg",
+   "bytes": 52136,
+   "width": 860,
+   "height": 450
+  },
+  "8ff26619dc845f16067974057689d1d6b0cc720b": {
+   "ext": ".jpg",
+   "bytes": 68598,
+   "width": 680,
+   "height": 450
+  },
+  "7c12361650122e3826ec8e41094b8226c319dba6": {
+   "ext": ".jpg",
+   "bytes": 122399,
+   "width": 860,
+   "height": 450
+  },
+  "0656f9db0868b62b2b612102ec2ef272e6214081": {
+   "ext": ".jpg",
+   "bytes": 66231,
+   "width": 680,
+   "height": 450
+  },
+  "b61d88a9477e33c63b13e5f3d60ea32753239a72": {
+   "ext": ".jpg",
+   "bytes": 77545,
+   "width": 680,
+   "height": 450
+  },
+  "15877d03ecdb5404fa185e30d4a53e90ac4e0cb5": {
+   "ext": ".jpg",
+   "bytes": 62628,
+   "width": 860,
+   "height": 450
+  },
+  "8354b2b4226aaea130d74f90dea5efe0810f7f8e": {
+   "ext": ".jpg",
+   "bytes": 83925,
+   "width": 680,
+   "height": 450
+  },
+  "eb87e9c7e980454f84ad5e352033c182d6a76be5": {
+   "ext": ".jpg",
+   "bytes": 66036,
+   "width": 680,
+   "height": 450
+  },
+  "f2f9f7509c1cbd38c0992b64fb8c04dae3b8c11a": {
+   "ext": ".jpg",
+   "bytes": 84321,
+   "width": 680,
+   "height": 450
   }
  },
- "generatedAt": "2026-10-07T08:08:11.123Z"
+ "generatedAt": "2026-10-12T11:56:57.351Z"
 }

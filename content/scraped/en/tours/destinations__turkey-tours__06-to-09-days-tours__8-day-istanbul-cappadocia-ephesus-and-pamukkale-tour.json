@@ -503,7 +503,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/8-day-istanbul-cappadocia-ephesus-and-pamukkale-tour",
-            "priceValidUntil": "2026-10-09",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

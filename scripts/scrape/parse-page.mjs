@@ -1,6 +1,7 @@
 // Generic parser for the old English content pages (country, category, combo, hubs, blog posts, static pages).
 // It keeps the body as ordered sections (heading plus blocks) and pulls the tour cards and FAQ out separately.
 import * as cheerio from 'cheerio';
+import { stripRollingDates } from './lib/jsonld.mjs';
 
 const squash = (value) => value.replace(/\s+/g, ' ').trim();
 const SKIP = '.package-card3, .faq-section, .faqWidget, .accordion, .breadcrumb-section, .banner3-section, .modal';
@@ -121,7 +122,7 @@ export function parsePage(html, sourceUrl, kind) {
   const jsonLd = [];
   $('script[type="application/ld+json"]').each((_, script) => {
     try {
-      jsonLd.push(JSON.parse($(script).text()));
+      jsonLd.push(stripRollingDates(JSON.parse($(script).text())));
     } catch {
       issues.push('invalid JSON-LD block');
     }

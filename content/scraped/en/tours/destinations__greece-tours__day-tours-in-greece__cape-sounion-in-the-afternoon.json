@@ -360,7 +360,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/cape-sounion-in-the-afternoon",
-            "priceValidUntil": "2026-10-12",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

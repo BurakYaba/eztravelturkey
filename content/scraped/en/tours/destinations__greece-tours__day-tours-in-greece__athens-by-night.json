@@ -367,7 +367,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/athens-by-night",
-            "priceValidUntil": "2026-10-14",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

@@ -479,7 +479,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/06-to-09-days-tours/7-day-best-of-turkey-tour",
-            "priceValidUntil": "2026-10-10",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

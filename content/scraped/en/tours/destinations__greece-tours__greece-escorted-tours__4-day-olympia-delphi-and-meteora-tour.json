@@ -434,7 +434,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-escorted-tours/4-day-olympia-delphi-and-meteora-tour",
-            "priceValidUntil": "2026-10-11",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {

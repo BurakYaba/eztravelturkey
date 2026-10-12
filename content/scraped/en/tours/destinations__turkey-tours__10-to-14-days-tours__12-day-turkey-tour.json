@@ -561,7 +561,6 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/12-day-turkey-tour",
-            "priceValidUntil": "2026-10-13",
             "shippingDetails": {
               "@type": "OfferShippingDetails",
               "shippingRate": {
