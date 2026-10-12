@@ -60,13 +60,19 @@ const countIssues = (rows) => {
 console.log(`tours: parsed ${entries.length}, ${invalid} failed the schema, ${report.filter((r) => r.issues.length === 0).length} with no issues`);
 console.log('tour issue counts:', JSON.stringify(countIssues(report)));
 
-// Other pages. Blog posts are only archived (P1.9), except the five "Map of X" posts that stay at the same URL.
-const MAP_POSTS = /\/en\/blog\/[a-z]+\/map-of-[a-z]+\/$/;
+// Other pages. Blog posts are parsed only when the client listed them for the move (scripts/scrape/lists/blogs-to-move.txt,
+// 34 posts including the five "Map of X" posts that keep their URL); the other posts stay in the raw archive (P1.9).
+const MOVE_LIST = new Set(
+  readFileSync(join(root, 'scripts', 'scrape', 'lists', 'blogs-to-move.txt'), 'utf8')
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean),
+);
 const pageEntries = [...latest.values()].filter(
   (entry) =>
     entry.status === 200 &&
     entry.kind !== 'tour' &&
-    (entry.kind !== 'blog-post' || MAP_POSTS.test(entry.url)) &&
+    (entry.kind !== 'blog-post' || MOVE_LIST.has(entry.url)) &&
     (!only || entry.url.includes(only)),
 );
 const pageReport = [];

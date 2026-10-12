@@ -67,7 +67,7 @@ Bu belge projenin tek yol haritasıdır. `docs/implementation-plan.md` ve `docs/
 | D9 | Her dil ayrı doküman + dile özel slug + `translationGroup` alanı. Ortak taksonomi zorlanmaz. | Dillerin eski yapıları farklı (Ek A.3) |
 | D10 | `/cn/` (Basitleştirilmiş Çince, 391 URL) → karşılığı olan `/zh/` sayfasına 301 | Müşteri anakarayı hedeflemiyor, slug'lar birebir aynı |
 | D11 | Karşılığı olmayan turda hreflang üretilmez, dil değiştirici üst kategoriye düşer | Hatalı hreflang zarar verir |
-| D12 | **Blog kapsamı (netleşti 2026-10-07):** biz yalnızca **5 "Map of X" yazısını** aynı URL'de taşırız ve blog hub (Travel Hub) sayfasını kurarız. 40-50 yeni yazıyı ve diğer eski yazıları müşteri CMS'ten kendisi girer. Taşınmayan her eski blog URL'si varsayılan olarak blog hub'ına 301 alır; müşteri isterse yayınladığı yazıda "eski URL" alanını doldurarak özel 301 oluşturur (P6.14, özel kural varsayılanı geçer); istemezse listeyi bize gönderir (D36). | Chat 25 Eylül ve 6 Ekim |
+| D12 | **Blog kapsamı (güncellendi 2026-10-12):** müşteri **34 blog yazısı** listeledi (`scripts/scrape/lists/blogs-to-move.txt`, 5 "Map of X" dahil): hepsi **olduğu gibi, aynı URL'de** yeni siteye taşınır. Diğer eski yazıları ve yeni yazıları müşteri CMS'ten kendisi girer. Taşınmayan her eski blog URL'si varsayılan olarak blog hub'ına 301 alır; müşteri yeni yazıda "eski URL" alanını doldurarak özel 301 oluşturur (P6.14, D36: B seçildi). Liste GA "etkin kullanıcı" sayılarına göre hazırlanmış (trafikli yazılar). | Müşteri, 2026-10-12 |
 | D13 | Görseller repoya girmez: önizleme için Vercel Blob, CMS kurulunca Sanity assets. **İstisna:** 5 "Map of X" yazısının görselleri repoda aynı yolda statik kalır (P7.13). | ~900+ görsel git'i şişirir |
 | D14 | Travel Hub, `/en/blog/` URL'sini kullanır (aynı URL, yeni tasarım) | Canlı `/en/blog/` zaten blog hub'ı |
 | D15 | Mevcut yeni sayfalarımız (`/tours/`, `/private-tours/`, `/small-group-tours/`, `/plan-my-trip/`, `/multi-country-tours/`) ek açılış sayfası olarak kalır, canonical tur adresleri eski yapıda | Müşteri tasarımında var, canlıda yok |
@@ -81,18 +81,19 @@ Bu belge projenin tek yol haritasıdır. `docs/implementation-plan.md` ve `docs/
 | D19 | `/multi-country-tours/` indeksi ile `/destinations/` hub'ı arasındaki ayrım (kopya içerik riski). **Karar (onaylandı 2026-10-07):** `/destinations/` canlıdaki gibi ülkeler + kombo grupları; `/multi-country-tours/` ek, kombo odaklı açılış sayfası (farklı giriş metni); çakışmayı S2.1 denetler. | P2 |
 | D20 | GA4 ve GTM: mevcut `GTM-55HWFMHR` yeniden kullanılacak mı, yeni kapsayıcı mı? Üç dil tek GA4 property'de mi? | P8 |
 | D21 | DNS geçiş sırası (üç alan adı aynı gün mü, kademeli mi?) | P10 |
-| D22 | Tur başına gerçek yorumlar nereden gelecek (Tripadvisor / müşteri)? **Karar (onaylandı 2026-10-07):** P3'te site geneli Tripadvisor alıntıları + bağlantı; tur başı yorum alanı şemada hazır ama boş, kaynak belirlenince doldurulur. | P3 |
+| D22 | **Kapandı (2026-10-12): yorumlar Tripadvisor'dan.** (Eski soru: Tur başına gerçek yorumlar nereden gelecek?) **Karar (onaylandı 2026-10-07):** P3'te site geneli Tripadvisor alıntıları + bağlantı; tur başı yorum alanı şemada hazır ama boş, kaynak belirlenince doldurulur. | P3 |
 | D23 | 5 Ekim'de müşterinin gönderdiği H1/H2 başlık örnekleri ve 3 Ekim tur sayfası bölümleri dosyası bizde yok. Kullanıcı bu ekleri `chat/müşteri talepleri/` içine koyar; gelene kadar mevcut H1/H2'ler korunur. | P3 |
 | D24 | Sözleşmedeki 3 aylık SEO programı üç dili de kapsıyor mu? | P10 |
 | D25 | Yönlendirme sayısı Vercel'in 1.024 sınırını aşarsa mekanizma (Global Config / Redis / Bloom filter) | P7 |
 | D26 | Hero'daki GSAP parallax kaldırılsın mı? **Öneri: kaldır.** Müşteri ağır animasyon istemiyor, GSAP + ScrollTrigger yükü LCP/INP'ye gider, görsel katkısı küçük. **Karar: kaldır** (onaylandı 2026-10-07, P2.16'da uygulanır). | P2 |
 | D27 | Israel URL'leri (≈60 blog yazısı + 13 destinations/kombo URL'si) nereye gider? **Öneri:** backlink veya trafik alanlar ilgili blog/destinations hub'ına 301, geri kalanı 410. | P7 |
-| D28 | Para birimi ve fiyat gösterimi dil başına ve `Offer.priceCurrency`. **Veri (2026-10-07):** üç sitede de fiyatlar EUR; varsayılan EUR. zh sitesi çoğu turda fiyat göstermiyor ("formu doldurun" uyarısı), jp ≈ üçte birinde "minimum fiyat" gösteriyor, bu yüzden **fiyat isteğe bağlı** olmalı (`docs/baseline/tour-overlap-2026-10-07.md`). | P3 |
+| D28 | Para birimi. **Müşteri yanıtı (2026-10-12): her dilde USD ve EUR seçenekleri olsun.** Veri: üç eski sitede fiyatlar EUR; EN formunda USD/EUR seçimi var. zh sitesi çoğu turda fiyat göstermiyor, jp ≈ üçte birinde "minimum fiyat" gösteriyor, bu yüzden **fiyat isteğe bağlı** (`docs/baseline/tour-overlap-2026-10-07.md`). Mekanizma D40'ta. | P3 |
+| D40 | **USD/EUR seçeneği nasıl çalışacak? (müşteriye teyit)** Varsayılan: baz fiyat EUR (tek kaynak), ziyaretçi USD/EUR düğmesiyle görünümü değiştirir (adres değişmez), USD karşılığı CMS site ayarlarında elle girilen EUR→USD kuruyla hesaplanır (kur kaynağı müşteriden), `Offer` yapılandırılmış verisi yalnızca EUR baz fiyatla üretilir, teklif formundaki "currency" alanı eski formdaki gibi kalır. Alternatif: yalnızca teklif formunda para birimi seçimi. Müşteriye sorulacak: düğme mi yoksa yalnız form alanı mı; kur nasıl belirlenecek; USD fiyatları tur başına sabit mi? | P3 |
 | D29 | Vercel planı: ticari kullanım koşulları ve **Image Optimization kotası** (900+ kaynak görsel). Gerekirse Sanity CDN dönüşümü. Güncel Vercel şartlarından doğrulanır. | P6, P9 |
 | D30 | Anahtar kelime, SERP ve GSC veri kaynağı: **OpenSEO MCP** (GSC performansı, URL denetimi, anahtar kelime, SERP, sıralama, AI görünürlüğü, GBP denetimi). **Bağlandı ve doğrulandı (2026-10-07):** `whoami` ve `list_projects` başarılı, 500 kredi, GSC mülkü (`https://www.magnificenttravel.com/`) bağlı ve veri veriyor. **GA4 bağlı değil** (OpenSEO ayarlarından bağlanmalı). zh-Hant ve ja için konum/dil desteği hâlâ doğrulanmadı. | S1 (P0-P1) |
 | D34 | **404 veren 26+ yüksek trafikli blog sayfası** (12 ayda ≈ 27.100 tıklama, `docs/baseline/gsc-en-baseline.md` §4). **Karar (kullanıcı, 2026-10-07): şimdilik göz ardı edilir.** Blogu müşteri yönetiyor; bu URL'ler P7.4'teki varsayılan kurala girer (taşınmayan eski blog URL'si → blog hub'ına 301). Müşteri isterse yeni yazıdaki "eski URL" alanıyla (P6.14) kendi hedefini tanımlar. Blog dışı 404'ler (eski turlar vb.) P7'de ele alınır. | P7 |
 | D35 | **Israel blog yazıları** (≈16 yazı ilk 150'de, ≥10.800 tıklama/yıl). Müşteri blogu kendisi yönettiği için bu yazılar da aynı varsayılan kurala girer; kalıcı karar müşterinindir. D27 yalnızca Israel destinations/kombo sayfalarını kapsar. | P7 |
-| D36 | **Müşteriye netleştirilecek:** "20-25 yüksek trafikli blog yenilere 301" cümlesinde 301'i kimin kuracağı belirsiz (chat 25 Eylül ve 6 Ekim). **Tüm site yönlendirmeleri bizim işimizdir** (P7). Yalnızca müşterinin *sonradan yazacağı yeni yazılar* için eski → yeni eşlemesi açık: (A) müşteri listeyi (eski URL → yeni URL) bize gönderir, biz ekleriz; (B) müşteri yeni yazıda "eski URL" alanını doldurur, 301 otomatik oluşur (P6.14). **Öneri: B**, ama yalnızca blog için. Hangi yazıların seçileceği müşterinin kararı; veri için `docs/baseline/gsc-en-baseline.md`. | P6, P7 |
+| D36 | **Kapandı (2026-10-12): B.** Müşteri, yeni blog yazılarında eski adresi panelden kendisi girecek ("yönlendirmeyi biz yapabiliyorsak"). Yapamazsa listeyi bize gönderir. Tüm diğer site yönlendirmeleri bizim işimiz (P7). | P6, P7 |
 | D31 | Hesap sahipliği matrisi: Vercel, Sanity, Resend, GA4, GTM, GSC, GitHub, DNS. Kim sahip, kim yönetici? | P6, P10 |
 | D32 | Geri dönüş: DNS geçişinden sonra eski hosting kaç gün açık kalacak? **Öneri: en az 30 gün** (eski ajansın sözleşme durumu müşteriyle netleşmeli). | P10 |
 | D38 | **Eski iki alan adı (`torukoryoko.com`, `eztravelturkey.com`) kapatılmamalı.** Müşteri "domain ve e-postalar kapanacak" dedi (2026-10-08), ama P7.5'teki yönlendirmeler (≈ 1.200 eski URL) bu alan adlarının DNS'inin yeni siteye bağlı kalmasına bağlı. **Öneri:** alan adları en az 12 ay kayıtlı kalır ve Vercel'e yönlendirilir; yalnızca eski sunucudaki e-posta kutuları kapatılır. Alan adlarının kaydı ve DNS'i kimde (bu ikisinin ad sunucuları `netportbilisim.com`) netleşmeli. | P7, P10 |
@@ -171,7 +172,7 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - [x] P1.6 (2026-10-07) Görsel hattı: eski site görselleri `/public/thumbs/<WxH>-<mod>-<ad>.jpg` desenli, yeniden boyutlandırılmış. **Spike sonucu:** site yalnızca sabit boyutlar sunuyor (galeri 950x700, harita 800x600, kart 648x425/680x450); daha büyük varyantlar 301 veriyor, orijinaller bağlantılı değil (yalnızca blog görselleri `/public/uploads/…` altında). En iyi kaynak bu boyutlar; retina hero için yetersiz kalırsa müşteriden orijinal istenir. Görselleri indir, içerik özetiyle tekilleştir, `image-manifest.json` oluştur (eski URL → özet/dosya, alt metin, kullanıldığı yer). **WebP'ye ön dönüşüm yapılmaz:** kaynaklar zaten ≈ 93 KB ortalama JPEG, Sanity CDN `auto=format` ile WebP/AVIF servis eder. **Sonuç:** 842 görsel adresi → 753 benzersiz dosya (89 kopya birleşti), 68,7 MB, hiç indirme hatası yok; 99 rota haritası (98 benzersiz dosya), 590 galeri kullanımı; dosyalar `data/images/` (git'e girmez), manifest `content/scraped/image-manifest.json` (commit'li).
 - [x] P1.7 (2026-10-07) Normalize JSON üretimi ve zod şemaları (`src/lib/schema/`). Bu şemalar Sanity şemasının ön tasarımıdır (Ek C). **Yapıldı:** `tour.ts`, `page.ts`; `tsconfig.json`'a `allowImportingTsExtensions` eklendi (betikler `.ts` şemalarını doğrudan içe aktarır). **Attribute ilk hesabı (P6.15):** normalize EN JSON'da yalnızca **108 benzersiz attribute** (`scripts/scrape/count-attributes.mjs`), Sanity limiti 2.000.
 - [x] P1.8 (2026-10-07) **Aynen taşıma doğrulaması:** 10 örnek tur için canlı sayfa ile JSON'u karşılaştır (gün sayısı, fiyat, liste öğeleri, harita var mı). Toplam tur sayısı ≈ 125 mi? Boş alan raporu. Metin üzerinde hiçbir değişiklik yapılmadığını diff testi ile göster. **Sonuç (`npm run scrape:verify`):** 118 tur, 9.566 metin parçası canlı sayfada birebir bulundu; gün, galeri, SSS ve dahil sayıları sayfayla eşleşiyor. Tur sayısı 118 (EN toplam 129 − Israel 11); müşterinin "≈125" rakamı Israel dahil bir yuvarlama olabilir.
-- [~] P1.9 (arşiv ve 5 harita yazısı yapıldı, müşteriye teslim açık) Blog: 520 yazının meta + gövde + görsel arşivi (yalnızca arşiv; normalize edilmez). 5 "Map of X" yazısı tam normalize edilir (Maps.txt). **Sonuç:** 461 yazı arşivlendi (Israel yazıları bilinçli çekilmedi, D4); 5 harita yazısı normalize edildi. **Arşiv müşteriye teslim edilir (açık):** DNS geçişinden sonra eski site kapanacağı için müşteri, yeniden yazmak veya taşımak istediği eski yazılara arşivden ulaşabilsin.
+- [~] P1.9 (arşiv yapıldı; **34 listeli yazı normalize edilecek** (D12), müşteriye teslim açık) Blog: 520 yazının meta + gövde + görsel arşivi (yalnızca arşiv; normalize edilmez). 5 "Map of X" yazısı tam normalize edilir (Maps.txt). **Sonuç:** 461 yazı arşivlendi (Israel yazıları bilinçli çekilmedi, D4); 5 harita yazısı normalize edildi. **Arşiv müşteriye teslim edilir (açık):** DNS geçişinden sonra eski site kapanacağı için müşteri, yeniden yazmak veya taşımak istediği eski yazılara arşivden ulaşabilsin.
 - [ ] P1.10 Görselleri Vercel Blob'a yükle (D13), manifest'e yeni adresleri yaz.
 - [x] P1.11 (2026-10-07) **SEO envanteri (baseline):** her URL için başlık, meta açıklama, H1/H2'ler, canonical, hreflang, robots meta, JSON-LD türleri, ana içerik kelime sayısı, iç link sayısı, görsel ve alt eksiği → `data/inventory/seo-<site>.csv`. Bu dosya P4.5 parite raporu ve T7 SEO drift testlerinin temelidir. Ana içerik, `<main>` olmayan eski sayfalarda üst bilgi, alt bilgi ve yasal metin modalları ayıklanarak ölçülür. **Sonuç** (`npm run scrape:seo`, `data/inventory/seo-en.csv`, 617 satır): ana içerik ortalama kelime sayısı: ülke ≈ 895, kombo ≈ 886, kategori ≈ 814, destinations hub ≈ 1.350, tur ≈ 572, blog yazısı ≈ 3.576 (kart, SSS ve yasal modal metinleri hariç).
 - [ ] P1.12 **Kanıtlanmış tarama riskleri:** (a) canlı EN sitenin `robots.txt` adresi python varsayılan istemcisine 403 verdi (WAF/bot koruması): gerçekçi User-Agent, düşük hız, 403/429'da geri çekilme, gerekirse Playwright; (b) zh/jp sitemap'leri `ISO-8859-9` bildiriyor: sayfa kodlamasını sayfa başına algıla, UTF-8 varsayma, CJK metinde bozulma testi; (c) eski `robots.txt` kuralları kendi içeriğimizi taramayı engelliyorsa bunun müşteri içeriği olduğu gerekçesiyle bilinçli geçilmesi günlüğe yazılır.
@@ -224,9 +225,9 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - [ ] P3.7 Kombo sayfaları ve altlarındaki turlar. **Ana sayfada kombo turlar öne çıkar** ("Find your Perfect Tour" bölümü kombo kartlarıyla veya kombo rayı yukarı).
 
 **Blog, kurumsal, formlar**
-- [ ] P3.8 Blog şablonu: önce kısa cevap, kaynaklar, yazar kartı, gerçek güncelleme tarihi, ilgili tur bağlantıları. Blog kategorisi, yazar sayfası, `/blog/` Travel Hub görünümü. 5 "Map of X" yazısı aynı URL'de.
-- [ ] P3.9 About ve Contact: ekip bloğu (içerik gelince doldurulur), çalışma saatleri, lisans doğrulama bağlantısı. `AboutPage` / `ContactPage`.
-- [ ] P3.10 Form paritesi: eski formdaki alanlar (yetişkin, çocuk ve yaşları, geliş/gidiş tarihi, bütçe, otel sınıfı, uyruk, para birimi, ülke kodlu telefon, notlar) ile bizim formumuz karşılaştırılır. Telefon/WhatsApp alanı tüm teklif formlarında. Spam koruması (Turnstile veya reCAPTCHA, karar). D17 sonucuna göre başvuru kaydı.
+- [ ] P3.8 Blog şablonu: önce kısa cevap, kaynaklar, yazar kartı, gerçek güncelleme tarihi, ilgili tur bağlantıları. Blog kategorisi, yazar sayfası, `/blog/` Travel Hub görünümü. Müşterinin listelediği **34 yazı olduğu gibi, aynı URL'de** taşınır (D12; HTML → zengin metin dönüşümü P6.4'te, içerik ve görseller değiştirilmez). 5 "Map of X" yazısı bunların arasında.
+- [ ] P3.9 About ve Contact: ekip bloğu, çalışma saatleri, lisans doğrulama bağlantısı. `AboutPage` / `ContactPage`. **Müşteri içeriği geldi (2026-10-12, `data/client-inputs/`):** Nihat Yolageldi (Founder & Travel Consultant), Kenan Ungur (Operations Manager & Travel Consultant), her ikisi için çalışma saatleri 9:00-19:00 ve e-posta, iki portre fotoğraf. **Teyit gerek:** fotoğrafların kime ait olduğu (Word dosyasındaki sıraya göre image1 = Nihat, image2 = Kenan varsayıldı) ve saat dilimi (İstanbul, GMT+3 varsayıldı, sayfada belirtilir). Fotoğraflar repoya girmez, Sanity'ye yüklenir.
+- [ ] P3.10 Form paritesi: eski formdaki alanlar (yetişkin, çocuk ve yaşları, geliş/gidiş tarihi, bütçe, otel sınıfı, uyruk, para birimi, ülke kodlu telefon, notlar) ile bizim formumuz karşılaştırılır. Telefon/WhatsApp alanı tüm teklif formlarında. Spam koruması (Turnstile veya reCAPTCHA, karar). D17 sonucuna göre başvuru kaydı. **Müşteri talebi (2026-10-12):** hangi tur sayfasından form gönderilirse **turun başlığı formda otomatik, görünür biçimde** yer alır ve bize gelen e-postaya eklenir. Müşterinin istediği e-posta düzeni (başlık "Magnificent Travel - Request a Quote", ilk satır "Tour: …", ardından Name, Nationality, E-Mail, Code, Mobile Phone, Number of Adults, Preferred Tour Start Date, Notes). USD/EUR para birimi alanı (D28, D40). Şu an sitemizde form turun adını yalnızca arka planda gönderiyor, formda görünmüyor.
 
 **İçerik ve düzeltmeler**
 - [ ] P3.11 İçerik güçlendirme (turlar hariç): ülke, kategori ve kombo giriş metinleri, SSS, About, Travel Hub. Kural: canlı sayfada sıralama alan başlıklar ve H1/H2'ler korunur (D23). Her sayfada tek H1.
@@ -263,7 +264,7 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 ### P5: Çince ve Japonca scrape ve dil eşleştirme
 **Amaç:** zh ve jp içeriğini P1 ile aynı hatta çekmek. Bu iki sitede GSC/GA verisi yok; kural: **her eski URL'nin bir akıbeti olur** (veriye göre önceliklendirme yapılmaz).
 
-- [ ] P5.1 ZH (793 URL: `/zh/` 385, `/cn/` 391, geri kalanı statik) ve JA (441 URL) ham arşivi.
+- [ ] P5.1 ZH (güncel 462 URL, 2026-10-12) ve JA (275 URL) ham arşivi. Ana sayfalar 12 Ekim'de yeniden arşivlendi (`data/archive/zh`, `jp`); 7 Ekim anlık görüntüsü `*-2026-10-07` klasörlerinde.
 - [ ] P5.2 Ayrıştırıcıları iki dile uyarla. Yapı EN'den farklı (Ek A.3). **Alt-URL'ler** (`/tour-itinerary/`, `/inclusion-rate/`, `/review/`, `/reviews/`, `/itinerary/`) tek tur kaydında birleştirilir. Japonca slug'lar yüzde-kodlu, Unicode olarak saklanır.
 - [ ] P5.3 `/cn/` yalnızca eşleme için arşivlenir (içeriği alınmaz, D10).
 - [ ] P5.4 **Dil eşleştirme** (ön analiz yapıldı: `docs/baseline/tour-overlap-2026-10-07.md`, 118 EN turunun ≈ %52'sinin zh veya jp'de karşılığı var; jp'nin kendi ürün kodları var): aynı turun üç dildeki karşılıkları (tur kodu `T-xx`, görsel özeti, rota ve gün sayısı) → `data/mapping/translations.csv`. Müşteriye doğrulatılır. Karşılığı olmayanlar işaretlenir (D11).
@@ -322,7 +323,7 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 
 - [ ] P7.1 Politika: her eski URL için karar: (a) aynı yol, yönlendirme yok (EN), (b) yeni yola 301, (c) üst kategoriye 301 (silinen tur, taşınmayan blog), (d) 404/410 (hayalet URL). Ana sayfaya toplu yönlendirme yok.
 - [ ] P7.2 **GSC 404 sınıflandırması (EN):** (1) dış link veya trafik alan silinmiş sayfalar → en yakın sayfaya 301, (2) eğik çizgi/büyük-küçük harf varyantları → normalizasyon, (3) hayalet URL'ler → 404/410.
-- [ ] P7.3 Silinecek tur listesi (müşteri verecek) → üst kategoriye 301.
+- [ ] P7.3 **Müşterinin sildiği turlar** (turları eski sitelerden müşteri kendisi sildi, 2026-10-12): liste envanter farkından çıkar (`data/inventory/<site>-2026-10-07.csv` ile güncel CSV). Şu ana kadar: ZH 331 URL (46 `/zh/` + 48 `/cn/` ana sayfa ve alt-URL'leri), JP 166 URL; **EN'de fark yok**. Her biri üst kategoriye veya ülke sayfasına 301.
 - [ ] P7.4 **Blog (D12):** 5 Map of X aynı URL (yönlendirme gerekmez). Diğer tüm eski blog URL'leri (`/en/blog/<ülke>/<yazı>/`) varsayılan olarak blog hub'ına 301. Müşterinin CMS'ten eklediği özel yönlendirmeler (P6.14) varsayılandan önce gelir. Karşılığı olmayan ve trafiği/linki olmayan sayfalar için 410 tercih edilebilir, bu karar müşteride.
 - [ ] P7.5 zh/jp alan adı geçişi (**eski alan adlarının DNS'i yeni siteye bağlı kalmalı, kapatılmamalı, D38; DNS şu an `netportbilisim.com` ad sunucularında, kontrol kimde netleşmeli**): `eztravelturkey.com/zh/*` → `magnificenttravel.com/zh/*`, `torukoryoko.com/jp/*` → `magnificenttravel.com/jp/*` kural bazlı (host + önek). `/cn/*` → karşılık gelen `/zh/*` (D10). Alt-URL'ler (`/tour-itinerary/` vb.) → tur sayfası. Eski kök sayfalar (`/`) → ilgili dilin ana sayfası.
 - [ ] P7.6 Mekanizma spike'ı (D25): kural sayısı ≤ 1.000 ise `redirects` + `has: host`; aksi halde `proxy.ts` + arama (Global Config / Redis / Bloom filter). Seçim ve gerekçe günlüğe yazılır.
@@ -363,7 +364,7 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 ### P9: Performans, güvenlik, işletme
 - [ ] P9.1 CWV bütçesi: LCP < 2,5 sn, CLS < 0,1, INP < 200 ms. Ölçüm Vercel önizlemesinde (lokal sonuçlar yanıltıcı), Lighthouse + PageSpeed + CrUX. Hero LCP, font ön yüklemesi, görsel `sizes`, JS bütçesi.
 - [ ] P9.2 Güvenlik başlıkları: CSP (GTM ile uyumlu), HSTS, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `frame-ancestors`; `poweredByHeader: false`; form hız sınırı ve bot koruması.
-- [ ] P9.3 Form teslimi: Resend alan adı doğrulaması (SPF/DKIM), alıcı e-posta (müşteriden), WhatsApp yedeği, bülten sağlayıcısı.
+- [ ] P9.3 Form teslimi: Resend alan adı doğrulaması (SPF/DKIM), WhatsApp yedeği, bülten sağlayıcısı. **Alıcı adresler müşteriden alındı (3 adres, `data/client-inputs/`, ortam değişkenine yazılır, repoya girmez).** Gönderen adres `magnificenttravel.com` üzerinde doğrulanır (P9.12).
 - [ ] P9.4 İzleme: uptime, Vercel uyarıları, hata izleme; "gece yarısı sorun çıkarsa" bildirim akışı (müşteriye 7/24 destek söz verildi).
 - [ ] P9.5 Yedek: içerik (P6.7), kod (git), DNS kayıtlarının dışa aktarımı.
 - [ ] P9.6 Erişilebilirlik (WCAG AA): kontrast, odak, klavye, `aria`.
@@ -463,8 +464,8 @@ Amaç: Ek H kabul listesini elle değil otomatik doğrulamak ve gerilemeyi (regr
 | Site | Sitemap URL | Not |
 |---|---|---|
 | magnificenttravel.com/en | 685 | 527 blog (6 kategori + 520 yazı), 153 destinations, 5 statik. Kök `/` → `/en/` 301. |
-| eztravelturkey.com | 793 | `/zh/` 385 (Geleneksel, `zh-TW`), `/cn/` 391 (Basitleştirilmiş, `zh-CN`). Kök `/` 200 |
-| torukoryoko.com | 441 | `/jp/` altında, Japonca slug'lar. Kök `/` 200 |
+| eztravelturkey.com | **462** (2026-10-12; 7 Ekim'de 793) | Müşteri tur sildi: 331 URL kalktı. `/zh/` (Geleneksel, `zh-TW`) ve `/cn/` (Basitleştirilmiş, `zh-CN`). Kök `/` 200 |
+| torukoryoko.com | **275** (2026-10-12; 7 Ekim'de 441) | Müşteri tur sildi: 166 URL kalktı. `/jp/` altında, Japonca slug'lar. Kök `/` 200 |
 
 Örnek 40 EN sitemap URL'sinin tamamı 200 verdi; GSC'deki 404'ler sitemap dışı URL'lerden geliyor.
 
@@ -558,30 +559,30 @@ Diğer tipler: kategori, ülke, kombo (giriş metni, eşleşme, lojistik, mevsim
 - Hosting ve sürekli teknik destek 7/24.
 
 ### Ek E. Müşteriden beklenenler (takip listesi)
-- [ ] Silinecek tur listesi ("haftaya atarız" demişti)
-- [ ] Blog yönlendirmesini kim ekleyecek: müşteri kendi mi (yeni yazıdaki "eski URL" alanı), yoksa bize liste mi gönderecek (D36)
+- [x] Silinecek tur listesi: müşteri turları eski sitelerden kendisi sildi (2026-10-12), envanter farkıyla yeniden tarandı (P7.3)
+- [x] Blog yönlendirmesi: müşteri yeni yazıda "eski URL" alanını kendisi dolduracak (D36: B)
 - [ ] `/cn/` kararı onayı (D10)
 - [ ] Tur dil eşleşmeleri doğrulaması (P5.4)
-- [ ] İletişim e-posta adresi
+- [x] Form alıcı e-posta adresleri (3 adres alındı, 2026-10-12)
 - [ ] Tur görselleri: önce canlı sitedeki orijinaller (scrape); kalite yetersiz kalan turlar için orijinal dosyalar veya Depositphotos erişimi (yalnızca gerekirse)
-- [ ] Tur başı yorum kaynağı (D22)
+- [x] Tur başı yorum kaynağı: Tripadvisor (D22)
 - [ ] 5 Ekim H1/H2 başlık örnekleri ve 3 Ekim tur sayfası bölümleri dosyası (bizde yok)
-- [ ] Ekip bloğu içeriği (isim, unvan, fotoğraf) ve çalışma saatleri
+- [x] Ekip bloğu içeriği ve çalışma saatleri (2026-10-12, teyit: fotoğraf sahipleri ve saat dilimi, P3.9)
 - [ ] zh/jp arayüz ve yeni içerik çevirisi sorumlusu
 - [ ] GSC: iki eski alan adı için erişim veya müşterinin kendi doğrulaması (isteğe bağlı)
 - [ ] Japonya/Tayvan için ek iletişim kanalı (LINE vb.) kullanılacak mı?
 - [ ] Sözleşme kapsamı: 3 aylık SEO programı hangi dilleri kapsıyor (D24)
 - [ ] **Müşteriye onaylatılacak:** ekibin hazırlayacağı hedef anahtar kelime ve rakip önerisi (dil başına). Müşteriden sıfırdan liste istenmez (S1.3, S1.4). Yalnızca iş önceliği ve marka terimleri sorulur.
-- [ ] Hangi dillerde hangi para birimiyle fiyat gösterilecek (D28)
+- [~] Para birimi: müşteri USD ve EUR seçenekleri istedi (D28); mekanizma müşteriye teyit edilecek (D40: düğme mi, kur nasıl)
 - [ ] Hesap sahipliği ve yönetici kişiler (D31): Vercel, Sanity, GitHub, GA4/GTM, GSC, DNS
 - [ ] Eski hosting'in geçişten sonra ne kadar açık kalacağı ve eski ajansla sözleşme durumu (D32)
 - [ ] **E-posta (D39):** bugün kullanılan kutuların listesi (üç alan adı için), her biri ne için, şifre/panel erişimi var mı; yeni sitede istenen ≥ 5 adres ve amaçları; hizmeti kim satın alacak
 - [ ] **Alan adları (D38):** `torukoryoko.com` ve `eztravelturkey.com` en az 12 ay kayıtlı kalacak ve yönlendirme için kullanılacak mı; kayıt şirketi ve DNS yönetimi kimde
-- [ ] **Panel kullanıcıları:** en az 3-4 kişinin adı ve e-postası (Sanity'de her biri kendi e-postasıyla girer)
+- [x] **Panel kullanıcıları:** 3 kişi (Meifen, Kenan, ortak hesap) alındı, e-postalar `data/client-inputs/` altında (2026-10-12)
 - [~] GSC "Not found (404)" dışa aktarımı: P7'de (blog dışı 404'ler için). Silinmiş blog sayfaları ertelendi (D34).
 - [ ] GA4/GTM kapsayıcısının içeriği ve veri toplayıp toplamadığı (P0.5d): müşterinin verdiği Analytics erişimiyle bakılır
 - [ ] Tripadvisor ve Google Business Profile **yönetici erişimi: yayın zamanı gerekir** (P10.10: web sitesi URL'sini yeni siteye güncellemek için). Denetim için şart değil, GBP "Performance" (arama, arama, yol tarifi) verisi başlangıç ölçümü için isteğe bağlı.
-- [ ] Gerçek tur yorumları için izin ve kaynak (D22)
+- [x] Gerçek tur yorumları: Tripadvisor (D22, P3.17)
 
 **Bizim tarafta (ekip) araç ve veri erişimi (D30):**
 - [x] **OpenSEO girişi (D30):** tamam (2026-10-07), GSC mülkü bağlı. GSC verisi OpenSEO üzerinden çekilir.

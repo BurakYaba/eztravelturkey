@@ -55,6 +55,14 @@ for (const file of walk(join(contentDir, 'pages')).filter((f) => f.endsWith('.js
   }
 }
 
+// Drop sources that no current page uses (tours the client deleted, replaced images), then files nobody points to.
+for (const src of Object.keys(manifest.sources)) {
+  if (!uses.has(src)) delete manifest.sources[src];
+}
+const keep = new Set(Object.values(manifest.sources).map((entry) => entry.sha1));
+for (const sha1 of Object.keys(manifest.files)) {
+  if (!keep.has(sha1)) delete manifest.files[sha1];
+}
 const todo = [...uses.keys()].filter((src) => !manifest.sources[src]).slice(0, limit);
 console.log(`${uses.size} image URLs referenced, ${uses.size - todo.length} already in the manifest, downloading ${todo.length}`);
 
