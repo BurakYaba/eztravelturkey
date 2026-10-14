@@ -1,12 +1,13 @@
 import { Link } from '@/i18n/link';
 import { ArrowRight, Compass } from '@phosphor-icons/react/dist/ssr';
-import { combos } from '@/data/combos';
+import { getLocale } from '@/i18n/server';
+import { comboCards } from '@/lib/data/cards';
 import { ButtonLink } from './Button';
-import { Photo } from './Photo';
+import { Picture } from './Picture';
 
 /** Cross-sell for visitors browsing single-country tours. */
-export function MultiCountryCta() {
-  const picks = [combos[0], combos[1], combos[2]];
+export async function MultiCountryCta() {
+  const picks = comboCards(await getLocale()).slice(0, 3);
   return (
     <section className="section-y bg-cream-100/70">
       <div className="container-x grid items-center gap-8 lg:grid-cols-[1.1fr_2fr_auto]">
@@ -19,19 +20,21 @@ export function MultiCountryCta() {
         </div>
         <ul className="grid gap-4 sm:grid-cols-3">
           {picks.map((c) => (
-            <li key={c.slug}>
+            <li key={c.href}>
               <Link
-                href={`/multi-country-tours/${c.slug}`}
+                href={c.href}
                 className="group border-cream-200 shadow-card hover:shadow-lift block overflow-hidden rounded-lg border bg-white transition hover:-translate-y-1">
-                <div className="relative aspect-[16/9]">
-                  <Photo
-                    id={c.image}
-                    sizes="(min-width: 640px) 220px, 100vw"
-                    className="transition duration-500 group-hover:scale-105"
-                  />
+                <div className="bg-cream-100 relative aspect-[16/9]">
+                  {c.image && (
+                    <Picture
+                      image={c.image}
+                      sizes="(min-width: 640px) 220px, 100vw"
+                      className="transition duration-500 group-hover:scale-105"
+                    />
+                  )}
                 </div>
                 <p className="text-navy-900 flex items-center justify-between gap-2 p-3 font-semibold">
-                  {c.name}
+                  {c.title}
                   <ArrowRight size={16} weight="bold" aria-hidden className="transition group-hover:translate-x-1" />
                 </p>
               </Link>

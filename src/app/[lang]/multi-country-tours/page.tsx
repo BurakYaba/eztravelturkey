@@ -6,7 +6,7 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
-import { combos } from '@/data/combos';
+import { comboCards } from '@/lib/data/cards';
 import { homeFaqs } from '@/data/faqs';
 import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
@@ -34,6 +34,7 @@ const coordinates = [
 
 export default async function MultiCountryPage() {
   const lang = await getLocale();
+  const combos = comboCards(lang);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Multi-Country Tours', path: '/multi-country-tours' },
@@ -55,7 +56,7 @@ export default async function MultiCountryPage() {
           />
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {combos.map((c) => (
-              <li key={c.slug} className="reveal">
+              <li key={c.href} className="reveal">
                 <ComboCard combo={c} className="h-full" />
               </li>
             ))}
@@ -99,7 +100,7 @@ export default async function MultiCountryPage() {
           collectionPageJsonLd(lang, 'Multi-Country Tours', '/multi-country-tours', description),
           itemListJsonLd(lang, 
             'Multi-country tours',
-            combos.map((c) => ({ name: `${c.name} Tours`, path: `/multi-country-tours/${c.slug}` })),
+            combos.map((c) => ({ name: c.title, path: c.href })),
           ),
           breadcrumbJsonLd(lang, crumbs),
         ]}

@@ -4,10 +4,10 @@ import { MultiCountryCta } from '@/components/shared/MultiCountryCta';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { ToursBrowser } from '@/components/tours/ToursBrowser';
-import { tours } from '@/data/tours';
+import { allTours } from '@/lib/data';
+import { toCardData } from '@/lib/data/cards';
 import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
-import { toBrowsable } from '@/lib/tours';
 
 const description =
   'Browse private, small group and multi-country tours across Turkey, Greece, Egypt and Jordan. Filter by destination, travel style and duration.';
@@ -21,6 +21,7 @@ export const generateMetadata = localizedMetadata({
 
 export default async function ToursPage() {
   const lang = await getLocale();
+  const tours = allTours(lang);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Tours', path: '/tours' },
@@ -40,7 +41,7 @@ export default async function ToursPage() {
           exceptional care.
         </p>
         <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <ToursBrowser tours={tours.map(toBrowsable)} />
+          <ToursBrowser tours={tours.map(toCardData)} />
         </Suspense>
       </section>
       <TrustBar />
@@ -50,7 +51,7 @@ export default async function ToursPage() {
           collectionPageJsonLd(lang, 'Tours', '/tours', description),
           itemListJsonLd(lang, 
             'Tours',
-            tours.map((t) => ({ name: `${t.title}: ${t.subtitle}`, path: `/tours/${t.slug}` })),
+            tours.map((t) => ({ name: t.title, path: t.href })),
           ),
           breadcrumbJsonLd(lang, crumbs),
         ]}

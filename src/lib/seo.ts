@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { site } from '@/data/site';
 import { img, type ImageId } from '@/data/images';
 import { defaultLocale, hasLocale, htmlLang, locales, type Locale } from '@/i18n/config';
+import type { ImageRef } from '@/lib/data/types';
 import { localePath } from '@/i18n/paths';
 
 /** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. */
@@ -15,8 +16,18 @@ type MetaInput = {
   /** Path without the language prefix, for example `/tours/some-tour`. */
   path: string;
   lang?: Locale;
+  /** Language whose address is the canonical one. Pages that only stand in for another language's text point there. */
+  canonicalLang?: Locale;
+  /** Languages that really have this page; hreflang is written only when there are at least two. */
+  alternateLangs?: readonly Locale[];
   image?: ImageId;
+  /** A scraped picture; wins over `image`. */
+  picture?: ImageRef | null;
   type?: 'website' | 'article';
+  /** Keep the title exactly as given instead of adding the site name. */
+  absoluteTitle?: boolean;
+  /** Keep the page out of search results (site search, previews). */
+  noindex?: boolean;
 };
 
 export function buildMetadata({
@@ -24,17 +35,26 @@ export function buildMetadata({
   description,
   path,
   lang = defaultLocale,
+  canonicalLang,
+  alternateLangs = [],
   image = 'hero-istanbul',
+  picture: scraped,
   type = 'website',
+  absoluteTitle = false,
+  noindex = false,
 }: MetaInput): Metadata {
-  const picture = img(image);
-  const full = localePath(lang, path);
+  const picture = scraped ?? img(image);
+  const full = localePath(canonicalLang ?? lang, path);
   const isHome = path === '/';
-  const fullTitle = isHome ? title : `${title} | ${site.name}`;
+  const fullTitle = isHome || absoluteTitle ? title : `${title} | ${site.name}`;
   return {
-    title: isHome ? { absolute: title } : title,
+    title: isHome || absoluteTitle ? { absolute: title } : title,
     description,
-    alternates: { canonical: full },
+    alternates: {
+      canonical: full,
+      ...(alternateLangs.length >= 2 ? { languages: languageAlternates(path, alternateLangs) } : {}),
+    },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       type,
       siteName: site.name,
@@ -141,12 +161,13 @@ type TripInput = {
   name: string;
   description: string;
   path: string;
-  image: ImageId;
-  priceEUR: number;
+  /** Absolute or site-relative address of the main picture. */
+  imageUrl: string;
+  priceEUR: number | null;
   stops: string[];
 };
 
-export const touristTripJsonLd = ({ lang, name, description, path, image, priceEUR, stops }: TripInput) => {
+export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, priceEUR, stops }: TripInput) => {
   const url = absoluteUrl(localePath(lang, path));
   return {
     '@context': 'https://schema.org',
@@ -154,7 +175,7 @@ export const touristTripJsonLd = ({ lang, name, description, path, image, priceE
     name,
     description,
     url,
-    image: absoluteUrl(img(image).src),
+    image: absoluteUrl(imageUrl),
     touristType: 'Cultural tourism',
     provider: organizationRef,
     itinerary: {
@@ -166,27 +187,41 @@ export const touristTripJsonLd = ({ lang, name, description, path, image, priceE
         item: { '@type': 'Place', name: stop },
       })),
     },
-    offers: {
-      '@type': 'Offer',
-      url,
-      priceCurrency: 'EUR',
-      price: String(priceEUR),
-      description: 'Starting price per person, taxes included. Final price depends on dates, hotels and group size.',
-      seller: organizationRef,
-    },
+    ...(priceEUR === null
+      ? {}
+      : {
+          offers: {
+            '@type': 'Offer',
+            url,
+            priceCurrency: 'EUR',
+            price: String(priceEUR),
+            description: 'Starting price per person. Final price depends on dates, hotels and group size.',
+            seller: organizationRef,
+          },
+        }),
   };
 };
+
+export const faqJsonLd = (items: { q: string; a: string }[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+});
 
 type ArticleInput = {
   lang: Locale;
   title: string;
   description: string;
   path: string;
-  image: ImageId;
-  date: string;
+  imageUrl: string;
+  date: string | null;
 };
 
-export const blogPostingJsonLd = ({ lang, title, description, path, image, date }: ArticleInput) => {
+export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, date }: ArticleInput) => {
   const url = absoluteUrl(localePath(lang, path));
   return {
     '@context': 'https://schema.org',
@@ -194,9 +229,8 @@ export const blogPostingJsonLd = ({ lang, title, description, path, image, date 
     headline: title,
     description,
     url,
-    image: absoluteUrl(img(image).src),
-    datePublished: date,
-    dateModified: date,
+    image: absoluteUrl(imageUrl),
+    ...(date ? { datePublished: date, dateModified: date } : {}),
     inLanguage: htmlLang[lang],
     author: { '@type': 'Organization', name: site.name, url: site.url },
     publisher: organizationRef,

@@ -1,23 +1,32 @@
 import type { ReactNode } from 'react';
 import type { ImageId } from '@/data/images';
+import type { ImageRef } from '@/lib/data/types';
 import { Breadcrumbs, type Crumb } from './Breadcrumbs';
 import { Photo } from './Photo';
+import { Picture } from './Picture';
 
 type Props = {
   title: string;
   description?: ReactNode;
-  image: ImageId;
+  /** Stock photo; used when `picture` is missing. */
+  image?: ImageId;
+  /** A scraped picture (tour, destination); wins over `image`. */
+  picture?: ImageRef | null;
   crumbs?: Crumb[];
   eyebrow?: string;
   actions?: ReactNode;
 };
 
 /** Page header with the photo bleeding in from the right and fading into the page color. */
-export function PageBanner({ title, description, image, crumbs, eyebrow, actions }: Props) {
+export function PageBanner({ title, description, image = 'hero-istanbul', picture, crumbs, eyebrow, actions }: Props) {
   return (
     <section className="border-cream-200 bg-cream-50 relative isolate overflow-hidden border-b">
       <div className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[68%]">
-        <Photo id={image} sizes="(min-width: 1024px) 68vw, 100vw" priority className="object-center" />
+        {picture ? (
+          <Picture image={picture} sizes="(min-width: 1024px) 68vw, 100vw" priority className="object-center" />
+        ) : (
+          <Photo id={image} sizes="(min-width: 1024px) 68vw, 100vw" priority className="object-center" />
+        )}
         <div aria-hidden className="bg-cream-50/80 absolute inset-0 lg:hidden" />
         <div aria-hidden className="fade-left absolute inset-0 hidden lg:block" />
       </div>

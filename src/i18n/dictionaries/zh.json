@@ -8,11 +8,26 @@
     "homeLabel": "Magnificent Travel，回到首頁"
   },
   "countries": {
-    "turkey": { "name": "土耳其", "tagline": "歷史就在這裡" },
-    "greece": { "name": "希臘", "tagline": "島嶼與古文明奇蹟" },
-    "egypt": { "name": "埃及", "tagline": "法老王的國度" },
-    "jordan": { "name": "約旦", "tagline": "探索古老的奧秘" },
-    "morocco": { "name": "摩洛哥", "tagline": "多彩的文化" }
+    "turkey": {
+      "name": "土耳其",
+      "tagline": "歷史就在這裡"
+    },
+    "greece": {
+      "name": "希臘",
+      "tagline": "島嶼與古文明奇蹟"
+    },
+    "egypt": {
+      "name": "埃及",
+      "tagline": "法老王的國度"
+    },
+    "jordan": {
+      "name": "約旦",
+      "tagline": "探索古老的奧秘"
+    },
+    "morocco": {
+      "name": "摩洛哥",
+      "tagline": "多彩的文化"
+    }
   },
   "nav": {
     "main": "主選單",
@@ -32,7 +47,9 @@
     "about": "關於我們",
     "travelGuides": "旅遊指南",
     "contact": "聯繫",
-    "planMyTrip": "規劃我的旅程"
+    "planMyTrip": "規劃我的旅程",
+    "home": "首頁",
+    "language": "語言"
   },
   "footer": {
     "about": "{name}（旅行社執照編號 {licenseNo}），登記名稱為 {legalName}，自 {founded} 年起為獨立經營的土耳其旅行社。",
@@ -69,6 +86,25 @@
     "title": "這個頁面不在地圖上",
     "text": "您要找的頁面可能已經移動。歡迎瀏覽我們的行程，或告訴我們您想去哪裡。",
     "tours": "瀏覽行程",
-    "home": "回到首頁"
+    "home": "回到首頁",
+    "popular": "熱門頁面"
+  },
+  "preview": {
+    "notice": "此語言版本準備中，目前顯示英文內容。"
+  },
+  "search": {
+    "title": "搜尋",
+    "placeholder": "搜尋行程、目的地與旅遊指南",
+    "button": "搜尋",
+    "empty": "找不到與「{query}」相關的內容。請試試其他關鍵字，或瀏覽我們的行程。",
+    "hint": "輸入目的地、行程或主題。",
+    "kindTour": "行程",
+    "kindDestination": "目的地",
+    "kindBlog": "指南",
+    "results": "「{query}」共 {count} 筆結果"
+  },
+  "gone": {
+    "title": "此頁面已不存在",
+    "text": "您要找的頁面已被移除，不會再恢復。歡迎瀏覽目前的行程，或告訴我們您想去哪裡。"
   }
 }

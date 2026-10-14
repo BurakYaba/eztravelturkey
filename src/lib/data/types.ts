@@ -1,0 +1,101 @@
+import type { CountryId, Faq, TourStyle } from '@/data/types';
+import type { Locale } from '@/i18n/config';
+
+/** A picture with its real size, ready for `next/image`. */
+export type ImageRef = { src: string; width: number; height: number; alt: string };
+
+type Common = {
+  /** Language the visitor asked for. */
+  lang: Locale;
+  /** True when this language has no content of its own yet and the English page stands in (preview only, P2.11). */
+  fallback: boolean;
+};
+
+export type TourRecord = Common & {
+  /** Path without the language, no slashes at both ends: destinations/turkey-tours/03-to-05-days-tours/<slug>. */
+  path: string;
+  /** Link for `Link`: `/destinations/.../`. */
+  href: string;
+  slug: string;
+  parent: string;
+  category: string | null;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  summary: string;
+  countries: CountryId[];
+  styles: TourStyle[];
+  days: number | null;
+  nights: number | null;
+  bucket: '3-5' | '6-9' | '10+' | null;
+  priceEUR: number | null;
+  priceNote: string;
+  facts: {
+    duration: string;
+    guideLanguages: string;
+    groupType: string;
+    flights: string;
+    startingPrice: string;
+    cancellation: string;
+    difficulty: string;
+    season: string;
+  };
+  extraFacts: { label: string; value: string }[];
+  route: string[];
+  routeMap: { image: ImageRef | null; intro: string };
+  highlights: string[];
+  itinerary: { dayLabel: string; title: string; text: string; meals: string }[];
+  included: string[];
+  excluded: string[];
+  importantNotes: string[];
+  cancellationPolicy: string[];
+  gallery: ImageRef[];
+  related: { title: string; href: string }[];
+  faqs: Faq[];
+  /** Main picture: the first gallery image. */
+  image: ImageRef | null;
+};
+
+export type PageKind =
+  | 'home'
+  | 'destinations-hub'
+  | 'country'
+  | 'combo'
+  | 'category'
+  | 'blog-hub'
+  | 'blog-category'
+  | 'blog-post'
+  | 'author'
+  | 'static';
+
+export type PageBlock =
+  | { type: 'p'; text: string }
+  | { type: 'list'; ordered: boolean; items: string[] }
+  | { type: 'table'; rows: string[][] }
+  | { type: 'image'; image: ImageRef };
+
+export type PageSection = { level: number; heading: string; blocks: PageBlock[] };
+
+export type CardRecord = {
+  title: string;
+  href: string;
+  image: ImageRef | null;
+  /** Short facts printed on the old card, such as "07 Nights / 08 Days". */
+  meta: string[];
+  price: string;
+};
+
+export type PageRecord = Common & {
+  kind: PageKind;
+  path: string;
+  href: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  lastUpdated: string | null;
+  sections: PageSection[];
+  cards: CardRecord[];
+  faqs: Faq[];
+  /** First picture on the page (blog posts and listings use it as the card image). */
+  image: ImageRef | null;
+};

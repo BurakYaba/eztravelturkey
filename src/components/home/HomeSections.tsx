@@ -9,20 +9,20 @@ import {
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr';
 import type { Icon } from '@phosphor-icons/react';
-import { ArticleCard } from '../shared/ArticleCard';
+import { BlogCard } from '../pages/BlogCard';
 import { ComboCard } from '../shared/ComboCard';
 import { DestinationTile } from '../shared/DestinationTile';
 import { Photo } from '../shared/Photo';
+import { Picture } from '../shared/Picture';
 import { ReviewCards } from '../shared/ReviewCards';
 import { SectionHeading } from '../shared/SectionHeading';
 import { TourCard } from '../tours/TourCard';
 import { TextLink } from '../shared/Button';
-import { combos } from '@/data/combos';
 import { destinations } from '@/data/destinations';
 import { site } from '@/data/site';
-import { tours } from '@/data/tours';
-import { getArticles } from '@/lib/content';
-import { formatDate } from '@/lib/utils';
+import { getLocale } from '@/i18n/server';
+import { blogPosts, featuredTours } from '@/lib/data';
+import { comboCards, toCardData } from '@/lib/data/cards';
 
 const reasons: { icon: Icon; title: string; text: string }[] = [
   {
@@ -99,7 +99,7 @@ export function DestinationsRow() {
         <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {destinations.map((d) => (
             <li key={d.id} className="reveal">
-              <DestinationTile href={`/destinations/${d.id}`} title={d.name} note={d.tagline} image={d.image} />
+              <DestinationTile href={`/destinations/${d.id}-tours`} title={d.name} note={d.tagline} image={d.image} />
             </li>
           ))}
           <li className="reveal">
@@ -176,8 +176,8 @@ export function WaysToTravel() {
   );
 }
 
-export function FeaturedTours() {
-  const picks = [tours[0], tours[2], tours[5]];
+export async function FeaturedTours() {
+  const picks = featuredTours(await getLocale());
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
@@ -188,8 +188,8 @@ export function FeaturedTours() {
         />
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {picks.map((tour) => (
-            <li key={tour.slug} className="reveal">
-              <TourCard tour={tour} className="h-full" />
+            <li key={tour.href} className="reveal">
+              <TourCard tour={toCardData(tour)} className="h-full" />
             </li>
           ))}
         </ul>
@@ -198,7 +198,8 @@ export function FeaturedTours() {
   );
 }
 
-export function MultiCountryRail() {
+export async function MultiCountryRail() {
+  const combos = comboCards(await getLocale());
   return (
     <section className="section-y">
       <div className="container-x">
@@ -210,7 +211,7 @@ export function MultiCountryRail() {
       </div>
       <ul className="no-scrollbar flex snap-x snap-mandatory scroll-px-4 gap-5 overflow-x-auto px-4 pb-4 sm:scroll-px-6 sm:px-6 lg:scroll-px-[max(2rem,calc((100%-80rem)/2+2rem))] lg:px-[max(2rem,calc((100%-80rem)/2+2rem))]">
         {combos.map((combo) => (
-          <li key={combo.slug} className="w-[82%] shrink-0 snap-start sm:w-[22rem]">
+          <li key={combo.href} className="w-[82%] shrink-0 snap-start sm:w-[22rem]">
             <ComboCard combo={combo} className="h-full" />
           </li>
         ))}
@@ -219,8 +220,11 @@ export function MultiCountryRail() {
   );
 }
 
-export function HubPreview() {
-  const [lead, ...rest] = getArticles();
+export async function HubPreview() {
+  const [lead, ...rest] = blogPosts(await getLocale()).filter((p) => p.image);
+  if (!lead) {
+    return null;
+  }
   const side = rest.slice(0, 2);
   return (
     <section className="section-y bg-cream-100/60">
@@ -228,34 +232,35 @@ export function HubPreview() {
         <SectionHeading
           title="Plan Your Trip with Local Insights"
           description="Find practical tips, destination inspiration and travel advice from our local team."
-          link={{ href: '/travel-hub', label: 'Explore the Travel Hub' }}
+          link={{ href: '/blog', label: 'Explore the Travel Guides' }}
         />
         <div className="grid gap-6 lg:grid-cols-5">
           <Link
-            href={`/travel-hub/${lead.slug}`}
+            href={lead.href}
             className="group reveal bg-navy-900 shadow-card hover:shadow-lift relative min-h-96 overflow-hidden rounded-lg transition duration-300 lg:col-span-3">
-            <Photo
-              id={lead.image}
-              sizes="(min-width: 1024px) 60vw, 100vw"
-              className="object-[50%_80%] transition duration-700 group-hover:scale-105"
-            />
+            {lead.image && (
+              <Picture
+                image={lead.image}
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="transition duration-700 group-hover:scale-105"
+              />
+            )}
             <span
               aria-hidden
               className="from-navy-950/90 via-navy-950/30 absolute inset-0 bg-gradient-to-t to-transparent"
             />
             <span className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-              <span className="text-gold-100 text-sm font-semibold">Featured: {lead.category}</span>
+              <span className="text-gold-100 text-sm font-semibold capitalize">Featured: {lead.path.split('/')[1]}</span>
               <span className="font-display mt-1 block text-3xl font-semibold text-white md:text-4xl">
                 {lead.title}
               </span>
-              <span className="mt-2 block max-w-lg text-white/90">{lead.description}</span>
-              <span className="mt-3 block text-sm text-white/80">{formatDate(lead.date)}</span>
+              <span className="mt-2 block max-w-lg text-white/90">{lead.metaDescription}</span>
             </span>
           </Link>
           <div className="grid gap-6 lg:col-span-2">
-            {side.map((article) => (
-              <div key={article.slug} className="reveal">
-                <ArticleCard article={article} className="h-full" />
+            {side.map((post) => (
+              <div key={post.path} className="reveal">
+                <BlogCard post={post} className="h-full" />
               </div>
             ))}
           </div>

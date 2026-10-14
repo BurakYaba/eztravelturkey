@@ -31,15 +31,15 @@ export async function Footer() {
     { label: t.multiCountry, href: '/multi-country-tours' },
     { label: t.privateTours, href: '/private-tours' },
     { label: t.smallGroupTours, href: '/small-group-tours' },
-    { label: t.travelGuides, href: '/travel-hub' },
+    { label: t.travelGuides, href: '/blog' },
   ];
   const company = [
     { label: t.aboutUs, href: '/about' },
     { label: t.contact, href: '/contact' },
     { label: t.faq, href: '/faq' },
     { label: t.planMyTrip, href: '/plan-my-trip' },
-    { label: t.terms, href: '/terms-conditions' },
-    { label: t.privacy, href: '/privacy-policy' },
+    { label: t.terms, href: '/gdpr/terms-conditions' },
+    { label: t.privacy, href: '/gdpr/privacy-policy' },
   ];
   return (
     <footer className="bg-navy-950 text-white">
@@ -75,7 +75,7 @@ export async function Footer() {
           <ul className="space-y-2.5">
             {destinations.map((d) => (
               <li key={d.id}>
-                <Link href={`/destinations/${d.id}`} className={linkClass}>
+                <Link href={`/destinations/${d.id}-tours`} className={linkClass}>
                   {format(t.countryTours, { country: countries[d.id as keyof typeof countries]?.name ?? d.name })}
                 </Link>
               </li>

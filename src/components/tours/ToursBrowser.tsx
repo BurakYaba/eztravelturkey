@@ -6,9 +6,10 @@ import { ArrowCounterClockwise, CalendarBlank, CaretDown, Compass, MapPin } from
 import { destinations } from '@/data/destinations';
 import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
-import { TourCard, type TourCardData } from './TourCard';
+import type { TourCardData } from '@/lib/data/cards';
+import { TourCard } from './TourCard';
 
-export type BrowsableTour = TourCardData & { countries: string[]; bucket: string };
+export type BrowsableTour = TourCardData;
 
 function Filter({
   label,
@@ -80,8 +81,8 @@ export function ToursBrowser({ tours, lockedStyle }: Props) {
     () =>
       tours.filter(
         (t) =>
-          (!destination || t.countries.includes(destination)) &&
-          (!style || t.styles.includes(style)) &&
+          (!destination || (t.countries as string[]).includes(destination)) &&
+          (!style || (t.styles as string[]).includes(style)) &&
           (!duration || t.bucket === duration),
       ),
     [tours, destination, style, duration],
@@ -175,20 +176,16 @@ export function ToursBrowser({ tours, lockedStyle }: Props) {
       {results.length > 0 ? (
         <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((tour, i) => (
-            <li key={tour.slug}>
+            <li key={tour.href}>
               <TourCard tour={tour} className="h-full" priority={i < 3} />
             </li>
           ))}
         </ul>
       ) : (
         <div className="border-cream-200 shadow-card mt-8 rounded-lg border bg-white p-8 text-center md:p-12">
-          <h2 className="text-2xl">
-            {destination === 'morocco' ? 'Morocco is planned to order' : 'No tours match these filters'}
-          </h2>
+          <h2 className="text-2xl">No tours match these filters</h2>
           <p className="text-muted mx-auto mt-2 max-w-lg">
-            {destination === 'morocco'
-              ? 'We do not list fixed Morocco tours. Tell us your dates and interests and we will design a route for you.'
-              : 'Try a different duration or style, or tell us what you have in mind and we will build it for you.'}
+            Try a different duration or style, or tell us what you have in mind and we will build it for you.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <ButtonLink href="/plan-my-trip" arrow>

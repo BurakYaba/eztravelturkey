@@ -9,6 +9,7 @@ import { destinations } from '@/data/destinations';
 import type { Dictionary } from '@/i18n/dictionaries';
 import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { Logo } from './Logo';
 
 type DropItem = { label: string; href: string; note?: string };
@@ -149,7 +150,7 @@ export function Header({ nav, countries, homeLabel }: Props) {
   const destinationItems: DropItem[] = [
     ...destinations.map((d) => {
       const country = countryLabel(countries, d.id);
-      return { label: country.name, href: `/destinations/${d.id}`, note: country.tagline };
+      return { label: country.name, href: `/destinations/${d.id}-tours`, note: country.tagline };
     }),
     { label: nav.allDestinations, href: '/destinations' },
   ];
@@ -161,7 +162,7 @@ export function Header({ nav, countries, homeLabel }: Props) {
   const primary = [
     { label: nav.multiCountry, href: '/multi-country-tours' },
     { label: nav.about, href: '/about' },
-    { label: nav.travelGuides, href: '/travel-hub' },
+    { label: nav.travelGuides, href: '/blog' },
     { label: nav.contact, href: '/contact' },
   ];
 
@@ -199,6 +200,7 @@ export function Header({ nav, countries, homeLabel }: Props) {
           </nav>
 
           <div className="flex items-center gap-3">
+            <LanguageSwitcher label={nav.language} className="hidden lg:flex" />
             <ButtonLink href="/plan-my-trip" arrow className="hidden sm:inline-flex">
               {nav.planMyTrip}
             </ButtonLink>
@@ -296,6 +298,7 @@ export function Header({ nav, countries, homeLabel }: Props) {
               {item.label}
             </Link>
           ))}
+          <LanguageSwitcher label={nav.language} className="mt-6 flex-wrap" />
           <ButtonLink href="/plan-my-trip" size="lg" arrow className="mt-6 w-full">
             {nav.planMyTrip}
           </ButtonLink>

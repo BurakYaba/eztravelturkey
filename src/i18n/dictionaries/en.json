@@ -8,11 +8,26 @@
     "homeLabel": "Magnificent Travel, home"
   },
   "countries": {
-    "turkey": { "name": "Turkey", "tagline": "History lives here" },
-    "greece": { "name": "Greece", "tagline": "Islands and ancient wonders" },
-    "egypt": { "name": "Egypt", "tagline": "Land of the pharaohs" },
-    "jordan": { "name": "Jordan", "tagline": "Ancient mysteries await" },
-    "morocco": { "name": "Morocco", "tagline": "Vibrant cultures" }
+    "turkey": {
+      "name": "Turkey",
+      "tagline": "History lives here"
+    },
+    "greece": {
+      "name": "Greece",
+      "tagline": "Islands and ancient wonders"
+    },
+    "egypt": {
+      "name": "Egypt",
+      "tagline": "Land of the pharaohs"
+    },
+    "jordan": {
+      "name": "Jordan",
+      "tagline": "Ancient mysteries await"
+    },
+    "morocco": {
+      "name": "Morocco",
+      "tagline": "Vibrant cultures"
+    }
   },
   "nav": {
     "main": "Main",
@@ -32,7 +47,9 @@
     "about": "About",
     "travelGuides": "Travel Guides",
     "contact": "Contact",
-    "planMyTrip": "Plan My Trip"
+    "planMyTrip": "Plan My Trip",
+    "home": "Home",
+    "language": "Language"
   },
   "footer": {
     "about": "{name} (License No. {licenseNo}), officially registered as {legalName}, has been an independent Turkish tour operator since {founded}.",
@@ -69,6 +86,25 @@
     "title": "This page has wandered off the map",
     "text": "The page you are looking for may have moved. Browse our tours or tell us where you would like to go.",
     "tours": "Explore Tours",
-    "home": "Back to home"
+    "home": "Back to home",
+    "popular": "Popular pages"
+  },
+  "preview": {
+    "notice": "This language version is being prepared. You are seeing the English text for now."
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search tours, destinations and guides",
+    "button": "Search",
+    "empty": "Nothing found for \"{query}\". Try another word, or browse our tours.",
+    "hint": "Type a destination, a tour or a topic.",
+    "kindTour": "Tour",
+    "kindDestination": "Destination",
+    "kindBlog": "Guide",
+    "results": "{count} results for \"{query}\""
+  },
+  "gone": {
+    "title": "This page is no longer available",
+    "text": "The page you asked for has been removed and will not return. Browse our current tours or tell us where you would like to go."
   }
 }
