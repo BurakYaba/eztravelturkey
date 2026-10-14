@@ -3,7 +3,7 @@ import typescriptParser from '@typescript-eslint/parser';
 
 export default [
   {
-    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'references/**', 'docs/**'],
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'references/**', 'docs/**', 'studio/dist/**', 'studio/.sanity/**'],
   },
   {
     files: ['**/*.{js,jsx}'],
