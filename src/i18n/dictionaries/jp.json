@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "defaultTitle": "Magnificent Travel | トルコ・ギリシャ・エジプト・ヨルダン・モロッコのツアー",
+    "defaultDescription": "1997年創業のトルコ政府公認旅行会社。トルコ、ギリシャ、エジプト、ヨルダン、モロッコのプライベートツアー、少人数グループツアー、コンビネーションツアーをご案内します。"
+  },
+  "common": {
+    "skipToContent": "本文へスキップ",
+    "homeLabel": "Magnificent Travel、ホームへ"
+  },
+  "countries": {
+    "turkey": {
+      "name": "トルコ",
+      "tagline": "歴史が息づく国"
+    },
+    "greece": {
+      "name": "ギリシャ",
+      "tagline": "島々と古代の驚異"
+    },
+    "egypt": {
+      "name": "エジプト",
+      "tagline": "ファラオの国"
+    },
+    "jordan": {
+      "name": "ヨルダン",
+      "tagline": "古代の神秘が待つ国"
+    },
+    "morocco": {
+      "name": "モロッコ",
+      "tagline": "彩り豊かな文化"
+    }
+  },
+  "nav": {
+    "main": "メインメニュー",
+    "mobile": "モバイルメニュー",
+    "menu": "メニュー",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "destinations": "目的地",
+    "allDestinations": "すべての目的地",
+    "tourStyles": "ツアースタイル",
+    "allTours": "すべてのツアー",
+    "privateTours": "プライベートツアー",
+    "privateNote": "ご興味とペースに合わせて",
+    "smallGroupTours": "少人数グループツアー",
+    "smallGroupNote": "同じ関心を持つ仲間と",
+    "multiCountry": "コンビネーションツアー",
+    "about": "会社概要",
+    "travelGuides": "旅行ガイド",
+    "contact": "問い合わせ先",
+    "planMyTrip": "旅行を計画する",
+    "home": "ホーム",
+    "language": "言語"
+  },
+  "footer": {
+    "about": "{name}（旅行業登録番号 {licenseNo}、正式名称 {legalName}）は、{founded}年から続く独立系のトルコの旅行会社です。",
+    "exploreHeading": "探す",
+    "exploreLabel": "目的地とツアー",
+    "countryTours": "{country}ツアー",
+    "companyHeading": "会社情報",
+    "companyLabel": "会社情報",
+    "contactHeading": "お問い合わせ",
+    "whatsapp": "WhatsApp {number}",
+    "multiCountry": "コンビネーションツアー",
+    "privateTours": "プライベートツアー",
+    "smallGroupTours": "少人数グループツアー",
+    "travelGuides": "旅行ガイド",
+    "allTours": "すべてのツアー",
+    "aboutUs": "会社概要",
+    "contact": "問い合わせ先",
+    "faq": "よくある質問",
+    "planMyTrip": "旅行を計画する",
+    "terms": "ご利用条件",
+    "privacy": "プライバシーポリシー",
+    "rights": "© {year} {name}. All rights reserved.",
+    "tursab": "TÜRSAB 加盟",
+    "tripadvisor": "Tripadvisor の口コミ",
+    "cards": "Visa・Mastercard をご利用いただけます"
+  },
+  "whatsapp": {
+    "aria": "WhatsApp でトラベルコンサルタントとチャット",
+    "label": "コンサルタントに相談",
+    "message": "こんにちは、Magnificent Travel さん。旅行を計画したいです。"
+  },
+  "notFound": {
+    "eyebrow": "エラー 404",
+    "title": "このページは地図から消えてしまいました",
+    "text": "お探しのページは移動した可能性があります。ツアー一覧をご覧いただくか、行きたい場所をお知らせください。",
+    "tours": "ツアーを見る",
+    "home": "ホームへ戻る",
+    "popular": "人気のページ"
+  },
+  "preview": {
+    "notice": "この言語版は準備中です。現在は英語の内容を表示しています。"
+  },
+  "search": {
+    "title": "検索",
+    "placeholder": "ツアー、目的地、ガイドを検索",
+    "button": "検索",
+    "empty": "「{query}」に一致する情報は見つかりませんでした。別の言葉をお試しいただくか、ツアー一覧をご覧ください。",
+    "hint": "目的地、ツアー、トピックを入力してください。",
+    "kindTour": "ツアー",
+    "kindDestination": "目的地",
+    "kindBlog": "ガイド",
+    "results": "「{query}」の検索結果 {count} 件"
+  },
+  "gone": {
+    "title": "このページは掲載を終了しました",
+    "text": "お探しのページは削除されており、再公開の予定はありません。現在のツアー一覧をご覧いただくか、行きたい場所をお知らせください。"
+  }
+}

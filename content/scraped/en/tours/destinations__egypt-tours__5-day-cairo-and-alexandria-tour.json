@@ -1,0 +1,310 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/egypt-tours/5-day-cairo-and-alexandria-tour/",
+  "path": "destinations/egypt-tours/5-day-cairo-and-alexandria-tour",
+  "slug": "5-day-cairo-and-alexandria-tour",
+  "parent": "egypt-tours",
+  "category": null,
+  "title": "5-Day Cairo & Alexandria Explorer Tour",
+  "metaTitle": "Cairo & Alexandria in 5 Days | Egypt City Tour",
+  "metaDescription": "Explore Cairo, Giza and Alexandria in five days, combining the Pyramids, museums, ancient landmarks and Mediterranean history on a short Egypt journey.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/egypt-tours/5-day-cairo-and-alexandria-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Egypt Tours & Vacation Packages | 2026–2027",
+    "5-Day Cairo & Alexandria Explorer Tour"
+  ],
+  "summary": "The 5-Day Cairo & Alexandria Tour stays entirely in northern Egypt, combining Cairo’s ancient sites with a full-day journey to the Mediterranean city of Alexandria. Visit the Pyramids of Giza, Saqqara and Memphis before exploring the Grand Egyptian Museum, Old Cairo and Khan el-Khalili Bazaar. Alexandria adds a different historical layer to the trip, shaped by its Greco-Roman past and long connection with the Mediterranean.\nWith no domestic flights or Nile cruise required, the five days remain focused on Cairo and Alexandria. The program includes selected 5-star hotels with breakfast, English-speaking local guides, transfers, entrance fees and the scheduled sightseeing detailed in the itinerary.",
+  "facts": {
+    "duration": "04 Nights / 05 Days",
+    "guideLanguages": "English, Spanish",
+    "groupType": "Private",
+    "flights": "No",
+    "startingPrice": "€ 995 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 4,
+  "days": 5,
+  "price": {
+    "amount": 995,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €995 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Cairo",
+    "Alexandria"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-Best-5-Day-Egypt-Tour-Package.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "5-Day Cairo & Alexandria Explorer Tour Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "04 Nights / 05 Days",
+    "Cairo • Alexandria",
+    "Land Transportation Included",
+    "Private Tour",
+    "Carefully Selected 5-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Cairo",
+      "text": "Arrival at Cairo International Airport. Meet and transfer to your hotel in Cairo.\nHotel check-in after 14:00. The remainder of the day is at leisure. Overnight in Cairo.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Pyramids, Memphis & Saqqara",
+      "text": "Breakfast at the hotel. Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramesses II. Continue to Saqqara to visit the famous Step Pyramid of Djoser. Later, explore the Pyramids of Giza built for Cheops, Chephren, and Mycerinus, along with the mysterious Great Sphinx of Giza. Transfer back to the hotel. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Cairo to Alexandria (By Vehicle)",
+      "text": "Breakfast at the hotel. Drive to Alexandria and visit the famous Bibliotheca Alexandrina. Explore the ancient Roman Amphitheatre of Alexandria, visit Pompey's Pillar, and view the historic Citadel of Qaitbay from outside. Return to Cairo in the evening. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Tour to Citadel & Egyptian Museum",
+      "text": "Breakfast at the hotel. Visit the Grand Egyptian Museum before continuing to the historic Cairo Citadel and the beautiful Mosque of Muhammad Ali. Explore Old Cairo and visit the Saints Sergius and Bacchus Church and the Hanging Church. Later, enjoy free time at the famous Khan el-Khalili bazaar before returning to the hotel. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Departure from Cairo",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Cairo Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "04 nights' hotel accommodation in Cairo (selected hotel category)",
+    "Cairo Tours",
+    "Full-day tour of the Giza Pyramids, the Great Sphinx, Memphis, and Saqqara",
+    "Full-day tour of the Grand Egyptian Museum, Cairo Citadel, Old Cairo, and Khan El Khalili Bazaar",
+    "Alexandria Tour",
+    "Full-day tour of Alexandria",
+    "Visit Pompey's Pillar and the Catacombs of Kom El Shoqafa",
+    "Visit the Bibliotheca Alexandrina",
+    "View the Citadel of Qaitbay from the outside",
+    "Visit the Roman Amphitheater and Montaza Palace Gardens",
+    "Included Services",
+    "Professional English-speaking guide throughout all sightseeing tours",
+    "Private transportation in an air-conditioned vehicle",
+    "All main entrance fees as per the itinerary",
+    "All airport, hotel, and sightseeing transfers within Egypt"
+  ],
+  "excluded": [
+    "Egypt entry visa",
+    "International flight tickets",
+    "Beverages during meals",
+    "Tipping and personal expenses"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year.",
+    "The itinerary can be customized to suit your travel preferences.",
+    "All transfers include one standard piece of luggage per person.",
+    "Domestic flight and ferry schedules are subject to change without prior notice."
+  ],
+  "cancellationPolicy": [
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Sharm-El-Sheikh-3.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "5-Day Cairo & Alexandria Explorer Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Alexandria-2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Beautiful Alexandria coastline on Mediterranean Sea Egypt"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cairo-4.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning views of Pyramids and Sphinx today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Alexandria-1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic mosques and architecture in Cairo Egypt"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cairo-9.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Travelers admiring the Great Pyramids of Egypt"
+    }
+  ],
+  "related": [
+    {
+      "title": "10-Day Istanbul, Athens & Cairo Capitals Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-and-egypt-tours/10-day-turkey-greece-and-egypt-tour/"
+    },
+    {
+      "title": "4-Day Cairo Highlights: Pyramids & Ancient Egypt",
+      "url": "https://www.magnificenttravel.com/en/destinations/egypt-tours/4-day-cairo-city-break-tour/"
+    },
+    {
+      "title": "8-Day Best of Egypt Tour: Cairo, Nile & Abu Simbel",
+      "url": "https://www.magnificenttravel.com/en/destinations/egypt-tours/8-day-best-of-egypt-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the Best 5-Day Egypt Tour Package?",
+      "a": "The Best 5-Day Egypt Tour Package covers Cairo and Alexandria, two of Egypt's most fascinating cities. You will explore the ancient wonders of Cairo, including the Pyramids of Giza and the Egyptian Museum, and discover Alexandria's rich Mediterranean heritage, historic landmarks, and coastal charm. The tour runs for 4 nights and 5 days."
+    },
+    {
+      "q": "How much does the Best 5-Day Egypt Tour Package cost?",
+      "a": "The tour starts from €995 per person for the 2026 season. The price includes accommodation, guided sightseeing tours, entrance fees according to the itinerary, selected meals, and all airport, hotel, and tour transfers. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "Are domestic flights included in the package?",
+      "a": "No, domestic flights are not included in this package. Transportation between Cairo and Alexandria is arranged according to the itinerary, allowing travelers to comfortably explore both destinations."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 4 nights of accommodation at carefully selected hotels with daily breakfast. Hotels are chosen for their comfort, service quality, and convenient locations near major attractions."
+    },
+    {
+      "q": "Does the 5-day Egypt tour include a guide?",
+      "a": "Yes, professional English-speaking Egyptologist guides accompany all scheduled sightseeing tours. Your guide will provide detailed insights into Egypt's ancient history, archaeology, and cultural heritage."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Egypt?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to experience Egypt's most famous historical attractions and cultural highlights within a short period. It offers an excellent introduction to both ancient and modern Egypt."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through museums, archaeological sites, historic districts, and city attractions. Most visitors with average fitness levels can comfortably participate."
+    },
+    {
+      "q": "What are the highlights of Cairo and Alexandria?",
+      "a": "Cairo is famous for the Pyramids of Giza, the Great Sphinx, the Egyptian Museum, and vibrant local markets. Alexandria is known for the Qaitbay Citadel, Catacombs of Kom El Shoqafa, Pompey's Pillar, the Corniche waterfront, and the modern Bibliotheca Alexandrina."
+    },
+    {
+      "q": "What is the cancellation policy for the Best 5-Day Egypt Tour Package?",
+      "a": "Free cancellation is available up to 15 days before the tour departure date. Cancellations made within 15 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the Best 5-Day Egypt Tour Package be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights in Cairo or Alexandria, upgrade hotel categories, include additional sightseeing excursions, or extend your stay to other destinations in Egypt. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "5-Day Cairo & Alexandria Explorer Tour",
+          "description": "Explore Cairo, Giza and Alexandria in five days, combining the Pyramids, museums, ancient landmarks and Mediterranean history on a short Egypt journey.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/6784f1e0bc6b4/Sharm-El-Sheikh-3.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "5-day-cairo-and-alexandria-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "5-day-cairo-and-alexandria-tour",
+          "name": "5-Day Cairo & Alexandria Explorer Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "5-Day Cairo & Alexandria Explorer Tour",
+          "description": "Explore Cairo, Giza and Alexandria in five days, combining the Pyramids, museums, ancient landmarks and Mediterranean history on a short Egypt journey.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/6784f1e0bc6b4/Sharm-El-Sheikh-3.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

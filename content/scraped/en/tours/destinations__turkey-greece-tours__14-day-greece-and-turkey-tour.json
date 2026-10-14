@@ -1,0 +1,366 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/14-day-greece-and-turkey-tour/",
+  "path": "destinations/turkey-greece-tours/14-day-greece-and-turkey-tour",
+  "slug": "14-day-greece-and-turkey-tour",
+  "parent": "turkey-greece-tours",
+  "category": null,
+  "title": "14-Day Greece to Turkey Cultural Journey",
+  "metaTitle": "Greece to Turkey | 14-Day Culture & Islands Tour",
+  "metaDescription": "Journey from Athens, Mykonos and Santorini to Ephesus, Pamukkale, Cappadocia and Istanbul on a 14-day cultural route across Greece and Turkey.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/14-day-greece-and-turkey-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey and Greece Tours: 8–18-Day Packages",
+    "14-Day Greece to Turkey Cultural Journey"
+  ],
+  "summary": "The 14-Day Greece & Turkey Tour begins with Greece’s classical and island destinations before continuing across Turkey from the Aegean coast to Cappadocia and Istanbul. Explore Athens, then travel through Mykonos and Santorini before crossing to Turkey for ancient Ephesus and the travertine terraces of Pamukkale. The route then turns inland to Cappadocia and finishes in Istanbul, creating a west-to-east progression that differs from Turkey-first itineraries.\nTwo weeks provide time for both island stays and guided cultural visits. Selected 4-star hotels, daily breakfast, English-speaking local guides, entrance fees during guided tours, scheduled flights and ferries, and airport and port transfers are included.",
+  "facts": {
+    "duration": "13 Nights / 14 days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Three Domestic Flights",
+    "startingPrice": "€ 3,195 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 13,
+  "days": 14,
+  "price": {
+    "amount": 3195,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €3,195 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Mykonos",
+    "Santorini",
+    "Izmir",
+    "Ephesus",
+    "Pamukkale",
+    "Cappadocia",
+    "Istanbul"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-14-Day-Greece--Turkey-Cultural-Tour.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "14-Day Greece to Turkey Cultural Journey Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "13 Nights / 14 Days",
+    "Athens • Mykonos • Santorini • Ephesus • Pamukkale • Cappadocia • Istanbul",
+    "Three Domestic Flights Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Athens",
+      "text": "Upon arrival at Athens Airport, meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Athens City Tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day city tour of Athens, including the Acropolis of Athens, Parthenon, and Acropolis Museum. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Ferry to Mykonos",
+      "text": "Breakfast at the hotel, then transfer to the port in Athens for your ferry to Mykonos.\nUpon arrival, transfer to your hotel. The remainder of the day is at leisure. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Free day in Mykonos",
+      "text": "Breakfast at the hotel. Enjoy a free day to explore Mykonos at your own pace. Wander through the charming whitewashed streets of Mykonos Town, discover boutique shops, waterfront cafés, and local restaurants, or relax on one of the island’s beautiful beaches. In the evening, enjoy the lively atmosphere and famous nightlife that Mykonos is known for. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Ferry to Santorini",
+      "text": "Breakfast at the hotel, then transfer to the port in Mykonos for your ferry to Santorini.\nUpon arrival, transfer to your hotel. The remainder of the day is at leisure. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Free day in Santorini",
+      "text": "Breakfast at the hotel.\nEnjoy a free day at leisure in Santorini to relax on the beaches or explore the charming town of Fira.\nOptional boat or bus excursions to the volcano and nearby islands are available. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Flight to Izmir",
+      "text": "Breakfast at the hotel and free time until transfer to the airport in Santorini.\nFlight with Aegean Airlines via Athens to Izmir.\nUpon arrival, meet and transfer to your hotel in Kusadasi.\nFree time at leisure. Overnight in Kusadasi.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Pamukkale & Hierapolis Day tour",
+      "text": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, drive back to Kusadasi. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Ephesus & Flight to Cappadocia",
+      "text": "Breakfast at the hotel, followed by a guided tour of Ephesus, visiting the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the Great Theatre. Continue to the Temple of Artemis and the House of the Virgin Mary, followed by lunch. After the tour, transfer to İzmir Adnan Menderes Airport for your flight to Kayseri. Upon arrival, transfer to your hotel in Cappadocia. Overnight in Cappadocia.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "North Cappadocia Tour",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 11",
+      "title": "South Cappadocia & Flight to Istanbul",
+      "text": "After breakfast at 10:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. Following the tour, transfer to Kayseri Airport for your flight to Istanbul. Upon arrival, meet and transfer to your hotel. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 12",
+      "title": "Istanbul Old City Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 13",
+      "title": "Bosphorus Cruise",
+      "text": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable cruise along the Bosphorus, sailing between Europe and Asia on one of the world’s most scenic waterways. After the tour, return to your hotel. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 14",
+      "title": "Departure from Istanbul",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Istanbul Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "13 nights' accommodation in 4-star hotels on a bed & breakfast basis",
+    "Included Services",
+    "6-day regular small group tour with a professional English-speaking guide",
+    "Entrance fees, lunches, and transportation included during the guided tours",
+    "Flight: Santorini → Izmir (via Athens)",
+    "Flight: Izmir → Cappadocia",
+    "Flight: Cappadocia → Istanbul",
+    "Ferry: Athens → Mykonos",
+    "Fast ferry: Mykonos → Santorini",
+    "All airport, hotel, and port transfers",
+    "All applicable local taxes and service charges"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Gratuities for driver and guide",
+    "Meals not mentioned",
+    "Drinks of any kind",
+    "Hot air balloon ride in Cappadocia",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates from 1 April to 15 October."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% fee.",
+    "Cancellation 20–14 days before arrival: 50% fee.",
+    "Cancellation 13 days or less before arrival, or no-show: 100% fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hot-air-ballon-in-cappadocia--5.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "14-Day Greece to Turkey Cultural Journey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens--1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "UNESCO World Heritage Site Acropolis of Athens"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Mykonos--9.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous whitewashed buildings in Mykonos"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Ephesus-.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Roman architecture at the Library of Celsus"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hagia-Sophia-Istanbul--1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Grand dome of Hagia Sophia Istanbul"
+    }
+  ],
+  "related": [
+    {
+      "title": "14-Day Best of Turkey & Greece: Complete Highlights",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/14-day-best-of-turkey-and-greece-tour/"
+    },
+    {
+      "title": "13-Day Greece & Ancient Turkey Heritage Route",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/13-day-turkey-and-greece-discovery-tour/"
+    },
+    {
+      "title": "18-Day Grand Turkey & Greece: Islands & Ancient Lands",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/18-day-turkey-and-greece-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 14-Day Greece and Turkey Tour?",
+      "a": "The 14-Day Greece and Turkey Tour covers Athens, Mykonos, Santorini, Kusadasi, Pamukkale, Ephesus, Cappadocia, and Istanbul. You will explore Greece's historic capital and famous islands before continuing to Turkey to visit the ancient city of Ephesus, Pamukkale's white terraces, the unique landscapes of Cappadocia, and the cultural treasures of Istanbul. The tour runs for 13 nights and 14 days."
+    },
+    {
+      "q": "How much does the 14-Day Greece and Turkey Tour cost?",
+      "a": "The tour starts from 3,195 euros per person for the 2026 season. The price includes accommodation, domestic flights within Turkey, the international flight between Greece and Turkey, ferry tickets between the Greek islands, guided tours, entrance fees, selected meals, and all airport, hotel, and port transfers. Final pricing may vary depending on travel dates and hotel availability."
+    },
+    {
+      "q": "Are flights and ferry tickets included in this 14-day itinerary?",
+      "a": "Yes, the package includes domestic flights within Turkey, the international flight between Greece and Turkey, and ferry transportation between Athens, Mykonos, and Santorini. These travel arrangements help maximize your sightseeing time while providing a comfortable and efficient travel experience."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 13 nights at carefully selected 4-star hotels and boutique accommodations with daily breakfast. Hotels are chosen for their comfort, service quality, and convenient locations near major attractions, city centers, and transportation hubs. All airport, hotel, and port transfers are included."
+    },
+    {
+      "q": "Does the 14-day Greece and Turkey tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical background, cultural insights, and local expertise while ensuring a smooth and enjoyable experience throughout both Greece and Turkey."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece and Turkey?",
+      "a": "Yes, this tour is ideal for first-time visitors seeking a comprehensive introduction to both countries. It combines Greece's iconic islands and ancient landmarks with Turkey's remarkable archaeological sites, unique landscapes, and vibrant cultural heritage."
+    },
+    {
+      "q": "How fit do I need to be for the 14-day tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historic districts, and areas with uneven surfaces, including Ephesus, Pamukkale, the Acropolis, and Cappadocia. Most travelers in average health can comfortably participate in the tour."
+    },
+    {
+      "q": "Are Mykonos and Santorini included in the tour?",
+      "a": "Yes, both Mykonos and Santorini are included in the itinerary. You will have time to explore Mykonos' charming streets, beaches, and waterfront cafés, as well as Santorini's famous caldera views, whitewashed villages, and unforgettable sunsets."
+    },
+    {
+      "q": "What is the cancellation policy for the Greece and Turkey Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and peace of mind."
+    },
+    {
+      "q": "Is the 14-Day Greece and Turkey Tour available all year and can it be customized?",
+      "a": "The tour operates throughout the year, subject to seasonal ferry schedules, and can be customized according to your preferences. You can extend your stay in Athens, Mykonos, Santorini, Cappadocia, or Istanbul, upgrade hotel categories, add optional excursions, or modify the itinerary. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "14-Day Greece to Turkey Cultural Journey",
+          "description": "Journey from Athens, Mykonos and Santorini to Ephesus, Pamukkale, Cappadocia and Istanbul on a 14-day cultural route across Greece and Turkey.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/16/678934dbde678/Hot-air-ballon-in-cappadocia--5.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "14-day-greece-and-turkey-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "14-day-greece-and-turkey-tour",
+          "name": "14-Day Greece to Turkey Cultural Journey",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "14-Day Greece to Turkey Cultural Journey",
+          "description": "Journey from Athens, Mykonos and Santorini to Ephesus, Pamukkale, Cappadocia and Istanbul on a 14-day cultural route across Greece and Turkey.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/16/678934dbde678/Hot-air-ballon-in-cappadocia--5.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

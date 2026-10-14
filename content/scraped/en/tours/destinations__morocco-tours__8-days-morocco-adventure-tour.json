@@ -1,0 +1,324 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-days-morocco-adventure-tour/",
+  "path": "destinations/morocco-tours/8-days-morocco-adventure-tour",
+  "slug": "8-days-morocco-adventure-tour",
+  "parent": "morocco-tours",
+  "category": null,
+  "title": "8-Day Atlas Mountains & Sahara Adventure",
+  "metaTitle": "Atlas & Sahara Adventure | 8-Day Morocco Trip",
+  "metaDescription": "Journey from Marrakech through the Atlas region, Tinghir and Ouarzazate to Erfoud on an 8-day adventure featuring gorges, kasbahs and desert landscapes.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-days-morocco-adventure-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Best Morocco Tours & Holidays 2026–2027",
+    "8-Day Atlas Mountains & Sahara Adventure"
+  ],
+  "summary": "The 8-Day Morocco Adventure Tour crosses the country from Marrakech to Casablanca, combining southern desert landscapes with northern cities in one overland route. Travel through Ouarzazate and Todra Gorge toward Erfoud, where the scenery shifts toward the Sahara, before continuing north to Fez. Chefchaouen brings a different setting in the Rif Mountains, followed by Rabat and the Atlantic coast at Casablanca.\nCovering this much of Morocco in eight days creates an active itinerary, with longer journeys handled by private transportation. The year-round program includes selected hotels with breakfast, English-speaking local guides, transfers, entrance fees and scheduled sightseeing at the destinations included along the route.",
+  "facts": {
+    "duration": "07 Nights / 08 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 1,575 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": 1575,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,575 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Marrakech",
+    "Tinghir",
+    "Erfoud",
+    "Ouarzazate"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-8-Day-Adventure-Tour-of-Morocco.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "8-Day Atlas Mountains & Sahara Adventure Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "07 Nights / 08 Days",
+    "Marrakech • Ouarzazate • Todra Gorge • Erfoud • Fez • Chefchaouen • Rabat • Casablanca",
+    "Private Land Transportation Included",
+    "Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival to Marrakech",
+      "text": "Arrival at Marrakesh Menara Airport and meet with our representative. Transfer to your hotel in Marrakech.\nHotel check-in after 14:00. The remainder of the day is at leisure. Overnight in Marrakech",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Visiting Ouzoud Waterfalls and Bin El Ouidane (223km)",
+      "text": "Depart from Marrakech by 4x4 vehicle with guide. Visit the famous Ouzoud Falls, the highest waterfalls in Morocco, and enjoy scenic views of the waterfalls and surrounding landscapes. Optional lunch near the waterfalls. Continue to Bin el Ouidane through beautiful mountain roads and river valleys while enjoying the natural scenery of the Atlas Mountains region.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Visiting Kelaa Mgouna and Boumalne Dades (280km)",
+      "text": "Cross the Middle Atlas Mountains toward Kelaat Mgouna, known as the Valley of the Roses. Discover the oasis landscapes and famous rose-growing region before continuing to Boumalne Dades. Optional lunch at a local restaurant. In the afternoon, visit the scenic Dades Valley and Dades Canyons, famous for their dramatic rock formations and mountain scenery.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Tinghir, Tinjdad and Erfoud (180km)",
+      "text": "Drive to Tinghir, famous for the spectacular Todra Gorge. Visit the canyons and enjoy the dramatic rock landscapes. Optional lunch at a local restaurant. Continue via Tinjdad to Erfoud, gateway to the Sahara Desert. Visit Rissani, birthplace of the Alaouite Dynasty. Optional jeep excursion to the Erg Chebbi dunes to watch the sunset. Overnight in Erfoud.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Tazzarine, N'kob and Zagora (360km)",
+      "text": "Drive to Zagora via Alnif and Tazzarine. Cross the scenic Jebel Saghro mountain range. Optional lunch in Nkob. Visit Tamegroute and its famous historic library. Overnight in Zagora.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Ouarzazate to Marrakech (380km)",
+      "text": "Drive to Marrakesh via Ouarzazate, known as the “Gateway of the Desert.” Enjoy an orientation tour of Ouarzazate and visit the Kasbah of Taourirt. Continue to Aït Benhaddou, the famous UNESCO World Heritage Kasbah. Optional lunch near the Kasbah while enjoying the scenic landscapes along the Atlas Mountain route.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Marrakech Sightseeing",
+      "text": "Full-day tour of Marrakesh by regular vehicle. Visit the Menara Gardens, Saadian Tombs, Bahia Palace, Koutoubia Mosque, and Dar Si Said Museum. Explore the traditional souks and handicraft quarters before visiting the famous Jemaa el-Fnaa square with its lively entertainment. Optional traditional dinner and folkloric show at Chez Ali under Caidal tents. Overnight in Marrakech.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Transfer to Marrakech Airport",
+      "text": "Transfer to Marrakech Menara Airport according to your international flight time\nAssistance with departure formalities at the airport",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "07 nights' hotel accommodation in the selected hotel category",
+    "Included Services",
+    "Meet and assist upon arrival and departure, with round-trip airport transfers from Marrakech Menara Airport",
+    "Meals as specified in the itinerary (drinks not included)",
+    "Private Marrakesh city tour by private car or minivan",
+    "Private air-conditioned 4×4 vehicle with driver during the 5-day tour outside Marrakesh",
+    "Professional English-speaking guide throughout the tour",
+    "Entrance fees to all monuments and attractions mentioned in the itinerary",
+    "Porterage service and hotel tips included",
+    "All applicable taxes and service charges included"
+  ],
+  "excluded": [
+    "International and domestic flight tickets",
+    "Travel insurance",
+    "Personal expenses",
+    "Meals and drinks during meals unless mentioned",
+    "Tips for luggage porters, restaurant staff, guide, and driver"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee.",
+    "20–14 days before arrival: 50% cancellation fee.",
+    "13 days or less before arrival, or no-show: 100% cancellation fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-asilah-13.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "8-Day Atlas Mountains & Sahara Adventure"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-asilah-6.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Beautiful golden sand dunes of Sahara today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Morocco.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic Rabat city in Morocco today destination"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Erfoud--.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic Taourirt Kasbah attraction in Morocco today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Sahra-desert-Morocco.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic caravan routes across Sahara Desert today"
+    }
+  ],
+  "related": [
+    {
+      "title": "8-Day Morocco Desert Tour: Fez to Marrakech",
+      "url": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-days-morocco-tour/"
+    },
+    {
+      "title": "5-Day Zagora Desert Escape from Marrakech",
+      "url": "https://www.magnificenttravel.com/en/destinations/morocco-tours/5-days-morocco-tour/"
+    },
+    {
+      "title": "9-Day Morocco Tour: Imperial Cities & Sahara",
+      "url": "https://www.magnificenttravel.com/en/destinations/morocco-tours/8-days-morocco-vacation-package/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 8-Day Adventure Tour of Morocco?",
+      "a": "The 8-Day Adventure Tour of Morocco covers Marrakech, Tinghir, Ouarzazate, and Erfoud. This exciting itinerary takes travelers through the Atlas Mountains, dramatic desert landscapes, historic kasbahs, scenic valleys, and traditional Moroccan towns, offering a perfect blend of culture and adventure. The tour runs for 7 nights and 8 days."
+    },
+    {
+      "q": "How much does the 8-Day Adventure Tour of Morocco cost?",
+      "a": "The tour starts from €1,575 per person for the 2026 season. The price includes accommodation, private land transportation, guided sightseeing tours, selected meals, and transfers according to the itinerary. Final pricing may vary depending on travel dates and accommodation category."
+    },
+    {
+      "q": "Is transportation included throughout the tour?",
+      "a": "Yes, private land transportation is included throughout the entire journey. Comfortable vehicles are used for all transfers and sightseeing, allowing travelers to experience Morocco's spectacular scenery in comfort."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation in carefully selected hotels, traditional riads, and desert-area properties with daily breakfast. Accommodations are chosen for their comfort, service quality, and authentic Moroccan character."
+    },
+    {
+      "q": "Does the tour include a guide?",
+      "a": "Yes, professional English-speaking guides accompany the scheduled sightseeing tours. Your guide will provide insights into Morocco's culture, history, architecture, and local traditions throughout the trip."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Morocco?",
+      "a": "Yes, this tour is ideal for first-time visitors seeking a more adventurous Moroccan experience. It combines cultural highlights, mountain scenery, desert landscapes, and historic sites in a well-balanced itinerary."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable with walking through historic sites, medinas, desert areas, and scenic valleys. Most visitors with average fitness levels can comfortably participate."
+    },
+    {
+      "q": "What are the highlights of Marrakech, Tinghir, Ouarzazate, and Erfoud?",
+      "a": "Marrakech is famous for its colorful souks, palaces, gardens, and vibrant atmosphere. Tinghir is known for the spectacular Todra Gorge and beautiful oasis scenery. Ouarzazate is renowned for its historic kasbahs and film studios. Erfoud serves as a gateway to the Sahara Desert and offers breathtaking desert landscapes and cultural experiences."
+    },
+    {
+      "q": "What is the cancellation policy for the 8-Day Adventure Tour of Morocco?",
+      "a": "Free cancellation is available up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the 8-Day Adventure Tour of Morocco be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights, upgrade accommodations, include luxury Sahara Desert camp experiences, visit additional destinations, or modify the itinerary to suit your interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "8-Day Atlas Mountains & Sahara Adventure",
+          "description": "Journey from Marrakech through the Atlas region, Tinghir and Ouarzazate to Erfoud on an 8-day adventure featuring gorges, kasbahs and desert landscapes.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/15/678782740ac41/asilah-13.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "8-days-morocco-adventure-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "8-days-morocco-adventure-tour",
+          "name": "8-Day Atlas Mountains & Sahara Adventure",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "8-Day Atlas Mountains & Sahara Adventure",
+          "description": "Journey from Marrakech through the Atlas region, Tinghir and Ouarzazate to Erfoud on an 8-day adventure featuring gorges, kasbahs and desert landscapes.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/15/678782740ac41/asilah-13.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/9-day-greece-and-egypt-tour/",
+  "path": "destinations/greece-and-egypt-tours/9-day-greece-and-egypt-tour",
+  "slug": "9-day-greece-and-egypt-tour",
+  "parent": "greece-and-egypt-tours",
+  "category": null,
+  "title": "9-Day Athens, Cairo & Alexandria Mediterranean Journey",
+  "metaTitle": "Athens, Cairo & Alexandria | 9-Day Cultural Tour",
+  "metaDescription": "Journey from Athens to Cairo and Alexandria in 9 days, connecting Classical Greece, the Pyramids and Egypt's Mediterranean history in one cultural trip.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/9-day-greece-and-egypt-tour/",
+  "lastUpdated": "2026-09-16",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece & Egypt Tours & Vacation Packages 2026–2027",
+    "9-Day Athens, Cairo & Alexandria Mediterranean Journey"
+  ],
+  "summary": "The 9-Day Greece & Egypt Tour connects Athens with Cairo and Alexandria, adding Egypt’s Mediterranean coast to the journey beyond the capital. Begin in Athens with guided visits to its classical landmarks before flying to Cairo for the Pyramids of Giza and other major historical sites. Continue to Alexandria for a different side of Egypt, shaped by its Mediterranean setting and layered Greco-Roman heritage.\nThe escorted itinerary operates from April to October and includes selected 4-star hotels, breakfast, professional local guides, guided-tour entrance fees, airport transfers, scheduled sightseeing and the one-way Athens–Cairo flight. The route focuses on Athens, Cairo and Alexandria without adding a Nile cruise.",
+  "facts": {
+    "duration": "08 Nights / 09 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, One Domestic Flights",
+    "startingPrice": "€ 2,275 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 8,
+  "days": 9,
+  "price": {
+    "amount": 2275,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,275 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Cairo",
+    "Alexandria"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-9-Day-Greece-and-Egypt-Holiday.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "9-Day Athens, Cairo & Alexandria Mediterranean Journey Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "08 Nights / 09 Days",
+    "Athens • Cairo • Alexandria",
+    "Athens–Cairo Flight Included",
+    "Small Group Tour",
+    "Carefully Selected 4-Star Hotels",
+    "April–October Departures",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel in Athens.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Athens City tour",
+      "text": "Breakfast at the hotel. Start a city tour of Athens, including visits to the Acropolis of Athens, the Acropolis Museum, and the famous Parthenon. Continue to see the Hellenic Parliament, the Tomb of the Unknown Soldier, and the National Library. Visit the Presidential Mansion to watch the Evzones Guards, then continue to the Panathenaic Stadium, the Temple of Olympian Zeus, and Hadrian's Arch. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Saronic Island Cruise",
+      "text": "Breakfast at the hotel. Transfer to Port of Piraeus for the day cruise.\nVisit Hydra, Poros, and Aegina with free time for walking, shopping, or swimming.\nLunch will be served onboard during the cruise. Optional tour available to the Temple of Aphaia.\nReturn to Athens in the evening. Overnight in Athens.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Delphi Sightseeing Tour",
+      "text": "Breakfast at the hotel. Meet at the hotel for a full-day excursion to Delphi via Thebes, Livadeia, and the mountain village of Arachova. Visit the Sanctuary of Apollo, the Treasury of the Athenians, the famous Temple of Apollo, and the impressive Delphi Archaeological Museum. After the tour, return to Athens. Overnight in Athens.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Athens to Cairo/ Flight",
+      "text": "Breakfast at the hotel. Check out and transfer to Athens International Airport for the flight to Cairo.\nUpon arrival, meet at the airport and transfer to the hotel. Rest of the day at leisure. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "(Pyramids and Sphinx)",
+      "text": "Breakfast at the hotel. Meet your guide in the hotel lobby and begin the sightseeing tour. Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramesses II. Continue to Saqqara to explore the famous Step Pyramid of Djoser. Later, visit the legendary Giza pyramid complex and the iconic Great Sphinx of Giza. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Egyptian Museum, Old Cairo",
+      "text": "Breakfast at the hotel. Visit the impressive Grand Egyptian Museum and the historic Cairo Citadel, including the beautiful Mosque of Muhammad Ali, also known as the Alabaster Mosque. Continue to Old Cairo to visit Church of Saints Sergius and Bacchus and the famous The Hanging Church. Later, explore the lively Khan el-Khalili Bazaar. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Day Trip to Alexandria",
+      "text": "Breakfast at the hotel. Depart for Alexandria, the historic Mediterranean city founded by Alexander the Great. Visit the famous Bibliotheca Alexandrina, one of the world’s most renowned modern libraries and cultural centers. After lunch, continue to the impressive Roman Amphitheatre of Alexandria and the historic Pompey's Pillar, one of the city’s most famous ancient landmarks. Later, drive back to Cairo. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Transfer to Cairo Airport",
+      "text": "Breakfast at the hotel.\nCheck out and transfer to Cairo International Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "08 nights' accommodation in 4-star hotels, including daily breakfast",
+    "Included Services",
+    "6-day regular small group tours with a professional English-speaking guide",
+    "Entrance fees and transportation included during the guided tours",
+    "One-way flight: Athens → Cairo",
+    "All airport, hotel, and port transfers within Athens",
+    "All airport, hotel, and port transfers within Cairo"
+  ],
+  "excluded": [
+    "Items of a personal nature",
+    "Gratuities for drivers and guides",
+    "Meals not mentioned in the itinerary",
+    "Drinks of any kind",
+    "Travel insurance"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [
+    "Domestic Flights & Ferries",
+    "Domestic flights and ferry tickets are non-refundable",
+    "100% cancellation fees apply once issued",
+    "Land Portion",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival, or no-show: 100% cancellation fee applies"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cairo--01.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "9-Day Athens, Cairo & Alexandria Mediterranean Journey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Aswan-04.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic temples and monuments in Aswan Egypt"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens---18.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic Acropolis and Parthenon in Athens Greece today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Aswan-06.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Traditional Nubian culture in Aswan Egypt today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens---15.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning sunset over the Acropolis and Athens skyline"
+    }
+  ],
+  "related": [
+    {
+      "title": "10-Day Athens, Mykonos, Santorini & Cairo Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/10-day-greece-and-egypt-tour/"
+    },
+    {
+      "title": "7-Day Athens & Cairo Ancient Civilizations Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/7-day-greece-and-egypt-tour/"
+    },
+    {
+      "title": "Turkey, Greece, Egypt & Jordan | 26-Day Grand Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-and-egypt-tours/26-day-turkey-greece-egypt-and-jordan-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 9-Day Greece and Egypt Holiday?",
+      "a": "The 9-Day Greece and Egypt Holiday covers Athens and Delphi in Greece, along with Cairo and Alexandria in Egypt. This itinerary combines the ancient wonders of Greece with the rich historical and cultural heritage of Egypt, offering travelers a memorable journey through two of the world's most influential civilizations. The tour runs for 8 nights and 9 days."
+    },
+    {
+      "q": "How much does the 9-Day Greece and Egypt Holiday cost?",
+      "a": "The tour starts from €2,275 per person for the 2026 season. The price includes accommodation, guided sightseeing tours, selected meals, airport and hotel transfers, domestic transportation, and one domestic flight. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "Are flights included in the package?",
+      "a": "Yes, one domestic flight is included within the itinerary. Additional transportation between destinations is provided according to the tour program. International flights between countries and arrival/departure flights are not included unless specifically stated."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation in carefully selected hotels throughout Greece and Egypt. Daily breakfast is included, and additional meals may be provided according to the itinerary. Hotels are chosen for their comfort, quality service, and convenient locations."
+    },
+    {
+      "q": "Does the tour include guides?",
+      "a": "Yes, professional English-speaking guides accompany the scheduled sightseeing tours in both Greece and Egypt. Your guides will provide fascinating insights into the history, archaeology, culture, and traditions of each destination."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece and Egypt?",
+      "a": "Yes, this tour is ideal for first-time visitors seeking a well-balanced introduction to both countries. It combines famous archaeological sites, historic cities, and cultural landmarks into one enriching travel experience."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through archaeological sites, museums, historic districts, and city centers. Most visitors with average fitness levels can comfortably participate."
+    },
+    {
+      "q": "What are the highlights of the tour?",
+      "a": "Highlights include the Acropolis and Parthenon in Athens, the UNESCO-listed archaeological site of Delphi, the Pyramids of Giza and Great Sphinx in Cairo, the Egyptian Museum, and the Mediterranean city of Alexandria, known for its rich Greco-Roman history and coastal charm."
+    },
+    {
+      "q": "What is the cancellation policy for the 9-Day Greece and Egypt Holiday?",
+      "a": "Free cancellation is available up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, airline conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the 9-Day Greece and Egypt Holiday be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights, upgrade hotel categories, include destinations such as Santorini, Mykonos, Luxor, Aswan, or a Nile Cruise, or modify the itinerary to suit your travel interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "9-Day Athens, Cairo & Alexandria Mediterranean Journey",
+          "description": "Journey from Athens to Cairo and Alexandria in 9 days, connecting Classical Greece, the Pyramids and Egypt's Mediterranean history in one cultural trip.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/19/678cf3827cd89/Cairo--01.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "9-day-greece-and-egypt-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "9-day-greece-and-egypt-tour",
+          "name": "9-Day Athens, Cairo & Alexandria Mediterranean Journey",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "9-Day Athens, Cairo & Alexandria Mediterranean Journey",
+          "description": "Journey from Athens to Cairo and Alexandria in 9 days, connecting Classical Greece, the Pyramids and Egypt's Mediterranean history in one cultural trip.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/19/678cf3827cd89/Cairo--01.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

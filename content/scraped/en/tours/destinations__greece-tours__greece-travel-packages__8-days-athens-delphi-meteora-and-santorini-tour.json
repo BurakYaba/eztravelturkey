@@ -1,0 +1,546 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-delphi-meteora-and-santorini-tour/",
+  "path": "destinations/greece-tours/greece-travel-packages/8-days-athens-delphi-meteora-and-santorini-tour",
+  "slug": "8-days-athens-delphi-meteora-and-santorini-tour",
+  "parent": "greece-tours",
+  "category": "greece-travel-packages",
+  "title": "8-Day Greece Tour: Athens, Meteora & Santorini",
+  "metaTitle": "Meteora & Santorini Tour | 8 Days in Greece",
+  "metaDescription": "Combine Athens, Delphi and Meteora with Santorini on an 8-day Greece journey linking ancient history, mountain monasteries and iconic island scenery.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-delphi-meteora-and-santorini-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Travel Packages 2026–2027 | Islands & Athens",
+    "8-Day Greece Tour: Athens, Meteora & Santorini"
+  ],
+  "summary": "The 8-Day Athens, Delphi, Meteora & Santorini Tour brings together Greece’s classical past, mountain landscapes and island life in a route that remains manageable within eight days. Begin at the Acropolis in Athens, then travel to Delphi to visit the Sanctuary of Apollo before continuing to Meteora and its centuries-old monasteries built high on natural rock pillars. Santorini comes last, giving you time to slow down and explore the caldera, villages and island independently.\nThis journey is offered from April to October, in line with the seasonal program. It includes selected 4-star hotels with breakfast, English-speaking local guides, domestic flights, airport transfers and the sightseeing specified in the itinerary.",
+  "facts": {
+    "duration": "07 Nights / 08 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 1,975 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": 1975,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,975 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Delphi",
+    "Meteora",
+    "Santorini"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-8-Day-Athens-Santorini--Meteora-Monesteries.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "8-Day Greece Tour: Athens, Meteora & Santorini Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "07 Nights / 08 Days",
+    "Athens • Delphi • Meteora • Santorini",
+    "Domestic Flights Included",
+    "Small Group or Private Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival to Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Half day Morning Athens City Tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon.\nContinue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Athens to Delphi then to Kalambaka",
+      "text": "Breakfast at the hotel.\nPick up from your hotel in Athens and depart for Delphi, passing through Thebes, Levadia, and the mountain village of Arachova. Visit the famous Archaeological Site of Delphi, then continue through the scenic towns of Central Greece to Kalambaka. Dinner and overnight in Kalambaka.",
+      "meals": "Breakfast and Dinner"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Meteora Tour then to Athens",
+      "text": "Breakfast at the hotel.\nVisit Meteora and explore its famous monasteries built on towering rock formations. Enjoy breathtaking views and discover important religious treasures. Return to Athens through Trikala and Lamia, with a short stop at Thermopylae to see the King Leonidas Monument. Arrival in Athens in the evening. Overnight in Athens.",
+      "meals": "Breakfast and Dinner"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Ferry to Santorini",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. Rest of the day at leisure. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Santorini at leisure",
+      "text": "Breakfast at the hotel. Enjoy a free day in Santorini to relax on the island’s famous black sand beaches and admire its breathtaking sunset views. Visit Fira, the island’s capital, known for its whitewashed houses, narrow streets, cliffside cafés, and stunning caldera views. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Santorini to Athens ( By Ferry )",
+      "text": "Breakfast and check-out from the hotel.\nFree time at leisure until transfer to the port.\nDepart by Seajet ferry to Athens. Upon arrival, transfer to your hotel.\nEvening at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Departure from Athens",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "07 nights hotel accommodation in the selected category",
+    "2-day Delphi and Meteora tour on half-board basis",
+    "English-speaking licensed guide during the tour",
+    "Half-day Athens city tour with entrance fees and transport",
+    "Ferry tickets: Port of Piraeus – Santorini – Piraeus",
+    "All airport, port, and hotel transfers in Athens and Santorini"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Driver and guide gratuities",
+    "Meals not mentioned",
+    "Drinks and beverages",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily from 01 April to 15 October",
+    "The itinerary can be customized upon request"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferries are non-refundable once issued (100% cancellation fees apply)",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-24.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "8-Day Greece Tour: Athens, Meteora & Santorini"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Olympia-5.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic neighborhoods around Acropolis in Athens Greece"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Meteora-2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Meteora monasteries perched atop dramatic rock formations"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Delphi-5.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic ruins overlooking Delphi valley and mountains"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-26.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Cliffside hotels overlooking Santorini and Aegean Sea"
+    }
+  ],
+  "related": [
+    {
+      "title": "8-Day Best of Greece: Athens, Mykonos & Santorini",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-best-of-greece-tour/"
+    },
+    {
+      "title": "10-Day Greece Tour: Athens, Santorini & Rhodes",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/tour-of-greece-in-10-days/"
+    },
+    {
+      "title": "10-Day Greece Tour: Athens, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/10-day-greece-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 8 Day Athens, Santorini & Meteora Monasteries Tour?",
+      "a": "The 8 Day Athens, Santorini & Meteora Monasteries Tour covers Athens, Santorini, Delphi, and Meteora. You will explore Athens' ancient landmarks, enjoy the spectacular beauty of Santorini, visit the archaeological site of Delphi, and discover the world-famous monasteries of Meteora perched atop dramatic rock formations. The tour runs for 7 nights and 8 days."
+    },
+    {
+      "q": "How much does the 8 Day Athens, Santorini & Meteora Monasteries Tour cost?",
+      "a": "The tour starts from €1,795 per person for the 2026 season. The price includes accommodation, domestic speed ferry tickets, guided sightseeing tours, entrance fees, selected meals, and all airport, hotel, and port transfers specified in the itinerary. Final pricing may vary depending on travel dates and hotel availability."
+    },
+    {
+      "q": "Are transportation and ferry tickets included in this itinerary?",
+      "a": "Yes, the package includes domestic speed ferry transportation to Santorini as well as all required land transportation for the Delphi and Meteora excursions. These arrangements allow you to comfortably explore some of Greece's most famous cultural and natural attractions."
+    },
+    {
+      "q": "Are international flights included in the package?",
+      "a": "No, international flights are not included in the tour price. Travelers are responsible for arranging their own flights to and from Greece. Magnificent Travel can assist with travel planning and recommendations if required."
+    },
+    {
+      "q": "Does the 8-day Greece tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical insights, cultural information, and local expertise while ensuring a smooth and enjoyable travel experience throughout Greece."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to experience both Greece's famous islands and its cultural heritage. It combines Athens, Santorini, Delphi, and Meteora, offering an excellent balance of history, archaeology, scenery, and local culture."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through archaeological sites, historic districts, and monastery complexes. Meteora includes some stair climbing and walking on uneven surfaces, but most travelers in average health can comfortably participate."
+    },
+    {
+      "q": "What are the highlights of Delphi and Meteora?",
+      "a": "Delphi is one of the most important archaeological sites in Greece and was once considered the center of the ancient world. Meteora is famous for its spectacular monasteries built on towering rock formations, offering breathtaking scenery and unique cultural experiences."
+    },
+    {
+      "q": "What is the cancellation policy for the Athens, Santorini & Meteora Monasteries Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, ferry conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 8 Day Athens, Santorini & Meteora Monasteries Tour available all year and can it be customized?",
+      "a": "Yes, the tour operates throughout the year, subject to seasonal ferry schedules and monastery visiting hours. You can extend your stay in Athens or Santorini, upgrade hotel categories, add optional excursions, or modify the itinerary. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "8-Day Greece Tour: Athens, Meteora & Santorini",
+          "description": "Combine Athens, Delphi and Meteora with Santorini on an 8-day Greece journey linking ancient history, mountain monasteries and iconic island scenery.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-delphi-meteora-and-santorini-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67827a8431ebe/Santorini-24.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "07 nights hotel accommodation in the selected category, 2-day Delphi and Meteora tour on half-board basis, English-speaking licensed guide during the tour, Half-day Athens city tour with entrance fees and transport, Ferry tickets: Port of Piraeus – Santorini – Piraeus, All airport, port, and hotel transfers in Athens and Santorini"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Personal expenses, Driver and guide gratuities, Meals not mentioned, Drinks and beverages, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival to Athens  ",
+              "description": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Half day Morning Athens City Tour",
+              "description": "Breakfast at the hotel. \nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. \nContinue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Athens to Delphi then to Kalambaka",
+              "description": "Breakfast at the hotel. \nPick up from your hotel in Athens and depart for Delphi, passing through Thebes, Levadia, and the mountain village of Arachova. Visit the famous Archaeological Site of Delphi, then continue through the scenic towns of Central Greece to Kalambaka.  Dinner and overnight in Kalambaka.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Dinner)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Meteora Tour then to Athens",
+              "description": "Breakfast at the hotel. \nVisit Meteora and explore its famous monasteries built on towering rock formations. Enjoy breathtaking views and discover important religious treasures. Return to Athens through Trikala and Lamia, with a short stop at Thermopylae to see the King Leonidas Monument. Arrival in Athens in the evening. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast and Dinner)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Santorini",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. Rest of the day at leisure.  Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Santorini at leisure",
+              "description": "Breakfast at the hotel.  Enjoy a free day in Santorini to relax on the island’s famous black sand beaches and admire its breathtaking sunset views. Visit Fira, the island’s capital, known for its whitewashed houses, narrow streets, cliffside cafés, and stunning caldera views.  Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Santorini to Athens ( By Ferry ) ",
+              "description": "Breakfast and check-out from the hotel.\nFree time at leisure until transfer to the port.\nDepart by Seajet ferry to Athens. Upon arrival, transfer to your hotel.\nEvening at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Athens",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "8-days-athens-delphi-meteora-and-santorini-tour",
+          "name": "8-Day Greece Tour: Athens, Meteora & Santorini",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "8-Day Greece Tour: Athens, Meteora & Santorini",
+          "description": "Combine Athens, Delphi and Meteora with Santorini on an 8-day Greece journey linking ancient history, mountain monasteries and iconic island scenery.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67827a8431ebe/Santorini-24.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "8-Day Greece Tour: Athens, Meteora & Santorini",
+          "productID": "669e4b6633636546a9000081",
+          "sku": "669e4b6633636546a9000081",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67827a8431ebe/Santorini-24.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Combine Athens, Delphi and Meteora with Santorini on an 8-day Greece journey linking ancient history, mountain monasteries and iconic island scenery.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1975",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-delphi-meteora-and-santorini-tour",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

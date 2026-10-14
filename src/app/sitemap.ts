@@ -1,50 +1,28 @@
 import type { MetadataRoute } from 'next';
-import { combos } from '@/data/combos';
-import { destinations } from '@/data/destinations';
-import { tours } from '@/data/tours';
-import { getArticles } from '@/lib/content';
+import { locales } from '@/i18n/config';
+import { localePath } from '@/i18n/paths';
+import { hasNativeContent, sitemapPaths } from '@/lib/data';
 import { absoluteUrl } from '@/lib/seo';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const statics = [
-    '/',
-    '/destinations',
-    '/tours',
-    '/multi-country-tours',
-    '/private-tours',
-    '/small-group-tours',
-    '/travel-hub',
-    '/about',
-    '/contact',
-    '/faq',
-    '/plan-my-trip',
-    '/terms-conditions',
-    '/privacy-policy',
-  ];
-  const articles = getArticles();
+/**
+ * One sitemap per language that has content of its own (/sitemap/en.xml). A language without its own pages has no
+ * sitemap yet, so pages that only stand in with English text never get listed (docs/project-plan.md P2.18).
+ * No `lastModified`: the old dates were a bulk date, and a build date would lie.
+ */
+export async function generateSitemaps() {
+  const withContent = await Promise.all(locales.map(async (id) => ((await hasNativeContent(id)) ? id : null)));
+  return withContent.filter((id) => id !== null).map((id) => ({ id }));
+}
 
-  return [
-    ...statics.map((path) => ({
-      url: absoluteUrl(path),
-      priority: path === '/' ? 1 : 0.8,
-      changeFrequency: 'weekly' as const,
-    })),
-    ...destinations.map((d) => ({
-      url: absoluteUrl(`/destinations/${d.id}`),
-      priority: 0.8,
-      changeFrequency: 'weekly' as const,
-    })),
-    ...combos.map((c) => ({
-      url: absoluteUrl(`/multi-country-tours/${c.slug}`),
-      priority: 0.8,
-      changeFrequency: 'weekly' as const,
-    })),
-    ...tours.map((t) => ({ url: absoluteUrl(`/tours/${t.slug}`), priority: 0.9, changeFrequency: 'weekly' as const })),
-    ...articles.map((a) => ({
-      url: absoluteUrl(`/travel-hub/${a.slug}`),
-      lastModified: a.date,
-      priority: 0.6,
-      changeFrequency: 'monthly' as const,
-    })),
-  ];
+export default async function sitemap(props: { id: Promise<string> }): Promise<MetadataRoute.Sitemap> {
+  const id = await props.id;
+  const lang = locales.find((l) => l === id);
+  if (!lang) {
+    return [];
+  }
+  return (await sitemapPaths(lang)).map((path) => ({
+    url: absoluteUrl(localePath(lang, path)),
+    priority: path === '/' ? 1 : path.split('/').length <= 2 ? 0.8 : 0.7,
+    changeFrequency: 'weekly' as const,
+  }));
 }

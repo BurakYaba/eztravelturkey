@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "defaultTitle": "Magnificent Travel | Tours across Turkey, Greece, Egypt, Jordan and Morocco",
+    "defaultDescription": "Licensed Turkish tour operator since 1997. Private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "homeLabel": "Magnificent Travel, home"
+  },
+  "countries": {
+    "turkey": {
+      "name": "Turkey",
+      "tagline": "History lives here"
+    },
+    "greece": {
+      "name": "Greece",
+      "tagline": "Islands and ancient wonders"
+    },
+    "egypt": {
+      "name": "Egypt",
+      "tagline": "Land of the pharaohs"
+    },
+    "jordan": {
+      "name": "Jordan",
+      "tagline": "Ancient mysteries await"
+    },
+    "morocco": {
+      "name": "Morocco",
+      "tagline": "Vibrant cultures"
+    }
+  },
+  "nav": {
+    "main": "Main",
+    "mobile": "Mobile",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "destinations": "Destinations",
+    "allDestinations": "All destinations",
+    "tourStyles": "Tour Styles",
+    "allTours": "All tours",
+    "privateTours": "Private Tours",
+    "privateNote": "Your interests, your pace",
+    "smallGroupTours": "Small Group Tours",
+    "smallGroupNote": "Like-minded explorers",
+    "multiCountry": "Multi-Country Tours",
+    "about": "About",
+    "travelGuides": "Travel Guides",
+    "contact": "Contact",
+    "planMyTrip": "Plan My Trip",
+    "home": "Home",
+    "language": "Language"
+  },
+  "footer": {
+    "about": "{name} (License No. {licenseNo}), officially registered as {legalName}, has been an independent Turkish tour operator since {founded}.",
+    "exploreHeading": "Explore",
+    "exploreLabel": "Destinations and tours",
+    "countryTours": "{country} tours",
+    "companyHeading": "Company",
+    "companyLabel": "Company",
+    "contactHeading": "Contact",
+    "whatsapp": "WhatsApp {number}",
+    "multiCountry": "Multi-country tours",
+    "privateTours": "Private tours",
+    "smallGroupTours": "Small group tours",
+    "travelGuides": "Travel guides",
+    "allTours": "All tours",
+    "aboutUs": "About us",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "planMyTrip": "Plan my trip",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy",
+    "rights": "© {year} {name}. All rights reserved.",
+    "tursab": "TURSAB member",
+    "tripadvisor": "Tripadvisor reviews",
+    "cards": "Visa and Mastercard accepted"
+  },
+  "whatsapp": {
+    "aria": "Chat with a travel consultant on WhatsApp",
+    "label": "Chat with a consultant",
+    "message": "Hello Magnificent Travel, I would like to plan a trip."
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "This page has wandered off the map",
+    "text": "The page you are looking for may have moved. Browse our tours or tell us where you would like to go.",
+    "tours": "Explore Tours",
+    "home": "Back to home",
+    "popular": "Popular pages"
+  },
+  "preview": {
+    "notice": "This language version is being prepared. You are seeing the English text for now."
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search tours, destinations and guides",
+    "button": "Search",
+    "empty": "Nothing found for \"{query}\". Try another word, or browse our tours.",
+    "hint": "Type a destination, a tour or a topic.",
+    "kindTour": "Tour",
+    "kindDestination": "Destination",
+    "kindBlog": "Guide",
+    "results": "{count} results for \"{query}\""
+  },
+  "gone": {
+    "title": "This page is no longer available",
+    "text": "The page you asked for has been removed and will not return. Browse our current tours or tell us where you would like to go."
+  }
+}

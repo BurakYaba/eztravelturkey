@@ -1,0 +1,323 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/egypt-tours/8-day-cairo-and-sharm-el-sheikh-package/",
+  "path": "destinations/egypt-tours/8-day-cairo-and-sharm-el-sheikh-package",
+  "slug": "8-day-cairo-and-sharm-el-sheikh-package",
+  "parent": "egypt-tours",
+  "category": null,
+  "title": "8-Day Cairo & Red Sea Escape: Hurghada to Sharm",
+  "metaTitle": "Cairo & Red Sea Escape | 8-Day Egypt Holiday",
+  "metaDescription": "Combine Cairo's ancient wonders with Hurghada and Sharm El Sheikh on an 8-day Egypt escape featuring cultural sightseeing and Red Sea relaxation.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/egypt-tours/8-day-cairo-and-sharm-el-sheikh-package/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Egypt Tours & Vacation Packages | 2026–2027",
+    "8-Day Cairo & Red Sea Escape: Hurghada to Sharm"
+  ],
+  "summary": "The 8-Day Cairo & Sharm El Sheikh Package divides your time between archaeological sightseeing in Cairo and several days on the Red Sea coast. Begin with the Pyramids of Giza, Saqqara and Memphis, followed by the Grand Egyptian Museum, before continuing to Sharm El Sheikh. The second part of the journey is deliberately less structured, leaving time for the beach, swimming or optional Red Sea activities rather than filling every day with guided visits.\nThe package can be arranged year-round and includes selected 5-star hotels with breakfast, English-speaking local guides for scheduled sightseeing, land transportation, transfers and the visits detailed in the itinerary.",
+  "facts": {
+    "duration": "07 Nights / 08 Days",
+    "guideLanguages": "English, Spanish",
+    "groupType": "Private",
+    "flights": "No",
+    "startingPrice": "€ 1,495 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": 1495,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,495 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Cairo",
+    "Hurghada",
+    "Sharm El Sheikh"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-8-Day-Egypt-Tour--Cairo--Red-Sea.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "8-Day Cairo & Red Sea Escape: Hurghada to Sharm Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "07 Nights / 08 Days",
+    "Cairo • Sharm El Sheikh",
+    "Land Transportation Included",
+    "Private Tour",
+    "Carefully Selected 5-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Cairo",
+      "text": "Arrival at Cairo International Airport. Meet and transfer to your hotel in Cairo.\nHotel check-in after 14:00. The remainder of the day is at leisure. Overnight in Cairo.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Sightseeing tour to Giza and Memphis",
+      "text": "Breakfast at the hotel. Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramesses II. Continue to Saqqara to visit the famous Step Pyramid of Djoser. Later, explore the Pyramids of Giza built for Cheops, Chephren, and Mycerinus, along with the mysterious Great Sphinx of Giza. Transfer back to the hotel. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Cairo to Sharm El-Sheikh *by bus:",
+      "text": "Breakfast at the hotel, followed by check-out and transfer to the SuperJet Bus Station for your bus journey to Sharm El-Sheikh (approximately 7–8 hours drive). Optional domestic flight is available at extra cost. Upon arrival, transfer to your hotel. Overnight in Sharm El-Sheikh.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Day at leisure in Sharm El-Sheikh",
+      "text": "Breakfast at the hotel. Enjoy a free day at leisure in Sharm El-Sheikh. Optional tours are available to Saint Catherine's Monastery and Mount Sinai. Optional snorkeling and diving activities in the Red Sea are also available. Overnight in Sharm El-Sheikh..",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Day at leisure in Sharm El-Sheikh",
+      "text": "Breakfast at the hotel. Enjoy a free day at leisure in Sharm El-Sheikh. Relax on the beaches, explore the beautiful coral reefs, or join optional water activities in the Red Sea. Overnight in Sharm El-Sheikh.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Day at leisure in Sharm El-Sheikh",
+      "text": "Breakfast. Enjoy a free day at leisure in Sharm El-Sheikh. Relax on the beaches, explore the coral reefs, enjoy water sports, or experience the lively nightlife along the Red Sea coast. Overnight in Sharm El-Sheikh.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Sharm El-Sheikh to Cairo *by bus",
+      "text": "Breakfast at the hotel, followed by check-out and transfer to the SuperJet Bus Station for your bus journey to Cairo (approximately 7–8 hours drive). Optional domestic flight is available at extra cost. Upon arrival, transfer to your hotel. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Departure from Cairo",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Cairo Airport according to your flight departure time.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "07 nights' hotel accommodation in Cairo and Sharm El Sheikh (selected hotel category)",
+    "Cairo Tour",
+    "Full-day tour of the Giza Pyramids, the Great Sphinx, Memphis, and Saqqara",
+    "Included Services",
+    "Professional English-speaking guide during the Cairo tour",
+    "Private transportation in an air-conditioned vehicle",
+    "All main entrance fees as per the itinerary",
+    "Return coach transportation between Cairo ↔ Sharm El Sheikh",
+    "All airport, hotel, and intercity transfers within Egypt"
+  ],
+  "excluded": [
+    "Entry visa fees",
+    "International flight tickets",
+    "Beverages during meals",
+    "Tipping and any personal expenses"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year.",
+    "The itinerary can be customized to suit your travel preferences.",
+    "All transfers include one standard piece of luggage per person.",
+    "Domestic flight and ferry schedules are subject to change without prior notice."
+  ],
+  "cancellationPolicy": [
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival, or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Sharm-El-Sheikh--.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "8-Day Cairo & Red Sea Escape: Hurghada to Sharm"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Sharm-El-Sheikh--1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous beach destination in Sinai Peninsula Egypt"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cairo-10.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Great Pyramid of Khufu in Giza Egypt"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Sharm-El-Sheikh-5.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning seaside views throughout Hurghada Egypt destination"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Cairo-5.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "World-famous Pyramids of Giza archaeological attraction today"
+    }
+  ],
+  "related": [
+    {
+      "title": "10-Day Egypt & Red Sea Journey: Nile to Hurghada",
+      "url": "https://www.magnificenttravel.com/en/destinations/egypt-tours/10-day-cairo-aswan-luxor-and-hurghada-tour/"
+    },
+    {
+      "title": "8-Day Cairo & Hurghada Cultural & Beach Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/egypt-tours/8-day-cairo-hurghada-and-red-sea-tour/"
+    },
+    {
+      "title": "13-Day Jordan & Egypt Grand Tour: Petra to the Nile",
+      "url": "https://www.magnificenttravel.com/en/destinations/egypt-jordan-and-israel-tours/13-day-best-of-jordan-and-egypt-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 8-Day Egypt Tour – Cairo & Red Sea?",
+      "a": "The 8-Day Egypt Tour – Cairo & Red Sea covers Cairo and Sharm El Sheikh. You will explore Egypt's most famous historical attractions in Cairo before relaxing in Sharm El Sheikh, one of the Red Sea's premier beach destinations known for its crystal-clear waters, coral reefs, and luxury resorts. The tour runs for 7 nights and 8 days."
+    },
+    {
+      "q": "How much does the 8-Day Egypt Tour – Cairo & Red Sea cost?",
+      "a": "The tour starts from €1,295 per person for the 2026 season. The price includes accommodation, guided sightseeing tours, selected meals, land transportation between destinations, and all airport and hotel transfers according to the itinerary. Final pricing may vary depending on travel dates and hotel category."
+    },
+    {
+      "q": "How do travelers get between Cairo and Sharm El Sheikh?",
+      "a": "Transportation between Cairo and Sharm El Sheikh is provided by comfortable land transportation according to the itinerary. This allows travelers to enjoy the journey while exploring Egypt beyond its major tourist attractions."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes accommodation at carefully selected hotels in Cairo and beach resorts in Sharm El Sheikh. Daily breakfast is included, and additional meal plans may be available depending on the selected resort."
+    },
+    {
+      "q": "Does the 8-day Egypt tour include a guide?",
+      "a": "Yes, professional English-speaking or Spanish-speaking Egyptologist guides accompany the scheduled sightseeing tours. Your guide will provide detailed information about Egypt's history, culture, and ancient monuments."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Egypt?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to combine Egypt's world-famous historical attractions with a relaxing Red Sea holiday. It offers a perfect balance of culture, sightseeing, and leisure."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy. Travelers should be comfortable walking through museums, archaeological sites, and city attractions in Cairo. The Sharm El Sheikh portion of the itinerary focuses mainly on relaxation and optional activities."
+    },
+    {
+      "q": "What are the highlights of Cairo and Sharm El Sheikh?",
+      "a": "Cairo is famous for the Pyramids of Giza, the Great Sphinx, and the Egyptian Museum. Sharm El Sheikh is renowned for its luxury resorts, beautiful beaches, snorkeling, scuba diving, colorful coral reefs, desert excursions, and year-round sunshine."
+    },
+    {
+      "q": "What is the cancellation policy for the 8-Day Egypt Tour – Cairo & Red Sea?",
+      "a": "You can generally cancel free of charge up to 30 days before the tour departure date. Cancellations made within the applicable cancellation period may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Can the 8-Day Egypt Tour – Cairo & Red Sea be customized?",
+      "a": "Yes, the tour can be customized according to your preferences. You can add extra nights in Cairo or Sharm El Sheikh, upgrade hotel categories, include optional Red Sea excursions, or extend your trip to destinations such as Luxor, Aswan, or Alexandria. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "8-Day Cairo & Red Sea Escape: Hurghada to Sharm",
+          "description": "Combine Cairo's ancient wonders with Hurghada and Sharm El Sheikh on an 8-day Egypt escape featuring cultural sightseeing and Red Sea relaxation.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/67852bfc5d38b/Sharm-El-Sheikh--.jpg",
+            "width": 505,
+            "height": 337
+          },
+          "url": "8-day-cairo-and-sharm-el-sheikh-package",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "8-day-cairo-and-sharm-el-sheikh-package",
+          "name": "8-Day Cairo & Red Sea Escape: Hurghada to Sharm",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "8-Day Cairo & Red Sea Escape: Hurghada to Sharm",
+          "description": "Combine Cairo's ancient wonders with Hurghada and Sharm El Sheikh on an 8-day Egypt escape featuring cultural sightseeing and Red Sea relaxation.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/67852bfc5d38b/Sharm-El-Sheikh--.jpg",
+            "width": 505,
+            "height": 337
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

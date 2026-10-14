@@ -1,0 +1,338 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-trip/",
+  "path": "destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-trip",
+  "slug": "11-day-turkey-and-egypt-trip",
+  "parent": "turkey-and-egypt-tours",
+  "category": null,
+  "title": "11-Day Turkey & Egypt Ancient Wonders Route",
+  "metaTitle": "Ephesus to Cairo | 11-Day Ancient Wonders Tour",
+  "metaDescription": "Travel from Istanbul through Cappadocia, Ephesus and Pamukkale before continuing to Cairo on an 11-day route linking two ancient civilizations.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/11-day-turkey-and-egypt-trip/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey & Egypt Tours & Vacation Packages 2026–2027",
+    "11-Day Turkey & Egypt Ancient Wonders Route"
+  ],
+  "summary": "The 11-Day Turkey & Egypt Trip connects Istanbul, Cappadocia and Turkey’s Aegean heritage with Cairo’s ancient sites. Begin in Istanbul before flying to Cappadocia, then continue to Pamukkale and Ephesus for two very different archaeological experiences. After completing the Turkey portion, fly to Cairo for the Pyramids of Giza and the city’s scheduled historical sightseeing. The route keeps the journey focused on Turkey’s major cultural highlights and Cairo rather than adding a Nile cruise or southern Egypt.\nThe escorted program includes selected 4-star hotels, breakfast, guided sightseeing, entrance fees, airport transfers, three domestic flights within the itinerary and the international Istanbul–Cairo flight.",
+  "facts": {
+    "duration": "10 Nights / 11 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, Three Domestic Flights",
+    "startingPrice": "€ 2,695 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 10,
+  "days": 11,
+  "price": {
+    "amount": 2695,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,695 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Cappadocia",
+    "Pamukkale",
+    "Ephesus",
+    "Cairo"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-11-Day-Turkey-and-Egypt-Trip.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "11-Day Turkey & Egypt Ancient Wonders Route Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "10 Nights / 11 Days",
+    "Istanbul • Cappadocia • Pamukkale • Ephesus • Cairo",
+    "Three Domestic Flights & Istanbul–Cairo Flight Included",
+    "Small Group Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Year-Round Departures",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Istanbul",
+      "text": "Arrival in Istanbul via Istanbul Airport (IST) or Sabiha Gökçen International Airport (SAW).\nMeet and transfer to your hotel. Check-in after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Istanbul Oldcity Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Bosphorus Cruise - Flight to Cappadocia",
+      "text": "After breakfast at 08:30, visit the historic Spice Bazaar, also known as the Egyptian Bazaar, famous for its colorful spices, sweets, and local products since 1665. Continue with a memorable Bosphorus cruise, sailing between Europe and Asia along one of the world’s most scenic waterways. After the tour, transfer to the airport at 15:00 for your flight to Nevsehir at 18:45. Upon arrival at 20:10, and transfer to your hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "North Cappadocia Tour",
+      "text": "Optional: Early morning hot air balloon ride over Cappadocia.\nAfter breakfast at 10:00, enjoy a full-day tour of North Cappadocia. Visit Uchisar Castle for panoramic views, followed by Rose Valley, Pasabag, and the Zelve Open Air Museum, famous for fairy chimneys and cave dwellings. After lunch, continue to Devrent Valley and Three Beauties, then visit the charming towns of Urgup and Avanos, known for traditional pottery. After the tour, return to the hotel. Overnight in Cappadocia.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "South Cappadocia tour- Flight to Izmir",
+      "text": "After breakfast at 09:00, enjoy a full-day tour of South Cappadocia. Visit Ortahisar Castle, the former Greek village of Mustafapaşa, and the Roman ruins of Sobesos Ancient City. Continue to Soğanlı Valley for a scenic walk through its cave churches, followed by lunch. After lunch, explore Kaymakli Underground City, one of Cappadocia’s most famous underground settlements. After the tour, transfer to Kayseri Airport for your flight to Izmir at 22:50. Upon arrival at 00:20, meet and transfer to Kusadasi. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Visit Ephesus and House of Virgin Mary",
+      "text": "After breakfast at 09:00, enjoy a guided tour of Ephesus, visiting highlights such as the Odeon, Library of Celsus, Temple of Hadrian, Fountain of Trajan, and the Great Theatre. Continue to the ruins of the Temple of Artemis, followed by lunch and a visit to the House of the Virgin Mary. Overnight in Kusadasi.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Pamukkale tour - Flight to Istanbul",
+      "text": "After breakfast at 07:30, depart for Pamukkale to explore its famous white travertine terraces, known as the “Cotton Castle,” and the ancient city of Hierapolis. Guests may also enjoy swimming at the famous Cleopatra Antique Pools (optional, extra entrance fee applies). After the tour, transfer to Denizli Airport for your flight to Istanbul at 21:15. Upon arrival at 22:35, meet and transfer to your hotel. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Istanbul to Cairo / By Flight",
+      "text": "Breakfast. Check out and transfer to Istanbul Airport for your flight to Cairo (14:00–15:20).\nUpon arrival, meet and transfer to your hotel. Overnight in Cairo.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Tour to Pyramids and Sphinx.",
+      "text": "Breakfast at the hotel. Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramesses II. Continue to Saqqara to visit the famous Step Pyramid of Djoser. Later, explore the Pyramids of Giza built for Cheops, Chephren, and Mycerinus, along with the mysterious Great Sphinx of Giza. Transfer back to the hotel. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Grand Egyptian Museum, Old Cairo Tour",
+      "text": "Breakfast at the hotel. Visit the Grand Egyptian Museum before continuing to the historic Cairo Citadel and the beautiful Mosque of Muhammad Ali. Explore Old Cairo and visit the Saints Sergius and Bacchus Church and the Hanging Church. Later, enjoy free time at the famous Khan el-Khalili bazaar before returning to the hotel. Overnight in Cairo.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 11",
+      "title": "Transfer to Cairo Airport",
+      "text": "Breakfast at the hotel in Cairo\nCheck-out and transfer to Cairo International Airport according to your flight schedule",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "10 nights' accommodation in 4-star hotels on a bed & breakfast basis",
+    "Included Services",
+    "8-day regular small group tour with a professional English-speaking guide",
+    "Entrance fees, lunches, and transportation included during the guided tours",
+    "Domestic flights: Istanbul → Cappadocia, Kayseri → Istanbul, and Kayseri → Izmir",
+    "International flight: Istanbul → Cairo",
+    "All airport and hotel transfers throughout Turkey and Egypt"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Gratuities for driver and guide",
+    "Meals not mentioned",
+    "Hot air balloon ride in Cappadocia",
+    "Travel insurance"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% cancellation fee",
+    "Cancellation 20–14 days before arrival: 50% cancellation fee",
+    "Cancellation 13 days or less before arrival, or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Hot-air-ballon---04.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "11-Day Turkey & Egypt Ancient Wonders Route"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale--11.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Top attraction in Turkey Pamukkale cotton castle"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Ephesus--8.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Library of Celsus in the ancient city of Ephesus"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pyramid---2.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic pharaoh monuments at Giza Egypt today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Didym.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Magnificent columns inside Karnak Temple Luxor Egypt"
+    }
+  ],
+  "related": [
+    {
+      "title": "9-Day Turkey & Egypt Highlights: Istanbul to Cairo",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/9-day-turkey-and-egypt-highlights-tour/"
+    },
+    {
+      "title": "13-Day Turkey & Egypt Explorer: Cappadocia and the Nile",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/13-day-explore-turkey-and-egypt/"
+    },
+    {
+      "title": "15-Day Best of Turkey & Egypt: Cappadocia to the Nile",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-and-egypt-tours/15-days-best-of-turkey-and-egypt-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does the 11-Day Turkey and Egypt vacation cover?",
+      "a": "This 11-day vacation combines four Turkish destinations with Egypt's capital. You explore Istanbul, Cappadocia, Pamukkale, and Ephesus in Turkey, then fly to Cairo to see the Pyramids of Giza. The trip runs for 10 nights and 11 days and is available daily all year round."
+    },
+    {
+      "q": "How is this 11-day trip different from the other 11-day Turkey and Egypt tour?",
+      "a": "This version focuses on covering more of Turkey, including Cappadocia, Pamukkale, and Ephesus alongside Istanbul, before visiting Cairo and the Pyramids. The other 11-day tour spends more time in Egypt with a Nile cruise from Aswan to Luxor. Choose this one for broader Turkey coverage and the alternative for a deeper Egypt and Nile experience."
+    },
+    {
+      "q": "How much does the 11-Day Turkey and Egypt vacation cost?",
+      "a": "The tour starts from 2,875 euros per person for the 2026 season. The price includes 10 nights of accommodation, guided tours, entrance fees, lunches on tour days, domestic flights, the international flight from Istanbul to Cairo, and transfers"
+    },
+    {
+      "q": "Are flights included in this Turkey and Egypt vacation?",
+      "a": "Yes, the package includes domestic flights within Turkey connecting Istanbul, Cappadocia, and Izmir, plus the international flight from Istanbul to Cairo. International flights into Istanbul and out of Cairo are not included and are arranged by you."
+    },
+    {
+      "q": "What are the main highlights of this 11-day itinerary?",
+      "a": "Highlights include Istanbul's Hagia Sophia and Blue Mosque, the fairy chimneys of Cappadocia, the thermal terraces of Pamukkale, the ancient ruins of Ephesus and the House of the Virgin Mary, and the Pyramids of Giza in Cairo. It blends Turkey's top sights with Egypt's most famous monument."
+    },
+    {
+      "q": "What accommodation is provided on the 11-day vacation?",
+      "a": "The package includes 10 nights at 4-star hotels on a bed and breakfast basis, with all airport and hotel transfers in both Turkey and Egypt. Hotels are selected for comfort and convenient locations near the main attractions."
+    },
+    {
+      "q": "Is the Cappadocia hot air balloon ride included?",
+      "a": "No, the hot air balloon ride in Cappadocia is not included in the standard package. It is a popular optional add-on, subject to weather conditions, and our team can help you arrange it as an extra during your time in Cappadocia."
+    },
+    {
+      "q": "How physically demanding is this tour?",
+      "a": "The physical difficulty is moderate. Expect regular walking at sites such as Ephesus, Pamukkale, the Cappadocia valleys, and the Pyramids, along with several internal flights and some early starts. Reasonable fitness makes the experience more comfortable."
+    },
+    {
+      "q": "Are meals included on the 11-day Turkey and Egypt vacation?",
+      "a": "Lunches are included on guided tour days and breakfast is provided daily at the hotels. Dinners, drinks during meals, and any meals not listed in the itinerary are not included, leaving evenings free to explore local dining."
+    },
+    {
+      "q": "Can this 11-day Turkey and Egypt vacation be customized?",
+      "a": "Yes, the itinerary can be customized. You can add a Nile cruise, upgrade hotels, extend your stay in any city, or include the Cappadocia balloon ride. Contact Magnificent Travel with your dates and group size for a personalized plan."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "11-Day Turkey & Egypt Ancient Wonders Route",
+          "description": "Travel from Istanbul through Cappadocia, Ephesus and Pamukkale before continuing to Cairo on an 11-day route linking two ancient civilizations.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/18/678b7f8384f12/Hot-air-ballon---04.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "11-day-turkey-and-egypt-trip",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "11-day-turkey-and-egypt-trip",
+          "name": "11-Day Turkey & Egypt Ancient Wonders Route",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "11-Day Turkey & Egypt Ancient Wonders Route",
+          "description": "Travel from Istanbul through Cappadocia, Ephesus and Pamukkale before continuing to Cairo on an 11-day route linking two ancient civilizations.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/18/678b7f8384f12/Hot-air-ballon---04.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

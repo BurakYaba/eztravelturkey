@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/link';
 import {
   EnvelopeSimple,
   FacebookLogo,
@@ -9,26 +9,11 @@ import {
   WhatsappLogo,
 } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
+import { format } from '@/i18n/dictionaries';
+import { getDictionaryForPage } from '@/i18n/server';
 import { site, whatsappLink } from '@/data/site';
 import { cn } from '@/lib/utils';
 import { Logo } from './Logo';
-
-const explore = [
-  { label: 'All tours', href: '/tours' },
-  { label: 'Multi-country tours', href: '/multi-country-tours' },
-  { label: 'Private tours', href: '/private-tours' },
-  { label: 'Small group tours', href: '/small-group-tours' },
-  { label: 'Travel guides', href: '/travel-hub' },
-];
-
-const company = [
-  { label: 'About us', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Plan my trip', href: '/plan-my-trip' },
-  { label: 'Terms and conditions', href: '/terms-conditions' },
-  { label: 'Privacy policy', href: '/privacy-policy' },
-];
 
 const socials = [
   { label: 'Facebook', href: site.social.facebook, icon: FacebookLogo },
@@ -39,15 +24,35 @@ const socials = [
 const linkClass = 'text-white/75 transition hover:text-white';
 const webcraft = 'https://www.webcraft.tr';
 
-export function Footer() {
+export async function Footer() {
+  const { footer: t, countries, common } = await getDictionaryForPage();
+  const explore = [
+    { label: t.allTours, href: '/tours' },
+    { label: t.multiCountry, href: '/multi-country-tours' },
+    { label: t.privateTours, href: '/private-tours' },
+    { label: t.smallGroupTours, href: '/small-group-tours' },
+    { label: t.travelGuides, href: '/blog' },
+  ];
+  const company = [
+    { label: t.aboutUs, href: '/about' },
+    { label: t.contact, href: '/contact' },
+    { label: t.faq, href: '/faq' },
+    { label: t.planMyTrip, href: '/plan-my-trip' },
+    { label: t.terms, href: '/gdpr/terms-conditions' },
+    { label: t.privacy, href: '/gdpr/privacy-policy' },
+  ];
   return (
     <footer className="bg-navy-950 text-white">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
         <div className="space-y-5">
-          <Logo light size="lg" />
+          <Logo light size="lg" label={common.homeLabel} />
           <p className="max-w-sm text-white/75">
-            {site.name} (License No. {site.licenseNo}), officially registered as {site.legalName}, has been an
-            independent Turkish tour operator since {site.founded}.
+            {format(t.about, {
+              name: site.name,
+              licenseNo: site.licenseNo,
+              legalName: site.legalName,
+              founded: site.founded,
+            })}
           </p>
           <ul className="flex gap-3">
             {socials.map(({ label, href, icon: Icon }) => (
@@ -65,13 +70,13 @@ export function Footer() {
           </ul>
         </div>
 
-        <nav aria-label="Destinations and tours">
-          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">Explore</h2>
+        <nav aria-label={t.exploreLabel}>
+          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">{t.exploreHeading}</h2>
           <ul className="space-y-2.5">
             {destinations.map((d) => (
               <li key={d.id}>
-                <Link href={`/destinations/${d.id}`} className={linkClass}>
-                  {d.name} tours
+                <Link href={`/destinations/${d.id}-tours`} className={linkClass}>
+                  {format(t.countryTours, { country: countries[d.id as keyof typeof countries]?.name ?? d.name })}
                 </Link>
               </li>
             ))}
@@ -85,8 +90,8 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Company">
-          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">Company</h2>
+        <nav aria-label={t.companyLabel}>
+          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">{t.companyHeading}</h2>
           <ul className="space-y-2.5">
             {company.map((item) => (
               <li key={item.href}>
@@ -99,12 +104,12 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">Contact</h2>
+          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">{t.contactHeading}</h2>
           <ul className="space-y-3.5 text-white/85">
             <li className="flex gap-3">
               <WhatsappLogo size={22} className="text-gold-500 mt-0.5 shrink-0" aria-hidden />
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                WhatsApp {site.whatsapp}
+                {format(t.whatsapp, { number: site.whatsapp })}
               </a>
             </li>
             <li className="flex gap-3">
@@ -136,20 +141,20 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-wide flex flex-col gap-3 py-6 text-sm text-white/65 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-8">
           <p>
-            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+            {format(t.rights, { year: new Date().getFullYear(), name: site.name })}
           </p>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:justify-center">
             <li>
               <a href={site.tursabUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                TURSAB member
+                {t.tursab}
               </a>
             </li>
             <li>
               <a href={site.tripadvisorUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                Tripadvisor reviews
+                {t.tripadvisor}
               </a>
             </li>
-            <li>Visa and Mastercard accepted</li>
+            <li>{t.cards}</li>
           </ul>
           <p className="lg:text-right">
             <a href={`${webcraft}/hizmetler/web-tasarim`} target="_blank" rel="noopener" className={linkClass}>

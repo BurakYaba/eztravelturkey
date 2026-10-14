@@ -1,0 +1,319 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/8-day-turkey-and-greece-tour/",
+  "path": "destinations/turkey-greece-tours/8-day-turkey-and-greece-tour",
+  "slug": "8-day-turkey-and-greece-tour",
+  "parent": "turkey-greece-tours",
+  "category": null,
+  "title": "8-Day Istanbul & Athens Two-Country Tour",
+  "metaTitle": "Istanbul & Athens in 8 Days | Turkey Greece Tour",
+  "metaDescription": "Explore Istanbul and Athens in 8 days, combining Ottoman, Byzantine and Classical Greek landmarks on a relaxed two-country cultural journey.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/8-day-turkey-and-greece-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey and Greece Tours: 8–18-Day Packages",
+    "8-Day Istanbul & Athens Two-Country Tour"
+  ],
+  "summary": "The 8-Day Turkey & Greece Tour connects Istanbul and Athens in a compact two-country itinerary, with several excursions extending beyond the two capitals. Explore Istanbul’s historic center and cruise the Bosphorus before continuing to Athens for its classical landmarks. From the Greek capital, visit Delphi on a full-day excursion and spend another day cruising the Saronic Islands, adding both mainland history and island scenery without requiring additional hotel changes.\nTravel dates can be arranged around your plans, with the itinerary customizable where possible. Selected 4-star hotels, daily breakfast, English-speaking local guides, flights specified in the program, airport transfers and scheduled sightseeing are included.",
+  "facts": {
+    "duration": "07 Nights / 08 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "Yes, One Domestic Flight",
+    "startingPrice": "€ 1,795 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": 1795,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,795 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Istanbul",
+    "Athens"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-8-Day-Turkey--Greece-Adventure.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "8-Day Istanbul & Athens Two-Country Tour Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "07 Nights / 08 Days",
+    "Istanbul • Athens • Delphi • Hydra • Poros • Aegina",
+    "One International Flight & Saronic Islands Cruise Included",
+    "Small Group or Private Tour",
+    "Carefully Selected Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival to Istanbul",
+      "text": "Upon arrival at Istanbul Airport (IST or SAW), meet our representative and transfer to your hotel.\nCheck-in is available after 14:00. The remainder of the day is at leisure. Overnight in Istanbul.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Istanbul Old City Walking Tour",
+      "text": "After breakfast at 08:30, enjoy a guided tour of Istanbul. Visit the historic Hippodrome of Constantinople, including the Egyptian Obelisk, Serpentine Column, and Fountain of Wilhelm II. Continue to the iconic Blue Mosque and the magnificent Hagia Sophia. After lunch, explore the atmospheric Basilica Cistern, famous for its ancient columns and underground beauty. Overnight in Istanbul.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Bosphorus Cruise & Beylerbeyi Palace",
+      "text": "After breakfast, visit the historic Spice Bazaar, one of the city’s most colorful and lively markets. Continue with a scenic cruise along the Bosphorus, sailing between Europe and Asia while enjoying views of palaces, mosques, and waterfront mansions. Cross the Bosphorus Bridge to Çamlıca Hill for panoramic views over the city, then visit the elegant Beylerbeyi Palace, the former summer residence of Ottoman sultans. Overnight in Istanbul.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Flight to Athens",
+      "text": "Breakfast at the hotel, then check out and transfer to the airport in Istanbul for your afternoon flight to Athens.\nUpon arrival, transfer to your hotel. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Athens City Tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day city tour of Athens, including the Acropolis of Athens, Parthenon, and Acropolis Museum.\nContinue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Saronic Islands Cruise",
+      "text": "Breakfast at the hotel, then transfer to Port of Piraeus for your Saronic Islands cruise.\nSail to Hydra, Poros, and Aegina with free time to explore each island.\nLunch will be served on board. Return to Athens in the evening. Overnight in Athens.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Day Trip to Delphi",
+      "text": "Breakfast at the hotel, then drive through Boeotia, passing Thebes, Levadia, and Arachova to Delphi. Visit the Sanctuary and Temple of Apollo at Delphi, Treasury of the Athenians, and the museum with the famous Charioteer statue. After lunch in Delphi village, return to Athens. Overnight in Athens.",
+      "meals": "Breakfast and Lunch"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Departure from Athens",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "Accommodation",
+    "07 nights' accommodation in 4-star hotels, including daily breakfast",
+    "Included Services",
+    "5-day regular small group tours with a professional English-speaking guide",
+    "Entrance fees, lunches, and transportation included during the guided tours",
+    "One-way flight: Istanbul → Athens",
+    "All airport, hotel, and transfer services within Istanbul",
+    "All airport, hotel, and port transfers within Athens"
+  ],
+  "excluded": [
+    "Personal expenses",
+    "Gratuities for driver and guide",
+    "Meals not mentioned",
+    "Drinks of any kind",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily throughout the year."
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferry tickets are non-refundable once issued.",
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% fee.",
+    "Cancellation 20–14 days before arrival: 50% fee.",
+    "Cancellation 13 days or less before arrival, or no-show: 100% fee."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-02.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "8-Day Istanbul & Athens Two-Country Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Istanbul--07.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Exploring Istanbul's vibrant atmosphere"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Suleymaniye-mosque-0.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Discovering the beauty of Istanbul Turkey"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Aegina-Greece---.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic landmarks throughout Athens city center Greece"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-01.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Scenic views across Athens from Acropolis Hill"
+    }
+  ],
+  "related": [
+    {
+      "title": "10-Day Istanbul, Athens & Cairo Capitals Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-and-egypt-tours/10-day-turkey-greece-and-egypt-tour/"
+    },
+    {
+      "title": "10-Day Turkey & Greek Islands Discovery Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/10-day-best-of-turkey-and-greece-trip/"
+    },
+    {
+      "title": "7-Day Athens & Cairo Ancient Civilizations Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-and-egypt-tours/7-day-greece-and-egypt-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 8-Day Turkey and Greece Tour?",
+      "a": "The 8-Day Turkey and Greece Tour covers two of the Eastern Mediterranean's most iconic cities: Istanbul and Athens. You will explore Istanbul's famous landmarks, including Hagia Sophia, the Blue Mosque, Topkapi Palace, and the Grand Bazaar, before continuing to Athens to discover the Acropolis, Parthenon, and the historic neighborhoods of the Greek capital. The tour runs for 7 nights and 8 days."
+    },
+    {
+      "q": "How much does the 8-Day Turkey and Greece Tour cost?",
+      "a": "The tour starts from 1,795 euros per person for the 2026 season. The price includes accommodation, domestic flights, guided sightseeing tours, entrance fees, selected meals, and all airport and hotel transfers. The final rate may vary depending on travel dates, hotel category, and seasonal availability."
+    },
+    {
+      "q": "Are flights included in this 8-day itinerary?",
+      "a": "Yes, the package includes the domestic flights specified in the itinerary, helping you travel efficiently between destinations. International flights to and from Turkey and Greece are not included unless specifically stated in your customized quotation."
+    },
+    {
+      "q": "What kind of accommodation does the tour provide?",
+      "a": "The package includes 7 nights at carefully selected 4-star hotels with daily breakfast. Hotels are chosen for their comfort, quality, and convenient locations near major attractions, making it easy to explore both Istanbul and Athens during your stay."
+    },
+    {
+      "q": "Does the 8-day Turkey and Greece tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical background, cultural insights, and local knowledge, helping you gain a deeper appreciation of both Turkish and Greek history."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Turkey and Greece?",
+      "a": "Yes, this tour is ideal for first-time visitors who want to experience the cultural and historical highlights of both countries without changing hotels frequently. It offers a relaxed pace while covering the most important attractions in Istanbul and Athens."
+    },
+    {
+      "q": "How fit do I need to be for the 8-day tour?",
+      "a": "The physical difficulty is moderate. Travelers should be comfortable walking through historic districts, museums, and archaeological sites, including the Acropolis in Athens and the Old City of Istanbul. Most travelers in average health can comfortably enjoy the itinerary."
+    },
+    {
+      "q": "What is the best time of year to take this tour?",
+      "a": "The tour operates throughout the year. Spring and autumn offer pleasant temperatures and excellent sightseeing conditions, while summer provides longer daylight hours. Winter is ideal for travelers seeking fewer crowds and a more relaxed atmosphere."
+    },
+    {
+      "q": "What is the cancellation policy for the Turkey and Greece Tour?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days of travel may be subject to fees according to the booking terms and cancellation policy. Travel insurance is recommended for additional flexibility and peace of mind."
+    },
+    {
+      "q": "Is the 8-Day Turkey and Greece Tour available all year and can it be customized?",
+      "a": "Yes, the tour is available year-round and can be customized to suit your preferences. You can extend your stay in Istanbul or Athens, upgrade hotel categories, add optional excursions, or adjust the itinerary to match your interests. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristDestination",
+          "name": "8-Day Istanbul & Athens Two-Country Tour",
+          "description": "Explore Istanbul and Athens in 8 days, combining Ottoman, Byzantine and Classical Greek landmarks on a relaxed two-country cultural journey.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/17/678a4dcadc082/Athens-02.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "url": "8-day-turkey-and-greece-tour",
+          "touristType": "International Travelers"
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "8-day-turkey-and-greece-tour",
+          "name": "8-Day Istanbul & Athens Two-Country Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "8-Day Istanbul & Athens Two-Country Tour",
+          "description": "Explore Istanbul and Athens in 8 days, combining Ottoman, Byzantine and Classical Greek landmarks on a relaxed two-country cultural journey.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/17/678a4dcadc082/Athens-02.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        }
+      ]
+    }
+  ]
+}

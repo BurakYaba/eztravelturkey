@@ -37,16 +37,3 @@ export const site = {
 
 export const whatsappLink = (message?: string) =>
   `https://wa.me/${site.whatsappNumber}${message ? `?text=${encodeURIComponent(message)}` : ''}`;
-
-export const nav = {
-  primary: [
-    { label: 'Multi-Country Tours', href: '/multi-country-tours' },
-    { label: 'About', href: '/about' },
-    { label: 'Travel Guides', href: '/travel-hub' },
-    { label: 'Contact', href: '/contact' },
-  ],
-  styles: [
-    { label: 'Private Tours', href: '/private-tours', note: 'Your interests, your pace' },
-    { label: 'Small Group Tours', href: '/small-group-tours', note: 'Like-minded explorers' },
-  ],
-} as const;

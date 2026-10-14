@@ -8,10 +8,10 @@ import { SectionHeading } from '../shared/SectionHeading';
 import { TrustBar } from '../shared/TrustBar';
 import { ToursBrowser } from './ToursBrowser';
 import type { ImageId } from '@/data/images';
-import { tours } from '@/data/tours';
+import { toursForStyle } from '@/lib/data';
+import { getLocale } from '@/i18n/server';
 import type { Faq } from '@/data/types';
 import { breadcrumbJsonLd, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
-import { toBrowsable } from '@/lib/tours';
 
 type Props = {
   style: 'private' | 'small-group';
@@ -24,8 +24,9 @@ type Props = {
   faqs: Faq[];
 };
 
-export function StylePage({ style, path, title, lead, description, image, points, faqs }: Props) {
-  const list = tours.filter((t) => t.styles.includes(style));
+export async function StylePage({ style, path, title, lead, description, image, points, faqs }: Props) {
+  const lang = await getLocale();
+  const list = await toursForStyle(lang, style);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Tour Styles', path: '/tours' },
@@ -52,7 +53,7 @@ export function StylePage({ style, path, title, lead, description, image, points
         <div className="container-x">
           <SectionHeading title={`Available ${title.toLowerCase()}`} />
           <Suspense fallback={<div className="h-96" aria-hidden />}>
-            <ToursBrowser tours={list.map(toBrowsable)} lockedStyle={style} />
+            <ToursBrowser tours={list} lockedStyle={style} />
           </Suspense>
         </div>
       </section>
@@ -66,12 +67,13 @@ export function StylePage({ style, path, title, lead, description, image, points
       <QuoteBand />
       <JsonLd
         data={[
-          collectionPageJsonLd(title, path, description),
+          collectionPageJsonLd(lang, title, path, description),
           itemListJsonLd(
+            lang,
             title,
-            list.map((t) => ({ name: `${t.title}: ${t.subtitle}`, path: `/tours/${t.slug}` })),
+            list.map((t) => ({ name: t.title, path: t.href })),
           ),
-          breadcrumbJsonLd(crumbs),
+          breadcrumbJsonLd(lang, crumbs),
         ]}
       />
     </>

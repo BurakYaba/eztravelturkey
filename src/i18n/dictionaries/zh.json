@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "defaultTitle": "Magnificent Travel | 土耳其、希臘、埃及、約旦、摩洛哥旅遊行程",
+    "defaultDescription": "1997 年創立的土耳其合法旅行社。提供土耳其、希臘、埃及、約旦與摩洛哥的專屬包團、小團與多國旅遊行程。"
+  },
+  "common": {
+    "skipToContent": "跳至主要內容",
+    "homeLabel": "Magnificent Travel，回到首頁"
+  },
+  "countries": {
+    "turkey": {
+      "name": "土耳其",
+      "tagline": "歷史就在這裡"
+    },
+    "greece": {
+      "name": "希臘",
+      "tagline": "島嶼與古文明奇蹟"
+    },
+    "egypt": {
+      "name": "埃及",
+      "tagline": "法老王的國度"
+    },
+    "jordan": {
+      "name": "約旦",
+      "tagline": "探索古老的奧秘"
+    },
+    "morocco": {
+      "name": "摩洛哥",
+      "tagline": "多彩的文化"
+    }
+  },
+  "nav": {
+    "main": "主選單",
+    "mobile": "行動版選單",
+    "menu": "選單",
+    "openMenu": "開啟選單",
+    "closeMenu": "關閉選單",
+    "destinations": "旅遊目的地",
+    "allDestinations": "所有目的地",
+    "tourStyles": "旅遊方式",
+    "allTours": "所有行程",
+    "privateTours": "專屬包團",
+    "privateNote": "依您的興趣與步調安排",
+    "smallGroupTours": "小團行程",
+    "smallGroupNote": "與同好一起探索",
+    "multiCountry": "多國旅遊行程",
+    "about": "關於我們",
+    "travelGuides": "旅遊指南",
+    "contact": "聯繫",
+    "planMyTrip": "規劃我的旅程",
+    "home": "首頁",
+    "language": "語言"
+  },
+  "footer": {
+    "about": "{name}（旅行社執照編號 {licenseNo}），登記名稱為 {legalName}，自 {founded} 年起為獨立經營的土耳其旅行社。",
+    "exploreHeading": "探索",
+    "exploreLabel": "目的地與行程",
+    "countryTours": "{country}旅遊行程",
+    "companyHeading": "公司",
+    "companyLabel": "公司",
+    "contactHeading": "聯繫",
+    "whatsapp": "WhatsApp {number}",
+    "multiCountry": "多國旅遊行程",
+    "privateTours": "專屬包團",
+    "smallGroupTours": "小團行程",
+    "travelGuides": "旅遊指南",
+    "allTours": "所有行程",
+    "aboutUs": "關於我們",
+    "contact": "聯繫",
+    "faq": "常見問題",
+    "planMyTrip": "規劃我的旅程",
+    "terms": "條款與細則",
+    "privacy": "隱私權政策",
+    "rights": "© {year} {name}。版權所有。",
+    "tursab": "TÜRSAB 會員",
+    "tripadvisor": "Tripadvisor 評價",
+    "cards": "接受 Visa 與 Mastercard"
+  },
+  "whatsapp": {
+    "aria": "透過 WhatsApp 與旅遊顧問聊天",
+    "label": "與顧問聊聊",
+    "message": "您好，Magnificent Travel，我想規劃一趟旅程。"
+  },
+  "notFound": {
+    "eyebrow": "錯誤 404",
+    "title": "這個頁面不在地圖上",
+    "text": "您要找的頁面可能已經移動。歡迎瀏覽我們的行程，或告訴我們您想去哪裡。",
+    "tours": "瀏覽行程",
+    "home": "回到首頁",
+    "popular": "熱門頁面"
+  },
+  "preview": {
+    "notice": "此語言版本準備中，目前顯示英文內容。"
+  },
+  "search": {
+    "title": "搜尋",
+    "placeholder": "搜尋行程、目的地與旅遊指南",
+    "button": "搜尋",
+    "empty": "找不到與「{query}」相關的內容。請試試其他關鍵字，或瀏覽我們的行程。",
+    "hint": "輸入目的地、行程或主題。",
+    "kindTour": "行程",
+    "kindDestination": "目的地",
+    "kindBlog": "指南",
+    "results": "「{query}」共 {count} 筆結果"
+  },
+  "gone": {
+    "title": "此頁面已不存在",
+    "text": "您要找的頁面已被移除，不會再恢復。歡迎瀏覽目前的行程，或告訴我們您想去哪裡。"
+  }
+}

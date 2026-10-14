@@ -1,0 +1,417 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/delphi-sightseeing-tour/",
+  "path": "destinations/greece-tours/day-tours-in-greece/delphi-sightseeing-tour",
+  "slug": "delphi-sightseeing-tour",
+  "parent": "greece-tours",
+  "category": "day-tours-in-greece",
+  "title": "Full-Day Delphi Tour",
+  "metaTitle": "Delphi Sightseeing Day Tour | Explore Ancient Greece",
+  "metaDescription": "Visit the legendary Oracle of Apollo on a full-day Delphi tour from Athens. Discover ancient ruins, mountain views, and rich Greek mythology.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/delphi-sightseeing-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Day Trips & Guided Excursions",
+    "Full-Day Delphi Tour"
+  ],
+  "summary": "The Full-Day Delphi Tour takes you from Athens into central Greece for a guided visit to one of the country’s most important archaeological sites. At Delphi, once regarded by the ancient Greeks as the center of the world, explore the sanctuary associated with the Oracle of Delphi and learn how religion, prophecy and public life shaped the site over centuries. The return to Athens is made the same day, so no overnight stay is required.\nTravel is by air-conditioned coach with a professional English-speaking guide throughout the excursion. Entrance fees for the scheduled archaeological visits are included, making this a straightforward day trip for travelers staying in Athens.",
+  "facts": {
+    "duration": "Full Day",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 175 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": null,
+  "days": null,
+  "price": {
+    "amount": 175,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €175 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Delphi"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [
+    "Enjoy a full-day trip from Athens to Delphi, one of the most important archaeological sites of Ancient Greece. Visit famous landmarks including the Temple of Apollo at Delphi, Ancient Theatre, Archaeological Site of Delphi, and the Delphi Archaeological Museum.",
+    "After the tour, return to Athens."
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Delphi One Day Trip from Athens",
+      "text": "07:30am Depart from Athens and drive through the scenic plains of Boeotia, passing Thebes, Levadia, and the mountain village of Arachova before arriving in Delphi, once regarded as the ancient \"Omphalos\" (Center of the World).\nVisit the Sanctuary of Apollo, the Treasury of the Athenians, and the Temple of Apollo, where the famous Oracle of Delphi once delivered its prophecies. Continue to the Delphi Archaeological Museum to admire its remarkable collection, including the world-renowned Bronze Charioteer and other masterpieces of ancient Greek art.\nAfter lunch at a local restaurant in Delphi village, enjoy some free time before returning to Athens in the evening. Upon arrival, transfer back to your hotel. Overnight in Athens.",
+      "meals": "Lunch"
+    }
+  ],
+  "included": [
+    "Transportation by air-conditioned coach",
+    "Professional English-speaking guide",
+    "Entrance fees included",
+    "Hotel pick-up and drop-off in Athens",
+    "All taxes and handling charges",
+    "Lunch included"
+  ],
+  "excluded": [
+    "Gratuities (optional)",
+    "Drinks"
+  ],
+  "importantNotes": [
+    "November to March every Wednesday – Friday & Sunday"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferries are non-refundable once issued (100% cancellation fees apply)",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Delphi-05.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "Full-Day Delphi Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Delphi-04.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Amazing mountain views from Delphi archaeological site"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens--18.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Discover ancient Athens with expert local guides"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Delphi--01.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "UNESCO World Heritage destination Delphi Greece attraction"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Delphi--06.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Stunning archaeological landscapes throughout Delphi Greece today"
+    }
+  ],
+  "related": [
+    {
+      "title": "3-Day Delphi & Meteora Guided Tour from Athens",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-escorted-tours/3-day-delphi-and-meteora-tour/"
+    },
+    {
+      "title": "5-Day Athens & Saronic Islands Escorted Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-escorted-tours/5-days-greece-tour/"
+    },
+    {
+      "title": "2-Day Delphi & Meteora Monasteries Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-escorted-tours/2-days-delphi-and-meteora-monasteries-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is included in the Full-Day Delphi Tour?",
+      "a": "The Full-Day Delphi Tour takes you to one of Greece's most important archaeological and historical sites. The excursion includes transportation from Athens, guided visits to the Sanctuary of Apollo, the Temple of Apollo, the ancient theater, the stadium, and the Delphi Archaeological Museum. The tour offers a fascinating journey into the spiritual heart of ancient Greece."
+    },
+    {
+      "q": "How much does the Full-Day Delphi Tour cost?",
+      "a": "The tour starts from €175 per person for the 2026 season. The price includes round-trip transportation, professional English-speaking guide services, and sightseeing according to the itinerary. Entrance fees and meals may vary depending on the package selected."
+    },
+    {
+      "q": "How long does the Full-Day Delphi Tour last?",
+      "a": "The tour lasts approximately 10 hours, including travel time between Athens and Delphi. It is a full-day excursion that allows visitors to fully explore one of Greece's most celebrated UNESCO World Heritage Sites."
+    },
+    {
+      "q": "What are the main attractions visited during the tour?",
+      "a": "Highlights include the Sanctuary of Apollo, the Temple of Apollo, the ancient theater, the stadium, the Sacred Way, the Treasury buildings, and the Delphi Archaeological Museum, which houses many remarkable artifacts discovered at the site."
+    },
+    {
+      "q": "Does the Full-Day Delphi Tour include a guide?",
+      "a": "Yes, professional English-speaking guides accompany the tour. Your guide will provide historical context, mythology, and fascinating insights into the significance of Delphi in ancient Greek civilization."
+    },
+    {
+      "q": "Why is Delphi considered one of Greece's most important archaeological sites?",
+      "a": "Delphi was believed by the ancient Greeks to be the center of the world and was home to the famous Oracle of Apollo. For centuries, rulers, generals, and ordinary citizens traveled to Delphi seeking guidance from the oracle, making it one of the most influential religious centers of the ancient world."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is moderate. Visitors should be comfortable walking uphill and navigating uneven surfaces within the archaeological site. Most travelers with average fitness levels can comfortably participate."
+    },
+    {
+      "q": "What should I wear for the Delphi Tour?",
+      "a": "Comfortable walking shoes are highly recommended. During warmer months, visitors should bring sunscreen, sunglasses, a hat, and water. Layered clothing is advisable during spring, autumn, and winter due to changing mountain weather conditions."
+    },
+    {
+      "q": "What is the cancellation policy for the Full-Day Delphi Tour?",
+      "a": "You can generally cancel free of charge up to 24 to 48 hours before the tour departure time, depending on the operator's policy. Cancellations made closer to departure may be subject to charges."
+    },
+    {
+      "q": "Is the Full-Day Delphi Tour suitable for first-time visitors to Greece?",
+      "a": "Yes, the tour is highly recommended for first-time visitors interested in Greek history, archaeology, and mythology. It provides a deeper understanding of ancient Greece and complements a visit to Athens perfectly."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "Full-Day Delphi Tour",
+          "description": "Visit the legendary Oracle of Apollo on a full-day Delphi tour from Athens. Discover ancient ruins, mountain views, and rich Greek mythology.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/delphi-sightseeing-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/6784b84b7fdab/Delphi-05.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "Transportation by air-conditioned coach, Professional English-speaking guide, Entrance fees included, Hotel pick-up and drop-off in Athens, All taxes and handling charges, Lunch included"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Gratuities (optional), Drinks"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Delphi One Day Trip from Athens ",
+              "description": "07:30am Depart from Athens and drive through the scenic plains of Boeotia, passing Thebes, Levadia, and the mountain village of Arachova before arriving in Delphi, once regarded as the ancient \"Omphalos\" (Center of the World).\n\nVisit the Sanctuary of Apollo, the Treasury of the Athenians, and the Temple of Apollo, where the famous Oracle of Delphi once delivered its prophecies. Continue to the Delphi Archaeological Museum to admire its remarkable collection, including the world-renowned Bronze Charioteer and other masterpieces of ancient Greek art.\n\nAfter lunch at a local restaurant in Delphi village, enjoy some free time before returning to Athens in the evening. Upon arrival, transfer back to your hotel. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Lunch)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "delphi-sightseeing-tour",
+          "name": "Full-Day Delphi Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "Full-Day Delphi Tour",
+          "description": "Visit the legendary Oracle of Apollo on a full-day Delphi tour from Athens. Discover ancient ruins, mountain views, and rich Greek mythology.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/6784b84b7fdab/Delphi-05.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "Full-Day Delphi Tour",
+          "productID": "669f484b3363650fe200029c",
+          "sku": "669f484b3363650fe200029c",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/13/6784b84b7fdab/Delphi-05.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Visit the legendary Oracle of Apollo on a full-day Delphi tour from Athens. Discover ancient ruins, mountain views, and rich Greek mythology.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "175",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/day-tours-in-greece/delphi-sightseeing-tour",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

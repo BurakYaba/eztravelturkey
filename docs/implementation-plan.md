@@ -1,5 +1,7 @@
 # Magnificent Travel Rebuild Plan
 
+> **Outdated, see [project-plan.md](project-plan.md).** This is the plan for the first, English-only static build. The new plan (three languages, Sanity CMS, scraped content, original URL structure) supersedes it wherever they disagree. Note: its Morocco assumption ("no tours") is wrong, the live site has fixed Morocco tours.
+
 Status: written before any implementation. Companion document: [site-analysis.md](site-analysis.md).
 
 ## 1. Goal

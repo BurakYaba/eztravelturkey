@@ -35,7 +35,7 @@ export async function POST(request: Request) {
   const type = clean(body.type, 20);
   const email = clean(body.email, 200);
 
-  if (!['quote', 'contact', 'newsletter'].includes(type)) {
+  if (!['quote', 'contact'].includes(type)) {
     return NextResponse.json({ ok: false, error: 'Unknown form type.' }, { status: 400 });
   }
   if (!emailOk(email)) {
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-  if (type !== 'newsletter' && clean(body.name, 120).length < 2) {
+  if (clean(body.name, 120).length < 2) {
     return NextResponse.json({ ok: false, error: 'Please enter your name.' }, { status: 400 });
   }
 
@@ -57,11 +57,9 @@ export async function POST(request: Request) {
     .filter(([, value]) => value);
 
   const subject =
-    type === 'newsletter'
-      ? 'Newsletter signup'
-      : type === 'contact'
-        ? `Contact message from ${clean(body.name, 120)}`
-        : `Trip request from ${clean(body.name, 120)}`;
+    type === 'contact'
+      ? `Contact message from ${clean(body.name, 120)}`
+      : `Trip request from ${clean(body.name, 120)}`;
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.INQUIRY_TO_EMAIL;

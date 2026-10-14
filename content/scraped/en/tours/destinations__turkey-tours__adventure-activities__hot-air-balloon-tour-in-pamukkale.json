@@ -1,0 +1,446 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/hot-air-balloon-tour-in-pamukkale/",
+  "path": "destinations/turkey-tours/adventure-activities/hot-air-balloon-tour-in-pamukkale",
+  "slug": "hot-air-balloon-tour-in-pamukkale",
+  "parent": "turkey-tours",
+  "category": "adventure-activities",
+  "title": "Pamukkale Balloon Tour",
+  "metaTitle": "Pamukkale Sunrise Balloon Flights | Daily Departures",
+  "metaDescription": "Enjoy a sunrise hot air balloon ride over Pamukkale and admire the stunning white terraces and ancient ruins from above. Experience breathtaking panoramic view",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/hot-air-balloon-tour-in-pamukkale/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Turkey Tours & Packages 2026–2027 | Private & Small Group",
+    "Turkey Activities & Experiences",
+    "Pamukkale Balloon Tour"
+  ],
+  "summary": "A hot air balloon flight over Pamukkale offers a very different perspective on the area’s white travertine terraces and the ancient city of Hierapolis. Flights generally take place around sunrise, subject to suitable weather conditions, when the early light spreads across the travertines and surrounding countryside. Take-off points and flight paths vary according to wind conditions, so the exact view and route can differ each morning.",
+  "facts": {
+    "duration": "45 Minutes to an Hour",
+    "guideLanguages": "Rnglish",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 140 / Per person",
+    "cancellation": "Cancellation 30+ days before arrival: No fee.",
+    "difficulty": "Moderate",
+    "season": "This tour operates daily throughout the year."
+  },
+  "extraFacts": {},
+  "nights": null,
+  "days": null,
+  "price": {
+    "amount": 300,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €140 €300 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [
+    "Hot Air Balloon Ride Requirements",
+    "All participants joining the hot air balloon ride in Cappadocia must:",
+    "Be in good physical condition",
+    "Have no serious knee, hip, back, or neck problems",
+    "Have no recent surgeries or broken bones",
+    "Be able to stand unassisted for approximately 1 hour",
+    "Not be pregnant",
+    "Be taller than 110 cm",
+    "Children under 5 years old are not permitted",
+    "Be able to follow all pilot safety instructions",
+    "Be able to bend knees during landing when instructed",
+    "Be able to absorb a small landing impact and hold safety handles",
+    "Not exceed 140 kg individual body weight"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "Option 1",
+      "title": "Standard Flight Program",
+      "text": "It takes 60 minutes , We are using 14-20 persons basket for Standard Flights.",
+      "meals": ""
+    },
+    {
+      "dayLabel": "Option 2",
+      "title": "Deluxe Long Flight",
+      "text": "Takes 90 minutes, We are using 6-8-12 persons basket for Deluxe Long Flights.",
+      "meals": "Pick-up service"
+    },
+    {
+      "dayLabel": "Option 3",
+      "title": "VIP Balloon Program",
+      "text": "For passengers who wish to plan a special event, we offer the VIP Balloon Flight. Whether celebrating a birthday, anniversary or wedding proposal, balloon flights make a magical back drop to all special occasions. We can arrange private balloon flights, sunset balloon flights, romantic landings and special arrangements for all sorts of surprises. Please contact us for your private balloon requests, we will be happy to offer our services, and help plan the special day. Price quotes available upon request and after consultation.",
+      "meals": ""
+    }
+  ],
+  "included": [
+    "Flight certificate",
+    "Hotel pick-up and drop-off service",
+    "Champagne celebration after landing",
+    "Light breakfast box",
+    "Passenger insurance included"
+  ],
+  "excluded": [],
+  "importantNotes": [],
+  "cancellationPolicy": [
+    "Cancellation 30+ days before arrival: No fee.",
+    "Cancellation 30–21 days before arrival: 25% cancellation fee applies.",
+    "Cancellation 20–14 days before arrival: 50% cancellation fee applies.",
+    "Cancellation 13 days or less before arrival, or no-show: 100% cancellation fee applies."
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale---.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "Pamukkale Balloon Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale-11.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Thermal waters cascading down Pamukkale cotton castle formations"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale-Cotton.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Panoramic view of Pamukkale terraces and countryside scenery"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale-19.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient Hierapolis ruins overlooking Pamukkale thermal terraces"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Pamukkale-4.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Hot air balloons floating above Pamukkale travertine terraces"
+    }
+  ],
+  "related": [
+    {
+      "title": "Hot Air Balloon Ride in Cappadocia",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/hot-air-balloon-tour-in-cappadocia/"
+    },
+    {
+      "title": "12-Day Turkey Highlights Tour: Cappadocia & Antalya",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/10-to-14-days-tours/12-day-turkey-tour/"
+    },
+    {
+      "title": "4-Day Gallipoli, Troy & Ephesus Heritage Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/03-to-05-days-tours/4-day-istanbul-gallipoli-troy-pergamon-pamukkale-and-ephesus-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the Pamukkale Balloon Tour and what can I expect?",
+      "a": "The Pamukkale Balloon Tour offers a memorable sunrise flight above Pamukkale's famous white travertine terraces, the ancient city of Hierapolis, and the surrounding countryside. The experience provides breathtaking aerial views and excellent photo opportunities while enjoying one of Turkey's most unique natural wonders from above."
+    },
+    {
+      "q": "How much does the Pamukkale Balloon Tour cost?",
+      "a": "The balloon ride starts from €100 per person for the 2026 season. Prices may vary depending on travel dates, demand, weather conditions, and availability. Early booking is recommended, especially during peak travel months."
+    },
+    {
+      "q": "How long does the hot air balloon flight last?",
+      "a": "The actual balloon flight lasts between 45 minutes and 1 hour, depending on weather conditions and operational requirements. Including hotel transfers, check-in procedures, and the pre-flight briefing, the full experience usually takes around 3 to 4 hours."
+    },
+    {
+      "q": "Is hotel pickup and drop-off included?",
+      "a": "Yes, hotel pickup and drop-off within the Pamukkale area are included. Guests are transported between their hotel and the balloon launch site, making the experience convenient and stress-free."
+    },
+    {
+      "q": "What time does the balloon ride take place?",
+      "a": "Flights operate at sunrise when weather conditions are generally calm and visibility is at its best. Pickup times vary throughout the year but usually take place before dawn to ensure you are ready for takeoff at sunrise."
+    },
+    {
+      "q": "Is the Pamukkale Balloon Tour suitable for first-time balloon riders?",
+      "a": "Yes, the experience is perfect for first-time balloon riders. The flight is smooth, peaceful, and professionally operated, making it an excellent introduction to hot air ballooning while enjoying spectacular scenery."
+    },
+    {
+      "q": "How safe is the hot air balloon ride?",
+      "a": "Pamukkale balloon flights are operated by licensed pilots and certified companies that follow strict aviation safety regulations. Flights only proceed when weather and wind conditions are suitable, ensuring passenger safety remains the highest priority."
+    },
+    {
+      "q": "What should I wear for the balloon ride?",
+      "a": "Comfortable clothing and closed-toe shoes are recommended. Early mornings can be cool, so it is advisable to bring a light jacket or sweater. Dressing in layers is ideal, especially during spring, autumn, and winter months."
+    },
+    {
+      "q": "What happens if the balloon flight is canceled due to weather?",
+      "a": "Balloon flights are weather dependent and may be canceled if conditions are not suitable for safe operation. If a cancellation occurs, guests are generally offered an alternative flight date or a full refund according to the operator's policy."
+    },
+    {
+      "q": "When is the best time of year for a Pamukkale Balloon Tour?",
+      "a": "The balloon tour operates throughout the year. Spring and autumn offer pleasant temperatures and clear views, summer provides excellent flying conditions, and winter can offer unique views of Pamukkale with fewer crowds. Each season delivers a different and memorable perspective of this UNESCO World Heritage Site."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "Pamukkale Balloon Tour",
+          "description": "Enjoy a sunrise hot air balloon ride over Pamukkale and admire the stunning white terraces and ancient ruins from above.\nExperience breathtaking panoramic view",
+          "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/hot-air-balloon-tour-in-pamukkale",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67823ffd5bcad/Pamukkale---.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "Flight certificate, Hotel pick-up and drop-off service, Champagne celebration after landing, Light breakfast box, Passenger insurance included"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Standard Flight Program",
+              "description": "It  takes 60 minutes , We are using 14-20 persons basket for Standard Flights.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " "
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Deluxe Long Flight",
+              "description": "Takes 90 minutes, We are using 6-8-12 persons basket for Deluxe Long Flights.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "Pick-up service"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "VIP Balloon Program",
+              "description": "For passengers who wish to plan a special event, we offer the VIP Balloon Flight. Whether celebrating a birthday, anniversary or wedding proposal, balloon flights make a magical back drop to all special occasions. We can arrange private balloon flights, sunset balloon flights, romantic landings and special arrangements for all sorts of surprises. Please contact us for your private balloon requests, we will be happy to offer our services, and help plan the special day. Price quotes available upon request and after consultation.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": " "
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Turkey Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "hot-air-balloon-tour-in-pamukkale",
+          "name": "Pamukkale Balloon Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "Pamukkale Balloon Tour",
+          "description": "Enjoy a sunrise hot air balloon ride over Pamukkale and admire the stunning white terraces and ancient ruins from above.\nExperience breathtaking panoramic view",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67823ffd5bcad/Pamukkale---.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "Pamukkale Balloon Tour",
+          "productID": "669d100133636555e8000011",
+          "sku": "669d100133636555e8000011",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/11/67823ffd5bcad/Pamukkale---.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Enjoy a sunrise hot air balloon ride over Pamukkale and admire the stunning white terraces and ancient ruins from above.\nExperience breathtaking panoramic view",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "140",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/turkey-tours/adventure-activities/hot-air-balloon-tour-in-pamukkale",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

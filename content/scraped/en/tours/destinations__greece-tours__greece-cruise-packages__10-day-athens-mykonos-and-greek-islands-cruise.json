@@ -1,0 +1,589 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/10-day-athens-mykonos-and-greek-islands-cruise/",
+  "path": "destinations/greece-tours/greece-cruise-packages/10-day-athens-mykonos-and-greek-islands-cruise",
+  "slug": "10-day-athens-mykonos-and-greek-islands-cruise",
+  "parent": "greece-tours",
+  "category": "greece-cruise-packages",
+  "title": "10-Day Luxury Greek Islands Cruise & Land Tour",
+  "metaTitle": "Luxury Greece Cruise | Islands & Land in 10 Days",
+  "metaDescription": "Experience Athens, Mykonos, Santorini, Paros, Naxos and Rhodes on a 10-day luxury journey combining island cruising with carefully planned time ashore.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/10-day-athens-mykonos-and-greek-islands-cruise/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Cruise Packages & Greek Island Cruises 2026–2027",
+    "10-Day Luxury Greek Islands Cruise & Land Tour"
+  ],
+  "summary": "The 10-Day Athens, Mykonos & Greek Islands Cruise gives Athens and Mykonos their own time in the itinerary before continuing with a four-night Aegean cruise. Explore the Acropolis and historic Athens, then stay in Mykonos rather than experiencing the island only as a brief cruise stop. From there, the sailing continues to Patmos, Rhodes, Crete and Santorini, adding four distinct island destinations without extending the journey beyond ten days.\nDepartures are planned from April to October in line with the cruise calendar. The program includes 4-star hotels with breakfast, a 4-night full-board cruise, English-speaking local guides, transfers and the scheduled sightseeing detailed in the itinerary.",
+  "facts": {
+    "duration": "09 Nights / 10 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 2,545 / Per person",
+    "cancellation": "Free cancellation up to 90 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 9,
+  "days": 10,
+  "price": {
+    "amount": 2545,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €2,545 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Mykonos",
+    "Santorini",
+    "Paros",
+    "Rhodes"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [
+    "09 Nights / 10 Days",
+    "Athens • Mykonos • Patmos • Rhodes • Crete • Santorini",
+    "4-Night Greek Islands & Turkey Cruise Included",
+    "Small Group Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Wednesday: Arrival in Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel in Athens.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Thursday: Half Day Athens City Tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Friday: Ferry to Mykonos",
+      "text": "Breakfast at the hotel and check-out.\nTransfer to the port for your SeaJets ferry to Mykonos.\nUpon arrival, transfer to your hotel.\nRemainder of the day at leisure. Overnight in Mykonos.\nDomestic flights to Mykonos are also available upon request.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Saturday: Free day in Mykonos",
+      "text": "Breakfast at the hotel. Enjoy a full day at leisure in Mykonos to relax on the beaches, explore Mykonos Town, and experience the island’s famous nightlife and seaside atmosphere. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Sunday : Free day in Mykonos",
+      "text": "Breakfast Enjoy a free day in Mykonos for beach relaxation, shopping, sightseeing, or an optional visit to Delos. In the evening, experience the island’s lively atmosphere and famous nightlife. Overnight in Mykonos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Monday: 4 nights cruise to the Greek islands",
+      "text": "Breakfast at the hotel. Free morning in Mykonos.\nIn the afternoon, transfer to the port to embark on your 4-night cruise to the Greek Islands and Turkey.\nOvernight on board",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Tuesday: Kusadasi and Patmos",
+      "text": "Arrival at Kuusadasiwith an optional excursion to Ephesus. Continue cruising to Patmos with optional visits to the Monastery of Saint John the Theologian and the Cave of the Apocalypse. Overnight on board.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Wednesday: Rhodes",
+      "text": "Early morning arrival at Rhodes. Enjoy free time on the island known for its historic sites, beautiful beaches, shopping areas, and lively nightlife. Optional tours are available to visit the Medieval City and the famous Acropolis of Lindos. Overnight on board.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Thursday: Crete and Santorini",
+      "text": "Arrival at Heraklion with an optional visit to the Palace of Knossos. Continue sailing to Santorini, famous for its volcanic scenery and whitewashed villages. Overnight on board.",
+      "meals": "Breakfast, Lunch and Dinner"
+    },
+    {
+      "dayLabel": "DAY 10",
+      "title": "Friday: Lavrio Port to Athens Airport",
+      "text": "Early morning arrival at Port of Piraeus.\nBreakfast on board, followed by transfer to the airport for your departure flight.",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "05 Nights 4* Hotel Accommodation on B&B basis",
+    "04-Night Greek Islands & Turkey Cruise on full board basis",
+    "Inside cabin category included",
+    "Half Day Athens City Tour on group basis",
+    "English-speaking tour guide",
+    "Entrance fees included",
+    "Transportation included"
+  ],
+  "excluded": [
+    "Flight tickets"
+  ],
+  "importantNotes": [
+    "International and domestic flights",
+    "Overnight city tax payable directly to hotels",
+    "4* Hotels: €10per room per night",
+    "5* Hotels: €15 per room per night",
+    "Personal expenses",
+    "Any services not mentioned as included",
+    "Cruise Exclusions",
+    "The cruise rates do not include:",
+    "Casino expenses",
+    "On-board purchases",
+    "Spa and beauty salon services",
+    "Photo shop purchases",
+    "Shore excursions",
+    "Wi-Fi and cabin telephone calls",
+    "Medical expenses",
+    "Laundry services",
+    "Room service",
+    "Specialty dining menus",
+    "Bar snacks and pizza",
+    "Mini bar expenses (where applicable)"
+  ],
+  "cancellationPolicy": [
+    "Cancellation of confirmed individual cruise bookings will be subject to the following penalties.",
+    "The cancellation policy applies to the cruise fare only.",
+    "90 days or more before sailing: Full refund / No cancellation fee",
+    "89–30 days before sailing: Loss of deposit amount",
+    "29 days or less before sailing: No refund except port and service charges"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Mykonos-13.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "10-Day Luxury Greek Islands Cruise & Land Tour"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Mykonos-9.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Iconic Mykonos windmills against blue Aegean skies"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Mykonos-16.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Traditional Cycladic beauty throughout Paros villages today"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-11.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Elegant cliffside restaurants in Santorini Greece destination"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-8.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient temples and monuments in Athens Greece"
+    }
+  ],
+  "related": [
+    {
+      "title": "5-Day Athens & Delphi Cultural Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/5-days-greece-tour-athesn-city-package/"
+    },
+    {
+      "title": "7-Day Greece Tour: Athens, Santorini & Rhodes",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/7-day-athens-santorini-and-rhodes-tour/"
+    },
+    {
+      "title": "8-Day Greece Tour: Athens, Meteora & Santorini",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/8-days-athens-delphi-meteora-and-santorini-tour/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 10-Day Luxury Greece Tour & Cruise?",
+      "a": "The 10-Day Luxury Greece Tour & Cruise covers Athens, Mykonos, Santorini, Naxos, Crete, Rhodes, and Kusadasi. This premium itinerary combines Greece's most celebrated islands with a visit to Turkey's Aegean coast, offering a perfect blend of history, culture, luxury cruising, spectacular scenery, and Mediterranean relaxation. The tour runs for 9 nights and 10 days."
+    },
+    {
+      "q": "How much does the 10-Day Luxury Greece Tour & Cruise cost?",
+      "a": "The tour starts from €2,545 per person for the 2026 season. The price includes accommodation, cruise transportation between destinations, guided sightseeing tours, selected meals, and all airport, hotel, and port transfers specified in the itinerary. Final pricing may vary depending on travel dates, cabin category, and availability."
+    },
+    {
+      "q": "Is cruise transportation between the islands included?",
+      "a": "Yes, all cruise transportation between Athens, Mykonos, Santorini, Naxos, Crete, Rhodes, and Kusadasi is included according to the itinerary. The cruise offers a comfortable and relaxing way to explore multiple destinations while enjoying the beauty of the Aegean Sea."
+    },
+    {
+      "q": "Are international flights included in the package?",
+      "a": "No, international flights are not included in the tour price. Travelers are responsible for arranging their own flights to and from Greece. Magnificent Travel can assist with travel planning and recommendations if required."
+    },
+    {
+      "q": "Does the 10-Day Luxury Greece Tour & Cruise include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical insights, cultural information, and local expertise while ensuring a smooth and enriching travel experience."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece?",
+      "a": "Yes, this tour is ideal for first-time visitors seeking a premium Greek island experience. It combines world-famous destinations, ancient history, luxurious cruising, beautiful beaches, and stunning landscapes, making it one of the most comprehensive ways to explore the Aegean region."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through island villages, historic districts, cruise ports, and archaeological sites. Most travelers in average health can comfortably participate throughout the itinerary."
+    },
+    {
+      "q": "What are the highlights of Mykonos, Santorini, Naxos, Crete, Rhodes, and Kusadasi?",
+      "a": "Mykonos is known for its sophisticated atmosphere, beaches, and iconic windmills. Santorini offers breathtaking caldera views and unforgettable sunsets. Naxos provides authentic Greek island charm and beautiful coastal scenery. Crete features fascinating history and local traditions. Rhodes is famous for its Medieval Old Town and impressive architecture, while Kusadasi serves as the gateway to the ancient city of Ephesus."
+    },
+    {
+      "q": "What is the cancellation policy for the 10-Day Luxury Greece Tour & Cruise?",
+      "a": "Free cancellation is available up to 90 days before the tour departure date. Cancellations made within 90 days may be subject to fees according to the booking terms, cruise conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 10-Day Luxury Greece Tour & Cruise available all year and can it be customized?",
+      "a": "The cruise operates seasonally according to cruise schedules and weather conditions. You can extend your stay in Athens before or after the cruise, upgrade accommodation, add optional excursions, or customize your travel arrangements. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "10-Day Luxury Greek Islands Cruise & Land Tour",
+          "description": "Experience Athens, Mykonos, Santorini, Paros, Naxos and Rhodes on a 10-day luxury journey combining island cruising with carefully planned time ashore.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/10-day-athens-mykonos-and-greek-islands-cruise",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/6783bc1270c15/Mykonos-13.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "05 Nights 4* Hotel Accommodation on B&B basis, 04-Night Greek Islands & Turkey Cruise on full board basis, Inside cabin category included, Half Day Athens City Tour on group basis, English-speaking tour guide, Entrance fees included, Transportation included"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Flight tickets"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Wednesday: Arrival in Athens",
+              "description": "Arrival at Athens International Airport. Meet and transfer to your hotel in Athens. \nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Thursday: Half Day Athens City Tour",
+              "description": "Breakfast at the hotel. \nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Friday:  Ferry to Mykonos",
+              "description": "Breakfast at the hotel and check-out. \nTransfer to the port for your SeaJets ferry to Mykonos. \nUpon arrival, transfer to your hotel. \nRemainder of the day at leisure. Overnight in Mykonos.\nDomestic flights to Mykonos are also available upon request.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Saturday: Free day in Mykonos",
+              "description": "Breakfast at the hotel. Enjoy a full day at leisure in Mykonos to relax on the beaches, explore Mykonos Town, and experience the island’s famous nightlife and seaside atmosphere. Overnight in Mykonos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Sunday : Free day in Mykonos",
+              "description": "Breakfast  Enjoy a free day in Mykonos for beach relaxation, shopping, sightseeing, or an optional visit to Delos. In the evening, experience the island’s lively atmosphere and famous nightlife. Overnight in Mykonos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Monday: 4 nights cruise to the Greek islands ",
+              "description": "Breakfast at the hotel. Free morning in Mykonos. \nIn the afternoon, transfer to the port to embark on your 4-night cruise to the Greek Islands and Turkey.\nOvernight on board",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast, Lunch and Dinner)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Tuesday: Kusadasi and Patmos",
+              "description": "Arrival at Kuusadasiwith an optional excursion to Ephesus. Continue cruising to Patmos with optional visits to the Monastery of Saint John the Theologian and the Cave of the Apocalypse. Overnight on board.\n",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast, Lunch and Dinner)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Wednesday: Rhodes",
+              "description": "Early morning arrival at Rhodes. Enjoy free time on the island known for its historic sites, beautiful beaches, shopping areas, and lively nightlife. Optional tours are available to visit the Medieval City and the famous Acropolis of Lindos. Overnight on board.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast, Lunch and Dinner)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Thursday: Crete and Santorini",
+              "description": "Arrival at Heraklion with an optional visit to the Palace of Knossos. Continue sailing to Santorini, famous for its volcanic scenery and whitewashed villages. Overnight on board.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast, Lunch and Dinner)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Friday: Lavrio Port to Athens Airport",
+              "description": "Early morning arrival at Port of Piraeus. \nBreakfast on board, followed by transfer to the airport for your departure flight.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "10-day-athens-mykonos-and-greek-islands-cruise",
+          "name": "10-Day Luxury Greek Islands Cruise & Land Tour",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "10-Day Luxury Greek Islands Cruise & Land Tour",
+          "description": "Experience Athens, Mykonos, Santorini, Paros, Naxos and Rhodes on a 10-day luxury journey combining island cruising with carefully planned time ashore.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/6783bc1270c15/Mykonos-13.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "10-Day Luxury Greek Islands Cruise & Land Tour",
+          "productID": "669e8fa4336365803100031c",
+          "sku": "669e8fa4336365803100031c",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/6783bc1270c15/Mykonos-13.jpg",
+            "width": 680,
+            "height": 501
+          },
+          "description": "Experience Athens, Mykonos, Santorini, Paros, Naxos and Rhodes on a 10-day luxury journey combining island cruising with carefully planned time ashore.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "2545",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-cruise-packages/10-day-athens-mykonos-and-greek-islands-cruise",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

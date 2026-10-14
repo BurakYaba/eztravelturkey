@@ -1,0 +1,565 @@
+{
+  "locale": "en",
+  "sourceUrl": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/9-days-greece-tour/",
+  "path": "destinations/greece-tours/greece-travel-packages/9-days-greece-tour",
+  "slug": "9-days-greece-tour",
+  "parent": "greece-tours",
+  "category": "greece-travel-packages",
+  "title": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+  "metaTitle": "Naxos, Santorini & Crete | 9-Day Island Tour",
+  "metaDescription": "Explore Athens, Naxos, Santorini and Crete in 9 days on an island-focused Greece journey combining Cycladic scenery, local culture and Mediterranean life.",
+  "canonical": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/9-days-greece-tour/",
+  "lastUpdated": "2026-09-15",
+  "breadcrumb": [
+    "Home",
+    "Explore Our Travel Destinations & Multi-Country Tours",
+    "Greece Tours & Packages 2026–2027 | Private & Island Hopping",
+    "Greece Travel Packages 2026–2027 | Islands & Athens",
+    "9-Day Greece Island Tour: Naxos, Santorini & Crete"
+  ],
+  "summary": "The 9-Day Greece Tour travels from Athens through Naxos and Santorini before continuing to Crete, combining the capital with three islands that each have their own character. Begin at the Acropolis and historic Athens, then slow the pace in Naxos with its beaches, villages and Cycladic landscape. Santorini follows with its volcanic caldera, while Crete brings a deeper archaeological and cultural dimension to the final part of the journey.\nTravel is arranged from April to October around seasonal ferry schedules. The program includes selected 4-star hotels with breakfast, English-speaking local guides, speed ferry tickets, airport and port transfers, and the scheduled sightseeing detailed in the itinerary.",
+  "facts": {
+    "duration": "09 Nights / 09 Days",
+    "guideLanguages": "English",
+    "groupType": "Small Group",
+    "flights": "No",
+    "startingPrice": "€ 1,995 / Per person",
+    "cancellation": "Free cancellation up to 30 days before the tour date.",
+    "difficulty": "Moderate",
+    "season": "This tour operates from 1 April to 15 October."
+  },
+  "extraFacts": {},
+  "nights": 9,
+  "days": 9,
+  "price": {
+    "amount": 1995,
+    "currency": "EUR",
+    "unit": "Per person",
+    "note": "Prices are updated for the 2026 season",
+    "raw": "From: €1,995 / Per person Prices are updated for the 2026 season"
+  },
+  "route": [
+    "Athens",
+    "Naxos",
+    "Santorini",
+    "Crete"
+  ],
+  "routeMap": {
+    "image": {
+      "src": "https://www.magnificenttravel.com/public/thumbs/800x600-bestFit-9-Day-Greece-Tour-Package.jpg",
+      "width": 1300,
+      "height": 550,
+      "alt": "9-Day Greece Island Tour: Naxos, Santorini & Crete Roadmap"
+    },
+    "intro": ""
+  },
+  "highlights": [
+    "08 Nights / 09 Days",
+    "Athens • Naxos • Santorini • Crete",
+    "Speed Ferry Tickets Included",
+    "Small Group or Private Tour",
+    "Carefully Selected 4-Star Hotels",
+    "Flexible Travel Dates",
+    "Fully Customizable Itinerary"
+  ],
+  "itinerary": [
+    {
+      "dayLabel": "DAY 01",
+      "title": "Arrival in Athens",
+      "text": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+      "meals": "None"
+    },
+    {
+      "dayLabel": "DAY 02",
+      "title": "Half Day Athens City tour",
+      "text": "Breakfast at the hotel.\nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 03",
+      "title": "Ferry to Naxos",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Naxos.\nArrival and transfer to your hotel. The remainder of the day is at leisure. Overnight in Naxos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 04",
+      "title": "Free Day in Naxos",
+      "text": "Breakfast at the hotel. Free day in Naxos, the largest island of the Cyclades.\nEnjoy sandy beaches, traditional villages, fertile valleys, and scenic mountain landscapes.\nExplore ancient ruins, local shops, and authentic Greek culture throughout the island.\nOvernight in Naxos.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 05",
+      "title": "Ferry to Santorini",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. The remainder of the day is at leisure. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 06",
+      "title": "Free Day in Santorini",
+      "text": "Breakfast at the hotel.\nEnjoy a free day in Santorini with an optional cruise to Nea Kameni, Palea Kameni, and Thirassia. Later, explore Fira and enjoy the island’s famous caldera views. Overnight in Santorini.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 07",
+      "title": "Santorini to Crete by Ferry",
+      "text": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Crete.\nArrival and transfer to your hotel. The remainder of the day is at leisure. Overnight in Crete.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 08",
+      "title": "Free Day in Crete",
+      "text": "Breakfast at the hotel. Enjoy a free day in Heraklion, the capital of Crete. We recommend visiting the famous Palace of Knossos and the Heraklion Archaeological Museum. Overnight in Heraklion.",
+      "meals": "Breakfast"
+    },
+    {
+      "dayLabel": "DAY 09",
+      "title": "Departure from Athens",
+      "text": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time",
+      "meals": "Breakfast"
+    }
+  ],
+  "included": [
+    "08 nights hotel accommodation in the selected category",
+    "Half-day Athens city tour with English-speaking guide",
+    "Entrance fees and transportation during the tour",
+    "Ferry tickets:",
+    "Port of Piraeus – Naxos",
+    "Fast ferry: Naxos – Santorini",
+    "Fast ferry: Santorini – Crete",
+    "All airport, port, and hotel transfers in Athens and the islands"
+  ],
+  "excluded": [
+    "Domestic flight from Crete to Athens",
+    "Personal expenses",
+    "Driver and guide gratuities",
+    "Meals not mentioned",
+    "Drinks and beverages",
+    "Travel insurance"
+  ],
+  "importantNotes": [
+    "This tour operates daily from 01 April to 15 October",
+    "The itinerary can be customized upon request"
+  ],
+  "cancellationPolicy": [
+    "Domestic flights and ferries are non-refundable once issued (100% cancellation fees apply)",
+    "Cancellation 30+ days before arrival: No fee.",
+    "30–21 days before arrival: 25% cancellation fee",
+    "20–14 days before arrival: 50% cancellation fee",
+    "13 days or less before arrival or no-show: 100% cancellation fee"
+  ],
+  "gallery": [
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Naxos--Temple-of-Apollo.jpg",
+      "width": 950,
+      "height": 750,
+      "alt": "9-Day Greece Island Tour: Naxos, Santorini & Crete"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Crete-1.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Ancient walls surrounding Rhodes Old Town Greece"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Naxos-4.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Famous village of Naoussa on Paros Island"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Santorini-21.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Travelers exploring picturesque streets of Oia Santorini"
+    },
+    {
+      "src": "https://www.magnificenttravel.com/public/thumbs/950x700-thumbnail-Athens-5.jpg",
+      "width": 950,
+      "height": 700,
+      "alt": "Historic cityscape of Athens with Acropolis views"
+    }
+  ],
+  "related": [
+    {
+      "title": "12-Day Greek Island Hopping: Mykonos, Paros & Santorini",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-greece-trip-package/"
+    },
+    {
+      "title": "12-Day Greece Tour: Athens, Mykonos, Santorini & Crete",
+      "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/12-days-athens-mykonos-santorini-and-crete-tour/"
+    },
+    {
+      "title": "10-Day Turkey & Greek Islands Discovery Tour",
+      "url": "https://www.magnificenttravel.com/en/destinations/turkey-greece-tours/10-day-best-of-turkey-and-greece-trip/"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What destinations are included in the 9-Day Greece Tour Package?",
+      "a": "The 9-Day Greece Tour Package covers Athens, Naxos, Crete, and Santorini. You will explore Athens' ancient landmarks, discover the authentic Cycladic charm of Naxos, experience the rich history and culture of Crete, and enjoy Santorini's world-famous caldera views and spectacular sunsets. The tour runs for 8 nights and 9 days."
+    },
+    {
+      "q": "How much does the 9-Day Greece Tour Package cost?",
+      "a": "The tour starts from €1,995 per person for the 2026 season. The price includes accommodation, two domestic flights, speed ferry tickets, guided sightseeing tours, selected meals, and all airport, hotel, and port transfers specified in the itinerary. Final pricing may vary depending on travel dates and hotel availability."
+    },
+    {
+      "q": "Are domestic flights and ferry tickets included in this itinerary?",
+      "a": "Yes, the package includes two domestic flights and all required speed ferry tickets between destinations. These transportation arrangements make it easy and convenient to travel between Athens and the Greek islands."
+    },
+    {
+      "q": "Are international flights included in the package?",
+      "a": "No, international flights are not included in the tour price. Travelers are responsible for arranging their own flights to and from Greece. Magnificent Travel can assist with travel planning and recommendations if needed."
+    },
+    {
+      "q": "Does the 9-day Greece tour include a guide?",
+      "a": "Yes, professional English-speaking guides are included during the scheduled sightseeing tours. Your guides provide historical insights, cultural information, and local expertise throughout the journey."
+    },
+    {
+      "q": "Is this tour suitable for first-time visitors to Greece?",
+      "a": "Yes, this tour is ideal for first-time visitors looking for a combination of history, culture, authentic island life, and spectacular scenery. It offers a well-balanced introduction to both mainland Greece and some of the country's most beautiful islands."
+    },
+    {
+      "q": "How fit do I need to be for the tour?",
+      "a": "The physical difficulty is easy to moderate. Travelers should be comfortable walking through archaeological sites, ferry ports, island villages, and historic districts. Most travelers in average health can comfortably participate throughout the itinerary"
+    },
+    {
+      "q": "What are the highlights of Naxos, Crete, and Santorini?",
+      "a": "Naxos is known for its traditional villages, beautiful beaches, and authentic Greek atmosphere. Crete offers impressive archaeological sites, local culture, and diverse landscapes. Santorini is famous for its volcanic caldera, whitewashed villages, blue-domed churches, and unforgettable sunsets overlooking the Aegean Sea."
+    },
+    {
+      "q": "What is the cancellation policy for the 9-Day Greece Tour Package?",
+      "a": "You can cancel free of charge up to 30 days before the tour departure date. Cancellations made within 30 days may be subject to fees according to the booking terms, transportation conditions, and cancellation policy. Travel insurance is recommended for additional flexibility and protection."
+    },
+    {
+      "q": "Is the 9-Day Greece Tour Package available all year and can it be customized?",
+      "a": "The tour operates throughout the year, subject to seasonal ferry schedules and flight availability. You can extend your stay in Athens, Naxos, Crete, or Santorini, upgrade hotel categories, add optional excursions, or modify the itinerary according to your preferences. Contact Magnificent Travel for a personalized itinerary and quotation."
+    }
+  ],
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TouristTrip",
+          "name": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+          "description": "Explore Athens, Naxos, Santorini and Crete in 9 days on an island-focused Greece journey combining Cycladic scenery, local culture and Mediterranean life.",
+          "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/9-days-greece-tour",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/678375585239d/Naxos--Temple-of-Apollo.jpg",
+            "width": 714,
+            "height": 476
+          },
+          "touristType": "International travelers",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Included",
+              "value": "08 nights hotel accommodation in the selected category, Half-day Athens city tour with English-speaking guide, Entrance fees and transportation during the tour, Ferry tickets:, Port of Piraeus – Naxos, Fast ferry: Naxos – Santorini, Fast ferry: Santorini – Crete, All airport, port, and hotel transfers in Athens and the islands"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Not Included",
+              "value": "Domestic flight from Crete to Athens, Personal expenses, Driver and guide gratuities, Meals not mentioned, Drinks and beverages, Travel insurance"
+            }
+          ],
+          "itinerary": [
+            {
+              "@type": "TouristAttraction",
+              "name": "Arrival in Athens  ",
+              "description": "Arrival at Athens International Airport. Meet and transfer to your hotel.\nCheck-in after 14:00. The remainder of the day is at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: None)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Half Day Athens City tour   ",
+              "description": "Breakfast at the hotel. \nEnjoy a half-day guided tour of Athens, including the Acropolis of Athens, Acropolis Museum, and Parthenon. Continue past the Parliament, Tomb of the Unknown Soldier, Presidential Palace, Panathenaic Stadium, Temple of Olympian Zeus, and Arch of Hadrian. Afternoon at leisure. Overnight in Athens.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Naxos",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Naxos.\nArrival and transfer to your hotel.  The remainder of the day is at leisure. Overnight in Naxos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Naxos",
+              "description": "Breakfast at the hotel. Free day in Naxos, the largest island of the Cyclades.\nEnjoy sandy beaches, traditional villages, fertile valleys, and scenic mountain landscapes.\nExplore ancient ruins, local shops, and authentic Greek culture throughout the island.\nOvernight in Naxos.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Ferry to Santorini",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Santorini.\nArrival and transfer to your hotel. The remainder of the day is at leisure. Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Santorini",
+              "description": "Breakfast at the hotel. \nEnjoy a free day in Santorini with an optional cruise to Nea Kameni, Palea Kameni, and Thirassia. Later, explore Fira and enjoy the island’s famous caldera views. Overnight in Santorini.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Santorini to Crete by Ferry",
+              "description": "Breakfast and check-out from the hotel. Transfer to the port for your ferry to Crete.\nArrival and transfer to your hotel.  The remainder of the day is at leisure. Overnight in Crete.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Free Day in Crete",
+              "description": "Breakfast at the hotel.  Enjoy a free day in Heraklion, the capital of Crete. We recommend visiting the famous Palace of Knossos and the Heraklion Archaeological Museum. Overnight in Heraklion.",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            },
+            {
+              "@type": "TouristAttraction",
+              "name": "Departure from Athens",
+              "description": "After breakfast, check out from the hotel before 12:00 pm.\nTransfer to Athens Airport according to your flight departure time",
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Meals",
+                "value": "(Meals: Breakfast)"
+              }
+            }
+          ],
+          "subjectOf": {
+            "@type": "TouristDestination",
+            "name": "Greece Tours"
+          },
+          "tripOrigin": {
+            "@type": "City",
+            "name": "Istanbul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "id": "https://www.magnificenttravel.com/en#webpage",
+          "url": "9-days-greece-tour",
+          "name": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+          "isPartOf": {
+            "@id": "https://www.magnificenttravel.com/en#website"
+          },
+          "about": {
+            "@id": "https://www.magnificenttravel.com/en#org"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Magnificent Travel",
+            "url": "https://www.magnificenttravel.com/en"
+          },
+          "headline": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+          "description": "Explore Athens, Naxos, Santorini and Crete in 9 days on an island-focused Greece journey combining Cycladic scenery, local culture and Mediterranean life.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/678375585239d/Naxos--Temple-of-Apollo.jpg",
+            "width": 714,
+            "height": 476
+          },
+          "inLanguage": "en_US"
+        },
+        {
+          "@type": "Organization",
+          "type": [
+            "Organization",
+            "TravelAgency"
+          ],
+          "id": "https://www.magnificenttravel.com/en#org",
+          "name": "Magnificent Travel",
+          "legalName": "Magnificent Travel",
+          "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+          "telephone": "+90 (212) 458 65 65",
+          "email": "support@magnificenttravel.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "postalCode": "34122",
+            "addressCountry": "TR",
+            "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+          },
+          "url": "https://www.magnificenttravel.com/en",
+          "foundingDate": "1997",
+          "currenciesAccepted": "EUR, USD, TRY",
+          "paymentAccepted": "Cash, Credit Card",
+          "areaServed": "TR,GR,EG,JO,MA,IL",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+            "width": 217,
+            "height": 61
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+90 (212) 458 65 65",
+            "url": "https://www.magnificenttravel.com/en/contact/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/Magnificenttravel",
+            "https://www.linkedin.com/company/magnificent-travel-tours/",
+            "https://instagram.com/magnificenttourism"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "9-Day Greece Island Tour: Naxos, Santorini & Crete",
+          "productID": "669e5c08336365580c000204",
+          "sku": "669e5c08336365580c000204",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.magnificenttravel.com/public/uploads/2025/01/12/678375585239d/Naxos--Temple-of-Apollo.jpg",
+            "width": 714,
+            "height": 476
+          },
+          "description": "Explore Athens, Naxos, Santorini and Crete in 9 days on an island-focused Greece journey combining Cycladic scenery, local culture and Mediterranean life.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Magnificent Travel"
+          },
+          "provider": {
+            "@type": "Organization",
+            "type": [
+              "Organization",
+              "TravelAgency"
+            ],
+            "id": "https://www.magnificenttravel.com/en#org",
+            "name": "Magnificent Travel",
+            "legalName": "Magnificent Travel",
+            "description": "Magnificent Travel 3217 (Macera Tur Turizm Seyahat Acentası ve Ltd) was founded in 1997 and is an independent Turkish Tour Operator and travel agency specializing in private, small group and cultural tours in Turkey and with representatives in Egypt, Greece, Israel, Morocco and Jordan.",
+            "telephone": "+90 (212) 458 65 65",
+            "email": "support@magnificenttravel.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "İstanbul",
+              "postalCode": "34122",
+              "addressCountry": "TR",
+              "streetAddress": "Kucukayasofya Mah. Gelinlik Sok. No:1/3 Sultanahmet - Fatih Istanbul 34122 / TURKEY"
+            },
+            "url": "https://www.magnificenttravel.com/en",
+            "foundingDate": "1997",
+            "currenciesAccepted": "EUR, USD, TRY",
+            "paymentAccepted": "Cash, Credit Card",
+            "areaServed": "TR,GR,EG,JO,MA,IL",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.magnificenttravel.com/public/uploads/2024/08/19/66c32105ee484/magnificent-logo.png",
+              "width": 217,
+              "height": 61
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "telephone": "+90 (212) 458 65 65",
+              "url": "https://www.magnificenttravel.com/en/contact/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Magnificenttravel",
+              "https://www.linkedin.com/company/magnificent-travel-tours/",
+              "https://instagram.com/magnificenttourism"
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 1,
+            "reviewCount": 1
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1995",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.magnificenttravel.com/en/destinations/greece-tours/greece-travel-packages/9-days-greece-tour",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": [
+                  "US",
+                  "GB",
+                  "DE",
+                  "FR",
+                  "NL",
+                  "AU",
+                  "CA"
+                ]
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 0,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": [
+                "US",
+                "GB",
+                "DE",
+                "FR",
+                "NL",
+                "AU",
+                "CA"
+              ],
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnLink": "https://www.magnificenttravel.com/en/gdpr/terms-conditions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
