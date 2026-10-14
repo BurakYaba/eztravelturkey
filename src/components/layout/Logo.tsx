@@ -8,6 +8,8 @@ type Props = {
   light?: boolean;
   size?: 'sm' | 'md' | 'lg';
   priority?: boolean;
+  /** Accessible name of the link, in the page language. */
+  label?: string;
 };
 
 // public/images/logo.png is public/mtlogo.png with its transparent margins trimmed (502 x 282).
@@ -17,9 +19,9 @@ const sizes = {
   lg: 'h-24',
 };
 
-export function Logo({ className, light = false, size = 'md', priority }: Props) {
+export function Logo({ className, light = false, size = 'md', priority, label = 'Magnificent Travel, home' }: Props) {
   return (
-    <Link href="/" aria-label="Magnificent Travel, home" className={cn('inline-flex shrink-0', className)}>
+    <Link href="/" aria-label={label} className={cn('inline-flex shrink-0', className)}>
       <Image
         src="/images/logo.png"
         alt="Magnificent Travel"

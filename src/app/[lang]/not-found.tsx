@@ -1,19 +1,19 @@
 import { ButtonLink } from '@/components/shared/Button';
+import { getDictionaryForPage } from '@/i18n/server';
 
-export default function NotFound() {
+export default async function NotFound() {
+  const { notFound: t } = await getDictionaryForPage();
   return (
     <section className="container-x flex min-h-[60dvh] flex-col items-start justify-center py-20">
-      <p className="eyebrow">Error 404</p>
-      <h1 className="h-display mt-3 max-w-xl">This page has wandered off the map</h1>
-      <p className="text-muted mt-4 max-w-lg text-lg">
-        The page you are looking for may have moved. Browse our tours or tell us where you would like to go.
-      </p>
+      <p className="eyebrow">{t.eyebrow}</p>
+      <h1 className="h-display mt-3 max-w-xl">{t.title}</h1>
+      <p className="text-muted mt-4 max-w-lg text-lg">{t.text}</p>
       <div className="mt-7 flex flex-wrap gap-3">
         <ButtonLink href="/tours" size="lg" arrow>
-          Explore Tours
+          {t.tours}
         </ButtonLink>
         <ButtonLink href="/" size="lg" variant="secondary">
-          Back to home
+          {t.home}
         </ButtonLink>
       </div>
     </section>

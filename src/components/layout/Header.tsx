@@ -6,22 +6,21 @@ import { stripLocale } from '@/i18n/paths';
 import { useEffect, useRef, useState } from 'react';
 import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
-import { nav } from '@/data/site';
+import type { Dictionary } from '@/i18n/dictionaries';
 import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
 import { Logo } from './Logo';
 
 type DropItem = { label: string; href: string; note?: string };
 
-const destinationItems: DropItem[] = [
-  ...destinations.map((d) => ({ label: d.name, href: `/destinations/${d.id}`, note: d.tagline })),
-  { label: 'All destinations', href: '/destinations' },
-];
+type Props = {
+  nav: Dictionary['nav'];
+  countries: Dictionary['countries'];
+  homeLabel: string;
+};
 
-const styleItems: DropItem[] = [
-  ...nav.styles.map((s) => ({ label: s.label, href: s.href, note: s.note })),
-  { label: 'All tours', href: '/tours' },
-];
+const countryLabel = (countries: Dictionary['countries'], id: string) =>
+  countries[id as keyof Dictionary['countries']] ?? { name: id, tagline: '' };
 
 function Dropdown({
   label,
@@ -111,7 +110,7 @@ function Dropdown({
   );
 }
 
-export function Header() {
+export function Header({ nav, countries, homeLabel }: Props) {
   const currentPath = usePathname();
   const pathname = stripLocale(currentPath);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -147,26 +146,45 @@ export function Header() {
 
   const isActive = (prefix: string) => pathname === prefix || pathname.startsWith(`${prefix}/`);
 
+  const destinationItems: DropItem[] = [
+    ...destinations.map((d) => {
+      const country = countryLabel(countries, d.id);
+      return { label: country.name, href: `/destinations/${d.id}`, note: country.tagline };
+    }),
+    { label: nav.allDestinations, href: '/destinations' },
+  ];
+  const styleItems: DropItem[] = [
+    { label: nav.privateTours, href: '/private-tours', note: nav.privateNote },
+    { label: nav.smallGroupTours, href: '/small-group-tours', note: nav.smallGroupNote },
+    { label: nav.allTours, href: '/tours' },
+  ];
+  const primary = [
+    { label: nav.multiCountry, href: '/multi-country-tours' },
+    { label: nav.about, href: '/about' },
+    { label: nav.travelGuides, href: '/travel-hub' },
+    { label: nav.contact, href: '/contact' },
+  ];
+
   return (
     <>
       <header className="border-cream-200/80 bg-cream-50/95 supports-[backdrop-filter]:bg-cream-50/85 sticky top-0 z-50 border-b backdrop-blur">
         <div className="container-wide flex h-[80px] items-center justify-between gap-6">
-          <Logo priority />
+          <Logo priority label={homeLabel} />
 
-          <nav aria-label="Main" className="hidden items-center gap-6 lg:flex xl:gap-8">
+          <nav aria-label={nav.main} className="hidden items-center gap-6 lg:flex xl:gap-8">
             <Dropdown
-              label="Destinations"
+              label={nav.destinations}
               items={destinationItems}
               pathname={pathname}
               active={isActive('/destinations')}
             />
             <Dropdown
-              label="Tour Styles"
+              label={nav.tourStyles}
               items={styleItems}
               pathname={pathname}
               active={isActive('/private-tours') || isActive('/small-group-tours') || isActive('/tours')}
             />
-            {nav.primary.map((item) => (
+            {primary.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -182,13 +200,13 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <ButtonLink href="/plan-my-trip" arrow className="hidden sm:inline-flex">
-              Plan My Trip
+              {nav.planMyTrip}
             </ButtonLink>
             <button
               ref={toggleRef}
               type="button"
               className="border-cream-200 text-navy-900 grid size-11 place-items-center rounded-lg border bg-white lg:hidden"
-              aria-label="Open menu"
+              aria-label={nav.openMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen(true)}>
@@ -211,7 +229,7 @@ export function Header() {
       {/* Drawer: slides in from the right and covers half the screen (never narrower than 17rem). */}
       <aside
         id="mobile-menu"
-        aria-label="Menu"
+        aria-label={nav.menu}
         aria-hidden={!menuOpen}
         inert={!menuOpen}
         className={cn(
@@ -220,21 +238,21 @@ export function Header() {
           menuOpen ? 'visible translate-x-0' : 'invisible translate-x-full',
         )}>
         <div className="border-cream-200 flex h-[80px] shrink-0 items-center justify-between border-b px-5">
-          <span className="font-display text-navy-900 text-lg font-semibold">Menu</span>
+          <span className="font-display text-navy-900 text-lg font-semibold">{nav.menu}</span>
           <button
             ref={closeRef}
             type="button"
-            aria-label="Close menu"
+            aria-label={nav.closeMenu}
             onClick={() => setMenuOpen(false)}
             className="border-cream-200 text-navy-900 grid size-11 place-items-center rounded-lg border bg-white">
             <X size={22} aria-hidden />
           </button>
         </div>
 
-        <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-5 pb-6">
+        <nav aria-label={nav.mobile} className="flex-1 overflow-y-auto px-5 pb-6">
           {[
-            { key: 'destinations', label: 'Destinations', items: destinationItems },
-            { key: 'styles', label: 'Tour Styles', items: styleItems },
+            { key: 'destinations', label: nav.destinations, items: destinationItems },
+            { key: 'styles', label: nav.tourStyles, items: styleItems },
           ].map((group) => {
             const open = mobileSection === group.key;
             return (
@@ -270,7 +288,7 @@ export function Header() {
               </div>
             );
           })}
-          {nav.primary.map((item) => (
+          {primary.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -279,7 +297,7 @@ export function Header() {
             </Link>
           ))}
           <ButtonLink href="/plan-my-trip" size="lg" arrow className="mt-6 w-full">
-            Plan My Trip
+            {nav.planMyTrip}
           </ButtonLink>
         </nav>
       </aside>

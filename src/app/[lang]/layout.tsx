@@ -6,7 +6,8 @@ import { Header } from '@/components/layout/Header';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { site } from '@/data/site';
-import { hasLocale, htmlLang, locales } from '@/i18n/config';
+import { defaultLocale, hasLocale, htmlLang, locales } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
 import { LocaleProvider } from '@/i18n/locale-context';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
 import '../globals.css';
@@ -23,17 +24,17 @@ const hanken = Hanken_Grotesk({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: {
-    default: `${site.name} | Tours across Turkey, Greece, Egypt, Jordan and Morocco`,
-    template: `%s | ${site.name}`,
-  },
-  description:
-    'Licensed Turkish tour operator since 1997. Private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco.',
-  applicationName: site.name,
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Promise<Metadata> {
+  const { lang } = await params;
+  const { meta } = getDictionary(hasLocale(lang) ? lang : defaultLocale);
+  return {
+    metadataBase: new URL(site.url),
+    title: { default: meta.defaultTitle, template: `%s | ${site.name}` },
+    description: meta.defaultDescription,
+    applicationName: site.name,
+    robots: { index: true, follow: true },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: '#0f2d4a',
@@ -50,6 +51,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
   if (!hasLocale(lang)) {
     notFound();
   }
+  const dictionary = getDictionary(lang);
   return (
     <html lang={htmlLang[lang]} className={`${playfair.variable} ${hanken.variable}`}>
       <body>
@@ -57,9 +59,9 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
           <a
             href="#main"
             className="focus:bg-navy-900 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:px-4 focus:py-2 focus:text-white">
-            Skip to content
+            {dictionary.common.skipToContent}
           </a>
-          <Header />
+          <Header nav={dictionary.nav} countries={dictionary.countries} homeLabel={dictionary.common.homeLabel} />
           <main id="main">{children}</main>
           <Footer />
           <WhatsAppButton />
