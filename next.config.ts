@@ -5,6 +5,9 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
+    // `next dev` resizes big pictures slowly and sometimes drops the connection (the page then keeps loading), so
+    // pictures are served as they are while developing. The real optimizer runs in production.
+    unoptimized: process.env.NODE_ENV === 'development',
     qualities: [60, 75, 85],
     // Tour, destination and blog pictures live in Sanity.
     remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/images/**' }],
