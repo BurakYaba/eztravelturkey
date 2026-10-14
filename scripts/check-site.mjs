@@ -32,7 +32,7 @@ for (const path of urls) {
   const canonical = /<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];
   if (!canonical) bad(path, 'no canonical');
   else if (!canonical.endsWith(path)) bad(path, `canonical is ${canonical}`);
-  const l = /<html lang="([^"]+)"/.exec(html)?.[1];
+  const l = /<html[^>]*\slang="([^"]+)"/.exec(html)?.[1];
   if (l !== lang[path.split('/')[1]]) bad(path, `html lang ${l}`);
   if (!/<title>[^<]{5,}<\/title>/.test(html)) bad(path, 'no title');
   if (!/<meta name="description" content="[^"]{20,}"/.test(html)) bad(path, 'no description');
