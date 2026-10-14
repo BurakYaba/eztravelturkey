@@ -15,7 +15,7 @@ type Props = PageProps<'/[lang]/blog'>;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  const page = hasLocale(lang) ? getPage(lang, 'blog') : undefined;
+  const page = hasLocale(lang) ? await getPage(lang, 'blog') : undefined;
   if (!hasLocale(lang) || !page) {
     return {};
   }
@@ -25,19 +25,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/blog',
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternateLangs: languagesWithPage('blog'),
+    alternateLangs: await languagesWithPage('blog'),
   });
 }
 
 export default async function BlogHub({ params }: Props) {
   const { lang } = await params;
-  const page = hasLocale(lang) ? getPage(lang, 'blog') : undefined;
+  const page = hasLocale(lang) ? await getPage(lang, 'blog') : undefined;
   if (!hasLocale(lang) || !page) {
     notFound();
   }
   const dict = getDictionary(lang);
-  const posts = blogPosts(lang);
-  const categories = blogCategories(lang);
+  const [posts, categories] = await Promise.all([blogPosts(lang), blogCategories(lang)]);
   const crumbs = [
     { name: dict.nav.home, path: '/' },
     { name: page.title, path: '/blog' },

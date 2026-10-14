@@ -6,11 +6,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     qualities: [60, 75, 85],
-    // Tour and blog pictures are served from the live site until they are uploaded (P1.10, then Sanity in P6).
-    remotePatterns: [{ protocol: 'https', hostname: 'www.magnificenttravel.com', pathname: '/public/**' }],
+    // Tour, destination and blog pictures live in Sanity.
+    remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/images/**' }],
   },
-  // The pages read the scraped JSON with `fs`; make sure it ships with every server function.
-  outputFileTracingIncludes: { '/**': ['./content/scraped/**/*'] },
   async redirects() {
     return [
       // D18: the live /en/videos/ page (five YouTube cards) is not rebuilt; its address goes to the blog.

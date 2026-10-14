@@ -6,7 +6,7 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
-import { comboCards } from '@/lib/data/cards';
+import { comboCards } from '@/lib/data';
 import { homeFaqs } from '@/data/faqs';
 import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
@@ -34,7 +34,7 @@ const coordinates = [
 
 export default async function MultiCountryPage() {
   const lang = await getLocale();
-  const combos = comboCards(lang);
+  const combos = await comboCards(lang);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Multi-Country Tours', path: '/multi-country-tours' },

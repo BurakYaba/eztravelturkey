@@ -11,5 +11,5 @@ export async function GET(_request: Request, context: RouteContext<'/[lang]/sear
   if (!hasLocale(lang)) {
     return new Response('Not found', { status: 404 });
   }
-  return Response.json(searchEntries(lang));
+  return Response.json(await searchEntries(lang));
 }

@@ -9,7 +9,6 @@ import { TrustBar } from '../shared/TrustBar';
 import { ToursBrowser } from './ToursBrowser';
 import type { ImageId } from '@/data/images';
 import { toursForStyle } from '@/lib/data';
-import { toCardData } from '@/lib/data/cards';
 import { getLocale } from '@/i18n/server';
 import type { Faq } from '@/data/types';
 import { breadcrumbJsonLd, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
@@ -27,7 +26,7 @@ type Props = {
 
 export async function StylePage({ style, path, title, lead, description, image, points, faqs }: Props) {
   const lang = await getLocale();
-  const list = toursForStyle(lang, style);
+  const list = await toursForStyle(lang, style);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Tour Styles', path: '/tours' },
@@ -54,7 +53,7 @@ export async function StylePage({ style, path, title, lead, description, image, 
         <div className="container-x">
           <SectionHeading title={`Available ${title.toLowerCase()}`} />
           <Suspense fallback={<div className="h-96" aria-hidden />}>
-            <ToursBrowser tours={list.map(toCardData)} lockedStyle={style} />
+            <ToursBrowser tours={list} lockedStyle={style} />
           </Suspense>
         </div>
       </section>

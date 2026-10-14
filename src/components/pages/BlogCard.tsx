@@ -1,9 +1,9 @@
 import { Link } from '@/i18n/link';
-import type { PageRecord } from '@/lib/data/types';
+import type { PageSummary } from '@/lib/data/types';
 import { cn } from '@/lib/utils';
 import { Picture } from '../shared/Picture';
 
-export function BlogCard({ post, className }: { post: PageRecord; className?: string }) {
+export function BlogCard({ post, className }: { post: PageSummary; className?: string }) {
   const category = post.path.split('/')[1] ?? '';
   return (
     <article

@@ -6,7 +6,7 @@ import { PageSections } from '@/components/pages/PageSections';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteBand } from '@/components/shared/QuoteBand';
-import { defaultLocale, hasLocale, locales } from '@/i18n/config';
+import { defaultLocale, hasLocale, locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { blogCategories, blogPosts, getPage, languagesWithPage, type PageRecord } from '@/lib/data';
 import {
@@ -19,23 +19,24 @@ import {
 
 type Props = PageProps<'/[lang]/blog/[...path]'>;
 
-export function generateStaticParams() {
-  return locales.flatMap((lang) =>
-    [...blogCategories(lang), ...blogPosts(lang)].map((p) => ({ lang, path: p.path.split('/').slice(1) })),
+export async function generateStaticParams() {
+  const lists = await Promise.all(
+    locales.map(async (lang) => ({ lang, pages: [...(await blogCategories(lang)), ...(await blogPosts(lang))] })),
   );
+  return lists.flatMap(({ lang, pages }) => pages.map((p) => ({ lang, path: p.path.split('/').slice(1) })));
 }
 
-const lookup = (lang: Parameters<typeof getPage>[0], path: string[]): PageRecord | undefined => {
+async function lookup(lang: Locale, path: string[]): Promise<PageRecord | undefined> {
   if (path.length > 2) {
     return undefined;
   }
-  const page = getPage(lang, ['blog', ...path].join('/'));
+  const page = await getPage(lang, ['blog', ...path].join('/'));
   return page && (page.kind === 'blog-category' || page.kind === 'blog-post') ? page : undefined;
-};
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, path } = await params;
-  const page = hasLocale(lang) ? lookup(lang, path) : undefined;
+  const page = hasLocale(lang) ? await lookup(lang, path) : undefined;
   if (!hasLocale(lang) || !page) {
     return {};
   }
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternateLangs: languagesWithPage(page.path),
+    alternateLangs: await languagesWithPage(page.path),
     picture: page.image,
     type: page.kind === 'blog-post' ? 'article' : 'website',
   });
@@ -53,19 +54,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogRoute({ params }: Props) {
   const { lang, path } = await params;
-  const page = hasLocale(lang) ? lookup(lang, path) : undefined;
+  const page = hasLocale(lang) ? await lookup(lang, path) : undefined;
   if (!hasLocale(lang) || !page) {
     notFound();
   }
   const dict = getDictionary(lang);
-  const hub = getPage(lang, 'blog');
+  const hub = await getPage(lang, 'blog');
   const crumbs = [
     { name: dict.nav.home, path: '/' },
     { name: hub?.title ?? dict.nav.travelGuides, path: '/blog' },
   ];
 
   if (page.kind === 'blog-category') {
-    const posts = blogPosts(lang).filter((p) => p.path.startsWith(`${page.path}/`));
+    const posts = (await blogPosts(lang)).filter((p) => p.path.startsWith(`${page.path}/`));
     const allCrumbs = [...crumbs, { name: page.title, path: page.href }];
     return (
       <>
@@ -104,10 +105,10 @@ export default async function BlogRoute({ params }: Props) {
     );
   }
 
-  const category = getPage(lang, page.path.split('/').slice(0, 2).join('/'));
+  const categoryTitle = await getPage(lang, page.path.split('/').slice(0, 2).join('/'));
   const allCrumbs = [
     ...crumbs,
-    ...(category ? [{ name: category.title, path: category.href }] : []),
+    ...(categoryTitle ? [{ name: categoryTitle.title, path: categoryTitle.href }] : []),
     { name: page.title, path: page.href },
   ];
   return (

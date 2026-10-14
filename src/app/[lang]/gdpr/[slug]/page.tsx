@@ -4,22 +4,19 @@ import { ContentPage } from '@/components/pages/ContentPage';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { defaultLocale, hasLocale, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { getPage, languagesWithPage, pagesOfKind } from '@/lib/data';
+import { getPage, languagesWithPage, pageSummaries } from '@/lib/data';
 import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/gdpr/[slug]'>;
 
-export function generateStaticParams() {
-  return locales.flatMap((lang) =>
-    pagesOfKind(lang, 'static')
-      .filter((p) => p.path.startsWith('gdpr/'))
-      .map((p) => ({ lang, slug: p.path.split('/')[1] ?? '' })),
-  );
+export async function generateStaticParams() {
+  const lists = await Promise.all(locales.map(async (lang) => ({ lang, pages: await pageSummaries(lang, 'static', 'gdpr') })));
+  return lists.flatMap(({ lang, pages }) => pages.map((p) => ({ lang, slug: p.path.split('/')[1] ?? '' })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
-  const page = hasLocale(lang) ? getPage(lang, `gdpr/${slug}`) : undefined;
+  const page = hasLocale(lang) ? await getPage(lang, `gdpr/${slug}`) : undefined;
   if (!hasLocale(lang) || !page) {
     return {};
   }
@@ -29,14 +26,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternateLangs: languagesWithPage(page.path),
+    alternateLangs: await languagesWithPage(page.path),
   });
 }
 
 /** Legal texts (privacy policy, terms and conditions, distance sales agreement) at the old /gdpr/ addresses. */
 export default async function GdprPage({ params }: Props) {
   const { lang, slug } = await params;
-  const page = hasLocale(lang) ? getPage(lang, `gdpr/${slug}`) : undefined;
+  const page = hasLocale(lang) ? await getPage(lang, `gdpr/${slug}`) : undefined;
   if (!hasLocale(lang) || !page) {
     notFound();
   }

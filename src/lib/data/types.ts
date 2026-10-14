@@ -4,6 +4,22 @@ import type { Locale } from '@/i18n/config';
 /** A picture with its real size, ready for `next/image`. */
 export type ImageRef = { src: string; width: number; height: number; alt: string };
 
+/** What a tour card needs. Small on purpose: client components such as the tour browser receive a list of these. */
+export type TourCardData = {
+  href: string;
+  title: string;
+  summary: string;
+  route: string[];
+  duration: string;
+  days: number | null;
+  nights: number | null;
+  styles: TourStyle[];
+  countries: CountryId[];
+  bucket: '3-5' | '6-9' | '10+' | null;
+  priceEUR: number | null;
+  image: ImageRef | null;
+};
+
 type Common = {
   /** Language the visitor asked for. */
   lang: Locale;
@@ -85,17 +101,21 @@ export type CardRecord = {
   price: string;
 };
 
-export type PageRecord = Common & {
+/** The short record of a page: enough for a card or a list. */
+export type PageSummary = Common & {
   kind: PageKind;
   path: string;
   href: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
+  /** Main picture (blog posts and listings use it as the card image). */
+  image: ImageRef | null;
+};
+
+export type PageRecord = PageSummary & {
   lastUpdated: string | null;
   sections: PageSection[];
   cards: CardRecord[];
   faqs: Faq[];
-  /** First picture on the page (blog posts and listings use it as the card image). */
-  image: ImageRef | null;
 };

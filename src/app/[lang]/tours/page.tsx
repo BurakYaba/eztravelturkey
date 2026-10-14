@@ -5,7 +5,6 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { ToursBrowser } from '@/components/tours/ToursBrowser';
 import { allTours } from '@/lib/data';
-import { toCardData } from '@/lib/data/cards';
 import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
@@ -21,7 +20,7 @@ export const generateMetadata = localizedMetadata({
 
 export default async function ToursPage() {
   const lang = await getLocale();
-  const tours = allTours(lang);
+  const tours = await allTours(lang);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Tours', path: '/tours' },
@@ -41,7 +40,7 @@ export default async function ToursPage() {
           exceptional care.
         </p>
         <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <ToursBrowser tours={tours.map(toCardData)} />
+          <ToursBrowser tours={tours} />
         </Suspense>
       </section>
       <TrustBar />

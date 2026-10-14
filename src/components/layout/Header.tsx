@@ -298,7 +298,7 @@ export function Header({ nav, countries, homeLabel }: Props) {
               {item.label}
             </Link>
           ))}
-          <LanguageSwitcher label={nav.language} className="mt-6 flex-wrap" />
+          <LanguageSwitcher label={nav.language} variant="list" className="mt-6" />
           <ButtonLink href="/plan-my-trip" size="lg" arrow className="mt-6 w-full">
             {nav.planMyTrip}
           </ButtonLink>

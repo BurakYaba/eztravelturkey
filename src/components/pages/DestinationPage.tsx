@@ -1,6 +1,5 @@
 import { Link } from '@/i18n/link';
-import type { PageRecord, TourRecord } from '@/lib/data/types';
-import { toCardData } from '@/lib/data/cards';
+import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
 import type { Crumb } from '../shared/Breadcrumbs';
 import { MultiCountryCta } from '../shared/MultiCountryCta';
@@ -13,9 +12,9 @@ import { PageSections } from './PageSections';
 
 type Props = {
   page: PageRecord;
-  tours: TourRecord[];
+  tours: TourCardData[];
   /** Duration or package pages of a country, shown as links above the tours. */
-  categories?: PageRecord[];
+  categories?: PageSummary[];
   crumbs: Crumb[];
   /** Cross-sell to the multi-country tours (single-country pages only). */
   crossSell?: boolean;
@@ -59,7 +58,7 @@ export function DestinationPage({ page, tours, categories = [], crumbs, crossSel
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {tours.map((tour, i) => (
                 <li key={tour.href}>
-                  <TourCard tour={toCardData(tour)} className="h-full" priority={i < 3} />
+                  <TourCard tour={tour} className="h-full" priority={i < 3} />
                 </li>
               ))}
             </ul>

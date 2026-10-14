@@ -21,8 +21,7 @@ import { TextLink } from '../shared/Button';
 import { destinations } from '@/data/destinations';
 import { site } from '@/data/site';
 import { getLocale } from '@/i18n/server';
-import { blogPosts, featuredTours } from '@/lib/data';
-import { comboCards, toCardData } from '@/lib/data/cards';
+import { blogPosts, comboCards, featuredTours } from '@/lib/data';
 
 const reasons: { icon: Icon; title: string; text: string }[] = [
   {
@@ -177,7 +176,7 @@ export function WaysToTravel() {
 }
 
 export async function FeaturedTours() {
-  const picks = featuredTours(await getLocale());
+  const picks = await featuredTours(await getLocale());
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
@@ -189,7 +188,7 @@ export async function FeaturedTours() {
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {picks.map((tour) => (
             <li key={tour.href} className="reveal">
-              <TourCard tour={toCardData(tour)} className="h-full" />
+              <TourCard tour={tour} className="h-full" />
             </li>
           ))}
         </ul>
@@ -199,7 +198,7 @@ export async function FeaturedTours() {
 }
 
 export async function MultiCountryRail() {
-  const combos = comboCards(await getLocale());
+  const combos = await comboCards(await getLocale());
   return (
     <section className="section-y">
       <div className="container-x">
@@ -221,7 +220,7 @@ export async function MultiCountryRail() {
 }
 
 export async function HubPreview() {
-  const [lead, ...rest] = blogPosts(await getLocale()).filter((p) => p.image);
+  const [lead, ...rest] = (await blogPosts(await getLocale())).filter((p) => p.image);
   if (!lead) {
     return null;
   }

@@ -8,7 +8,7 @@ import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { destinations } from '@/data/destinations';
-import { comboCards } from '@/lib/data/cards';
+import { comboCards } from '@/lib/data';
 import { homeFaqs } from '@/data/faqs';
 import { site } from '@/data/site';
 import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
@@ -82,7 +82,7 @@ export default async function DestinationsPage() {
             link={{ href: '/multi-country-tours', label: 'About multi-country tours' }}
           />
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {comboCards(lang).map((c) => (
+            {(await comboCards(lang)).map((c) => (
               <li key={c.href} className="reveal">
                 <ComboCard combo={c} className="h-full" />
               </li>

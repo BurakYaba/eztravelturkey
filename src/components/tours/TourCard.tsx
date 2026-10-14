@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/link';
 import { ArrowRight, Clock, UsersThree } from '@phosphor-icons/react/dist/ssr';
-import type { TourCardData } from '@/lib/data/cards';
+import type { TourCardData } from '@/lib/data/types';
 import { cn, eur } from '@/lib/utils';
 import { Picture } from '../shared/Picture';
 

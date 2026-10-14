@@ -9,8 +9,9 @@ import { absoluteUrl } from '@/lib/seo';
  * sitemap yet, so pages that only stand in with English text never get listed (docs/project-plan.md P2.18).
  * No `lastModified`: the old dates were a bulk date, and a build date would lie.
  */
-export function generateSitemaps() {
-  return locales.filter(hasNativeContent).map((id) => ({ id }));
+export async function generateSitemaps() {
+  const withContent = await Promise.all(locales.map(async (id) => ((await hasNativeContent(id)) ? id : null)));
+  return withContent.filter((id) => id !== null).map((id) => ({ id }));
 }
 
 export default async function sitemap(props: { id: Promise<string> }): Promise<MetadataRoute.Sitemap> {
@@ -19,7 +20,7 @@ export default async function sitemap(props: { id: Promise<string> }): Promise<M
   if (!lang) {
     return [];
   }
-  return sitemapPaths(lang).map((path) => ({
+  return (await sitemapPaths(lang)).map((path) => ({
     url: absoluteUrl(localePath(lang, path)),
     priority: path === '/' ? 1 : path.split('/').length <= 2 ? 0.8 : 0.7,
     changeFrequency: 'weekly' as const,

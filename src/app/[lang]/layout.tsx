@@ -98,7 +98,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
             className="focus:bg-navy-900 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:px-4 focus:py-2 focus:text-white">
             {dictionary.common.skipToContent}
           </a>
-          {!hasNativeContent(lang) && (
+          {!(await hasNativeContent(lang)) && (
             <p role="note" className="bg-gold-100 text-navy-900 px-4 py-2 text-center text-sm font-medium">
               {dictionary.preview.notice}
             </p>

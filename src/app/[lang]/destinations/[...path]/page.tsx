@@ -17,13 +17,14 @@ import {
 
 type Props = PageProps<'/[lang]/destinations/[...path]'>;
 
-export function generateStaticParams() {
-  return locales.flatMap((lang) => destinationParams(lang).map((path) => ({ lang, path })));
+export async function generateStaticParams() {
+  const lists = await Promise.all(locales.map(async (lang) => ({ lang, paths: await destinationParams(lang) })));
+  return lists.flatMap(({ lang, paths }) => paths.map((path) => ({ lang, path })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, path } = await params;
-  const match = hasLocale(lang) ? resolveDestination(lang, path) : null;
+  const match = hasLocale(lang) ? await resolveDestination(lang, path) : null;
   if (!hasLocale(lang) || !match) {
     return {};
   }
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${record.path}`,
     lang,
     canonicalLang: record.fallback ? defaultLocale : lang,
-    alternateLangs: languagesWithPage(record.path),
+    alternateLangs: await languagesWithPage(record.path),
     picture: match.type === 'tour' ? match.tour.image : match.page.image,
     type: 'website',
   });
@@ -45,14 +46,14 @@ export default async function DestinationRoute({ params }: Props) {
   if (!hasLocale(lang)) {
     notFound();
   }
-  const match = resolveDestination(lang, path);
+  const match = await resolveDestination(lang, path);
   if (!match) {
     notFound();
   }
 
   if (match.type === 'tour') {
     const { tour } = match;
-    const crumbs = destinationCrumbs(lang, path, tour.title);
+    const crumbs = await destinationCrumbs(lang, path, tour.title);
     return (
       <>
         <TourDetail tour={tour} crumbs={crumbs} />
@@ -76,7 +77,7 @@ export default async function DestinationRoute({ params }: Props) {
   }
 
   const { page, tours } = match;
-  const crumbs = destinationCrumbs(lang, path, page.title);
+  const crumbs = await destinationCrumbs(lang, path, page.title);
   return (
     <>
       <DestinationPage

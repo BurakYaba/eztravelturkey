@@ -6,7 +6,7 @@ import { ArrowCounterClockwise, CalendarBlank, CaretDown, Compass, MapPin } from
 import { destinations } from '@/data/destinations';
 import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
-import type { TourCardData } from '@/lib/data/cards';
+import type { TourCardData } from '@/lib/data/types';
 import { TourCard } from './TourCard';
 
 export type BrowsableTour = TourCardData;

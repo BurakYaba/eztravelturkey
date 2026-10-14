@@ -26,4 +26,5 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npx tsc --noEmit
+      # The content is read from Sanity while building. The datasets are public, so no token is needed.
       - run: npm run build
