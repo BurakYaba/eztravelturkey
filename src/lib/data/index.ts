@@ -74,36 +74,61 @@ function toTour(tour: ScrapedTour, lang: Locale, fallback: boolean): TourRecord 
     extraFacts: Object.entries(tour.extraFacts).map(([label, value]) => ({ label, value })),
     route: tour.route,
     routeMap: { image: image(tour.routeMap.image), intro: tour.routeMap.intro },
-    highlights: tour.highlights,
+    highlights: withoutIsrael(tour.highlights),
     itinerary: tour.itinerary,
-    included: tour.included,
-    excluded: tour.excluded,
-    importantNotes: tour.importantNotes,
-    cancellationPolicy: tour.cancellationPolicy,
+    included: withoutIsrael(tour.included),
+    excluded: withoutIsrael(tour.excluded),
+    importantNotes: withoutIsrael(tour.importantNotes),
+    cancellationPolicy: withoutIsrael(tour.cancellationPolicy),
     gallery,
-    related: tour.related.map((r) => ({ title: r.title, href: internalHref(r.url) })),
-    faqs: tour.faqs,
+    related: tour.related
+      .filter((r) => !mentionsIsrael(r.title) && !mentionsIsrael(r.url))
+      .map((r) => ({ title: r.title, href: internalHref(r.url) })),
+    faqs: faqsWithoutIsrael(tour.faqs),
     image: gallery[0] ?? null,
   };
 }
 
-/** The old site's pages mention Israel in a few headings. Israel is not on the new site (D4). */
+/**
+ * Israel is not on the new site (docs/project-plan.md D4): no tours, no pages, and no sentence that offers or lists it.
+ * The old pages mention it in headings, paragraphs, list items, FAQs, picture names and links to Israeli combinations.
+ * Every such unit is dropped here, so no page can show it. Jerusalem or Jericho inside a Jordan itinerary is geography,
+ * not an Israel tour; those are kept and listed for the owner in the plan (P3 content review).
+ */
 const mentionsIsrael = (text: string) => /israel/i.test(text);
+const withoutIsrael = (items: string[]) => items.filter((item) => !mentionsIsrael(item));
+const faqsWithoutIsrael = <T extends { q: string; a: string }>(faqs: T[]) =>
+  faqs.filter((f) => !mentionsIsrael(f.q) && !mentionsIsrael(f.a));
 
 function toSections(sections: ScrapedPage['sections']): PageSection[] {
-  return sections
-    .filter((s) => !mentionsIsrael(s.heading))
-    .map((s) => ({
-      level: s.level,
-      heading: s.heading,
-      blocks: s.blocks.flatMap((b): PageBlock[] => {
-        if (b.type === 'image') {
+  return sections.flatMap((section): PageSection[] => {
+    if (mentionsIsrael(section.heading)) {
+      return [];
+    }
+    const blocks = section.blocks.flatMap((b): PageBlock[] => {
+      switch (b.type) {
+        case 'p':
+          return mentionsIsrael(b.text) ? [] : [b];
+        case 'list': {
+          const items = withoutIsrael(b.items);
+          return items.length > 0 ? [{ ...b, items }] : [];
+        }
+        case 'table': {
+          const rows = b.rows.filter((row) => !row.some(mentionsIsrael));
+          return rows.length > 0 ? [{ ...b, rows }] : [];
+        }
+        default: {
+          if (mentionsIsrael(b.src) || mentionsIsrael(b.alt)) {
+            return [];
+          }
           const resolved = resolveImage({ src: b.src, alt: b.alt });
           return resolved ? [{ type: 'image', image: resolved }] : [];
         }
-        return [b];
-      }),
-    }));
+      }
+    });
+    // A section whose text was all about Israel goes with it; a heading that never had text stays.
+    return section.blocks.length > 0 && blocks.length === 0 ? [] : [{ level: section.level, heading: section.heading, blocks }];
+  });
 }
 
 function toCard(card: ScrapedPage['cards'][number]): CardRecord {
@@ -126,7 +151,7 @@ function toPage(page: ScrapedPage, lang: Locale, fallback: boolean): PageRecord 
     lastUpdated: page.lastUpdated,
     sections,
     cards,
-    faqs: page.faqs,
+    faqs: faqsWithoutIsrael(page.faqs),
     image: firstImage?.type === 'image' ? firstImage.image : (cards.find((c) => c.image)?.image ?? null),
   };
 }

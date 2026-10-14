@@ -26,6 +26,7 @@ for (const path of urls) {
   checked++;
   if (res.status !== 200) { bad(path, `status ${res.status}`); continue; }
   const html = await res.text();
+  if (/israel/i.test(html)) bad(path, 'mentions Israel');
   const h1 = (html.match(/<h1[\s>]/g) ?? []).length;
   if (h1 !== 1) bad(path, `${h1} H1`);
   const canonical = /<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];
