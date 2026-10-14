@@ -21,11 +21,11 @@ const sections = [
   },
   {
     title: 'What we collect',
-    body: 'When you send a trip request, contact message or newsletter signup, we collect the details you enter: your name, email address, phone or WhatsApp number, travel preferences and message. If you message us on WhatsApp or by phone, we also see the details you share with us there.',
+    body: 'When you send a trip request or contact message, we collect the details you enter: your name, email address, phone or WhatsApp number, travel preferences and message. If you message us on WhatsApp or by phone, we also see the details you share with us there.',
   },
   {
     title: 'How we use it',
-    body: 'We use your details to reply to you, prepare itineraries and quotes, arrange bookings you confirm, and, if you subscribe, send our newsletter. We do not sell your personal information.',
+    body: 'We use your details to reply to you, prepare itineraries and quotes, and arrange bookings you confirm. We do not sell your personal information.',
   },
   {
     title: 'Who we share it with',
@@ -37,7 +37,7 @@ const sections = [
   },
   {
     title: 'Your rights',
-    body: 'You may ask to access, correct, delete or restrict the use of your personal data, to object to its use, and to unsubscribe from the newsletter at any time. Contact us using the details on the contact page.',
+    body: 'You may ask to access, correct, delete or restrict the use of your personal data, and to object to its use at any time. Contact us using the details on the contact page.',
   },
   {
     title: 'Cookies and analytics',

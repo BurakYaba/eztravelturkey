@@ -1,7 +1,6 @@
 import { Link } from '@/i18n/link';
 import { HubBrowser } from '@/components/shared/HubBrowser';
 import { JsonLd } from '@/components/shared/JsonLd';
-import { Newsletter } from '@/components/shared/Newsletter';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { Photo } from '@/components/shared/Photo';
 import { TrustBar } from '@/components/shared/TrustBar';
@@ -100,7 +99,6 @@ export default async function TravelHubPage() {
         </div>
       </section>
 
-      <Newsletter />
       <JsonLd
         data={[
           collectionPageJsonLd(lang, 'Travel Hub', '/travel-hub', description),

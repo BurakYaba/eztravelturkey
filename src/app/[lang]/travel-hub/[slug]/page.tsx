@@ -6,7 +6,6 @@ import rehypeSlug from 'rehype-slug';
 import { ArticleCard } from '@/components/shared/ArticleCard';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { JsonLd } from '@/components/shared/JsonLd';
-import { Newsletter } from '@/components/shared/Newsletter';
 import { Photo } from '@/components/shared/Photo';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
@@ -126,7 +125,6 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
         </div>
       </section>
 
-      <Newsletter />
       <QuoteBand />
       <JsonLd
         data={[
