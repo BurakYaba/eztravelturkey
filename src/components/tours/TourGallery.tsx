@@ -100,7 +100,7 @@ export function TourGallery({ images, title, text, photoLabel }: Props) {
         {images.map((photo, i) => {
           const feature = i === 0 && total >= 5;
           return (
-            <li key={photo.src} className={cn(feature && 'col-span-2 md:row-span-2')}>
+            <li key={`${photo.src}-${i}`} className={cn(feature && 'col-span-2 md:row-span-2')}>
               <button
                 type="button"
                 onClick={() => openAt(i)}
@@ -189,7 +189,7 @@ export function TourGallery({ images, title, text, photoLabel }: Props) {
               aria-label={text.photos}
               className="flex justify-start gap-2 overflow-x-auto px-4 py-4 md:justify-center md:px-6">
               {images.map((photo, i) => (
-                <li key={photo.src} className="shrink-0">
+                <li key={`${photo.src}-${i}`} className="shrink-0">
                   <button
                     type="button"
                     onClick={() => show(i)}

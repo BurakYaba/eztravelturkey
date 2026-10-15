@@ -207,9 +207,14 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
     importantNotes: raw.importantNotes ?? [],
     cancellationPolicy: raw.cancellationPolicy ?? [],
     gallery,
-    related: (raw.related ?? [])
-      .filter((r): r is { title: string; path: string } => r !== null)
-      .map((r) => ({ title: r.title, href: hrefOf(r.path) })),
+    // The old pages sometimes list the same related tour twice; a visitor should see it once.
+    related: [
+      ...new Map(
+        (raw.related ?? [])
+          .filter((r): r is { title: string; path: string } => r !== null)
+          .map((r) => [hrefOf(r.path), { title: r.title, href: hrefOf(r.path) }] as const),
+      ).values(),
+    ],
     faqs: raw.faqs ?? [],
     image: gallery[0] ?? null,
   };
