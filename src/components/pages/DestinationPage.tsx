@@ -1,4 +1,6 @@
 import { Link } from '@/i18n/link';
+import { getDictionary } from '@/i18n/dictionaries';
+import { getLocale } from '@/i18n/server';
 import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
 import type { Crumb } from '../shared/Breadcrumbs';
@@ -24,7 +26,9 @@ type Props = {
  * Interim page for a country, a combination or a category: the old page's text, the tours under it and its FAQs.
  * The final design comes in docs/project-plan.md P3.
  */
-export function DestinationPage({ page, tours, categories = [], crumbs, crossSell = false }: Props) {
+export async function DestinationPage({ page, tours, categories = [], crumbs, crossSell = false }: Props) {
+  const lang = await getLocale();
+  const { card } = getDictionary(lang);
   return (
     <>
       <PageBanner title={page.title} description={page.metaDescription} picture={page.image} crumbs={crumbs} />
@@ -58,7 +62,7 @@ export function DestinationPage({ page, tours, categories = [], crumbs, crossSel
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {tours.map((tour, i) => (
                 <li key={tour.href}>
-                  <TourCard tour={tour} className="h-full" priority={i < 3} />
+                  <TourCard tour={tour} lang={lang} text={card} className="h-full" priority={i < 3} />
                 </li>
               ))}
             </ul>

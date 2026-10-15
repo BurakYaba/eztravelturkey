@@ -119,7 +119,7 @@ function tourDoc(t) {
     metaDescription: t.metaDescription,
     summary: t.summary,
     ...durationOf(t),
-    price: { amount: t.price.amount, currency: t.price.currency, unit: t.price.unit, note: t.price.note },
+    price: { eur: t.price.currency === 'EUR' ? t.price.amount : null, unit: t.price.unit, note: t.price.note },
     facts: t.facts,
     extraFacts: keyed(Object.entries(t.extraFacts), ([label, value]) => ({ _type: 'fact', label, value })),
     route: t.route,
@@ -316,6 +316,21 @@ const report = {
 if (dry) {
   console.log('Dry run, nothing sent:', report);
   process.exit(0);
+}
+
+// Fields the client types into Studio (USD price, hotels, departure options) are not in the scraped files, so a
+// replace would erase them. Carry them over from the document that is already there.
+const keepFields = await client.fetch(
+  '*[_type == "tour" && language == $lang]{ _id, "usd": price.usd, hotels, departures }',
+  { lang },
+);
+const kept = new Map(keepFields.map((k) => [k._id, k]));
+for (const d of docs) {
+  const old = kept.get(d._id);
+  if (d._type !== 'tour' || !old) continue;
+  if (old.usd != null) d.price = { ...d.price, usd: old.usd };
+  if (old.hotels) d.hotels = old.hotels;
+  if (old.departures) d.departures = old.departures;
 }
 
 for (let i = 0; i < docs.length; i += 25) {

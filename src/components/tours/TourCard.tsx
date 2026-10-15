@@ -1,18 +1,27 @@
 import { Link } from '@/i18n/link';
 import { ArrowRight, Clock, UsersThree } from '@phosphor-icons/react/dist/ssr';
 import type { TourCardData } from '@/lib/data/types';
-import { cn, eur } from '@/lib/utils';
+import type { Locale } from '@/i18n/config';
+import type { Dictionary } from '@/i18n/dictionaries';
+import { cn } from '@/lib/utils';
 import { Picture } from '../shared/Picture';
+import { TourPrice } from './TourPrice';
 
-const styleLabel = (styles: string[]) =>
-  styles.length > 1 ? 'Private or small group' : styles[0] === 'private' ? 'Private' : 'Small group';
+export type TourCardText = Dictionary['card'];
+
+const styleLabel = (styles: string[], text: TourCardText) =>
+  styles.length > 1 ? text.either : styles[0] === 'private' ? text.private : text.smallGroup;
 
 export function TourCard({
   tour,
+  lang,
+  text,
   className,
   priority,
 }: {
   tour: TourCardData;
+  lang: Locale;
+  text: TourCardText;
   className?: string;
   priority?: boolean;
 }) {
@@ -42,31 +51,21 @@ export function TourCard({
 
         <dl className="text-ink mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
           <div className="flex items-center gap-1.5">
-            <dt className="sr-only">Duration</dt>
+            <dt className="sr-only">{text.duration}</dt>
             <Clock size={17} className="text-gold-600" aria-hidden />
             <dd>{tour.duration}</dd>
           </div>
           <div className="flex items-center gap-1.5">
-            <dt className="sr-only">Style</dt>
+            <dt className="sr-only">{text.style}</dt>
             <UsersThree size={17} className="text-gold-600" aria-hidden />
-            <dd>{styleLabel(tour.styles)}</dd>
+            <dd>{styleLabel(tour.styles, text)}</dd>
           </div>
         </dl>
 
         <div className="border-cream-200 mt-auto flex items-end justify-between gap-3 border-t pt-4">
-          <p className="leading-tight">
-            {tour.priceEUR === null ? (
-              <span className="text-navy-900 font-semibold">Price on request</span>
-            ) : (
-              <>
-                <span className="text-muted block text-xs">From</span>
-                <span className="font-display text-navy-900 text-2xl font-semibold">{eur(tour.priceEUR)}</span>
-                <span className="text-muted text-sm"> per person</span>
-              </>
-            )}
-          </p>
+          <TourPrice lang={lang} eur={tour.priceEUR} usd={tour.priceUSD} text={text} />
           <span className="text-navy-900 inline-flex items-center gap-1.5 font-semibold">
-            View itinerary
+            {text.view}
             <ArrowRight size={16} weight="bold" className="transition group-hover:translate-x-1" aria-hidden />
           </span>
         </div>

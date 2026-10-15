@@ -13,6 +13,7 @@ import {
   faqJsonLd,
   itemListJsonLd,
   touristTripJsonLd,
+  webPageJsonLd,
 } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/destinations/[...path]'>;
@@ -66,8 +67,10 @@ export default async function DestinationRoute({ params }: Props) {
               path: `/${tour.path}`,
               imageUrl: tour.image?.src ?? '/images/logo.png',
               priceEUR: tour.priceEUR,
+              priceUSD: tour.priceUSD,
               stops: tour.route,
             }),
+            webPageJsonLd(lang, tour.title, `/${tour.path}`, 'WebPage', tour.metaDescription),
             breadcrumbJsonLd(lang, crumbs),
             ...(tour.faqs.length > 0 ? [faqJsonLd(tour.faqs)] : []),
           ]}

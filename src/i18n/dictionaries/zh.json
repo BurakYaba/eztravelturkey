@@ -106,5 +106,143 @@
   "gone": {
     "title": "此頁面已不存在",
     "text": "您要找的頁面已被移除，不會再恢復。歡迎瀏覽目前的行程，或告訴我們您想去哪裡。"
+  },
+  "tour": {
+    "sectionsLabel": "行程各區段",
+    "tabs": {
+      "overview": "行程總覽",
+      "itinerary": "每日行程",
+      "inclusions": "費用包含",
+      "requirements": "實用資訊",
+      "faqs": "常見問題",
+      "reviews": "旅客評價"
+    },
+    "glance": {
+      "title": "行程一覽",
+      "duration": "天數",
+      "route": "路線",
+      "style": "旅遊方式",
+      "guide": "導遊語言",
+      "season": "出團季節",
+      "difficulty": "難易度",
+      "flights": "航班"
+    },
+    "style": {
+      "private": "專屬包團",
+      "smallGroup": "小團行程"
+    },
+    "price": {
+      "title": "價格與出發資訊",
+      "from": "起價",
+      "perPerson": "每人",
+      "onRequest": "價格請洽詢",
+      "note": "起價為每人費用，實際價格依出發日期、飯店與人數而定。",
+      "departures": "出發方式",
+      "season": "季節"
+    },
+    "overview": "行程總覽",
+    "highlights": "行程亮點與路線",
+    "routeMap": "路線圖",
+    "itinerary": "每日行程",
+    "meals": "餐食：{meals}",
+    "included": "費用包含",
+    "excluded": "費用不包含",
+    "hotels": {
+      "title": "住宿與餐食",
+      "city": "城市",
+      "nights": "晚數",
+      "hotel": "飯店",
+      "category": "等級"
+    },
+    "notes": "重要說明",
+    "cancellation": "取消政策",
+    "gallery": "相簿",
+    "photo": "{title}，照片 {n}",
+    "faqs": "常見問題",
+    "related": "您可能也喜歡",
+    "reviews": {
+      "title": "旅客評價",
+      "text": "歡迎到 Tripadvisor 閱讀旅客對 Magnificent Travel 的評價。",
+      "link": "前往 Tripadvisor"
+    },
+    "practical": {
+      "title": "實用資訊",
+      "flights": "國內航班",
+      "difficulty": "步行強度",
+      "cancellation": "取消",
+      "ask": "詢問我們的旅遊團隊"
+    },
+    "cta": {
+      "title": "準備好規劃這趟旅程了嗎？",
+      "text": "告訴我們出發日期與人數，旅遊顧問會為您提供專屬報價。",
+      "quote": "索取專屬報價",
+      "whatsapp": "用 WhatsApp 聊聊"
+    }
+  },
+  "form": {
+    "sidebarTitle": "規劃您的旅程",
+    "sidebarText": "索取此行程的專屬報價。",
+    "tour": "行程",
+    "destinations": "您想前往哪裡？",
+    "name": "姓名",
+    "email": "電子郵件",
+    "nationality": "國籍",
+    "phoneCode": "國碼",
+    "phone": "手機號碼",
+    "phoneOptional": "電話或 WhatsApp（選填）",
+    "adults": "成人人數",
+    "children": "兒童（0 至 11 歲）",
+    "childrenAges": "兒童年齡",
+    "startDate": "希望出發日期",
+    "endDate": "希望結束日期（選填）",
+    "style": "旅遊方式",
+    "styleOptions": {
+      "private": "專屬包團",
+      "smallGroup": "小團行程",
+      "unsure": "尚未決定"
+    },
+    "budget": "每人預算（選填）",
+    "hotelClass": "飯店等級",
+    "hotelOptions": {
+      "any": "不限",
+      "three": "三星",
+      "four": "四星",
+      "five": "五星"
+    },
+    "currency": "報價幣別",
+    "notes": "還有什麼要告訴我們的嗎？（選填）",
+    "notesHint": "興趣、行程步調、特殊紀念日、行動不便需求。",
+    "contactMessage": "有什麼可以協助您？",
+    "consent": "我同意 Magnificent Travel 依隱私權政策使用我的資料回覆此訊息。",
+    "optional": "（選填）",
+    "send": "送出需求",
+    "sendMessage": "送出訊息",
+    "sending": "傳送中…",
+    "noObligation": "無須承擔任何義務，我們的旅遊專家將為您量身規劃行程。",
+    "errorGeneric": "發生錯誤，請再試一次，或直接用 WhatsApp 聯絡我們。",
+    "errorNetwork": "無法送出您的需求，請檢查網路連線，或直接用 WhatsApp 聯絡我們。",
+    "doneTitle": "謝謝您，您的需求已送出",
+    "doneTitleLocal": "您的需求已準備好",
+    "doneText": "旅遊顧問會寄信到您提供的電子郵件，附上建議行程與專屬報價。",
+    "doneTextLocal": "為確保團隊立即收到，請用 WhatsApp 傳送給我們，您的資料已自動填好。",
+    "whatsappAlso": "也用 WhatsApp 聊聊",
+    "whatsappSend": "用 WhatsApp 傳送",
+    "whatsappHello": "您好，Magnificent Travel，我是 {name}。",
+    "whatsappTour": "我對這個行程有興趣：{tour}。",
+    "whatsappDestinations": "目的地：{destinations}。",
+    "whatsappAdults": "成人：{adults} 位。",
+    "whatsappStart": "希望出發日期：{date}。"
+  },
+  "card": {
+    "from": "起價",
+    "perPerson": "每人",
+    "onRequest": "價格請洽詢",
+    "view": "查看行程",
+    "duration": "天數",
+    "style": "旅遊方式",
+    "private": "專屬包團",
+    "smallGroup": "小團行程",
+    "either": "包團或小團",
+    "whatsappAsk": "您好，Magnificent Travel，我想索取此行程的報價：{tour}。"
   }
 }

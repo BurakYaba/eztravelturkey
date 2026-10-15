@@ -163,18 +163,37 @@ type TripInput = {
   path: string;
   /** Absolute or site-relative address of the main picture. */
   imageUrl: string;
+  /** Starting prices the client entered (D40); each one becomes its own Offer. */
   priceEUR: number | null;
+  priceUSD: number | null;
   stops: string[];
 };
 
-export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, priceEUR, stops }: TripInput) => {
+export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, priceEUR, priceUSD, stops }: TripInput) => {
   const url = absoluteUrl(localePath(lang, path));
+  const offers = (
+    [
+      ['EUR', priceEUR],
+      ['USD', priceUSD],
+    ] as const
+  )
+    .filter((entry): entry is readonly ['EUR' | 'USD', number] => entry[1] !== null)
+    .map(([currency, price]) => ({
+      '@type': 'Offer',
+      url,
+      priceCurrency: currency,
+      price: String(price),
+      description: 'Starting price per person. Final price depends on dates, hotels and group size.',
+      availability: 'https://schema.org/InStock',
+      seller: organizationRef,
+    }));
   return {
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
     name,
     description,
     url,
+    inLanguage: htmlLang[lang],
     image: absoluteUrl(imageUrl),
     touristType: 'Cultural tourism',
     provider: organizationRef,
@@ -187,18 +206,7 @@ export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, pri
         item: { '@type': 'Place', name: stop },
       })),
     },
-    ...(priceEUR === null
-      ? {}
-      : {
-          offers: {
-            '@type': 'Offer',
-            url,
-            priceCurrency: 'EUR',
-            price: String(priceEUR),
-            description: 'Starting price per person. Final price depends on dates, hotels and group size.',
-            seller: organizationRef,
-          },
-        }),
+    ...(offers.length === 0 ? {} : { offers }),
   };
 };
 

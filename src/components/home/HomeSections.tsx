@@ -20,6 +20,7 @@ import { TourCard } from '../tours/TourCard';
 import { TextLink } from '../shared/Button';
 import { destinations } from '@/data/destinations';
 import { site } from '@/data/site';
+import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import { blogPosts, comboCards, featuredTours } from '@/lib/data';
 
@@ -176,7 +177,8 @@ export function WaysToTravel() {
 }
 
 export async function FeaturedTours() {
-  const picks = await featuredTours(await getLocale());
+  const lang = await getLocale();
+  const [picks, { card }] = [await featuredTours(lang), getDictionary(lang)];
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
@@ -188,7 +190,7 @@ export async function FeaturedTours() {
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {picks.map((tour) => (
             <li key={tour.href} className="reveal">
-              <TourCard tour={tour} className="h-full" />
+              <TourCard tour={tour} lang={lang} text={card} className="h-full" />
             </li>
           ))}
         </ul>
