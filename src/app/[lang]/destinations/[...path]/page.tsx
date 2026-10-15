@@ -93,10 +93,13 @@ export default async function DestinationRoute({ params }: Props) {
       <JsonLd
         data={[
           collectionPageJsonLd(lang, page.title, `/${page.path}`, page.metaDescription),
+          // The list in the data matches what the page shows: the length or style pages when it has them, else the tours.
           itemListJsonLd(
             lang,
             page.title,
-            tours.map((t) => ({ name: t.title, path: t.href })),
+            match.type === 'country' && match.categories.length > 0
+              ? match.categories.map((c) => ({ name: c.title, path: c.href }))
+              : tours.map((t) => ({ name: t.title, path: t.href })),
           ),
           breadcrumbJsonLd(lang, crumbs),
           ...(page.faqs.length > 0 ? [faqJsonLd(page.faqs)] : []),

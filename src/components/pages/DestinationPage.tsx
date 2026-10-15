@@ -1,5 +1,5 @@
 import { Link } from '@/i18n/link';
-import { getDictionary } from '@/i18n/dictionaries';
+import { format, getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
@@ -28,7 +28,12 @@ type Props = {
  */
 export async function DestinationPage({ page, tours, categories = [], crumbs, crossSell = false }: Props) {
   const lang = await getLocale();
-  const { card } = getDictionary(lang);
+  const { card, destination: t } = getDictionary(lang);
+  // A country that has length or style pages sends its tours to those pages (as the live site does): listing all of
+  // them here as well would repeat every category page and compete with it in search. A country without such pages
+  // (Egypt, Jordan, Morocco) and every combination or category page list their tours.
+  const listTours = categories.length === 0;
+  const countIn = (href: string) => tours.filter((tour) => tour.href.startsWith(href)).length;
   return (
     <>
       <PageBanner title={page.title} description={page.metaDescription} picture={page.image} crumbs={crumbs} />
@@ -36,7 +41,7 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
       {categories.length > 0 && (
         <section className="section-y pb-0">
           <div className="container-x">
-            <SectionHeading title="Choose by length or style" />
+            <SectionHeading title={t.chooseTitle} />
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {categories.map((c) => (
                 <li key={c.path}>
@@ -46,7 +51,10 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
                     <span className="bg-cream-100 relative block aspect-square w-24 shrink-0 overflow-hidden rounded-md">
                       {c.image && <Picture image={c.image} sizes="96px" />}
                     </span>
-                    <span className="text-navy-900 self-center font-semibold">{c.title}</span>
+                    <span className="self-center">
+                      <span className="text-navy-900 block font-semibold">{c.title}</span>
+                      <span className="text-muted block text-sm">{format(t.toursCount, { count: countIn(c.href) })}</span>
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -55,10 +63,10 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
         </section>
       )}
 
-      {tours.length > 0 && (
+      {listTours && tours.length > 0 && (
         <section className="section-y">
           <div className="container-x">
-            <SectionHeading title={`Tours (${tours.length})`} />
+            <SectionHeading title={format(t.toursHeading, { count: tours.length })} />
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {tours.map((tour, i) => (
                 <li key={tour.href}>

@@ -262,5 +262,10 @@
     "smallGroup": "Small group",
     "either": "Private or small group",
     "whatsappAsk": "Hello Magnificent Travel, I would like a quote for: {tour}."
+  },
+  "destination": {
+    "chooseTitle": "Choose by length or style",
+    "toursCount": "{count} tours",
+    "toursHeading": "Tours ({count})"
   }
 }

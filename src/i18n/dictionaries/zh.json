@@ -262,5 +262,10 @@
     "smallGroup": "小團行程",
     "either": "包團或小團",
     "whatsappAsk": "您好，Magnificent Travel，我想索取此行程的報價：{tour}。"
+  },
+  "destination": {
+    "chooseTitle": "依天數或旅遊方式選擇",
+    "toursCount": "{count} 個行程",
+    "toursHeading": "行程（{count}）"
   }
 }

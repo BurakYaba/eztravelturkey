@@ -262,5 +262,10 @@
     "smallGroup": "少人数グループ",
     "either": "プライベートまたは少人数",
     "whatsappAsk": "こんにちは、Magnificent Travel さん。次のツアーのお見積りをお願いします：{tour}。"
+  },
+  "destination": {
+    "chooseTitle": "日数やスタイルから選ぶ",
+    "toursCount": "{count} ツアー",
+    "toursHeading": "ツアー（{count}）"
   }
 }
