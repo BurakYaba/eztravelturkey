@@ -73,11 +73,13 @@ type RawTourCard = {
   duration?: string;
   groupType?: string;
   priceEUR?: number | null;
+  priceUSD?: number | null;
   route?: string[];
   image?: RawImage;
 };
 
-const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": select(price.currency == "EUR" => price.amount), route, "image": gallery[0]{ ${img} }`;
+// `price.amount` is the pre-D40 shape; it is read until every tour document has been imported again.
+const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": coalesce(price.eur, select(price.currency == "EUR" => price.amount)), "priceUSD": price.usd, route, "image": gallery[0]{ ${img} }`;
 
 function toCard(raw: RawTourCard): TourCardData {
   const days = raw.days ?? null;
@@ -93,6 +95,7 @@ function toCard(raw: RawTourCard): TourCardData {
     countries: countriesOf(raw.parent),
     bucket: bucketOf(days),
     priceEUR: raw.priceEUR ?? null,
+    priceUSD: raw.priceUSD ?? null,
     image: image(raw.image),
   };
 }
@@ -133,6 +136,8 @@ type RawTour = RawTourCard & {
   facts?: Partial<TourRecord['facts']>;
   extraFacts?: { label: string; value: string }[];
   priceNote?: string;
+  departures?: string[];
+  hotels?: TourRecord['hotels'];
   routeMap?: { intro?: string; image?: RawImage };
   highlights?: string[];
   itinerary?: TourRecord['itinerary'];
@@ -145,7 +150,7 @@ type RawTour = RawTourCard & {
   faqs?: Faq[];
 };
 
-const tourFields = `${tourCardFields}, category, metaTitle, metaDescription, facts, extraFacts[]{ label, value }, "priceNote": price.note, "routeMap": { "intro": routeMap.intro, "image": routeMap.image{ ${img} } }, highlights, itinerary[]{ dayLabel, title, text, meals }, included, excluded, importantNotes, cancellationPolicy, "gallery": gallery[]{ ${img} }, "related": related[]->{ title, path }, faqs[]{ q, a }`;
+const tourFields = `${tourCardFields}, category, metaTitle, metaDescription, facts, extraFacts[]{ label, value }, "priceNote": price.note, departures, hotels[]{ city, nights, name, category }, "routeMap": { "intro": routeMap.intro, "image": routeMap.image{ ${img} } }, highlights, itinerary[]{ dayLabel, title, text, meals }, included, excluded, importantNotes, cancellationPolicy, "gallery": gallery[]{ ${img} }, "related": related[]->{ title, path }, faqs[]{ q, a }`;
 
 const emptyFacts: TourRecord['facts'] = {
   duration: '',
@@ -187,7 +192,10 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
     nights: card.nights,
     bucket: card.bucket,
     priceEUR: card.priceEUR,
+    priceUSD: card.priceUSD,
     priceNote: raw.priceNote ?? '',
+    departures: raw.departures ?? [],
+    hotels: raw.hotels ?? [],
     facts: { ...emptyFacts, ...raw.facts },
     extraFacts: raw.extraFacts ?? [],
     route: card.route,
@@ -199,9 +207,14 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
     importantNotes: raw.importantNotes ?? [],
     cancellationPolicy: raw.cancellationPolicy ?? [],
     gallery,
-    related: (raw.related ?? [])
-      .filter((r): r is { title: string; path: string } => r !== null)
-      .map((r) => ({ title: r.title, href: hrefOf(r.path) })),
+    // The old pages sometimes list the same related tour twice; a visitor should see it once.
+    related: [
+      ...new Map(
+        (raw.related ?? [])
+          .filter((r): r is { title: string; path: string } => r !== null)
+          .map((r) => [hrefOf(r.path), { title: r.title, href: hrefOf(r.path) }] as const),
+      ).values(),
+    ],
     faqs: raw.faqs ?? [],
     image: gallery[0] ?? null,
   };

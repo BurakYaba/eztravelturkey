@@ -106,5 +106,166 @@
   "gone": {
     "title": "This page is no longer available",
     "text": "The page you asked for has been removed and will not return. Browse our current tours or tell us where you would like to go."
+  },
+  "tour": {
+    "sectionsLabel": "Tour sections",
+    "tabs": {
+      "overview": "Overview",
+      "itinerary": "Itinerary",
+      "inclusions": "Inclusions",
+      "requirements": "Trip Requirements",
+      "faqs": "FAQs",
+      "routeMap": "Route Map",
+      "payment": "Payment Summary",
+      "cancellation": "Trip Cancellation Terms"
+    },
+    "glance": {
+      "title": "Trip at a glance",
+      "duration": "Duration",
+      "route": "Route",
+      "style": "Travel style",
+      "guide": "Guide languages",
+      "season": "Season",
+      "difficulty": "Difficulty",
+      "flights": "Flights"
+    },
+    "style": {
+      "private": "Private tour",
+      "smallGroup": "Small group tour"
+    },
+    "price": {
+      "title": "Price and availability",
+      "from": "From",
+      "perPerson": "per person",
+      "onRequest": "Price on request",
+      "note": "Starting price per person. The final price depends on dates, hotels and group size.",
+      "departures": "Departure options",
+      "season": "Season"
+    },
+    "overview": "Trip overview",
+    "highlights": "Highlights and route",
+    "routeMap": "Route map",
+    "itinerary": "Day-by-day itinerary",
+    "meals": "Meals: {meals}",
+    "included": "What is included",
+    "excluded": "What is not included",
+    "hotels": {
+      "title": "Hotels and meals",
+      "city": "City",
+      "nights": "Nights",
+      "hotel": "Hotel",
+      "category": "Category"
+    },
+    "notes": "Important notes",
+    "cancellation": "Cancellation policy",
+    "gallery": "Gallery",
+    "photo": "{title}, photo {n}",
+    "faqs": "Frequently asked questions",
+    "related": "You may also like",
+    "practical": {
+      "flights": "Domestic flights",
+      "difficulty": "Walking level",
+      "cancellation": "Cancellation"
+    },
+    "cta": {
+      "title": "Ready to plan this trip?",
+      "text": "Tell us your dates and group size and a travel specialist will send you a personalized quote.",
+      "quote": "Request a personalized quote",
+      "whatsapp": "Chat on WhatsApp"
+    },
+    "lightbox": {
+      "open": "Open photo {n} of {total}",
+      "close": "Close",
+      "previous": "Previous photo",
+      "next": "Next photo",
+      "position": "Photo {n} of {total}",
+      "photos": "Photos"
+    },
+    "requirements": {
+      "title": "Trip requirements and practical information",
+      "notes": "Good to know"
+    },
+    "payment": {
+      "title": "Payment summary",
+      "terms": "Read the full terms and conditions"
+    },
+    "cancel": {
+      "title": "Trip cancellation terms",
+      "terms": "Read the full terms and conditions",
+      "none": "The cancellation terms of this tour are set out in our terms and conditions."
+    }
+  },
+  "form": {
+    "sidebarTitle": "Plan your trip",
+    "sidebarText": "Get a personalized quote for this tour.",
+    "tour": "Tour",
+    "destinations": "Where would you like to go?",
+    "name": "Full name",
+    "email": "Email",
+    "nationality": "Nationality",
+    "phoneCode": "Code",
+    "phone": "Mobile phone",
+    "phoneOptional": "Phone or WhatsApp (optional)",
+    "adults": "Number of adults",
+    "children": "Children (0 to 11)",
+    "childrenAges": "Ages of the children",
+    "startDate": "Preferred tour start date",
+    "endDate": "Preferred end date (optional)",
+    "style": "Travel style",
+    "styleOptions": {
+      "private": "Private tour",
+      "smallGroup": "Small group tour",
+      "unsure": "Not sure yet"
+    },
+    "budget": "Budget per person (optional)",
+    "hotelClass": "Hotel category",
+    "hotelOptions": {
+      "any": "No preference",
+      "three": "3 stars",
+      "four": "4 stars",
+      "five": "5 stars"
+    },
+    "currency": "Currency for the quote",
+    "notes": "Anything we should know? (optional)",
+    "notesHint": "Interests, pace, special occasions, mobility needs.",
+    "contactMessage": "How can we help?",
+    "consent": "I agree that Magnificent Travel may use my details to reply to this message, as described in the privacy policy.",
+    "optional": "(optional)",
+    "send": "Send my request",
+    "sendMessage": "Send message",
+    "sending": "Sending...",
+    "noObligation": "No obligation. Our travel experts will create a tailored itinerary.",
+    "errorGeneric": "Something went wrong. Please try again or message us on WhatsApp.",
+    "errorNetwork": "We could not send your request. Please check your connection or message us on WhatsApp.",
+    "doneTitle": "Thank you, your request is on its way",
+    "doneTitleLocal": "Your request is ready",
+    "doneText": "A travel specialist will reply to the email address you gave us with ideas and a personalized quote.",
+    "doneTextLocal": "To make sure it reaches our team straight away, send it to us on WhatsApp. Your details are filled in for you.",
+    "whatsappAlso": "Also chat on WhatsApp",
+    "whatsappSend": "Send on WhatsApp",
+    "whatsappHello": "Hello Magnificent Travel, my name is {name}.",
+    "whatsappTour": "I am interested in: {tour}.",
+    "whatsappDestinations": "Destinations: {destinations}.",
+    "whatsappAdults": "Adults: {adults}.",
+    "whatsappStart": "Preferred start date: {date}.",
+    "verifyFailed": "The spam check could not load. Please reload the page or message us on WhatsApp.",
+    "verifyNeeded": "Please wait for the spam check to finish, then send again."
+  },
+  "card": {
+    "from": "From",
+    "perPerson": "per person",
+    "onRequest": "Price on request",
+    "view": "View itinerary",
+    "duration": "Duration",
+    "style": "Style",
+    "private": "Private",
+    "smallGroup": "Small group",
+    "either": "Private or small group",
+    "whatsappAsk": "Hello Magnificent Travel, I would like a quote for: {tour}."
+  },
+  "destination": {
+    "chooseTitle": "Choose by length or style",
+    "toursCount": "{count} tours",
+    "toursHeading": "Tours ({count})"
   }
 }

@@ -16,7 +16,9 @@ export type TourCardData = {
   styles: TourStyle[];
   countries: CountryId[];
   bucket: '3-5' | '6-9' | '10+' | null;
+  /** Starting prices; the client fills in either or both (D40). */
   priceEUR: number | null;
+  priceUSD: number | null;
   image: ImageRef | null;
 };
 
@@ -45,7 +47,10 @@ export type TourRecord = Common & {
   nights: number | null;
   bucket: '3-5' | '6-9' | '10+' | null;
   priceEUR: number | null;
+  priceUSD: number | null;
   priceNote: string;
+  departures: string[];
+  hotels: { city: string; nights: number | null; name: string; category: string }[];
   facts: {
     duration: string;
     guideLanguages: string;

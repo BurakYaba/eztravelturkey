@@ -6,6 +6,7 @@ import { TrustBar } from '@/components/shared/TrustBar';
 import { ToursBrowser } from '@/components/tours/ToursBrowser';
 import { allTours } from '@/lib/data';
 import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
+import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 
 const description =
@@ -40,7 +41,7 @@ export default async function ToursPage() {
           exceptional care.
         </p>
         <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <ToursBrowser tours={tours} />
+          <ToursBrowser tours={tours} lang={lang} cardText={getDictionary(lang).card} />
         </Suspense>
       </section>
       <TrustBar />

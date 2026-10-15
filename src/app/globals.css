@@ -283,3 +283,34 @@ html:lang(ja) :is(h1, h2, h3, h4) {
   line-break: strict;
   overflow-wrap: anywhere;
 }
+
+/* Photo viewer (tour gallery): a native dialog on a dark navy veil. Motion is skipped when the visitor asks for less. */
+.lightbox::backdrop {
+  background: rgb(10 32 56 / 0.97);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox {
+    opacity: 0;
+    transition:
+      opacity 0.2s ease,
+      display 0.2s allow-discrete,
+      overlay 0.2s allow-discrete;
+  }
+  .lightbox[open] {
+    opacity: 1;
+  }
+  @starting-style {
+    .lightbox[open] {
+      opacity: 0;
+    }
+  }
+  .lightbox-photo {
+    animation: lightbox-in 0.25s ease-out both;
+  }
+}
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}

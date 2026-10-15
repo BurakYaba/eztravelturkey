@@ -10,7 +10,4 @@ export const dictionaries: Record<Locale, Dictionary> = { en, zh, jp };
 
 export const getDictionary = (lang: Locale): Dictionary => dictionaries[lang];
 
-/** Fills `{name}` placeholders: `format('Since {year}', { year: 1997 })`. */
-export function format(template: string, values: Record<string, string | number>): string {
-  return template.replace(/\{(\w+)\}/g, (match, key: string) => (key in values ? String(values[key]) : match));
-}
+export { format } from './template';

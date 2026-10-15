@@ -8,7 +8,6 @@ import { htmlLang, localeNames, locales } from '@/i18n/config';
 import { useLocale } from '@/i18n/locale-context';
 import { switchLocaleHref } from '@/i18n/switch';
 import { cn } from '@/lib/utils';
-import { Flag } from './Flag';
 
 type Props = {
   /** Accessible name of the control, in the page language. */
@@ -19,7 +18,7 @@ type Props = {
 };
 
 /**
- * Language menu with flags. Every option is a plain link (no cookie, crawlers can follow it); the current language
+ * Language menu (flags are left out for now; `Flag.tsx` is kept for when they come back). Every option is a plain link (no cookie, crawlers can follow it); the current language
  * is marked and is not a link in the list variant.
  */
 export function LanguageSwitcher({ label, variant = 'dropdown', className }: Props) {
@@ -64,7 +63,6 @@ export function LanguageSwitcher({ label, variant = 'dropdown', className }: Pro
           'flex items-center gap-3 rounded-md px-3 py-2.5 text-[0.95rem] transition',
           code === lang ? 'bg-cream-100 text-navy-900 font-semibold' : 'text-navy-900 hover:bg-cream-100 font-medium',
         )}>
-        <Flag locale={code} />
         <span className="flex-1">{localeNames[code]}</span>
         {code === lang && <Check size={16} weight="bold" className="text-gold-700" aria-hidden />}
       </NextLink>
@@ -89,7 +87,6 @@ export function LanguageSwitcher({ label, variant = 'dropdown', className }: Pro
         aria-controls={menuId}
         onClick={() => setOpen((v) => !v)}
         className="text-navy-900 border-cream-200 hover:border-navy-900/40 flex h-11 items-center gap-2 rounded-lg border bg-white px-3 text-[0.95rem] font-medium transition">
-        <Flag locale={lang} />
         <span lang={htmlLang[lang]}>{localeNames[lang]}</span>
         <CaretDown size={13} weight="bold" aria-hidden className={cn('transition-transform', open && 'rotate-180')} />
       </button>

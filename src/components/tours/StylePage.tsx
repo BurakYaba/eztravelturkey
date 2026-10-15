@@ -9,6 +9,7 @@ import { TrustBar } from '../shared/TrustBar';
 import { ToursBrowser } from './ToursBrowser';
 import type { ImageId } from '@/data/images';
 import { toursForStyle } from '@/lib/data';
+import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import type { Faq } from '@/data/types';
 import { breadcrumbJsonLd, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
@@ -53,7 +54,7 @@ export async function StylePage({ style, path, title, lead, description, image, 
         <div className="container-x">
           <SectionHeading title={`Available ${title.toLowerCase()}`} />
           <Suspense fallback={<div className="h-96" aria-hidden />}>
-            <ToursBrowser tours={list} lockedStyle={style} />
+            <ToursBrowser tours={list} lockedStyle={style} lang={lang} cardText={getDictionary(lang).card} />
           </Suspense>
         </div>
       </section>

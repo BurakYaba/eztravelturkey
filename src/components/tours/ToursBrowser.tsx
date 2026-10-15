@@ -7,7 +7,8 @@ import { destinations } from '@/data/destinations';
 import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
 import type { TourCardData } from '@/lib/data/types';
-import { TourCard } from './TourCard';
+import type { Locale } from '@/i18n/config';
+import { TourCard, type TourCardText } from './TourCard';
 
 export type BrowsableTour = TourCardData;
 
@@ -55,9 +56,12 @@ type Props = {
   tours: BrowsableTour[];
   /** Fixes one filter (for example the style pages), hiding that control. */
   lockedStyle?: 'private' | 'small-group';
+  lang: Locale;
+  /** Card texts in the page language, passed from the server so the client does not carry every dictionary. */
+  cardText: TourCardText;
 };
 
-export function ToursBrowser({ tours, lockedStyle }: Props) {
+export function ToursBrowser({ tours, lockedStyle, lang, cardText }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const search = useSearchParams();
@@ -177,7 +181,7 @@ export function ToursBrowser({ tours, lockedStyle }: Props) {
         <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((tour, i) => (
             <li key={tour.href}>
-              <TourCard tour={tour} className="h-full" priority={i < 3} />
+              <TourCard tour={tour} lang={lang} text={cardText} className="h-full" priority={i < 3} />
             </li>
           ))}
         </ul>

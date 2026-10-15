@@ -106,5 +106,166 @@
   "gone": {
     "title": "このページは掲載を終了しました",
     "text": "お探しのページは削除されており、再公開の予定はありません。現在のツアー一覧をご覧いただくか、行きたい場所をお知らせください。"
+  },
+  "tour": {
+    "sectionsLabel": "ツアー情報の各セクション",
+    "tabs": {
+      "overview": "概要",
+      "itinerary": "日程",
+      "inclusions": "料金に含まれるもの",
+      "requirements": "旅行条件",
+      "faqs": "よくある質問",
+      "routeMap": "ルートマップ",
+      "payment": "お支払いについて",
+      "cancellation": "キャンセル規定"
+    },
+    "glance": {
+      "title": "ツアーのポイント",
+      "duration": "日数",
+      "route": "ルート",
+      "style": "ツアースタイル",
+      "guide": "ガイドの言語",
+      "season": "催行時期",
+      "difficulty": "難易度",
+      "flights": "航空便"
+    },
+    "style": {
+      "private": "プライベートツアー",
+      "smallGroup": "少人数グループツアー"
+    },
+    "price": {
+      "title": "料金と出発",
+      "from": "最低料金",
+      "perPerson": "1名あたり",
+      "onRequest": "料金はお問い合わせください",
+      "note": "表示は1名あたりの最低料金です。最終料金は日程、ホテル、人数によって変わります。",
+      "departures": "出発の種類",
+      "season": "シーズン"
+    },
+    "overview": "ツアー概要",
+    "highlights": "ハイライトとルート",
+    "routeMap": "ルートマップ",
+    "itinerary": "日程表",
+    "meals": "食事：{meals}",
+    "included": "料金に含まれるもの",
+    "excluded": "料金に含まれないもの",
+    "hotels": {
+      "title": "ホテルと食事",
+      "city": "都市",
+      "nights": "泊数",
+      "hotel": "ホテル",
+      "category": "カテゴリー"
+    },
+    "notes": "注意事項",
+    "cancellation": "キャンセルポリシー",
+    "gallery": "フォトギャラリー",
+    "photo": "{title}、写真 {n}",
+    "faqs": "よくある質問",
+    "related": "こちらもおすすめ",
+    "practical": {
+      "flights": "国内線",
+      "difficulty": "歩く量",
+      "cancellation": "キャンセル"
+    },
+    "cta": {
+      "title": "この旅を計画しませんか？",
+      "text": "ご希望の日程と人数をお知らせください。専門スタッフがお見積りをお送りします。",
+      "quote": "お見積りを依頼する",
+      "whatsapp": "WhatsApp で相談"
+    },
+    "lightbox": {
+      "open": "写真 {n}/{total} を開く",
+      "close": "閉じる",
+      "previous": "前の写真",
+      "next": "次の写真",
+      "position": "写真 {n}/{total}",
+      "photos": "写真"
+    },
+    "requirements": {
+      "title": "旅行条件と実用情報",
+      "notes": "ご案内"
+    },
+    "payment": {
+      "title": "お支払いについて",
+      "terms": "利用規約の全文を読む"
+    },
+    "cancel": {
+      "title": "ツアーのキャンセル規定",
+      "terms": "利用規約の全文を読む",
+      "none": "このツアーのキャンセル規定は利用規約に記載されています。"
+    }
+  },
+  "form": {
+    "sidebarTitle": "旅行を計画する",
+    "sidebarText": "このツアーのお見積りをご依頼ください。",
+    "tour": "ツアー",
+    "destinations": "どこへ行きたいですか？",
+    "name": "お名前",
+    "email": "メールアドレス",
+    "nationality": "国籍",
+    "phoneCode": "国番号",
+    "phone": "携帯電話番号",
+    "phoneOptional": "電話または WhatsApp（任意）",
+    "adults": "大人の人数",
+    "children": "子ども（0〜11歳）",
+    "childrenAges": "子どもの年齢",
+    "startDate": "ご希望の出発日",
+    "endDate": "ご希望の終了日（任意）",
+    "style": "ツアースタイル",
+    "styleOptions": {
+      "private": "プライベートツアー",
+      "smallGroup": "少人数グループツアー",
+      "unsure": "まだ決めていません"
+    },
+    "budget": "1名あたりのご予算（任意）",
+    "hotelClass": "ホテルのカテゴリー",
+    "hotelOptions": {
+      "any": "指定なし",
+      "three": "3つ星",
+      "four": "4つ星",
+      "five": "5つ星"
+    },
+    "currency": "お見積りの通貨",
+    "notes": "その他お伝えしたいことはありますか？（任意）",
+    "notesHint": "ご興味、ペース、記念日、体力面でのご要望など。",
+    "contactMessage": "ご用件をお聞かせください",
+    "consent": "プライバシーポリシーに従い、Magnificent Travel がこのメッセージへの返信のために私の情報を利用することに同意します。",
+    "optional": "（任意）",
+    "send": "リクエストを送信",
+    "sendMessage": "メッセージを送信",
+    "sending": "送信中…",
+    "noObligation": "お申し込みの義務はありません。専門スタッフがご希望に合わせた旅程をご提案します。",
+    "errorGeneric": "エラーが発生しました。もう一度お試しいただくか、WhatsApp でご連絡ください。",
+    "errorNetwork": "送信できませんでした。通信状況をご確認いただくか、WhatsApp でご連絡ください。",
+    "doneTitle": "ありがとうございます。リクエストを送信しました",
+    "doneTitleLocal": "リクエストの準備ができました",
+    "doneText": "専門スタッフが、ご入力のメールアドレスへ旅程のご提案とお見積りをお送りします。",
+    "doneTextLocal": "すぐにチームへ届くよう、WhatsApp でお送りください。ご入力内容は入力済みです。",
+    "whatsappAlso": "WhatsApp でも相談する",
+    "whatsappSend": "WhatsApp で送信",
+    "whatsappHello": "こんにちは、Magnificent Travel さん。{name} と申します。",
+    "whatsappTour": "次のツアーに興味があります：{tour}。",
+    "whatsappDestinations": "目的地：{destinations}。",
+    "whatsappAdults": "大人：{adults}名。",
+    "whatsappStart": "ご希望の出発日：{date}。",
+    "verifyFailed": "スパム確認を読み込めませんでした。ページを再読み込みするか、WhatsApp でご連絡ください。",
+    "verifyNeeded": "スパム確認の完了をお待ちのうえ、もう一度送信してください。"
+  },
+  "card": {
+    "from": "最低料金",
+    "perPerson": "1名あたり",
+    "onRequest": "料金はお問い合わせください",
+    "view": "日程を見る",
+    "duration": "日数",
+    "style": "スタイル",
+    "private": "プライベート",
+    "smallGroup": "少人数グループ",
+    "either": "プライベートまたは少人数",
+    "whatsappAsk": "こんにちは、Magnificent Travel さん。次のツアーのお見積りをお願いします：{tour}。"
+  },
+  "destination": {
+    "chooseTitle": "日数やスタイルから選ぶ",
+    "toursCount": "{count} ツアー",
+    "toursHeading": "ツアー（{count}）"
   }
 }
