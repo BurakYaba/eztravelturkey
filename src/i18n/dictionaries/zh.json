@@ -113,8 +113,11 @@
       "overview": "行程總覽",
       "itinerary": "每日行程",
       "inclusions": "費用包含",
-      "requirements": "實用資訊",
-      "faqs": "常見問題"
+      "requirements": "行程須知",
+      "faqs": "常見問題",
+      "routeMap": "路線圖",
+      "payment": "付款說明",
+      "cancellation": "取消條款"
     },
     "glance": {
       "title": "行程一覽",
@@ -160,11 +163,9 @@
     "faqs": "常見問題",
     "related": "您可能也喜歡",
     "practical": {
-      "title": "實用資訊",
       "flights": "國內航班",
       "difficulty": "步行強度",
-      "cancellation": "取消",
-      "ask": "詢問我們的旅遊團隊"
+      "cancellation": "取消"
     },
     "cta": {
       "title": "準備好規劃這趟旅程了嗎？",
@@ -179,6 +180,19 @@
       "next": "下一張照片",
       "position": "第 {n} 張，共 {total} 張",
       "photos": "照片"
+    },
+    "requirements": {
+      "title": "行程須知與實用資訊",
+      "notes": "請留意"
+    },
+    "payment": {
+      "title": "付款說明",
+      "terms": "閱讀完整條款與細則"
+    },
+    "cancel": {
+      "title": "行程取消條款",
+      "terms": "閱讀完整條款與細則",
+      "none": "此行程的取消條款請見我們的條款與細則。"
     }
   },
   "form": {

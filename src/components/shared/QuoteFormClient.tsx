@@ -89,6 +89,7 @@ export function QuoteFormClient({
     if (turnstileSiteKey && !token) {
       setError(checkFailed ? text.verifyFailed : text.verifyNeeded);
       setStatus('error');
+      setCheckRound((n) => n + 1);
       return;
     }
     const data = new FormData(e.currentTarget);

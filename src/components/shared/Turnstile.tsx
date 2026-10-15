@@ -12,6 +12,7 @@ type TurnstileApi = {
       language: string;
       theme: 'light';
       size: 'flexible';
+      retry: 'never';
       callback: (token: string) => void;
       'expired-callback': () => void;
       'error-callback': () => void;
@@ -66,6 +67,8 @@ export function Turnstile({ siteKey, lang, onToken, onFail, resetKey }: Props) {
       language: widgetLanguage[lang],
       theme: 'light',
       size: 'flexible',
+      // A refused domain or key will not get better by retrying; the form offers WhatsApp instead.
+      retry: 'never',
       callback: onToken,
       'expired-callback': () => onToken(''),
       'error-callback': onFail,

@@ -113,8 +113,11 @@
       "overview": "概要",
       "itinerary": "日程",
       "inclusions": "料金に含まれるもの",
-      "requirements": "旅行の実用情報",
-      "faqs": "よくある質問"
+      "requirements": "旅行条件",
+      "faqs": "よくある質問",
+      "routeMap": "ルートマップ",
+      "payment": "お支払いについて",
+      "cancellation": "キャンセル規定"
     },
     "glance": {
       "title": "ツアーのポイント",
@@ -160,11 +163,9 @@
     "faqs": "よくある質問",
     "related": "こちらもおすすめ",
     "practical": {
-      "title": "旅行の実用情報",
       "flights": "国内線",
       "difficulty": "歩く量",
-      "cancellation": "キャンセル",
-      "ask": "旅行チームに相談する"
+      "cancellation": "キャンセル"
     },
     "cta": {
       "title": "この旅を計画しませんか？",
@@ -179,6 +180,19 @@
       "next": "次の写真",
       "position": "写真 {n}/{total}",
       "photos": "写真"
+    },
+    "requirements": {
+      "title": "旅行条件と実用情報",
+      "notes": "ご案内"
+    },
+    "payment": {
+      "title": "お支払いについて",
+      "terms": "利用規約の全文を読む"
+    },
+    "cancel": {
+      "title": "ツアーのキャンセル規定",
+      "terms": "利用規約の全文を読む",
+      "none": "このツアーのキャンセル規定は利用規約に記載されています。"
     }
   },
   "form": {

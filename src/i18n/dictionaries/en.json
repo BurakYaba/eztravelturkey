@@ -113,8 +113,11 @@
       "overview": "Overview",
       "itinerary": "Itinerary",
       "inclusions": "Inclusions",
-      "requirements": "Practical information",
-      "faqs": "FAQs"
+      "requirements": "Trip Requirements",
+      "faqs": "FAQs",
+      "routeMap": "Route Map",
+      "payment": "Payment Summary",
+      "cancellation": "Trip Cancellation Terms"
     },
     "glance": {
       "title": "Trip at a glance",
@@ -160,11 +163,9 @@
     "faqs": "Frequently asked questions",
     "related": "You may also like",
     "practical": {
-      "title": "Practical information",
       "flights": "Domestic flights",
       "difficulty": "Walking level",
-      "cancellation": "Cancellation",
-      "ask": "Ask our travel team"
+      "cancellation": "Cancellation"
     },
     "cta": {
       "title": "Ready to plan this trip?",
@@ -179,6 +180,19 @@
       "next": "Next photo",
       "position": "Photo {n} of {total}",
       "photos": "Photos"
+    },
+    "requirements": {
+      "title": "Trip requirements and practical information",
+      "notes": "Good to know"
+    },
+    "payment": {
+      "title": "Payment summary",
+      "terms": "Read the full terms and conditions"
+    },
+    "cancel": {
+      "title": "Trip cancellation terms",
+      "terms": "Read the full terms and conditions",
+      "none": "The cancellation terms of this tour are set out in our terms and conditions."
     }
   },
   "form": {

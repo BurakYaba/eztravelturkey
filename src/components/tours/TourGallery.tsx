@@ -199,7 +199,7 @@ export function TourGallery({ images, title, text, photoLabel }: Props) {
                       'focus-visible:ring-gold-500 relative block h-14 w-20 overflow-hidden rounded-md ring-2 transition focus-visible:outline-none md:h-16 md:w-24',
                       i === current ? 'ring-gold-500' : 'opacity-60 ring-transparent hover:opacity-100',
                     )}>
-                    <Picture image={photo} alt="" sizes="6rem" quality={50} />
+                    <Picture image={photo} alt="" sizes="6rem" quality={60} />
                   </button>
                 </li>
               ))}

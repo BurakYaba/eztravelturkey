@@ -1,18 +1,25 @@
 import { Link } from '@/i18n/link';
 import {
+  AirplaneTilt,
   CalendarBlank,
+  Check,
   Clock,
-  Compass,
+  IdentificationCard,
+  Info,
   MapPin,
+  MinusCircle,
+  PersonSimpleWalk,
+  ShieldCheck,
   Translate,
   UsersThree,
   WhatsappLogo,
 } from '@phosphor-icons/react/dist/ssr';
+import type { Icon } from '@phosphor-icons/react';
+import { paymentSummary, travelRules } from '@/data/policies';
 import { whatsappLink } from '@/data/site';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import type { TourRecord } from '@/lib/data/types';
-import { cn } from '@/lib/utils';
 import { Accordion } from '../shared/Accordion';
 import type { Crumb } from '../shared/Breadcrumbs';
 import { ButtonAnchor, ButtonLink } from '../shared/Button';
@@ -21,17 +28,16 @@ import { Picture } from '../shared/Picture';
 import { QuoteForm } from '../shared/QuoteForm';
 import { SectionHeading } from '../shared/SectionHeading';
 import { TourGallery } from '../tours/TourGallery';
+import { TourPanel } from '../tours/TourPanel';
 import { TourPrice } from '../tours/TourPrice';
+import { TourTabs, TourTabsProvider } from '../tours/TourTabs';
 
-function List({ items, tone }: { items: string[]; tone?: 'plus' | 'minus' }) {
+function Bullets({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2">
       {items.map((item, i) => (
         <li key={i} className="flex gap-3">
-          <span
-            aria-hidden
-            className={cn('mt-2 size-1.5 shrink-0 rounded-full', tone === 'minus' ? 'bg-muted' : 'bg-gold-600')}
-          />
+          <span aria-hidden className="bg-gold-600 mt-2 size-1.5 shrink-0 rounded-full" />
           <span>{item}</span>
         </li>
       ))}
@@ -39,11 +45,14 @@ function List({ items, tone }: { items: string[]; tone?: 'plus' | 'minus' }) {
   );
 }
 
+const ruleIcon: Record<string, Icon> = { passport: IdentificationCard, insurance: ShieldCheck };
+
 /**
- * The tour page. The blocks and their order are fixed in code (D37): an editor changes the content, not the layout.
- * The order follows the client's "Tour Page Structure" (Ek D.2): overview with the facts and the price, itinerary,
- * inclusions, practical information, FAQs, reviews. Blocks without content are left out. Everything is in the first
- * HTML, so the sticky bar at the top is a plain set of links (H.2).
+ * The tour page. The sections and their order are fixed in code (D37): an editor changes the content, not the layout.
+ * The sections follow the client's tab strip (Overview, Itinerary, Inclusions, Trip Requirements, FAQs, Route Map,
+ * Payment Summary, Trip Cancellation Terms). From lg up they are tabs and only the chosen one shows; on phones they
+ * are accordion panels. All of it is in the first HTML either way (H.2). Sections without content are left out.
+ * There is no reviews tab: the live tour pages carry no reviews of their own, only the Tripadvisor badge in the footer.
  */
 export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: Crumb[] }) {
   const lang = await getLocale();
@@ -57,22 +66,25 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { label: t.glance.guide, value: tour.facts.guideLanguages, icon: Translate },
     { label: t.glance.season, value: tour.facts.season, icon: CalendarBlank },
   ].filter((f) => f.value);
+  // Facts the old page printed that belong with the practical rules.
   const practical = [
-    { label: t.practical.flights, value: tour.facts.flights },
-    { label: t.practical.difficulty, value: tour.facts.difficulty },
-    { label: t.practical.cancellation, value: tour.facts.cancellation },
-    ...tour.extraFacts,
+    { label: t.practical.flights, value: tour.facts.flights, icon: AirplaneTilt },
+    { label: t.practical.difficulty, value: tour.facts.difficulty, icon: PersonSimpleWalk },
+    ...tour.extraFacts.map((f) => ({ ...f, icon: Info })),
   ].filter((f) => f.value);
-  const hasPrice = tour.priceEUR !== null || tour.priceUSD !== null;
   const hasInclusions = tour.included.length > 0 || tour.excluded.length > 0;
-  const hasPolicies = tour.importantNotes.length > 0 || tour.cancellationPolicy.length > 0;
 
-  const sections = [
-    { id: 'overview', label: t.tabs.overview, show: true },
-    { id: 'itinerary', label: t.tabs.itinerary, show: tour.itinerary.length > 0 },
-    { id: 'inclusions', label: t.tabs.inclusions, show: hasInclusions || hasPolicies },
-    { id: 'faqs', label: t.tabs.faqs, show: tour.faqs.length > 0 },
-  ].filter((s) => s.show);
+  const tabs = [
+    { id: 'overview', label: t.tabs.overview },
+    ...(tour.itinerary.length > 0 ? [{ id: 'itinerary', label: t.tabs.itinerary }] : []),
+    ...(hasInclusions ? [{ id: 'inclusions', label: t.tabs.inclusions }] : []),
+    { id: 'requirements', label: t.tabs.requirements },
+    ...(tour.faqs.length > 0 ? [{ id: 'faqs', label: t.tabs.faqs }] : []),
+    ...(tour.routeMap.image ? [{ id: 'route-map', label: t.tabs.routeMap }] : []),
+    { id: 'payment', label: t.tabs.payment },
+    { id: 'cancellation', label: t.tabs.cancellation },
+  ];
+  const label = (id: string) => tabs.find((tab) => tab.id === id)?.label ?? '';
 
   return (
     <>
@@ -98,42 +110,26 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
         }
       />
 
-      <nav
-        aria-label={t.sectionsLabel}
-        className="border-cream-200 bg-cream-50/95 supports-backdrop-filter:bg-cream-50/85 sticky top-20 z-40 border-b backdrop-blur">
-        <ul className="container-wide flex gap-1 overflow-x-auto whitespace-nowrap">
-          {sections.map((s) => (
-            <li key={s.id}>
-              <a
-                href={`#${s.id}`}
-                className="text-navy-900 hover:border-gold-600 block border-b-2 border-transparent px-4 py-3.5 text-sm font-semibold transition">
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <TourTabsProvider tabs={tabs}>
+        <TourTabs tabs={tabs} label={t.sectionsLabel} />
 
-      <div className="section-y">
-        <div className="container-wide grid gap-10 lg:grid-cols-[1fr_22rem]">
-          <div className="min-w-0 space-y-14">
-            <section id="overview" className="scroll-mt-36 space-y-10">
-              <div>
-                <SectionHeading title={t.overview} className="mb-5 md:mb-6" />
-                {tour.summary && (
-                  <p className="text-ink/90 max-w-3xl leading-relaxed whitespace-pre-line">{tour.summary}</p>
-                )}
-              </div>
+        <div className="container-wide grid gap-10 pb-16 lg:grid-cols-[minmax(0,1fr)_22rem] xl:grid-cols-[minmax(0,1fr)_24rem]">
+          <div id="tour-panels" className="min-w-0 max-lg:pt-6 lg:min-h-136">
+            <TourPanel id="overview" label={label('overview')} defaultOpen className="max-lg:mt-0">
+              <SectionHeading title={t.overview} className="mb-5 md:mb-6 max-lg:hidden" />
+              {tour.summary && (
+                <p className="text-ink/90 max-w-3xl leading-relaxed whitespace-pre-line">{tour.summary}</p>
+              )}
 
               {glance.length > 0 && (
-                <div className="border-cream-200 bg-cream-50 rounded-lg border p-5 md:p-6">
+                <div className="border-cream-200 bg-cream-50 mt-8 rounded-lg border p-5 md:p-6">
                   <h3 className="mb-4 text-2xl">{t.glance.title}</h3>
                   <dl className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
-                    {glance.map(({ label, value, icon: Icon }) => (
-                      <div key={label} className="flex gap-3">
-                        <Icon size={26} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                    {glance.map(({ label: name, value, icon: Glyph }) => (
+                      <div key={name} className="flex gap-3">
+                        <Glyph size={26} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
                         <div className="min-w-0">
-                          <dt className="text-muted text-sm">{label}</dt>
+                          <dt className="text-muted text-sm">{name}</dt>
                           <dd className="text-navy-900 font-semibold">{value}</dd>
                         </div>
                       </div>
@@ -142,81 +138,48 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                 </div>
               )}
 
-              <div className="border-cream-200 rounded-lg border bg-white p-5 md:p-6">
-                <h3 className="mb-3 text-2xl">{t.price.title}</h3>
-                <TourPrice lang={lang} eur={tour.priceEUR} usd={tour.priceUSD} text={{ ...t.price, ...card }} size="page" />
-                {hasPrice && <p className="text-muted mt-3 max-w-2xl text-sm">{t.price.note}</p>}
-                {tour.priceNote && <p className="text-navy-900 mt-1 text-sm font-medium">{tour.priceNote}</p>}
-                {tour.departures.length > 0 && (
-                  <div className="border-cream-200 mt-4 border-t pt-4">
-                    <p className="text-navy-900 mb-2 text-sm font-semibold">{t.price.departures}</p>
-                    <List items={tour.departures} />
-                  </div>
-                )}
-              </div>
-
               {tour.highlights.length > 0 && (
-                <div>
+                <div className="mt-8">
                   <h3 className="mb-4 text-2xl">{t.highlights}</h3>
-                  <List items={tour.highlights} />
-                </div>
-              )}
-
-              {tour.routeMap.image && (
-                <div>
-                  <h3 className="mb-4 text-2xl">{t.routeMap}</h3>
-                  {tour.routeMap.intro && <p className="text-muted mb-4 max-w-3xl">{tour.routeMap.intro}</p>}
-                  <figure className="bg-cream-100 relative max-w-3xl overflow-hidden rounded-lg">
-                    <div
-                      className="relative w-full"
-                      style={{ aspectRatio: `${tour.routeMap.image.width} / ${tour.routeMap.image.height}` }}>
-                      <Picture
-                        image={tour.routeMap.image}
-                        sizes="(min-width: 1024px) 48rem, 100vw"
-                        className="object-contain"
-                      />
-                    </div>
-                  </figure>
+                  <Bullets items={tour.highlights} />
                 </div>
               )}
 
               {tour.gallery.length > 1 && (
-                <div>
+                <div className="mt-10">
                   <h3 className="mb-4 text-2xl">{t.gallery}</h3>
                   <TourGallery images={tour.gallery} title={tour.title} text={t.lightbox} photoLabel={t.photo} />
                 </div>
               )}
-            </section>
+            </TourPanel>
 
             {tour.itinerary.length > 0 && (
-              <section id="itinerary" className="scroll-mt-36 space-y-10">
-                <div>
-                  <SectionHeading title={t.itinerary} />
-                  <Accordion
-                    size="lg"
-                    defaultOpen={['day-0']}
-                    items={tour.itinerary.map((day, i) => ({
-                      id: `day-${i}`,
-                      badge: (
-                        <span className="bg-navy-900 shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold tracking-wide text-white">
-                          {day.dayLabel}
-                        </span>
-                      ),
-                      title: day.title,
-                      content: (
-                        <div className="space-y-3">
-                          <p className="text-ink/90 whitespace-pre-line">{day.text}</p>
-                          {day.meals && day.meals !== 'None' && (
-                            <p className="text-navy-900 text-sm font-semibold">{format(t.meals, { meals: day.meals })}</p>
-                          )}
-                        </div>
-                      ),
-                    }))}
-                  />
-                </div>
+              <TourPanel id="itinerary" label={label('itinerary')} defaultOpen>
+                <SectionHeading title={t.itinerary} className="mb-6 max-lg:hidden" />
+                <Accordion
+                  size="lg"
+                  defaultOpen={['day-0']}
+                  items={tour.itinerary.map((day, i) => ({
+                    id: `day-${i}`,
+                    badge: (
+                      <span className="bg-navy-900 shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold tracking-wide text-white">
+                        {day.dayLabel}
+                      </span>
+                    ),
+                    title: day.title,
+                    content: (
+                      <div className="space-y-3">
+                        <p className="text-ink/90 whitespace-pre-line">{day.text}</p>
+                        {day.meals && day.meals !== 'None' && (
+                          <p className="text-navy-900 text-sm font-semibold">{format(t.meals, { meals: day.meals })}</p>
+                        )}
+                      </div>
+                    ),
+                  }))}
+                />
 
                 {tour.hotels.length > 0 && (
-                  <div>
+                  <div className="mt-10">
                     <h3 className="mb-4 text-2xl">{t.hotels.title}</h3>
                     <div className="border-cream-200 overflow-x-auto rounded-lg border bg-white">
                       <table className="w-full text-left text-sm">
@@ -252,89 +215,191 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                     </div>
                   </div>
                 )}
-              </section>
+              </TourPanel>
             )}
 
-            {(hasInclusions || hasPolicies) && (
-              <section id="inclusions" className="scroll-mt-36 space-y-10">
-                {hasInclusions && (
-                  <div className="grid gap-8 md:grid-cols-2">
-                    {tour.included.length > 0 && (
-                      <div>
-                        <h2 className="h-section mb-4">{t.included}</h2>
-                        <List items={tour.included} />
-                      </div>
-                    )}
-                    {tour.excluded.length > 0 && (
-                      <div>
-                        <h2 className="h-section mb-4">{t.excluded}</h2>
-                        <List items={tour.excluded} tone="minus" />
-                      </div>
-                    )}
-                  </div>
-                )}
-                {tour.importantNotes.length > 0 && (
-                  <div>
-                    <h3 className="mb-4 text-2xl">{t.notes}</h3>
-                    <List items={tour.importantNotes} />
-                  </div>
-                )}
-                {tour.cancellationPolicy.length > 0 && (
-                  <div>
-                    <h3 className="mb-4 text-2xl">{t.cancellation}</h3>
-                    <List items={tour.cancellationPolicy} />
-                  </div>
-                )}
-              </section>
+            {hasInclusions && (
+              <TourPanel id="inclusions" label={label('inclusions')}>
+                <SectionHeading title={t.tabs.inclusions} className="mb-6 max-lg:hidden" />
+                <div className="grid gap-5 md:grid-cols-2">
+                  {tour.included.length > 0 && (
+                    <div className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
+                      <h3 className="flex items-center gap-2 font-sans text-lg font-semibold tracking-normal">
+                        <ShieldCheck size={24} weight="fill" className="text-gold-600" aria-hidden />
+                        {t.included}
+                      </h3>
+                      <ul className="mt-4 space-y-3">
+                        {tour.included.map((item, i) => (
+                          <li key={i} className="flex gap-3">
+                            <Check size={20} weight="bold" className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {tour.excluded.length > 0 && (
+                    <div className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
+                      <h3 className="flex items-center gap-2 font-sans text-lg font-semibold tracking-normal">
+                        <MinusCircle size={24} weight="fill" className="text-navy-700" aria-hidden />
+                        {t.excluded}
+                      </h3>
+                      <ul className="mt-4 space-y-3">
+                        {tour.excluded.map((item, i) => (
+                          <li key={i} className="flex gap-3">
+                            <MinusCircle size={20} className="text-navy-700 mt-0.5 shrink-0" aria-hidden />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </TourPanel>
             )}
+
+            <TourPanel id="requirements" label={label('requirements')}>
+              <SectionHeading title={t.requirements.title} className="mb-6 max-lg:hidden" />
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {practical.map(({ label: name, value, icon: Glyph }) => (
+                  <li key={name} className="bg-cream-100 flex gap-4 rounded-lg p-4">
+                    <Glyph size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                    <div>
+                      <h3 className="font-sans text-base font-semibold tracking-normal">{name}</h3>
+                      <p className="text-muted mt-1 text-[0.95rem]">{value}</p>
+                    </div>
+                  </li>
+                ))}
+                {travelRules.map((rule) => {
+                  const Glyph = ruleIcon[rule.kind] ?? Info;
+                  return (
+                    <li key={rule.kind} className="bg-cream-100 flex gap-4 rounded-lg p-4 sm:col-span-2">
+                      <Glyph size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                      <div>
+                        <h3 className="font-sans text-base font-semibold tracking-normal">{rule.title}</h3>
+                        <p className="text-muted mt-1 text-[0.95rem]">{rule.text}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+              {tour.importantNotes.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="mb-4 text-2xl">{t.requirements.notes}</h3>
+                  <Bullets items={tour.importantNotes} />
+                </div>
+              )}
+            </TourPanel>
 
             {tour.faqs.length > 0 && (
-              <section id="faqs" className="scroll-mt-36">
-                <SectionHeading title={t.faqs} />
+              <TourPanel id="faqs" label={label('faqs')}>
+                <SectionHeading title={t.faqs} className="mb-6 max-lg:hidden" />
                 <Accordion items={tour.faqs.map((f, i) => ({ id: `faq-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
-              </section>
+              </TourPanel>
             )}
 
-            {tour.related.length > 0 && (
-              <section>
-                <SectionHeading title={t.related} />
-                <ul className="space-y-2">
-                  {tour.related.map((r) => (
-                    <li key={r.href}>
-                      <Link href={r.href} className="text-navy-900 font-semibold underline underline-offset-4">
-                        {r.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+            {tour.routeMap.image && (
+              <TourPanel id="route-map" label={label('route-map')}>
+                <SectionHeading title={t.routeMap} className="mb-6 max-lg:hidden" />
+                {tour.routeMap.intro && <p className="text-muted mb-4 max-w-3xl">{tour.routeMap.intro}</p>}
+                <figure className="bg-cream-100 relative max-w-3xl overflow-hidden rounded-lg">
+                  <div
+                    className="relative w-full"
+                    style={{ aspectRatio: `${tour.routeMap.image.width} / ${tour.routeMap.image.height}` }}>
+                    <Picture
+                      image={tour.routeMap.image}
+                      sizes="(min-width: 1024px) 48rem, 100vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </figure>
+              </TourPanel>
             )}
+
+            <TourPanel id="payment" label={label('payment')}>
+              <SectionHeading title={t.payment.title} className="mb-6 max-lg:hidden" />
+              <ul className="grid gap-4 sm:grid-cols-3">
+                {paymentSummary.map((step) => (
+                  <li key={step.label} className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
+                    <p className="text-gold-700 text-sm font-semibold">{step.label}</p>
+                    <p className="font-display text-navy-900 mt-1 text-2xl font-semibold">{step.value}</p>
+                    <p className="text-muted mt-2 text-[0.95rem]">{step.text}</p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5">
+                <Link href="/gdpr/terms-conditions" className="text-navy-900 font-semibold underline underline-offset-4">
+                  {t.payment.terms}
+                </Link>
+              </p>
+            </TourPanel>
+
+            <TourPanel id="cancellation" label={label('cancellation')}>
+              <SectionHeading title={t.cancel.title} className="mb-6 max-lg:hidden" />
+              {tour.facts.cancellation && (
+                <p className="text-navy-900 mb-4 text-lg font-semibold">{tour.facts.cancellation}</p>
+              )}
+              {tour.cancellationPolicy.length > 0 ? (
+                <Bullets items={tour.cancellationPolicy} />
+              ) : (
+                !tour.facts.cancellation && <p className="text-muted">{t.cancel.none}</p>
+              )}
+              <p className="mt-5">
+                <Link href="/gdpr/terms-conditions" className="text-navy-900 font-semibold underline underline-offset-4">
+                  {t.cancel.terms}
+                </Link>
+              </p>
+            </TourPanel>
           </div>
 
-          <aside id="enquiry" className="scroll-mt-36 space-y-6">
-            <QuoteForm variant="sidebar" tour={{ slug: tour.slug, title: tour.title }} />
-            {practical.length > 0 && (
-              <div className="border-cream-200 bg-cream-50 rounded-lg border p-5">
-                <h2 className="mb-3 text-xl">{t.practical.title}</h2>
-                <dl className="divide-cream-200 divide-y text-sm">
-                  {practical.map((f) => (
-                    <div key={f.label} className="py-2.5">
-                      <dt className="text-muted">{f.label}</dt>
-                      <dd className="text-navy-900 font-medium">{f.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="mt-3">
-                  <Link href="/contact" className="text-navy-900 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4">
-                    <Compass size={18} aria-hidden />
-                    {t.practical.ask}
-                  </Link>
-                </p>
+          <aside id="enquiry" className="scroll-mt-40 lg:self-start lg:pt-10">
+            <div className="space-y-5 lg:sticky lg:top-40 lg:max-h-[calc(100dvh-11rem)] lg:overflow-y-auto lg:pr-1">
+              <div className="bg-navy-900 rounded-lg p-5 text-white">
+                <TourPrice
+                  lang={lang}
+                  eur={tour.priceEUR}
+                  usd={tour.priceUSD}
+                  text={{ ...t.price, ...card }}
+                  size="page"
+                  tone="dark"
+                />
+                {(tour.priceEUR !== null || tour.priceUSD !== null) && (
+                  <p className="mt-2 text-sm text-white/80">{t.price.note}</p>
+                )}
+                {tour.priceNote && <p className="mt-1 text-sm font-medium text-white">{tour.priceNote}</p>}
+                {tour.departures.length > 0 && (
+                  <div className="mt-4 border-t border-white/15 pt-4 text-sm">
+                    <p className="text-gold-100 mb-1 font-semibold">{t.price.departures}</p>
+                    <ul className="space-y-1 text-white/90">
+                      {tour.departures.map((d, i) => (
+                        <li key={i}>{d}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            )}
+              <QuoteForm variant="sidebar" tour={{ slug: tour.slug, title: tour.title }} />
+            </div>
           </aside>
         </div>
-      </div>
+      </TourTabsProvider>
+
+      {tour.related.length > 0 && (
+        <section className="section-y border-cream-200 bg-cream-100/60 border-t">
+          <div className="container-wide">
+            <SectionHeading title={t.related} />
+            <ul className="space-y-2">
+              {tour.related.map((r) => (
+                <li key={r.href}>
+                  <Link href={r.href} className="text-navy-900 font-semibold underline underline-offset-4">
+                    {r.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
     </>
   );
 }
