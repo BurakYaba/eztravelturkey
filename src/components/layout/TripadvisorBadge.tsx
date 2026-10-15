@@ -8,7 +8,34 @@ declare global {
   interface Window {
     /** Set by Tripadvisor's embed script: draws every badge that registered itself. */
     taValidate?: () => void;
+    /** Defined by a second Tripadvisor script that loads after the embed code; the badge calls it as soon as it is drawn. */
+    resizeRatingsOnlyWidget?: (options: unknown) => void;
   }
+}
+
+/**
+ * Tripadvisor's badge calls `resizeRatingsOnlyWidget` from an inline handler the moment its logo has loaded, but the
+ * script that defines it arrives separately and can be late, which throws a ReferenceError. Until the real function
+ * exists, a stand-in waits and passes the call on to it (the real script replaces the stand-in when it loads).
+ */
+function drawBadge() {
+  if (!window.resizeRatingsOnlyWidget) {
+    const standIn = (options: unknown, attempt = 0) => {
+      if (attempt > 20) {
+        return;
+      }
+      window.setTimeout(() => {
+        const real = window.resizeRatingsOnlyWidget;
+        if (real && real !== standIn) {
+          real(options);
+        } else {
+          standIn(options, attempt + 1);
+        }
+      }, 500);
+    };
+    window.resizeRatingsOnlyWidget = standIn as (options: unknown) => void;
+  }
+  window.taValidate?.();
 }
 
 /** Tripadvisor's own widget languages. */
@@ -42,7 +69,7 @@ export function TripadvisorBadge({ lang, label }: { lang: Locale; label: string 
         id="tripadvisor-widget"
         src={`https://www.tripadvisor.com/WidgetEmbed-cdsratingsonlynarrow?border=true&locationId=5617607&display_version=2&uniq=461&lang=${widgetLang[lang]}`}
         strategy="lazyOnload"
-        onLoad={() => window.taValidate?.()}
+        onLoad={drawBadge}
       />
     </>
   );
