@@ -10,10 +10,11 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
 import { format } from '@/i18n/dictionaries';
-import { getDictionaryForPage } from '@/i18n/server';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { site, whatsappLink } from '@/data/site';
 import { cn } from '@/lib/utils';
 import { Logo } from './Logo';
+import { TripadvisorBadge } from './TripadvisorBadge';
 
 const socials = [
   { label: 'Facebook', href: site.social.facebook, icon: FacebookLogo },
@@ -25,6 +26,7 @@ const linkClass = 'text-white/75 transition hover:text-white';
 const webcraft = 'https://www.webcraft.tr';
 
 export async function Footer() {
+  const lang = await getLocale();
   const { footer: t, countries, common } = await getDictionaryForPage();
   const explore = [
     { label: t.allTours, href: '/tours' },
@@ -150,9 +152,7 @@ export async function Footer() {
               </a>
             </li>
             <li>
-              <a href={site.tripadvisorUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                {t.tripadvisor}
-              </a>
+              <TripadvisorBadge lang={lang} label={t.tripadvisor} />
             </li>
             <li>{t.cards}</li>
           </ul>

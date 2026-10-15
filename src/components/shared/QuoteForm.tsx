@@ -15,5 +15,6 @@ export async function QuoteForm(props: Props) {
   const lang = await getLocale();
   const { form, countries } = getDictionary(lang);
   const destinations = Object.entries(countries).map(([id, c]) => ({ id, name: c.name }));
-  return <QuoteFormClient {...props} text={form} destinations={destinations} />;
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || undefined;
+  return <QuoteFormClient {...props} text={form} destinations={destinations} turnstileSiteKey={turnstileSiteKey} />;
 }

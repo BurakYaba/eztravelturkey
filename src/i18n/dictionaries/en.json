@@ -114,8 +114,7 @@
       "itinerary": "Itinerary",
       "inclusions": "Inclusions",
       "requirements": "Practical information",
-      "faqs": "FAQs",
-      "reviews": "Reviews"
+      "faqs": "FAQs"
     },
     "glance": {
       "title": "Trip at a glance",
@@ -160,11 +159,6 @@
     "photo": "{title}, photo {n}",
     "faqs": "Frequently asked questions",
     "related": "You may also like",
-    "reviews": {
-      "title": "Reviews",
-      "text": "Read what travelers say about Magnificent Travel on Tripadvisor.",
-      "link": "View on Tripadvisor"
-    },
     "practical": {
       "title": "Practical information",
       "flights": "Domestic flights",
@@ -177,6 +171,14 @@
       "text": "Tell us your dates and group size and a travel specialist will send you a personalized quote.",
       "quote": "Request a personalized quote",
       "whatsapp": "Chat on WhatsApp"
+    },
+    "lightbox": {
+      "open": "Open photo {n} of {total}",
+      "close": "Close",
+      "previous": "Previous photo",
+      "next": "Next photo",
+      "position": "Photo {n} of {total}",
+      "photos": "Photos"
     }
   },
   "form": {
@@ -231,7 +233,9 @@
     "whatsappTour": "I am interested in: {tour}.",
     "whatsappDestinations": "Destinations: {destinations}.",
     "whatsappAdults": "Adults: {adults}.",
-    "whatsappStart": "Preferred start date: {date}."
+    "whatsappStart": "Preferred start date: {date}.",
+    "verifyFailed": "The spam check could not load. Please reload the page or message us on WhatsApp.",
+    "verifyNeeded": "Please wait for the spam check to finish, then send again."
   },
   "card": {
     "from": "From",

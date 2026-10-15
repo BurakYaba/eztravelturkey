@@ -1,12 +1,14 @@
 'use client';
 
-import { useId, useState, type FormEvent, type ReactNode } from 'react';
+import { useCallback, useId, useState, type FormEvent, type ReactNode } from 'react';
 import { CheckCircle, WarningCircle, WhatsappLogo } from '@phosphor-icons/react/dist/ssr';
 import { whatsappLink } from '@/data/site';
 import type { Dictionary } from '@/i18n/dictionaries';
+import { useLocale } from '@/i18n/locale-context';
 import { format } from '@/i18n/template';
 import { cn } from '@/lib/utils';
 import { Button, ButtonAnchor } from './Button';
+import { Turnstile } from './Turnstile';
 
 type Variant = 'sidebar' | 'page' | 'contact';
 
@@ -17,6 +19,8 @@ type Props = {
   className?: string;
   text: Dictionary['form'];
   destinations: { id: string; name: string }[];
+  /** Cloudflare Turnstile site key; without it the form runs on the hidden trap field alone. */
+  turnstileSiteKey?: string;
 };
 
 type Status = 'idle' | 'sending' | 'done' | 'error';
@@ -53,8 +57,21 @@ function Field({
 
 const count = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
 
-export function QuoteFormClient({ variant = 'page', tour, defaultDestinations = [], className, text, destinations }: Props) {
+export function QuoteFormClient({
+  variant = 'page',
+  tour,
+  defaultDestinations = [],
+  className,
+  text,
+  destinations,
+  turnstileSiteKey,
+}: Props) {
   const uid = useId();
+  const lang = useLocale();
+  const [token, setToken] = useState('');
+  const [checkFailed, setCheckFailed] = useState(false);
+  const [checkRound, setCheckRound] = useState(0);
+  const onCheckFail = useCallback(() => setCheckFailed(true), []);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [delivered, setDelivered] = useState(false);
@@ -69,6 +86,11 @@ export function QuoteFormClient({ variant = 'page', tour, defaultDestinations = 
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (turnstileSiteKey && !token) {
+      setError(checkFailed ? text.verifyFailed : text.verifyNeeded);
+      setStatus('error');
+      return;
+    }
     const data = new FormData(e.currentTarget);
     const get = (name: string) => String(data.get(name) ?? '');
     const payload: Record<string, string> = {
@@ -91,6 +113,7 @@ export function QuoteFormClient({ variant = 'page', tour, defaultDestinations = 
       destinations: data.getAll('destinations').join(', '),
       message: get('message'),
       website: get('website'),
+      turnstileToken: token,
       source: typeof window === 'undefined' ? '' : window.location.pathname,
     };
 
@@ -106,6 +129,8 @@ export function QuoteFormClient({ variant = 'page', tour, defaultDestinations = 
       if (!res.ok || !result.ok) {
         setError(result.error ?? text.errorGeneric);
         setStatus('error');
+        setToken('');
+        setCheckRound((n) => n + 1);
         return;
       }
       const lines = [
@@ -340,6 +365,10 @@ export function QuoteFormClient({ variant = 'page', tour, defaultDestinations = 
           <input type="checkbox" required className="accent-navy-900 mt-1 size-4" />
           <span>{text.consent}</span>
         </label>
+      )}
+
+      {turnstileSiteKey && (
+        <Turnstile siteKey={turnstileSiteKey} lang={lang} onToken={setToken} onFail={onCheckFail} resetKey={checkRound} />
       )}
 
       {status === 'error' && (

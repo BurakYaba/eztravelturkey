@@ -31,6 +31,31 @@ const labels: [key: string, label: string][] = [
   ['source', 'Sent from'],
 ];
 
+/**
+ * Asks Cloudflare whether the Turnstile token the form sent is genuine. Only runs when TURNSTILE_SECRET_KEY is set, so a
+ * site without the key still works on the hidden trap field alone.
+ */
+async function turnstilePassed(token: string, ip: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    return true;
+  }
+  if (!token) {
+    return false;
+  }
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body: new URLSearchParams({ secret, response: token, ...(ip ? { remoteip: ip } : {}) }),
+      signal: AbortSignal.timeout(5000),
+    });
+    const result = (await res.json()) as { success?: boolean };
+    return result.success === true;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: Request) {
   let body: Payload;
   try {
@@ -42,6 +67,14 @@ export async function POST(request: Request) {
   // Honeypot: real visitors never fill this hidden field.
   if (clean(body.website)) {
     return NextResponse.json({ ok: true, delivered: true });
+  }
+
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? '';
+  if (!(await turnstilePassed(clean(body.turnstileToken, 4096), ip))) {
+    return NextResponse.json(
+      { ok: false, error: 'The spam check failed. Please try again or message us on WhatsApp.' },
+      { status: 400 },
+    );
   }
 
   const type = clean(body.type, 20);

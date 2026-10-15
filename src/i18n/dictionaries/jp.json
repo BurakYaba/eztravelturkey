@@ -114,8 +114,7 @@
       "itinerary": "日程",
       "inclusions": "料金に含まれるもの",
       "requirements": "旅行の実用情報",
-      "faqs": "よくある質問",
-      "reviews": "口コミ"
+      "faqs": "よくある質問"
     },
     "glance": {
       "title": "ツアーのポイント",
@@ -160,11 +159,6 @@
     "photo": "{title}、写真 {n}",
     "faqs": "よくある質問",
     "related": "こちらもおすすめ",
-    "reviews": {
-      "title": "口コミ",
-      "text": "Magnificent Travel についてのお客様の声は Tripadvisor でご覧いただけます。",
-      "link": "Tripadvisor を見る"
-    },
     "practical": {
       "title": "旅行の実用情報",
       "flights": "国内線",
@@ -177,6 +171,14 @@
       "text": "ご希望の日程と人数をお知らせください。専門スタッフがお見積りをお送りします。",
       "quote": "お見積りを依頼する",
       "whatsapp": "WhatsApp で相談"
+    },
+    "lightbox": {
+      "open": "写真 {n}/{total} を開く",
+      "close": "閉じる",
+      "previous": "前の写真",
+      "next": "次の写真",
+      "position": "写真 {n}/{total}",
+      "photos": "写真"
     }
   },
   "form": {
@@ -231,7 +233,9 @@
     "whatsappTour": "次のツアーに興味があります：{tour}。",
     "whatsappDestinations": "目的地：{destinations}。",
     "whatsappAdults": "大人：{adults}名。",
-    "whatsappStart": "ご希望の出発日：{date}。"
+    "whatsappStart": "ご希望の出発日：{date}。",
+    "verifyFailed": "スパム確認を読み込めませんでした。ページを再読み込みするか、WhatsApp でご連絡ください。",
+    "verifyNeeded": "スパム確認の完了をお待ちのうえ、もう一度送信してください。"
   },
   "card": {
     "from": "最低料金",

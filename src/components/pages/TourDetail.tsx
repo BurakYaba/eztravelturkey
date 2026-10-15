@@ -5,11 +5,10 @@ import {
   Compass,
   MapPin,
   Translate,
-  Star,
   UsersThree,
   WhatsappLogo,
 } from '@phosphor-icons/react/dist/ssr';
-import { site, whatsappLink } from '@/data/site';
+import { whatsappLink } from '@/data/site';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import type { TourRecord } from '@/lib/data/types';
@@ -21,6 +20,7 @@ import { PageBanner } from '../shared/PageBanner';
 import { Picture } from '../shared/Picture';
 import { QuoteForm } from '../shared/QuoteForm';
 import { SectionHeading } from '../shared/SectionHeading';
+import { TourGallery } from '../tours/TourGallery';
 import { TourPrice } from '../tours/TourPrice';
 
 function List({ items, tone }: { items: string[]; tone?: 'plus' | 'minus' }) {
@@ -72,7 +72,6 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { id: 'itinerary', label: t.tabs.itinerary, show: tour.itinerary.length > 0 },
     { id: 'inclusions', label: t.tabs.inclusions, show: hasInclusions || hasPolicies },
     { id: 'faqs', label: t.tabs.faqs, show: tour.faqs.length > 0 },
-    { id: 'reviews', label: t.tabs.reviews, show: true },
   ].filter((s) => s.show);
 
   return (
@@ -184,17 +183,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
               {tour.gallery.length > 1 && (
                 <div>
                   <h3 className="mb-4 text-2xl">{t.gallery}</h3>
-                  <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    {tour.gallery.map((image, i) => (
-                      <li key={image.src} className="bg-cream-100 relative aspect-4/3 overflow-hidden rounded-lg">
-                        <Picture
-                          image={image}
-                          sizes="(min-width: 1024px) 16rem, 50vw"
-                          alt={format(t.photo, { title: tour.title, n: i + 1 })}
-                        />
-                      </li>
-                    ))}
-                  </ul>
+                  <TourGallery images={tour.gallery} title={tour.title} text={t.lightbox} photoLabel={t.photo} />
                 </div>
               )}
             </section>
@@ -305,17 +294,6 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                 <Accordion items={tour.faqs.map((f, i) => ({ id: `faq-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
               </section>
             )}
-
-            <section id="reviews" className="scroll-mt-36">
-              <SectionHeading title={t.reviews.title} />
-              <div className="border-cream-200 flex flex-wrap items-center gap-5 rounded-lg border bg-white p-5 md:p-6">
-                <Star size={40} weight="fill" className="text-gold-600 shrink-0" aria-hidden />
-                <p className="text-ink/90 min-w-0 flex-1 basis-64">{t.reviews.text}</p>
-                <ButtonAnchor href={site.tripadvisorUrl} target="_blank" rel="noopener noreferrer" variant="secondary">
-                  {t.reviews.link}
-                </ButtonAnchor>
-              </div>
-            </section>
 
             {tour.related.length > 0 && (
               <section>

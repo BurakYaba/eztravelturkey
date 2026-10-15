@@ -114,8 +114,7 @@
       "itinerary": "每日行程",
       "inclusions": "費用包含",
       "requirements": "實用資訊",
-      "faqs": "常見問題",
-      "reviews": "旅客評價"
+      "faqs": "常見問題"
     },
     "glance": {
       "title": "行程一覽",
@@ -160,11 +159,6 @@
     "photo": "{title}，照片 {n}",
     "faqs": "常見問題",
     "related": "您可能也喜歡",
-    "reviews": {
-      "title": "旅客評價",
-      "text": "歡迎到 Tripadvisor 閱讀旅客對 Magnificent Travel 的評價。",
-      "link": "前往 Tripadvisor"
-    },
     "practical": {
       "title": "實用資訊",
       "flights": "國內航班",
@@ -177,6 +171,14 @@
       "text": "告訴我們出發日期與人數，旅遊顧問會為您提供專屬報價。",
       "quote": "索取專屬報價",
       "whatsapp": "用 WhatsApp 聊聊"
+    },
+    "lightbox": {
+      "open": "開啟第 {n} 張照片（共 {total} 張）",
+      "close": "關閉",
+      "previous": "上一張照片",
+      "next": "下一張照片",
+      "position": "第 {n} 張，共 {total} 張",
+      "photos": "照片"
     }
   },
   "form": {
@@ -231,7 +233,9 @@
     "whatsappTour": "我對這個行程有興趣：{tour}。",
     "whatsappDestinations": "目的地：{destinations}。",
     "whatsappAdults": "成人：{adults} 位。",
-    "whatsappStart": "希望出發日期：{date}。"
+    "whatsappStart": "希望出發日期：{date}。",
+    "verifyFailed": "無法載入垃圾訊息檢查，請重新整理頁面，或直接用 WhatsApp 聯絡我們。",
+    "verifyNeeded": "請等待垃圾訊息檢查完成後再送出。"
   },
   "card": {
     "from": "起價",
