@@ -437,6 +437,9 @@ export async function resolveDestination(lang: Locale, segments: string[]): Prom
       toursUnder(lang, first),
       pageSummaries(lang, 'category', `destinations/${first}`),
     ]);
+    // Shortest trips first: "3-5 days" before "10 days or more" (a plain sort by address puts "10日以上" before "3～5日間").
+    const length = (c: PageSummary) => Number(/\d+/.exec(c.title)?.[0] ?? Number.MAX_SAFE_INTEGER);
+    categories.sort((x, y) => length(x) - length(y));
     return { type: 'country', page, tours, categories };
   }
   if (page?.kind === 'combo') {

@@ -4,9 +4,9 @@ P4.5. The new site against the live English site as recorded on 2026-10-07 (`dat
 
 ## Coverage
 
-- Old English pages answering 200: 617. On the new site at the same address: **188**. Not on the new site: 429. New addresses that the old site did not have: 5.
+- Old English pages answering 200: 617. On the new site at the same address: **188**. Not on the new site: 429. New addresses that the old site did not have: 12.
 - Not carried over, by kind: static 2, blog-post 427. Blog posts the client did not list are not moved (D12) and get a 301 to the blog hub (P7.4); tours that were removed or Israel pages are handled in P7.
-- New addresses: /en/multi-country-tours/, /en/plan-my-trip/, /en/private-tours/, /en/small-group-tours/, /en/tours/.
+- New addresses: /en/destinations/egypt-tours/03-to-05-days-tours/, /en/destinations/egypt-tours/06-to-09-days-tours/, /en/destinations/egypt-tours/10-days-and-longer/, /en/destinations/jordan-tours/03-to-05-days-tours/, /en/destinations/jordan-tours/06-to-09-days-tours/, /en/destinations/morocco-tours/03-to-05-days-tours/, /en/destinations/morocco-tours/06-days-and-longer/, /en/multi-country-tours/, /en/plan-my-trip/, /en/private-tours/, /en/small-group-tours/, /en/tours/.
 
 ## Titles, descriptions, headings, canonical
 
@@ -32,7 +32,7 @@ Every old page carried three H1 elements (the page heading plus two legal-text m
 
 ## Content and links
 
-Words are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.
+Words (characters for Chinese and Japanese) are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.
 
 | Kind | Old words (median) | New words (median) | New under 70% of old | Old internal links (median) | New internal links (median) | Old images without alt | New images without alt |
 |---|---|---|---|---|---|---|---|
@@ -42,7 +42,7 @@ Words are the text inside `<main>` of each page. The old counts left out the hea
 | blog-post | 3434 | 3334 | 0 | 40 | 28 | 1 | 0 |
 | category | 832 | 1583 | 0 | 36 | 33 | 0 | 0 |
 | combo | 907 | 1822 | 0 | 31 | 29 | 0 | 0 |
-| country | 878 | 1972 | 0 | 34 | 27 | 0 | 0 |
+| country | 878 | 1991 | 0 | 34 | 30 | 0 | 0 |
 | destinations-hub | 1350 | 927 | 1 | 25 | 27 | 0 | 0 |
 | home | 749 | 1541 | 0 | 41 | 36 | 0 | 0 |
 | static | 913 | 1376 | 0 | 27 | 21 | 0 | 0 |

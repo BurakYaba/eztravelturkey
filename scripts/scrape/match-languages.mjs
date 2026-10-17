@@ -23,13 +23,26 @@ const stays = (t) =>
     .filter((l) => /^(住宿|宿泊地?)[：:]/.test(l))
     .join(' ');
 
+/** Number of domestic flights a tour includes, from the title ("3段內陸航班") or the included list; null when it says nothing. */
+function flightCount(t) {
+  const inTitle = /(\d)\s*段\s*(?:內陸|国内|國内)/.exec(t.title);
+  if (inTitle) return Number(inTitle[1]);
+  const lines = t.included.join('\n');
+  const jp = /国内線\s*(\d)\s*区間|(\d)\s*区間.*国内線/.exec(lines);
+  if (jp) return Number(jp[1] ?? jp[2]);
+  const zh = /(\d)\s*段\s*(?:國内|国内|內陸)/.exec(lines);
+  if (zh) return Number(zh[1]);
+  const en = t.included.filter((l) => /domestic flight|flight from|flight to/i.test(l)).length;
+  return en || null;
+}
+
 function features(t) {
   // The title, the route and the places of the "main places" fact say what the tour visits; the stays fill gaps (the
   // Chinese pages have no route line).
   const named = [t.title, t.route.join(' '), Object.values(t.extraFacts).join(' ')].join(' ');
   let cities = placesIn(named);
   if (cities.length < 2) cities = [...new Set([...cities, ...placesIn(stays(t))])];
-  return { cities, countries: countriesOfPlaces(cities), days: t.days };
+  return { cities, countries: countriesOfPlaces(cities), days: t.days, flights: flightCount(t), price: t.price.amount > 0 ? t.price.amount : null };
 }
 
 const jaccard = (a, b) => {
@@ -46,7 +59,12 @@ function score(a, b) {
   if (gap > 1) return 0;
   const sameCountries = jaccard(a.countries, b.countries);
   if (sameCountries < 1) return 0;
-  return jaccard(a.cities, b.cities) * (gap === 0 ? 1 : 0.8);
+  // Same price in euro (the Japanese pages copy the English ones for many tours) or the same number of domestic flights tell tours apart
+  // that visit the same places for the same number of days.
+  const base = jaccard(a.cities, b.cities) * (gap === 0 ? 1 : 0.8);
+  const samePrice = a.price !== null && b.price !== null && a.price === b.price ? 0.15 : 0;
+  const sameFlights = a.flights !== null && b.flights !== null ? (a.flights === b.flights ? 0.05 : -0.1) : 0;
+  return Math.min(1.2, Math.max(0, base + samePrice + sameFlights));
 }
 
 const langs = { en: readTours('en'), zh: readTours('zh'), jp: readTours('jp') };

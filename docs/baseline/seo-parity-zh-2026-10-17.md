@@ -13,57 +13,44 @@ P5.9. The new site against the old Chinese site as archived in October 2026 (`da
 
 | Kind | Pages | Same title | Same description | Same H1 | Old pages with more than one H1 | New pages with more than one H1 | Same canonical |
 |---|---|---|---|---|---|---|---|
-| blog-hub | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| category | 4 | 4 | 4 | 4 | 0 | 0 | 0 |
-| combo | 2 | 2 | 2 | 2 | 0 | 0 | 0 |
-| country | 4 | 4 | 4 | 4 | 0 | 0 | 0 |
-| destinations-hub | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-| static | 6 | 1 | 6 | 6 | 0 | 0 | 0 |
-| tour | 53 | 53 | 53 | 53 | 53 | 0 | 0 |
+| blog-hub | 1 | 0 | 1 | 0 | 0 | 0 | n/a (the old pages had no canonical) |
+| category | 4 | 4 | 4 | 4 | 0 | 0 | n/a (the old pages had no canonical) |
+| combo | 2 | 2 | 2 | 2 | 0 | 0 | n/a (the old pages had no canonical) |
+| country | 4 | 4 | 4 | 4 | 0 | 0 | n/a (the old pages had no canonical) |
+| destinations-hub | 1 | 0 | 0 | 0 | 0 | 0 | n/a (the old pages had no canonical) |
+| static | 6 | 1 | 6 | 6 | 0 | 0 | n/a (the old pages had no canonical) |
+| tour | 53 | 53 | 53 | 53 | 53 | 0 | n/a (the old pages had no canonical) |
 
 Pages with a different title:
 
-- `/zh/blog/` (blog-hub): "Eztravel Turkey" -> "旅遊指南 | Eztravel Turkey". **Needs a reason.**
-- `/zh/destinations/` (destinations-hub): "" -> "旅遊目的地 | Eztravel Turkey". **Needs a reason.**
-- `/zh/about-us/` (static): "Eztravel Turkey" -> "關於我們 | Eztravel Turkey". **Needs a reason.**
-- `/zh/contact/` (static): "Eztravel Turkey" -> "聯繫 | Eztravel Turkey". **Needs a reason.**
-- `/zh/faq/` (static): "Eztravel Turkey" -> "FAQ問答集 | Eztravel Turkey". **Needs a reason.**
-- `/zh/privacy-policy/` (static): "Eztravel Turkey" -> "隱私權政策 | Eztravel Turkey". **Needs a reason.**
-- `/zh/how-to-book-a-trip/` (static): "Eztravel Turkey" -> "如何預定行程 | Eztravel Turkey". **Needs a reason.**
+- `/zh/blog/` (blog-hub): "Eztravel Turkey" -> "旅遊指南 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
+- `/zh/destinations/` (destinations-hub): "" -> "旅遊目的地 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
+- `/zh/about-us/` (static): "Eztravel Turkey" -> "關於我們 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
+- `/zh/contact/` (static): "Eztravel Turkey" -> "聯繫 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
+- `/zh/faq/` (static): "Eztravel Turkey" -> "FAQ問答集 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
+- `/zh/privacy-policy/` (static): "Eztravel Turkey" -> "隱私權政策 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
+- `/zh/how-to-book-a-trip/` (static): "Eztravel Turkey" -> "如何預定行程 | Eztravel Turkey". the old title was empty or only the site name: now heading + site name
 
 Every new page has exactly one H1 (the old pages wrote the page title twice, in the banner and in the text).
 
 ## Content and links
 
-Words are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.
+Words (characters for Chinese and Japanese) are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.
 
 | Kind | Old words (median) | New words (median) | New under 70% of old | Old internal links (median) | New internal links (median) | Old images without alt | New images without alt |
 |---|---|---|---|---|---|---|---|
-| blog-hub | 609 | 3 | 1 | 22 | 20 | 9 | 0 |
-| category | 745 | 78 | 4 | 26 | 29 | 49 | 0 |
-| combo | 1142 | 136 | 2 | 28 | 29 | 29 | 0 |
-| country | 870 | 10 | 4 | 26 | 22 | 49 | 0 |
-| destinations-hub | 0 | 9 | 0 | 0 | 22 | 0 | 0 |
-| static | 799 | 47 | 6 | 19 | 20 | 43 | 0 |
-| tour | 2471 | 97 | 53 | 26 | 21 | 371 | 0 |
+| blog-hub | 609 | 126 | 1 | 22 | 20 | 9 | 0 |
+| category | 745 | 951 | 0 | 26 | 29 | 49 | 0 |
+| combo | 1142 | 1276 | 0 | 28 | 29 | 29 | 0 |
+| country | 870 | 999 | 1 | 26 | 28 | 49 | 0 |
+| destinations-hub | 0 | 292 | 0 | 0 | 22 | 0 | 0 |
+| static | 799 | 1177 | 0 | 19 | 20 | 43 | 0 |
+| tour | 2471 | 2836 | 0 | 26 | 21 | 371 | 0 |
 
 Pages whose new text is under 70% of the old (largest drop first):
 
-- `/zh/blog/` (blog-hub): 609 -> 3 words
-- `/zh/destinations/jordan-tours/` (country): 634 -> 4 words
-- `/zh/destinations/egypt-tours/` (country): 870 -> 6 words
-- `/zh/how-to-book-a-trip/` (static): 566 -> 5 words
-- `/zh/destinations/greece-tours/` (country): 782 -> 10 words
-- `/zh/terms-condition/` (static): 2418 -> 33 words
-- `/zh/destinations/turkey-tours/` (country): 870 -> 14 words
-- `/zh/faq/` (static): 3036 -> 52 words
-- `/zh/destinations/turkey-and-greece-tours/touch-of-greece-turkey-tour/` (tour): 3983 -> 110 words
-- `/zh/destinations/turkey-and-greece-tours/highlights-of-turkey-greece-tour/` (tour): 4064 -> 117 words
-- `/zh/destinations/turkey-and-greece-tours/turkey-greece-historical-tour/` (tour): 4149 -> 121 words
-- `/zh/destinations/turkey-and-greece-tours/turkey-greek-islands-tour/` (tour): 3729 -> 110 words
-- `/zh/destinations/turkey-tours/06-to-09-days-tours/turkey-cultural-trip-07-days/` (tour): 2934 -> 87 words
-- `/zh/destinations/turkey-tours/06-to-09-days-tours/turkey-classic-tour-07-days/` (tour): 3119 -> 93 words
-- `/zh/destinations/combination-tours/turkey-jordan-tour-13-days/` (tour): 4086 -> 127 words
+- `/zh/blog/` (blog-hub): 609 -> 3 characters
+- `/zh/destinations/turkey-tours/` (country): 870 -> 14 characters
 
 ## Structured data
 
