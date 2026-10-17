@@ -106,8 +106,9 @@ function toCard(raw: RawTourCard): TourCardData {
     styles: stylesOf(raw.groupType ?? ''),
     countries: countriesOf(raw.parent),
     bucket: bucketOf(days),
-    priceEUR: raw.priceEUR ?? null,
-    priceUSD: raw.priceUSD ?? null,
+    // The old site printed "From: €0" on one tour; a price of zero means no price was set.
+    priceEUR: raw.priceEUR && raw.priceEUR > 0 ? raw.priceEUR : null,
+    priceUSD: raw.priceUSD && raw.priceUSD > 0 ? raw.priceUSD : null,
     image: image(raw.image),
   };
 }

@@ -121,6 +121,7 @@
       "requirements": "行程須知",
       "faqs": "常見問題",
       "routeMap": "路線圖",
+      "price": "行程價格",
       "payment": "付款說明",
       "cancellation": "取消條款"
     },
@@ -145,7 +146,8 @@
       "onRequest": "價格請洽詢",
       "note": "起價為每人費用，實際價格依出發日期、飯店與人數而定。",
       "departures": "出發方式",
-      "season": "季節"
+      "season": "季節",
+      "notes": "價格說明"
     },
     "overview": "行程總覽",
     "highlights": "行程亮點與路線",
@@ -279,7 +281,13 @@
     "fromPrice": "行程起價",
     "guides": "旅遊指南：{country}",
     "moreGuides": "所有旅遊指南",
-    "allTours": "所有行程"
+    "allTours": "所有行程",
+    "bucket": {
+      "3-5": "3–5 天{country}行程",
+      "6-9": "6–9 天{country}行程",
+      "10+": "10 天以上{country}行程",
+      "other": "更多{country}行程"
+    }
   },
   "team": {
     "title": "認識我們的團隊",

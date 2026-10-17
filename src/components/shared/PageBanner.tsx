@@ -21,9 +21,19 @@ type Props = {
 export function PageBanner({ title, description, image = 'hero-istanbul', picture, crumbs, eyebrow, actions }: Props) {
   return (
     <section className="border-cream-200 bg-cream-50 relative isolate overflow-hidden border-b">
-      <div className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[68%]">
+      {/* A scraped picture is at most about 950 px wide. On a wide screen it is shown no larger than it is (a little over,
+          at most), so it stays sharp; the left edge fades into the page, so the narrower photo leaves no hard edge. */}
+      <div
+        className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[68%] lg:max-w-(--hero-max)"
+        style={picture ? ({ '--hero-max': `${Math.round(picture.width * 1.1)}px` } as React.CSSProperties) : undefined}>
         {picture ? (
-          <Picture image={picture} sizes="(min-width: 1024px) 68vw, 100vw" priority className="object-center" />
+          <Picture
+            image={picture}
+            sizes={`(min-width: 1024px) ${Math.min(Math.round(picture.width * 1.1), 1500)}px, 100vw`}
+            priority
+            quality={85}
+            className="object-center"
+          />
         ) : (
           <Photo id={image} sizes="(min-width: 1024px) 68vw, 100vw" priority className="object-center" />
         )}

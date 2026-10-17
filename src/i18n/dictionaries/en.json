@@ -121,6 +121,7 @@
       "requirements": "Trip Requirements",
       "faqs": "FAQs",
       "routeMap": "Route Map",
+      "price": "Tour Price",
       "payment": "Payment Summary",
       "cancellation": "Trip Cancellation Terms"
     },
@@ -145,7 +146,8 @@
       "onRequest": "Price on request",
       "note": "Starting price per person. The final price depends on dates, hotels and group size.",
       "departures": "Departure options",
-      "season": "Season"
+      "season": "Season",
+      "notes": "Price notes"
     },
     "overview": "Trip overview",
     "highlights": "Highlights and route",
@@ -279,7 +281,13 @@
     "fromPrice": "Tours from",
     "guides": "Travel guides: {country}",
     "moreGuides": "All travel guides",
-    "allTours": "All tours"
+    "allTours": "All tours",
+    "bucket": {
+      "3-5": "3–5 day {country} tours",
+      "6-9": "6–9 day {country} tours",
+      "10+": "10+ day {country} tours",
+      "other": "More {country} tours"
+    }
   },
   "team": {
     "title": "Meet the team",

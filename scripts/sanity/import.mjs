@@ -119,7 +119,7 @@ function tourDoc(t) {
     metaDescription: t.metaDescription,
     summary: t.summary,
     ...durationOf(t),
-    price: { eur: t.price.currency === 'EUR' ? t.price.amount : null, unit: t.price.unit, note: t.price.note },
+    price: { eur: t.price.currency === 'EUR' && t.price.amount > 0 ? t.price.amount : null, unit: t.price.unit, note: t.price.note },
     facts: t.facts,
     extraFacts: keyed(Object.entries(t.extraFacts), ([label, value]) => ({ _type: 'fact', label, value })),
     route: t.route,

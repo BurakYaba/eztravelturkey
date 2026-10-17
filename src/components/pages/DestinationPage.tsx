@@ -1,11 +1,10 @@
-import { Suspense } from 'react';
 import { Link } from '@/i18n/link';
 import { destinations } from '@/data/destinations';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { formatPrice } from '@/i18n/format';
 import { getLocale } from '@/i18n/server';
 import { blogsAbout, countriesIn } from '@/lib/data';
-import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
+import type { ImageRef, PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
 import type { Crumb } from '../shared/Breadcrumbs';
 import { MultiCountryCta } from '../shared/MultiCountryCta';
@@ -14,7 +13,6 @@ import { Picture } from '../shared/Picture';
 import { QuoteBand } from '../shared/QuoteBand';
 import { SectionHeading } from '../shared/SectionHeading';
 import { TourCard } from '../tours/TourCard';
-import { ToursBrowser } from '../tours/ToursBrowser';
 import { BlogCard } from './BlogCard';
 import { PageSections } from './PageSections';
 
@@ -27,6 +25,23 @@ type Props = {
   /** Cross-sell to the multi-country tours (single-country pages only). */
   crossSell?: boolean;
 };
+
+/** One choice in the "choose by length or style" grid: a picture, a title and how many tours it holds. */
+function ChooserCard({ href, title, count, image }: { href: string; title: string; count: string; image: ImageRef | null }) {
+  return (
+    <Link
+      href={href}
+      className="group border-cream-200 shadow-card hover:shadow-lift flex h-full gap-4 overflow-hidden rounded-lg border bg-white p-3 transition hover:-translate-y-0.5">
+      <span className="bg-cream-100 relative block aspect-square w-24 shrink-0 overflow-hidden rounded-md">
+        {image && <Picture image={image} alt="" sizes="96px" />}
+      </span>
+      <span className="self-center">
+        <span className="text-navy-900 block font-semibold">{title}</span>
+        <span className="text-muted block text-sm">{count}</span>
+      </span>
+    </Link>
+  );
+}
 
 /**
  * A country, a combination or a category page: the old page's text, what sits under it (category cards or tours), a
@@ -56,7 +71,21 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
     ...(country ? [{ label: t.bestTime, value: country.bestTime }, { label: t.currency, value: country.currency }] : []),
   ];
   const guides = await blogsAbout(lang, folder, 3);
-  const guideCountry = ids.length === 1 ? getDictionary(lang).countries[ids[0] as 'turkey']?.name : undefined;
+
+  // A country without category pages shows the same chooser as one with them, but its length groups are sections of
+  // this page: the old site has no pages for them and their addresses stay as they were.
+  const countryName = ids.length === 1 ? getDictionary(lang).countries[ids[0] as 'turkey']?.name : undefined;
+  const groups =
+    listTours && page.kind === 'country'
+      ? (['3-5', '6-9', '10+', 'other'] as const)
+          .map((key) => ({
+            key,
+            id: `group-${key === '10+' ? '10-plus' : key}`,
+            title: format(t.bucket[key], { country: countryName ?? '' }).trim(),
+            tours: tours.filter((tour) => (tour.bucket ?? 'other') === key),
+          }))
+          .filter((g) => g.tours.length > 0)
+      : [];
   return (
     <>
       <PageBanner title={page.title} description={page.metaDescription} picture={page.image} crumbs={crumbs} />
@@ -76,24 +105,29 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
         </section>
       )}
 
-      {categories.length > 0 && (
+      {(categories.length > 0 || groups.length > 0) && (
         <section className="section-y pb-0">
           <div className="container-x">
             <SectionHeading title={t.chooseTitle} />
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {categories.map((c) => (
                 <li key={c.path}>
-                  <Link
+                  <ChooserCard
                     href={c.href}
-                    className="group border-cream-200 shadow-card hover:shadow-lift flex h-full gap-4 overflow-hidden rounded-lg border bg-white p-3 transition hover:-translate-y-0.5">
-                    <span className="bg-cream-100 relative block aspect-square w-24 shrink-0 overflow-hidden rounded-md">
-                      {c.image && <Picture image={c.image} sizes="96px" />}
-                    </span>
-                    <span className="self-center">
-                      <span className="text-navy-900 block font-semibold">{c.title}</span>
-                      <span className="text-muted block text-sm">{format(t.toursCount, { count: countIn(c.href) })}</span>
-                    </span>
-                  </Link>
+                    title={c.title}
+                    count={format(t.toursCount, { count: countIn(c.href) })}
+                    image={c.image}
+                  />
+                </li>
+              ))}
+              {groups.map((g) => (
+                <li key={g.key}>
+                  <ChooserCard
+                    href={`#${g.id}`}
+                    title={g.title}
+                    count={format(t.toursCount, { count: g.tours.length })}
+                    image={g.tours.find((tour) => tour.image)?.image ?? null}
+                  />
                 </li>
               ))}
             </ul>
@@ -101,24 +135,32 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
         </section>
       )}
 
-      {listTours && tours.length > 0 && (
+      {groups.map((g, gi) => (
+        <section key={g.key} id={g.id} className="section-y scroll-mt-20 pb-0">
+          <div className="container-x">
+            <SectionHeading title={g.title} />
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {g.tours.map((tour, i) => (
+                <li key={tour.href}>
+                  <TourCard tour={tour} lang={lang} text={card} className="h-full" priority={gi === 0 && i < 3} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))}
+
+      {listTours && page.kind !== 'country' && tours.length > 0 && (
         <section className="section-y">
           <div className="container-x">
             <SectionHeading title={format(t.toursHeading, { count: tours.length })} />
-            {page.kind === 'country' ? (
-              // A country with no category pages lists its tours here, with the style and length filters.
-              <Suspense fallback={<div className="h-96" aria-hidden />}>
-                <ToursBrowser tours={tours} singleCountry lang={lang} cardText={card} />
-              </Suspense>
-            ) : (
-              <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {tours.map((tour, i) => (
-                  <li key={tour.href}>
-                    <TourCard tour={tour} lang={lang} text={card} className="h-full" priority={i < 3} />
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {tours.map((tour, i) => (
+                <li key={tour.href}>
+                  <TourCard tour={tour} lang={lang} text={card} className="h-full" priority={i < 3} />
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}
@@ -135,7 +177,7 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
         <section className="section-y">
           <div className="container-x">
             <SectionHeading
-              title={guideCountry ? format(t.guides, { country: guideCountry }) : t.moreGuides}
+              title={countryName ? format(t.guides, { country: countryName }) : t.moreGuides}
               link={{ href: '/blog', label: t.moreGuides }}
             />
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
