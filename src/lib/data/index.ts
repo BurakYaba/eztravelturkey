@@ -1,6 +1,7 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
 import { defaultLocale, locales, type Locale } from '@/i18n/config';
 import { formatDate } from '@/i18n/format';
+import { toursOfCategory } from './duration';
 import { query } from './sanity';
 import type {
   CardRecord,
@@ -112,6 +113,8 @@ function toCard(raw: RawTourCard): TourCardData {
     image: image(raw.image),
   };
 }
+
+export { toursOfCategory };
 
 export type TourFilter = { parent?: string; category?: string | null; style?: TourStyle; paths?: string[] };
 
@@ -405,11 +408,8 @@ export async function resolveDestination(lang: Locale, segments: string[]): Prom
     return { type: 'combo', page, tours: await toursUnder(lang, first) };
   }
   if (page?.kind === 'category') {
-    const [tours, parent] = await Promise.all([
-      toursUnder(lang, first, segments[1] ?? null),
-      getPage(lang, `destinations/${first}`),
-    ]);
-    return { type: 'category', page, tours, parent };
+    const [all, parent] = await Promise.all([toursUnder(lang, first), getPage(lang, `destinations/${first}`)]);
+    return { type: 'category', page, tours: toursOfCategory(all, page.href), parent };
   }
   const tour = await getTour(lang, path);
   return tour ? { type: 'tour', tour } : null;

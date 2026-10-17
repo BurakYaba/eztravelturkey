@@ -2,30 +2,28 @@
 //
 //   node scripts/depositphotos/download-heroes.mjs
 //
-// Needs the client's Chrome with remote debugging allowed (chrome://inspect/#remote-debugging) and the Depositphotos
-// account signed in. It only presses the download icon of pictures that are already in the account's download list
+// Needs a browser signed in to the Depositphotos account (see browser.mjs: `node scripts/depositphotos/browser.mjs login`
+// once, or --cdp for the client's own running Chrome). It only presses the download icon of pictures that are already in the account's download list
 // (a re-download: nothing is bought and no credit is spent) and works one picture at a time with a pause. Files go to
 // data/depositphotos/originals/ (not in git). Pictures already there are skipped, so it can be run again.
-import { createRequire } from 'node:module';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
-const require = createRequire('C:/Users/Burak/AppData/Roaming/npm/node_modules/@playwright/cli/');
-const { chromium } = require('playwright-core');
+import { openBrowser } from './browser.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 const dir = path.join(root, 'data/depositphotos');
 const catalog = JSON.parse(readFileSync(path.join(dir, 'catalog.json'), 'utf8'));
-const proposal = JSON.parse(readFileSync(path.join(dir, 'proposal.json'), 'utf8'));
+const file = process.argv.find((a) => a.startsWith('--file='))?.slice(7) ?? 'proposal.json';
+const proposal = JSON.parse(readFileSync(path.join(dir, file), 'utf8'));
 const have = () => new Set(readdirSync(path.join(dir, 'originals')).map((f) => f.match(/Depositphotos_(\d+)_/)?.[1]));
 
 const wanted = [...new Set(proposal.map((p) => p.pick?.id).filter(Boolean))];
 const todo = wanted.filter((id) => !have().has(id));
 console.log(`${wanted.length} pictures wanted, ${wanted.length - todo.length} already downloaded, ${todo.length} to go`);
 
-const [port, wsPath] = readFileSync(process.env.LOCALAPPDATA + '/Google/Chrome/User Data/DevToolsActivePort', 'utf8').trim().split('\n');
-const browser = await chromium.connectOverCDP(`ws://127.0.0.1:${port}${wsPath}`, { timeout: 240000 });
-const page = await browser.contexts()[0].newPage();
+const { context, close } = await openBrowser({ cdp: process.argv.includes('--cdp') });
+const page = await context.newPage();
 
 // Group by list page (160 rows each) so every page is opened once.
 const byOffset = new Map();
@@ -58,6 +56,6 @@ for (const [offset, ids] of byOffset) {
   }
 }
 await page.close();
-await browser.close();
+await close();
 console.log(`done: ${done} downloaded, ${failed.length} failed`);
 for (const [id, why] of failed) console.log(' ', id, why);

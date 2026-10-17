@@ -55,11 +55,11 @@ The Pexels photographers are credited on the About page (section "Photo credits"
 | `greek-ruins-columns` | Uiliam Nörnberg | https://www.pexels.com/photo/the-sun-is-setting-over-the-parthenon-28300999/ | Pexels License (free for commercial use, no attribution required; credited on the About page) |
 
 <!-- depositphotos-heroes:start -->
-## Tour hero pictures from Depositphotos (118)
+## Hero pictures from Depositphotos (146): tours and destination pages
 
-Bought by Magnificent Travel (team account, standard license) and shown as the main picture of 118 tours (2026-10-17). Each picture is used for one tour. The license page of every picture is in the client's account at the address in the last column.
+Bought by Magnificent Travel (team account, standard license) and shown as the main picture of 118 tours and 28 destination pages (2026-10-17). Each picture is used once. The license page of every picture is in the client's account at the address in the last column.
 
-| Depositphotos no. | Size | Title | Artist | Tour | License page |
+| Depositphotos no. | Size | Title | Artist | Used on | License page |
 |---|---|---|---|---|---|
 | 65693639 | XL | The Great Temple of Abu Simbel, Egypt | naticastillog | 10-Day Egypt & Red Sea Journey: Nile to Hurghada | https://depositphotos.com/tr/purchased/view/294655608.html |
 | 31686247 | XL | Temple Of Hathor In Abu Simbel, Egypt | Design Pics | 10-Day Egypt Heritage Explorer: Cairo to Luxor | https://depositphotos.com/tr/purchased/view/294655560.html |
@@ -179,4 +179,32 @@ Bought by Magnificent Travel (team account, standard license) and shown as the m
 | 4863118 | XL | Hagia Sophia in Istanbul in morning light | AchimHB | 4-Day Istanbul Tour | https://depositphotos.com/tr/purchased/view/294622764.html |
 | 285833118 | XL | Iznik.bursa,turkey- july 14,2019. iznik known as Nicaea since ancient times and iznik is located on eastern shore of lake iznik. view from old and historical buildings in iznik. | yilmazsavaskandag | 5-Day Istanbul & Bursa Tour | https://depositphotos.com/tr/purchased/view/294658498.html |
 | 383487262 | XL | Hagia Sophia and Blue Mosque. Istanbul, Turkey. | resulmuslu | 6-Day Istanbul, Bursa & Princes' Islands Tour | https://depositphotos.com/tr/purchased/view/294622706.html |
+| 32824433 | L | The town of Goreme-Cappadocia, the tourism capital of Turkey | toshket | Turkey (destination page) | https://depositphotos.com/tr/purchased/view/294744708.html |
+| 98816964 | XL | Orthodox Church building on Santorini | teamtime | Greece (destination page) | https://depositphotos.com/tr/purchased/view/294642300.html |
+| 1554934 | XL | Bedouin on camel near of great pyramid | Ukrainian | Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653178.html |
+| 11440304 | L | Camel against treasury | kyolshin | Jordan (destination page) | https://depositphotos.com/tr/purchased/view/294716128.html |
+| 237960328 | XL | Ancient fortress at marrakech, Morocco | stefano.zaccaria1704.gmail.com | Morocco (destination page) | https://depositphotos.com/tr/purchased/view/294672316.html |
+| 612185972 | XL | Amazing panoramic landscape, luxury travel vacation. Oia town stairs, blue doors on Santorini island, Greece. Traditional and famous houses and churches with blue domes over the Caldera, Aegean sea | icemanphotos | Turkey and Greece (destination page) | https://depositphotos.com/tr/purchased/view/294642296.html |
+| 1108653 | XL | Pyramids | jordano | Turkey and Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653156.html |
+| 21262721 | L | Facade of Monastery at Petra, Jordan | OSORIOartist | Turkey and Jordan (destination page) | https://depositphotos.com/tr/purchased/view/294716116.html |
+| 1589729 | XL | Bedouin on camel near of egypt pyramid | Ukrainian | Greece and Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653138.html |
+| 93042916 | L | View from above of Al Khazneh | liseykina | Greece and Jordan (destination page) | https://depositphotos.com/tr/purchased/view/294716086.html |
+| 15413287 | XL | View of one of the Great Pyramids in Giza, Egypt | Nickolayv | Turkey, Greece and Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653118.html |
+| 51162297 | XL | Ancient City of Ephesus, Izmir, Turkey | EnginKorkmaz | Turkey 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294606090.html |
+| 198371060 | L | Front view of dwellings in stone formations in valley of Cappadocia, Turkey | OlgaGrebBO | Turkey 6-9 days (destination page) | https://depositphotos.com/tr/purchased/view/294744694.html |
+| 417607950 | XL | View of Mediterranean seacoast, mountains, beach and resort hotels at Antalya historical downtown, Antalya, Turkey | neurobite | Turkey 10-14 days (destination page) | https://depositphotos.com/tr/purchased/view/294667026.html |
+| 3100559 | XL | City harbor in marmaris | aragami12345 | Turkey 15+ days (destination page) | https://depositphotos.com/tr/purchased/view/294664758.html |
+| 264419390 | XL | Hagia Sophia and cloudy sky | zevana | Istanbul packages (destination page) | https://depositphotos.com/tr/purchased/view/294622758.html |
+| 73160679 | L | Cave Mosque Famous city Cappadocia in Turkey | DeReGe | Turkey activities (destination page) | https://depositphotos.com/tr/purchased/view/294744674.html |
+| 10888376 | XL | Academy of Athens panorama, Greece | lefpap | Greece day tours (destination page) | https://depositphotos.com/tr/purchased/view/294644960.html |
+| 10887581 | XL | Mykonos | Daydream | Greece cruises (destination page) | https://depositphotos.com/tr/purchased/view/294643560.html |
+| 150575592 | XL | Panoramic view of Meteora monastery on the high rock and road in the mountains at spring time, Greece | Noman Pixel | Greece escorted (destination page) | https://depositphotos.com/tr/purchased/view/294652028.html |
+| 52011489 | XL | Oia Santorini | Dessie_bg | Greece packages (destination page) | https://depositphotos.com/tr/purchased/view/294642294.html |
+| 97213732 | XL | Famous pyramid and sphinx | kanuman | Egypt 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294653108.html |
+| 150772890 | XL | River Nile in Egypt. Life on the River Nile | ewastudio | Egypt 6-9 days (destination page) | https://depositphotos.com/tr/purchased/view/294655124.html |
+| 182210484 | XL | Parasols on the beach of Red Sea in Hurghada, Egypt | Patryk_Kosmider | Egypt 10+ days (destination page) | https://depositphotos.com/tr/purchased/view/294654804.html |
+| 330621416 | L | Ruins of Karak castle, Jordan | mathes | Jordan 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294720586.html |
+| 330620420 | L | Bedouin camp in Wadi Rum desert, Jordan | mathes | Jordan 6-9 days (destination page) | https://depositphotos.com/tr/purchased/view/295660108.html |
+| 91723648 | XL | Morocco. Blue medina of Chefchaouen city at sunset | Alex_7370 | Morocco 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294672158.html |
+| 89111928 | XL | Camels in Merzouga dunes | duha127 | Morocco 6+ days (destination page) | https://depositphotos.com/tr/purchased/view/294674498.html |
 <!-- depositphotos-heroes:end -->

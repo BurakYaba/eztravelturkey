@@ -9,7 +9,9 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 const root = path.resolve(import.meta.dirname, '../..');
-const proposal = JSON.parse(readFileSync(path.join(root, 'data/depositphotos/proposal.json'), 'utf8'));
+const file = process.argv.find((a) => a.startsWith('--file='))?.slice(7) ?? 'proposal.json';
+const positional = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const proposal = JSON.parse(readFileSync(path.join(root, 'data/depositphotos', file), 'utf8'));
 const catalog = new Map(JSON.parse(readFileSync(path.join(root, 'data/depositphotos/catalog.json'), 'utf8')).map((r) => [r.id, r]));
 const out = path.join(root, 'data/depositphotos/sheets');
 mkdirSync(out, { recursive: true });
@@ -42,8 +44,8 @@ async function thumb(id) {
   return thumbs.get(id);
 }
 
-const first = Number(process.argv[2] ?? 0);
-const count = Number(process.argv[3] ?? proposal.length);
+const first = Number(positional[0] ?? 0);
+const count = Number(positional[1] ?? proposal.length);
 const slice = proposal.slice(first, first + count);
 for (let s = 0; s * per < slice.length; s++) {
   const group = slice.slice(s * per, s * per + per);
@@ -72,7 +74,7 @@ for (let s = 0; s * per < slice.length; s++) {
     labels.push(...lines);
   }
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${cols * cellW}" height="${rows * cellH}" font-family="Arial, sans-serif"><rect width="100%" height="100%" fill="#fff"/>${labels.join('')}</svg>`;
-  const file = path.join(out, `sheet-${String(s).padStart(2, '0')}.png`);
-  writeFileSync(file, await sharp(Buffer.from(svg)).composite(layers).png().toBuffer());
-  console.log(file);
+  const target = path.join(out, `${file.replace('.json', '')}-${String(s).padStart(2, '0')}.png`);
+  writeFileSync(target, await sharp(Buffer.from(svg)).composite(layers).png().toBuffer());
+  console.log(target);
 }

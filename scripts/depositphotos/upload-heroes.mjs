@@ -17,7 +17,12 @@ const dry = process.argv.includes('--dry');
 const replace = process.argv.includes('--replace');
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
-const proposal = JSON.parse(readFileSync(path.join(dir, 'proposal.json'), 'utf8'));
+// --file=destination-proposal.json sets the main picture of destination pages instead of the hero of tours.
+const file = process.argv.find((a) => a.startsWith('--file='))?.slice(7) ?? 'proposal.json';
+const forPages = file.startsWith('destination');
+const docType = forPages ? 'destinationPage' : 'tour';
+const field = forPages ? 'mainImage' : 'heroImage';
+const proposal = JSON.parse(readFileSync(path.join(dir, file), 'utf8'));
 const originals = new Map(readdirSync(path.join(dir, 'originals')).map((f) => [f.match(/Depositphotos_(\d+)_/)?.[1], f]));
 const cachePath = path.join(dir, `assets-${dataset}.json`);
 const cache = existsSync(cachePath) ? JSON.parse(readFileSync(cachePath, 'utf8')) : {};
@@ -34,13 +39,13 @@ if (!dry && !process.env.SANITY_WRITE_TOKEN) {
   process.exit(1);
 }
 
-const tours = await client.fetch('*[_type == "tour" && language == "en"]{ _id, path, "has": defined(heroImage) }');
+const tours = await client.fetch(`*[_type == $type && language == "en"]{ _id, path, "has": defined(${field}.asset) }`, { type: docType });
 const byPath = new Map(tours.map((t) => [t.path, t]));
 const alt = (title) => title.replace(/\s+/g, ' ').replace(/^\d{1,2} \w{3} \d{4},? ?/, '').trim().slice(0, 140);
 
 const plan = proposal.filter((p) => p.pick && byPath.has(p.path) && (replace || !byPath.get(p.path).has));
 const missing = plan.filter((p) => !originals.has(p.pick.id));
-console.log(`${proposal.length} tours in the proposal, ${plan.length} to set in ${dataset}, ${missing.length} without a downloaded file`);
+console.log(`${proposal.length} in the proposal, ${plan.length} ${docType} documents to set in ${dataset}, ${missing.length} without a downloaded file`);
 if (dry) process.exit(0);
 
 let n = 0;
@@ -59,9 +64,9 @@ for (const item of plan) {
   }
   await client
     .patch(byPath.get(item.path)._id)
-    .set({ heroImage: { _type: 'picture', asset: { _type: 'reference', _ref: cache[item.pick.id] }, alt: alt(item.pick.title) } })
+    .set({ [field]: { _type: 'picture', asset: { _type: 'reference', _ref: cache[item.pick.id] }, alt: alt(item.pick.title) } })
     .commit();
   n++;
   if (n % 10 === 0) console.log(`${n}/${plan.length}`);
 }
-console.log(`done: ${n} tours set in ${dataset}`);
+console.log(`done: ${n} ${docType} documents set in ${dataset}`);
