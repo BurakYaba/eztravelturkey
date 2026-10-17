@@ -2,7 +2,7 @@ import { StylePage } from '@/components/tours/StylePage';
 import { localizedMetadata } from '@/lib/seo';
 
 const description =
-  'Small group tours in Turkey and Greece with licensed local guides. Meaningful travel with like-minded explorers.';
+  'Small group tours in Turkey and Greece with licensed local guides. Meaningful travel with like-minded explorers. One local team arranges it all.';
 
 export const generateMetadata = localizedMetadata({
   title: 'Small Group Tours',

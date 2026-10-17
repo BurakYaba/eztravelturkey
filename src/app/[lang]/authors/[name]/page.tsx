@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   return buildMetadata({
     title: page.metaTitle,
+    absoluteTitle: true,
     description: page.metaDescription,
     path: `/${page.path}`,
     lang,

@@ -40,6 +40,7 @@ export default async function ToursPage() {
           and Jordan, our tours bring you closer to the most extraordinary destinations. Travel your way, with the same
           exceptional care.
         </p>
+        <h2 className="sr-only">{getDictionary(lang).destination.allTours}</h2>
         <Suspense fallback={<div className="h-96" aria-hidden />}>
           <ToursBrowser tours={tours} lang={lang} cardText={getDictionary(lang).card} />
         </Suspense>

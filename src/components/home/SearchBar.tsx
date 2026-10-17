@@ -34,7 +34,7 @@ function Select({
           <select
             id={id}
             name={name}
-            className="[&>option]:text-ink w-full cursor-pointer appearance-none truncate bg-transparent py-1 pr-6 text-base font-medium text-white focus:outline-none">
+            className="[&>option]:text-ink min-h-11 w-full cursor-pointer appearance-none truncate bg-transparent py-2 pr-6 text-base font-medium text-white focus:outline-none">
             {children}
           </select>
           <CaretDown

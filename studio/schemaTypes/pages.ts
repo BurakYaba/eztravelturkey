@@ -35,7 +35,13 @@ const kinds = {
   ],
 };
 
-function pageType(name: string, title: string, kind: string, kindOptions?: { value: string; title: string }[]) {
+function pageType(
+  name: string,
+  title: string,
+  kind: string,
+  kindOptions?: { value: string; title: string }[],
+  extraFields: ReturnType<typeof defineField>[] = [],
+) {
   return defineType({
     name,
     title,
@@ -44,6 +50,7 @@ function pageType(name: string, title: string, kind: string, kindOptions?: { val
       pageFields[0]!,
       kindField(kindOptions ?? [{ value: kind, title }], kind, Boolean(kindOptions)),
       ...pageFields.slice(1),
+      ...extraFields,
     ],
     orderings: [{ title: 'Page address', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
     preview: { select: { title: 'title', subtitle: 'path', media: 'mainImage' } },
@@ -51,7 +58,32 @@ function pageType(name: string, title: string, kind: string, kindOptions?: { val
 }
 
 export const destinationPage = pageType('destinationPage', 'Destination page', 'country', kinds.destinationPage);
-export const blogPost = pageType('blogPost', 'Blog post', 'blog-post');
+/** Fields only blog posts have: who wrote it, the answer in a nutshell and when the facts were last checked. */
+const blogFields = [
+  defineField({
+    name: 'author',
+    title: 'Author',
+    type: 'reference',
+    to: [{ type: 'author' }],
+    description: 'Shown as the byline and in the author card. Posts without an author are credited to Magnificent Travel.',
+  }),
+  defineField({
+    name: 'shortAnswer',
+    title: 'Short answer',
+    type: 'text',
+    rows: 3,
+    description: 'The answer to the question of the post in 40 to 60 words. Shown in a highlighted box before the text.',
+    validation: (rule) => rule.max(400).warning('Keep the short answer under about 60 words.'),
+  }),
+  defineField({
+    name: 'lastUpdated',
+    title: 'Last updated',
+    type: 'date',
+    description: 'The day the facts in the post were last checked. Shown on the page and in search results.',
+  }),
+];
+
+export const blogPost = pageType('blogPost', 'Blog post', 'blog-post', undefined, blogFields);
 export const blogCategory = pageType('blogCategory', 'Blog category', 'blog-category');
 export const author = pageType('author', 'Author', 'author');
 export const staticPage = pageType('staticPage', 'Text page (about, legal)', 'static');

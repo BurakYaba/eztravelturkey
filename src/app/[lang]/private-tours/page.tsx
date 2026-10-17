@@ -2,7 +2,7 @@ import { StylePage } from '@/components/tours/StylePage';
 import { localizedMetadata } from '@/lib/seo';
 
 const description =
-  'Private tours in Turkey, Greece, Egypt and Jordan with your own licensed guide and vehicle. Your interests, your pace.';
+  'Private tours in Turkey, Greece, Egypt and Jordan with your own licensed guide and vehicle. Your interests, your pace, one local team.';
 
 export const generateMetadata = localizedMetadata({
   title: 'Private Tours',

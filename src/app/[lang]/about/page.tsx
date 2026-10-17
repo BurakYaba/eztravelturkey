@@ -13,6 +13,7 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { Photo } from '@/components/shared/Photo';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
+import { TeamBlock } from '@/components/shared/TeamBlock';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { photoCredits } from '@/data/images';
 import { site } from '@/data/site';
@@ -76,6 +77,8 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      <TeamBlock className="section-y bg-cream-100/60" />
+
       <section className="bg-navy-900 py-12 text-white">
         <div className="container-x">
           <dl className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
@@ -119,7 +122,7 @@ export default async function AboutPage() {
               href={site.tursabUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-navy-900 decoration-gold-500/60 mt-4 inline-flex items-center gap-1.5 font-semibold underline underline-offset-4">
+              className="text-navy-900 decoration-gold-500/60 mt-2 inline-flex min-h-11 items-center gap-1.5 font-semibold underline underline-offset-4">
               <SealCheck size={20} className="text-gold-600" aria-hidden />
               Verify our registration with TURSAB <ArrowUpRight size={16} weight="bold" aria-hidden />
             </a>
@@ -152,7 +155,7 @@ export default async function AboutPage() {
             . The Istanbul skyline in the home page header is an illustration supplied by Magnificent Travel.
           </p>
           <details className="border-cream-200 mt-4 rounded-lg border bg-white p-4">
-            <summary className="text-navy-900 cursor-pointer font-semibold">Show photographers</summary>
+            <summary className="text-navy-900 flex min-h-11 cursor-pointer items-center font-semibold">Show photographers</summary>
             <ul className="text-muted mt-3 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
               {photoCredits.map((c) => (
                 <li key={c.id}>

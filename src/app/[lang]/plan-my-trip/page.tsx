@@ -9,7 +9,7 @@ import { breadcrumbJsonLd, localizedMetadata, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
 const description =
-  'Tell us where you would like to go and get a personalized itinerary and quote from our travel experts. No obligation.';
+  'Tell us where you would like to go and get a personalized itinerary and quote from our travel experts. No obligation, and we reply by email or WhatsApp.';
 
 export const generateMetadata = localizedMetadata({
   title: 'Plan My Trip',

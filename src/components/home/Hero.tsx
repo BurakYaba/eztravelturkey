@@ -17,17 +17,17 @@ export function Hero() {
 
         <div className="container-wide relative pt-6 pb-24 md:flex md:min-h-[540px] md:items-center md:pt-20 md:pb-28 lg:min-h-[600px]">
           <div className="max-w-2xl">
-            <p className="eyebrow rise" style={{ '--d': 50 } as React.CSSProperties}>
+            <p className="eyebrow">
               Turkey, Greece, Egypt, Jordan &amp; Morocco
             </p>
-            <h1 className="h-display rise mt-3" style={{ '--d': 120 } as React.CSSProperties}>
+            <h1 className="h-display mt-3">
               Private, Small Group &amp; Multi-Country Tours
             </h1>
-            <p className="rise text-ink/85 mt-4 max-w-xl text-lg md:text-xl" style={{ '--d': 200 } as React.CSSProperties}>
+            <p className="text-ink/85 mt-4 max-w-xl text-lg md:text-xl">
               Discover five remarkable destinations with an experienced local tour operator since 1997. Personalized
               itineraries, carefully selected hotels and seamless travel arrangements.
             </p>
-            <div className="rise mt-7 flex flex-wrap gap-3" style={{ '--d': 280 } as React.CSSProperties}>
+            <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href="/tours" size="lg" arrow>
                 Explore Tours
               </ButtonLink>

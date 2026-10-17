@@ -36,7 +36,10 @@ function Block({ block }: { block: PageBlock }) {
       );
     default:
       return (
-        <figure className="bg-cream-100 relative aspect-[3/2] max-w-3xl overflow-hidden rounded-lg">
+        // The picture keeps its own proportions: a map or a chart must not be cropped to fit a frame.
+        <figure
+          className="bg-cream-100 relative max-w-3xl overflow-hidden rounded-lg"
+          style={{ aspectRatio: `${block.image.width} / ${block.image.height}` }}>
           <Picture image={block.image} sizes="(min-width: 1024px) 48rem, 100vw" />
         </figure>
       );
@@ -44,10 +47,29 @@ function Block({ block }: { block: PageBlock }) {
 }
 
 /** The text of a scraped page, section by section, exactly as the old page had it. */
-export function PageSections({ sections, className }: { sections: PageSection[]; className?: string }) {
+export function PageSections({
+  sections,
+  className,
+  skipLeadImage = false,
+}: {
+  sections: PageSection[];
+  className?: string;
+  /** The page already shows the picture that opens the text (in its banner), so it is not printed a second time. */
+  skipLeadImage?: boolean;
+}) {
   return (
     <div className={cn('space-y-10', className)}>
       {sections.map((section, i) => {
+        if (
+          skipLeadImage &&
+          i === 0 &&
+          section.level === 0 &&
+          !section.heading &&
+          section.blocks.length === 1 &&
+          section.blocks[0]?.type === 'image'
+        ) {
+          return null;
+        }
         const Heading = section.level >= 3 ? 'h3' : 'h2';
         return (
           <section key={i} className="space-y-4">

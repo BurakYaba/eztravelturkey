@@ -74,7 +74,12 @@
     "rights": "© {year} {name}. All rights reserved.",
     "tursab": "TURSAB member",
     "tripadvisor": "Tripadvisor reviews",
-    "cards": "Visa and Mastercard accepted"
+    "cards": "Visa and Mastercard accepted",
+    "credit": {
+      "webDesign": "Web design",
+      "and": "and",
+      "seo": "SEO"
+    }
   },
   "whatsapp": {
     "aria": "Chat with a travel consultant on WhatsApp",
@@ -266,6 +271,34 @@
   "destination": {
     "chooseTitle": "Choose by length or style",
     "toursCount": "{count} tours",
-    "toursHeading": "Tours ({count})"
+    "toursHeading": "Tours ({count})",
+    "keyFacts": "Good to know",
+    "bestTime": "Best time to visit",
+    "currency": "Currency",
+    "tourCount": "Tours",
+    "fromPrice": "Tours from",
+    "guides": "Travel guides: {country}",
+    "moreGuides": "All travel guides",
+    "allTours": "All tours"
+  },
+  "team": {
+    "title": "Meet the team",
+    "text": "The people who plan your trip and answer your messages.",
+    "hours": "Working hours",
+    "email": "Email"
+  },
+  "blog": {
+    "byline": "By {name}",
+    "organization": "Magnificent Travel",
+    "updated": "Updated {date}",
+    "shortAnswer": "The short answer",
+    "aboutAuthor": "About the author",
+    "readProfile": "Read the full profile",
+    "toursIn": "Tours in {country}",
+    "allToursIn": "All {country} tours",
+    "guidesFor": "Travel guides: {country}",
+    "allGuides": "All travel guides",
+    "categories": "Guides by country",
+    "featured": "Maps"
   }
 }

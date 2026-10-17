@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import { Hanken_Grotesk, Noto_Sans_JP, Noto_Sans_TC, Noto_Serif_JP, Noto_Serif_TC, Playfair_Display } from 'next/font/google';
+import { Hanken_Grotesk, Playfair_Display } from 'next/font/google';
+import { CjkFonts } from '../fonts/CjkFonts';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
@@ -23,33 +24,6 @@ const hanken = Hanken_Grotesk({
   subsets: ['latin'],
   variable: '--font-hanken',
   display: 'swap',
-});
-
-// Chinese and Japanese text is only drawn with these fonts on pages in that language (see the lang rules in globals.css).
-// Their files are split by character ranges, so a page in English never downloads one. No preload for the same reason.
-const notoSansTc = Noto_Sans_TC({
-  weight: ['400', '500', '700'],
-  variable: '--font-noto-sans-tc',
-  display: 'swap',
-  preload: false,
-});
-const notoSerifTc = Noto_Serif_TC({
-  weight: ['600', '700'],
-  variable: '--font-noto-serif-tc',
-  display: 'swap',
-  preload: false,
-});
-const notoSansJp = Noto_Sans_JP({
-  weight: ['400', '500', '700'],
-  variable: '--font-noto-sans-jp',
-  display: 'swap',
-  preload: false,
-});
-const notoSerifJp = Noto_Serif_JP({
-  weight: ['600', '700'],
-  variable: '--font-noto-serif-jp',
-  display: 'swap',
-  preload: false,
 });
 
 export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Promise<Metadata> {
@@ -81,17 +55,9 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
   }
   const dictionary = getDictionary(lang);
   return (
-    <html
-      lang={htmlLang[lang]}
-      className={[
-        playfair.variable,
-        hanken.variable,
-        lang === 'zh' ? `${notoSansTc.variable} ${notoSerifTc.variable}` : '',
-        lang === 'jp' ? `${notoSansJp.variable} ${notoSerifJp.variable}` : '',
-      ]
-        .filter(Boolean)
-        .join(' ')}>
+    <html lang={htmlLang[lang]} className={`${playfair.variable} ${hanken.variable}`}>
       <body>
+        {lang !== 'en' && <CjkFonts lang={lang} />}
         <LocaleProvider lang={lang}>
           <a
             href="#main"

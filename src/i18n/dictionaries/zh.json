@@ -74,7 +74,12 @@
     "rights": "© {year} {name}。版權所有。",
     "tursab": "TÜRSAB 會員",
     "tripadvisor": "Tripadvisor 評價",
-    "cards": "接受 Visa 與 Mastercard"
+    "cards": "接受 Visa 與 Mastercard",
+    "credit": {
+      "webDesign": "網站設計",
+      "and": "與",
+      "seo": "SEO"
+    }
   },
   "whatsapp": {
     "aria": "透過 WhatsApp 與旅遊顧問聊天",
@@ -266,6 +271,34 @@
   "destination": {
     "chooseTitle": "依天數或旅遊方式選擇",
     "toursCount": "{count} 個行程",
-    "toursHeading": "行程（{count}）"
+    "toursHeading": "行程（{count}）",
+    "keyFacts": "行前須知",
+    "bestTime": "最佳旅遊時間",
+    "currency": "貨幣",
+    "tourCount": "行程數",
+    "fromPrice": "行程起價",
+    "guides": "旅遊指南：{country}",
+    "moreGuides": "所有旅遊指南",
+    "allTours": "所有行程"
+  },
+  "team": {
+    "title": "認識我們的團隊",
+    "text": "為您規劃行程並回覆訊息的人。",
+    "hours": "服務時間",
+    "email": "電子郵件"
+  },
+  "blog": {
+    "byline": "作者：{name}",
+    "organization": "Magnificent Travel",
+    "updated": "更新於 {date}",
+    "shortAnswer": "簡短回答",
+    "aboutAuthor": "關於作者",
+    "readProfile": "閱讀完整介紹",
+    "toursIn": "{country}行程",
+    "allToursIn": "所有{country}行程",
+    "guidesFor": "旅遊指南：{country}",
+    "allGuides": "所有旅遊指南",
+    "categories": "依國家瀏覽指南",
+    "featured": "地圖"
   }
 }

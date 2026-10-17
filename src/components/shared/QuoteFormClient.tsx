@@ -71,6 +71,8 @@ export function QuoteFormClient({
   const [token, setToken] = useState('');
   const [checkFailed, setCheckFailed] = useState(false);
   const [checkRound, setCheckRound] = useState(0);
+  // Cloudflare's check weighs about 700 KB, so it starts only when the visitor first touches the form.
+  const [armed, setArmed] = useState(false);
   const onCheckFail = useCallback(() => setCheckFailed(true), []);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
@@ -89,6 +91,7 @@ export function QuoteFormClient({
     if (turnstileSiteKey && !token) {
       setError(checkFailed ? text.verifyFailed : text.verifyNeeded);
       setStatus('error');
+      setArmed(true);
       setCheckRound((n) => n + 1);
       return;
     }
@@ -177,6 +180,8 @@ export function QuoteFormClient({
   return (
     <form
       onSubmit={onSubmit}
+      onFocusCapture={() => setArmed(true)}
+      onPointerDownCapture={() => setArmed(true)}
       className={cn('border-cream-200 shadow-card space-y-4 rounded-lg border bg-white p-5 md:p-6', className)}>
       {/* Honeypot, hidden from people */}
       <div aria-hidden className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
@@ -368,7 +373,7 @@ export function QuoteFormClient({
         </label>
       )}
 
-      {turnstileSiteKey && (
+      {turnstileSiteKey && armed && (
         <Turnstile siteKey={turnstileSiteKey} lang={lang} onToken={setToken} onFail={onCheckFail} resetKey={checkRound} />
       )}
 

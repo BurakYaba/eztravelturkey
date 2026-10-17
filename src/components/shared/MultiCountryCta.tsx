@@ -28,6 +28,7 @@ export async function MultiCountryCta() {
                   {c.image && (
                     <Picture
                       image={c.image}
+                      alt=""
                       sizes="(min-width: 640px) 220px, 100vw"
                       className="transition duration-500 group-hover:scale-105"
                     />

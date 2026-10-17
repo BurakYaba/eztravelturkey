@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogCard } from '@/components/pages/BlogCard';
-import { ContentPage } from '@/components/pages/ContentPage';
+import { BlogPost } from '@/components/pages/BlogPost';
 import { PageSections } from '@/components/pages/PageSections';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   return buildMetadata({
     title: page.metaTitle,
+    absoluteTitle: true,
     description: page.metaDescription,
     path: `/${page.path}`,
     lang,
@@ -113,7 +114,7 @@ export default async function BlogRoute({ params }: Props) {
   ];
   return (
     <>
-      <ContentPage page={page} crumbs={allCrumbs} />
+      <BlogPost page={page} crumbs={allCrumbs} />
       <QuoteBand />
       <JsonLd
         data={[
@@ -123,7 +124,8 @@ export default async function BlogRoute({ params }: Props) {
             description: page.metaDescription,
             path: `/${page.path}`,
             imageUrl: page.image?.src ?? '/images/logo.png',
-            date: page.lastUpdated,
+            modified: page.updated?.iso ?? null,
+            author: page.author ? { name: page.author.name, path: page.author.href } : null,
           }),
           breadcrumbJsonLd(lang, allCrumbs),
         ]}

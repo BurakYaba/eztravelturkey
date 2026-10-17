@@ -83,7 +83,7 @@ export function TextLink({ href, children, className }: { href: string; children
     <Link
       href={href}
       className={cn(
-        'group text-navy-900 decoration-gold-500/60 hover:decoration-gold-600 inline-flex items-center gap-1.5 font-semibold underline underline-offset-4 transition',
+        'group text-navy-900 decoration-gold-500/60 hover:decoration-gold-600 inline-flex min-h-11 items-center gap-1.5 font-semibold underline underline-offset-4 transition',
         className,
       )}>
       {children}

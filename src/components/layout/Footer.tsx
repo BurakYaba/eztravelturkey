@@ -22,7 +22,7 @@ const socials = [
   { label: 'Instagram', href: site.social.instagram, icon: InstagramLogo },
 ];
 
-const linkClass = 'text-white/75 transition hover:text-white';
+const linkClass = 'inline-block py-1.5 text-white/75 transition hover:text-white';
 const webcraft = 'https://www.webcraft.tr';
 
 export async function Footer() {
@@ -158,11 +158,11 @@ export async function Footer() {
           </ul>
           <p className="lg:text-right">
             <a href={`${webcraft}/hizmetler/web-tasarim`} target="_blank" rel="noopener" className={linkClass}>
-              Web tasarım
+              {t.credit.webDesign}
             </a>{' '}
-            ve{' '}
+            {t.credit.and}{' '}
             <a href={`${webcraft}/hizmetler/seo-hizmeti`} target="_blank" rel="noopener" className={linkClass}>
-              SEO
+              {t.credit.seo}
             </a>
             :{' '}
             <a href={`${webcraft}/`} target="_blank" rel="noopener" className={cn(linkClass, 'font-semibold')}>
