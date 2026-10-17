@@ -318,10 +318,10 @@ if (dry) {
   process.exit(0);
 }
 
-// Fields the client types into Studio (USD price, hotels, departure options) are not in the scraped files, so a
+// Fields the client types into Studio (USD price, hotels, departure options, main picture) are not in the scraped files, so a
 // replace would erase them. Carry them over from the document that is already there.
 const keepFields = await client.fetch(
-  '*[_type == "tour" && language == $lang]{ _id, "usd": price.usd, hotels, departures }',
+  '*[_type == "tour" && language == $lang]{ _id, "usd": price.usd, hotels, departures, heroImage }',
   { lang },
 );
 const kept = new Map(keepFields.map((k) => [k._id, k]));
@@ -331,6 +331,7 @@ for (const d of docs) {
   if (old.usd != null) d.price = { ...d.price, usd: old.usd };
   if (old.hotels) d.hotels = old.hotels;
   if (old.departures) d.departures = old.departures;
+  if (old.heroImage) d.heroImage = old.heroImage;
 }
 
 for (let i = 0; i < docs.length; i += 25) {
