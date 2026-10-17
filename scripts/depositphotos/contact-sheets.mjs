@@ -11,7 +11,8 @@ import sharp from 'sharp';
 const root = path.resolve(import.meta.dirname, '../..');
 const file = process.argv.find((a) => a.startsWith('--file='))?.slice(7) ?? 'proposal.json';
 const positional = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-const proposal = JSON.parse(readFileSync(path.join(root, 'data/depositphotos', file), 'utf8'));
+// --picks-only leaves out the tours that copy an English hero (the Chinese and Japanese proposals have some)
+const proposal = JSON.parse(readFileSync(path.join(root, 'data/depositphotos', file), 'utf8')).filter((p) => !process.argv.includes('--picks-only') || p.pick);
 const catalog = new Map(JSON.parse(readFileSync(path.join(root, 'data/depositphotos/catalog.json'), 'utf8')).map((r) => [r.id, r]));
 const out = path.join(root, 'data/depositphotos/sheets');
 mkdirSync(out, { recursive: true });

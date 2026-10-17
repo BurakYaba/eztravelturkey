@@ -75,7 +75,27 @@ const lower = (s) => s.normalize('NFKC').toLowerCase();
 /** Ids of the places named in a text (title, route, stays), in any of the three languages. */
 export function placesIn(text) {
   const t = lower(text ?? '');
-  return [...new Set(places.filter(([, , names]) => names.some((n) => t.includes(lower(n)))).map(([id]) => id))];
+  // A Latin name must be a whole word ("fes" is not in "festival"); Chinese and Japanese names have no spaces and are found inside the text.
+  const has = (name) => {
+    const n = lower(name);
+    return /^[a-z' ]+$/.test(n) ? new RegExp(`(^|[^a-z])${n}([^a-z]|$)`).test(t) : t.includes(n);
+  };
+  return [...new Set(places.filter(([, , names]) => names.some(has)).map(([id]) => id))];
+}
+
+/** Countries a text names outright (for a tour such as "トルコ・エジプト9日間" that names no city). */
+export function countriesNamed(text) {
+  const t = lower(text ?? '');
+  const names = {
+    turkey: ['turkey', '土耳其', 'トルコ'],
+    greece: ['greece', '希臘', 'ギリシャ'],
+    egypt: ['egypt', '埃及', 'エジプト'],
+    jordan: ['jordan', '約旦', 'ヨルダン'],
+    morocco: ['morocco', '摩洛哥', 'モロッコ'],
+  };
+  return Object.entries(names)
+    .filter(([, list]) => list.some((n) => t.includes(lower(n))))
+    .map(([id]) => id);
 }
 
 export const countryOfPlace = new Map(places.map(([id, country]) => [id, country]));

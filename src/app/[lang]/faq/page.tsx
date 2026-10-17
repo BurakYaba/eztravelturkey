@@ -7,6 +7,7 @@ import { faqGroups } from '@/data/faqs';
 import { getPage } from '@/lib/data';
 import { docMetadata } from '@/lib/page-meta';
 import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd } from '@/lib/seo';
+import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 
 const description =
@@ -17,40 +18,35 @@ export const generateMetadata = docMetadata({
   description,
   path: '/faq',
   image: 'travel-planning',
+  dictionary: (d) => ({ title: d.ui.pages.faq.title, description: d.ui.pages.faq.banner }),
 });
 
 export default async function FaqPage() {
   const lang = await getLocale();
+  const { ui, nav } = getDictionary(lang);
+  const t = ui.pages.faq;
   // The questions and answers of the old FAQ page, as they were. The grouped answers written for the first draft are
   // only used when the CMS has no page yet.
   const doc = await getPage(lang, 'faq');
-  const items = doc?.faqs.length ? doc.faqs : faqGroups.flatMap((g) => g.items);
+  const items = doc?.faqs.length ? doc.faqs : lang === 'en' ? faqGroups.flatMap((g) => g.items) : [];
   const crumbs = [
-    { name: 'Home', path: '/' },
-    { name: 'FAQ', path: '/faq' },
+    { name: nav.home, path: '/' },
+    { name: t.crumb, path: '/faq' },
   ];
   return (
     <>
-      <PageBanner
-        title={doc?.title || 'Frequently Asked Questions'}
-        description="Everything you need to know about traveling with Magnificent Travel."
-        image="travel-planning"
-        crumbs={crumbs}
-      />
+      <PageBanner title={doc?.title || t.title} description={t.banner} image="travel-planning" crumbs={crumbs} />
       <section className="section-y">
         <div className="container-x max-w-3xl">
           {doc && doc.sections.length > 0 && <PageSections sections={doc.sections} className="mb-10" />}
           <Accordion items={items.map((f, i) => ({ id: `q-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
         </div>
       </section>
-      <QuoteBand
-        title="Still have a question?"
-        text="Message us on WhatsApp or send a request and a travel specialist will reply."
-      />
+      <QuoteBand title={t.bandTitle} text={t.bandText} />
       <JsonLd
         data={[
-          webPageJsonLd(lang, doc?.title ?? 'Frequently Asked Questions', '/faq', 'WebPage', description),
-          faqJsonLd(items),
+          webPageJsonLd(lang, doc?.title ?? t.title, '/faq', 'WebPage', description),
+          ...(items.length > 0 ? [faqJsonLd(items)] : []),
           breadcrumbJsonLd(lang, crumbs),
         ]}
       />

@@ -9,13 +9,7 @@ import { QuoteBand } from '@/components/shared/QuoteBand';
 import { defaultLocale, hasLocale, locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { blogCategories, blogPosts, getPage, alternatesOf, type PageRecord } from '@/lib/data';
-import {
-  blogPostingJsonLd,
-  breadcrumbJsonLd,
-  buildMetadata,
-  collectionPageJsonLd,
-  itemListJsonLd,
-} from '@/lib/seo';
+import { blogPostingJsonLd, breadcrumbJsonLd, buildMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/blog/[...path]'>;
 

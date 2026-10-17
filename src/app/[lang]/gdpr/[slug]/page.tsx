@@ -10,7 +10,9 @@ import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo';
 type Props = PageProps<'/[lang]/gdpr/[slug]'>;
 
 export async function generateStaticParams() {
-  const lists = await Promise.all(locales.map(async (lang) => ({ lang, pages: await pageSummaries(lang, 'static', 'gdpr') })));
+  const lists = await Promise.all(
+    locales.map(async (lang) => ({ lang, pages: await pageSummaries(lang, 'static', 'gdpr') })),
+  );
   return lists.flatMap(({ lang, pages }) => pages.map((p) => ({ lang, slug: p.path.split('/')[1] ?? '' })));
 }
 

@@ -10,7 +10,7 @@ import { site } from '@/data/site';
 import { defaultLocale, hasLocale, htmlLang, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { LocaleProvider } from '@/i18n/locale-context';
-import { alternatesIndex, hasNativeContent } from '@/lib/data';
+import { alternatesIndex, availableCountries, hasNativeContent } from '@/lib/data';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
 import '../globals.css';
 
@@ -69,7 +69,12 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
               {dictionary.preview.notice}
             </p>
           )}
-          <Header nav={dictionary.nav} countries={dictionary.countries} homeLabel={dictionary.common.homeLabel} />
+          <Header
+            nav={dictionary.nav}
+            countries={dictionary.countries}
+            homeLabel={dictionary.common.homeLabel}
+            available={await availableCountries(lang)}
+          />
           <main id="main">{children}</main>
           <Footer />
           <WhatsAppButton />

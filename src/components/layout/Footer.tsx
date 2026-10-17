@@ -11,6 +11,7 @@ import {
 import { destinations } from '@/data/destinations';
 import { format } from '@/i18n/dictionaries';
 import { legalHref } from '@/i18n/public-paths';
+import { availableCountries, getPage } from '@/lib/data';
 import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { site, whatsappLink } from '@/data/site';
 import { cn } from '@/lib/utils';
@@ -29,6 +30,7 @@ const webcraft = 'https://www.webcraft.tr';
 export async function Footer() {
   const lang = await getLocale();
   const { footer: t, countries, common } = await getDictionaryForPage();
+  const available = await availableCountries(lang);
   const explore = [
     { label: t.allTours, href: '/tours' },
     { label: t.multiCountry, href: '/multi-country-tours' },
@@ -36,6 +38,11 @@ export async function Footer() {
     { label: t.smallGroupTours, href: '/small-group-tours' },
     { label: t.travelGuides, href: '/blog' },
   ];
+  // Text pages of the old Chinese and Japanese sites that no other page links to (how to book; the Japanese privacy conditions).
+  const extraPages = lang === 'zh' ? ['how-to-book-a-trip'] : lang === 'jp' ? ['個人情報の保護及び利用条件'] : [];
+  const extra = (
+    await Promise.all(extraPages.map(async (path) => ({ page: await getPage(lang, path), path })))
+  ).flatMap(({ page, path }) => (page && !page.fallback ? [{ label: page.title, href: `/${path}` }] : []));
   const company = [
     { label: t.aboutUs, href: '/about' },
     { label: t.contact, href: '/contact' },
@@ -44,6 +51,7 @@ export async function Footer() {
     { label: t.terms, href: legalHref(lang, 'terms') },
     { label: t.privacy, href: legalHref(lang, 'privacy') },
     // The old English site links the Turkish distance sales agreement from every page (a Turkish tour operator's legal text); the Chinese and Japanese sites never had it.
+    ...extra,
     ...(lang === 'en' ? [{ label: t.distanceSales, href: '/gdpr/mesafeli-satis-sozlesmesi' }] : []),
   ];
   return (
@@ -76,15 +84,19 @@ export async function Footer() {
         </div>
 
         <nav aria-label={t.exploreLabel}>
-          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">{t.exploreHeading}</h2>
+          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">
+            {t.exploreHeading}
+          </h2>
           <ul className="space-y-2.5">
-            {destinations.map((d) => (
-              <li key={d.id}>
-                <Link href={`/destinations/${d.id}-tours`} className={linkClass}>
-                  {format(t.countryTours, { country: countries[d.id as keyof typeof countries]?.name ?? d.name })}
-                </Link>
-              </li>
-            ))}
+            {destinations
+              .filter((d) => available.includes(d.id))
+              .map((d) => (
+                <li key={d.id}>
+                  <Link href={`/destinations/${d.id}-tours`} className={linkClass}>
+                    {format(t.countryTours, { country: countries[d.id as keyof typeof countries]?.name ?? d.name })}
+                  </Link>
+                </li>
+              ))}
             {explore.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className={linkClass}>
@@ -96,7 +108,9 @@ export async function Footer() {
         </nav>
 
         <nav aria-label={t.companyLabel}>
-          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">{t.companyHeading}</h2>
+          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">
+            {t.companyHeading}
+          </h2>
           <ul className="space-y-2.5">
             {company.map((item) => (
               <li key={item.href}>
@@ -109,7 +123,9 @@ export async function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">{t.contactHeading}</h2>
+          <h2 className="text-gold-100 mb-4 font-sans text-sm font-semibold tracking-[0.14em] uppercase">
+            {t.contactHeading}
+          </h2>
           <ul className="space-y-3.5 text-white/85">
             <li className="flex gap-3">
               <WhatsappLogo size={22} className="text-gold-500 mt-0.5 shrink-0" aria-hidden />
@@ -145,9 +161,7 @@ export async function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-wide flex flex-col gap-3 py-6 text-sm text-white/65 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-8">
-          <p>
-            {format(t.rights, { year: new Date().getFullYear(), name: site.name })}
-          </p>
+          <p>{format(t.rights, { year: new Date().getFullYear(), name: site.name })}</p>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:justify-center">
             <li>
               <a href={site.tursabUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>

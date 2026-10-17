@@ -3,56 +3,51 @@ import { JsonLd } from '@/components/shared/JsonLd';
 import { MultiCountryCta } from '@/components/shared/MultiCountryCta';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { TrustBar } from '@/components/shared/TrustBar';
+import { browserText } from '@/components/tours/browser-text';
+import { TourGrid } from '@/components/tours/TourGrid';
 import { ToursBrowser } from '@/components/tours/ToursBrowser';
-import { allTours } from '@/lib/data';
-import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
+import { allTours, availableCountries } from '@/lib/data';
+import { dictMetadata } from '@/lib/dict-meta';
+import { breadcrumbJsonLd, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 
-const description =
-  'Browse private, small group and multi-country tours across Turkey, Greece, Egypt and Jordan. Filter by destination, travel style and duration.';
-
-export const generateMetadata = localizedMetadata({
-  title: 'Explore Our Tours',
-  description,
-  path: '/tours',
-  image: 'santorini-sunset',
-});
+export const generateMetadata = dictMetadata((d) => d.ui.pages.tours, { path: '/tours', image: 'santorini-sunset' });
 
 export default async function ToursPage() {
   const lang = await getLocale();
+  const dictionary = getDictionary(lang);
+  const { ui, nav } = dictionary;
+  const t = ui.pages.tours;
   const tours = await allTours(lang);
   const crumbs = [
-    { name: 'Home', path: '/' },
-    { name: 'Tours', path: '/tours' },
+    { name: nav.home, path: '/' },
+    { name: t.crumb, path: '/tours' },
   ];
   return (
     <>
-      <PageBanner
-        title="Explore Our Tours"
-        description="Private, small group and multi-country journeys designed around you."
-        image="santorini-sunset"
-        crumbs={crumbs}
-      />
+      <PageBanner title={t.title} description={t.banner} image="santorini-sunset" crumbs={crumbs} />
       <section className="container-x py-10 md:py-12">
-        <p className="text-ink/90 mb-8 max-w-3xl text-lg">
-          From the timeless wonders of Turkey to the sun-drenched islands of Greece and the ancient treasures of Egypt
-          and Jordan, our tours bring you closer to the most extraordinary destinations. Travel your way, with the same
-          exceptional care.
-        </p>
-        <h2 className="sr-only">{getDictionary(lang).destination.allTours}</h2>
-        <Suspense fallback={<div className="h-96" aria-hidden />}>
-          <ToursBrowser tours={tours} lang={lang} cardText={getDictionary(lang).card} />
+        <p className="text-ink/90 mb-8 max-w-3xl text-lg">{t.lead}</p>
+        <h2 className="sr-only">{dictionary.destination.allTours}</h2>
+        <Suspense fallback={<TourGrid tours={tours} lang={lang} text={dictionary.card} withTabs />}>
+          <ToursBrowser
+            tours={tours}
+            lang={lang}
+            cardText={dictionary.card}
+            text={browserText(dictionary, await availableCountries(lang))}
+          />
         </Suspense>
       </section>
       <TrustBar />
       <MultiCountryCta />
       <JsonLd
         data={[
-          collectionPageJsonLd(lang, 'Tours', '/tours', description),
-          itemListJsonLd(lang, 
-            'Tours',
-            tours.map((t) => ({ name: t.title, path: t.href })),
+          collectionPageJsonLd(lang, t.crumb, '/tours', t.description),
+          itemListJsonLd(
+            lang,
+            t.crumb,
+            tours.map((tour) => ({ name: tour.title, path: tour.href })),
           ),
           breadcrumbJsonLd(lang, crumbs),
         ]}

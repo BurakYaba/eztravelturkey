@@ -1,6 +1,7 @@
 import { WhatsappLogo } from '@phosphor-icons/react/dist/ssr';
 import type { ImageId } from '@/data/images';
 import { whatsappLink } from '@/data/site';
+import { getDictionaryForPage } from '@/i18n/server';
 import { ButtonAnchor, ButtonLink } from './Button';
 import { Photo } from './Photo';
 
@@ -10,11 +11,9 @@ type Props = {
   image?: ImageId;
 };
 
-export function QuoteBand({
-  title = 'Tell us where you would like to go',
-  text = 'Share your plans and get a personalized itinerary and quote from our travel experts.',
-  image = 'santorini-sunset',
-}: Props) {
+export async function QuoteBand({ title, text, image = 'santorini-sunset' }: Props) {
+  const { ui } = await getDictionaryForPage();
+  const t = ui.quoteBand;
   return (
     <section className="bg-cream-100 relative isolate overflow-hidden [--veil:var(--color-cream-100)]">
       <div className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[68%]">
@@ -24,20 +23,20 @@ export function QuoteBand({
       </div>
       <div className="container-wide py-14 md:py-20">
         <div className="max-w-xl">
-          <h2 className="h-section">{title}</h2>
-          <p className="text-ink/85 mt-3 text-lg">{text}</p>
+          <h2 className="h-section">{title ?? t.title}</h2>
+          <p className="text-ink/85 mt-3 text-lg">{text ?? t.text}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <ButtonLink href="/plan-my-trip" size="lg" arrow>
-              Plan My Trip
+              {t.plan}
             </ButtonLink>
             <ButtonAnchor
-              href={whatsappLink('Hello Magnificent Travel, I would like to plan a trip.')}
+              href={whatsappLink(t.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
               variant="secondary"
               size="lg">
               <WhatsappLogo size={22} weight="fill" aria-hidden />
-              Chat on WhatsApp
+              {t.whatsapp}
             </ButtonAnchor>
           </div>
         </div>

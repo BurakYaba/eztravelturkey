@@ -10,7 +10,9 @@ import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo';
 type Props = PageProps<'/[lang]/authors/[name]'>;
 
 export async function generateStaticParams() {
-  const lists = await Promise.all(locales.map(async (lang) => ({ lang, authors: await pageSummaries(lang, 'author') })));
+  const lists = await Promise.all(
+    locales.map(async (lang) => ({ lang, authors: await pageSummaries(lang, 'author') })),
+  );
   return lists.flatMap(({ lang, authors }) => authors.map((p) => ({ lang, name: p.path.split('/')[1] ?? '' })));
 }
 

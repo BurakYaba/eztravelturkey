@@ -1,5 +1,5 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
-import { defaultLocale, locales, type Locale } from '@/i18n/config';
+import { defaultLocale, type Locale } from '@/i18n/config';
 import { formatDate } from '@/i18n/format';
 import { cmsPath, countryFolder, publicPath } from '@/i18n/public-paths';
 import { toursOfCategory } from './duration';
@@ -78,6 +78,11 @@ async function source(lang: Locale): Promise<{ lang: Locale; fallback: boolean }
  * switcher then falls back to the hub, and no hreflang is written.
  */
 export async function alternatesOf(lang: Locale, path: string): Promise<Partial<Record<Locale, string>>> {
+  // The home pages of the languages are each other's counterpart.
+  if (trim(path) === '') {
+    const homes = await query<Locale[]>('*[_type == "homePage"].language', {});
+    return homes.length < 2 ? {} : Object.fromEntries(homes.map((l) => [l, '/']));
+  }
   const rows = await query<{ language: Locale; path: string }[]>(
     '*[_type in $types && defined(translationGroup) && translationGroup == *[_type in $types && language == $lang && path == $path][0].translationGroup]{ language, path }',
     { types: allTypes, lang, path: trim(cmsPath(lang, path)) },
@@ -535,8 +540,8 @@ export async function teamMembers(lang: Locale): Promise<TeamMember[]> {
   return rows.map(({ profile, ...r }) => ({
     ...r,
     photo: image(r.photo as unknown as RawImage),
-    // A team member who also has an author page links to it, so the page is reachable from the site.
-    profileHref: profile ? hrefOf(profile) : null,
+    // A team member who also has an author page links to it, so the page is reachable from the site (the author pages are English only).
+    profileHref: profile && lang === defaultLocale ? hrefOf(profile) : null,
   }));
 }
 
@@ -546,6 +551,19 @@ const TEAM_QUERY = `*[_type == "teamMember" && language == $lang] | order(order 
 
 /** Country ids named in a path folder: `turkey-tours` gives turkey, `turkey-greece-tours` gives turkey and greece. */
 export const countriesIn = countriesOf;
+
+/**
+ * The countries a language has a page for, in the usual order. The old Chinese site has no Morocco tours (the client removed them), so
+ * its menus, tiles and filters leave Morocco out instead of linking to a page that is not there. A language that still shows English
+ * stand-in pages has all five.
+ */
+export async function availableCountries(lang: Locale): Promise<CountryId[]> {
+  const src = await source(lang);
+  const paths = await query<string[]>('*[_type == "destinationPage" && kind == "country" && language == $lang].path', { lang: src.lang });
+  const found = new Set(paths.flatMap((p) => countriesOf(p.split('/')[1] ?? '')));
+  const ids = countryIds.filter((id) => found.has(id));
+  return ids.length > 0 ? ids : countryIds;
+}
 
 /** Blog posts about the countries of a folder (a country, a combination), a few of each, newest guides first as the hub orders them. */
 export async function blogsAbout(lang: Locale, folder: string, limit = 3): Promise<PageSummary[]> {

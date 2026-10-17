@@ -4,7 +4,7 @@
 //
 // One row per picture: its Depositphotos number, size and title, the tours that show it, and the address of the license
 // page in the client's account. Replaces the block between the two marker comments, so it can be run again.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '../..');
@@ -17,6 +17,18 @@ const destinations = read('destination-proposal.json');
 const byPicture = new Map();
 for (const p of proposal) if (p.pick) byPicture.set(p.pick.id, [...(byPicture.get(p.pick.id) ?? []), p.title]);
 for (const p of destinations) if (p.pick) byPicture.set(p.pick.id, [...(byPicture.get(p.pick.id) ?? []), `${p.title} (destination page)`]);
+// the Chinese and Japanese tours that have a hero of their own (the others copy the English tour's)
+const cjk = { zh: 'Chinese', jp: 'Japanese' };
+let cjkTours = 0;
+for (const lang of Object.keys(cjk)) {
+  const file = path.join(root, 'data/depositphotos', `proposal-${lang}.json`);
+  if (!existsSync(file)) continue;
+  for (const p of JSON.parse(readFileSync(file, 'utf8'))) {
+    if (!p.pick) continue;
+    cjkTours++;
+    byPicture.set(p.pick.id, [...(byPicture.get(p.pick.id) ?? []), `${p.title} (${cjk[lang]} site)`]);
+  }
+}
 
 const rows = [...byPicture.entries()]
   .map(([id, titles]) => {
@@ -27,9 +39,9 @@ const rows = [...byPicture.entries()]
   .join('\n');
 
 const block = `<!-- depositphotos-heroes:start -->
-## Hero pictures from Depositphotos (${byPicture.size}): tours and destination pages
+## Hero pictures from Depositphotos (${byPicture.size}): tours (three languages) and destination pages
 
-Bought by Magnificent Travel (team account, standard license) and shown as the main picture of ${proposal.filter((p) => p.pick).length} tours and ${destinations.filter((p) => p.pick).length} destination pages (2026-10-17). Each picture is used once. The license page of every picture is in the client's account at the address in the last column.
+Bought by Magnificent Travel (team account, standard license) and shown as the main picture of ${proposal.filter((p) => p.pick).length} English tours, ${cjkTours} Chinese and Japanese tours (the others there copy the English tour's picture) and ${destinations.filter((p) => p.pick).length} destination pages (2026-10-17). Each picture is used once. The license page of every picture is in the client's account at the address in the last column.
 
 | Depositphotos no. | Size | Title | Artist | Used on | License page |
 |---|---|---|---|---|---|

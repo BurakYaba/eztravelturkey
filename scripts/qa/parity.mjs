@@ -1,7 +1,10 @@
 // SEO parity of the new site with the old English site (docs/project-plan.md P4.5).
 //
 //   node scripts/qa/crawl.mjs [address]        writes data/qa/crawl.json
-//   node scripts/qa/parity.mjs                 writes docs/baseline/seo-parity-<date>.md and data/qa/parity.csv
+//   node scripts/qa/parity.mjs [en|zh|jp]      writes docs/baseline/seo-parity[-<lang>]-<date>.md and data/qa/parity[-<lang>].csv
+//
+// For zh and jp (docs/project-plan.md P5.9) the old values come from data/inventory/seo-<lang>.csv (the archive of the old site) and the
+// pages are joined by their address without the domain; the old Japanese hub folder had a trailing blank, which the new address does not.
 //
 // Old values: data/inventory/seo-en.csv (the live English site on 2026-10-07, P1.11) and, for the title and description
 // text, the scraped files that the import started from. New values: the crawl of the new site. Pages are joined by address.
@@ -9,7 +12,11 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '../..');
-const crawl = JSON.parse(readFileSync(path.join(root, 'data/qa/crawl.json'), 'utf8'));
+const lang = process.argv[2] ?? 'en';
+const cjk = lang !== 'en';
+const crawl = JSON.parse(readFileSync(path.join(root, 'data/qa/crawl.json'), 'utf8')).filter((p) => new URL(p.url).pathname.startsWith(`/${lang}/`));
+/** An address without the domain, decoded, each part trimmed, with a trailing slash: the key two sites are joined on. */
+const keyOf = (url) => `/${new URL(url).pathname.split('/').filter(Boolean).map((part) => decodeURIComponent(part).trim()).join('/')}/`;
 const today = new Date().toISOString().slice(0, 10);
 
 // ---- old inventory (CSV with quoted fields)
@@ -40,47 +47,73 @@ function parseCsv(text) {
   const [head, ...body] = rows;
   return body.filter((r) => r.length === head.length).map((r) => Object.fromEntries(head.map((h, i) => [h, r[i]])));
 }
-const old = parseCsv(readFileSync(path.join(root, 'data/inventory/seo-en.csv'), 'utf8'));
+const old = parseCsv(readFileSync(path.join(root, `data/inventory/seo-${lang}.csv`), 'utf8'));
+const moved = cjk ? parseCsv(readFileSync(path.join(root, `data/mapping/redirects-${lang}.csv`), 'utf8').replace(/^﻿/, '')) : [];
+const fate = new Map(moved.map((r) => [keyOf(r.old_url), r]));
 
 // the old text of titles and descriptions, from the scraped files
 const walk = (dir) =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(dir, e.name)) : e.name.endsWith('.json') ? [path.join(dir, e.name)] : []));
 const scraped = new Map();
-for (const f of walk(path.join(root, 'content/scraped/en'))) {
+const kindOfPath = new Map();
+for (const f of walk(path.join(root, 'content/scraped', lang))) {
   const j = JSON.parse(readFileSync(f, 'utf8'));
-  if (j.canonical) scraped.set(j.canonical.replace(/\/?$/, '/'), { title: j.metaTitle, description: j.metaDescription, h1: j.h1 ?? j.title });
+  if (j.canonical) scraped.set(keyOf(j.canonical), { title: j.metaTitle, description: j.metaDescription, h1: j.h1 ?? j.title });
+  if (j.canonical) kindOfPath.set(keyOf(j.canonical), j.kind ?? 'tour');
 }
 
-const fresh = new Map(crawl.map((p) => [p.url.replace(/\/?$/, '/'), p]));
+const fresh = new Map(crawl.map((p) => [keyOf(p.url), p]));
 const median = (a) => (a.length ? a.slice().sort((x, y) => x - y)[Math.floor(a.length / 2)] : 0);
 const typesOf = (s) => new Set(s.split(/\s+/).filter(Boolean));
 
 const matched = [];
 const missing = [];
+const oldKeys = new Set();
 for (const o of old) {
-  const key = o.url.replace(/\/?$/, '/');
+  // the Chinese old site lists /cn/ (simplified Chinese) next to /zh/; it is not carried over (D10)
+  if (cjk && new URL(o.url).pathname.startsWith('/cn/')) continue;
+  const key = keyOf(o.url);
+  oldKeys.add(key);
   const n = fresh.get(key);
   if (o.status !== '200') continue;
-  if (n) matched.push({ o, n, key, s: scraped.get(key) });
+  if (cjk) o.kind = kindOfPath.get(key) ?? (o.kind === 'tour-subpage' ? 'tab of a tour' : o.kind);
+  if (n && o.kind !== 'tab of a tour') matched.push({ o, n, key, s: scraped.get(key) });
   else missing.push(o);
 }
-const newOnly = [...fresh.keys()].filter((k) => !old.some((o) => o.url.replace(/\/?$/, '/') === k));
+const newOnly = [...fresh.keys()].filter((k) => !oldKeys.has(k));
 
 const kinds = [...new Set(matched.map((m) => m.o.kind))].sort();
 const lines = [];
 const out = (s = '') => lines.push(s);
 
-out(`# SEO parity with the old English site (${today})`);
+const names = { en: 'English', zh: 'Chinese', jp: 'Japanese' };
+out(`# SEO parity with the old ${names[lang]} site (${today})`);
 out();
-out('P4.5. The new site against the live English site as recorded on 2026-10-07 (`data/inventory/seo-en.csv`, P1.11). Titles and descriptions are compared with the text the import started from, so a difference here is a change made on purpose or a bug. Generated by `scripts/qa/parity.mjs` from a crawl of the deployed site (`scripts/qa/crawl.mjs`).');
+out(
+  cjk
+    ? `P5.9. The new site against the old ${names[lang]} site as archived in October 2026 (\`data/inventory/seo-${lang}.csv\`). Titles and descriptions are compared with the text the import started from, so a difference here is a change made on purpose or a bug. Pages are joined by their address without the domain. For Chinese and Japanese the word count is a character count (there are no spaces between words). Generated by \`scripts/qa/parity.mjs ${lang}\` from a crawl of the site (\`scripts/qa/crawl.mjs\`).`
+    : 'P4.5. The new site against the live English site as recorded on 2026-10-07 (`data/inventory/seo-en.csv`, P1.11). Titles and descriptions are compared with the text the import started from, so a difference here is a change made on purpose or a bug. Generated by `scripts/qa/parity.mjs` from a crawl of the deployed site (`scripts/qa/crawl.mjs`).',
+);
 out();
 out('## Coverage');
 out();
-out(`- Old English pages answering 200: ${old.filter((o) => o.status === '200').length}. On the new site at the same address: **${matched.length}**. Not on the new site: ${missing.length}. New addresses that the old site did not have: ${newOnly.length}.`);
+out(`- Old ${names[lang]} pages answering 200${cjk ? ' (without /cn/)' : ''}: ${oldKeys.size}. On the new site at the same address: **${matched.length}**. Not on the new site: ${missing.length}. New addresses that the old site did not have: ${newOnly.length}.`);
 const missingByKind = {};
 for (const m of missing) missingByKind[m.kind] = (missingByKind[m.kind] ?? 0) + 1;
-out(`- Not carried over, by kind: ${Object.entries(missingByKind).map(([k, v]) => `${k} ${v}`).join(', ') || 'none'}. Blog posts the client did not list are not moved (D12) and get a 301 to the blog hub (P7.4); tours that were removed or Israel pages are handled in P7.`);
-out(`- New addresses: ${newOnly.map((k) => new URL(k).pathname).join(', ') || 'none'}.`);
+out(
+  cjk
+    ? `- Not on the new site at the same address, by kind: ${Object.entries(missingByKind).map(([k, v]) => `${k} ${v}`).join(', ') || 'none'}. Every one of them has a fate in \`data/mapping/redirects-${lang}.csv\`: the tabs of a tour (/inclusion-rate/, /review/ ... were empty pages) and the pages whose address changed get a 301 to the page that took their place (P7.5).`
+    : `- Not carried over, by kind: ${Object.entries(missingByKind).map(([k, v]) => `${k} ${v}`).join(', ') || 'none'}. Blog posts the client did not list are not moved (D12) and get a 301 to the blog hub (P7.4); tours that were removed or Israel pages are handled in P7.`,
+);
+if (cjk) {
+  const byAction = {};
+  for (const o of missing) {
+    const action = fate.get(keyOf(o.url))?.action ?? 'no fate';
+    byAction[action] = (byAction[action] ?? 0) + 1;
+  }
+  out(`- Fate of those ${missing.length}: ${Object.entries(byAction).map(([k, v]) => `${k} ${v}`).join(', ')}.`);
+}
+out(`- New addresses: ${newOnly.join(', ') || 'none'}.`);
 out();
 out('## Titles, descriptions, headings, canonical');
 out();
@@ -93,10 +126,10 @@ for (const kind of kinds) {
   const sameDesc = set.filter((m) => m.s && m.s.description === m.n.description).length;
   const withScrape = set.filter((m) => m.s).length;
   const sameH1 = set.filter((m) => (m.s?.h1 ?? m.o.h1First) === m.n.h1[0]).length;
-  out(`| ${kind} | ${set.length} | ${sameTitle} | ${sameDesc}${withScrape < set.length ? ` of ${withScrape}` : ''} | ${sameH1} | ${set.filter((m) => Number(m.o.h1Count) > 1).length} | ${set.filter((m) => m.n.h1.length > 1).length} | ${set.filter((m) => m.o.canonical.replace(/\/?$/, '/') === m.n.canonical).length} |`);
+  out(`| ${kind} | ${set.length} | ${sameTitle} | ${sameDesc}${withScrape < set.length ? ` of ${withScrape}` : ''} | ${sameH1} | ${set.filter((m) => Number(m.o.h1Count) > 1).length} | ${set.filter((m) => m.n.h1.length > 1).length} | ${cjk ? 'n/a (the old pages had no canonical)' : set.filter((m) => m.o.canonical.replace(/\/?$/, '/') === m.n.canonical).length} |`);
   for (const m of set) {
     const oldTitle = m.s ? m.s.title : m.o.title;
-    if (oldTitle !== m.n.title) changed.push({ kind, path: new URL(m.key).pathname, from: oldTitle, to: m.n.title, why: kind === 'home' ? 'P3.12: the old title had no Morocco; new one is under 60 characters' : 'check' });
+    if (oldTitle !== m.n.title) changed.push({ kind, path: m.key, from: oldTitle, to: m.n.title, why: kind === 'home' ? 'P3.12: the old title had no Morocco; new one is under 60 characters' : cjk ? (oldTitle.trim() === '' || /^(Eztravel Turkey|トルコ旅行)$/.test(oldTitle.trim()) ? 'the old title was empty or only the site name: now heading + site name' : 'the old title belonged to another page: now heading + site name') : 'check' });
   }
 }
 out();
@@ -105,11 +138,11 @@ out();
 if (changed.length === 0) out('none');
 for (const c of changed.slice(0, 20)) out(`- \`${c.path}\` (${c.kind}): "${c.from}" -> "${c.to}". ${c.why === 'check' ? '**Needs a reason.**' : c.why}`);
 out();
-out('Every old page carried three H1 elements (the page heading plus two legal-text modals, Ek I); every new page has exactly one.');
+out(cjk ? 'Every new page has exactly one H1 (the old pages wrote the page title twice, in the banner and in the text).' : 'Every old page carried three H1 elements (the page heading plus two legal-text modals, Ek I); every new page has exactly one.');
 out();
 out('## Content and links');
 out();
-out('Words are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.');
+out('Words (characters for Chinese and Japanese) are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.');
 out();
 out('| Kind | Old words (median) | New words (median) | New under 70% of old | Old internal links (median) | New internal links (median) | Old images without alt | New images without alt |');
 out('|---|---|---|---|---|---|---|---|');
@@ -117,16 +150,16 @@ const thin = [];
 for (const kind of kinds) {
   const set = matched.filter((m) => m.o.kind === kind);
   const ow = set.map((m) => Number(m.o.mainWords)).filter((x) => x > 0);
-  const nw = set.map((m) => m.n.words);
-  const under = set.filter((m) => Number(m.o.mainWords) > 0 && m.n.words < 0.7 * Number(m.o.mainWords));
-  under.forEach((m) => thin.push({ kind, path: new URL(m.key).pathname, o: Number(m.o.mainWords), n: m.n.words }));
+  const nw = set.map((m) => (cjk ? m.n.chars : m.n.words));
+  const under = set.filter((m) => Number(m.o.mainWords) > 0 && (cjk ? m.n.chars : m.n.words) < 0.7 * Number(m.o.mainWords));
+  under.forEach((m) => thin.push({ kind, path: m.key, o: Number(m.o.mainWords), n: m.n.words }));
   out(`| ${kind} | ${median(ow)} | ${median(nw)} | ${under.length} | ${median(set.map((m) => Number(m.o.internalLinks)))} | ${median(set.map((m) => m.n.internalLinks))} | ${set.reduce((a, m) => a + Number(m.o.imagesWithoutAlt), 0)} | ${set.reduce((a, m) => a + m.n.imagesWithoutAlt, 0)} |`);
 }
 out();
 if (thin.length > 0) {
   out('Pages whose new text is under 70% of the old (largest drop first):');
   out();
-  for (const t of thin.sort((a, b) => a.n / a.o - b.n / b.o).slice(0, 15)) out(`- \`${t.path}\` (${t.kind}): ${t.o} -> ${t.n} words`);
+  for (const t of thin.sort((a, b) => a.n / a.o - b.n / b.o).slice(0, 15)) out(`- \`${t.path}\` (${t.kind}): ${t.o} -> ${t.n} ${cjk ? 'characters' : 'words'}`);
   out();
 }
 out('## Structured data');
@@ -140,21 +173,36 @@ for (const kind of kinds) {
   out(`| ${kind} | ${[...o].sort().join(', ') || 'none'} | ${[...n].sort().join(', ')} |`);
 }
 out();
-out('The old tour pages carried `Product`, `AggregateRating`, `Offer`, `MerchantReturnPolicy` and `OfferShippingDetails` next to `TouristTrip` (Ek I). The new ones carry `TouristTrip` with an `Offer` per currency, `WebPage`, `BreadcrumbList` and, where the tour has questions, `FAQPage`. The self-made rating and the shipping and return policy of a tour are left out on purpose (D16): a company rating written by the company itself is not allowed in Google rich results, and a tour has no shipping. This is the one place where the new pages carry **less** structured data than the old ones.');
-out();
-out('## What changed on purpose');
-out();
-out('- Home page title (see above). Everything else keeps the old title, H1 and canonical.');
-out('- Two descriptions differ: the About page (the old one was 195 characters, over the 160 limit of Ek H.3, so a 141-character one written in code is used) and the destinations hub (the old text listed Israel; it now names the five countries).');
-out('- About, FAQ, Contact, Destinations hub and the home FAQ show the text of the old pages (from the CMS) inside the new design; the first draft had hand-written text there and 3 of these pages had different titles and about a third fewer words. Sections that mention Israel are left out. This is why the destinations hub has 927 words against 1350 (about 30% of the old text was Israel, and the card paragraphs of the old hub are now the country and combination tiles).');
-out('- Old pages not on the new site apart from blog posts: `/en/search/` (noindex, not in the sitemap) and `/en/videos/` (301 to the blog, D18).');
-out('- Three H1 elements per page became one.');
-out('- Pages that were thin or broken on the old site (two tours with a 13 and 32 character description) keep the old text; fixing them is a content decision (S2.2).');
-out('- Tours show a price in euro and dollar when both are entered; the old pages showed euro only.');
-out('- Country pages with category pages no longer list every tour (D42); Egypt, Jordan and Morocco got category pages (7 new addresses).');
+if (!cjk) {
+  out('The old tour pages carried `Product`, `AggregateRating`, `Offer`, `MerchantReturnPolicy` and `OfferShippingDetails` next to `TouristTrip` (Ek I). The new ones carry `TouristTrip` with an `Offer` per currency, `WebPage`, `BreadcrumbList` and, where the tour has questions, `FAQPage`. The self-made rating and the shipping and return policy of a tour are left out on purpose (D16): a company rating written by the company itself is not allowed in Google rich results, and a tour has no shipping. This is the one place where the new pages carry **less** structured data than the old ones.');
+  out();
+  out('## What changed on purpose');
+  out();
+  out('- Home page title (see above). Everything else keeps the old title, H1 and canonical.');
+  out('- Two descriptions differ: the About page (the old one was 195 characters, over the 160 limit of Ek H.3, so a 141-character one written in code is used) and the destinations hub (the old text listed Israel; it now names the five countries).');
+  out('- About, FAQ, Contact, Destinations hub and the home FAQ show the text of the old pages (from the CMS) inside the new design; the first draft had hand-written text there and 3 of these pages had different titles and about a third fewer words. Sections that mention Israel are left out. This is why the destinations hub has 927 words against 1350 (about 30% of the old text was Israel, and the card paragraphs of the old hub are now the country and combination tiles).');
+  out('- Old pages not on the new site apart from blog posts: `/en/search/` (noindex, not in the sitemap) and `/en/videos/` (301 to the blog, D18).');
+  out('- Three H1 elements per page became one.');
+  out('- Pages that were thin or broken on the old site (two tours with a 13 and 32 character description) keep the old text; fixing them is a content decision (S2.2).');
+  out('- Tours show a price in euro and dollar when both are entered; the old pages showed euro only.');
+  out('- Country pages with category pages no longer list every tour (D42); Egypt, Jordan and Morocco got category pages (7 new addresses).');
+}
+if (cjk) {
+  out('The old pages carried no structured data at all (no JSON-LD). The new pages carry `TravelAgency`, `WebSite`, `BreadcrumbList` and `WebPage`, `TouristTrip` on tours (an `Offer` only where a price is entered) and `FAQPage` where the page has questions.');
+  out();
+  out('## What changed on purpose');
+  out();
+  out('- A title that was only the site name ("Eztravel Turkey" on seven Chinese pages) or that belonged to another page (the Japanese privacy page carried the FAQ title) became the page heading followed by the site name. The hub pages, which were the home page under another address, take the menu word as heading. Every other title, description and heading is the old one.');
+  out('- Chinese and Japanese descriptions are kept whatever their length (the 120 to 160 characters of Ek H.3 are for Latin letters). A few tours have a description under 20 characters; it is the old text and a task for a native editor.');
+  out('- Israel: nothing that names the country is carried over (`以色列`, `イスラエル`). The Chinese FAQ had none; the Japanese FAQ lost one question. Six Chinese Jordan tours mention the 6th-century Madaba map of Jerusalem, which is Jordan content and stays.');
+  out('- The tab addresses of every tour (`/inclusion-rate/`, `/review/`, `/reviews/`, `/tour-itinerary/`, `/itinerary/`) answered 200 with an empty page and a meaningless title; they redirect to the tour (P7.5).');
+  out('- The Japanese folder `/jp/目的地/ギリシャツアー /` had a blank at the end of its name; the new address has none and the old one redirects.');
+  out('- Text pages and the home page are the old text inside the new design. The fixed words of the new design (menus, buttons, forms, section headings) are drafts that a native speaker still has to review (P5.7).');
+  out('- Tours show their price tables and notes as the old tab did. The euro starting price of a Japanese tour is shown where the old page printed one; some Chinese price tables are for 2023 and 2024 (the old text): the client has to update them.');
+}
 
-writeFileSync(path.join(root, `docs/baseline/seo-parity-${today}.md`), lines.join('\n') + '\n');
+writeFileSync(path.join(root, `docs/baseline/seo-parity${cjk ? `-${lang}` : ''}-${today}.md`), lines.join('\n') + '\n');
 const csv = ['url,kind,old_title,new_title,old_h1_count,new_h1_count,old_words,new_words,old_links,new_links'];
-for (const m of matched) csv.push([m.key, m.o.kind, `"${(m.s?.title ?? m.o.title).replace(/"/g, '""')}"`, `"${m.n.title.replace(/"/g, '""')}"`, m.o.h1Count, m.n.h1.length, m.o.mainWords, m.n.words, m.o.internalLinks, m.n.internalLinks].join(','));
-writeFileSync(path.join(root, 'data/qa/parity.csv'), csv.join('\n'));
+for (const m of matched) csv.push([m.key, m.o.kind, `"${(m.s?.title ?? m.o.title).replace(/"/g, '""')}"`, `"${m.n.title.replace(/"/g, '""')}"`, m.o.h1Count, m.n.h1.length, m.o.mainWords, cjk ? m.n.chars : m.n.words, m.o.internalLinks, m.n.internalLinks].join(','));
+writeFileSync(path.join(root, `data/qa/parity${cjk ? `-${lang}` : ''}.csv`), csv.join('\n'));
 console.log(lines.join('\n'));

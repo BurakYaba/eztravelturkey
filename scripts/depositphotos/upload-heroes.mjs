@@ -6,6 +6,9 @@
 // Reads data/depositphotos/proposal.json and the files in data/depositphotos/originals/. Each picture is scaled down to
 // at most 2400 px wide (the originals are 2000 to 6000 px), uploaded once, and set on its tour. SANITY_DATASET picks the
 // dataset (default production). A tour that already has a main picture keeps it unless --replace is given.
+//
+// --lang=zh|jp --file=proposal-zh.json sets the heroes of the Chinese or Japanese tours (match-heroes-cjk.mjs): a tour that has the same
+// tour in English takes that tour's picture (`copyFrom`), the others take the picture chosen for them.
 import { createClient } from '@sanity/client';
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -15,6 +18,7 @@ const root = path.resolve(import.meta.dirname, '../..');
 const dir = path.join(root, 'data/depositphotos');
 const dry = process.argv.includes('--dry');
 const replace = process.argv.includes('--replace');
+const lang = process.argv.find((a) => a.startsWith('--lang='))?.slice(7) ?? 'en';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
 // --file=destination-proposal.json sets the main picture of destination pages instead of the hero of tours.
@@ -39,17 +43,32 @@ if (!dry && !process.env.SANITY_WRITE_TOKEN) {
   process.exit(1);
 }
 
-const tours = await client.fetch(`*[_type == $type && language == "en"]{ _id, path, "has": defined(${field}.asset) }`, { type: docType });
+const tours = await client.fetch(`*[_type == $type && language == $lang]{ _id, path, title, "has": defined(${field}.asset) }`, { type: docType, lang });
 const byPath = new Map(tours.map((t) => [t.path, t]));
+// the English tours' pictures, for the tours that copy one
+const englishHeroes = new Map(
+  (await client.fetch(`*[_type == "tour" && language == "en" && defined(heroImage.asset)]{ path, "ref": heroImage.asset._ref }`)).map((t) => [t.path, t.ref]),
+);
 const alt = (title) => title.replace(/\s+/g, ' ').replace(/^\d{1,2} \w{3} \d{4},? ?/, '').trim().slice(0, 140);
 
-const plan = proposal.filter((p) => p.pick && byPath.has(p.path) && (replace || !byPath.get(p.path).has));
-const missing = plan.filter((p) => !originals.has(p.pick.id));
+const plan = proposal.filter((p) => (p.pick || p.copyFrom) && byPath.has(p.path) && (replace || !byPath.get(p.path).has));
+const missing = plan.filter((p) => p.pick && !originals.has(p.pick.id));
 console.log(`${proposal.length} in the proposal, ${plan.length} ${docType} documents to set in ${dataset}, ${missing.length} without a downloaded file`);
 if (dry) process.exit(0);
 
 let n = 0;
 for (const item of plan) {
+  if (item.copyFrom) {
+    // the same trip shows the same picture in every language; the description is the tour's own title
+    const ref = englishHeroes.get(item.copyFrom);
+    if (!ref) continue;
+    await client
+      .patch(byPath.get(item.path)._id)
+      .set({ [field]: { _type: 'picture', asset: { _type: 'reference', _ref: ref }, alt: byPath.get(item.path).title.slice(0, 140) } })
+      .commit();
+    n++;
+    continue;
+  }
   const file = originals.get(item.pick.id);
   if (!file) continue;
   if (!cache[item.pick.id]) {
@@ -64,7 +83,7 @@ for (const item of plan) {
   }
   await client
     .patch(byPath.get(item.path)._id)
-    .set({ [field]: { _type: 'picture', asset: { _type: 'reference', _ref: cache[item.pick.id] }, alt: alt(item.pick.title) } })
+    .set({ [field]: { _type: 'picture', asset: { _type: 'reference', _ref: cache[item.pick.id] }, alt: lang === 'en' ? alt(item.pick.title) : byPath.get(item.path).title.slice(0, 140) } })
     .commit();
   n++;
   if (n % 10 === 0) console.log(`${n}/${plan.length}`);

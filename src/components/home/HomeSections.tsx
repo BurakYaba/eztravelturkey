@@ -1,11 +1,5 @@
 import { Link } from '@/i18n/link';
-import {
-  ArrowRight,
-  Buildings,
-  MapTrifold,
-  Path,
-  UsersThree,
-} from '@phosphor-icons/react/dist/ssr';
+import { ArrowRight, Buildings, MapTrifold, Path, UsersThree } from '@phosphor-icons/react/dist/ssr';
 import type { Icon } from '@phosphor-icons/react';
 import { BlogCard } from '../pages/BlogCard';
 import { ComboCard } from '../shared/ComboCard';
@@ -18,35 +12,16 @@ import { TourCard } from '../tours/TourCard';
 import { TextLink } from '../shared/Button';
 import { destinations } from '@/data/destinations';
 import { site } from '@/data/site';
-import { getDictionary } from '@/i18n/dictionaries';
-import { getLocale } from '@/i18n/server';
-import { blogPosts, comboCards, featuredTours } from '@/lib/data';
+import { format, getDictionary } from '@/i18n/dictionaries';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
+import { availableCountries, blogPosts, comboCards, featuredTours } from '@/lib/data';
 
 // The trust bar right above already says: since 1997, licensed, 24/7 support. Not repeated here (P3.18).
-const reasons: { icon: Icon; title: string; text: string }[] = [
-  {
-    icon: Path,
-    title: 'Flexible, customized itineraries',
-    text: 'Change dates, hotels and sightseeing pace, or add destinations.',
-  },
-  {
-    icon: MapTrifold,
-    title: 'Multi-country specialists',
-    text: 'Flights, ferries, hotels, transfers and guides arranged as one journey.',
-  },
-  {
-    icon: UsersThree,
-    title: 'Small group and private tours',
-    text: 'Choose flexibility or company. Locally arranged guides and transport either way.',
-  },
-  {
-    icon: Buildings,
-    title: 'Carefully selected hotels',
-    text: 'Chosen for location, cleanliness, comfort, service and traveler feedback.',
-  },
-];
+const reasonIcons: Icon[] = [Path, MapTrifold, UsersThree, Buildings];
 
-export function WhyTravel() {
+export async function WhyTravel() {
+  const { ui } = await getDictionaryForPage();
+  const t = ui.home.why;
   return (
     <section className="section-y">
       <div className="container-x grid items-center gap-10 lg:grid-cols-[5fr_7fr] lg:gap-14">
@@ -54,21 +29,21 @@ export function WhyTravel() {
           <Photo id="cappadocia-valley" sizes="(min-width: 1024px) 40vw, 100vw" className="object-[80%_75%]" />
         </div>
         <div>
-          <h2 className="h-section">Local Expertise. Personal Attention</h2>
-          <p className="text-muted mt-3 max-w-xl text-lg">
-            Based in Istanbul, Magnificent Travel has been organizing journeys since 1997. We help you choose the right
-            route, hotels and travel pace with support from planning to your final day.
-          </p>
+          <h2 className="h-section">{t.title}</h2>
+          <p className="text-muted mt-3 max-w-xl text-lg">{t.text}</p>
           <ul className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-            {reasons.map(({ icon: Icon, title, text }) => (
-              <li key={title} className="flex gap-4">
-                <Icon size={32} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
-                <div>
-                  <h3 className="font-sans text-base font-semibold tracking-normal">{title}</h3>
-                  <p className="text-muted mt-1 text-[0.95rem]">{text}</p>
-                </div>
-              </li>
-            ))}
+            {t.reasons.map(({ title, text }, i) => {
+              const Icon = reasonIcons[i] ?? Path;
+              return (
+                <li key={title} className="flex gap-4">
+                  <Icon size={32} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                  <div>
+                    <h3 className="font-sans text-base font-semibold tracking-normal">{title}</h3>
+                    <p className="text-muted mt-1 text-[0.95rem]">{text}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -76,28 +51,29 @@ export function WhyTravel() {
   );
 }
 
-export function DestinationsRow() {
+export async function DestinationsRow() {
+  const { ui, countries } = await getDictionaryForPage();
+  const t = ui.home.destinations;
+  const available = await availableCountries(await getLocale());
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
-        <SectionHeading
-          title="Explore our destinations"
-          description="Find your next journey through ancient cities, island landscapes and remarkable cultures."
-          link={{ href: '/destinations', label: 'View all destinations' }}
-        />
+        <SectionHeading title={t.title} description={t.text} link={{ href: '/destinations', label: t.all }} />
         <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-          {destinations.map((d) => (
-            <li key={d.id} className="reveal">
-              <DestinationTile href={`/destinations/${d.id}-tours`} title={d.name} note={d.tagline} image={d.image} />
-            </li>
-          ))}
+          {destinations
+            .filter((d) => available.includes(d.id))
+            .map((d) => (
+              <li key={d.id} className="reveal">
+                <DestinationTile
+                  href={`/destinations/${d.id}-tours`}
+                  title={countries[d.id].name}
+                  note={countries[d.id].tagline}
+                  image={d.image}
+                />
+              </li>
+            ))}
           <li className="reveal">
-            <DestinationTile
-              href="/multi-country-tours"
-              title="Multi-Country"
-              note="Many countries, one journey"
-              image="santorini-domes"
-            />
+            <DestinationTile href="/multi-country-tours" title={t.multi} note={t.multiNote} image="santorini-domes" />
           </li>
         </ul>
       </div>
@@ -105,14 +81,16 @@ export function DestinationsRow() {
   );
 }
 
-export function WaysToTravel() {
+export async function WaysToTravel() {
+  const { ui } = await getDictionaryForPage();
+  const t = ui.home.ways;
   const tile =
     'group relative block overflow-hidden rounded-lg bg-navy-900 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lift';
   const overlay = 'absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent';
   return (
     <section className="section-y">
       <div className="container-x">
-        <SectionHeading title="Ways to travel" description="Different travel styles. The same exceptional care." />
+        <SectionHeading title={t.title} description={t.text} />
         <div className="grid gap-4 lg:grid-cols-5 lg:grid-rows-2">
           <Link href="/private-tours" className={`${tile} reveal min-h-[22rem] lg:col-span-2 lg:row-span-2`}>
             <Photo
@@ -122,12 +100,10 @@ export function WaysToTravel() {
             />
             <span aria-hidden className={overlay} />
             <span className="absolute inset-x-0 bottom-0 p-6">
-              <span className="font-display block text-3xl font-semibold text-white">Private tours</span>
-              <span className="mt-1 block max-w-xs text-white/90">
-                Your interests. Your pace. A more personal way to see the world.
-              </span>
+              <span className="font-display block text-3xl font-semibold text-white">{t.privateTitle}</span>
+              <span className="mt-1 block max-w-xs text-white/90">{t.privateText}</span>
               <span className="mt-3 inline-flex items-center gap-1.5 font-semibold text-white">
-                Learn more <ArrowRight size={16} weight="bold" aria-hidden />
+                {t.learnMore} <ArrowRight size={16} weight="bold" aria-hidden />
               </span>
             </span>
           </Link>
@@ -139,8 +115,8 @@ export function WaysToTravel() {
             />
             <span aria-hidden className={overlay} />
             <span className="absolute inset-x-0 bottom-0 p-6">
-              <span className="font-display block text-2xl font-semibold text-white">Small group tours</span>
-              <span className="mt-1 block text-white/90">Meaningful travel with like-minded explorers.</span>
+              <span className="font-display block text-2xl font-semibold text-white">{t.smallTitle}</span>
+              <span className="mt-1 block text-white/90">{t.smallText}</span>
             </span>
           </Link>
           <Link href="/multi-country-tours" className={`${tile} reveal min-h-56 lg:col-span-3`}>
@@ -151,14 +127,14 @@ export function WaysToTravel() {
             />
             <span aria-hidden className={overlay} />
             <span className="absolute inset-x-0 bottom-0 p-6">
-              <span className="font-display block text-2xl font-semibold text-white">Multi-country tours</span>
-              <span className="mt-1 block text-white/90">Diverse cultures and landscapes woven into one trip.</span>
+              <span className="font-display block text-2xl font-semibold text-white">{t.multiTitle}</span>
+              <span className="mt-1 block text-white/90">{t.multiText}</span>
             </span>
           </Link>
         </div>
         <p className="bg-cream-100 text-ink mt-6 flex items-center gap-3 rounded-lg px-5 py-4">
           <Buildings size={24} className="text-gold-600 shrink-0" aria-hidden />
-          One team coordinates hotels, guides, flights and transfers across your whole journey.
+          {t.note}
         </p>
       </div>
     </section>
@@ -167,15 +143,15 @@ export function WaysToTravel() {
 
 export async function FeaturedTours() {
   const lang = await getLocale();
-  const [picks, { card }] = [await featuredTours(lang), getDictionary(lang)];
+  const [picks, { card, ui }] = [await featuredTours(lang), getDictionary(lang)];
+  const t = ui.home.featured;
+  if (picks.length === 0) {
+    return null;
+  }
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
-        <SectionHeading
-          title="Find your Perfect Tour"
-          description="Choose a private journey, a small group adventure, or a personalized multi-country itinerary."
-          link={{ href: '/tours', label: 'View all tours' }}
-        />
+        <SectionHeading title={t.title} description={t.text} link={{ href: '/tours', label: t.all }} />
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {picks.map((tour) => (
             <li key={tour.href} className="reveal">
@@ -189,15 +165,16 @@ export async function FeaturedTours() {
 }
 
 export async function MultiCountryRail() {
-  const combos = await comboCards(await getLocale());
+  const lang = await getLocale();
+  const combos = await comboCards(lang);
+  const t = getDictionary(lang).ui.home.multiRail;
+  if (combos.length === 0) {
+    return null;
+  }
   return (
     <section className="section-y">
       <div className="container-x">
-        <SectionHeading
-          title="Multi-Country Tours - Seamlessly Planned"
-          description="Discover more in one journey, with hotels, guides, transfers and transport coordinated by one team."
-          link={{ href: '/multi-country-tours', label: 'See all combinations' }}
-        />
+        <SectionHeading title={t.title} description={t.text} link={{ href: '/multi-country-tours', label: t.all }} />
       </div>
       <ul className="no-scrollbar flex snap-x snap-mandatory scroll-px-4 gap-5 overflow-x-auto px-4 pb-4 sm:scroll-px-6 sm:px-6 lg:scroll-px-[max(2rem,calc((100%-80rem)/2+2rem))] lg:px-[max(2rem,calc((100%-80rem)/2+2rem))]">
         {combos.map((combo) => (
@@ -211,7 +188,9 @@ export async function MultiCountryRail() {
 }
 
 export async function HubPreview() {
-  const [lead, ...rest] = (await blogPosts(await getLocale())).filter((p) => p.image);
+  const lang = await getLocale();
+  const t = getDictionary(lang).ui.home.hub;
+  const [lead, ...rest] = (await blogPosts(lang)).filter((p) => p.image);
   if (!lead) {
     return null;
   }
@@ -219,11 +198,7 @@ export async function HubPreview() {
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
-        <SectionHeading
-          title="Plan Your Trip with Local Insights"
-          description="Find practical tips, destination inspiration and travel advice from our local team."
-          link={{ href: '/blog', label: 'Explore the Travel Guides' }}
-        />
+        <SectionHeading title={t.title} description={t.text} link={{ href: '/blog', label: t.all }} />
         <div className="grid gap-6 lg:grid-cols-5">
           <Link
             href={lead.href}
@@ -240,7 +215,9 @@ export async function HubPreview() {
               className="from-navy-950/90 via-navy-950/30 absolute inset-0 bg-gradient-to-t to-transparent"
             />
             <span className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-              <span className="text-gold-100 text-sm font-semibold capitalize">Featured: {lead.path.split('/')[1]}</span>
+              <span className="text-gold-100 text-sm font-semibold capitalize">
+                {format(t.featured, { topic: lead.path.split('/')[1] ?? '' })}
+              </span>
               <span className="font-display mt-1 block text-3xl font-semibold text-white md:text-4xl">
                 {lead.title}
               </span>
@@ -260,20 +237,22 @@ export async function HubPreview() {
   );
 }
 
-export function ReviewsSection() {
+export async function ReviewsSection() {
+  const { ui } = await getDictionaryForPage();
+  const t = ui.home.reviews;
   return (
     <section className="section-y">
       <div className="container-x">
         <SectionHeading
-          title="Verified guest reviews"
-          description="Hear from our guests about their experiences."
-          link={{ href: site.tripadvisorUrl, label: `All ${site.stats.reviews} reviews on Tripadvisor` }}
+          title={t.title}
+          description={t.text}
+          link={{ href: site.tripadvisorUrl, label: format(t.all, { count: site.stats.reviews }) }}
         />
         <ReviewCards />
         <p className="text-muted mt-6 text-center">
-          Rated {site.stats.rating} out of 5 on Tripadvisor.{' '}
+          {format(t.rated, { rating: site.stats.rating })}{' '}
           <TextLink href="/about" className="ml-1">
-            About Magnificent Travel
+            {t.about}
           </TextLink>
         </p>
       </div>

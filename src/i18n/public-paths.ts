@@ -44,7 +44,9 @@ export function publicPath(lang: Locale, path: string): string {
   const first = parts[1] ?? '';
   if (first === 'destinations' && lang !== 'en') {
     const rest = parts.slice(2);
-    if (rest[0]) rest[0] = countryFolders[lang][rest[0]] ?? rest[0];
+    if (rest[0]) {
+      rest[0] = countryFolders[lang][rest[0]] ?? rest[0];
+    }
     return ['', destinationsRoot[lang], ...rest].join('/');
   }
   const name = pageNames[lang][first];
@@ -68,7 +70,9 @@ export function logicalPath(lang: Locale, path: string): string {
   const parts = path.split('/');
   const first = parts[1] ?? '';
   const english = Object.entries(pageNames[lang]).find(([, name]) => name === first)?.[0];
-  if (english) return ['', english, ...parts.slice(2)].join('/');
+  if (english) {
+    return ['', english, ...parts.slice(2)].join('/');
+  }
   return first === destinationsRoot[lang] && lang !== 'en' ? ['', 'destinations', ...parts.slice(2)].join('/') : path;
 }
 

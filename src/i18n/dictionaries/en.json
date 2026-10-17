@@ -10,23 +10,33 @@
   "countries": {
     "turkey": {
       "name": "Turkey",
-      "tagline": "History lives here"
+      "tagline": "History lives here",
+      "bestTime": "April to June and September to October for sightseeing. Turkey can be visited all year.",
+      "currency": "Turkish lira"
     },
     "greece": {
       "name": "Greece",
-      "tagline": "Islands and ancient wonders"
+      "tagline": "Islands and ancient wonders",
+      "bestTime": "April to October, with the warmest sea in July to September.",
+      "currency": "Euro"
     },
     "egypt": {
       "name": "Egypt",
-      "tagline": "Land of the pharaohs"
+      "tagline": "Land of the pharaohs",
+      "bestTime": "October to April for cooler sightseeing. Tours run daily all year.",
+      "currency": "Egyptian pound"
     },
     "jordan": {
       "name": "Jordan",
-      "tagline": "Ancient mysteries await"
+      "tagline": "Ancient mysteries await",
+      "bestTime": "Spring and autumn are the most comfortable seasons. Summers are hot in the south.",
+      "currency": "Jordanian dinar"
     },
     "morocco": {
       "name": "Morocco",
-      "tagline": "Vibrant cultures"
+      "tagline": "Vibrant cultures",
+      "bestTime": "Spring and autumn for most routes. The desert is best outside midsummer.",
+      "currency": "Moroccan dirham"
     }
   },
   "nav": {
@@ -303,5 +313,335 @@
     "allGuides": "All travel guides",
     "categories": "Guides by country",
     "featured": "Maps"
+  },
+  "ui": {
+    "trust": {
+      "label": "Why travelers trust us",
+      "since": "Since {year}",
+      "years": "Trusted for over {years} years",
+      "rating": "{rating} on Tripadvisor",
+      "ratingNote": "Excellent traveler reviews",
+      "licensed": "Licensed Tour Operator",
+      "license": "License No. {no}",
+      "travelers": "{count} Travelers",
+      "travelersNote": "From around the world",
+      "support": "24/7 Local Support",
+      "supportNote": "While you travel"
+    },
+    "quoteBand": {
+      "title": "Tell us where you would like to go",
+      "text": "Share your plans and get a personalized itinerary and quote from our travel experts.",
+      "plan": "Plan My Trip",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappMessage": "Hello Magnificent Travel, I would like to plan a trip."
+    },
+    "multiCta": {
+      "title": "Planning more than one country?",
+      "text": "Combine destinations and see even more with our multi-country tours, or let us design a journey just for you.",
+      "button": "Plan a Custom Trip"
+    },
+    "breadcrumb": {
+      "label": "Breadcrumb"
+    },
+    "home": {
+      "hero": {
+        "eyebrow": "Turkey, Greece, Egypt, Jordan & Morocco",
+        "title": "Private, Small Group & Multi-Country Tours",
+        "text": "Discover five remarkable destinations with an experienced local tour operator since 1997. Personalized itineraries, carefully selected hotels and seamless travel arrangements.",
+        "explore": "Explore Tours",
+        "plan": "Plan My Trip"
+      },
+      "search": {
+        "label": "Find a tour",
+        "destination": "Destination",
+        "destinationAny": "Where would you like to go?",
+        "multi": "Multi-country tours",
+        "style": "Travel style",
+        "styleAny": "Any style",
+        "private": "Private",
+        "smallGroup": "Small group",
+        "duration": "Duration",
+        "durationAny": "Any duration",
+        "d35": "3 to 5 days",
+        "d69": "6 to 9 days",
+        "d10": "10 days or more",
+        "button": "Search Tours"
+      },
+      "why": {
+        "title": "Local Expertise. Personal Attention",
+        "text": "Based in Istanbul, Magnificent Travel has been organizing journeys since 1997. We help you choose the right route, hotels and travel pace with support from planning to your final day.",
+        "reasons": [
+          {
+            "title": "Flexible, customized itineraries",
+            "text": "Change dates, hotels and sightseeing pace, or add destinations."
+          },
+          {
+            "title": "Multi-country specialists",
+            "text": "Flights, ferries, hotels, transfers and guides arranged as one journey."
+          },
+          {
+            "title": "Small group and private tours",
+            "text": "Choose flexibility or company. Locally arranged guides and transport either way."
+          },
+          {
+            "title": "Carefully selected hotels",
+            "text": "Chosen for location, cleanliness, comfort, service and traveler feedback."
+          }
+        ]
+      },
+      "destinations": {
+        "title": "Explore our destinations",
+        "text": "Find your next journey through ancient cities, island landscapes and remarkable cultures.",
+        "all": "View all destinations",
+        "multi": "Multi-Country",
+        "multiNote": "Many countries, one journey"
+      },
+      "ways": {
+        "title": "Ways to travel",
+        "text": "Different travel styles. The same exceptional care.",
+        "privateTitle": "Private tours",
+        "privateText": "Your interests. Your pace. A more personal way to see the world.",
+        "learnMore": "Learn more",
+        "smallTitle": "Small group tours",
+        "smallText": "Meaningful travel with like-minded explorers.",
+        "multiTitle": "Multi-country tours",
+        "multiText": "Diverse cultures and landscapes woven into one trip.",
+        "note": "One team coordinates hotels, guides, flights and transfers across your whole journey."
+      },
+      "featured": {
+        "title": "Find your Perfect Tour",
+        "text": "Choose a private journey, a small group adventure, or a personalized multi-country itinerary.",
+        "all": "View all tours"
+      },
+      "multiRail": {
+        "title": "Multi-Country Tours - Seamlessly Planned",
+        "text": "Discover more in one journey, with hotels, guides, transfers and transport coordinated by one team.",
+        "all": "See all combinations"
+      },
+      "hub": {
+        "title": "Plan Your Trip with Local Insights",
+        "text": "Find practical tips, destination inspiration and travel advice from our local team.",
+        "all": "Explore the Travel Guides",
+        "featured": "Featured: {topic}"
+      },
+      "reviews": {
+        "title": "Verified guest reviews",
+        "text": "Hear from our guests about their experiences.",
+        "all": "All {count} reviews on Tripadvisor",
+        "rated": "Rated {rating} out of 5 on Tripadvisor.",
+        "about": "About Magnificent Travel"
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "text": "Everything you need to know about traveling with Magnificent Travel.",
+        "all": "View all FAQs"
+      }
+    },
+    "pages": {
+      "tours": {
+        "title": "Explore Our Tours",
+        "description": "Browse private, small group and multi-country tours across Turkey, Greece, Egypt and Jordan. Filter by destination, travel style and duration.",
+        "banner": "Private, small group and multi-country journeys designed around you.",
+        "lead": "From the timeless wonders of Turkey to the sun-drenched islands of Greece and the ancient treasures of Egypt and Jordan, our tours bring you closer to the most extraordinary destinations. Travel your way, with the same exceptional care.",
+        "crumb": "Tours"
+      },
+      "multi": {
+        "title": "Multi-Country Tours",
+        "description": "Multi-country tours across Turkey, Greece, Egypt and Jordan, with flights, ferries, hotels, transfers and guides coordinated by one licensed local team.",
+        "banner": "Seamlessly weave together diverse cultures and iconic landscapes in one journey.",
+        "listTitle": "Multi-country tours across the eastern Mediterranean",
+        "listText": "Choose a combination and we will shape the route, the length and the pace around you.",
+        "teamTitle": "One team coordinates it all",
+        "teamText": "Several countries in one trip means many moving parts. We handle them as a single itinerary.",
+        "items": [
+          {
+            "title": "Flights",
+            "text": "International connections between countries and domestic flights within them."
+          },
+          {
+            "title": "Ferries",
+            "text": "High-speed island ferries and port transfers in Greece."
+          },
+          {
+            "title": "Hotels",
+            "text": "Carefully selected hotels in every city and region."
+          },
+          {
+            "title": "Guides and transfers",
+            "text": "Licensed local guides and private transfers throughout."
+          }
+        ],
+        "faqTitle": "Questions about multi-country trips",
+        "faqAll": "All FAQs",
+        "bandTitle": "Planning more than one country?",
+        "bandText": "Tell us which places you cannot miss and we will shape a route around them.",
+        "list": "Multi-country tours"
+      },
+      "styles": {
+        "how": "How {title} work",
+        "available": "Available {title}",
+        "faqTitle": "Questions about this style",
+        "crumb": "Tour Styles",
+        "private": {
+          "title": "Private Tours",
+          "description": "Private tours in Turkey, Greece, Egypt and Jordan with your own licensed guide and vehicle. Your interests, your pace, one local team.",
+          "lead": "Your interests. Your pace. A more personal way to see the world.",
+          "points": [
+            {
+              "title": "Your own guide and vehicle",
+              "text": "A licensed local guide and a private vehicle stay with your party, so the day follows your interests."
+            },
+            {
+              "title": "Flexible pace",
+              "text": "Start later, linger longer or skip a stop. The plan bends around you."
+            },
+            {
+              "title": "Tailored hotels and sightseeing",
+              "text": "Choose hotel category, add nights and swap sights. We rebuild the itinerary to match."
+            },
+            {
+              "title": "Ideal for families and special occasions",
+              "text": "Honeymoons, family trips and multigenerational journeys are easier to shape privately."
+            }
+          ],
+          "faqs": [
+            {
+              "q": "Is a private tour much more expensive?",
+              "a": "It depends on group size and season. We quote clearly so you can compare private and small group options side by side."
+            },
+            {
+              "q": "Can I change the itinerary?",
+              "a": "Yes. The listed itineraries are starting points that we adapt to your dates, hotels and interests."
+            },
+            {
+              "q": "Are private tours available all year?",
+              "a": "Most run daily throughout the year, subject to availability. Island tours in Greece run from April to mid October."
+            }
+          ]
+        },
+        "smallGroup": {
+          "title": "Small Group Tours",
+          "description": "Small group tours in Turkey and Greece with licensed local guides. Meaningful travel with like-minded explorers. One local team arranges it all.",
+          "lead": "Meaningful travel with like-minded explorers.",
+          "points": [
+            {
+              "title": "Small by design",
+              "text": "Fewer travelers means easier access to sites, better conversation with your guide and a more relaxed day."
+            },
+            {
+              "title": "Everything arranged locally",
+              "text": "Sightseeing, transport and guide services are arranged by our local team."
+            },
+            {
+              "title": "Good value",
+              "text": "Sharing a guide and vehicle keeps the price lower than a fully private tour."
+            },
+            {
+              "title": "Easy to join",
+              "text": "Daily departure options mean you can pick the date that suits you, subject to availability."
+            }
+          ],
+          "faqs": [
+            {
+              "q": "How big are your small groups?",
+              "a": "Groups are kept small so the experience stays personal. We confirm the format and expected group size in your proposal."
+            },
+            {
+              "q": "Can I switch to a private tour?",
+              "a": "Yes. Most small group itineraries can also run privately."
+            },
+            {
+              "q": "Are small group tours suitable for solo travelers?",
+              "a": "Yes. They are a popular way for solo travelers to explore with company and support."
+            }
+          ]
+        }
+      },
+      "plan": {
+        "title": "Plan My Trip",
+        "description": "Tell us where you would like to go and get a personalized itinerary and quote from our travel experts. No obligation, and we reply by email or WhatsApp.",
+        "bannerTitle": "Plan Your Trip",
+        "banner": "Share your dreams and our travel experts will create a tailored itinerary and quote. No obligation.",
+        "nextTitle": "What happens next",
+        "steps": [
+          {
+            "title": "You tell us your plans",
+            "text": "Destinations, dates, number of travelers and anything that matters to you."
+          },
+          {
+            "title": "We send a proposal",
+            "text": "A route, hotels, what is included and a clear price, shaped around your answers."
+          },
+          {
+            "title": "We refine it together",
+            "text": "Change anything you like. Confirm with a 50% deposit when you are ready."
+          }
+        ],
+        "talkTitle": "Prefer to talk?",
+        "talkText": "Message or call us and a travel consultant will help.",
+        "whatsapp": "WhatsApp"
+      },
+      "hub": {
+        "title": "Destinations",
+        "description": "Tours in Turkey, Greece, Egypt, Jordan and Morocco, plus multi-country combinations, from a licensed local operator since 1997.",
+        "bannerTitle": "Our Destinations",
+        "banner": "Extraordinary cultures, timeless history and unforgettable experiences across the eastern Mediterranean and beyond.",
+        "chooseTitle": "Choose where to go",
+        "chooseText": "Each country page lists our tours, the best time to visit and what to expect.",
+        "comboTitle": "Multi-country combinations",
+        "comboText": "Two or more countries in one trip, with hotels, guides, transfers and flights arranged as a single itinerary.",
+        "comboLink": "About multi-country tours",
+        "planningTitle": "Planning your destinations",
+        "allFaqs": "All FAQs"
+      },
+      "about": {
+        "bannerTitle": "About Magnificent Travel",
+        "banner": "An independent Turkish tour operator, creating journeys across the eastern Mediterranean since {year}.",
+        "crumb": "About"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "banner": "Have a question? Send us a message or reach us directly. We will help you plan.",
+        "crumb": "Contact",
+        "formTitle": "Have a question?",
+        "formText": "Ask about a tour, your dates or a custom itinerary."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "banner": "Everything you need to know about traveling with Magnificent Travel.",
+        "crumb": "FAQ",
+        "bandTitle": "Still have a question?",
+        "bandText": "Message us on WhatsApp or send a request and a travel specialist will reply."
+      }
+    },
+    "browser": {
+      "allTours": "All tours",
+      "destination": "Destination",
+      "allDestinations": "All destinations",
+      "style": "Travel style",
+      "anyStyle": "Any travel style",
+      "privateOption": "Private",
+      "smallOption": "Small group",
+      "privateTours": "Private tours",
+      "smallTours": "Small group tours",
+      "duration": "Duration",
+      "anyDuration": "Any duration",
+      "d35": "3 to 5 days",
+      "d69": "6 to 9 days",
+      "d10": "10 days or more",
+      "reset": "Reset filters",
+      "tour": "tour",
+      "tours": "tours",
+      "filterByCountry": "Filter by country",
+      "emptyTitle": "No tours match these filters",
+      "emptyText": "Try a different duration or style, or tell us what you have in mind and we will build it for you.",
+      "planButton": "Plan My Trip"
+    },
+    "combo": {
+      "view": "View route"
+    },
+    "reviews": {
+      "readMore": "Read more on Tripadvisor"
+    }
   }
 }

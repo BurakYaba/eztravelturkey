@@ -10,11 +10,17 @@ import { PageSections } from '@/components/pages/PageSections';
 import { getPage } from '@/lib/data';
 import { docMetadata } from '@/lib/page-meta';
 import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo';
+import { format, getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 
 const description = `${site.name} is a licensed Turkish tour operator (License No. ${site.licenseNo}) organizing private, small group and multi-country tours since ${site.founded}.`;
 
-export const generateMetadata = docMetadata({ title: 'About Us', description, path: '/about', image: 'istanbul-bosphorus' });
+export const generateMetadata = docMetadata({
+  title: 'About Us',
+  description,
+  path: '/about',
+  image: 'istanbul-bosphorus',
+});
 
 const stats = [
   { value: String(site.founded), label: 'Founded in Istanbul' },
@@ -28,6 +34,41 @@ export default async function AboutPage() {
   // The text of the old About page, as it was. Sections that only hold icons or one-word labels are left out.
   const doc = await getPage(lang, 'about');
   const story = (doc?.sections ?? []).filter((s) => s.blocks.some((b) => b.type === 'p' && b.text.length > 60));
+  if (lang !== 'en') {
+    // The Chinese and Japanese pages show the text of their old About page, then the team (the English page's extra blocks are English text).
+    const { ui, nav } = getDictionary(lang);
+    const own = (doc?.sections ?? []).filter((s) => s.blocks.some((b) => b.type !== 'image'));
+    const localCrumbs = [
+      { name: nav.home, path: '/' },
+      { name: ui.pages.about.crumb, path: '/about' },
+    ];
+    return (
+      <>
+        <PageBanner
+          title={doc?.title ?? ui.pages.about.bannerTitle}
+          description={format(ui.pages.about.banner, { year: site.founded })}
+          image="istanbul-bosphorus"
+          crumbs={localCrumbs}
+        />
+        <TrustBar />
+        {own.length > 0 && (
+          <section className="section-y">
+            <div className="container-x max-w-3xl">
+              <PageSections sections={own} />
+            </div>
+          </section>
+        )}
+        <TeamBlock className="section-y bg-cream-100/60" />
+        <QuoteBand />
+        <JsonLd
+          data={[
+            webPageJsonLd(lang, doc?.title ?? ui.pages.about.bannerTitle, '/about', 'AboutPage', doc?.metaDescription),
+            breadcrumbJsonLd(lang, localCrumbs),
+          ]}
+        />
+      </>
+    );
+  }
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -111,7 +152,9 @@ export default async function AboutPage() {
             . The Istanbul skyline in the home page header is an illustration supplied by Magnificent Travel.
           </p>
           <details className="border-cream-200 mt-4 rounded-lg border bg-white p-4">
-            <summary className="text-navy-900 flex min-h-11 cursor-pointer items-center font-semibold">Show photographers</summary>
+            <summary className="text-navy-900 flex min-h-11 cursor-pointer items-center font-semibold">
+              Show photographers
+            </summary>
             <ul className="text-muted mt-3 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
               {photoCredits.map((c) => (
                 <li key={c.id}>
@@ -131,7 +174,10 @@ export default async function AboutPage() {
 
       <QuoteBand />
       <JsonLd
-        data={[webPageJsonLd(lang, 'About Magnificent Travel', '/about', 'AboutPage', description), breadcrumbJsonLd(lang, crumbs)]}
+        data={[
+          webPageJsonLd(lang, 'About Magnificent Travel', '/about', 'AboutPage', description),
+          breadcrumbJsonLd(lang, crumbs),
+        ]}
       />
     </>
   );

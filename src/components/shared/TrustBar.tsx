@@ -1,18 +1,25 @@
 import { CalendarCheck, Headset, ShieldCheck, Star, UsersThree } from '@phosphor-icons/react/dist/ssr';
 import { site } from '@/data/site';
+import { format } from '@/i18n/dictionaries';
+import { getDictionaryForPage } from '@/i18n/server';
 import { cn } from '@/lib/utils';
 
-const items = [
-  { icon: CalendarCheck, label: `Since ${site.founded}`, note: `Trusted for over ${site.stats.years} years` },
-  { icon: Star, label: `${site.stats.rating} on Tripadvisor`, note: 'Excellent traveler reviews' },
-  { icon: ShieldCheck, label: 'Licensed Tour Operator', note: `License No. ${site.licenseNo}` },
-  { icon: UsersThree, label: `${site.stats.travelers} Travelers`, note: 'From around the world' },
-  { icon: Headset, label: '24/7 Local Support', note: 'While you travel' },
-];
-
-export function TrustBar({ className, notes = false }: { className?: string; notes?: boolean }) {
+export async function TrustBar({ className, notes = false }: { className?: string; notes?: boolean }) {
+  const { ui } = await getDictionaryForPage();
+  const t = ui.trust;
+  const items = [
+    {
+      icon: CalendarCheck,
+      label: format(t.since, { year: site.founded }),
+      note: format(t.years, { years: site.stats.years }),
+    },
+    { icon: Star, label: format(t.rating, { rating: site.stats.rating }), note: t.ratingNote },
+    { icon: ShieldCheck, label: t.licensed, note: format(t.license, { no: site.licenseNo }) },
+    { icon: UsersThree, label: format(t.travelers, { count: site.stats.travelers }), note: t.travelersNote },
+    { icon: Headset, label: t.support, note: t.supportNote },
+  ];
   return (
-    <section aria-label="Why travelers trust us" className={cn('border-cream-200 bg-cream-100/70 border-y', className)}>
+    <section aria-label={t.label} className={cn('border-cream-200 bg-cream-100/70 border-y', className)}>
       <div className="container-x">
         <ul className="lg:divide-cream-200 grid grid-cols-2 gap-x-4 gap-y-5 py-5 md:grid-cols-3 lg:grid-cols-5 lg:divide-x">
           {items.map(({ icon: Icon, label, note }) => (

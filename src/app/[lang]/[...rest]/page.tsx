@@ -16,7 +16,9 @@ const routed = new Set(['about', 'about-us', '会社概要', 'contact', '問い�
 export async function generateStaticParams() {
   const lists = await Promise.all(locales.map(async (lang) => ({ lang, pages: await pageSummaries(lang, 'static') })));
   return lists.flatMap(({ lang, pages }) =>
-    pages.filter((p) => !routed.has(p.path) && !p.path.startsWith('gdpr/')).map((p) => ({ lang, rest: p.path.split('/') })),
+    pages
+      .filter((p) => !routed.has(p.path) && !p.path.startsWith('gdpr/'))
+      .map((p) => ({ lang, rest: p.path.split('/') })),
   );
 }
 
