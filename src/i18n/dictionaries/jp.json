@@ -74,7 +74,12 @@
     "rights": "© {year} {name}. All rights reserved.",
     "tursab": "TÜRSAB 加盟",
     "tripadvisor": "Tripadvisor の口コミ",
-    "cards": "Visa・Mastercard をご利用いただけます"
+    "cards": "Visa・Mastercard をご利用いただけます",
+    "credit": {
+      "webDesign": "ウェブデザイン",
+      "and": "と",
+      "seo": "SEO"
+    }
   },
   "whatsapp": {
     "aria": "WhatsApp でトラベルコンサルタントとチャット",
@@ -266,6 +271,34 @@
   "destination": {
     "chooseTitle": "日数やスタイルから選ぶ",
     "toursCount": "{count} ツアー",
-    "toursHeading": "ツアー（{count}）"
+    "toursHeading": "ツアー（{count}）",
+    "keyFacts": "旅の基本情報",
+    "bestTime": "ベストシーズン",
+    "currency": "通貨",
+    "tourCount": "ツアー数",
+    "fromPrice": "ツアー最低料金",
+    "guides": "旅行ガイド：{country}",
+    "moreGuides": "すべての旅行ガイド",
+    "allTours": "すべてのツアー"
+  },
+  "team": {
+    "title": "スタッフ紹介",
+    "text": "旅行を計画し、お問い合わせに対応するスタッフです。",
+    "hours": "対応時間",
+    "email": "メール"
+  },
+  "blog": {
+    "byline": "執筆：{name}",
+    "organization": "Magnificent Travel",
+    "updated": "更新：{date}",
+    "shortAnswer": "結論から",
+    "aboutAuthor": "著者について",
+    "readProfile": "プロフィールを読む",
+    "toursIn": "{country}のツアー",
+    "allToursIn": "{country}のツアー一覧",
+    "guidesFor": "旅行ガイド：{country}",
+    "allGuides": "すべての旅行ガイド",
+    "categories": "国別ガイド",
+    "featured": "地図"
   }
 }

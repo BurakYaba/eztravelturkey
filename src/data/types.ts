@@ -58,8 +58,6 @@ export type Tour = {
   image: ImageId;
   gallery: ImageId[];
   related: string[];
-  /** Itinerary written from the route outline, not copied from the live site. Needs owner review. */
-  draft?: boolean;
 };
 
 export type Combo = {

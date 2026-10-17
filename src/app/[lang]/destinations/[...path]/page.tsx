@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const record = match.type === 'tour' ? match.tour : match.page;
   return buildMetadata({
     title: record.metaTitle,
+    absoluteTitle: true,
     description: record.metaDescription,
     path: `/${record.path}`,
     lang,

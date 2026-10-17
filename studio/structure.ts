@@ -4,7 +4,7 @@ import { languages } from './schemaTypes/fields';
 type Builder = Parameters<StructureResolver>[0];
 
 /** A list of one document type that opens a language first: Tours, then English, 繁體中文 or 日本語. Every list and item needs an id. */
-const byLanguage = (S: Builder, type: string, title: string) =>
+const byLanguage = (S: Builder, type: string, title: string, orderBy = 'path') =>
   S.listItem()
     .id(type)
     .title(title)
@@ -25,7 +25,7 @@ const byLanguage = (S: Builder, type: string, title: string) =>
                   .apiVersion('2025-01-01')
                   .filter('_type == $type && language == $language')
                   .params({ type, language: language.value })
-                  .defaultOrdering([{ field: 'path', direction: 'asc' }]),
+                  .defaultOrdering([{ field: orderBy, direction: 'asc' }]),
               ),
           ),
         ),
@@ -71,4 +71,5 @@ export const structure: StructureResolver = (S) =>
       byLanguage(S, 'staticPage', 'Text pages (about, legal)'),
       byLanguage(S, 'hubPage', 'Hub pages'),
       homePages(S),
+      byLanguage(S, 'teamMember', 'Team (About and Contact pages)', 'order'),
     ]);

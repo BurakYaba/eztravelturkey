@@ -56,12 +56,14 @@ type Props = {
   tours: BrowsableTour[];
   /** Fixes one filter (for example the style pages), hiding that control. */
   lockedStyle?: 'private' | 'small-group';
+  /** The list is already one country's tours (a country page): no destination filter and no country tabs. */
+  singleCountry?: boolean;
   lang: Locale;
   /** Card texts in the page language, passed from the server so the client does not carry every dictionary. */
   cardText: TourCardText;
 };
 
-export function ToursBrowser({ tours, lockedStyle, lang, cardText }: Props) {
+export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, cardText }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const search = useSearchParams();
@@ -97,20 +99,26 @@ export function ToursBrowser({ tours, lockedStyle, lang, cardText }: Props) {
 
   return (
     <div>
-      <div className="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto] md:items-center">
-        <Filter
-          label="Destination"
-          id={`${uid}-d`}
-          icon={<MapPin size={20} />}
-          value={destination}
-          onChange={(v) => setParam('destination', v)}>
-          <option value="">All destinations</option>
-          {destinations.map((d) => (
-            <option key={d.id} value={d.id}>
-              {d.name}
-            </option>
-          ))}
-        </Filter>
+      <div
+        className={cn(
+          'grid gap-3 md:items-center',
+          singleCountry ? 'md:grid-cols-[1fr_1fr_auto]' : 'md:grid-cols-[1fr_1fr_1fr_auto]',
+        )}>
+        {!singleCountry && (
+          <Filter
+            label="Destination"
+            id={`${uid}-d`}
+            icon={<MapPin size={20} />}
+            value={destination}
+            onChange={(v) => setParam('destination', v)}>
+            <option value="">All destinations</option>
+            {destinations.map((d) => (
+              <option key={d.id} value={d.id}>
+                {d.name}
+              </option>
+            ))}
+          </Filter>
+        )}
         {lockedStyle ? (
           <div className="border-cream-200 bg-cream-100 text-navy-900 flex h-12 items-center gap-3 rounded-lg border px-3.5 font-medium">
             <Compass size={20} className="text-gold-600" aria-hidden />
@@ -144,7 +152,7 @@ export function ToursBrowser({ tours, lockedStyle, lang, cardText }: Props) {
             type="button"
             onClick={() => router.replace(pathname, { scroll: false })}
             disabled={!filtered}
-            className="text-navy-900 inline-flex items-center gap-1.5 font-semibold underline underline-offset-4 disabled:pointer-events-none disabled:opacity-40">
+            className="text-navy-900 inline-flex min-h-11 items-center gap-1.5 font-semibold underline underline-offset-4 disabled:pointer-events-none disabled:opacity-40">
             <ArrowCounterClockwise size={16} weight="bold" aria-hidden />
             Reset filters
           </button>
@@ -154,28 +162,30 @@ export function ToursBrowser({ tours, lockedStyle, lang, cardText }: Props) {
         </div>
       </div>
 
-      <div
-        role="tablist"
-        aria-label="Filter by country"
-        className="no-scrollbar border-cream-200 mt-8 flex gap-1 overflow-x-auto border-b">
-        {tabs.map((tab) => {
-          const active = destination === tab.id;
-          return (
-            <button
-              key={tab.id || 'all'}
-              role="tab"
-              aria-selected={active}
-              type="button"
-              onClick={() => setParam('destination', tab.id)}
-              className={cn(
-                'font-display -mb-px shrink-0 border-b-2 px-4 py-3 text-lg font-semibold transition',
-                active ? 'border-gold-600 text-gold-700' : 'text-navy-900 hover:text-gold-700 border-transparent',
-              )}>
-              {tab.name}
-            </button>
-          );
-        })}
-      </div>
+      {!singleCountry && (
+        <div
+          role="tablist"
+          aria-label="Filter by country"
+          className="no-scrollbar border-cream-200 mt-8 flex gap-1 overflow-x-auto border-b">
+          {tabs.map((tab) => {
+            const active = destination === tab.id;
+            return (
+              <button
+                key={tab.id || 'all'}
+                role="tab"
+                aria-selected={active}
+                type="button"
+                onClick={() => setParam('destination', tab.id)}
+                className={cn(
+                  'font-display -mb-px shrink-0 border-b-2 px-4 py-3 text-lg font-semibold transition',
+                  active ? 'border-gold-600 text-gold-700' : 'text-navy-900 hover:text-gold-700 border-transparent',
+                )}>
+                {tab.name}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {results.length > 0 ? (
         <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

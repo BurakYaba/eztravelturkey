@@ -17,11 +17,12 @@ import { homeFaqs } from '@/data/faqs';
 import { localizedMetadata, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
-const title = 'Turkey, Greece, Egypt and Jordan Tours and Multi-Country Packages';
+// Brand first, all five countries, under 60 characters (P3.12: the old title was 86 and left Morocco out).
+const title = 'Magnificent Travel: Turkey, Greece, Egypt, Jordan & Morocco';
 const description =
   'Private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco, planned by a licensed local operator since 1997.';
 
-export const generateMetadata = localizedMetadata({ title: `${title} | Magnificent Travel`, description, path: '/' });
+export const generateMetadata = localizedMetadata({ title, description, path: '/', absoluteTitle: true });
 
 export default async function HomePage() {
   const lang = await getLocale();
@@ -30,11 +31,11 @@ export default async function HomePage() {
     <>
       <Hero />
       <TrustBar className="mt-10" notes />
+      <MultiCountryRail />
       <WhyTravel />
       <DestinationsRow />
       <WaysToTravel />
       <FeaturedTours />
-      <MultiCountryRail />
       <HubPreview />
       <ReviewsSection />
       <section className="section-y bg-cream-100/60">

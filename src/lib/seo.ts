@@ -226,10 +226,13 @@ type ArticleInput = {
   description: string;
   path: string;
   imageUrl: string;
-  date: string | null;
+  /** When the post was last checked (a full date or a month); no publication date is claimed because the old site gave none. */
+  modified: string | null;
+  /** The editor's chosen author; without one the company is the author, as on the old site. */
+  author?: { name: string; path: string } | null;
 };
 
-export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, date }: ArticleInput) => {
+export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, modified, author }: ArticleInput) => {
   const url = absoluteUrl(localePath(lang, path));
   return {
     '@context': 'https://schema.org',
@@ -238,9 +241,11 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, da
     description,
     url,
     image: absoluteUrl(imageUrl),
-    ...(date ? { datePublished: date, dateModified: date } : {}),
+    ...(modified ? { dateModified: modified } : {}),
     inLanguage: htmlLang[lang],
-    author: { '@type': 'Organization', name: site.name, url: site.url },
+    author: author
+      ? { '@type': 'Person', name: author.name, url: absoluteUrl(localePath(lang, author.path)) }
+      : { '@type': 'Organization', name: site.name, url: site.url },
     publisher: organizationRef,
     mainEntityOfPage: url,
   };

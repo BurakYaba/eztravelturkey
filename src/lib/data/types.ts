@@ -118,8 +118,29 @@ export type PageSummary = Common & {
   image: ImageRef | null;
 };
 
+/** A person on the About and Contact pages. */
+export type TeamMember = {
+  name: string;
+  role: string;
+  email: string;
+  hours: string;
+  timezone: string;
+  photo: ImageRef | null;
+};
+
+/** The author of a blog post, when the editor chose one. */
+export type PostAuthor = { name: string; href: string; image: ImageRef | null };
+
 export type PageRecord = PageSummary & {
   lastUpdated: string | null;
+  /**
+   * When the page was last checked: `iso` for search engines ("2026-08" or a full date) and `label` for people. The old
+   * posts carry it as an "Updated: August 2026" line in their text (`inText`), which is left where it is.
+   */
+  updated: { iso: string; label: string; inText: boolean } | null;
+  /** The answer in a nutshell, shown in a box before the text (blog posts). */
+  shortAnswer: string;
+  author: PostAuthor | null;
   sections: PageSection[];
   cards: CardRecord[];
   faqs: Faq[];

@@ -124,17 +124,17 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
               {glance.length > 0 && (
                 <div className="border-cream-200 bg-cream-50 mt-8 rounded-lg border p-5 md:p-6">
                   <h3 className="mb-4 text-2xl">{t.glance.title}</h3>
-                  <dl className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                  <ul className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
                     {glance.map(({ label: name, value, icon: Glyph }) => (
-                      <div key={name} className="flex gap-3">
+                      <li key={name} className="flex gap-3">
                         <Glyph size={26} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
-                        <div className="min-w-0">
-                          <dt className="text-muted text-sm">{name}</dt>
-                          <dd className="text-navy-900 font-semibold">{value}</dd>
-                        </div>
-                      </div>
+                        <span className="min-w-0">
+                          <span className="text-muted block text-sm">{name}</span>
+                          <span className="text-navy-900 block font-semibold">{value}</span>
+                        </span>
+                      </li>
                     ))}
-                  </dl>
+                  </ul>
                 </div>
               )}
 

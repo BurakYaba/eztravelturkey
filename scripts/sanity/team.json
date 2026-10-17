@@ -1,0 +1,26 @@
+[
+  {
+    "id": "team-en-nihat-yolageldi",
+    "language": "en",
+    "name": "Nihat Yolageldi",
+    "role": "Founder & Travel Consultant",
+    "email": "support@magnificenttravel.com",
+    "hours": "9:00 AM - 7:00 PM",
+    "timezone": "Istanbul time (GMT+3)",
+    "photo": "image1.jpeg",
+    "alt": "Nihat Yolageldi, founder and travel consultant at Magnificent Travel",
+    "order": 1
+  },
+  {
+    "id": "team-en-kenan-ungur",
+    "language": "en",
+    "name": "Kenan Ungur",
+    "role": "Operations Manager & Travel Consultant",
+    "email": "kenan@magnificenttravel.com",
+    "hours": "9:00 AM - 7:00 PM",
+    "timezone": "Istanbul time (GMT+3)",
+    "photo": "image2.jpeg",
+    "alt": "Kenan Ungur, operations manager and travel consultant at Magnificent Travel",
+    "order": 2
+  }
+]

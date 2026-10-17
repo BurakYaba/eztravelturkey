@@ -35,6 +35,7 @@ export function TourCard({
         {tour.image && (
           <Picture
             image={tour.image}
+            alt=""
             sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
             priority={priority}
             className="transition duration-500 group-hover:scale-105"
@@ -63,8 +64,8 @@ export function TourCard({
         </dl>
 
         <div className="border-cream-200 mt-auto flex items-end justify-between gap-3 border-t pt-4">
-          <TourPrice lang={lang} eur={tour.priceEUR} usd={tour.priceUSD} text={text} />
-          <span className="text-navy-900 inline-flex items-center gap-1.5 font-semibold">
+          <TourPrice lang={lang} eur={tour.priceEUR} usd={tour.priceUSD} text={text} className="min-w-0" />
+          <span className="text-navy-900 inline-flex shrink-0 items-center gap-1.5 font-semibold whitespace-nowrap">
             {text.view}
             <ArrowRight size={16} weight="bold" className="transition group-hover:translate-x-1" aria-hidden />
           </span>

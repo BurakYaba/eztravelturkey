@@ -15,6 +15,7 @@ export function BlogCard({ post, className }: { post: PageSummary; className?: s
         {post.image && (
           <Picture
             image={post.image}
+            alt=""
             sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
             className="transition duration-500 group-hover:scale-105"
           />

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogCard } from '@/components/pages/BlogCard';
+import { Link } from '@/i18n/link';
 import { PageSections } from '@/components/pages/PageSections';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteBand } from '@/components/shared/QuoteBand';
-import { TextLink } from '@/components/shared/Button';
+import { SectionHeading } from '@/components/shared/SectionHeading';
 import { defaultLocale, hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { blogCategories, blogPosts, getPage, languagesWithPage } from '@/lib/data';
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   return buildMetadata({
     title: page.metaTitle,
+    absoluteTitle: true,
     description: page.metaDescription,
     path: '/blog',
     lang,
@@ -41,20 +43,51 @@ export default async function BlogHub({ params }: Props) {
     { name: dict.nav.home, path: '/' },
     { name: page.title, path: '/blog' },
   ];
+  // The "Map of X" guides are the posts readers come for most; they get their own row before the rest.
+  const isMap = (path: string) => (path.split('/').pop() ?? '').startsWith('map-of-');
+  const maps = posts.filter((p) => isMap(p.path));
+  const rest = posts.filter((p) => !isMap(p.path));
+  const countOf = (path: string) => posts.filter((p) => p.path.startsWith(`${path}/`)).length;
   return (
     <>
       <PageBanner title={page.title} description={page.metaDescription} crumbs={crumbs} />
+      <section className="section-y pb-0">
+        <div className="container-x">
+          <nav aria-label={dict.blog.categories}>
+            <ul className="flex flex-wrap gap-2.5">
+              {categories.map((c) => (
+                <li key={c.path}>
+                  <Link
+                    href={c.href}
+                    className="border-navy-900/25 text-navy-900 hover:border-navy-900 hover:bg-cream-100 inline-flex min-h-11 items-center gap-2 rounded-full border bg-white px-4 text-[0.95rem] font-semibold transition">
+                    {c.title}
+                    <span className="text-muted text-sm font-normal">{countOf(c.path)}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </section>
+      {maps.length > 0 && (
+        <section className="section-y pb-0">
+          <div className="container-x">
+            <SectionHeading title={dict.blog.featured} />
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {maps.map((post) => (
+                <li key={post.path}>
+                  <BlogCard post={post} className="h-full" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
       <section className="section-y">
         <div className="container-x">
-          <ul className="mb-8 flex flex-wrap gap-x-6 gap-y-2">
-            {categories.map((c) => (
-              <li key={c.path}>
-                <TextLink href={c.href}>{c.title}</TextLink>
-              </li>
-            ))}
-          </ul>
+          <SectionHeading title={dict.blog.allGuides} />
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
+            {rest.map((post) => (
               <li key={post.path}>
                 <BlogCard post={post} className="h-full" />
               </li>

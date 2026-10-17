@@ -18,7 +18,7 @@ export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: 
                 </span>
               ) : (
                 <>
-                  <Link href={item.path} className="hover:text-navy-900 underline-offset-4 hover:underline">
+                  <Link href={item.path} className="hover:text-navy-900 -my-3 inline-block py-3 underline-offset-4 hover:underline">
                     {item.name}
                   </Link>
                   <CaretRight size={12} aria-hidden />

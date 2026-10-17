@@ -2,8 +2,6 @@ import { Link } from '@/i18n/link';
 import {
   ArrowRight,
   Buildings,
-  CalendarCheck,
-  Headset,
   MapTrifold,
   Path,
   UsersThree,
@@ -24,12 +22,8 @@ import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import { blogPosts, comboCards, featuredTours } from '@/lib/data';
 
+// The trust bar right above already says: since 1997, licensed, 24/7 support. Not repeated here (P3.18).
 const reasons: { icon: Icon; title: string; text: string }[] = [
-  {
-    icon: CalendarCheck,
-    title: `Local tour operator since ${site.founded}`,
-    text: `Licensed under Turkish Ministry of Culture and Tourism License No. ${site.licenseNo}.`,
-  },
   {
     icon: Path,
     title: 'Flexible, customized itineraries',
@@ -44,11 +38,6 @@ const reasons: { icon: Icon; title: string; text: string }[] = [
     icon: UsersThree,
     title: 'Small group and private tours',
     text: 'Choose flexibility or company. Locally arranged guides and transport either way.',
-  },
-  {
-    icon: Headset,
-    title: '24/7 local support',
-    text: 'Our team helps with flights, transfers and hotels throughout your trip.',
   },
   {
     icon: Buildings,

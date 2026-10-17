@@ -10,12 +10,13 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
+import { TeamBlock } from '@/components/shared/TeamBlock';
 import { QuoteForm } from '@/components/shared/QuoteForm';
 import { site, whatsappLink } from '@/data/site';
 import { breadcrumbJsonLd, localizedMetadata, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
-const description = `Contact ${site.name} by WhatsApp, phone or the contact form. Our office is in Sultanahmet, Istanbul.`;
+const description = `Contact ${site.name} by WhatsApp, phone or the contact form. Our licensed Turkish tour operator office is in Sultanahmet, Istanbul.`;
 
 export const generateMetadata = localizedMetadata({
   title: 'Contact Us',
@@ -90,7 +91,7 @@ export default async function ContactPage() {
                   href={mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-navy-900 decoration-gold-500/60 mt-2 inline-flex items-center gap-1 font-semibold underline underline-offset-4">
+                  className="text-navy-900 decoration-gold-500/60 mt-1 inline-flex min-h-11 items-center gap-1 font-semibold underline underline-offset-4">
                   Open in Google Maps <ArrowUpRight size={14} weight="bold" aria-hidden />
                 </a>
               </div>
@@ -126,6 +127,7 @@ export default async function ContactPage() {
           </div>
         </div>
       </section>
+      <TeamBlock className="section-y bg-cream-100/60" />
       <JsonLd
         data={[
           webPageJsonLd(lang, 'Contact Magnificent Travel', '/contact', 'ContactPage', description),

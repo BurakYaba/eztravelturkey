@@ -1,5 +1,6 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
 import { defaultLocale, locales, type Locale } from '@/i18n/config';
+import { formatDate } from '@/i18n/format';
 import { query } from './sanity';
 import type {
   CardRecord,
@@ -9,11 +10,23 @@ import type {
   PageRecord,
   PageSection,
   PageSummary,
+  TeamMember,
   TourCardData,
   TourRecord,
 } from './types';
 
-export type { CardRecord, ImageRef, PageBlock, PageKind, PageRecord, PageSection, PageSummary, TourCardData, TourRecord };
+export type {
+  CardRecord,
+  ImageRef,
+  PageBlock,
+  PageKind,
+  PageRecord,
+  PageSection,
+  PageSummary,
+  TeamMember,
+  TourCardData,
+  TourRecord,
+};
 
 /**
  * The only door to the content, which lives in Sanity. Pages ask for tours and pages here and never write a query
@@ -78,8 +91,7 @@ type RawTourCard = {
   image?: RawImage;
 };
 
-// `price.amount` is the pre-D40 shape; it is read until every tour document has been imported again.
-const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": coalesce(price.eur, select(price.currency == "EUR" => price.amount)), "priceUSD": price.usd, route, "image": gallery[0]{ ${img} }`;
+const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": gallery[0]{ ${img} }`;
 
 function toCard(raw: RawTourCard): TourCardData {
   const days = raw.days ?? null;
@@ -242,13 +254,15 @@ type RawPageSummary = {
 
 type RawPage = RawPageSummary & {
   lastUpdated?: string | null;
+  shortAnswer?: string;
+  author?: { title?: string; path?: string; image?: RawImage } | null;
   sections?: { level?: number; heading?: string; blocks?: RawBlock[] }[];
   cards?: { title: string; href: string; meta?: string[]; price?: string; image?: RawImage }[];
   faqs?: Faq[];
 };
 
 const summaryFields = `kind, path, title, metaTitle, metaDescription, "image": mainImage{ ${img} }`;
-const pageFields = `${summaryFields}, lastUpdated, sections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cards[]{ title, href, meta, price, "image": image{ ${img} } }, faqs[]{ q, a }`;
+const pageFields = `${summaryFields}, lastUpdated, shortAnswer, "author": author->{ title, path, "image": mainImage{ ${img} } }, sections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cards[]{ title, href, meta, price, "image": image{ ${img} } }, faqs[]{ q, a }`;
 
 function toBlock(raw: RawBlock): PageBlock[] {
   switch (raw._type) {
@@ -280,6 +294,29 @@ function toSummary(raw: RawPageSummary, lang: Locale, fallback: boolean): PageSu
   };
 }
 
+const monthNumber: Record<string, string> = Object.fromEntries(
+  ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'].map(
+    (m, i) => [m, String(i + 1).padStart(2, '0')],
+  ),
+);
+
+/**
+ * The date a page was last checked. A date typed in Studio wins. Otherwise the old posts' own "Updated: August 2026"
+ * line is read, as a month (the old site never gave a day). A page with neither has no date; none is invented.
+ */
+function updatedOf(date: string | null, sections: PageSection[], lang: Locale): PageRecord['updated'] {
+  if (date) {
+    return { iso: date, label: formatDate(lang, date), inText: false };
+  }
+  const line = sections
+    .flatMap((s) => s.blocks)
+    .slice(0, 6)
+    .map((b) => (b.type === 'p' ? /^Updated:\s*([A-Za-z]+)\s+(\d{4})\s*$/.exec(b.text) : null))
+    .find(Boolean);
+  const month = line ? monthNumber[line[1]!.toLowerCase()] : undefined;
+  return line && month ? { iso: `${line[2]}-${month}`, label: `${line[1]} ${line[2]}`, inText: true } : null;
+}
+
 function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
   const sections: PageSection[] = (raw.sections ?? []).map((s) => ({
     level: s.level ?? 2,
@@ -298,6 +335,9 @@ function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
   return {
     ...summary,
     lastUpdated: raw.lastUpdated ?? null,
+    updated: updatedOf(raw.lastUpdated ?? null, sections, lang),
+    shortAnswer: raw.shortAnswer ?? '',
+    author: raw.author?.title && raw.author.path ? { name: raw.author.title, href: hrefOf(raw.author.path), image: image(raw.author.image) } : null,
     sections,
     cards,
     faqs: raw.faqs ?? [],
@@ -451,6 +491,45 @@ export async function searchEntries(lang: Locale): Promise<SearchEntry[]> {
       kind: p.kind === 'blog-post' ? ('blog' as const) : ('destination' as const),
     })),
   ];
+}
+
+// ---- team
+
+/** The people on the About and Contact pages, in the order set in Studio. A language without its own list shows the English one. */
+export async function teamMembers(lang: Locale): Promise<TeamMember[]> {
+  const own = await query<TeamMember[]>(TEAM_QUERY, { lang });
+  const rows = own.length > 0 || lang === defaultLocale ? own : await query<TeamMember[]>(TEAM_QUERY, { lang: defaultLocale });
+  return rows.map((r) => ({ ...r, photo: image(r.photo as unknown as RawImage) }));
+}
+
+const TEAM_QUERY = `*[_type == "teamMember" && language == $lang] | order(order asc){ name, "role": coalesce(role, ""), "email": coalesce(email, ""), "hours": coalesce(hours, ""), "timezone": coalesce(timezone, ""), "photo": photo{ ${img} } }`;
+
+// ---- related content
+
+/** Country ids named in a path folder: `turkey-tours` gives turkey, `turkey-greece-tours` gives turkey and greece. */
+export const countriesIn = (folder: string) => countryIds.filter((id) => folder.includes(id));
+
+/** Blog posts about the countries of a folder (a country, a combination), a few of each, newest guides first as the hub orders them. */
+export async function blogsAbout(lang: Locale, folder: string, limit = 3): Promise<PageSummary[]> {
+  const ids = countriesIn(folder);
+  if (ids.length === 0) {
+    return [];
+  }
+  const posts = (await blogPosts(lang)).filter((p) => p.image);
+  const perCountry = Math.max(1, Math.ceil(limit / ids.length));
+  return ids
+    .flatMap((id) => posts.filter((p) => p.path.startsWith(`blog/${id}/`)).slice(0, perCountry))
+    .slice(0, limit);
+}
+
+/** A few tours of the countries a blog post or folder is about, for the "tours in {country}" block. */
+export async function toursAbout(lang: Locale, folder: string, limit = 3): Promise<TourCardData[]> {
+  const ids = countriesIn(folder);
+  if (ids.length !== 1) {
+    return [];
+  }
+  const tours = (await toursUnder(lang, `${ids[0]}-tours`)).filter((t) => t.image);
+  return tours.slice(0, limit);
 }
 
 // ---- sitemap
