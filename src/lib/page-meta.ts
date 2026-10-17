@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { defaultLocale, hasLocale } from '@/i18n/config';
-import { getPage, languagesWithPage } from '@/lib/data';
+import { getPage, alternatesOf } from '@/lib/data';
 import type { ImageId } from '@/data/images';
 import { buildMetadata } from '@/lib/seo';
 
@@ -23,7 +23,7 @@ export const docMetadata =
       path: input.path,
       lang: locale,
       canonicalLang: page?.fallback ? defaultLocale : locale,
-      alternateLangs: await languagesWithPage(input.path.replace(/^\//, '')),
+      alternates: await alternatesOf(locale, input.path.replace(/^\//, '')),
       image: input.image,
       absoluteTitle: Boolean(page?.metaTitle),
     });

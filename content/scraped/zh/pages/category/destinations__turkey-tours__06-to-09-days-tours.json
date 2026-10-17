@@ -1,0 +1,123 @@
+{
+  "locale": "zh",
+  "kind": "category",
+  "sourceUrl": "https://www.eztravelturkey.com/zh/destinations/turkey-tours/06-to-09-days-tours/",
+  "path": "destinations/turkey-tours/06-to-09-days-tours",
+  "metaTitle": "土耳其蜜月旅遊行程 | Eztravel Turkey",
+  "metaDescription": "如果您能夠在土耳其度過一周或更長的時間便可參加土耳其的精選行程，我們提供的旅行路線將完全配合您的時間。",
+  "canonical": "https://www.eztravelturkey.com/zh/destinations/turkey-tours/06-to-09-days-tours/",
+  "robots": "",
+  "h1": "土耳其6-9天旅遊行程",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "土耳其旅遊行程",
+    "土耳其6-9天旅遊行程"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "我們提供靈活而富有創意的土耳其套裝行程，適合每日出發。量身訂製符合旅客預算，還可根據旅客的需求調整修改行程。 以適當的順序安排遊覽土耳其的各主要旅遊景點，如恰納卡萊、庫夏達斯、卡帕多奇亞、安塔利亞、費特希耶等地。我們的旅遊專案可以根據您提供的天數進行調整，並可根據您的所選的旅遊日期設計合適的行程。"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "title": "土耳其精選8日遊-3段內陸航班 TURKEY CLASSIC TOUR 8 DAYS",
+      "url": "/zh/destinations/turkey-tours/06-to-09-days-tours/8-3-turkey-classic-tour-8-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070906512217.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-庫夏達斯-棉花堡-艾菲索斯-伊斯坦堡",
+        "8天 | 7夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "土耳其精選8日遊-2段內陸航班 TURKEY CULTURAL TOUR 8 DAYS",
+      "url": "/zh/destinations/turkey-tours/06-to-09-days-tours/8-2-turkey-cultural-tour-8-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070812495776.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-庫薩達斯-棉花堡-艾菲索斯-伊斯坦堡",
+        "8天 | 6夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "獨家土耳其精選7日遊-3段內陸航班 TURKEY CLASSIC TOUR 7 DAYS",
+      "url": "/zh/destinations/turkey-tours/06-to-09-days-tours/turkey-classic-tour-07-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070812502253.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-棉花堡-庫夏達斯-艾菲索斯-伊斯坦堡",
+        "7天 | 6夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "土耳其世界遺產7日遊-2段內陸航班 TURKEY CULTURAL TRIP 7 DAYS",
+      "url": "/zh/destinations/turkey-tours/06-to-09-days-tours/turkey-cultural-trip-07-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070812505166.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-棉花堡-庫夏達斯-艾菲索斯-伊斯坦堡",
+        "7天 | 5夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "土耳其世界遺產與地中海6日精華遊-2段內陸航班 TURKEY MAGNIFICENT 6 DAYS TOUR",
+      "url": "/zh/destinations/turkey-tours/06-to-09-days-tours/ephesus-pamukkale-antalya-cappadocia-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070812512697.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-艾菲索斯-棉花堡-安塔利亞-卡帕多奇亞-伊斯坦堡",
+        "6天 | 4夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "伊斯坦堡+卡帕多奇亞6日遊-2段內陸航班 ISTANBUL+CAPPADOCIA 6 DAYS TOUR",
+      "url": "/zh/destinations/turkey-tours/06-to-09-days-tours/istanbul-cappadocia-06-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/202307081253023.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-伊斯坦堡",
+        "6天 | 5夜 全年每日出發"
+      ],
+      "price": ""
+    }
+  ],
+  "faqs": [],
+  "jsonLd": []
+}

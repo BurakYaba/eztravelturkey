@@ -10,6 +10,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
 import { format } from '@/i18n/dictionaries';
+import { legalHref } from '@/i18n/public-paths';
 import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { site, whatsappLink } from '@/data/site';
 import { cn } from '@/lib/utils';
@@ -40,10 +41,10 @@ export async function Footer() {
     { label: t.contact, href: '/contact' },
     { label: t.faq, href: '/faq' },
     { label: t.planMyTrip, href: '/plan-my-trip' },
-    { label: t.terms, href: '/gdpr/terms-conditions' },
-    { label: t.privacy, href: '/gdpr/privacy-policy' },
-    // The old site links the Turkish distance sales agreement from every page (a Turkish tour operator's legal text).
-    { label: t.distanceSales, href: '/gdpr/mesafeli-satis-sozlesmesi' },
+    { label: t.terms, href: legalHref(lang, 'terms') },
+    { label: t.privacy, href: legalHref(lang, 'privacy') },
+    // The old English site links the Turkish distance sales agreement from every page (a Turkish tour operator's legal text); the Chinese and Japanese sites never had it.
+    ...(lang === 'en' ? [{ label: t.distanceSales, href: '/gdpr/mesafeli-satis-sozlesmesi' }] : []),
   ];
   return (
     <footer className="bg-navy-950 text-white">

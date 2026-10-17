@@ -1,0 +1,124 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/モロッコツアー/カサブランカ＆フェズ4泊5日/",
+  "path": "目的地/モロッコツアー/カサブランカ＆フェズ4泊5日",
+  "slug": "カサブランカ＆フェズ4泊5日",
+  "parent": "モロッコツアー",
+  "category": null,
+  "title": "カサブランカ＆フェズ 4泊5日",
+  "metaTitle": "モロッコ4泊5日ツアー｜カサブランカ＆フェズ周遊 | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "カサブランカとフェズを巡る4泊5日のモロッコツアー。歴史ある街並みや伝統文化を短期間で効率よく楽しめるプランです。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/モロッコツアー/カサブランカ＆フェズ4泊5日/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "モロッコツアー",
+    "カサブランカ＆フェズ 4泊5日"
+  ],
+  "summary": "カサブランカとフェズを巡る4泊5日のモロッコツアー。歴史ある街並みや伝統文化を短期間で効率よく楽しめるプランです。",
+  "facts": {
+    "duration": "4泊5日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 4,
+  "days": 5,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "カサブランカ&フェズ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "1日目",
+      "title": "",
+      "text": "カサブランカ到着後空港からホテルへ送迎フリータイム\n\nカサブランカ泊\n\n宿泊地: カサブランカ",
+      "meals": "なし"
+    },
+    {
+      "dayLabel": "2日目",
+      "title": "",
+      "text": "ホテルにてご朝食 ホテルからピックアップ\n\nラバト観光（宮殿、ハッサンの塔、モハメッド5世廟、ウダイアのカスバ）\n\nメクネスへ出発\n\nランチ（オプション）\n\nマンソール門（世界遺産）\n\nヴォルビリス遺跡（世界遺産）\n\nフェズ泊\n\nラバト メクネス ヴォルビリス（320km）\n\n宿泊地: フェズ",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "3日目",
+      "title": "",
+      "text": "メディナ観光（ブージェルド門ムーライ・イドリス廟など）\n\nランチ（オプション）\n\n午後 スーク（市場）と新市街観光\n\nフェズ泊\n\n宿泊地: フェズ",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "4日目",
+      "title": "",
+      "text": "カサブランカ (320km)\n\nホテルにて朝食\n\nカサブランカに向け出発（高速道路利用）\n\nランチ（オプション）\n\n午後 宮殿、ハサン2世モスク（外からのみ）、ムハンマド5世広場、アンファ\n\nカサブランカ泊\n\n宿泊地: カサブランカ",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "5日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\nチェックアウト後ご帰国便に合わせて空港送迎\n\n宿泊地: 帰国",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    }
+  ],
+  "included": [
+    "04泊 ホテル宿泊代 （朝食、夕食付 飲み物代別）",
+    "ガイド代 （カサブランカ、ラバト、メクネス、ヴォルビリス、フェズ）",
+    "送迎代（2日目から4日目までプライベート送迎 エアコン付き 車種Mercedes Vito もしくはHyundai H1)",
+    "空港送迎（混載）"
+  ],
+  "excluded": [],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011608414039.jpg",
+      "width": null,
+      "height": null,
+      "alt": "カサブランカ モスク 建築 観光"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2023070909153085.jpg",
+      "width": null,
+      "height": null,
+      "alt": "カサブランカ 海沿い モスク 景観"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2023070909155429.jpg",
+      "width": null,
+      "height": null,
+      "alt": "メクネス 歴史的門 建築"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011608450667.jpg",
+      "width": null,
+      "height": null,
+      "alt": "フェズ 伝統工芸 フェス帽子"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011608462886.jpg",
+      "width": null,
+      "height": null,
+      "alt": "メクネス 歴史都市 観光"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

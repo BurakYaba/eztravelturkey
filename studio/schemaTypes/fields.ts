@@ -43,6 +43,15 @@ export const pathField = defineField({
     }),
 });
 
+/** Links the same page in the three languages: pages with the same value are translations of each other. */
+export const translationGroupField = defineField({
+  name: 'translationGroup',
+  title: 'Same page in other languages',
+  type: 'string',
+  description:
+    'Pages in different languages that have the same code here are the same page. The language menu and the search engines (hreflang) then point from one to the other. Leave empty when the page has no counterpart.',
+});
+
 export const titleField = defineField({
   name: 'title',
   title: 'Page title (H1)',
@@ -218,6 +227,7 @@ export const sectionsField = defineField({
 export const pageFields = [
   languageField,
   pathField,
+  translationGroupField,
   titleField,
   metaTitleField,
   metaDescriptionField,

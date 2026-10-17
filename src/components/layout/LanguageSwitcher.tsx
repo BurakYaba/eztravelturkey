@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState } from 'react';
 import { CaretDown, Check } from '@phosphor-icons/react/dist/ssr';
 import { htmlLang, localeNames, locales } from '@/i18n/config';
-import { useLocale } from '@/i18n/locale-context';
+import { useAlternates, useLocale } from '@/i18n/locale-context';
 import { switchLocaleHref } from '@/i18n/switch';
 import { cn } from '@/lib/utils';
 
@@ -23,6 +23,7 @@ type Props = {
  */
 export function LanguageSwitcher({ label, variant = 'dropdown', className }: Props) {
   const lang = useLocale();
+  const alternates = useAlternates();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
@@ -54,7 +55,7 @@ export function LanguageSwitcher({ label, variant = 'dropdown', className }: Pro
   const options = locales.map((code) => (
     <li key={code}>
       <NextLink
-        href={switchLocaleHref(code, pathname)}
+        href={switchLocaleHref(code, lang, pathname, alternates)}
         hrefLang={htmlLang[code]}
         lang={htmlLang[code]}
         aria-current={code === lang ? 'true' : undefined}

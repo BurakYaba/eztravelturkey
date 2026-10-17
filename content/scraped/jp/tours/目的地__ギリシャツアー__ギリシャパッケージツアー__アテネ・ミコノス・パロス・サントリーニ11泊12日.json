@@ -1,0 +1,180 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/ギリシャツアー /ギリシャパッケージツアー/アテネ・ミコノス・パロス・サントリーニ11泊12日/",
+  "path": "目的地/ギリシャツアー/ギリシャパッケージツアー/アテネ・ミコノス・パロス・サントリーニ11泊12日",
+  "slug": "アテネ・ミコノス・パロス・サントリーニ11泊12日",
+  "parent": "ギリシャツアー",
+  "category": "ギリシャパッケージツアー",
+  "title": "アテネ・ミコノス・パロス・サントリーニ11泊12日",
+  "metaTitle": "アテネ・ミコノス・パロス・サントリーニ11泊12日｜ギリシャ周遊ツアー | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "アテネ、ミコノス、パロス、サントリーニを巡る11泊12日のギリシャ周遊ツアー。日本語対応・現地発でエーゲ海の島々と歴史を満喫。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/ギリシャツアー/ギリシャパッケージツアー/アテネ・ミコノス・パロス・サントリーニ11泊12日/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "ギリシャツアー",
+    "ギリシャパッケージツアー",
+    "アテネ・ミコノス・パロス・サントリーニ11泊12日"
+  ],
+  "summary": "アテネ、ミコノス、パロス、サントリーニを巡る11泊12日のギリシャ周遊ツアー。日本語対応・現地発でエーゲ海の島々と歴史を満喫。",
+  "facts": {
+    "duration": "11泊 12日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 11,
+  "days": 12,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "アテネ",
+    "ミコノス",
+    "パロス",
+    "サントリーニ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "1日目",
+      "title": "",
+      "text": "空港到着後ホテルへご送迎\n\nホテル泊\n\n宿泊地: アテネ",
+      "meals": "なし"
+    },
+    {
+      "dayLabel": "2日目",
+      "title": "",
+      "text": "午前 アテネツアー アクロポリス\n\n午後 フリータイム\n\n宿泊地: アテネ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "3日目",
+      "title": "",
+      "text": "早朝、港へ送迎。フェリーにてナクソスへ\n\nご到着後ホテルへ送迎 フリータイム\n\n宿泊地: ナクソス",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "4日目",
+      "title": "",
+      "text": "フリータイム\n\n宿泊地: ナクソス",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "5日目",
+      "title": "",
+      "text": "港へ送迎、フェリーにてサントリーニへ\n\nご到着後ホテルへ送迎\n\n宿泊地: サントリーニ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "6日目",
+      "title": "",
+      "text": "半日火山クルーズツアー\n\nフリータイム\n\n宿泊地: サントリーニ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "7日目",
+      "title": "",
+      "text": "フリータイム\n\n宿泊地: サントリーニ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "8日目",
+      "title": "",
+      "text": "午前；港へ送迎、フェリーにてイラクリオ（クレタ）へご到着後ホテルへ送迎\n\n宿泊地: クレタ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "9日目",
+      "title": "",
+      "text": "フリータイム\n\n宿泊地: クレタ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "10日目",
+      "title": "",
+      "text": "フリータイム\n\n宿泊地: クレタ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "11日目",
+      "title": "",
+      "text": "午前；空港へ送迎、空路にてアテネへ\n\nご到着後エアポートホテルへ\n\n宿泊地: アテネ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    },
+    {
+      "dayLabel": "12日目",
+      "title": "",
+      "text": "ご帰国便に合わせて空港チェックイン\n\n宿泊地: 機内",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    }
+  ],
+  "included": [
+    "3 泊 アテネホテルOscar もしくは同等クラス",
+    "3泊 ミコノスホテル Argo もしくは同等クラス",
+    "2泊 パロスホテル High Mill もしくは同等クラス",
+    "3泊 サントリーニホテル Villa Kalimera もしくは同等クラス",
+    "半日アテネツアー アクロポリス入場料およびアクロポリス博物館入場料込み",
+    "半日サントリーニボルケーノクルーズ",
+    "フェリーチケット ピレウス-ミコノス-パロス-サントリーニ",
+    "ツアー中に記載されている陸路送迎",
+    "観光ツアーがある日の施設入場料",
+    "朝食",
+    "ホテル税"
+  ],
+  "excluded": [
+    "サントリーニ-アテネ間航空券代(ツアーご参加日によって変動がありますが 50ユーロから150ユーロの間とお考えください)オプション:",
+    "サントリーニで洞窟ホテルにご宿泊希望の場合は1泊あたり50ユーロご追加ください"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/202601130912345.jpg",
+      "width": null,
+      "height": null,
+      "alt": "サントリーニ島 全景"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011309135164.jpg",
+      "width": null,
+      "height": null,
+      "alt": "サントリーニ 教会と海"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011309121998.jpg",
+      "width": null,
+      "height": null,
+      "alt": "メテオラ 修道院 ギリシャ"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/202601130911129.jpg",
+      "width": null,
+      "height": null,
+      "alt": "クレタ島 海と街並み"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011309092280.jpg",
+      "width": null,
+      "height": null,
+      "alt": "クレタ島 歴史的街並み"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

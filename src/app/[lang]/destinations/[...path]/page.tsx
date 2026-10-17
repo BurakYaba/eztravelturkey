@@ -4,8 +4,9 @@ import { DestinationPage } from '@/components/pages/DestinationPage';
 import { TourDetail } from '@/components/pages/TourDetail';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { defaultLocale, hasLocale, locales } from '@/i18n/config';
+import { decodeSegments } from '@/i18n/public-paths';
 import { destinationCrumbs } from '@/lib/crumbs';
-import { destinationParams, languagesWithPage, resolveDestination } from '@/lib/data';
+import { destinationParams, alternatesOf, resolveDestination } from '@/lib/data';
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -24,7 +25,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang, path } = await params;
+  const { lang, path: encoded } = await params;
+  const path = decodeSegments(encoded);
   const match = hasLocale(lang) ? await resolveDestination(lang, path) : null;
   if (!hasLocale(lang) || !match) {
     return {};
@@ -37,14 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${record.path}`,
     lang,
     canonicalLang: record.fallback ? defaultLocale : lang,
-    alternateLangs: await languagesWithPage(record.path),
+    alternates: await alternatesOf(lang, record.path),
     picture: match.type === 'tour' ? match.tour.image : match.page.image,
     type: 'website',
   });
 }
 
 export default async function DestinationRoute({ params }: Props) {
-  const { lang, path } = await params;
+  const { lang, path: encoded } = await params;
+  const path = decodeSegments(encoded);
   if (!hasLocale(lang)) {
     notFound();
   }

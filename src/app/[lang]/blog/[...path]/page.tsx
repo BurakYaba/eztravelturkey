@@ -8,7 +8,7 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { defaultLocale, hasLocale, locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { blogCategories, blogPosts, getPage, languagesWithPage, type PageRecord } from '@/lib/data';
+import { blogCategories, blogPosts, getPage, alternatesOf, type PageRecord } from '@/lib/data';
 import {
   blogPostingJsonLd,
   breadcrumbJsonLd,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternateLangs: await languagesWithPage(page.path),
+    alternates: await alternatesOf(lang, page.path),
     picture: page.image,
     type: page.kind === 'blog-post' ? 'article' : 'website',
   });

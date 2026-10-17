@@ -1,0 +1,122 @@
+{
+  "locale": "zh",
+  "kind": "country",
+  "sourceUrl": "https://www.eztravelturkey.com/zh/destinations/greece-tours/",
+  "path": "destinations/greece-tours",
+  "metaTitle": "預訂希臘旅遊 | Eztravel Turkey",
+  "metaDescription": "探索希臘;從壯觀的聖托里尼島日落到米克諾斯島白色粉刷的房屋和風車。遊覽古雅典，雅典衛城博物館等...",
+  "canonical": "https://www.eztravelturkey.com/zh/destinations/greece-tours/",
+  "robots": "",
+  "h1": "希臘旅遊行程",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "希臘旅遊行程"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "任何希臘旅遊的畫面都是完美的。在看著不可思議的美麗藍天和基克拉澤斯看似無盡的陽光，而且這裡還是對形成西方思想的偉大文明的發源地，很難找到任何瑕疵。但能讓希臘之旅真正歌詠的是那些只來自我們的專業私人導遊的知識。無論是古代雅典的紀念碑，米克諾斯島的別緻氛圍，納克索斯島的愛琴海魅力，還是聖托里尼島的浪漫迷人，我們的旅遊專家都可以為您量身打造一個最適合的希臘行程，完美地彈奏每一個音符。請立即聯繫我們，開始計劃您的希臘之旅。"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "title": "希臘浪漫島嶼8日 ATHENS SANTORINI MYKONOS TOUR",
+      "url": "/zh/destinations/greece-tours/athens-mykonos-santorini-08-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070817172232.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "雅典-米科諾斯島-聖托里尼島-雅典",
+        "8天 | 7夜 4月10日-10月25日每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "雅典精華5日遊 GREECE SIGHTSEEING TOUR",
+      "url": "/zh/destinations/greece-tours/athens-sightseeing-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070817180170.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "雅典-愛情海三島",
+        "5天 | 4夜 4~10月 每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "奥林匹亞、岱爾菲&梅特奥拉世界遺產之旅4日遊 CLASSICAL MAINLAND TOUR WITH METEORA",
+      "url": "/zh/destinations/greece-tours/classical-mainland-tour-with-meteora/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/202307081718311.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "雅典-奧林匹亞-岱爾菲-喀蘭帕卡-梅特奧拉修道院群",
+        "4天 | 3夜 11~3月: 每周一 (1/05除外)；4~10月: 每周一、二、六出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "奥林匹亞&岱爾菲世界遺產3日遊 OLYMPIA & DELPHI TOUR",
+      "url": "/zh/destinations/greece-tours/olympia-delfi-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070817190456.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "雅典-奧林匹亞-岱爾菲",
+        "3天 | 2夜 4月～10月 每週二 三 日出團"
+      ],
+      "price": ""
+    },
+    {
+      "title": "岱爾菲&梅特歐拉世界遺產之旅3日遊 DELPHI & METEORA TOUR",
+      "url": "/zh/destinations/greece-tours/delphi-meteora-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070817243641.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "雅典-岱爾菲-喀蘭帕卡-梅特奧拉修道院群",
+        "3天 | 2夜 4月～10月 每週二/三/日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "岱爾菲&梅特歐拉世界遺產之旅2日遊 METEORA MONASTERIES TOUR",
+      "url": "/zh/destinations/greece-tours/meteora-tour-escorted/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070817201669.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "雅典-岱爾菲-喀蘭帕卡-梅特奧拉修道院群",
+        "2天 | 1夜 4月～10月 每週一 三 四出發"
+      ],
+      "price": ""
+    }
+  ],
+  "faqs": [],
+  "jsonLd": []
+}

@@ -1,0 +1,130 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/ギリシャツアー /ギリシャパッケージツアー/アテネツアー4泊5日/",
+  "path": "目的地/ギリシャツアー/ギリシャパッケージツアー/アテネツアー4泊5日",
+  "slug": "アテネツアー4泊5日",
+  "parent": "ギリシャツアー",
+  "category": "ギリシャパッケージツアー",
+  "title": "アテネツアー4泊5日",
+  "metaTitle": "ギリシャ・エーゲ海シーパッケージ｜サントリーニ・ミコノス周遊ツアー | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "サントリーニ島やミコノス島を巡るギリシャ・エーゲ海シーパッケージツアー。フェリー移動で島々を周遊し、青い海と白い街並みを満喫できる人気の海系旅行プランをご紹介。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/ギリシャツアー/ギリシャパッケージツアー/アテネツアー4泊5日/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "ギリシャツアー",
+    "ギリシャパッケージツアー",
+    "アテネツアー4泊5日"
+  ],
+  "summary": "サントリーニ島やミコノス島を巡るギリシャ・エーゲ海シーパッケージツアー。フェリー移動で島々を周遊し、青い海と白い街並みを満喫できる人気の海系旅行プランをご紹介。",
+  "facts": {
+    "duration": "04泊 05日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 4,
+  "days": 5,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "アテネ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "1日目",
+      "title": "",
+      "text": "空港到着後ホテルへご送迎\n\n宿泊地: アテネ",
+      "meals": "なし"
+    },
+    {
+      "dayLabel": "2日目",
+      "title": "",
+      "text": "午前 アテネシティーツアー\n\n午後 フリータイム\n\n宿泊地: アテネ",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "3日目",
+      "title": "",
+      "text": "デルフィまたはアルゴリス\n\nデルフィまたはアルゴリスツアー・・・お客様自身でご選択ください\n\n宿泊地: アテネ",
+      "meals": "朝食； ○ 昼食； ○ 夕食； ×"
+    },
+    {
+      "dayLabel": "4日目",
+      "title": "",
+      "text": "サロニコス諸島クルーズ\n\nピレウスから出港\n\nサロニコス諸島クルーズ\n\n18時頃ピレウスへ向けて出港\n\n宿泊地: アテネ",
+      "meals": "朝食； ○ 昼食； ○ 夕食； ×"
+    },
+    {
+      "dayLabel": "5日目",
+      "title": "",
+      "text": "ご帰国便に合わせて空港送迎\n\n宿泊地: アテネ",
+      "meals": "朝食；○ 昼食；× 夕食；×"
+    }
+  ],
+  "included": [
+    "4 泊 アテネホテル",
+    "半日アテネツアー",
+    "デルフィまたはアルゴリスツアー",
+    "サロニコス諸島クルーズ",
+    "ツアー中のガイド料と入場料",
+    "朝食",
+    "終日ツアーの日の昼食",
+    "ツアー中記載の送迎",
+    "税"
+  ],
+  "excluded": [],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011213305440.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アテネ アクロポリス 夕景"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/202307090244562.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アテネ 博物館 彫刻"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011213315798.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アテネ 古代劇場"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011213330885.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アクロポリス 城壁"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011213340822.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アクロポリスとエーゲ海"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

@@ -27,8 +27,14 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    // The sitemap index. A route folder named sitemap.xml clashes with the sitemap file convention, so it lives apart.
-    return [{ source: '/sitemap.xml', destination: '/sitemap-index' }];
+    return {
+      beforeFiles: [
+        // The sitemap index. A route folder named sitemap.xml clashes with the sitemap file convention, so it lives apart.
+        { source: '/sitemap.xml', destination: '/sitemap-index' },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   async redirects() {
     return [

@@ -2,7 +2,9 @@
 
 import { Link } from '@/i18n/link';
 import { usePathname } from 'next/navigation';
+import { useLocale } from '@/i18n/locale-context';
 import { stripLocale } from '@/i18n/paths';
+import { logicalPath } from '@/i18n/public-paths';
 import { useEffect, useRef, useState } from 'react';
 import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
@@ -112,8 +114,9 @@ function Dropdown({
 }
 
 export function Header({ nav, countries, homeLabel }: Props) {
+  const lang = useLocale();
   const currentPath = usePathname();
-  const pathname = stripLocale(currentPath);
+  const pathname = logicalPath(lang, decodeURIComponent(stripLocale(currentPath)));
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);

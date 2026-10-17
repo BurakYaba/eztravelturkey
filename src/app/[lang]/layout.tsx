@@ -10,7 +10,7 @@ import { site } from '@/data/site';
 import { defaultLocale, hasLocale, htmlLang, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { LocaleProvider } from '@/i18n/locale-context';
-import { hasNativeContent } from '@/lib/data';
+import { alternatesIndex, hasNativeContent } from '@/lib/data';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
 import '../globals.css';
 
@@ -58,7 +58,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
     <html lang={htmlLang[lang]} className={`${playfair.variable} ${hanken.variable}`}>
       <body>
         {lang !== 'en' && <CjkFonts lang={lang} />}
-        <LocaleProvider lang={lang}>
+        <LocaleProvider lang={lang} alternates={await alternatesIndex()}>
           <a
             href="#main"
             className="focus:bg-navy-900 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:px-4 focus:py-2 focus:text-white">

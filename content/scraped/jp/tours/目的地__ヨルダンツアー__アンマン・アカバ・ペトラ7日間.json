@@ -1,0 +1,139 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/アンマン・アカバ・ペトラ7日間/",
+  "path": "目的地/ヨルダンツアー/アンマン・アカバ・ペトラ7日間",
+  "slug": "アンマン・アカバ・ペトラ7日間",
+  "parent": "ヨルダンツアー",
+  "category": null,
+  "title": "アンマン・アカバ・ペトラ7日間",
+  "metaTitle": "ヨルダン7日間ツアー｜アンマン・ペトラ・アカバ周遊 | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "アンマン、ジェラシュ、死海、マダバ、ネボ山、ペトラ、アカバを巡る6泊7日のヨルダンツアー。歴史遺跡と自然の絶景、紅海リゾートを満喫できるプランです。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/アンマン・アカバ・ペトラ7日間/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "ヨルダンツアー",
+    "アンマン・アカバ・ペトラ7日間"
+  ],
+  "summary": "アンマン、ジェラシュ、死海、マダバ、ネボ山、ペトラ、アカバを巡る6泊7日のヨルダンツアー。歴史遺跡と自然の絶景、紅海リゾートを満喫できるプランです。",
+  "facts": {
+    "duration": "06泊 07日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 6,
+  "days": 7,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "アンマン",
+    "アカバ",
+    "ペトラ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "1日目",
+      "title": "",
+      "text": "アンマン到着\n\n空港からホテルへ送迎\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； × 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "2日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\nアンマンツアー\n\nシタデル・ローマ劇場・考古学博物館\n\nジェラシュ\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "3日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\n世界遺産アムラ城観光\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "4日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\nネボ山観光 （モーゼの終焉の地と言われている）\n\n死海観光\n\nマダバに向け出発 6世紀のパレスチナのモザイクが描かれている聖ジョージ教会観光\n\nカラク（十字軍の建てた城塞）\n\nペトラ泊\n\n宿泊地: ペトラ",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "5日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\n終日ペトラツアー\n\nペトラ泊\n\n宿泊地: ペトラ",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "6日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\nワディラムへ（所要時間約1.5時間）\n\n4×4ジープサファリツアー\n\nアンマンへ移動\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "7日目",
+      "title": "",
+      "text": "ホテルで朝食\n\n空港送迎\n\nツアー終了\n\n宿泊地: 帰国",
+      "meals": "朝食； × 昼食； × 夕食； ×"
+    }
+  ],
+  "included": [
+    "宿泊費（朝食付き）",
+    "記載のあるツアー",
+    "全日ツアー中の移動交通費、ガイド代（英語）、施設入場料、ランチ",
+    "ホテル/空港（または駅）送迎",
+    "税"
+  ],
+  "excluded": [],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011519364583.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ヨルダン アンマン 古代劇場"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011519380042.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ 渓谷の景観"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011519392442.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ ナイトショー"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011519403874.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ 赤い渓谷"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011519414053.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ 古代都市"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

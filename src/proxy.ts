@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { defaultLocale, locales, hasLocale, htmlLang } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
+import { logicalPath } from '@/i18n/public-paths';
 import { isGone } from '@/lib/gone';
 
 const escapeHtml = (value: string) => value.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -28,6 +29,20 @@ export function proxy(request: NextRequest) {
     return gone(prefixed ? first : defaultLocale);
   }
   if (prefixed) {
+    // The Chinese and Japanese pages keep their old addresses (/jp/目的地/, /zh/about-us/); the routes know them by their English
+    // names, so the request is served by the English route while the visitor's address stays as it is.
+    let body = pathname.slice(first.length + 1) || '/';
+    try {
+      body = decodeURIComponent(body);
+    } catch {
+      // an address that is not valid UTF-8 simply is not an alias
+    }
+    const logical = logicalPath(first, body);
+    if (logical !== body) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${first}${logical}`;
+      return NextResponse.rewrite(url);
+    }
     return;
   }
   const url = request.nextUrl.clone();

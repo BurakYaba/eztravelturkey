@@ -1,6 +1,7 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
 import { defaultLocale, locales, type Locale } from '@/i18n/config';
 import { formatDate } from '@/i18n/format';
+import { cmsPath, countryFolder, publicPath } from '@/i18n/public-paths';
 import { toursOfCategory } from './duration';
 import { query } from './sanity';
 import type {
@@ -47,7 +48,12 @@ const image = (raw: RawImage): ImageRef | null =>
   raw?.src && raw.width && raw.height ? { src: raw.src, width: raw.width, height: raw.height, alt: raw.alt ?? '' } : null;
 
 const countryIds: CountryId[] = ['turkey', 'greece', 'egypt', 'jordan', 'morocco'];
-const countriesOf = (slug: string) => countryIds.filter((id) => slug.includes(id));
+/** How the Japanese site names the countries in its folders (トルコツアー, コンビネーションツアー/トルコ・ギリシャ周遊ツアー). */
+const japaneseNames: Record<CountryId, string> = { turkey: 'トルコ', greece: 'ギリシャ', egypt: 'エジプト', jordan: 'ヨルダン', morocco: 'モロッコ' };
+const countriesOf = (folder: string) => {
+  const english = countryIds.filter((id) => folder.includes(id));
+  return english.length > 0 ? english : countryIds.filter((id) => folder.includes(japaneseNames[id]));
+};
 const stylesOf = (groupType: string): TourStyle[] => (/private/i.test(groupType) ? ['private'] : ['small-group']);
 const bucketOf = (days: number | null) => (days === null ? null : days <= 5 ? '3-5' : days <= 9 ? '6-9' : '10+');
 
@@ -66,13 +72,30 @@ async function source(lang: Locale): Promise<{ lang: Locale; fallback: boolean }
   return (await hasNativeContent(lang)) ? { lang, fallback: false } : { lang: defaultLocale, fallback: true };
 }
 
-/** Languages that have their own version of a page (same path in their own content), for hreflang. */
-export async function languagesWithPage(path: string): Promise<Locale[]> {
-  const found = await query<string[]>('array::unique(*[_type in $types && path == $path].language)', {
-    types: allTypes,
-    path: trim(path),
-  });
-  return locales.filter((l) => found.includes(l));
+/**
+ * The same page in the other languages, from the code the editor or the import gave all of them (`translationGroup`).
+ * `{ en: 'about', zh: 'about-us' }`: paths without the language prefix. Empty when the page has no counterpart (D11): the
+ * switcher then falls back to the hub, and no hreflang is written.
+ */
+export async function alternatesOf(lang: Locale, path: string): Promise<Partial<Record<Locale, string>>> {
+  const rows = await query<{ language: Locale; path: string }[]>(
+    '*[_type in $types && defined(translationGroup) && translationGroup == *[_type in $types && language == $lang && path == $path][0].translationGroup]{ language, path }',
+    { types: allTypes, lang, path: trim(cmsPath(lang, path)) },
+  );
+  return rows.length < 2 ? {} : Object.fromEntries(rows.map((r) => [r.language, hrefOf(r.path).replace(/\/$/, '') || '/']));
+}
+
+/** Every page that has a counterpart, for the language menu: `{ 'jp:目的地/トルコツアー': { en: '/destinations/turkey-tours', ... } }`. */
+export async function alternatesIndex(): Promise<Record<string, Partial<Record<Locale, string>>>> {
+  const rows = await query<{ language: Locale; path: string; group: string }[]>(
+    '*[_type in $types && defined(translationGroup) && defined(path)]{ language, path, "group": translationGroup }',
+    { types: allTypes },
+  );
+  const byGroup = new Map<string, Partial<Record<Locale, string>>>();
+  for (const r of rows) {
+    byGroup.set(r.group, { ...byGroup.get(r.group), [r.language]: `/${trim(r.path)}` });
+  }
+  return Object.fromEntries(rows.map((r) => [`${r.language}:/${trim(r.path)}`, byGroup.get(r.group) ?? {}]));
 }
 
 // ---- tours
@@ -82,6 +105,7 @@ type RawTourCard = {
   title: string;
   summary?: string;
   parent: string;
+  category?: string | null;
   days?: number | null;
   nights?: number | null;
   duration?: string;
@@ -92,7 +116,7 @@ type RawTourCard = {
   image?: RawImage;
 };
 
-const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": coalesce(heroImage, gallery[0]){ ${img} }`;
+const tourCardFields = `path, title, summary, parent, category, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": coalesce(heroImage, gallery[0]){ ${img} }`;
 
 function toCard(raw: RawTourCard): TourCardData {
   const days = raw.days ?? null;
@@ -105,7 +129,7 @@ function toCard(raw: RawTourCard): TourCardData {
     days,
     nights: raw.nights ?? null,
     styles: stylesOf(raw.groupType ?? ''),
-    countries: countriesOf(raw.parent),
+    countries: countriesOf(`${raw.parent} ${raw.category ?? ''}`),
     bucket: bucketOf(days),
     // The old site printed "From: €0" on one tour; a price of zero means no price was set.
     priceEUR: raw.priceEUR && raw.priceEUR > 0 ? raw.priceEUR : null,
@@ -160,13 +184,14 @@ type RawTour = RawTourCard & {
   included?: string[];
   excluded?: string[];
   importantNotes?: string[];
+  priceSections?: RawSection[];
   cancellationPolicy?: string[];
   gallery?: RawImage[];
   related?: ({ title: string; path: string } | null)[];
   faqs?: Faq[];
 };
 
-const tourFields = `${tourCardFields}, category, metaTitle, metaDescription, facts, extraFacts[]{ label, value }, "priceNote": price.note, departures, hotels[]{ city, nights, name, category }, "routeMap": { "intro": routeMap.intro, "image": routeMap.image{ ${img} } }, highlights, itinerary[]{ dayLabel, title, text, meals }, included, excluded, importantNotes, cancellationPolicy, "gallery": gallery[]{ ${img} }, "related": related[]->{ title, path }, faqs[]{ q, a }`;
+const tourFields = `${tourCardFields}, category, metaTitle, metaDescription, facts, extraFacts[]{ label, value }, "priceNote": price.note, departures, hotels[]{ city, nights, name, category }, "routeMap": { "intro": routeMap.intro, "image": routeMap.image{ ${img} } }, highlights, itinerary[]{ dayLabel, title, text, meals }, included, excluded, importantNotes, "priceSections": priceSections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cancellationPolicy, "gallery": gallery[]{ ${img} }, "related": related[]->{ title, path }, faqs[]{ q, a }`;
 
 const emptyFacts: TourRecord['facts'] = {
   duration: '',
@@ -183,7 +208,7 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
   const src = await source(lang);
   const raw = await query<RawTour | null>(`*[_type == "tour" && language == $lang && path == $path][0]{ ${tourFields} }`, {
     lang: src.lang,
-    path: trim(path),
+    path: trim(cmsPath(src.lang, path)),
   });
   if (!raw) {
     return undefined;
@@ -221,6 +246,7 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
     included: raw.included ?? [],
     excluded: raw.excluded ?? [],
     importantNotes: raw.importantNotes ?? [],
+    priceSections: (raw.priceSections ?? []).map(toSection),
     cancellationPolicy: raw.cancellationPolicy ?? [],
     gallery,
     // The old pages sometimes list the same related tour twice; a visitor should see it once.
@@ -256,17 +282,25 @@ type RawPageSummary = {
   image?: RawImage;
 };
 
+type RawSection = { level?: number; heading?: string; blocks?: RawBlock[] };
+
 type RawPage = RawPageSummary & {
   lastUpdated?: string | null;
   shortAnswer?: string;
   author?: { title?: string; path?: string; image?: RawImage } | null;
-  sections?: { level?: number; heading?: string; blocks?: RawBlock[] }[];
+  sections?: RawSection[];
   cards?: { title: string; href: string; meta?: string[]; price?: string; image?: RawImage }[];
   faqs?: Faq[];
 };
 
 const summaryFields = `kind, path, title, metaTitle, metaDescription, "image": mainImage{ ${img} }`;
 const pageFields = `${summaryFields}, lastUpdated, shortAnswer, "author": author->{ title, path, "image": mainImage{ ${img} } }, sections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cards[]{ title, href, meta, price, "image": image{ ${img} } }, faqs[]{ q, a }`;
+
+const toSection = (s: RawSection): PageSection => ({
+  level: s.level ?? 2,
+  heading: s.heading ?? '',
+  blocks: (s.blocks ?? []).flatMap(toBlock),
+});
 
 function toBlock(raw: RawBlock): PageBlock[] {
   switch (raw._type) {
@@ -322,11 +356,7 @@ function updatedOf(date: string | null, sections: PageSection[], lang: Locale): 
 }
 
 function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
-  const sections: PageSection[] = (raw.sections ?? []).map((s) => ({
-    level: s.level ?? 2,
-    heading: s.heading ?? '',
-    blocks: (s.blocks ?? []).flatMap(toBlock),
-  }));
+  const sections: PageSection[] = (raw.sections ?? []).map(toSection);
   const cards: CardRecord[] = (raw.cards ?? []).map((c) => ({
     title: c.title,
     href: c.href,
@@ -352,7 +382,7 @@ function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
 /** One page by its path without the language (`''` is the home page). */
 export async function getPage(lang: Locale, path: string): Promise<PageRecord | undefined> {
   const src = await source(lang);
-  const wanted = trim(path);
+  const wanted = trim(cmsPath(src.lang, path));
   const raw = wanted
     ? await query<RawPage | null>(`*[_type in $types && language == $lang && path == $path][0]{ ${pageFields} }`, {
         types: pageTypes,
@@ -368,7 +398,7 @@ export async function pageSummaries(lang: Locale, kind: PageKind, prefix?: strin
   const src = await source(lang);
   const rows = await query<RawPageSummary[]>(
     `*[_type in $types && language == $lang && kind == $kind${prefix ? ' && path match $prefix' : ''}] | order(path asc){ ${summaryFields} }`,
-    { types: pageTypes, lang: src.lang, kind, prefix: prefix ? `${trim(prefix)}/*` : undefined },
+    { types: pageTypes, lang: src.lang, kind, prefix: prefix ? `${trim(cmsPath(src.lang, prefix))}/*` : undefined },
   );
   return rows.map((r) => toSummary(r, lang, src.fallback));
 }
@@ -379,7 +409,7 @@ export async function pageTitle(lang: Locale, path: string): Promise<string | un
   const title = await query<string | null>('*[_type in $types && language == $lang && path == $path][0].title', {
     types: pageTypes,
     lang: src.lang,
-    path: trim(path),
+    path: trim(cmsPath(src.lang, path)),
   });
   return title ?? undefined;
 }
@@ -515,7 +545,7 @@ const TEAM_QUERY = `*[_type == "teamMember" && language == $lang] | order(order 
 // ---- related content
 
 /** Country ids named in a path folder: `turkey-tours` gives turkey, `turkey-greece-tours` gives turkey and greece. */
-export const countriesIn = (folder: string) => countryIds.filter((id) => folder.includes(id));
+export const countriesIn = countriesOf;
 
 /** Blog posts about the countries of a folder (a country, a combination), a few of each, newest guides first as the hub orders them. */
 export async function blogsAbout(lang: Locale, folder: string, limit = 3): Promise<PageSummary[]> {
@@ -536,7 +566,7 @@ export async function toursAbout(lang: Locale, folder: string, limit = 3): Promi
   if (ids.length !== 1) {
     return [];
   }
-  const tours = (await toursUnder(lang, `${ids[0]}-tours`)).filter((t) => t.image);
+  const tours = (await toursUnder(lang, countryFolder(lang, ids[0]!))).filter((t) => t.image);
   return tours.slice(0, limit);
 }
 
@@ -544,6 +574,7 @@ export async function toursAbout(lang: Locale, folder: string, limit = 3): Promi
 
 /** Pages that are written in code, not stored in the CMS: the new landing pages and the hand-made about, contact and FAQ. */
 const codePages = [
+  '/destinations',
   '/tours',
   '/multi-country-tours',
   '/private-tours',
@@ -566,6 +597,7 @@ export async function sitemapPaths(lang: Locale): Promise<string[]> {
     types: allTypes,
     lang,
   });
-  const paths = new Set(['/', ...codePages, ...stored.map((p) => `/${trim(p)}`)]);
+  // Code pages are known by their English address; in Chinese and Japanese some have the old site's name (/about-us, /会社概要).
+  const paths = new Set(['/', ...codePages.map((p) => publicPath(lang, p)), ...stored.map((p) => `/${trim(p)}`)]);
   return [...paths].filter((p) => !notListed.has(p));
 }

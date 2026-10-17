@@ -1,0 +1,107 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/3/",
+  "path": "目的地/ヨルダンツアー/3",
+  "slug": "3",
+  "parent": "ヨルダンツアー",
+  "category": null,
+  "title": "ペトラ3日間",
+  "metaTitle": "ヨルダン3日間ツアー｜ペトラ世界遺産観光 | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "ペトラを巡る2泊3日のヨルダンツアー。世界遺産ペトラの壮大な遺跡を短期間で効率よく観光できるプランです。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/3/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "ヨルダンツアー",
+    "ペトラ3日間"
+  ],
+  "summary": "ペトラを巡る2泊3日のヨルダンツアー。世界遺産ペトラの壮大な遺跡を短期間で効率よく観光できるプランです。",
+  "facts": {
+    "duration": "02泊 03日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 2,
+  "days": 3,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "ペトラ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "Day 1",
+      "title": "Queen Alia International airport/ Petra",
+      "text": "空港からペトラのホテルへ送迎\n\nペトラ泊",
+      "meals": ""
+    },
+    {
+      "dayLabel": "Day 2",
+      "title": "Petra",
+      "text": "ホテルで朝食\n\n終日ペトラツアー\n\nペトラ泊",
+      "meals": ""
+    },
+    {
+      "dayLabel": "Day 3",
+      "title": "Petra",
+      "text": "ホテルで朝食\n\n空港送迎\n\nツアー終了",
+      "meals": ""
+    }
+  ],
+  "included": [],
+  "excluded": [],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/202601152009399.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ヨルダン ペトラ 古代都市遺跡"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011520105662.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ 砂岩に刻まれた建築群"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011520120779.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ 失われた都市 ヨルダン"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011520131736.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ ユネスコ世界遺産 ヨルダン"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011520142949.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ ローズシティ 岩の都市"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

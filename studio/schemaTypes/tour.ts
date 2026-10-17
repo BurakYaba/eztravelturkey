@@ -6,6 +6,7 @@ import {
   metaTitleField,
   pathField,
   titleField,
+  translationGroupField,
 } from './fields';
 
 /** The folder a tour lives in under /destinations: a country or a multi-country combination. */
@@ -21,6 +22,16 @@ const parents = [
   { title: 'Combination: Greece and Egypt', value: 'greece-and-egypt-tours' },
   { title: 'Combination: Greece and Jordan', value: 'greece-and-jordan-tours' },
   { title: 'Combination: Turkey, Greece and Egypt', value: 'turkey-greece-and-egypt-tours' },
+  // Chinese site
+  { title: 'Chinese site: combinations', value: 'combination-tours' },
+  { title: 'Chinese site: Turkey and Greece', value: 'turkey-and-greece-tours' },
+  // Japanese site
+  { title: 'Japanese site: トルコ', value: 'トルコツアー' },
+  { title: 'Japanese site: ギリシャ', value: 'ギリシャツアー' },
+  { title: 'Japanese site: エジプト', value: 'エジプトツアー' },
+  { title: 'Japanese site: ヨルダン', value: 'ヨルダンツアー' },
+  { title: 'Japanese site: モロッコ', value: 'モロッコツアー' },
+  { title: 'Japanese site: コンビネーション', value: 'コンビネーションツアー' },
 ];
 
 const stringList = (name: string, title: string, description?: string) =>
@@ -40,6 +51,7 @@ export const tour = defineType({
   fields: [
     { ...languageField, group: 'basics' },
     { ...pathField, group: 'basics' },
+    { ...translationGroupField, group: 'basics' },
     defineField({
       name: 'parent',
       title: 'Country or combination',
@@ -155,7 +167,7 @@ export const tour = defineType({
           type: 'object',
           fields: [
             defineField({ name: 'dayLabel', title: 'Day', type: 'string', description: 'For example "DAY 01" or "DAY 02-03".' }),
-            defineField({ name: 'title', title: 'Title', type: 'string', validation: (rule) => rule.required() }),
+            defineField({ name: 'title', title: 'Title', type: 'string' }),
             defineField({ name: 'text', title: 'Text', type: 'text', rows: 6 }),
             defineField({ name: 'meals', title: 'Meals', type: 'string' }),
           ],
@@ -186,6 +198,14 @@ export const tour = defineType({
     { ...stringList('included', 'What is included'), group: 'details' },
     { ...stringList('excluded', 'What is not included'), group: 'details' },
     { ...stringList('importantNotes', 'Important notes'), group: 'details' },
+    defineField({
+      name: 'priceSections',
+      title: 'Price tables and other price text',
+      type: 'array',
+      description: 'Text and tables for the Tour Price tab, such as the price tables of the Chinese and Japanese sites.',
+      group: 'details',
+      of: [{ type: 'section' }],
+    }),
     { ...stringList('cancellationPolicy', 'Cancellation policy'), group: 'details' },
     { ...faqsField, group: 'details' },
     defineField({

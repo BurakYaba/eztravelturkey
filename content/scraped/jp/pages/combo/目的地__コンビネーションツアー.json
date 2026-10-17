@@ -1,0 +1,100 @@
+{
+  "locale": "jp",
+  "kind": "combo",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/コンビネーションツアー/",
+  "path": "目的地/コンビネーションツアー",
+  "metaTitle": "トルコ＋ギリシャ・エジプト・ヨルダン周遊コンビネーションツアー一覧｜人気プラン | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "トルコと周辺国を一度に巡る人気のコンビネーションツアー一覧。トルコ＋ギリシャ、トルコ＋エジプト、トルコ＋ヨルダンなど、世界遺産と絶景を楽しむ周遊旅行をご紹介。日本語ガイド付きで安心の現地ツアー。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/コンビネーションツアー/",
+  "robots": "",
+  "h1": "コンビネーションツアー",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "コンビネーションツアー"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "コンビネーションツアーは、複数の国や地域を一度に楽しめる効率的な旅行スタイルです。"
+        },
+        {
+          "type": "p",
+          "text": "トルコ周遊ツアーをはじめ、トルコ・ギリシャ周遊ツアー、トルコ・エジプト周遊ツアー、ヨルダンを含む多国間ルートなど、文化や歴史、景色の異なる国々を組み合わせた多彩なプランをご用意しています。"
+        },
+        {
+          "type": "p",
+          "text": "各国の見どころをバランスよく巡れる行程で、移動や宿泊も含まれているため、初めての海外旅行や長期旅行でも安心してご参加いただけます。"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "title": "トルコ・ギリシャ周遊ツアー",
+      "url": "/jp/目的地/コンビネーションツアー/トルコ・ギリシャ周遊ツアー/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2025122408493988.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [],
+      "price": ""
+    },
+    {
+      "title": "トルコ・エジプト周遊ツアー",
+      "url": "/jp/目的地/コンビネーションツアー/トルコ・エジプト周遊ツアー/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070906190836.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [],
+      "price": ""
+    },
+    {
+      "title": "トルコ＆ヨルダンコンビネーションツアー13日間",
+      "url": "/jp/目的地/コンビネーションツアー/トルコ＆ヨルダンコンビネーションツアー13日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070905365189.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [],
+      "price": ""
+    },
+    {
+      "title": "エジプト・ヨルダン11日間",
+      "url": "/jp/目的地/コンビネーションツアー/エジプトヨルダン11日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070905380051.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [],
+      "price": ""
+    },
+    {
+      "title": "イスタンブール・ミコノス・サントリーニ・アテネ８泊９日",
+      "url": "/jp/目的地/コンビネーションツアー/イスタンブール・ミコノス・サントリーニ・アテネ８泊９日/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070905385652.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [],
+      "price": ""
+    }
+  ],
+  "faqs": [],
+  "jsonLd": []
+}

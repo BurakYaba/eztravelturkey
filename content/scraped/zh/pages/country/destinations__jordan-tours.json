@@ -1,0 +1,107 @@
+{
+  "locale": "zh",
+  "kind": "country",
+  "sourceUrl": "https://www.eztravelturkey.com/zh/destinations/jordan-tours/",
+  "path": "destinations/jordan-tours",
+  "metaTitle": "預訂約旦度假套餐 | Eztravel Turkey",
+  "metaDescription": "探索約旦的阿拉伯國家，探索佩特拉古城這樣 的墓葬，寺廟和古蹟，或在前往瓦迪拉姆途中在死海游泳。",
+  "canonical": "https://www.eztravelturkey.com/zh/destinations/jordan-tours/",
+  "robots": "",
+  "h1": "約旦旅遊行程",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "約旦旅遊行程"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "我們的約旦旅遊行程將帶您踏上歷史，文化和傳奇之旅。深入約旦探索令人印象深刻的景點，去發現自然和國家的寶藏--佩特拉古城，這個2000多年前雕刻在岩壁上的傳奇，還可以在瓦迪拉姆營地欣賞滿布星光的夜空，體驗漂浮在死海面上，了解貝都因沙漠當地人的傳統。訪問約旦充滿神秘色彩的迷人歷史中，將是一次獨特的體驗，非常適合那些尋找與眾不同的國家的好奇和冒險旅行者。"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "title": "完全約旦8日遊 AMMAN AQABA PETRA TOUR 8 DAYS",
+      "url": "/zh/destinations/jordan-tours/amman-aqaba-petra-tour-8-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/202307081928235.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "安曼-傑拉什-阿傑隆-沙漠城堡-馬德巴-尼泊山-卡拉克-佩特拉-瓦迪拉姆-亞喀巴-安曼",
+        "8天 | 7夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "約旦經典7日遊 AMMAN JERASH PETRA 7 DAYS TOUR",
+      "url": "/zh/destinations/jordan-tours/amman-aqaba-petra-7-days-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070819285310.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "安曼-烏姆蓋斯-傑拉什-阿傑隆-沙漠城堡-馬德巴-尼泊山-卡拉克-佩特拉-瓦迪拉姆-安曼",
+        "7天 | 6夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "約旦精選6日遊 AMMAN PETRA 6 DAYS TOUR",
+      "url": "/zh/destinations/jordan-tours/amman-petra-6-days-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070819292158.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "安曼-傑拉什-死海-馬德巴-尼泊山-卡拉克-佩特拉-亞喀巴-安曼",
+        "6天 | 5夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "約旦特選5日遊 AMMAN PETRA 5 DAYS TOUR",
+      "url": "/zh/destinations/jordan-tours/amman-petra-5-days-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070819301297.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "安曼-烏姆蓋斯-傑拉什-阿傑隆-馬德巴-尼泊山-卡拉克-死海-佩特拉-安曼",
+        "5天 | 4夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "約旦佩特拉古城3日遊 PETRA 3 DAYS TOUR",
+      "url": "/zh/destinations/jordan-tours/amman-petra-3-days-tour/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070819304772.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "安曼-佩特拉-安曼",
+        "3天 | 2夜 全年每日出發"
+      ],
+      "price": ""
+    }
+  ],
+  "faqs": [],
+  "jsonLd": []
+}

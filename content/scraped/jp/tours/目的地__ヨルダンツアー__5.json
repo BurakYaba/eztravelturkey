@@ -1,0 +1,136 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/5/",
+  "path": "目的地/ヨルダンツアー/5",
+  "slug": "5",
+  "parent": "ヨルダンツアー",
+  "category": null,
+  "title": "アンマン・ペトラ5日間",
+  "metaTitle": "ヨルダン5日間ツアー｜アンマン・ペトラ・死海周遊 | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "アンマン、マダバ、ネボ山、死海、ペトラ、ワディラムを巡る4泊5日のヨルダンツアー。歴史遺跡と自然の絶景を効率よく満喫できるプランです。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/5/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "ヨルダンツアー",
+    "アンマン・ペトラ5日間"
+  ],
+  "summary": "アンマン、マダバ、ネボ山、死海、ペトラ、ワディラムを巡る4泊5日のヨルダンツアー。歴史遺跡と自然の絶景を効率よく満喫できるプランです。",
+  "facts": {
+    "duration": "04泊 05日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 4,
+  "days": 5,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "アンマン",
+    "ペトラ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "1日目",
+      "title": "",
+      "text": "空港からアンマンのホテルへ送迎\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； × 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "2日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\nマダバに向け出発 6世紀のパレスチナのモザイクが描かれている聖ジョージ教会観光\n\nネボ山観光 （モーゼの終焉の地と言われている）\n\n死海観光\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "3日目",
+      "title": "",
+      "text": "朝食後ペトラへ移動\n\nペトラツアー\n\nペトラ泊\n\n宿泊地: ペトラ",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "4日目",
+      "title": "",
+      "text": "ホテルにて朝食\n\nワディラムへ\n\n4×4ジープサファリツアー\n\nアンマンへ移動\n\nアンマン泊\n\n宿泊地: アンマン",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    },
+    {
+      "dayLabel": "5日目",
+      "title": "",
+      "text": "ホテルで朝食\n\n空港送迎\n\nツアー終了\n\n宿泊地: ご帰国",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    }
+  ],
+  "included": [
+    "宿泊費（朝食付きまたは朝食夕食付）",
+    "ワディラムジープサファリツアー（2時間）",
+    "記載のあるツアーの移動交通費、ガイド代（英語）、施設入場料",
+    "4泊分ホテル（ツインまたはトリプルをシェアルーム、シングルをご希望の場合は別途手配）",
+    "空港（または駅）送迎",
+    "ヨルダン入国ビザ",
+    "税"
+  ],
+  "excluded": [
+    "昼食、夕食",
+    "飲み物",
+    "ツアーに記載されていないサービス",
+    "ビザ代60USD/人",
+    "出国税 15USD/人",
+    "チップ",
+    "ペトラ馬車代"
+  ],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011511395489.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アンマン 夜景 都市観光"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011511433414.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ヨルダン マダバ 歴史都市"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011511444325.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ペトラ 渓谷ツアー"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011511455023.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ワディラム ラクダツアー"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011511464711.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ワディラム 砂漠景観"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

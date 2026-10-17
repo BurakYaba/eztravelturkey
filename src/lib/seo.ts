@@ -5,8 +5,8 @@ import { defaultLocale, hasLocale, htmlLang, locales, type Locale } from '@/i18n
 import type { ImageRef } from '@/lib/data/types';
 import { localePath } from '@/i18n/paths';
 
-/** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. */
-export const absoluteUrl = (path = '/') => `${site.url}${path.startsWith('/') ? path : `/${path}`}`;
+/** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. Japanese and Chinese letters are percent-encoded. */
+export const absoluteUrl = (path = '/') => `${site.url}${encodeURI(path.startsWith('/') ? path : `/${path}`)}`;
 
 const ogLocale: Record<Locale, string> = { en: 'en_US', zh: 'zh_TW', jp: 'ja_JP' };
 
@@ -18,8 +18,8 @@ type MetaInput = {
   lang?: Locale;
   /** Language whose address is the canonical one. Pages that only stand in for another language's text point there. */
   canonicalLang?: Locale;
-  /** Languages that really have this page; hreflang is written only when there are at least two. */
-  alternateLangs?: readonly Locale[];
+  /** The same page in the languages that really have it (paths without the language prefix); hreflang is written only when there are at least two. */
+  alternates?: Partial<Record<Locale, string>>;
   image?: ImageId;
   /** A scraped picture; wins over `image`. */
   picture?: ImageRef | null;
@@ -36,7 +36,7 @@ export function buildMetadata({
   path,
   lang = defaultLocale,
   canonicalLang,
-  alternateLangs = [],
+  alternates = {},
   image = 'hero-istanbul',
   picture: scraped,
   type = 'website',
@@ -52,7 +52,7 @@ export function buildMetadata({
     description,
     alternates: {
       canonical: full,
-      ...(alternateLangs.length >= 2 ? { languages: languageAlternates(path, alternateLangs) } : {}),
+      ...(Object.keys(alternates).length >= 2 ? { languages: hreflangOf(alternates) } : {}),
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
@@ -250,6 +250,12 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, mo
     mainEntityOfPage: url,
   };
 };
+
+/** hreflang of a page that has counterparts: one address per language, and x-default pointing at English when it has the page. */
+export function hreflangOf(alternates: Partial<Record<Locale, string>>): Record<string, string> {
+  const entries = locales.flatMap((lang) => (alternates[lang] ? [[htmlLang[lang], absoluteUrl(localePath(lang, alternates[lang]))] as const] : []));
+  return Object.fromEntries([...entries, ...(alternates.en ? [['x-default', absoluteUrl(localePath('en', alternates.en))] as const] : [])]);
+}
 
 /** All language versions of a path, for hreflang. Pages that exist in only some languages pass `only`. */
 export function languageAlternates(path: string, only: readonly Locale[] = locales): Record<string, string> {

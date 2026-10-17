@@ -1,0 +1,43 @@
+{
+  "locale": "zh",
+  "kind": "static",
+  "sourceUrl": "https://www.eztravelturkey.com/zh/contact/",
+  "path": "contact",
+  "metaTitle": "Eztravel Turkey",
+  "metaDescription": "土耳其旅行社提供土耳其旅遊，希臘旅遊，和到埃及，約旦，摩洛哥小團體套裝和私人訂製旅遊行程",
+  "canonical": "https://www.eztravelturkey.com/zh/contact/",
+  "robots": "",
+  "h1": "聯繫",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "聯繫"
+  ],
+  "sections": [
+    {
+      "level": 4,
+      "heading": "聯絡方式",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "地址 Küçükayasofya Mah.Gelinlik Sok. No:1/3 Sultanahmet. Fatih Istanbul 34122 TURKEY",
+            "電話 +90 212 458 65 65",
+            "LINE公司號 (@ihs7735m )",
+            "Wechat (kubrahsu)",
+            "iMessage m.me/easytravelturkey",
+            "EMAIL service@eztravelturkey.com; eztravelturkey@gmail.com"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "heading": "提出問題",
+      "blocks": []
+    }
+  ],
+  "cards": [],
+  "faqs": [],
+  "jsonLd": []
+}
