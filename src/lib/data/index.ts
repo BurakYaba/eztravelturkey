@@ -91,7 +91,7 @@ type RawTourCard = {
   image?: RawImage;
 };
 
-const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": gallery[0]{ ${img} }`;
+const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": coalesce(heroImage, gallery[0]){ ${img} }`;
 
 function toCard(raw: RawTourCard): TourCardData {
   const days = raw.days ?? null;
@@ -229,7 +229,7 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
       ).values(),
     ],
     faqs: raw.faqs ?? [],
-    image: gallery[0] ?? null,
+    image: card.image ?? gallery[0] ?? null,
   };
 }
 

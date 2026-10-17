@@ -281,13 +281,7 @@
     "fromPrice": "行程起價",
     "guides": "旅遊指南：{country}",
     "moreGuides": "所有旅遊指南",
-    "allTours": "所有行程",
-    "bucket": {
-      "3-5": "3–5 天{country}行程",
-      "6-9": "6–9 天{country}行程",
-      "10+": "10 天以上{country}行程",
-      "other": "更多{country}行程"
-    }
+    "allTours": "所有行程"
   },
   "team": {
     "title": "認識我們的團隊",

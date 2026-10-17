@@ -281,13 +281,7 @@
     "fromPrice": "ツアー最低料金",
     "guides": "旅行ガイド：{country}",
     "moreGuides": "すべての旅行ガイド",
-    "allTours": "すべてのツアー",
-    "bucket": {
-      "3-5": "3〜5日間の{country}ツアー",
-      "6-9": "6〜9日間の{country}ツアー",
-      "10+": "10日間以上の{country}ツアー",
-      "other": "その他の{country}ツアー"
-    }
+    "allTours": "すべてのツアー"
   },
   "team": {
     "title": "スタッフ紹介",

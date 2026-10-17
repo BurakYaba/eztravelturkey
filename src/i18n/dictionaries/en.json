@@ -281,13 +281,7 @@
     "fromPrice": "Tours from",
     "guides": "Travel guides: {country}",
     "moreGuides": "All travel guides",
-    "allTours": "All tours",
-    "bucket": {
-      "3-5": "3–5 day {country} tours",
-      "6-9": "6–9 day {country} tours",
-      "10+": "10+ day {country} tours",
-      "other": "More {country} tours"
-    }
+    "allTours": "All tours"
   },
   "team": {
     "title": "Meet the team",
