@@ -22,7 +22,8 @@
     "check:site": "node scripts/check-site.mjs",
     "sanity:import": "node --env-file-if-exists=.env.local scripts/sanity/import.mjs",
     "sanity:team": "node --env-file-if-exists=.env.local scripts/sanity/import-team.mjs",
-    "audit:seo": "node scripts/audit-seo.mjs"
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "sanity:categories": "node --env-file-if-exists=.env.local scripts/sanity/import-categories.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

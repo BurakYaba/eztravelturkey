@@ -73,6 +73,12 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     ...tour.extraFacts.map((f) => ({ ...f, icon: Info })),
   ].filter((f) => f.value);
   const hasInclusions = tour.included.length > 0 || tour.excluded.length > 0;
+  const hasPrice = tour.priceEUR !== null || tour.priceUSD !== null;
+  // The old pages mix sentences about the price ("Prices are per person, based on a minimum of ...") into the notes.
+  // They move to the price tab word for word; the other notes stay where they were.
+  const isPriceNote = (note: string) => /^prices?/i.test(note);
+  const priceNotes = tour.importantNotes.filter(isPriceNote);
+  const otherNotes = tour.importantNotes.filter((note) => !isPriceNote(note));
 
   const tabs = [
     { id: 'overview', label: t.tabs.overview },
@@ -81,6 +87,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { id: 'requirements', label: t.tabs.requirements },
     ...(tour.faqs.length > 0 ? [{ id: 'faqs', label: t.tabs.faqs }] : []),
     ...(tour.routeMap.image ? [{ id: 'route-map', label: t.tabs.routeMap }] : []),
+    { id: 'price', label: t.tabs.price },
     { id: 'payment', label: t.tabs.payment },
     { id: 'cancellation', label: t.tabs.cancellation },
   ];
@@ -283,10 +290,10 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                   );
                 })}
               </ul>
-              {tour.importantNotes.length > 0 && (
+              {otherNotes.length > 0 && (
                 <div className="mt-8">
                   <h3 className="mb-4 text-2xl">{t.requirements.notes}</h3>
-                  <Bullets items={tour.importantNotes} />
+                  <Bullets items={otherNotes} />
                 </div>
               )}
             </TourPanel>
@@ -315,6 +322,45 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                 </figure>
               </TourPanel>
             )}
+
+            <TourPanel id="price" label={label('price')}>
+              <SectionHeading title={t.price.title} className="mb-6 max-lg:hidden" />
+              <div className="border-cream-200 shadow-card rounded-lg border bg-white p-5 md:p-6">
+                <TourPrice
+                  lang={lang}
+                  eur={tour.priceEUR}
+                  usd={tour.priceUSD}
+                  text={{ ...t.price, ...card }}
+                  size="page"
+                />
+                {hasPrice && <p className="text-muted mt-3 max-w-2xl text-sm">{t.price.note}</p>}
+                {tour.priceNote && <p className="text-navy-900 mt-1 text-sm font-medium">{tour.priceNote}</p>}
+                <ButtonLink href="#enquiry" arrow className="mt-5">
+                  {t.cta.quote}
+                </ButtonLink>
+              </div>
+              {tour.facts.season && (
+                <div className="bg-cream-100 mt-5 flex gap-4 rounded-lg p-4">
+                  <CalendarBlank size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                  <div>
+                    <h3 className="font-sans text-base font-semibold tracking-normal">{t.price.season}</h3>
+                    <p className="text-muted mt-1 text-[0.95rem]">{tour.facts.season}</p>
+                  </div>
+                </div>
+              )}
+              {tour.departures.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="mb-4 text-2xl">{t.price.departures}</h3>
+                  <Bullets items={tour.departures} />
+                </div>
+              )}
+              {priceNotes.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="mb-4 text-2xl">{t.price.notes}</h3>
+                  <Bullets items={priceNotes} />
+                </div>
+              )}
+            </TourPanel>
 
             <TourPanel id="payment" label={label('payment')}>
               <SectionHeading title={t.payment.title} className="mb-6 max-lg:hidden" />
@@ -363,7 +409,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                   size="page"
                   tone="dark"
                 />
-                {(tour.priceEUR !== null || tour.priceUSD !== null) && (
+                {hasPrice && (
                   <p className="mt-2 text-sm text-white/80">{t.price.note}</p>
                 )}
                 {tour.priceNote && <p className="mt-1 text-sm font-medium text-white">{tour.priceNote}</p>}

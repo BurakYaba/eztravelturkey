@@ -121,6 +121,7 @@
       "requirements": "旅行条件",
       "faqs": "よくある質問",
       "routeMap": "ルートマップ",
+      "price": "ツアー料金",
       "payment": "お支払いについて",
       "cancellation": "キャンセル規定"
     },
@@ -145,7 +146,8 @@
       "onRequest": "料金はお問い合わせください",
       "note": "表示は1名あたりの最低料金です。最終料金は日程、ホテル、人数によって変わります。",
       "departures": "出発の種類",
-      "season": "シーズン"
+      "season": "シーズン",
+      "notes": "料金について"
     },
     "overview": "ツアー概要",
     "highlights": "ハイライトとルート",

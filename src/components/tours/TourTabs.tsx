@@ -10,6 +10,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
+import { CaretLeft, CaretRight } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';
 
 export type TabItem = { id: string; label: string };
@@ -64,6 +65,32 @@ export function TourTabs({ tabs, label }: { tabs: TabItem[]; label: string }) {
   const state = useContext(TabsContext);
   const listRef = useRef<HTMLUListElement>(null);
   const active = state?.active ?? tabs[0]?.id;
+  // The strip scrolls sideways when the tabs do not fit; arrows show on the side that has more tabs hidden.
+  const [more, setMore] = useState({ left: false, right: false });
+
+  useEffect(() => {
+    const list = listRef.current;
+    const items = list?.querySelectorAll<HTMLElement>('li');
+    if (!list || !items || items.length === 0) {
+      return;
+    }
+    const first = items[0]!;
+    const last = items[items.length - 1]!;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const side = entry.target === first ? 'left' : 'right';
+          setMore((m) => ({ ...m, [side]: !entry.isIntersecting }));
+        }
+      },
+      { root: list, threshold: 0.95 },
+    );
+    observer.observe(first);
+    observer.observe(last);
+    return () => observer.disconnect();
+  }, [tabs]);
+
+  const nudge = (direction: 1 | -1) => listRef.current?.scrollBy({ left: direction * 240, behavior: 'smooth' });
 
   // Keep the selected tab inside the strip when the tabs overflow (narrow desktop windows).
   useEffect(() => {
@@ -101,7 +128,31 @@ export function TourTabs({ tabs, label }: { tabs: TabItem[]; label: string }) {
 
   return (
     <div className="border-cream-200 bg-cream-50/95 sticky top-20 z-30 hidden border-b backdrop-blur lg:block">
-      <nav aria-label={label} className="container-wide">
+      <nav aria-label={label} className="container-wide relative">
+        {more.left && (
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-hidden
+            onClick={() => nudge(-1)}
+            className="from-cream-50 absolute inset-y-0 left-0 z-10 hidden w-14 items-center justify-start bg-gradient-to-r to-transparent lg:flex">
+            <span className="text-navy-900 border-cream-200 grid size-8 place-items-center rounded-full border bg-white shadow-sm">
+              <CaretLeft size={16} weight="bold" />
+            </span>
+          </button>
+        )}
+        {more.right && (
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-hidden
+            onClick={() => nudge(1)}
+            className="from-cream-50 absolute inset-y-0 right-0 z-10 hidden w-14 items-center justify-end bg-gradient-to-l to-transparent lg:flex">
+            <span className="text-navy-900 border-cream-200 grid size-8 place-items-center rounded-full border bg-white shadow-sm">
+              <CaretRight size={16} weight="bold" />
+            </span>
+          </button>
+        )}
         <ul
           ref={listRef}
           role="tablist"

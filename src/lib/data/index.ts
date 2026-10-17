@@ -1,6 +1,7 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
 import { defaultLocale, locales, type Locale } from '@/i18n/config';
 import { formatDate } from '@/i18n/format';
+import { toursOfCategory } from './duration';
 import { query } from './sanity';
 import type {
   CardRecord,
@@ -91,7 +92,7 @@ type RawTourCard = {
   image?: RawImage;
 };
 
-const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": gallery[0]{ ${img} }`;
+const tourCardFields = `path, title, summary, parent, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": coalesce(heroImage, gallery[0]){ ${img} }`;
 
 function toCard(raw: RawTourCard): TourCardData {
   const days = raw.days ?? null;
@@ -106,11 +107,14 @@ function toCard(raw: RawTourCard): TourCardData {
     styles: stylesOf(raw.groupType ?? ''),
     countries: countriesOf(raw.parent),
     bucket: bucketOf(days),
-    priceEUR: raw.priceEUR ?? null,
-    priceUSD: raw.priceUSD ?? null,
+    // The old site printed "From: €0" on one tour; a price of zero means no price was set.
+    priceEUR: raw.priceEUR && raw.priceEUR > 0 ? raw.priceEUR : null,
+    priceUSD: raw.priceUSD && raw.priceUSD > 0 ? raw.priceUSD : null,
     image: image(raw.image),
   };
 }
+
+export { toursOfCategory };
 
 export type TourFilter = { parent?: string; category?: string | null; style?: TourStyle; paths?: string[] };
 
@@ -228,7 +232,7 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
       ).values(),
     ],
     faqs: raw.faqs ?? [],
-    image: gallery[0] ?? null,
+    image: card.image ?? gallery[0] ?? null,
   };
 }
 
@@ -404,11 +408,8 @@ export async function resolveDestination(lang: Locale, segments: string[]): Prom
     return { type: 'combo', page, tours: await toursUnder(lang, first) };
   }
   if (page?.kind === 'category') {
-    const [tours, parent] = await Promise.all([
-      toursUnder(lang, first, segments[1] ?? null),
-      getPage(lang, `destinations/${first}`),
-    ]);
-    return { type: 'category', page, tours, parent };
+    const [all, parent] = await Promise.all([toursUnder(lang, first), getPage(lang, `destinations/${first}`)]);
+    return { type: 'category', page, tours: toursOfCategory(all, page.href), parent };
   }
   const tour = await getTour(lang, path);
   return tour ? { type: 'tour', tour } : null;

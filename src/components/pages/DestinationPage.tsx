@@ -4,7 +4,7 @@ import { destinations } from '@/data/destinations';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { formatPrice } from '@/i18n/format';
 import { getLocale } from '@/i18n/server';
-import { blogsAbout, countriesIn } from '@/lib/data';
+import { blogsAbout, countriesIn, toursOfCategory } from '@/lib/data';
 import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
 import type { Crumb } from '../shared/Breadcrumbs';
@@ -39,7 +39,7 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
   // them here as well would repeat every category page and compete with it in search. A country without such pages
   // (Egypt, Jordan, Morocco) and every combination or category page list their tours.
   const listTours = categories.length === 0;
-  const countIn = (href: string) => tours.filter((tour) => tour.href.startsWith(href)).length;
+  const countIn = (href: string) => toursOfCategory(tours, href).length;
 
   const folder = page.path.split('/')[1] ?? '';
   const ids = countriesIn(folder);

@@ -195,6 +195,14 @@ export const tour = defineType({
       group: 'details',
       of: [{ type: 'reference', to: [{ type: 'tour' }], weak: true }],
     }),
+    defineField({
+      name: 'heroImage',
+      title: 'Main picture (optional)',
+      type: 'picture',
+      description:
+        'The large picture at the top of the tour page and on its card. Leave empty to use the first gallery picture. Use a wide picture of at least 1800 pixels.',
+      group: 'media',
+    }),
     defineField({ name: 'gallery', title: 'Gallery', type: 'array', of: [{ type: 'picture' }], group: 'media' }),
     { ...metaTitleField, group: 'seo' },
     { ...metaDescriptionField, group: 'seo' },

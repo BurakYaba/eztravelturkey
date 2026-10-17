@@ -51,7 +51,7 @@ export function WhyTravel() {
     <section className="section-y">
       <div className="container-x grid items-center gap-10 lg:grid-cols-[5fr_7fr] lg:gap-14">
         <div className="reveal shadow-card relative aspect-[4/5] overflow-hidden rounded-lg max-lg:aspect-[16/10]">
-          <Photo id="travelers-couple" sizes="(min-width: 1024px) 40vw, 100vw" />
+          <Photo id="cappadocia-valley" sizes="(min-width: 1024px) 40vw, 100vw" className="object-[80%_75%]" />
         </div>
         <div>
           <h2 className="h-section">Local Expertise. Personal Attention</h2>
