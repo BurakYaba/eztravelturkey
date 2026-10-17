@@ -42,6 +42,8 @@ export async function Footer() {
     { label: t.planMyTrip, href: '/plan-my-trip' },
     { label: t.terms, href: '/gdpr/terms-conditions' },
     { label: t.privacy, href: '/gdpr/privacy-policy' },
+    // The old site links the Turkish distance sales agreement from every page (a Turkish tour operator's legal text).
+    { label: t.distanceSales, href: '/gdpr/mesafeli-satis-sozlesmesi' },
   ];
   return (
     <footer className="bg-navy-950 text-white">

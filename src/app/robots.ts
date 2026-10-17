@@ -1,12 +1,10 @@
 import type { MetadataRoute } from 'next';
-import { locales } from '@/i18n/config';
-import { hasNativeContent } from '@/lib/data';
 import { absoluteUrl } from '@/lib/seo';
 
-export default async function robots(): Promise<MetadataRoute.Robots> {
-  const withContent = await Promise.all(locales.map(async (lang) => ((await hasNativeContent(lang)) ? lang : null)));
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: '*', allow: '/', disallow: ['/api/'] }],
-    sitemap: withContent.filter((lang) => lang !== null).map((lang) => absoluteUrl(`/sitemap/${lang}.xml`)),
+    // The index lists the sitemap of every language that has pages of its own (src/app/sitemap.xml/route.ts).
+    sitemap: absoluteUrl('/sitemap.xml'),
   };
 }

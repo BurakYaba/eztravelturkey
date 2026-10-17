@@ -126,6 +126,8 @@ export type TeamMember = {
   hours: string;
   timezone: string;
   photo: ImageRef | null;
+  /** The member's author page, when there is one. */
+  profileHref: string | null;
 };
 
 /** The author of a blog post, when the editor chose one. */
