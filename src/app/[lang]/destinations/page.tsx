@@ -8,26 +8,33 @@ import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { destinations } from '@/data/destinations';
-import { comboCards } from '@/lib/data';
+import { PageSections } from '@/components/pages/PageSections';
+import { comboCards, getPage } from '@/lib/data';
+import { docMetadata } from '@/lib/page-meta';
 import { homeFaqs } from '@/data/faqs';
-import { site } from '@/data/site';
-import { breadcrumbJsonLd, localizedMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
+import { breadcrumbJsonLd, collectionPageJsonLd, faqJsonLd, itemListJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
 const description =
   'Tours in Turkey, Greece, Egypt, Jordan and Morocco, plus multi-country combinations, from a licensed local operator since 1997.';
 
-export const generateMetadata = localizedMetadata({
+export const generateMetadata = docMetadata({
   title: 'Destinations',
   description,
   path: '/destinations',
   image: 'istanbul-skyline',
 });
 
-const faqIndexes = [0, 1, 5, 7, 12, 13];
-
 export default async function DestinationsPage() {
   const lang = await getLocale();
+  // The old hub page's own text: the guide sections at the end (the country and combination cards before them are drawn by the tiles above),
+  // and its ten questions.
+  const doc = await getPage(lang, 'destinations');
+  const sections = doc?.sections ?? [];
+  let from = sections.length;
+  while (from > 0 && sections[from - 1].heading && !/packages|vacations?|holidays/i.test(sections[from - 1].heading)) {from--;}
+  const guide = sections.slice(from);
+  const faqs = doc?.faqs.length ? doc.faqs : [0, 1, 5, 7, 12, 13].map((i) => homeFaqs[i]);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Destinations', path: '/destinations' },
@@ -35,7 +42,7 @@ export default async function DestinationsPage() {
   return (
     <>
       <PageBanner
-        title="Our Destinations"
+        title={doc?.title ?? 'Our Destinations'}
         description="Extraordinary cultures, timeless history and unforgettable experiences across the eastern Mediterranean and beyond."
         image="istanbul-skyline"
         crumbs={crumbs}
@@ -90,22 +97,17 @@ export default async function DestinationsPage() {
           </ul>
         </div>
       </section>
-      <section className="section-y">
-        <div className="container-x max-w-3xl">
-          <h2 className="h-section">Regional travel specialists since {site.founded}</h2>
-          <p className="text-ink/90 mt-4 text-lg">
-            {site.name} is a licensed Turkish tour operator (License No. {site.licenseNo}). We organize journeys across
-            Turkey, Greece, Egypt, Jordan and Morocco, and we combine them into multi-country itineraries managed by one
-            team. Our local guides, drivers and hotel partners know each destination well, so your plan fits together.
-          </p>
-        </div>
-      </section>
-      <section className="section-y">
+      {guide.length > 0 && (
+        <section className="section-y">
+          <div className="container-x max-w-3xl">
+            <PageSections sections={guide} />
+          </div>
+        </section>
+      )}
+      <section className="section-y bg-cream-100/60">
         <div className="container-x max-w-3xl">
           <SectionHeading title="Planning your destinations" link={{ href: '/faq', label: 'All FAQs' }} />
-          <Accordion
-            items={faqIndexes.map((i) => ({ id: `q-${i}`, title: homeFaqs[i].q, content: <p>{homeFaqs[i].a}</p> }))}
-          />
+          <Accordion items={faqs.map((f, i) => ({ id: `q-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
         </div>
       </section>
       <QuoteBand />
@@ -116,6 +118,7 @@ export default async function DestinationsPage() {
             'Destinations',
             destinations.map((d) => ({ name: `${d.name} tours`, path: `/destinations/${d.id}-tours` })),
           ),
+          faqJsonLd(faqs),
           breadcrumbJsonLd(lang, crumbs),
         ]}
       />

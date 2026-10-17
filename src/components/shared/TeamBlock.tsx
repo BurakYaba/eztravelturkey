@@ -1,4 +1,5 @@
 import { Clock, EnvelopeSimple } from '@phosphor-icons/react/dist/ssr';
+import { Link } from '@/i18n/link';
 import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import { teamMembers } from '@/lib/data';
@@ -31,7 +32,15 @@ export async function TeamBlock({ className }: { className?: string }) {
                 </div>
               )}
               <div className="min-w-0 self-center">
-                <h3 className="text-2xl">{person.name}</h3>
+                <h3 className="text-2xl">
+                  {person.profileHref ? (
+                    <Link href={person.profileHref} className="underline decoration-gold-500/60 underline-offset-4">
+                      {person.name}
+                    </Link>
+                  ) : (
+                    person.name
+                  )}
+                </h3>
                 {person.role && <p className="text-gold-700 mt-0.5 font-semibold">{person.role}</p>}
                 <ul className="mt-4 space-y-2 text-[0.95rem]">
                   {person.hours && (

@@ -14,7 +14,8 @@ import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { homeFaqs } from '@/data/faqs';
-import { localizedMetadata, webPageJsonLd } from '@/lib/seo';
+import { getPage } from '@/lib/data';
+import { faqJsonLd, localizedMetadata, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
 // Brand first, all five countries, under 60 characters (P3.12: the old title was 86 and left Morocco out).
@@ -26,7 +27,9 @@ export const generateMetadata = localizedMetadata({ title, description, path: '/
 
 export default async function HomePage() {
   const lang = await getLocale();
-  const faqs = homeFaqs.slice(0, 7);
+  // The questions of the old home page (the CMS copy); the first draft's seven only when the CMS has none.
+  const doc = await getPage(lang, '');
+  const faqs = doc?.faqs.length ? doc.faqs : homeFaqs.slice(0, 7);
   return (
     <>
       <Hero />
@@ -49,7 +52,7 @@ export default async function HomePage() {
         </div>
       </section>
       <QuoteBand />
-      <JsonLd data={webPageJsonLd(lang, title, '/', 'WebPage', description)} />
+      <JsonLd data={[webPageJsonLd(lang, title, '/', 'WebPage', description), faqJsonLd(faqs)]} />
     </>
   );
 }

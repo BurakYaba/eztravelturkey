@@ -13,12 +13,14 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { TeamBlock } from '@/components/shared/TeamBlock';
 import { QuoteForm } from '@/components/shared/QuoteForm';
 import { site, whatsappLink } from '@/data/site';
-import { breadcrumbJsonLd, localizedMetadata, webPageJsonLd } from '@/lib/seo';
+import { getPage } from '@/lib/data';
+import { docMetadata } from '@/lib/page-meta';
+import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
 const description = `Contact ${site.name} by WhatsApp, phone or the contact form. Our licensed Turkish tour operator office is in Sultanahmet, Istanbul.`;
 
-export const generateMetadata = localizedMetadata({
+export const generateMetadata = docMetadata({
   title: 'Contact Us',
   description,
   path: '/contact',
@@ -31,6 +33,7 @@ const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURICom
 
 export default async function ContactPage() {
   const lang = await getLocale();
+  const doc = await getPage(lang, 'contact');
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Contact', path: '/contact' },
@@ -51,7 +54,7 @@ export default async function ContactPage() {
   return (
     <>
       <PageBanner
-        title="Contact Us"
+        title={doc?.title ?? 'Contact Us'}
         description="Have a question? Send us a message or reach us directly. We will help you plan."
         image="istanbul-skyline"
         crumbs={crumbs}

@@ -13,9 +13,13 @@ const sitemapUrls = [...robots.matchAll(/^Sitemap:\s*(\S+)/gim)].map((m) => new 
 if (sitemapUrls.length === 0) bad('/robots.txt', 'lists no sitemap');
 
 const urls = [];
+// robots.txt points at the sitemap index, which lists one sitemap per language; the pages are in those.
+const locs = async (path) => [...(await (await get(path)).text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
 for (const sm of sitemapUrls) {
-  const xml = await (await get(sm)).text();
-  urls.push(...[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname));
+  for (const loc of await locs(sm)) {
+    if (/^\/sitemap\/.+\.xml$/.test(loc)) urls.push(...(await locs(loc)));
+    else urls.push(loc);
+  }
 }
 console.log(`${sitemapUrls.length} sitemap(s), ${urls.length} URLs`);
 

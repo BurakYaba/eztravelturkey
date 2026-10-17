@@ -497,13 +497,20 @@ export async function searchEntries(lang: Locale): Promise<SearchEntry[]> {
 // ---- team
 
 /** The people on the About and Contact pages, in the order set in Studio. A language without its own list shows the English one. */
+type RawMember = Omit<TeamMember, 'profileHref' | 'photo'> & { photo: unknown; profile?: string | null };
+
 export async function teamMembers(lang: Locale): Promise<TeamMember[]> {
-  const own = await query<TeamMember[]>(TEAM_QUERY, { lang });
-  const rows = own.length > 0 || lang === defaultLocale ? own : await query<TeamMember[]>(TEAM_QUERY, { lang: defaultLocale });
-  return rows.map((r) => ({ ...r, photo: image(r.photo as unknown as RawImage) }));
+  const own = await query<RawMember[]>(TEAM_QUERY, { lang });
+  const rows = own.length > 0 || lang === defaultLocale ? own : await query<RawMember[]>(TEAM_QUERY, { lang: defaultLocale });
+  return rows.map(({ profile, ...r }) => ({
+    ...r,
+    photo: image(r.photo as unknown as RawImage),
+    // A team member who also has an author page links to it, so the page is reachable from the site.
+    profileHref: profile ? hrefOf(profile) : null,
+  }));
 }
 
-const TEAM_QUERY = `*[_type == "teamMember" && language == $lang] | order(order asc){ name, "role": coalesce(role, ""), "email": coalesce(email, ""), "hours": coalesce(hours, ""), "timezone": coalesce(timezone, ""), "photo": photo{ ${img} } }`;
+const TEAM_QUERY = `*[_type == "teamMember" && language == $lang] | order(order asc){ name, "role": coalesce(role, ""), "email": coalesce(email, ""), "hours": coalesce(hours, ""), "timezone": coalesce(timezone, ""), "photo": photo{ ${img} }, "profile": *[_type == "author" && language == ^.language && lower(title) == lower(^.name)][0].path }`;
 
 // ---- related content
 

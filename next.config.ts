@@ -12,6 +12,24 @@ const nextConfig: NextConfig = {
     // Tour, destination and blog pictures live in Sanity.
     remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/images/**' }],
   },
+  async headers() {
+    // The simple security headers (Ek H.7). A Content-Security-Policy and frame rules need the list of every outside
+    // script the site loads (Turnstile, Tripadvisor, analytics) and come with P9.2.
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=()' },
+        ],
+      },
+    ];
+  },
+  async rewrites() {
+    // The sitemap index. A route folder named sitemap.xml clashes with the sitemap file convention, so it lives apart.
+    return [{ source: '/sitemap.xml', destination: '/sitemap-index' }];
+  },
   async redirects() {
     return [
       // D18: the live /en/videos/ page (five YouTube cards) is not rebuilt; its address goes to the blog.

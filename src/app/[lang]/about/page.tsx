@@ -1,37 +1,20 @@
-import {
-  ArrowUpRight,
-  Binoculars,
-  Bed,
-  HandHeart,
-  Headset,
-  MapTrifold,
-  Path,
-  SealCheck,
-} from '@phosphor-icons/react/dist/ssr';
+import { ArrowUpRight, SealCheck } from '@phosphor-icons/react/dist/ssr';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
-import { Photo } from '@/components/shared/Photo';
 import { QuoteBand } from '@/components/shared/QuoteBand';
-import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TeamBlock } from '@/components/shared/TeamBlock';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { photoCredits } from '@/data/images';
 import { site } from '@/data/site';
-import { breadcrumbJsonLd, localizedMetadata, webPageJsonLd } from '@/lib/seo';
+import { PageSections } from '@/components/pages/PageSections';
+import { getPage } from '@/lib/data';
+import { docMetadata } from '@/lib/page-meta';
+import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
 
 const description = `${site.name} is a licensed Turkish tour operator (License No. ${site.licenseNo}) organizing private, small group and multi-country tours since ${site.founded}.`;
 
-export const generateMetadata = localizedMetadata({ title: 'About Us', description, path: '/about', image: 'istanbul-bosphorus' });
-
-const arrange = [
-  { icon: Bed, text: 'Hotels selected for location, comfort and traveler feedback' },
-  { icon: Binoculars, text: 'Licensed local guides and sightseeing' },
-  { icon: MapTrifold, text: 'Airport and hotel transfers' },
-  { icon: Path, text: 'Domestic and regional flights, and ferries' },
-  { icon: HandHeart, text: 'Private, small group and fully customized tours' },
-  { icon: Headset, text: '24/7 local support while you travel' },
-];
+export const generateMetadata = docMetadata({ title: 'About Us', description, path: '/about', image: 'istanbul-bosphorus' });
 
 const stats = [
   { value: String(site.founded), label: 'Founded in Istanbul' },
@@ -42,6 +25,9 @@ const stats = [
 
 export default async function AboutPage() {
   const lang = await getLocale();
+  // The text of the old About page, as it was. Sections that only hold icons or one-word labels are left out.
+  const doc = await getPage(lang, 'about');
+  const story = (doc?.sections ?? []).filter((s) => s.blocks.some((b) => b.type === 'p' && b.text.length > 60));
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -49,33 +35,20 @@ export default async function AboutPage() {
   return (
     <>
       <PageBanner
-        title="About Magnificent Travel"
+        title={doc?.title ?? 'About Magnificent Travel'}
         description={`An independent Turkish tour operator, creating journeys across the eastern Mediterranean since ${site.founded}.`}
         image="istanbul-bosphorus"
         crumbs={crumbs}
       />
       <TrustBar />
 
-      <section className="section-y">
-        <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="text-ink/90 space-y-4 text-lg">
-            <h2 className="h-section mb-5">Why travel with Magnificent Travel?</h2>
-            <p>
-              We have operated since {site.founded} as a licensed local operator, offering private tours, small group
-              tours and customized journeys across Turkey, Greece, Egypt, Jordan and Morocco.
-            </p>
-            <p>
-              We arrange hotels, licensed guides, airport transfers, sightseeing, regional transport, flights and
-              ferries. When a trip crosses borders, we run it as one itinerary instead of several separate holidays, so
-              you speak to one team from your first message to your last day.
-            </p>
-            <p>Our local staff are available around the clock while you travel.</p>
+      {story.length > 0 && (
+        <section className="section-y">
+          <div className="container-x max-w-3xl">
+            <PageSections sections={story} />
           </div>
-          <div className="shadow-card relative aspect-[4/3] overflow-hidden rounded-lg">
-            <Photo id="istanbul-bazaar" sizes="(min-width: 1024px) 45vw, 100vw" />
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <TeamBlock className="section-y bg-cream-100/60" />
 
@@ -89,23 +62,6 @@ export default async function AboutPage() {
               </div>
             ))}
           </dl>
-        </div>
-      </section>
-
-      <section className="section-y">
-        <div className="container-x">
-          <SectionHeading
-            title="What we arrange"
-            description="Everything that makes a trip run smoothly, handled by one team."
-          />
-          <ul className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
-            {arrange.map(({ icon: Icon, text }) => (
-              <li key={text} className="bg-cream-100 flex items-start gap-4 rounded-lg p-5">
-                <Icon size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
-                <span className="text-ink">{text}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
