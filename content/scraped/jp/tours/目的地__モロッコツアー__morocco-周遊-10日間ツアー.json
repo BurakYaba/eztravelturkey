@@ -133,7 +133,6 @@
   ],
   "importantNotes": [],
   "cancellationPolicy": [
-    "国内線フライト",
     "出発89〜30日前：デポジット分のみ損失",
     "出発29日前以下：返金不可（港湾・サービス料金は除く）"
   ],
@@ -172,5 +171,26 @@
   "related": [],
   "faqs": [],
   "jsonLd": [],
-  "priceSections": []
+  "priceSections": [
+    {
+      "level": 3,
+      "heading": "キャンセルポリシー（Trip Cancellation Policy）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "国内線フライト"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "到着13日以内、または無断不参加：キャンセル料100％",
+      "blocks": []
+    },
+    {
+      "level": 3,
+      "heading": "個人予約の売切スペースキャンセル（クルーズ料金のみ適用）",
+      "blocks": []
+    }
+  ]
 }

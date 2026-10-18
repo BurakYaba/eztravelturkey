@@ -29,8 +29,16 @@ const STICKY_OFFSET = 138;
  * Holds which tour tab is selected. From lg up only that tab's panel is shown; below lg the same panels are
  * accordions and this state is not used. The selection follows the URL hash so a tab can be linked to.
  */
-export function TourTabsProvider({ tabs, children }: { tabs: TabItem[]; children: ReactNode }) {
-  const [active, setActive] = useState(tabs[0]?.id ?? '');
+export function TourTabsProvider({
+  tabs,
+  initial,
+  children,
+}: {
+  tabs: TabItem[];
+  initial?: string;
+  children: ReactNode;
+}) {
+  const [active, setActive] = useState(initial && tabs.some((t) => t.id === initial) ? initial : (tabs[0]?.id ?? ''));
 
   useEffect(() => {
     const fromHash = () => {

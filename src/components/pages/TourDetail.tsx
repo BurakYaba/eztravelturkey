@@ -125,7 +125,10 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
         }
       />
 
-      <TourTabsProvider tabs={tabs}>
+      {/* The old Chinese and Japanese tour pages opened on the itinerary and have no overview text beyond one sentence: they open there too. */}
+      <TourTabsProvider
+        tabs={tabs}
+        initial={!english && tour.summary.length < 200 && tour.itinerary.length > 0 ? 'itinerary' : undefined}>
         <TourTabs tabs={tabs} label={t.sectionsLabel} />
 
         <div className="container-wide grid gap-10 pb-16 lg:grid-cols-[minmax(0,1fr)_22rem] xl:grid-cols-[minmax(0,1fr)_24rem]">

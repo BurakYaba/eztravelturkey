@@ -202,13 +202,7 @@
   "importantNotes": [
     "このツアーは4月から10月の間催行いたします。\nスケジュール"
   ],
-  "cancellationPolicy": [
-    "国内線航空券・フェリーチケット： 発券後は払い戻し不可（キャンセル料100％）",
-    "到着日の31日前まで：無料",
-    "到着日の30～21日前：25％",
-    "到着日の20～14日前：50％",
-    "到着日の13日前以降またはノーショー：100％"
-  ],
+  "cancellationPolicy": [],
   "gallery": [
     {
       "src": "https://www.torukoryoko.com/_uploads/2025122917304734.jpg",
@@ -244,5 +238,23 @@
   "related": [],
   "faqs": [],
   "jsonLd": [],
-  "priceSections": []
+  "priceSections": [
+    {
+      "level": 3,
+      "heading": "キャンセル規定（Trip Cancellation Policy）",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "国内線航空券・フェリーチケット： 発券後は払い戻し不可（キャンセル料100％）",
+            "到着日の31日前まで：無料",
+            "到着日の30～21日前：25％",
+            "到着日の20～14日前：50％",
+            "到着日の13日前以降またはノーショー：100％"
+          ]
+        }
+      ]
+    }
+  ]
 }

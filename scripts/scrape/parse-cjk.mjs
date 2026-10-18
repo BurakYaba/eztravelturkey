@@ -241,7 +241,14 @@ function parseTour(html, url, listing) {
           }
         } else rest.push(block);
       }
-      const probe = heading || '';
+      // Only a short heading names a list ("行程内容包含"); a long one such as "2023-2024行程定價(以下為包含…的每人價格)" is a price table
+      // that merely says "includes" in brackets.
+      const probe = (heading || '').length <= 24 ? heading || '' : '';
+      // Tables next to a list (prices under "included") keep their place in the price tab.
+      const tables = rest.filter((block) => block.type === 'table');
+      if (tables.length > 0 && probe !== '' && (includeRe.test(probe) || excludeRe.test(probe) || cancelRe.test(probe))) {
+        priceSections.push({ level: 0, heading: '', blocks: tables });
+      }
       if (excludeRe.test(probe)) {
         excludedSections.push(listFrom({ blocks: rest }));
         excluded.push(...excludedSections[excludedSections.length - 1]);
