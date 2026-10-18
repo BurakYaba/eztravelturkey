@@ -427,6 +427,8 @@ Not: P1 (scrape) kod gerektirmediği için P2 ile paralel yürür. P8 ve P9, P6'
 - [ ] P8.10 **Yerel SEO ve varlık tutarlılığı:** Google Business Profile (Sultanahmet ofisi), Tripadvisor, TÜRSAB kaydı; ad, adres, telefon üç dilde ve tüm kaynaklarda aynı. `TravelAgency` `sameAs` listesi güncel.
 - [ ] P8.11 **GA4'te AI yönlendirme kanalı:** `chatgpt.com`, `perplexity.ai`, `gemini.google.com`, `copilot.microsoft.com` vb. kaynaklar için özel kanal grubu (AEO/GEO çalışmasının ölçümü).
 - [ ] P8.12 Tek tutarlı `@id` JSON-LD grafiği: `Organization` aynı sayfada tekrarlanmaz (canlı sitede tekrarlanıyor, bkz. Ek I). İsteğe bağlı görsel sitemap.
+- [ ] P8.14 **zh/jp başlık ve açıklamalar (P5'ten devir):** eski sitelerin başlıkları ve açıklamaları olduğu gibi taşındı (sıralama verisi yok, ilke 12). Japonca başlıklar çok uzun (79 sayfa, ≈ 60-90 karakter, SERP'te kesilir), 7 Çince sayfa aynı genel açıklamayı kullanıyor, 9 Çince tur açıklaması çok kısa. **Anadil SEO editörü** yazar; Studio'da `metaTitle`/`metaDescription` alanları. Ek H3.1a ve H3.1b'nin zh/jp satırları bununla kapanır (`docs/baseline/ek-h-all-languages-2026-10-17.md`).
+- [ ] P8.15 **Çince gizlilik politikası (müşteri girdisi, yayından önce zorunlu):** eski `/zh/privacy-policy/` sayfasının tamamı "Privacy Policy" iki kelimesi. Müşteri gerçek metni verir (veya İngilizce politikanın çevirisi onaylanır); Studio'da `privacy-policy` belgesi. Ek H2.1'in zh satırı bununla kapanır.
 - [ ] P8.13 **Kapı:** Ek H kabul listesinin tamamı T2/T4 testleriyle geçer.
 
 **Bitti sayılır:** Rich Results Test ve schema doğrulayıcı örnek sayfalarda hatasız; hreflang karşılıklı; GA4/GTM olayları canlı önizlemede doğrulandı.
