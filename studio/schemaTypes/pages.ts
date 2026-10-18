@@ -1,10 +1,12 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType, type ValidationContext } from 'sanity';
+import { BlogPathInput } from '../components/BlogPathInput';
 import {
   languageField,
   mainImageField,
   metaDescriptionField,
   metaTitleField,
   pageFields,
+  pathField,
   titleField,
 } from './fields';
 
@@ -41,6 +43,7 @@ function pageType(
   kind: string,
   kindOptions?: { value: string; title: string }[],
   extraFields: ReturnType<typeof defineField>[] = [],
+  replaceFields: Record<string, ReturnType<typeof defineField>> = {},
 ) {
   return defineType({
     name,
@@ -49,7 +52,7 @@ function pageType(
     fields: [
       pageFields[0]!,
       kindField(kindOptions ?? [{ value: kind, title }], kind, Boolean(kindOptions)),
-      ...pageFields.slice(1),
+      ...pageFields.slice(1).map((field) => replaceFields[field.name] ?? field),
       ...extraFields,
     ],
     orderings: [{ title: 'Page address', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
@@ -58,6 +61,17 @@ function pageType(
 }
 
 export const destinationPage = pageType('destinationPage', 'Destination page', 'country', kinds.destinationPage);
+/** Posts created before this day were moved from the old site and may stay without an author. */
+const legacyCutoff = '2026-10-19';
+
+/** The old addresses of a post, as the editor may paste them: `/en/blog/x/y/`, without the last slash or with the whole domain. */
+export const normalizeOldUrl = (value: string) =>
+  `/${value
+    .trim()
+    .replace(/^https?:\/\/[^/]+/i, '')
+    .replace(/[?#].*$/, '')
+    .replace(/^\/+|\/+$/g, '')}/`.toLowerCase();
+
 /** Fields only blog posts have: who wrote it, the answer in a nutshell and when the facts were last checked. */
 const blogFields = [
   defineField({
@@ -65,7 +79,13 @@ const blogFields = [
     title: 'Author',
     type: 'reference',
     to: [{ type: 'author' }],
-    description: 'Shown as the byline and in the author card. Posts without an author are credited to Magnificent Travel.',
+    description: 'Shown as the byline and in the author card. Required for new posts (readers and search engines trust a named author).',
+    validation: (rule) =>
+      rule.custom((value, context: ValidationContext) => {
+        // The 34 posts moved from the old site have no author and are credited to Magnificent Travel; only new posts need one.
+        const created = (context.document as { _createdAt?: string } | undefined)?._createdAt ?? '';
+        return value || (created && created < legacyCutoff) ? true : 'Choose the author of this post.';
+      }),
   }),
   defineField({
     name: 'shortAnswer',
@@ -81,9 +101,48 @@ const blogFields = [
     type: 'date',
     description: 'The day the facts in the post were last checked. Shown on the page and in search results.',
   }),
+  defineField({
+    name: 'oldUrls',
+    title: 'Old addresses of this post (redirects)',
+    type: 'array',
+    of: [{ type: 'string' }],
+    description:
+      'Only when this post replaces a post of the old site: paste the old address, for example /en/blog/turkey/old-name/. Visitors and Google who use it are sent to this post (a permanent redirect). The redirect starts after the next site update, about 5 minutes after you publish.',
+    validation: (rule) =>
+      rule.custom(async (values: string[] | undefined, context: ValidationContext) => {
+        if (!values?.length) {return true;}
+        const doc = context.document as { _id?: string; language?: string; path?: string } | undefined;
+        const id = (doc?._id ?? '').replace(/^drafts\./, '');
+        const own = `/${doc?.language ?? 'en'}/${doc?.path ?? ''}/`;
+        const client = context.getClient({ apiVersion: '2025-01-01' });
+        const seen = new Set<string>();
+        for (const value of values) {
+          const url = normalizeOldUrl(value);
+          const match = /^\/(en|zh|jp)\/(.+)\/$/.exec(url);
+          if (!match) {return `${value}: write the address of the old page, starting with /en/, /zh/ or /jp/.`;}
+          if (url === own.toLowerCase()) {return `${value}: that is the address of this post itself.`;}
+          if (seen.has(url)) {return `${value}: listed twice.`;}
+          seen.add(url);
+          const [, language, path] = match;
+          const clash = await client.fetch<{ title: string } | null>(
+            '*[defined(path) && language == $language && path == $path && !(_id in [$id, "drafts." + $id])][0]{ title }',
+            { language, path, id },
+          );
+          if (clash) {return `${value}: a page already exists at this address ("${clash.title}"), so it cannot be redirected.`;}
+          const taken = await client.fetch<{ title: string } | null>(
+            '*[_type == "blogPost" && !(_id in [$id, "drafts." + $id]) && $url in oldUrls[]][0]{ title }',
+            { url, id },
+          );
+          if (taken) {return `${value}: already used by the post "${taken.title}".`;}
+        }
+        return true;
+      }),
+  }),
 ];
 
-export const blogPost = pageType('blogPost', 'Blog post', 'blog-post', undefined, blogFields);
+export const blogPost = pageType('blogPost', 'Blog post', 'blog-post', undefined, blogFields, {
+  path: { ...pathField, components: { input: BlogPathInput } },
+});
 export const blogCategory = pageType('blogCategory', 'Blog category', 'blog-category');
 export const author = pageType('author', 'Author', 'author');
 export const staticPage = pageType('staticPage', 'Text page (about, legal)', 'static');

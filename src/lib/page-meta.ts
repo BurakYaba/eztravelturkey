@@ -3,7 +3,7 @@ import { defaultLocale, hasLocale } from '@/i18n/config';
 import { getDictionary, type Dictionary } from '@/i18n/dictionaries';
 import { alternatesOf, getPage } from '@/lib/data';
 import type { ImageId } from '@/data/images';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, editorSeo } from '@/lib/seo';
 
 /**
  * `generateMetadata` for a page that is laid out in code but whose title and description live in the CMS (about, contact, FAQ,
@@ -37,5 +37,6 @@ export const docMetadata =
       alternates: await alternatesOf(locale, input.path.replace(/^\//, '')),
       image: input.image,
       absoluteTitle: Boolean(page?.metaTitle),
+      ...(page ? editorSeo(page) : {}),
     });
   };

@@ -177,6 +177,8 @@ export const toursForStyle = (lang: Locale, style: TourStyle) => listTours(lang,
 type RawTour = RawTourCard & {
   metaTitle?: string;
   metaDescription?: string;
+  noindex?: boolean | null;
+  canonical?: string | null;
   category?: string | null;
   facts?: Partial<TourRecord['facts']>;
   extraFacts?: { label: string; value: string }[];
@@ -196,7 +198,7 @@ type RawTour = RawTourCard & {
   faqs?: Faq[];
 };
 
-const tourFields = `${tourCardFields}, category, metaTitle, metaDescription, facts, extraFacts[]{ label, value }, "priceNote": price.note, departures, hotels[]{ city, nights, name, category }, "routeMap": { "intro": routeMap.intro, "image": routeMap.image{ ${img} } }, highlights, itinerary[]{ dayLabel, title, text, meals }, included, excluded, importantNotes, "priceSections": priceSections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cancellationPolicy, "gallery": gallery[]{ ${img} }, "related": related[]->{ title, path }, faqs[]{ q, a }`;
+const tourFields = `${tourCardFields}, category, metaTitle, metaDescription, noindex, "canonical": canonicalUrl, facts, extraFacts[]{ label, value }, "priceNote": price.note, departures, hotels[]{ city, nights, name, category }, "routeMap": { "intro": routeMap.intro, "image": routeMap.image{ ${img} } }, highlights, itinerary[]{ dayLabel, title, text, meals }, included, excluded, importantNotes, "priceSections": priceSections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cancellationPolicy, "gallery": gallery[]{ ${img} }, "related": related[]->{ title, path }, faqs[]{ q, a }`;
 
 const emptyFacts: TourRecord['facts'] = {
   duration: '',
@@ -231,6 +233,8 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
     title: raw.title,
     metaTitle: raw.metaTitle ?? raw.title,
     metaDescription: raw.metaDescription ?? '',
+    noindex: raw.noindex === true,
+    canonical: raw.canonical || null,
     summary: card.summary,
     countries: card.countries,
     styles: card.styles,
@@ -284,6 +288,8 @@ type RawPageSummary = {
   title: string;
   metaTitle?: string;
   metaDescription?: string;
+  noindex?: boolean | null;
+  canonical?: string | null;
   image?: RawImage;
 };
 
@@ -298,7 +304,7 @@ type RawPage = RawPageSummary & {
   faqs?: Faq[];
 };
 
-const summaryFields = `kind, path, title, metaTitle, metaDescription, "image": mainImage{ ${img} }`;
+const summaryFields = `kind, path, title, metaTitle, metaDescription, noindex, "canonical": canonicalUrl, "image": mainImage{ ${img} }`;
 const pageFields = `${summaryFields}, lastUpdated, shortAnswer, "author": author->{ title, path, "image": mainImage{ ${img} } }, sections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cards[]{ title, href, meta, price, "image": image{ ${img} } }, faqs[]{ q, a }`;
 
 const toSection = (s: RawSection): PageSection => ({
@@ -333,6 +339,8 @@ function toSummary(raw: RawPageSummary, lang: Locale, fallback: boolean): PageSu
     title: raw.title,
     metaTitle: raw.metaTitle ?? raw.title,
     metaDescription: raw.metaDescription ?? '',
+    noindex: raw.noindex === true,
+    canonical: raw.canonical || null,
     image: image(raw.image),
   };
 }
@@ -614,7 +622,7 @@ export async function sitemapPaths(lang: Locale): Promise<string[]> {
   if (!(await hasNativeContent(lang))) {
     return [];
   }
-  const stored = await query<string[]>('*[_type in $types && language == $lang && defined(path)].path', {
+  const stored = await query<string[]>('*[_type in $types && language == $lang && defined(path) && noindex != true].path', {
     types: allTypes,
     lang,
   });

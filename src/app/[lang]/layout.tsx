@@ -4,6 +4,7 @@ import { Hanken_Grotesk, Playfair_Display } from 'next/font/google';
 import { CjkFonts } from '../fonts/CjkFonts';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { PreviewBar } from '@/components/layout/PreviewBar';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { site } from '@/data/site';
@@ -64,6 +65,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
             className="focus:bg-navy-900 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:px-4 focus:py-2 focus:text-white">
             {dictionary.common.skipToContent}
           </a>
+          <PreviewBar />
           {!(await hasNativeContent(lang)) && (
             <p role="note" className="bg-gold-100 text-navy-900 px-4 py-2 text-center text-sm font-medium">
               {dictionary.preview.notice}

@@ -6,7 +6,7 @@ import { hasLocale, locales } from '@/i18n/config';
 import { decodeSegments } from '@/i18n/public-paths';
 import { getDictionary } from '@/i18n/dictionaries';
 import { alternatesOf, getPage, pageSummaries } from '@/lib/data';
-import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo';
+import { breadcrumbJsonLd, buildMetadata, editorSeo } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/[...rest]'>;
 
@@ -45,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     alternates: await alternatesOf(lang, page.path),
+    ...editorSeo(page),
   });
 }
 

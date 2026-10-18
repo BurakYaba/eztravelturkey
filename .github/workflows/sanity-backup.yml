@@ -1,0 +1,76 @@
+# Daily copy of the Sanity content (docs/project-plan.md P6.7). Sanity does not back up Free projects, and its history is
+# only 3 days, so this is the only way back from a deleted or damaged document. Restore steps: docs/backup-restore.md.
+#
+# Needs the repository secret SANITY_BACKUP_TOKEN: a token with the Viewer role (sanity.io/manage > API > Tokens).
+name: Sanity backup
+
+on:
+  schedule:
+    # Every day at 03:15 UTC. On Sundays the pictures are saved as well.
+    - cron: '15 3 * * *'
+  workflow_dispatch:
+    inputs:
+      pictures:
+        description: 'Also save the pictures and files (large, slow)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  documents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Export all documents
+        env:
+          SANITY_BACKUP_TOKEN: ${{ secrets.SANITY_BACKUP_TOKEN }}
+        run: node scripts/sanity/backup.mjs "production-$(date -u +%F).ndjson.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sanity-documents-${{ github.run_id }}
+          path: production-*.ndjson.gz
+          # Documents are small (about 2 MB a day), so a month of them costs little.
+          retention-days: 30
+          if-no-files-found: error
+
+  pictures:
+    # Sundays, or when started by hand with the box ticked.
+    if: github.event_name == 'schedule' || inputs.pictures
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Decide
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%u)" = 7 ]; then echo "run=yes" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'yes'
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'yes'
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - name: Export documents and pictures
+        if: steps.gate.outputs.run == 'yes'
+        working-directory: studio
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_BACKUP_TOKEN }}
+        run: |
+          npm ci
+          npx sanity dataset export production "../production-full-$(date -u +%F).tar.gz" --overwrite
+      - uses: actions/upload-artifact@v4
+        if: steps.gate.outputs.run == 'yes'
+        with:
+          name: sanity-full-${{ github.run_id }}
+          path: production-full-*.tar.gz
+          # The file is about 280 MB (measured 2026-10-18). Eight days keep one copy at a time, which fits the 500 MB of artifact
+          # storage a private repository has on the free GitHub plan.
+          retention-days: 8
+          if-no-files-found: error

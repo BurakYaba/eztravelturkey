@@ -1,4 +1,5 @@
 import { defineField, defineType, type ValidationContext } from 'sanity';
+import { lengthHint } from '../components/LengthHint';
 
 /** Languages of the site. Every language has its own documents (docs/project-plan.md D9). */
 export const languages = [
@@ -65,6 +66,7 @@ export const metaTitleField = defineField({
   title: 'Search result title',
   type: 'string',
   description: 'Shown in Google. The site name is added after it. About 50 to 60 characters.',
+  components: { input: lengthHint(30, 60) },
   validation: (rule) => rule.required().max(70).warning('Over about 60 characters, Google may cut the title.'),
 });
 
@@ -74,6 +76,7 @@ export const metaDescriptionField = defineField({
   type: 'text',
   rows: 3,
   description: 'Shown in Google under the title. About 120 to 160 characters.',
+  components: { input: lengthHint(120, 160) },
   validation: (rule) => rule.required().max(200).warning('Over about 160 characters, Google may cut the description.'),
 });
 
@@ -88,8 +91,8 @@ export const picture = defineType({
       name: 'alt',
       title: 'Alternative text',
       type: 'string',
-      description: 'Describe what the picture shows.',
-      validation: (rule) => rule.required().warning('Add a short description of the picture.'),
+      description: 'Describe what the picture shows, in a few words. People who cannot see the picture and search engines read it.',
+      validation: (rule) => rule.required().error('Describe the picture in a few words before publishing.'),
     }),
   ],
 });
@@ -223,6 +226,30 @@ export const sectionsField = defineField({
   of: [{ type: 'section' }],
 });
 
+/** Keeps a page out of search results (Google) and out of the sitemap. The page still opens for people who have the link. */
+export const noindexField = defineField({
+  name: 'noindex',
+  title: 'Hide from search engines',
+  type: 'boolean',
+  description: 'Switch on only for a page that should not appear in Google, for example a draft campaign page. Off by default.',
+  initialValue: false,
+});
+
+/** Overrides the address search engines treat as the main one for the page. Normally left empty. */
+export const canonicalUrlField = defineField({
+  name: 'canonicalUrl',
+  title: 'Main address for search engines (optional)',
+  type: 'string',
+  description:
+    'Leave empty. Fill in only when the same text exists on another page of the site and that page should be the one Google shows. Write the address as /en/blog/turkey/other-post/ or as a full https://www.magnificenttravel.com/... address.',
+  validation: (rule) =>
+    rule.custom((value: string | undefined) => {
+      if (!value) {return true;}
+      if (/^https:\/\/(www\.)?magnificenttravel\.com\/(en|zh|jp)\//.test(value) || /^\/(en|zh|jp)\//.test(value)) {return true;}
+      return 'Start with /en/, /zh/ or /jp/, or with https://www.magnificenttravel.com/';
+    }),
+});
+
 /** Fields every text page has, in the order the editor sees them. */
 export const pageFields = [
   languageField,
@@ -234,4 +261,6 @@ export const pageFields = [
   mainImageField,
   sectionsField,
   faqsField,
+  noindexField,
+  canonicalUrlField,
 ];
