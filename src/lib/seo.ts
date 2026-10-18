@@ -28,7 +28,15 @@ type MetaInput = {
   absoluteTitle?: boolean;
   /** Keep the page out of search results (site search, previews). */
   noindex?: boolean;
+  /** The main address the editor named in the CMS (`/en/...` or a full address of this site); wins over the page's own address. */
+  canonicalOverride?: string | null;
 };
+
+/** The search-engine settings an editor can change on a page or tour in the CMS, ready to spread into `buildMetadata`. */
+export const editorSeo = (record: { noindex: boolean; canonical: string | null }) => ({
+  noindex: record.noindex,
+  canonicalOverride: record.canonical,
+});
 
 export function buildMetadata({
   title,
@@ -42,6 +50,7 @@ export function buildMetadata({
   type = 'website',
   absoluteTitle = false,
   noindex = false,
+  canonicalOverride,
 }: MetaInput): Metadata {
   const picture = scraped ?? img(image);
   const full = localePath(canonicalLang ?? lang, path);
@@ -51,7 +60,7 @@ export function buildMetadata({
     title: isHome || absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
-      canonical: full,
+      canonical: canonicalOverride ? (canonicalOverride.endsWith('/') ? canonicalOverride : `${canonicalOverride}/`) : full,
       ...(Object.keys(alternates).length >= 2 ? { languages: hreflangOf(alternates) } : {}),
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),

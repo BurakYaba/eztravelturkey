@@ -1,9 +1,11 @@
 import { defineField, defineType } from 'sanity';
 import {
+  canonicalUrlField,
   faqsField,
   languageField,
   metaDescriptionField,
   metaTitleField,
+  noindexField,
   pathField,
   titleField,
   translationGroupField,
@@ -226,6 +228,8 @@ export const tour = defineType({
     defineField({ name: 'gallery', title: 'Gallery', type: 'array', of: [{ type: 'picture' }], group: 'media' }),
     { ...metaTitleField, group: 'seo' },
     { ...metaDescriptionField, group: 'seo' },
+    { ...noindexField, group: 'seo' },
+    { ...canonicalUrlField, group: 'seo' },
   ],
   orderings: [{ title: 'Page address', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
   preview: {

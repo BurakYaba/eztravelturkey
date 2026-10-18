@@ -40,6 +40,10 @@ export type TourRecord = Common & {
   title: string;
   metaTitle: string;
   metaDescription: string;
+  /** The editor hid the tour from search engines (also left out of the sitemap). */
+  noindex: boolean;
+  /** An address the editor named as the main one for search engines; empty means the page's own address. */
+  canonical: string | null;
   summary: string;
   countries: CountryId[];
   styles: TourStyle[];
@@ -116,6 +120,8 @@ export type PageSummary = Common & {
   title: string;
   metaTitle: string;
   metaDescription: string;
+  noindex: boolean;
+  canonical: string | null;
   /** Main picture (blog posts and listings use it as the card image). */
   image: ImageRef | null;
 };

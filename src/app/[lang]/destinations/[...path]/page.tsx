@@ -11,6 +11,7 @@ import {
   breadcrumbJsonLd,
   buildMetadata,
   collectionPageJsonLd,
+  editorSeo,
   faqJsonLd,
   itemListJsonLd,
   touristTripJsonLd,
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: await alternatesOf(lang, record.path),
     picture: match.type === 'tour' ? match.tour.image : match.page.image,
     type: 'website',
+    ...editorSeo(record),
   });
 }
 

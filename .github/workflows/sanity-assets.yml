@@ -1,0 +1,45 @@
+# Weekly report of Sanity pictures that no document uses any more (docs/project-plan.md P6.16). It only reports; deleting
+# is a manual run (Actions > Sanity unused assets > Run workflow > tick "delete"), after a fresh backup of the documents.
+#
+# Needs the repository secrets SANITY_BACKUP_TOKEN (Viewer, for the backup) and SANITY_CLEANUP_TOKEN (Editor, to read and delete assets).
+name: Sanity unused assets
+
+on:
+  schedule:
+    - cron: '30 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      delete:
+        description: 'Delete the unused assets listed in the report (a backup of the documents is made first)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Backup before deleting
+        if: inputs.delete
+        env:
+          SANITY_BACKUP_TOKEN: ${{ secrets.SANITY_BACKUP_TOKEN }}
+        run: node scripts/sanity/backup.mjs "production-before-cleanup-$(date -u +%F).ndjson.gz"
+      - uses: actions/upload-artifact@v4
+        if: inputs.delete
+        with:
+          name: sanity-before-cleanup-${{ github.run_id }}
+          path: production-before-cleanup-*.ndjson.gz
+          retention-days: 90
+      - name: Report (and delete when asked)
+        env:
+          SANITY_CLEANUP_TOKEN: ${{ secrets.SANITY_CLEANUP_TOKEN }}
+        run: node scripts/sanity/orphan-assets.mjs ${{ inputs.delete && '--delete' || '' }}

@@ -1,9 +1,12 @@
 import type { NextConfig } from 'next';
+import { editorRedirects } from './src/lib/old-urls';
 
 // The site keeps the old sites' URL structure (docs/project-plan.md D1): language prefix `/en/`, `/zh/`, `/jp/` and a
 // trailing slash. Redirects from the old addresses are added in P7.
-const nextConfig: NextConfig = {
+const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextConfig => ({
   trailingSlash: true,
+  // The fingerprint of the editors' redirects this build was made with; `/api/revalidate/` compares it with the CMS (P6.14).
+  env: { EDITOR_REDIRECTS_HASH: editor.hash },
   images: {
     // `next dev` resizes big pictures slowly and sometimes drops the connection (the page then keeps loading), so
     // pictures are served as they are while developing. The real optimizer runs in production.
@@ -40,8 +43,25 @@ const nextConfig: NextConfig = {
     return [
       // D18: the live /en/videos/ page (five YouTube cards) is not rebuilt; its address goes to the blog.
       { source: '/en/videos', destination: '/en/blog/', permanent: true },
+      // P6.14: old addresses that editors typed into a blog post in the Studio.
+      ...editor.rules,
     ];
   },
-};
+});
 
-export default nextConfig;
+/**
+ * The editors' redirects are read from Sanity at build time. A build that cannot read them stops instead of going live
+ * without them (the site that is already live keeps serving). `next dev` goes on without them.
+ */
+export default async function config(): Promise<NextConfig> {
+  try {
+    return nextConfig(await editorRedirects());
+  } catch (error) {
+    if (process.env.NODE_ENV === 'production') {
+      throw error;
+    }
+    // eslint-disable-next-line no-console
+    console.warn('Editor redirects were not loaded:', (error as Error).message);
+    return nextConfig({ rules: [], hash: 'none' });
+  }
+}
