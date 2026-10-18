@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { Link } from '@/i18n/link';
-import { destinations } from '@/data/destinations';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { formatPrice } from '@/i18n/format';
 import { getLocale } from '@/i18n/server';
-import { blogsAbout, countriesIn, toursOfCategory } from '@/lib/data';
+import { availableCountries, blogsAbout, countriesIn, toursOfCategory } from '@/lib/data';
 import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
+import { browserText } from '../tours/browser-text';
 import type { Crumb } from '../shared/Breadcrumbs';
 import { MultiCountryCta } from '../shared/MultiCountryCta';
 import { PageBanner } from '../shared/PageBanner';
@@ -14,6 +14,7 @@ import { Picture } from '../shared/Picture';
 import { QuoteBand } from '../shared/QuoteBand';
 import { SectionHeading } from '../shared/SectionHeading';
 import { TourCard } from '../tours/TourCard';
+import { TourGrid } from '../tours/TourGrid';
 import { ToursBrowser } from '../tours/ToursBrowser';
 import { BlogCard } from './BlogCard';
 import { PageSections } from './PageSections';
@@ -34,7 +35,8 @@ type Props = {
  */
 export async function DestinationPage({ page, tours, categories = [], crumbs, crossSell = false }: Props) {
   const lang = await getLocale();
-  const { card, destination: t } = getDictionary(lang);
+  const dictionary = getDictionary(lang);
+  const { card, destination: t, countries, ui } = dictionary;
   // A country that has length or style pages sends its tours to those pages (as the live site does): listing all of
   // them here as well would repeat every category page and compete with it in search. A country without such pages
   // (Egypt, Jordan, Morocco) and every combination or category page list their tours.
@@ -44,7 +46,7 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
   const folder = page.path.split('/')[1] ?? '';
   const ids = countriesIn(folder);
   const countryId = page.kind === 'country' ? ids[0] : undefined;
-  const country = countryId ? destinations.find((d) => d.id === countryId) : undefined;
+  const country = countryId ? countries[countryId as keyof typeof countries] : undefined;
   const cheapest = tours.reduce<number | null>(
     (low, tour) => (tour.priceEUR !== null && (low === null || tour.priceEUR < low) ? tour.priceEUR : low),
     null,
@@ -53,7 +55,12 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
   const facts = [
     { label: t.tourCount, value: String(tours.length) },
     ...(cheapest === null ? [] : [{ label: t.fromPrice, value: formatPrice(lang, cheapest, 'EUR') }]),
-    ...(country ? [{ label: t.bestTime, value: country.bestTime }, { label: t.currency, value: country.currency }] : []),
+    ...(country
+      ? [
+          { label: t.bestTime, value: country.bestTime },
+          { label: t.currency, value: country.currency },
+        ]
+      : []),
   ];
   const guides = await blogsAbout(lang, folder, 3);
   const guideCountry = ids.length === 1 ? getDictionary(lang).countries[ids[0] as 'turkey']?.name : undefined;
@@ -91,7 +98,9 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
                     </span>
                     <span className="self-center">
                       <span className="text-navy-900 block font-semibold">{c.title}</span>
-                      <span className="text-muted block text-sm">{format(t.toursCount, { count: countIn(c.href) })}</span>
+                      <span className="text-muted block text-sm">
+                        {format(t.toursCount, { count: countIn(c.href) })}
+                      </span>
                     </span>
                   </Link>
                 </li>
@@ -107,8 +116,14 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
             <SectionHeading title={format(t.toursHeading, { count: tours.length })} />
             {page.kind === 'country' ? (
               // A country with no category pages lists its tours here, with the style and length filters.
-              <Suspense fallback={<div className="h-96" aria-hidden />}>
-                <ToursBrowser tours={tours} singleCountry lang={lang} cardText={card} />
+              <Suspense fallback={<TourGrid tours={tours} lang={lang} text={card} />}>
+                <ToursBrowser
+                  tours={tours}
+                  singleCountry
+                  lang={lang}
+                  cardText={card}
+                  text={browserText(dictionary, await availableCountries(lang))}
+                />
               </Suspense>
             ) : (
               <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -152,7 +167,7 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
       {page.faqs.length > 0 && (
         <section className="section-y">
           <div className="container-x max-w-3xl">
-            <SectionHeading title="Frequently asked questions" />
+            <SectionHeading title={ui.home.faq.title} />
             <Accordion items={page.faqs.map((f, i) => ({ id: `q-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
           </div>
         </section>

@@ -1,0 +1,137 @@
+{
+  "locale": "jp",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/モロッコツアー/南モロッコ7泊8日/",
+  "path": "目的地/モロッコツアー/南モロッコ7泊8日",
+  "slug": "南モロッコ7泊8日",
+  "parent": "モロッコツアー",
+  "category": null,
+  "title": "南モロッコ7泊8日",
+  "metaTitle": "南モロッコ7泊8日ツアー｜マラケシュ・ザゴラ・タンギール | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "マラケシュ、ワルザザート、ザゴラ、エルフード、タンギールを巡る南モロッコ7泊8日ツアー。砂漠体験や歴史名所を効率よく楽しめるプランです。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/モロッコツアー/南モロッコ7泊8日/",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "モロッコツアー",
+    "南モロッコ7泊8日"
+  ],
+  "summary": "マラケシュ、ワルザザート、ザゴラ、エルフード、タンギールを巡る南モロッコ7泊8日ツアー。砂漠体験や歴史名所を効率よく楽しめるプランです。",
+  "facts": {
+    "duration": "7泊8日",
+    "guideLanguages": "",
+    "groupType": "",
+    "flights": "",
+    "startingPrice": "",
+    "cancellation": "",
+    "difficulty": "",
+    "season": ""
+  },
+  "extraFacts": {},
+  "nights": 7,
+  "days": 8,
+  "price": {
+    "amount": null,
+    "currency": "",
+    "unit": "",
+    "note": "お問い合わせフォーム",
+    "raw": ""
+  },
+  "route": [
+    "南モロッコ"
+  ],
+  "routeMap": {
+    "image": null,
+    "intro": ""
+  },
+  "highlights": [],
+  "itinerary": [
+    {
+      "dayLabel": "1日目水曜日",
+      "title": "",
+      "text": "マラケシュ到着後ホテルへ送迎\n\nマラケシュ泊\n\n宿泊地: マラケシュ",
+      "meals": "朝食； × 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "2日目木曜日",
+      "title": "",
+      "text": "ホテルにて朝食\n\nメナラ庭園、サアド朝の墓、バヒア宮殿、クトゥービア、ダルシサイド博物館\n\n昼食（ホテルにて）\n\nジェマ エル フナ広場\n\n夕方オプションツアー；伝統的なカイダルテントでのライブパフォーマンスとモロッコ料理\n\nマラケシュ泊\n\n宿泊地: マラケシュ",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "3日目金曜日",
+      "title": "",
+      "text": "マラケシュ・ワルザザート ・ザゴラ (380km)\n\nホテルにて朝食\n\nザゴラに向け出発\n\nティシカ峠（アトラス山脈で一番高い峠 2260m）アイトベンハッドゥ（世界遺産）\n\nランチ（オプション）\n\nザゴラ泊\n\n宿泊地: ザゴラ",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "4日目土曜日",
+      "title": "",
+      "text": "エルフード (360km)\n\nホテルにて朝食\n\nタムグルートへ出発 陶器工房へ\n\nエルフード\n\nタザリンにてランチ（オプション）\n\n午後 アルニフ リッサニ観光\n\nオプション: 4x4 にてディナー ベドウィンのテントでキャンプ\n\n宿泊地: エルフード",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "5日目日曜日",
+      "title": "",
+      "text": "タンギール/ワルザザート(375km)\n\n（オプション 前日4×4サファリツアーをオプションで選択なさらなかった方にはメルズーガの日の出ツアーをお勧めいたします）\n\nタンギールへ トドラ渓谷ツアー\n\nランチ（オプション）\n\n午後ワルザザート ケラア・デ・ムグーナへ\n\n宿泊地: ワルザザート",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "6日目月曜日",
+      "title": "",
+      "text": "ホテルにて朝食\n\nワルザザート- マラケシュ (210km)\n\nワルザザートツアー\n\nランチ（オプション）\n\nマラケシュへ移動\n\nフリータイム\n\n宿泊地: マラケシュ",
+      "meals": "朝食； ○ 昼食； × 夕食； ○"
+    },
+    {
+      "dayLabel": "7日目火曜日",
+      "title": "",
+      "text": "帰国便に合わせて空港送迎\n\n宿泊地: 金曜日",
+      "meals": "朝食； ○ 昼食； × 夕食； ×"
+    }
+  ],
+  "included": [
+    "06泊 ホテル宿泊代 （朝食、夕食付 飲み物代別）",
+    "ガイド代 、記載のあるツアーの入場料",
+    "空港送迎（混載）",
+    "記載のある部分の食事（飲み物は含まれません）",
+    "税金"
+  ],
+  "excluded": [],
+  "importantNotes": [],
+  "cancellationPolicy": [],
+  "gallery": [
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011813465728.jpg",
+      "width": null,
+      "height": null,
+      "alt": "マラケシュ 伝統的な門の建築風景"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011813482857.jpg",
+      "width": null,
+      "height": null,
+      "alt": "マラケシュ 赤土の自然と建築"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2023070909364420.jpg",
+      "width": null,
+      "height": null,
+      "alt": "ザゴラ 砂漠の夜とキャラバン体験"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2026011813504618.jpg",
+      "width": null,
+      "height": null,
+      "alt": "アトラス山脈 大自然の観光ルート"
+    },
+    {
+      "src": "https://www.torukoryoko.com/_uploads/2023070909372595.jpg",
+      "width": null,
+      "height": null,
+      "alt": "マラケシュ 色彩豊かな歴史的街並み"
+    }
+  ],
+  "related": [],
+  "faqs": [],
+  "jsonLd": [],
+  "priceSections": []
+}

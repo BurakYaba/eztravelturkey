@@ -69,6 +69,8 @@ export type TourRecord = Common & {
   included: string[];
   excluded: string[];
   importantNotes: string[];
+  /** Price tables and other text of the price tab (the Chinese and Japanese pages have them). */
+  priceSections: PageSection[];
   cancellationPolicy: string[];
   gallery: ImageRef[];
   related: { title: string; href: string }[];

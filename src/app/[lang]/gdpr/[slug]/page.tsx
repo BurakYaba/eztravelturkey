@@ -4,13 +4,15 @@ import { ContentPage } from '@/components/pages/ContentPage';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { defaultLocale, hasLocale, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { getPage, languagesWithPage, pageSummaries } from '@/lib/data';
+import { getPage, alternatesOf, pageSummaries } from '@/lib/data';
 import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/gdpr/[slug]'>;
 
 export async function generateStaticParams() {
-  const lists = await Promise.all(locales.map(async (lang) => ({ lang, pages: await pageSummaries(lang, 'static', 'gdpr') })));
+  const lists = await Promise.all(
+    locales.map(async (lang) => ({ lang, pages: await pageSummaries(lang, 'static', 'gdpr') })),
+  );
   return lists.flatMap(({ lang, pages }) => pages.map((p) => ({ lang, slug: p.path.split('/')[1] ?? '' })));
 }
 
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternateLangs: await languagesWithPage(page.path),
+    alternates: await alternatesOf(lang, page.path),
   });
 }
 

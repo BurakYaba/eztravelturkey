@@ -9,10 +9,11 @@ import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
 import { destinations } from '@/data/destinations';
 import { PageSections } from '@/components/pages/PageSections';
-import { comboCards, getPage } from '@/lib/data';
+import { availableCountries, comboCards, getPage } from '@/lib/data';
 import { docMetadata } from '@/lib/page-meta';
 import { homeFaqs } from '@/data/faqs';
 import { breadcrumbJsonLd, collectionPageJsonLd, faqJsonLd, itemListJsonLd } from '@/lib/seo';
+import { format, getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 
 const description =
@@ -23,44 +24,49 @@ export const generateMetadata = docMetadata({
   description,
   path: '/destinations',
   image: 'istanbul-skyline',
+  dictionary: (d) => d.ui.pages.hub,
 });
 
 export default async function DestinationsPage() {
   const lang = await getLocale();
+  const { ui, nav, countries, footer } = getDictionary(lang);
+  const t = ui.pages.hub;
   // The old hub page's own text: the guide sections at the end (the country and combination cards before them are drawn by the tiles above),
-  // and its ten questions.
+  // and its ten questions. The old Chinese and Japanese hubs were the home page with no text of their own.
   const doc = await getPage(lang, 'destinations');
   const sections = doc?.sections ?? [];
   let from = sections.length;
-  while (from > 0 && sections[from - 1].heading && !/packages|vacations?|holidays/i.test(sections[from - 1].heading)) {from--;}
+  while (from > 0 && sections[from - 1].heading && !/packages|vacations?|holidays/i.test(sections[from - 1].heading)) {
+    from--;
+  }
   const guide = sections.slice(from);
-  const faqs = doc?.faqs.length ? doc.faqs : [0, 1, 5, 7, 12, 13].map((i) => homeFaqs[i]);
+  const faqs = doc?.faqs.length
+    ? doc.faqs
+    : lang === 'en'
+      ? [0, 1, 5, 7, 12, 13].map((i) => homeFaqs[i]).filter((f) => f !== undefined)
+      : [];
+  const combos = await comboCards(lang);
+  const available = (await availableCountries(lang))
+    .map((id) => destinations.find((d) => d.id === id))
+    .filter((d) => d !== undefined);
   const crumbs = [
-    { name: 'Home', path: '/' },
-    { name: 'Destinations', path: '/destinations' },
+    { name: nav.home, path: '/' },
+    { name: nav.destinations, path: '/destinations' },
   ];
   return (
     <>
-      <PageBanner
-        title={doc?.title ?? 'Our Destinations'}
-        description="Extraordinary cultures, timeless history and unforgettable experiences across the eastern Mediterranean and beyond."
-        image="istanbul-skyline"
-        crumbs={crumbs}
-      />
+      <PageBanner title={doc?.title ?? t.bannerTitle} description={t.banner} image="istanbul-skyline" crumbs={crumbs} />
       <TrustBar />
       <section className="section-y">
         <div className="container-x">
-          <SectionHeading
-            title="Choose where to go"
-            description="Each country page lists our tours, the best time to visit and what to expect."
-          />
+          <SectionHeading title={t.chooseTitle} description={t.chooseText} />
           <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {destinations.map((d) => (
+            {available.map((d) => (
               <li key={d.id} className="reveal">
                 <ShapedTile
                   href={`/destinations/${d.id}-tours`}
-                  title={d.name}
-                  note={d.tagline}
+                  title={countries[d.id].name}
+                  note={countries[d.id].tagline}
                   image={d.image}
                   country={d.id}
                   sizes="(min-width: 768px) 33vw, 50vw"
@@ -71,8 +77,8 @@ export default async function DestinationsPage() {
             <li className="reveal">
               <DestinationTile
                 href="/multi-country-tours"
-                title="Multi-Country"
-                note="Many countries, one journey"
+                title={ui.home.destinations.multi}
+                note={ui.home.destinations.multiNote}
                 image="santorini-domes"
                 sizes="(min-width: 768px) 33vw, 50vw"
                 className="aspect-[4/5]"
@@ -81,22 +87,24 @@ export default async function DestinationsPage() {
           </ul>
         </div>
       </section>
-      <section className="section-y bg-cream-100/60">
-        <div className="container-x">
-          <SectionHeading
-            title="Multi-country combinations"
-            description="Two or more countries in one trip, with hotels, guides, transfers and flights arranged as a single itinerary."
-            link={{ href: '/multi-country-tours', label: 'About multi-country tours' }}
-          />
-          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {(await comboCards(lang)).map((c) => (
-              <li key={c.href} className="reveal">
-                <ComboCard combo={c} className="h-full" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      {combos.length > 0 && (
+        <section className="section-y bg-cream-100/60">
+          <div className="container-x">
+            <SectionHeading
+              title={t.comboTitle}
+              description={t.comboText}
+              link={{ href: '/multi-country-tours', label: t.comboLink }}
+            />
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {combos.map((c) => (
+                <li key={c.href} className="reveal">
+                  <ComboCard combo={c} className="h-full" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
       {guide.length > 0 && (
         <section className="section-y">
           <div className="container-x max-w-3xl">
@@ -104,21 +112,27 @@ export default async function DestinationsPage() {
           </div>
         </section>
       )}
-      <section className="section-y bg-cream-100/60">
-        <div className="container-x max-w-3xl">
-          <SectionHeading title="Planning your destinations" link={{ href: '/faq', label: 'All FAQs' }} />
-          <Accordion items={faqs.map((f, i) => ({ id: `q-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
-        </div>
-      </section>
+      {faqs.length > 0 && (
+        <section className="section-y bg-cream-100/60">
+          <div className="container-x max-w-3xl">
+            <SectionHeading title={t.planningTitle} link={{ href: '/faq', label: t.allFaqs }} />
+            <Accordion items={faqs.map((f, i) => ({ id: `q-${i}`, title: f.q, content: <p>{f.a}</p> }))} />
+          </div>
+        </section>
+      )}
       <QuoteBand />
       <JsonLd
         data={[
-          collectionPageJsonLd(lang, 'Destinations', '/destinations', description),
-          itemListJsonLd(lang, 
-            'Destinations',
-            destinations.map((d) => ({ name: `${d.name} tours`, path: `/destinations/${d.id}-tours` })),
+          collectionPageJsonLd(lang, t.title, '/destinations', t.description),
+          itemListJsonLd(
+            lang,
+            t.title,
+            available.map((d) => ({
+              name: format(footer.countryTours, { country: countries[d.id].name }),
+              path: `/destinations/${d.id}-tours`,
+            })),
           ),
-          faqJsonLd(faqs),
+          ...(faqs.length > 0 ? [faqJsonLd(faqs)] : []),
           breadcrumbJsonLd(lang, crumbs),
         ]}
       />

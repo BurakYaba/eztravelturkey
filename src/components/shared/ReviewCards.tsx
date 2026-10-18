@@ -1,9 +1,11 @@
 import { ArrowUpRight, Star } from '@phosphor-icons/react/dist/ssr';
 import { reviews } from '@/data/reviews';
 import { site } from '@/data/site';
+import { getDictionaryForPage } from '@/i18n/server';
 import { formatDate } from '@/lib/utils';
 
-export function ReviewCards() {
+export async function ReviewCards() {
+  const { ui } = await getDictionaryForPage();
   return (
     <ul className="grid gap-5 md:grid-cols-3">
       {reviews.map((review) => (
@@ -22,7 +24,7 @@ export function ReviewCards() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold-700 mt-2 inline-flex items-center gap-1 text-sm font-semibold underline underline-offset-4">
-              Read more on Tripadvisor
+              {ui.reviews.readMore}
               <ArrowUpRight size={14} weight="bold" aria-hidden />
             </a>
           </footer>

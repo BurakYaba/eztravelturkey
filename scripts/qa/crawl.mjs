@@ -51,6 +51,7 @@ await Promise.all(
       const main = $('main').first();
       main.find('script, style, noscript').remove();
       const words = (main.text().replace(/\s+/g, ' ').trim().match(/\S+/g) ?? []).length;
+      const chars = main.text().replace(/\s/g, '').length; // Chinese and Japanese have no spaces between words
       const links = [];
       $('a[href]').each((_, el) => {
         const href = $(el).attr('href') ?? '';
@@ -86,6 +87,7 @@ await Promise.all(
         jsonLd: ld,
         og: { title: $('meta[property="og:title"]').attr('content') ?? '', image: $('meta[property="og:image"]').attr('content') ?? '' },
         words,
+        chars,
         internalLinks: new Set(links).size,
         linkTargets: [...new Set(links.map((l) => l.split('?')[0]))],
         images: $('img').length,

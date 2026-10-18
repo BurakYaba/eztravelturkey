@@ -1,5 +1,5 @@
 // Downloads every image referenced by the parsed pages and builds content/scraped/image-manifest.json.
-// Usage: node scripts/scrape/images.mjs [--limit N]
+// Usage: node scripts/scrape/images.mjs [--limit N]   (all three languages: content/scraped/en, zh, jp)
 // Images are de-duplicated by the SHA-1 of the source bytes (the same photo is stored and later uploaded once).
 // Files go to data/images/ (git-ignored); the manifest is committed so the CMS import knows what to upload.
 // The old site only serves fixed thumbnail sizes (950x700 gallery, 800x600 map): larger variants answer 301 and the
@@ -15,7 +15,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const args = process.argv.slice(2);
 const limit = args.includes('--limit') ? Number(args[args.indexOf('--limit') + 1]) : Infinity;
 
-const contentDir = join(root, 'content', 'scraped', 'en');
+const languages = ['en', 'zh', 'jp'];
 const imageDir = join(root, 'data', 'images');
 mkdirSync(imageDir, { recursive: true });
 const manifestFile = join(root, 'content', 'scraped', 'image-manifest.json');
@@ -38,20 +38,23 @@ const walk = (dir) =>
     ? readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)]))
     : [];
 
-for (const file of walk(join(contentDir, 'tours')).filter((f) => f.endsWith('.json'))) {
-  const tour = JSON.parse(readFileSync(file, 'utf8'));
-  for (const image of tour.gallery) note(image.src, image.alt, tour.path, 'gallery');
-  if (tour.routeMap.image) note(tour.routeMap.image.src, tour.routeMap.image.alt, tour.path, 'route-map');
-}
-for (const file of walk(join(contentDir, 'pages')).filter((f) => f.endsWith('.json'))) {
-  const page = JSON.parse(readFileSync(file, 'utf8'));
-  for (const section of page.sections) {
-    for (const block of section.blocks) {
-      if (block.type === 'image') note(block.src, block.alt, page.path, 'page');
-    }
+for (const lang of languages) {
+  const contentDir = join(root, 'content', 'scraped', lang);
+  for (const file of walk(join(contentDir, 'tours')).filter((f) => f.endsWith('.json'))) {
+    const tour = JSON.parse(readFileSync(file, 'utf8'));
+    for (const image of tour.gallery) note(image.src, image.alt, `${lang}:${tour.path}`, 'gallery');
+    if (tour.routeMap.image) note(tour.routeMap.image.src, tour.routeMap.image.alt, tour.path, 'route-map');
   }
-  for (const card of page.cards) {
-    if (card.image) note(card.image.src, card.image.alt, page.path, 'card');
+  for (const file of walk(join(contentDir, 'pages')).filter((f) => f.endsWith('.json'))) {
+    const page = JSON.parse(readFileSync(file, 'utf8'));
+    for (const section of page.sections) {
+      for (const block of section.blocks) {
+        if (block.type === 'image') note(block.src, block.alt, `${lang}:${page.path}`, 'page');
+      }
+    }
+    for (const card of page.cards) {
+      if (card.image) note(card.image.src, card.image.alt, `${lang}:${page.path}`, 'card');
+    }
   }
 }
 

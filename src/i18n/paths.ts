@@ -1,6 +1,7 @@
 import { hasLocale, locales, type Locale } from './config';
+import { publicPath } from './public-paths';
 
-/** `/tours` and `/tours/` become `/en/tours/` (trailing slash, as on the old sites). Query and hash are kept. */
+/** `/tours` and `/tours/` become `/en/tours/` (trailing slash, as on the old sites). Query and hash are kept. In Chinese and Japanese the address of a page that kept its old name is translated: `/about` is `/jp/会社概要/`. */
 export function localizeHref(lang: Locale, href: string): string {
   if (!href.startsWith('/') || href.startsWith('//')) {
     return href;
@@ -9,7 +10,7 @@ export function localizeHref(lang: Locale, href: string): string {
   const path = match?.[1] ?? href;
   const rest = match?.[2] ?? '';
   const first = path.split('/')[1] ?? '';
-  const base = hasLocale(first) ? path : `/${lang}${path === '/' ? '' : path}`;
+  const base = hasLocale(first) ? path : `/${lang}${path === '/' ? '' : publicPath(lang, path)}`;
   return `${base.endsWith('/') ? base : `${base}/`}${rest}`;
 }
 

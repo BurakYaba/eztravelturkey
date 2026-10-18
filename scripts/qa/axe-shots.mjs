@@ -1,7 +1,7 @@
 // Accessibility (axe-core) and screenshots of a sample of pages in every language at phone and desktop width
 // (docs/project-plan.md P4.2).
 //
-//   node scripts/qa/axe-shots.mjs [address]        default http://localhost:3100
+//   node scripts/qa/axe-shots.mjs [address] [en,zh,jp]        default http://localhost:3100, every language
 //
 // Writes data/qa/axe.json and data/qa/shots/<lang>-<page>-<width>.png (not in git). Only reads; needs no login.
 import { createRequire } from 'node:module';
@@ -17,24 +17,58 @@ const shots = path.join(root, 'data/qa/shots');
 mkdirSync(shots, { recursive: true });
 const axeSource = readFileSync(path.join(root, 'node_modules/axe-core/axe.min.js'), 'utf8');
 
-const pages = {
-  home: '/',
-  tours: '/tours/',
-  tour: '/destinations/egypt-tours/8-day-best-of-egypt-tour/',
-  country: '/destinations/turkey-tours/',
-  category: '/destinations/egypt-tours/06-to-09-days-tours/',
-  combo: '/destinations/turkey-greece-tours/',
-  blog: '/blog/',
-  about: '/about/',
-  faq: '/faq/',
-  contact: '/contact/',
-  destinations: '/destinations/',
+// The same kinds of page in each language; the Chinese and Japanese addresses are their own (P5.8).
+const pagesOf = {
+  en: {
+    home: '/',
+    tours: '/tours/',
+    tour: '/destinations/egypt-tours/8-day-best-of-egypt-tour/',
+    country: '/destinations/turkey-tours/',
+    category: '/destinations/egypt-tours/06-to-09-days-tours/',
+    combo: '/destinations/turkey-greece-tours/',
+    blog: '/blog/',
+    about: '/about/',
+    faq: '/faq/',
+    contact: '/contact/',
+    destinations: '/destinations/',
+  },
+  zh: {
+    home: '/',
+    tours: '/tours/',
+    tour: '/destinations/turkey-tours/06-to-09-days-tours/turkey-classic-tour-07-days/',
+    country: '/destinations/turkey-tours/',
+    category: '/destinations/turkey-tours/06-to-09-days-tours/',
+    combo: '/destinations/turkey-and-greece-tours/',
+    about: '/about-us/',
+    faq: '/faq/',
+    contact: '/contact/',
+    destinations: '/destinations/',
+    privacy: '/privacy-policy/',
+    private: '/private-tours/',
+    multi: '/multi-country-tours/',
+  },
+  jp: {
+    home: '/',
+    tours: '/tours/',
+    tour: '/目的地/トルコツアー/6～9日間トルコツアー/TM-01イスタンブール・カッパドキア・エフェソス・パムッカレ7泊8日/',
+    country: '/目的地/トルコツアー/',
+    category: '/目的地/トルコツアー/6～9日間トルコツアー/',
+    combo: '/目的地/コンビネーションツアー/トルコ・ギリシャ周遊ツアー/',
+    about: '/会社概要/',
+    faq: '/faq/',
+    contact: '/問い合わせ先/',
+    destinations: '/目的地/',
+    privacy: '/プライバシーポリシー/',
+    private: '/private-tours/',
+    multi: '/multi-country-tours/',
+  },
 };
 const sizes = { phone: { width: 390, height: 844 }, desktop: { width: 1440, height: 900 } };
 
 const browser = await chromium.launch({ channel: 'chrome' });
 const results = [];
-for (const lang of ['en', 'zh', 'jp']) {
+for (const lang of (process.argv[3] ?? 'en,zh,jp').split(',')) {
+  const pages = pagesOf[lang];
   for (const [size, viewport] of Object.entries(sizes)) {
     const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
     for (const [name, p] of Object.entries(pages)) {
@@ -42,7 +76,7 @@ for (const lang of ['en', 'zh', 'jp']) {
       const messages = [];
       page.on('pageerror', (e) => messages.push(String(e).slice(0, 120)));
       page.on('console', (m) => m.type() === 'error' && messages.push(m.text().slice(0, 120)));
-      const res = await page.goto(`${base}/${lang}${p}`, { waitUntil: 'networkidle', timeout: 60000 }).catch(() => null);
+      const res = await page.goto(`${base}/${lang}${encodeURI(p)}`, { waitUntil: 'networkidle', timeout: 60000 }).catch(() => null);
       const status = res?.status() ?? 0;
       // lazy pictures and reveal animations
       await page.evaluate(async () => {
@@ -56,7 +90,7 @@ for (const lang of ['en', 'zh', 'jp']) {
       await page.addScriptTag({ content: axeSource });
       const axe = await page.evaluate(() => window.axe.run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] }));
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
-      if (lang === 'en' || name === 'home' || name === 'tour') await page.screenshot({ path: path.join(shots, `${lang}-${name}-${size}.png`), fullPage: size === 'phone' && name !== 'blog' });
+      await page.screenshot({ path: path.join(shots, `${lang}-${name}-${size}.png`), fullPage: size === 'phone' && name !== 'blog' });
       results.push({
         lang, size, name, status, overflow, errors: messages.slice(0, 3),
         violations: axe.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, sample: v.nodes[0]?.target?.join(' ').slice(0, 100) })),

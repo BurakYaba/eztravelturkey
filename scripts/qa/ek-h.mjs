@@ -3,8 +3,10 @@
 //   node scripts/qa/crawl.mjs [address]        first, to write data/qa/crawl.json
 //   node scripts/qa/ek-h.mjs [address]         then this; prints a table and writes data/qa/ek-h.md
 //
-// Every row is PASS, FAIL or LATER (cannot be true yet: the domain is not connected, Chinese and Japanese content is not
-// in, the performance work is in P9). The table is what P4.6 hands to the phases that own the open rows.
+// Every row is PASS, FAIL or LATER (cannot be true yet: the domain is not connected, the performance work is in P9). The table
+// is what P4.6 hands to the phases that own the open rows. It covers all three languages (P5): the Chinese and Japanese pages are
+// held to the same rules, except that the length limits of titles and descriptions are for Latin letters (a CJK title of 30
+// characters is as wide as a Latin one of 60).
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
@@ -20,8 +22,13 @@ const row = (id, item, status, note = '') => rows.push({ id, item, status, note 
 const count = (fn) => pages.filter(fn).length;
 const list = (fn, n = 3) => pages.filter(fn).slice(0, n).map((p) => new URL(p.url).pathname).join(', ');
 const pathOf = (p) => new URL(p.url).pathname;
+const langOf = (p) => pathOf(p).split('/')[1] ?? 'en';
+const expectedLang = { en: 'en', zh: 'zh-Hant', jp: 'ja' };
+/** The English ("logical") address of a page: the language prefix and the Japanese hub folder name taken away. */
+const logical = (p) => decodeURIComponent(pathOf(p)).replace(/^\/(en|zh|jp)/, '').replace(/^\/目的地(?=\/|$)/, '/destinations') || '/';
+const cjk = (p) => langOf(p) !== 'en';
 const kind = (p) => {
-  const x = pathOf(p).replace(/^\/(en|zh|jp)/, '') || '/';
+  const x = logical(p);
   if (x === '/') return 'home';
   if (x.startsWith('/blog/')) return x.split('/').filter(Boolean).length > 2 ? 'post' : 'blog-list';
   if (x === '/blog/') return 'blog-list';
@@ -49,17 +56,22 @@ const gone = await get(`${base}/en/destinations/israel-tours/`);
 row('H1.6', 'Status policy 200/301/404/410, no soft 404', nf.status === 404 && gone.status === 410 ? 'PASS' : 'FAIL', `unknown address ${nf.status}, removed address ${gone.status}`);
 const inbound = new Map();
 for (const p of pages) for (const t of p.linkTargets) inbound.set(t, (inbound.get(t) ?? 0) + 1);
-const orphans = pages.filter((p) => !inbound.has(pathOf(p)) && pathOf(p) !== '/en/');
+const homes = new Set(['/en/', '/zh/', '/jp/']);
+const orphans = pages.filter((p) => !inbound.has(pathOf(p)) && !homes.has(pathOf(p)));
 row('H1.8a', 'No orphan page: every indexable page has an internal link', orphans.length === 0 ? 'PASS' : 'FAIL', `${orphans.length} without one ${orphans.slice(0, 3).map(pathOf).join(', ')}`);
-// depth from the home page
+// depth from the home page of its own language
 const byPath = new Map(pages.map((p) => [pathOf(p), p]));
-const depth = new Map([['/en/', 0]]);
-for (const queue = ['/en/']; queue.length; ) {
-  const cur = queue.shift();
-  for (const t of byPath.get(cur)?.linkTargets ?? []) {
-    if (byPath.has(t) && !depth.has(t)) {
-      depth.set(t, depth.get(cur) + 1);
-      queue.push(t);
+const depth = new Map();
+for (const home of homes) {
+  depth.set(home, 0);
+  for (const queue = [home]; queue.length; ) {
+    const cur = queue.shift();
+    for (const t of byPath.get(cur)?.linkTargets ?? []) {
+      // stay inside the language: the language menu would make every page two clicks from the other homes
+      if (byPath.has(t) && !depth.has(t) && t.startsWith(home)) {
+        depth.set(t, depth.get(cur) + 1);
+        queue.push(t);
+      }
     }
   }
 }
@@ -67,22 +79,39 @@ const deep = pages.filter((p) => (depth.get(pathOf(p)) ?? 99) > 3);
 row('H1.8b', 'Every page within 3 clicks of the home page', deep.length === 0 ? 'PASS' : 'FAIL', `deepest ${Math.max(...depth.values())}; ${deep.length} deeper than 3 ${deep.slice(0, 3).map(pathOf).join(', ')}`);
 
 // ---- H.2 render and HTML
-row('H2.1', 'Content and links in the first HTML', count((p) => p.words < 50) === 0 ? 'PASS' : 'FAIL', `${count((p) => p.words < 50)} pages under 50 words: ${list((p) => p.words < 50)}`);
+// Chinese and Japanese have no spaces between words: 50 words is about 100 characters.
+const thin = (p) => (cjk(p) ? p.chars < 100 : p.words < 50);
+row('H2.1', 'Content and links in the first HTML', count(thin) === 0 ? 'PASS' : 'FAIL', `${count(thin)} pages with almost no text: ${list(thin)}`);
 row('H2.2a', 'Exactly one h1 per page', count((p) => p.h1.length !== 1) === 0 ? 'PASS' : 'FAIL', `${count((p) => p.h1.length !== 1)} pages`);
 row('H2.2b', 'main, nav, header, footer landmarks', count((p) => !p.landmarks.main || !p.landmarks.nav || !p.landmarks.header || !p.landmarks.footer) === 0 ? 'PASS' : 'FAIL', '');
 const head = await get(`${base}/en/`);
-row('H2.3', 'lang correct; UTF-8; compression', count((p) => p.lang !== 'en') === 0 && /utf-8/i.test(head.headers.get('content-type') ?? '') ? 'PASS' : 'FAIL', `content-type ${head.headers.get('content-type')}; content-encoding ${head.headers.get('content-encoding') ?? 'none (the request did not ask for it)'}`);
+row('H2.3', 'lang correct; UTF-8; compression', count((p) => p.lang !== expectedLang[langOf(p)]) === 0 && /utf-8/i.test(head.headers.get('content-type') ?? '') ? 'PASS' : 'FAIL', `content-type ${head.headers.get('content-type')}; content-encoding ${head.headers.get('content-encoding') ?? 'none (the request did not ask for it)'}`);
 
 // ---- H.3 metadata
-const longTitles = pages.filter((p) => p.title.length > 60);
+const longTitles = pages.filter((p) => p.title.length > (cjk(p) ? 40 : 60));
 const dupTitles = pages.length - new Set(pages.map((p) => p.title)).size;
-row('H3.1a', 'Titles unique, up to 60 characters', dupTitles === 0 && longTitles.length <= 1 ? 'PASS' : 'FAIL', `${dupTitles} repeated; ${longTitles.length} over 60 (the moved blog title that is 61 on the live site)`);
-const badDesc = pages.filter((p) => p.description.length < 120 || p.description.length > 160);
-row('H3.1b', 'Descriptions unique, 120-160 characters', badDesc.length === 0 && pages.length - new Set(pages.map((p) => p.description)).size === 0 ? 'PASS' : 'FAIL', `${badDesc.length} outside the range`);
+row('H3.1a', 'Titles unique, up to 60 characters (40 for Chinese and Japanese)', dupTitles === 0 && longTitles.length <= 1 ? 'PASS' : 'FAIL', `${dupTitles} repeated; too long: ${['en', 'zh', 'jp'].map((l) => `${l} ${longTitles.filter((p) => langOf(p) === l).length}`).join(', ')} (English: the moved blog title that is 61 on the live site; Chinese and Japanese: the old titles, kept)`);
+const badDesc = pages.filter((p) => (cjk(p) ? p.description.length < 8 : p.description.length < 120 || p.description.length > 160));
+const dupDesc = pages.length - new Set(pages.map((p) => p.description)).size;
+row('H3.1b', 'Descriptions unique, 120-160 characters (Chinese and Japanese: at least 8)', badDesc.length === 0 && dupDesc === 0 ? 'PASS' : 'FAIL', `${badDesc.length} outside the range; ${dupDesc} repeated ${pages.filter((p, i) => pages.findIndex((q) => q.description === p.description) !== i).slice(0, 3).map(pathOf).join(', ')}`);
 row('H3.2', 'Open Graph and Twitter cards, share picture', count((p) => !p.og.title || !p.og.image) === 0 ? 'PASS' : 'FAIL', `${count((p) => !p.og.image)} without a share picture`);
 
 // ---- H.4 languages
-row('H4.1', 'hreflang reciprocal, x-default, only where a real counterpart exists', 'LATER', 'only English has content of its own; starts with P5');
+// hreflang: every alternate points back, each page lists itself, x-default points at English when it has the page
+const hreflangProblems = [];
+for (const p of pages) {
+  if (p.hreflang.length === 0) continue;
+  const mine = new Map(p.hreflang.map((h) => [h.split('=')[0], h.slice(h.indexOf('=') + 1)]));
+  if (!mine.get(expectedLang[langOf(p)]) || decodeURIComponent(new URL(mine.get(expectedLang[langOf(p)])).pathname) !== decodeURIComponent(pathOf(p))) hreflangProblems.push(`${pathOf(p)} does not list itself`);
+  for (const [code, url] of mine) {
+    if (code === 'x-default') continue;
+    const other = byPath.get(new URL(url).pathname);
+    if (!other) hreflangProblems.push(`${pathOf(p)} -> ${url} is not a page of the sitemap`);
+    else if (!other.hreflang.some((h) => h.startsWith(`${expectedLang[langOf(p)]}=`))) hreflangProblems.push(`${new URL(url).pathname} does not point back to ${pathOf(p)}`);
+  }
+  if (mine.has('en') && !mine.has('x-default')) hreflangProblems.push(`${pathOf(p)} has no x-default`);
+}
+row('H4.1', 'hreflang reciprocal, x-default, only where a real counterpart exists', hreflangProblems.length === 0 ? 'PASS' : 'FAIL', `${count((p) => p.hreflang.length > 0)} pages with hreflang; ${hreflangProblems.length} problems ${hreflangProblems.slice(0, 2).join('; ')}`);
 
 // ---- H.5 structured data
 const expect = {
@@ -94,7 +123,7 @@ const expect = {
 const invalid = pages.filter((p) => p.jsonLd.includes('INVALID'));
 const missingLd = [];
 for (const p of pages) {
-  const x = pathOf(p).replace(/^\/en/, '');
+  const x = logical(p);
   let need = [];
   if (x === '/') need = expect.home;
   else if (/^\/blog\/[^/]+\/[^/]+\/$/.test(x)) need = expect.post;
@@ -131,7 +160,7 @@ row('H8.2', 'No broken pictures', brokenPics.length === 0 ? 'PASS' : 'FAIL', `${
 row('H9.1', 'Viewport; no horizontal scroll; tap targets; sticky items do not cover content', count((p) => !/width=device-width/.test(p.viewport)) === 0 ? 'PASS' : 'FAIL', 'checked on 10 templates in an emulated phone (P3.15); real devices still to do');
 const brokenLinks = links.filter((l) => l.kind === 'link' && l.status !== 200);
 row('H10.1', 'No broken or redirected internal link', brokenLinks.length === 0 ? 'PASS' : 'FAIL', `${links.filter((l) => l.kind === 'link').length} internal addresses checked`);
-const noCrumb = pages.filter((p) => pathOf(p) !== '/en/' && !p.jsonLd.includes('BreadcrumbList'));
+const noCrumb = pages.filter((p) => !homes.has(pathOf(p)) && !p.jsonLd.includes('BreadcrumbList'));
 row('H10.2', 'Breadcrumb on every page, same as BreadcrumbList', noCrumb.length === 0 ? 'PASS' : 'FAIL', `${noCrumb.length} without BreadcrumbList ${noCrumb.slice(0, 3).map(pathOf).join(', ')}`);
 const llms = await get(`${base}/llms.txt`);
 row('H11.1', 'llms.txt; AI bots can read the site; short answer, author, date, source on pages', llms.status === 200 ? 'PASS' : 'LATER', `llms.txt answers ${llms.status}; P8.3`);

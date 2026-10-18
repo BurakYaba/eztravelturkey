@@ -1,0 +1,137 @@
+{
+  "locale": "jp",
+  "kind": "country",
+  "sourceUrl": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/",
+  "path": "目的地/ヨルダンツアー",
+  "metaTitle": "ヨルダンツアー｜ペトラ・死海・アンマン現地発観光ツアー | トルコ旅行・中近東周遊ツアー専門｜現地旅行会社の【トルコ旅行】",
+  "metaDescription": "ペトラ遺跡や死海、アンマンを巡る現地発ヨルダンツアー。少人数・安心サポートで歴史と大自然を深く体験できる特別な旅をご提供します。",
+  "canonical": "https://www.torukoryoko.com/jp/目的地/ヨルダンツアー/",
+  "robots": "",
+  "h1": "ヨルダンツアー",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "ヨルダンツアー"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "ヨルダンツアーのハイライトといえば、映画『インディ・ジョーンズ』の舞台としても有名なペトラ遺跡です。そのほか、旧約聖書に登場するネボ山、死海、砂漠での4×4ジープツアーなどを組み入れた充実したパッケージツアーをご用意しています。"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "title": "アンマン・アカバ・ペトラ8日間",
+      "url": "/jp/目的地/ヨルダンツアー/アンマン・アカバ・ペトラ8日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2024051612155855.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: アンマン-ジェラシュ-死海-マダバ-ネボ山-カラク-ペトラ-アガバ-ワディラム",
+        "日数: 07泊 08日"
+      ],
+      "price": ""
+    },
+    {
+      "title": "アンマン・ペトラ3日間",
+      "url": "/jp/目的地/ヨルダンツアー/アンマン・ペトラ3日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070908525287.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: アンマン－ペトラ",
+        "日数: 02泊 03日"
+      ],
+      "price": ""
+    },
+    {
+      "title": "アンマン・ペトラ4日間",
+      "url": "/jp/目的地/ヨルダンツアー/アンマン・ペトラ4日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/202601151008273.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: アンマン-マダバ-ネボ山-死海-ペトラ",
+        "日数: 03泊 04日"
+      ],
+      "price": ""
+    },
+    {
+      "title": "アンマン・ペトラ5日間",
+      "url": "/jp/目的地/ヨルダンツアー/5/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2026011511384758.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: アンマン・マダバ・ネボ山・死海・ペト・ラワディラム",
+        "日数: 04泊 05日"
+      ],
+      "price": ""
+    },
+    {
+      "title": "アンマン・死海・マダバ・ネボ山・ペトラ・アカバ 6日間",
+      "url": "/jp/目的地/ヨルダンツアー/アンマン・死海・マダバ・ネボ山・ペトラ・アカバ6日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070909020319.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: アンマン・マダバ・ネボ山・死海・ペトラ・ ワディラム",
+        "日数: 05泊 06日"
+      ],
+      "price": ""
+    },
+    {
+      "title": "アンマン・アカバ・ペトラ7日間",
+      "url": "/jp/目的地/ヨルダンツアー/アンマン・アカバ・ペトラ7日間/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070909052143.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: アンマン・ジェラシュ・死海・マダバ・ネボ山・死海・アカバ",
+        "日数: 06泊 07日"
+      ],
+      "price": ""
+    },
+    {
+      "title": "ペトラ3日間",
+      "url": "/jp/目的地/ヨルダンツアー/3/",
+      "image": {
+        "src": "https://www.torukoryoko.com/_uploads/2023070909113667.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "行先: ペトラ",
+        "日数: 02泊 03日"
+      ],
+      "price": ""
+    }
+  ],
+  "faqs": [],
+  "jsonLd": []
+}

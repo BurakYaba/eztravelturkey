@@ -2,7 +2,9 @@
 
 import { Link } from '@/i18n/link';
 import { usePathname } from 'next/navigation';
+import { useLocale } from '@/i18n/locale-context';
 import { stripLocale } from '@/i18n/paths';
+import { logicalPath } from '@/i18n/public-paths';
 import { useEffect, useRef, useState } from 'react';
 import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
@@ -18,6 +20,8 @@ type Props = {
   nav: Dictionary['nav'];
   countries: Dictionary['countries'];
   homeLabel: string;
+  /** The countries this language has a page for. */
+  available: string[];
 };
 
 const countryLabel = (countries: Dictionary['countries'], id: string) =>
@@ -111,9 +115,10 @@ function Dropdown({
   );
 }
 
-export function Header({ nav, countries, homeLabel }: Props) {
+export function Header({ nav, countries, homeLabel, available }: Props) {
+  const lang = useLocale();
   const currentPath = usePathname();
-  const pathname = stripLocale(currentPath);
+  const pathname = logicalPath(lang, decodeURIComponent(stripLocale(currentPath)));
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -148,10 +153,12 @@ export function Header({ nav, countries, homeLabel }: Props) {
   const isActive = (prefix: string) => pathname === prefix || pathname.startsWith(`${prefix}/`);
 
   const destinationItems: DropItem[] = [
-    ...destinations.map((d) => {
-      const country = countryLabel(countries, d.id);
-      return { label: country.name, href: `/destinations/${d.id}-tours`, note: country.tagline };
-    }),
+    ...destinations
+      .filter((d) => available.includes(d.id))
+      .map((d) => {
+        const country = countryLabel(countries, d.id);
+        return { label: country.name, href: `/destinations/${d.id}-tours`, note: country.tagline };
+      }),
     { label: nav.allDestinations, href: '/destinations' },
   ];
   const styleItems: DropItem[] = [

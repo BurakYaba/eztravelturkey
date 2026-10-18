@@ -18,6 +18,7 @@ import type { Icon } from '@phosphor-icons/react';
 import { paymentSummary, travelRules } from '@/data/policies';
 import { whatsappLink } from '@/data/site';
 import { format, getDictionary } from '@/i18n/dictionaries';
+import { legalHref } from '@/i18n/public-paths';
 import { getLocale } from '@/i18n/server';
 import type { TourRecord } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
@@ -31,6 +32,7 @@ import { TourGallery } from '../tours/TourGallery';
 import { TourPanel } from '../tours/TourPanel';
 import { TourPrice } from '../tours/TourPrice';
 import { TourTabs, TourTabsProvider } from '../tours/TourTabs';
+import { PageSections } from './PageSections';
 
 function Bullets({ items }: { items: string[] }) {
   return (
@@ -58,7 +60,8 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
   const lang = await getLocale();
   const { tour: t, card } = getDictionary(lang);
 
-  const style = tour.styles.length > 1 ? card.either : tour.styles[0] === 'private' ? t.style.private : t.style.smallGroup;
+  const style =
+    tour.styles.length > 1 ? card.either : tour.styles[0] === 'private' ? t.style.private : t.style.smallGroup;
   const glance = [
     { label: t.glance.duration, value: tour.facts.duration, icon: Clock },
     { label: t.glance.route, value: tour.route.join(' · '), icon: MapPin },
@@ -72,6 +75,10 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { label: t.practical.difficulty, value: tour.facts.difficulty, icon: PersonSimpleWalk },
     ...tour.extraFacts.map((f) => ({ ...f, icon: Info })),
   ].filter((f) => f.value);
+  // The payment terms and the passport and insurance rules are the English site's legal text. The Chinese and Japanese sites
+  // have their own terms pages (P5.5); their tours show only what their own old pages said.
+  const english = lang === 'en';
+  const rules = english ? travelRules : [];
   const hasInclusions = tour.included.length > 0 || tour.excluded.length > 0;
   const hasPrice = tour.priceEUR !== null || tour.priceUSD !== null;
   // The old pages mix sentences about the price ("Prices are per person, based on a minimum of ...") into the notes.
@@ -79,16 +86,17 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
   const isPriceNote = (note: string) => /^prices?/i.test(note);
   const priceNotes = tour.importantNotes.filter(isPriceNote);
   const otherNotes = tour.importantNotes.filter((note) => !isPriceNote(note));
+  const hasRequirements = practical.length > 0 || rules.length > 0 || otherNotes.length > 0;
 
   const tabs = [
     { id: 'overview', label: t.tabs.overview },
     ...(tour.itinerary.length > 0 ? [{ id: 'itinerary', label: t.tabs.itinerary }] : []),
     ...(hasInclusions ? [{ id: 'inclusions', label: t.tabs.inclusions }] : []),
-    { id: 'requirements', label: t.tabs.requirements },
+    ...(hasRequirements ? [{ id: 'requirements', label: t.tabs.requirements }] : []),
     ...(tour.faqs.length > 0 ? [{ id: 'faqs', label: t.tabs.faqs }] : []),
     ...(tour.routeMap.image ? [{ id: 'route-map', label: t.tabs.routeMap }] : []),
     { id: 'price', label: t.tabs.price },
-    { id: 'payment', label: t.tabs.payment },
+    ...(english ? [{ id: 'payment', label: t.tabs.payment }] : []),
     { id: 'cancellation', label: t.tabs.cancellation },
   ];
   const label = (id: string) => tabs.find((tab) => tab.id === id)?.label ?? '';
@@ -123,7 +131,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
         <div className="container-wide grid gap-10 pb-16 lg:grid-cols-[minmax(0,1fr)_22rem] xl:grid-cols-[minmax(0,1fr)_24rem]">
           <div id="tour-panels" className="min-w-0 max-lg:pt-6 lg:min-h-136">
             <TourPanel id="overview" label={label('overview')} defaultOpen className="max-lg:mt-0">
-              <SectionHeading title={t.overview} className="mb-5 md:mb-6 max-lg:hidden" />
+              <SectionHeading title={t.overview} className="mb-5 max-lg:hidden md:mb-6" />
               {tour.summary && (
                 <p className="text-ink/90 max-w-3xl leading-relaxed whitespace-pre-line">{tour.summary}</p>
               )}
@@ -265,38 +273,40 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
               </TourPanel>
             )}
 
-            <TourPanel id="requirements" label={label('requirements')}>
-              <SectionHeading title={t.requirements.title} className="mb-6 max-lg:hidden" />
-              <ul className="grid gap-4 sm:grid-cols-2">
-                {practical.map(({ label: name, value, icon: Glyph }) => (
-                  <li key={name} className="bg-cream-100 flex gap-4 rounded-lg p-4">
-                    <Glyph size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
-                    <div>
-                      <h3 className="font-sans text-base font-semibold tracking-normal">{name}</h3>
-                      <p className="text-muted mt-1 text-[0.95rem]">{value}</p>
-                    </div>
-                  </li>
-                ))}
-                {travelRules.map((rule) => {
-                  const Glyph = ruleIcon[rule.kind] ?? Info;
-                  return (
-                    <li key={rule.kind} className="bg-cream-100 flex gap-4 rounded-lg p-4 sm:col-span-2">
+            {hasRequirements && (
+              <TourPanel id="requirements" label={label('requirements')}>
+                <SectionHeading title={t.requirements.title} className="mb-6 max-lg:hidden" />
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  {practical.map(({ label: name, value, icon: Glyph }) => (
+                    <li key={name} className="bg-cream-100 flex gap-4 rounded-lg p-4">
                       <Glyph size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
                       <div>
-                        <h3 className="font-sans text-base font-semibold tracking-normal">{rule.title}</h3>
-                        <p className="text-muted mt-1 text-[0.95rem]">{rule.text}</p>
+                        <h3 className="font-sans text-base font-semibold tracking-normal">{name}</h3>
+                        <p className="text-muted mt-1 text-[0.95rem]">{value}</p>
                       </div>
                     </li>
-                  );
-                })}
-              </ul>
-              {otherNotes.length > 0 && (
-                <div className="mt-8">
-                  <h3 className="mb-4 text-2xl">{t.requirements.notes}</h3>
-                  <Bullets items={otherNotes} />
-                </div>
-              )}
-            </TourPanel>
+                  ))}
+                  {rules.map((rule) => {
+                    const Glyph = ruleIcon[rule.kind] ?? Info;
+                    return (
+                      <li key={rule.kind} className="bg-cream-100 flex gap-4 rounded-lg p-4 sm:col-span-2">
+                        <Glyph size={30} className="text-gold-600 mt-0.5 shrink-0" aria-hidden />
+                        <div>
+                          <h3 className="font-sans text-base font-semibold tracking-normal">{rule.title}</h3>
+                          <p className="text-muted mt-1 text-[0.95rem]">{rule.text}</p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+                {otherNotes.length > 0 && (
+                  <div className="mt-8">
+                    <h3 className="mb-4 text-2xl">{t.requirements.notes}</h3>
+                    <Bullets items={otherNotes} />
+                  </div>
+                )}
+              </TourPanel>
+            )}
 
             {tour.faqs.length > 0 && (
               <TourPanel id="faqs" label={label('faqs')}>
@@ -360,25 +370,30 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                   <Bullets items={priceNotes} />
                 </div>
               )}
+              {tour.priceSections.length > 0 && <PageSections sections={tour.priceSections} className="mt-8" />}
             </TourPanel>
 
-            <TourPanel id="payment" label={label('payment')}>
-              <SectionHeading title={t.payment.title} className="mb-6 max-lg:hidden" />
-              <ul className="grid gap-4 sm:grid-cols-3">
-                {paymentSummary.map((step) => (
-                  <li key={step.label} className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
-                    <p className="text-gold-700 text-sm font-semibold">{step.label}</p>
-                    <p className="font-display text-navy-900 mt-1 text-2xl font-semibold">{step.value}</p>
-                    <p className="text-muted mt-2 text-[0.95rem]">{step.text}</p>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5">
-                <Link href="/gdpr/terms-conditions" className="text-navy-900 font-semibold underline underline-offset-4">
-                  {t.payment.terms}
-                </Link>
-              </p>
-            </TourPanel>
+            {english && (
+              <TourPanel id="payment" label={label('payment')}>
+                <SectionHeading title={t.payment.title} className="mb-6 max-lg:hidden" />
+                <ul className="grid gap-4 sm:grid-cols-3">
+                  {paymentSummary.map((step) => (
+                    <li key={step.label} className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
+                      <p className="text-gold-700 text-sm font-semibold">{step.label}</p>
+                      <p className="font-display text-navy-900 mt-1 text-2xl font-semibold">{step.value}</p>
+                      <p className="text-muted mt-2 text-[0.95rem]">{step.text}</p>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5">
+                  <Link
+                    href={legalHref(lang, 'terms')}
+                    className="text-navy-900 font-semibold underline underline-offset-4">
+                    {t.payment.terms}
+                  </Link>
+                </p>
+              </TourPanel>
+            )}
 
             <TourPanel id="cancellation" label={label('cancellation')}>
               <SectionHeading title={t.cancel.title} className="mb-6 max-lg:hidden" />
@@ -391,7 +406,9 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                 !tour.facts.cancellation && <p className="text-muted">{t.cancel.none}</p>
               )}
               <p className="mt-5">
-                <Link href="/gdpr/terms-conditions" className="text-navy-900 font-semibold underline underline-offset-4">
+                <Link
+                  href={legalHref(lang, 'terms')}
+                  className="text-navy-900 font-semibold underline underline-offset-4">
                   {t.cancel.terms}
                 </Link>
               </p>
@@ -409,9 +426,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
                   size="page"
                   tone="dark"
                 />
-                {hasPrice && (
-                  <p className="mt-2 text-sm text-white/80">{t.price.note}</p>
-                )}
+                {hasPrice && <p className="mt-2 text-sm text-white/80">{t.price.note}</p>}
                 {tour.priceNote && <p className="mt-1 text-sm font-medium text-white">{tour.priceNote}</p>}
                 {tour.departures.length > 0 && (
                   <div className="mt-4 border-t border-white/15 pt-4 text-sm">

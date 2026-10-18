@@ -1,0 +1,108 @@
+{
+  "locale": "zh",
+  "kind": "category",
+  "sourceUrl": "https://www.eztravelturkey.com/zh/destinations/turkey-tours/02-to-05-days-tours/",
+  "path": "destinations/turkey-tours/02-to-05-days-tours",
+  "metaTitle": "預訂土耳其度假套餐 | Eztravel Turkey",
+  "metaDescription": "體驗土耳其最佳的短天數旅遊行程。在短暫的停留中遊覽土耳其的精華景點，也可安排私人定制行程",
+  "canonical": "https://www.eztravelturkey.com/zh/destinations/turkey-tours/02-to-05-days-tours/",
+  "robots": "",
+  "h1": "土耳其2-5天旅遊行程",
+  "lastUpdated": null,
+  "breadcrumb": [
+    "Destinations",
+    "土耳其旅遊行程",
+    "土耳其2-5天旅遊行程"
+  ],
+  "sections": [
+    {
+      "level": 0,
+      "heading": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "2到5天的土耳其之旅是專為覺得只利用一天時間旅遊太短的商務或過境的旅客所提供的行程。旅客在這2-5天的旅程之後會有充電感。短天數行程包括伊斯坦堡之旅，土耳其西部之旅，甚至是世界文化遺產之旅 - 所以請趕緊收拾行李，跟著我們一起出遊吧！"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "title": "卡帕多奇亞+艾菲索斯+棉花堡精華4日遊-3段內陸航班 CAPPADOCIA+EPHESUS+PAMUKKALE 4 DAYS TOUR-3 Flights",
+      "url": "/zh/destinations/turkey-tours/02-to-05-days-tours/cappadocia-pamukkale-ephesus-tour-by-plane/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070812450088.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-艾菲索斯-庫薩達斯-棉花堡-伊斯坦堡",
+        "4天 | 3夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "卡帕多奇亞+棉花堡+艾菲索斯精華4日遊-2段內陸航班 CAPPADOCIA+PAMUKKALE+EPHESUS 4 DAYS TOUR-2 Flights",
+      "url": "/zh/destinations/turkey-tours/02-to-05-days-tours/cappadocia-pamukkale-ephesus-tour-by-2plane/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070906480967.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-棉花堡-艾菲索斯-庫薩達斯-伊斯坦堡",
+        "4天 | 2夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "伊斯坦堡+卡帕多奇亞5日遊-2段內陸航班 ISTANBUL+CAPPADOCIA 5 DAYS TOUR",
+      "url": "/zh/destinations/turkey-tours/02-to-05-days-tours/istanbul-cappadocia-tour-06-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070906463645.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞-伊斯坦堡",
+        "5天 | 4夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "土耳其3日西部文化遺產之旅-2段內陸航班 WESTERN TURKEY TOUR 3 DAYS",
+      "url": "/zh/destinations/turkey-tours/02-to-05-days-tours/western-turkey-tour-03-days/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/202307090649305.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-艾菲索斯-庫薩達斯-棉花堡-三古城之旅-伊斯坦堡",
+        "3天 | 2夜 全年每日出發"
+      ],
+      "price": ""
+    },
+    {
+      "title": "卡帕多奇亞兩天-夜 【搭機】 CAPPADOCIA TOUR BY FLIGHT",
+      "url": "/zh/destinations/turkey-tours/02-to-05-days-tours/cappadocia-tour-by-flight/",
+      "image": {
+        "src": "https://www.eztravelturkey.com/_uploads/2023070906485425.jpg",
+        "width": null,
+        "height": null,
+        "alt": ""
+      },
+      "meta": [
+        "伊斯坦堡-卡帕多奇亞--伊斯坦堡",
+        "2天 | 1夜 全年每日出發"
+      ],
+      "price": ""
+    }
+  ],
+  "faqs": [],
+  "jsonLd": []
+}

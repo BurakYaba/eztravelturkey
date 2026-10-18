@@ -30,7 +30,7 @@ for (const path of urls) {
   checked++;
   if (res.status !== 200) { bad(path, `status ${res.status}`); continue; }
   const html = await res.text();
-  if (/israel/i.test(html)) bad(path, 'mentions Israel');
+  if (/israel|以色列|イスラエル/i.test(html)) bad(path, 'mentions Israel');
   const h1 = (html.match(/<h1[\s>]/g) ?? []).length;
   if (h1 !== 1) bad(path, `${h1} H1`);
   const canonical = /<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];
@@ -39,7 +39,9 @@ for (const path of urls) {
   const l = /<html[^>]*\slang="([^"]+)"/.exec(html)?.[1];
   if (l !== lang[path.split('/')[1]]) bad(path, `html lang ${l}`);
   if (!/<title>[^<]{5,}<\/title>/.test(html)) bad(path, 'no title');
-  if (!/<meta name="description" content="[^"]{20,}"/.test(html)) bad(path, 'no description');
+  // 20 letters for English; the old Chinese and Japanese pages have descriptions of 9 characters and up, which is what a short CJK sentence is.
+  const minDescription = path.startsWith('/en/') ? 20 : 8;
+  if (!new RegExp(`<meta name="description" content="[^"]{${minDescription},}"`).test(html)) bad(path, 'no description');
   for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
     try { JSON.parse(m[1]); } catch { bad(path, 'invalid JSON-LD'); }
   }
@@ -63,7 +65,12 @@ await expect('/en/destinations/turkey-tours/not-a-tour/', 404);
 await expect('/en/blog/israel/some-post/', 410);
 await expect('/en/destinations/israel-tours/', 410);
 await expect('/en/sitemap/en.xml', 404);
-await expect('/sitemap/zh.xml', 404);
+await expect('/sitemap/zh.xml', 200);
+await expect('/sitemap/jp.xml', 200);
+await expect('/jp/%E7%9B%AE%E7%9A%84%E5%9C%B0/', 200);
+await expect('/jp/%E7%9B%AE%E7%9A%84%E5%9C%B0/%E3%83%88%E3%83%AB%E3%82%B3%E3%83%84%E3%82%A2%E3%83%BC/', 200);
+await expect('/jp/%E7%9B%AE%E7%9A%84%E5%9C%B0/nope/', 404);
+await expect('/zh/about-us/', 200);
 await expect('/en/search-index.json', 200);
 await expect('/en/search/', 200);
 await expect('/zh/destinations/', 200);
@@ -73,9 +80,14 @@ const search = await (await get('/en/search-index.json')).json();
 if (!Array.isArray(search) || search.length < 170) bad('/en/search-index.json', `only ${search.length ?? '?'} entries`);
 if (search.some((e) => /israel/i.test(e.title + e.href))) bad('/en/search-index.json', 'mentions Israel');
 
-const zh = await (await get('/zh/destinations/turkey-tours/')).text();
-if (!/rel="canonical" href="[^"]*\/en\/destinations\/turkey-tours\/"/.test(zh)) bad('/zh/destinations/turkey-tours/', 'fallback page must point its canonical to English');
-if (/hreflang/.test(zh)) bad('/zh/destinations/turkey-tours/', 'must not write hreflang yet');
+// Pages that exist in more than one language point at each other (hreflang) and each is its own canonical.
+const country = await (await get('/zh/destinations/turkey-tours/')).text();
+if (!/rel="canonical" href="[^"]*\/zh\/destinations\/turkey-tours\/"/.test(country)) bad('/zh/destinations/turkey-tours/', 'canonical must be the Chinese page');
+for (const code of ['en', 'zh-Hant', 'ja', 'x-default']) {
+  if (!new RegExp(`hrefLang="${code}"`, 'i').test(country)) bad('/zh/destinations/turkey-tours/', `no hreflang ${code}`);
+}
+const jpHub = await (await get('/jp/%E7%9B%AE%E7%9A%84%E5%9C%B0/')).text();
+if (!/rel="canonical" href="[^"]*\/jp\/%E7%9B%AE%E7%9A%84%E5%9C%B0\/"/.test(jpHub)) bad('/jp/目的地/', 'canonical must be the encoded Japanese address');
 
 console.log(problems.length === 0 ? 'ALL OK' : `${problems.length} problem(s):\n${problems.slice(0, 40).join('\n')}`);
 process.exit(problems.length === 0 ? 0 : 1);

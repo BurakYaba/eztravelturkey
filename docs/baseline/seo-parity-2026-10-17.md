@@ -32,7 +32,7 @@ Every old page carried three H1 elements (the page heading plus two legal-text m
 
 ## Content and links
 
-Words are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.
+Words (characters for Chinese and Japanese) are the text inside `<main>` of each page. The old counts left out the header, footer and legal modals; the two methods are close but not identical, so read differences of about a tenth as noise.
 
 | Kind | Old words (median) | New words (median) | New under 70% of old | Old internal links (median) | New internal links (median) | Old images without alt | New images without alt |
 |---|---|---|---|---|---|---|---|

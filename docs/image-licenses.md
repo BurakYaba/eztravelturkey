@@ -55,9 +55,9 @@ The Pexels photographers are credited on the About page (section "Photo credits"
 | `greek-ruins-columns` | Uiliam Nörnberg | https://www.pexels.com/photo/the-sun-is-setting-over-the-parthenon-28300999/ | Pexels License (free for commercial use, no attribution required; credited on the About page) |
 
 <!-- depositphotos-heroes:start -->
-## Hero pictures from Depositphotos (146): tours and destination pages
+## Hero pictures from Depositphotos (200): tours (three languages) and destination pages
 
-Bought by Magnificent Travel (team account, standard license) and shown as the main picture of 118 tours and 28 destination pages (2026-10-17). Each picture is used once. The license page of every picture is in the client's account at the address in the last column.
+Bought by Magnificent Travel (team account, standard license) and shown as the main picture of 118 English tours, 81 Chinese and Japanese tours (the others there copy the English tour's picture) and 28 destination pages (2026-10-17). Each picture is used once. The license page of every picture is in the client's account at the address in the last column.
 
 | Depositphotos no. | Size | Title | Artist | Used on | License page |
 |---|---|---|---|---|---|
@@ -125,12 +125,12 @@ Bought by Magnificent Travel (team account, standard license) and shown as the m
 | 11472286 | XL | Souk of Fez, Morocco | AnibalTrejo | 8-Day Morocco Desert Tour: Fez to Marrakech | https://depositphotos.com/tr/purchased/view/294672534.html |
 | 22421935 | XL | Morocco desert. Differents color dunes | OSORIOartist | 9-Day Morocco Tour: Imperial Cities & Sahara | https://depositphotos.com/tr/purchased/view/294674732.html |
 | 61290209 | XL | Egypt Temple of Philae | FreeProd | 11-Day Istanbul & Egypt Nile Cruise Journey | https://depositphotos.com/tr/purchased/view/294653478.html |
-| 414231122 | XL | Air balloons and Colossus | zevana | 11-Day Turkey & Egypt Ancient Wonders Route | https://depositphotos.com/tr/purchased/view/294653952.html |
-| 110987762 | XL | Hot air balloons over mountain landscape | Byelikova | 13-Day Turkey & Egypt Explorer: Cappadocia and the Nile | https://depositphotos.com/tr/purchased/view/294622916.html |
-| 326092586 | XL | Colorful hot air balloon flying over Cappadocia, Turkey. | praewa_koreashopping@hotmail.com | 15-Day Best of Turkey & Egypt: Cappadocia to the Nile | https://depositphotos.com/tr/purchased/view/294622848.html |
+| 414231122 | XL | Air balloons and Colossus | zevana | 11-Day Turkey & Egypt Ancient Wonders Route; TL-02 中央アナトリアとトルコ西部ツアー10日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294653952.html |
+| 110987762 | XL | Hot air balloons over mountain landscape | Byelikova | 13-Day Turkey & Egypt Explorer: Cappadocia and the Nile; TL-03 中央アナトリアとトルコ西部ツアー11日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294622916.html |
+| 326092586 | XL | Colorful hot air balloon flying over Cappadocia, Turkey. | praewa_koreashopping@hotmail.com | 15-Day Best of Turkey & Egypt: Cappadocia to the Nile; カッパドキアとトルコ西部10日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294622848.html |
 | 12420806 | XL | The Blue Mosque, Istanbul, Turkey. | masterlu | 7-Day Istanbul & Cairo Two-Country Escape | https://depositphotos.com/tr/purchased/view/294667832.html |
-| 2775961 | XL | Cappadocia | AnibalTrejo | 9-Day Turkey & Egypt Highlights: Istanbul to Cairo | https://depositphotos.com/tr/purchased/view/294600788.html |
-| 179619900 | XL | Goreme , Turkey - May 01, 2016: Hot air balloons over mountain landscape in Cappadocia, Goreme National Park Turkey. | Byelikova | 11-Day Turkey & Petra Cultural Heritage Journey | https://depositphotos.com/tr/purchased/view/294600616.html |
+| 2775961 | XL | Cappadocia | AnibalTrejo | 9-Day Turkey & Egypt Highlights: Istanbul to Cairo; トルコワンダーツアー11日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294600788.html |
+| 179619900 | XL | Goreme , Turkey - May 01, 2016: Hot air balloons over mountain landscape in Cappadocia, Goreme National Park Turkey. | Byelikova | 11-Day Turkey & Petra Cultural Heritage Journey; トルコ卒業旅行９泊１０日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294600616.html |
 | 396962554 | XL | Cappadocia Balloon Visual Show | muratti6868 | 13-Day Grand Turkey & Jordan: Ephesus to the Dead Sea | https://depositphotos.com/tr/purchased/view/294600538.html |
 | 85851612 | XL | Balloons CappadociaTurkey. | fotoall | 9-Day Cappadocia, Petra & Wadi Rum Adventure | https://depositphotos.com/tr/purchased/view/294599912.html |
 | 6634879 | L | Petra's Tresure | dibrova | 9-Day Istanbul, Petra & Wadi Rum Heritage Journey | https://depositphotos.com/tr/purchased/view/294716136.html |
@@ -179,32 +179,86 @@ Bought by Magnificent Travel (team account, standard license) and shown as the m
 | 4863118 | XL | Hagia Sophia in Istanbul in morning light | AchimHB | 4-Day Istanbul Tour | https://depositphotos.com/tr/purchased/view/294622764.html |
 | 285833118 | XL | Iznik.bursa,turkey- july 14,2019. iznik known as Nicaea since ancient times and iznik is located on eastern shore of lake iznik. view from old and historical buildings in iznik. | yilmazsavaskandag | 5-Day Istanbul & Bursa Tour | https://depositphotos.com/tr/purchased/view/294658498.html |
 | 383487262 | XL | Hagia Sophia and Blue Mosque. Istanbul, Turkey. | resulmuslu | 6-Day Istanbul, Bursa & Princes' Islands Tour | https://depositphotos.com/tr/purchased/view/294622706.html |
-| 32824433 | L | The town of Goreme-Cappadocia, the tourism capital of Turkey | toshket | Turkey (destination page) | https://depositphotos.com/tr/purchased/view/294744708.html |
-| 98816964 | XL | Orthodox Church building on Santorini | teamtime | Greece (destination page) | https://depositphotos.com/tr/purchased/view/294642300.html |
-| 1554934 | XL | Bedouin on camel near of great pyramid | Ukrainian | Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653178.html |
-| 11440304 | L | Camel against treasury | kyolshin | Jordan (destination page) | https://depositphotos.com/tr/purchased/view/294716128.html |
-| 237960328 | XL | Ancient fortress at marrakech, Morocco | stefano.zaccaria1704.gmail.com | Morocco (destination page) | https://depositphotos.com/tr/purchased/view/294672316.html |
+| 32824433 | L | The town of Goreme-Cappadocia, the tourism capital of Turkey | toshket | Turkey (destination page); 土耳其約旦精華13日遊 TURKEY & JORDAN 13 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294744708.html |
+| 98816964 | XL | Orthodox Church building on Santorini | teamtime | Greece (destination page); アテネ・ナクソス・サントリーニ・クレタ11泊12日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294642300.html |
+| 1554934 | XL | Bedouin on camel near of great pyramid | Ukrainian | Egypt (destination page); 開羅金字塔4日遊 WONDER OF EGYPT (Chinese site) | https://depositphotos.com/tr/purchased/view/294653178.html |
+| 11440304 | L | Camel against treasury | kyolshin | Jordan (destination page); 約旦經典7日遊 AMMAN JERASH PETRA 7 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294716128.html |
+| 237960328 | XL | Ancient fortress at marrakech, Morocco | stefano.zaccaria1704.gmail.com | Morocco (destination page); モロッコ周遊10日間ツアー (Japanese site) | https://depositphotos.com/tr/purchased/view/294672316.html |
 | 612185972 | XL | Amazing panoramic landscape, luxury travel vacation. Oia town stairs, blue doors on Santorini island, Greece. Traditional and famous houses and churches with blue domes over the Caldera, Aegean sea | icemanphotos | Turkey and Greece (destination page) | https://depositphotos.com/tr/purchased/view/294642296.html |
-| 1108653 | XL | Pyramids | jordano | Turkey and Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653156.html |
-| 21262721 | L | Facade of Monastery at Petra, Jordan | OSORIOartist | Turkey and Jordan (destination page) | https://depositphotos.com/tr/purchased/view/294716116.html |
-| 1589729 | XL | Bedouin on camel near of egypt pyramid | Ukrainian | Greece and Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653138.html |
-| 93042916 | L | View from above of Al Khazneh | liseykina | Greece and Jordan (destination page) | https://depositphotos.com/tr/purchased/view/294716086.html |
-| 15413287 | XL | View of one of the Great Pyramids in Giza, Egypt | Nickolayv | Turkey, Greece and Egypt (destination page) | https://depositphotos.com/tr/purchased/view/294653118.html |
-| 51162297 | XL | Ancient City of Ephesus, Izmir, Turkey | EnginKorkmaz | Turkey 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294606090.html |
-| 198371060 | L | Front view of dwellings in stone formations in valley of Cappadocia, Turkey | OlgaGrebBO | Turkey 6-9 days (destination page) | https://depositphotos.com/tr/purchased/view/294744694.html |
-| 417607950 | XL | View of Mediterranean seacoast, mountains, beach and resort hotels at Antalya historical downtown, Antalya, Turkey | neurobite | Turkey 10-14 days (destination page) | https://depositphotos.com/tr/purchased/view/294667026.html |
+| 1108653 | XL | Pyramids | jordano | Turkey and Egypt (destination page); エジプト・ヨルダン11日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294653156.html |
+| 21262721 | L | Facade of Monastery at Petra, Jordan | OSORIOartist | Turkey and Jordan (destination page); 約旦精選6日遊 AMMAN PETRA 6 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294716116.html |
+| 1589729 | XL | Bedouin on camel near of egypt pyramid | Ukrainian | Greece and Egypt (destination page); トルコ・エジプト12日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294653138.html |
+| 93042916 | L | View from above of Al Khazneh | liseykina | Greece and Jordan (destination page); トルコ＆ヨルダンコンビネーションツアー13日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294716086.html |
+| 15413287 | XL | View of one of the Great Pyramids in Giza, Egypt | Nickolayv | Turkey, Greece and Egypt (destination page); トルコ・エジプト9日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294653118.html |
+| 51162297 | XL | Ancient City of Ephesus, Izmir, Turkey | EnginKorkmaz | Turkey 3-5 days (destination page); 土耳其希臘小島13日遊 TURKEY & GREEK ISLANDS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294606090.html |
+| 198371060 | L | Front view of dwellings in stone formations in valley of Cappadocia, Turkey | OlgaGrebBO | Turkey 6-9 days (destination page); 土耳其希臘獨家10日遊 BEST OF TURKEY & GREECE 10 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294744694.html |
+| 417607950 | XL | View of Mediterranean seacoast, mountains, beach and resort hotels at Antalya historical downtown, Antalya, Turkey | neurobite | Turkey 10-14 days (destination page); TM-14 イスタンブール･カッパドキア・アンタルヤツアー６泊７日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294667026.html |
 | 3100559 | XL | City harbor in marmaris | aragami12345 | Turkey 15+ days (destination page) | https://depositphotos.com/tr/purchased/view/294664758.html |
-| 264419390 | XL | Hagia Sophia and cloudy sky | zevana | Istanbul packages (destination page) | https://depositphotos.com/tr/purchased/view/294622758.html |
-| 73160679 | L | Cave Mosque Famous city Cappadocia in Turkey | DeReGe | Turkey activities (destination page) | https://depositphotos.com/tr/purchased/view/294744674.html |
-| 10888376 | XL | Academy of Athens panorama, Greece | lefpap | Greece day tours (destination page) | https://depositphotos.com/tr/purchased/view/294644960.html |
-| 10887581 | XL | Mykonos | Daydream | Greece cruises (destination page) | https://depositphotos.com/tr/purchased/view/294643560.html |
-| 150575592 | XL | Panoramic view of Meteora monastery on the high rock and road in the mountains at spring time, Greece | Noman Pixel | Greece escorted (destination page) | https://depositphotos.com/tr/purchased/view/294652028.html |
+| 264419390 | XL | Hagia Sophia and cloudy sky | zevana | Istanbul packages (destination page); 伊斯坦堡+開羅7日遊 ISTANBUL & CAIRO 7 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294622758.html |
+| 73160679 | L | Cave Mosque Famous city Cappadocia in Turkey | DeReGe | Turkey activities (destination page); 土耳其希臘熱門14日遊 HIGHLIGHTS OF TURKEY & GREECE TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294744674.html |
+| 10888376 | XL | Academy of Athens panorama, Greece | lefpap | Greece day tours (destination page); 雅典+開羅7日遊 ATHENS & CAIRO 7 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294644960.html |
+| 10887581 | XL | Mykonos | Daydream | Greece cruises (destination page); 希臘小島+埃及尼羅河14日遊 GREEK ISLANDS & EGPYT 14 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294643560.html |
+| 150575592 | XL | Panoramic view of Meteora monastery on the high rock and road in the mountains at spring time, Greece | Noman Pixel | Greece escorted (destination page); 奥林匹亞、岱爾菲&梅特奥拉世界遺產之旅4日遊 CLASSICAL MAINLAND TOUR WITH METEORA (Chinese site) | https://depositphotos.com/tr/purchased/view/294652028.html |
 | 52011489 | XL | Oia Santorini | Dessie_bg | Greece packages (destination page) | https://depositphotos.com/tr/purchased/view/294642294.html |
-| 97213732 | XL | Famous pyramid and sphinx | kanuman | Egypt 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294653108.html |
+| 97213732 | XL | Famous pyramid and sphinx | kanuman | Egypt 3-5 days (destination page); トルコ・エジプト周遊ツアー14泊15日毎日催行 (Japanese site) | https://depositphotos.com/tr/purchased/view/294653108.html |
 | 150772890 | XL | River Nile in Egypt. Life on the River Nile | ewastudio | Egypt 6-9 days (destination page) | https://depositphotos.com/tr/purchased/view/294655124.html |
-| 182210484 | XL | Parasols on the beach of Red Sea in Hurghada, Egypt | Patryk_Kosmider | Egypt 10+ days (destination page) | https://depositphotos.com/tr/purchased/view/294654804.html |
-| 330621416 | L | Ruins of Karak castle, Jordan | mathes | Jordan 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294720586.html |
+| 182210484 | XL | Parasols on the beach of Red Sea in Hurghada, Egypt | Patryk_Kosmider | Egypt 10+ days (destination page); 開羅金字塔/紅海沙姆沙伊赫7日遊 EGYPT DELIGHTS 7 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294654804.html |
+| 330621416 | L | Ruins of Karak castle, Jordan | mathes | Jordan 3-5 days (destination page); アンマン・ペトラ4日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294720586.html |
 | 330620420 | L | Bedouin camp in Wadi Rum desert, Jordan | mathes | Jordan 6-9 days (destination page) | https://depositphotos.com/tr/purchased/view/295660108.html |
-| 91723648 | XL | Morocco. Blue medina of Chefchaouen city at sunset | Alex_7370 | Morocco 3-5 days (destination page) | https://depositphotos.com/tr/purchased/view/294672158.html |
+| 91723648 | XL | Morocco. Blue medina of Chefchaouen city at sunset | Alex_7370 | Morocco 3-5 days (destination page); フェズ＆シャウエン4泊5日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294672158.html |
 | 89111928 | XL | Camels in Merzouga dunes | duha127 | Morocco 6+ days (destination page) | https://depositphotos.com/tr/purchased/view/294674498.html |
+| 250675658 | XL | Karnak temple in Luxor, Egypt | merrydolla | 埃及約旦精華13日遊 EGYPT & JORDAN 13 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294654226.html |
+| 12606435 | L | Cave city in Cappadocia | volare2004 | 土耳其埃及經典15日遊 TURKEY & EGYPT 15 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294744858.html |
+| 211197350 | XL | Great Hypostyle Hall and clouds at Temples of Karnak, ancient Thebes. Luxor, Egypt | merrydolla | 開羅/亞斯文/盧克索(陸路)7日遊 EGYPT CULTURAL TRIP 7 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294654222.html |
+| 113331058 | XL | Avenue of Sphinxes at Luxor temple | paulprescott | 開羅/亞斯文/盧克索(尼羅河巡禮)8日遊 EGYPT CULTURAL TRIP 8 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294654004.html |
+| 184525898 | XL | Sphinx at Pompeys Pillar, Alexandria | highwoodart | 開羅金字塔+亞歷山大港5日遊 GATEWAY TO ANCIENT 5 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294655958.html |
+| 15649819 | XL | Sphinxes avenue. Luxor, Egypt | Arsty. | 開羅金字塔/盧克索+亞斯文尼羅河巡遊4日/亞歷山大港10日遊 GREAT SITES OF EGYPT 10 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294653998.html |
+| 387991742 | XL | The Acropolis of Athens, with the Parthenon Temple at sunset, Athens, Greece. | luckyphotographer | 雅典精華5日遊 GREECE SIGHTSEEING TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294644760.html |
+| 177912920 | XL | Meteora monasteries, Greece. Details from the Monastery of Rousanou or St. Barbara | microgen | 岱爾菲&梅特歐拉世界遺產之旅2日遊 METEORA MONASTERIES TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294652022.html |
+| 119158154 | XL | Hagia Sophiaat night from Sultanahmet Square, Istanbul | jovannig | 伊斯坦堡+雅典8日遊 ISTANBUL & ATHENS 8 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294622486.html |
+| 163321836 | L | Fairy chimenys in Cappadocia | fyletto | 希臘土耳其精華14日遊 TOUCH OF GREECE & TURKEY TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294744656.html |
+| 90551248 | L | Cappadocia hot air balloon, Turkey | Xantana | 土耳其希臘浪漫16日遊 TURKEY & GREECE HISTORICAL TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294744648.html |
+| 99214458 | XL | Wonderful Hadrian Temple. In the ancient city of Ephesus, Turkey. | herraez | 卡帕多奇亞+棉花堡+艾菲索斯精華4日遊-2段內陸航班 CAPPADOCIA+PAMUKKALE+EPHESUS 4 DAYS TOUR-2 Flights (Chinese site) | https://depositphotos.com/tr/purchased/view/294605516.html |
+| 154980560 | XL | The ruins of the ancient antique city of Ephesus | Lester120 | 卡帕多奇亞+艾菲索斯+棉花堡精華4日遊-3段內陸航班 CAPPADOCIA+EPHESUS+PAMUKKALE 4 DAYS TOUR-3 Flights (Chinese site) | https://depositphotos.com/tr/purchased/view/294605512.html |
+| 12420854 | XL | Basilica Cistern, Istanbul, Turkey. | masterlu | 卡帕多奇亞兩天-夜 【搭機】 CAPPADOCIA TOUR BY FLIGHT (Chinese site) | https://depositphotos.com/tr/purchased/view/294602978.html |
+| 193183638 | XL | Panoramic view of Istanbul with the Bosphorus Bridge | monticello | 伊斯坦堡+卡帕多奇亞5日遊-2段內陸航班 ISTANBUL+CAPPADOCIA 5 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294602906.html |
+| 90793292 | XL | Terrace Houses in Ephesus Ancient City | EvrenKalinbacak | 土耳其3日西部文化遺產之旅-2段內陸航班 WESTERN TURKEY TOUR 3 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294605480.html |
+| 266322878 | L | Celsus Library in Ephesus, Turkey | Kisa_Markiza | 土耳其精選8日遊-2段內陸航班 TURKEY CULTURAL TOUR 8 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/295260774.html |
+| 266322544 | L | Celsus Library and ruins in Ephesus, Turkey | Kisa_Markiza | 土耳其精選8日遊-3段內陸航班 TURKEY CLASSIC TOUR 8 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/295260756.html |
+| 172382316 | L | Celsius Library in Ephesus, Turkey | bloodua | 獨家土耳其精選7日遊-3段內陸航班 TURKEY CLASSIC TOUR 7 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/295260590.html |
+| 10662936 | L | The goddess of victory (Nika), Ephesus, Turkey | Gelia78 | 土耳其世界遺產7日遊-2段內陸航班 TURKEY CULTURAL TRIP 7 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/295260536.html |
+| 60636945 | L | Ancient Ruins of Ephesus | niglaynike | 土耳其華麗11日遊-2段內陸航班 ANATOLIA CROSSROADS ANTALYA 11 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/295260298.html |
+| 468327612 | L | A pool next to a body of water. Turkey Tour Package Travel Ephesus Adventure | imagesrepublic@gmail.com | 土耳其精選地中海15日遊-1段內陸航班 ANATOLIA CROSSROADS 15 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/295259596.html |
+| 388039128 | L | Turkey Izmir Ephesus Ancient City, Historical city | EsinDeniz | 土耳其璀璨10日遊-3段內陸航班 WESTERN TURKEY AND CAPPADOCIA TOUR 10 DAYS (Chinese site) | https://depositphotos.com/tr/purchased/view/294746412.html |
+| 91618726 | L | Temple of Hadrian in Ephesus Ancient City | EvrenKalinbacak | 土耳其浪漫10日遊-3段內陸航班 TURKEY CLASSIC ALACATI 10 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294746406.html |
+| 51195429 | L | Temple of Hadrian in Ephesus, Turkey | EvrenKalinbacak | 土耳其懷古10日遊-1段內陸航班 TURKEY CULTURAL SAFRANBOLU 10 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294746320.html |
+| 28447871 | L | Stone carving of the goddess Nike at the ruins of ancient Ephesus, Turkey | lefpap | 土耳其奇觀11日遊-2段內陸航班 TURKEY WONDERS 11 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294746314.html |
+| 2267318 | XL | Bosphorus Bridge - Istanbul - Turkey | orhancam | 伊斯坦堡+王子島5日遊 ISTANBUL+PRINCE ISLAND 5 DAYS TOUR (Chinese site) | https://depositphotos.com/tr/purchased/view/294602896.html |
+| 184630102 | XL | Beach at the hotel Dreams Beach in Sharm El Sheikh late in the e | valirin | エジプトツアーカイロ・シャルムエルシェイク7泊8日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294654498.html |
+| 2560258 | XL | Alexandria | Yosef_Er | エジプトツアーカイロ・ナイルクルーズ9泊10日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294655954.html |
+| 96702062 | XL | Mosque in Alexandria in Egypt | hecke06 | カイロ-アレキサンドリア-カイロ４泊５日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294655948.html |
+| 325310048 | XL | Parthenon is one of the well known ancient treasures of Athens and it sits on the hill of Acropolis | YaseminOlgunozBerber | アテネツアー4泊5日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294644754.html |
+| 4528507 | XL | Beautiful Mykonos | tepic | イスタンブール・ミコノス・サントリーニ・アテネ８泊９日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294643548.html |
+| 50630287 | L | Temple of Hadrian in Ephesus, Turkey | EvrenKalinbacak | ギリシャ・トルコ14日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294746310.html |
+| 70763843 | L | Ephesus | kokal | トルコ・ギリシャ10日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294746206.html |
+| 44925585 | XL | Didyma Apollon Temple | kokal | トルコ・ギリシャ歴史発見ツアー18日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294670782.html |
+| 9954230 | L | Artemis of Ephesus, goddess of fertility | Sombra12 | ハイライトトルコ・ギリシャツアー13泊14日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294746196.html |
+| 321572494 | XL | Hierapolis Ancient City, ruins of Hierapolis in Pamukkale, Denizli, Turkey | roanworks | TL-01 イスタンブール・サフランボル・カッパドキア・パムッカレ・エフェソス９泊10日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294670214.html |
+| 21394215 | XL | Pamukkale Turkey | Violin | T-01 カッパドキア･パムッカレ･エフェソス3泊4日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294670188.html |
+| 155184374 | XL | Pamukkale exotic pearl of Turkey | alan64 | T-05 ハットゥシャシュ･カッパドキア・エフェソス・パムッカレ5泊6日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294670184.html |
+| 57634411 | XL | Parched basins of Pamukkale in Turkey | kosmos111 | T-07チャナッカレ・トロイ・ペルガモン・エフェソス・パムッカレツアー3泊4日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294670186.html |
+| 341282244 | XL | Pamukkale, carbonate mineral, Geology | PantherMediaSeller | 世界遺産カッパドキア・エフェソス・パムッカレ3泊4日｜空路で巡るトルコ周遊ツアー (Japanese site) | https://depositphotos.com/tr/purchased/view/294622242.html |
+| 340372432 | XL | Pamukkale - Denizli, Turkey, nature background | PantherMediaSeller | TM-02 イスタンブール･カッパドキア･パムッカレ･エフェソス6泊7日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294622228.html |
+| 437867726 | XL | Swimming places of Travertine in Pamukkale | RokaB | TM-07 イスタンブール・カッパドキア･パムッカレ･エフェソス6泊７日毎日催行 (Japanese site) | https://depositphotos.com/tr/purchased/view/294605208.html |
+| 86905326 | XL | Travertine terraces in Pamukkale | Cornfield | TM-09 イスタンブール・エフェソス・パムッカレ・カッパドキア 6泊７日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294605172.html |
+| 8186602 | XL | Salt lake trek | scorpion26 | TM-11 カッパドキア・ネムルトダー・ウルファ５泊６日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294667552.html |
+| 53350741 | XL | Pamukkale basins | intendo48 | TM-13 エフェソス・パムッカレ・フェティエ・アンタルヤ・5泊6日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294603550.html |
+| 653433364 | XL | Raissouni Palace, Hassan II Cultural Center, Asilah, morocco, africa | toloB | カサブランカ＆フェズ 4泊5日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294676288.html |
+| 62924459 | XL | Jamaa el Fna, Marrakesh, Morocco. | kasto | マラケシュ& ザゴラ4泊5日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294671628.html |
+| 19512219 | XL | Marrakesh | kamchatka | 南モロッコ7泊8日 (Japanese site) | https://depositphotos.com/tr/purchased/view/294671622.html |
+| 153144616 | L | The Monastery, a building carved out of rock in the ancient Petra | marcociannarel | ペトラ3日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294716078.html |
+| 55233109 | L | ASIA MIDDLE EAST JORDAN PETRA | urf | アンマン・ペトラ5日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294716072.html |
+| 197230440 | L | Beautiful mosque in Aqaba, Jordan, Middle East region | nabijecka | アンマン・アカバ・ペトラ7日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294718162.html |
+| 249659228 | L | Sunset view of Aqaba gulf in Jordan | Dudlajzov | アンマン・アカバ・ペトラ8日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294717992.html |
+| 12753113 | L | Beach in Aqaba, Jordan | hitdelight | アンマン・死海・マダバ・ネボ山・ペトラ・アカバ 6日間 (Japanese site) | https://depositphotos.com/tr/purchased/view/294717926.html |
 <!-- depositphotos-heroes:end -->

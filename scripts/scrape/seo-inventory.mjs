@@ -2,6 +2,7 @@
 // P4.5 (parity report) and the SEO drift test compare against later.
 // Usage: node scripts/scrape/seo-inventory.mjs --site en        Output: data/inventory/seo-<site>.csv (git-ignored)
 // Main-content words exclude header, footer, modals (the legal text that repeats on every page), tour cards and FAQ.
+// The Chinese and Japanese pages have no spaces between words, so for them `mainWords` is the number of characters (letters, not blanks).
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,6 +25,7 @@ for (const line of readFileSync(manifestFile, 'utf8').split('\n').filter(Boolean
 }
 
 const squash = (value) => value.replace(/\s+/g, ' ').trim();
+const cjk = site !== 'en';
 const rows = [];
 for (const entry of latest.values()) {
   const base = { url: entry.url, kind: entry.kind, status: entry.status, location: entry.location };
@@ -34,9 +36,9 @@ for (const entry of latest.values()) {
   const $ = cheerio.load(readFileSync(join(archiveDir, `${entry.id}.html`), 'utf8'));
   const title = squash($('title').first().text());
   const description = squash($('meta[name="description"]').attr('content') ?? '');
-  const area = $('.page-content-area, .col-xl-8').first().clone();
-  area.find('script, style, noscript, .modal, .package-card3, .faq-section, .faqWidget, .accordion, .banner3-section').remove();
-  const words = squash(area.text()).split(' ').filter(Boolean).length;
+  const area = (cjk ? $('section.content-area, .home-content').first() : $('.page-content-area, .col-xl-8').first()).clone();
+  area.find('script, style, noscript, .modal, .package-card3, .faq-section, .faqWidget, .accordion, .banner3-section, .widget-area, form, select').remove();
+  const words = cjk ? squash(area.text()).replace(/\s/g, '').length : squash(area.text()).split(' ').filter(Boolean).length;
   const origin = new URL(entry.url).origin;
   const internal = new Set(
     $('a[href]')

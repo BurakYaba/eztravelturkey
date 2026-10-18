@@ -3,7 +3,6 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useId, useMemo, type ReactNode } from 'react';
 import { ArrowCounterClockwise, CalendarBlank, CaretDown, Compass, MapPin } from '@phosphor-icons/react/dist/ssr';
-import { destinations } from '@/data/destinations';
 import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
 import type { TourCardData } from '@/lib/data/types';
@@ -61,9 +60,36 @@ type Props = {
   lang: Locale;
   /** Card texts in the page language, passed from the server so the client does not carry every dictionary. */
   cardText: TourCardText;
+  /** The words of the filters and the country names, in the page language. */
+  text: BrowserText;
 };
 
-export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, cardText }: Props) {
+export type BrowserText = {
+  allTours: string;
+  destination: string;
+  allDestinations: string;
+  style: string;
+  anyStyle: string;
+  privateOption: string;
+  smallOption: string;
+  privateTours: string;
+  smallTours: string;
+  duration: string;
+  anyDuration: string;
+  d35: string;
+  d69: string;
+  d10: string;
+  reset: string;
+  tour: string;
+  tours: string;
+  filterByCountry: string;
+  emptyTitle: string;
+  emptyText: string;
+  planButton: string;
+  countries: { id: string; name: string }[];
+};
+
+export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, cardText, text }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const search = useSearchParams();
@@ -95,7 +121,7 @@ export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, 
   );
 
   const filtered = Boolean(destination || duration || (!lockedStyle && style));
-  const tabs = [{ id: '', name: 'All tours' }, ...destinations.map((d) => ({ id: d.id, name: d.name }))];
+  const tabs = [{ id: '', name: text.allTours }, ...text.countries];
 
   return (
     <div>
@@ -106,13 +132,13 @@ export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, 
         )}>
         {!singleCountry && (
           <Filter
-            label="Destination"
+            label={text.destination}
             id={`${uid}-d`}
             icon={<MapPin size={20} />}
             value={destination}
             onChange={(v) => setParam('destination', v)}>
-            <option value="">All destinations</option>
-            {destinations.map((d) => (
+            <option value="">{text.allDestinations}</option>
+            {text.countries.map((d) => (
               <option key={d.id} value={d.id}>
                 {d.name}
               </option>
@@ -122,30 +148,30 @@ export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, 
         {lockedStyle ? (
           <div className="border-cream-200 bg-cream-100 text-navy-900 flex h-12 items-center gap-3 rounded-lg border px-3.5 font-medium">
             <Compass size={20} className="text-gold-600" aria-hidden />
-            {lockedStyle === 'private' ? 'Private tours' : 'Small group tours'}
+            {lockedStyle === 'private' ? text.privateTours : text.smallTours}
           </div>
         ) : (
           <Filter
-            label="Travel style"
+            label={text.style}
             id={`${uid}-s`}
             icon={<Compass size={20} />}
             value={style}
             onChange={(v) => setParam('style', v)}>
-            <option value="">Any travel style</option>
-            <option value="private">Private</option>
-            <option value="small-group">Small group</option>
+            <option value="">{text.anyStyle}</option>
+            <option value="private">{text.privateOption}</option>
+            <option value="small-group">{text.smallOption}</option>
           </Filter>
         )}
         <Filter
-          label="Duration"
+          label={text.duration}
           id={`${uid}-t`}
           icon={<CalendarBlank size={20} />}
           value={duration}
           onChange={(v) => setParam('duration', v)}>
-          <option value="">Any duration</option>
-          <option value="3-5">3 to 5 days</option>
-          <option value="6-9">6 to 9 days</option>
-          <option value="10+">10 days or more</option>
+          <option value="">{text.anyDuration}</option>
+          <option value="3-5">{text.d35}</option>
+          <option value="6-9">{text.d69}</option>
+          <option value="10+">{text.d10}</option>
         </Filter>
         <div className="flex items-center gap-4 md:pl-3">
           <button
@@ -154,10 +180,10 @@ export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, 
             disabled={!filtered}
             className="text-navy-900 inline-flex min-h-11 items-center gap-1.5 font-semibold underline underline-offset-4 disabled:pointer-events-none disabled:opacity-40">
             <ArrowCounterClockwise size={16} weight="bold" aria-hidden />
-            Reset filters
+            {text.reset}
           </button>
           <p className="text-muted whitespace-nowrap" aria-live="polite">
-            <strong className="text-navy-900">{results.length}</strong> {results.length === 1 ? 'tour' : 'tours'}
+            <strong className="text-navy-900">{results.length}</strong> {results.length === 1 ? text.tour : text.tours}
           </p>
         </div>
       </div>
@@ -165,7 +191,7 @@ export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, 
       {!singleCountry && (
         <div
           role="tablist"
-          aria-label="Filter by country"
+          aria-label={text.filterByCountry}
           className="no-scrollbar border-cream-200 mt-8 flex gap-1 overflow-x-auto border-b">
           {tabs.map((tab) => {
             const active = destination === tab.id;
@@ -197,19 +223,17 @@ export function ToursBrowser({ tours, lockedStyle, singleCountry = false, lang, 
         </ul>
       ) : (
         <div className="border-cream-200 shadow-card mt-8 rounded-lg border bg-white p-8 text-center md:p-12">
-          <h2 className="text-2xl">No tours match these filters</h2>
-          <p className="text-muted mx-auto mt-2 max-w-lg">
-            Try a different duration or style, or tell us what you have in mind and we will build it for you.
-          </p>
+          <h2 className="text-2xl">{text.emptyTitle}</h2>
+          <p className="text-muted mx-auto mt-2 max-w-lg">{text.emptyText}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <ButtonLink href="/plan-my-trip" arrow>
-              Plan My Trip
+              {text.planButton}
             </ButtonLink>
             <button
               type="button"
               onClick={() => router.replace(pathname, { scroll: false })}
               className="border-navy-900/25 text-navy-900 hover:border-navy-900 h-11 rounded-lg border bg-white px-5 font-semibold">
-              Reset filters
+              {text.reset}
             </button>
           </div>
         </div>

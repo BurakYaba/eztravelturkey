@@ -2,10 +2,12 @@ import { Link } from '@/i18n/link';
 import { ArrowRight, Clock } from '@phosphor-icons/react/dist/ssr';
 import type { CardRecord } from '@/lib/data/types';
 import { cn } from '@/lib/utils';
+import { getDictionaryForPage } from '@/i18n/server';
 import { Picture } from './Picture';
 
 /** A multi-country combination, from the card the old site showed for it. */
-export function ComboCard({ combo, className }: { combo: CardRecord; className?: string }) {
+export async function ComboCard({ combo, className }: { combo: CardRecord; className?: string }) {
+  const { card, ui } = await getDictionaryForPage();
   return (
     <article
       className={cn(
@@ -38,14 +40,14 @@ export function ComboCard({ combo, className }: { combo: CardRecord; className?:
           <p className="leading-tight">
             {combo.price && (
               <>
-                <span className="text-muted block text-xs">From</span>
+                <span className="text-muted block text-xs">{card.from}</span>
                 <span className="font-display text-navy-900 text-2xl font-semibold">{combo.price}</span>
-                <span className="text-muted text-sm"> per person</span>
+                <span className="text-muted text-sm"> {card.perPerson}</span>
               </>
             )}
           </p>
           <span className="text-navy-900 inline-flex items-center gap-1.5 font-semibold">
-            View route
+            {ui.combo.view}
             <ArrowRight size={16} weight="bold" className="transition group-hover:translate-x-1" aria-hidden />
           </span>
         </div>

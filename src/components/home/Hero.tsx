@@ -1,8 +1,13 @@
+import { availableCountries } from '@/lib/data';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { ButtonLink } from '../shared/Button';
 import { HeroImage } from './HeroImage';
 import { SearchBar } from './SearchBar';
 
-export function Hero() {
+export async function Hero() {
+  const { ui, countries } = await getDictionaryForPage();
+  const available = await availableCountries(await getLocale());
+  const t = ui.home.hero;
   return (
     <>
       <section className="bg-cream-50 relative isolate overflow-hidden">
@@ -17,28 +22,21 @@ export function Hero() {
 
         <div className="container-wide relative pt-6 pb-24 md:flex md:min-h-[540px] md:items-center md:pt-20 md:pb-28 lg:min-h-[600px]">
           <div className="max-w-2xl">
-            <p className="eyebrow">
-              Turkey, Greece, Egypt, Jordan &amp; Morocco
-            </p>
-            <h1 className="h-display mt-3">
-              Private, Small Group &amp; Multi-Country Tours
-            </h1>
-            <p className="text-ink/85 mt-4 max-w-xl text-lg md:text-xl">
-              Discover five remarkable destinations with an experienced local tour operator since 1997. Personalized
-              itineraries, carefully selected hotels and seamless travel arrangements.
-            </p>
+            <p className="eyebrow">{t.eyebrow}</p>
+            <h1 className="h-display mt-3">{t.title}</h1>
+            <p className="text-ink/85 mt-4 max-w-xl text-lg md:text-xl">{t.text}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href="/tours" size="lg" arrow>
-                Explore Tours
+                {t.explore}
               </ButtonLink>
               <ButtonLink href="/plan-my-trip" size="lg" variant="secondary">
-                Plan My Trip
+                {t.plan}
               </ButtonLink>
             </div>
           </div>
         </div>
       </section>
-      <SearchBar />
+      <SearchBar text={ui.home.search} countries={available.map((id) => ({ id, name: countries[id].name }))} />
     </>
   );
 }
