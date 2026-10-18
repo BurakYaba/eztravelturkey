@@ -23,27 +23,30 @@ GitHub Free'de özel depo için artifact depolaması 500 MB'dir; haftalık görs
 
 1. Yedeği indirin ve açın (`gunzip production-GÜN.ndjson.gz`). Her satır bir JSON belgedir.
 2. Belgeyi bulun (ör. `grep '"_id":"tour-en-...' production-GÜN.ndjson > bir.ndjson`).
-3. `cd studio` ve `npx sanity dataset import bir.ndjson production --missing` (var olanlara dokunmaz, yalnızca eksik olanı ekler) veya silinmeyen ama bozulan belge için `--replace` (üzerine yazar). **Önce `staging` dataset'inde deneyin.**
+3. `cd studio` ve `npx sanity dataset import bir.ndjson --dataset production --missing` (var olanlara dokunmaz, yalnızca eksik olanı ekler) veya silinmeyen ama bozulan belge için `--replace` (üzerine yazar). **Önce `staging` dataset'inde deneyin.**
 
 ## Tüm dataset'i geri yüklemek (felaket senaryosu)
 
 1. Son haftalık tam yedeği (`production-full-GÜN.tar.gz`) indirin.
-2. Dataset'i silip yeniden oluşturduysanız (aynı ad: `production`, **public**): `cd studio && npx sanity dataset import ../production-full-GÜN.tar.gz production --replace`.
+2. Dataset'i silip yeniden oluşturduysanız (aynı ad: `production`, **public**): `cd studio && npx sanity dataset import ../production-full-GÜN.tar.gz --dataset production --replace --allow-replacement-characters`.
 3. Haftalık yedekten sonraki değişiklikler için en yeni günlük yedeği `--replace` ile üstüne alın (görseller zaten yüklüdür).
 4. `npm run check:site` ile siteyi, `node scripts/sanity/verify-import.mjs` ile sayıları doğrulayın.
 
 ## Geri yükleme provası
 
-**Yapıldı (kısmen, 2026-10-18):** yedeğin okunabilirliği ve canlı veriyle eşitliği doğrulandı; tam dışa aktarım (284 MB) alındı. **Yapılmadı:** yedeğin `staging` dataset'ine `--replace` ile geri yüklenmesi (otomatik güvenlik denetimi toplu üzerine yazmayı engelledi). Prova kullanıcı tarafından şu komutla yapılır:
+**Yapıldı (2026-10-18, kullanıcı):** GitHub Actions'ın ürettiği haftalık tam yedek (`sanity-full-…`, 284 MB) indirildi ve `staging` dataset'ine `--replace` ile geri yüklendi: 355 belge, görseller dahil, yaklaşık 2 dakika. Ardından `verify-import.mjs` `staging`'de **All equal.** verdi (en 118, zh 53, jp 63 tur, rastgele 20 tur alan alan eşit). Yani otomatik yedek, geri yüklenebilen bir yedek. Komutlar:
 
 ```
 cd studio
 npx sanity login
-npx sanity dataset import ../production-full-GÜN.tar.gz staging --replace
-SANITY_DATASET=staging node --env-file-if-exists=../.env.local ../scripts/sanity/verify-import.mjs
+npx sanity dataset import ..\dataackups\production-full-GÜN.tar.gz --dataset staging --replace --allow-replacement-characters
+cd ..
+$env:SANITY_DATASET="staging"; node --env-file-if-exists=.env.local scripts/sanity/verify-import.mjs
 ```
 
-Prova bittiğinde bu satırı "yapıldı (tarih)" olarak güncelleyin; plan P6.7'nin kutusu ancak o zaman işaretlenir.
+Yedek dosyası, ilgili Actions çalıştırmasının sayfasında **Artifacts** başlığı altından indirilir (zip içinde .tar.gz). Prova yalnızca `staging`'i etkiler.
+
+**Not (2026-10-18):** içe aktarma, Japonca ana sayfa belgesinde (`homepage-jp-home`) bir Unicode değiştirme karakteri (U+FFFD) bulup durdu. Bu bozukluk yedekte değil, **eski Japonca sitenin kendi HTML'inde** var ("友 人に�� �介する" cümlesi; ham arşivde de aynı baytlar). Bu yüzden geri yüklemede `--allow-replacement-characters` bayrağı gerekir. Cümle Japonca bilen birince düzeltilmeli (P8.14 ile birlikte).
 
 ## Kullanılmayan görseller (P6.16)
 
