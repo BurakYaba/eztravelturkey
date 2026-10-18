@@ -39,7 +39,7 @@ GitHub Free'de özel depo için artifact depolaması 500 MB'dir; haftalık görs
 ```
 cd studio
 npx sanity login
-npx sanity dataset import ..\dataackups\production-full-GÜN.tar.gz --dataset staging --replace --allow-replacement-characters
+npx sanity dataset import ..\data\backups\production-full-GÜN.tar.gz --dataset staging --replace --allow-replacement-characters
 cd ..
 $env:SANITY_DATASET="staging"; node --env-file-if-exists=.env.local scripts/sanity/verify-import.mjs
 ```
