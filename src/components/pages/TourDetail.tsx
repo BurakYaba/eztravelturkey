@@ -15,7 +15,7 @@ import {
   WhatsappLogo,
 } from '@phosphor-icons/react/dist/ssr';
 import type { Icon } from '@phosphor-icons/react';
-import { paymentSummary, travelRules } from '@/data/policies';
+import { policies } from '@/data/policies';
 import { whatsappLink } from '@/data/site';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { legalHref } from '@/i18n/public-paths';
@@ -75,10 +75,9 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { label: t.practical.difficulty, value: tour.facts.difficulty, icon: PersonSimpleWalk },
     ...tour.extraFacts.map((f) => ({ ...f, icon: Info })),
   ].filter((f) => f.value);
-  // The payment terms and the passport and insurance rules are the English site's legal text. The Chinese and Japanese sites
-  // have their own terms pages (P5.5); their tours show only what their own old pages said.
+  // Payment terms and the passport and insurance rules: the words of each language's own terms page (src/data/policies.ts).
   const english = lang === 'en';
-  const rules = english ? travelRules : [];
+  const { payment: paymentSummary, rules } = policies[lang];
   const hasInclusions = tour.included.length > 0 || tour.excluded.length > 0;
   const hasPrice = tour.priceEUR !== null || tour.priceUSD !== null;
   // The old pages mix sentences about the price ("Prices are per person, based on a minimum of ...") into the notes.
@@ -96,7 +95,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     ...(tour.faqs.length > 0 ? [{ id: 'faqs', label: t.tabs.faqs }] : []),
     ...(tour.routeMap.image ? [{ id: 'route-map', label: t.tabs.routeMap }] : []),
     { id: 'price', label: t.tabs.price },
-    ...(english ? [{ id: 'payment', label: t.tabs.payment }] : []),
+    { id: 'payment', label: t.tabs.payment },
     { id: 'cancellation', label: t.tabs.cancellation },
   ];
   const label = (id: string) => tabs.find((tab) => tab.id === id)?.label ?? '';
@@ -376,27 +375,25 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
               {tour.priceSections.length > 0 && <PageSections sections={tour.priceSections} className="mt-8" />}
             </TourPanel>
 
-            {english && (
-              <TourPanel id="payment" label={label('payment')}>
-                <SectionHeading title={t.payment.title} className="mb-6 max-lg:hidden" />
-                <ul className="grid gap-4 sm:grid-cols-3">
-                  {paymentSummary.map((step) => (
-                    <li key={step.label} className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
-                      <p className="text-gold-700 text-sm font-semibold">{step.label}</p>
-                      <p className="font-display text-navy-900 mt-1 text-2xl font-semibold">{step.value}</p>
-                      <p className="text-muted mt-2 text-[0.95rem]">{step.text}</p>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5">
-                  <Link
-                    href={legalHref(lang, 'terms')}
-                    className="text-navy-900 font-semibold underline underline-offset-4">
-                    {t.payment.terms}
-                  </Link>
-                </p>
-              </TourPanel>
-            )}
+            <TourPanel id="payment" label={label('payment')}>
+              <SectionHeading title={t.payment.title} className="mb-6 max-lg:hidden" />
+              <ul className="grid gap-4 sm:grid-cols-3">
+                {paymentSummary.map((step) => (
+                  <li key={step.label} className="border-cream-200 shadow-card rounded-lg border bg-white p-5">
+                    <p className="text-gold-700 text-sm font-semibold">{step.label}</p>
+                    <p className="font-display text-navy-900 mt-1 text-2xl font-semibold">{step.value}</p>
+                    <p className="text-muted mt-2 text-[0.95rem]">{step.text}</p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5">
+                <Link
+                  href={legalHref(lang, 'terms')}
+                  className="text-navy-900 font-semibold underline underline-offset-4">
+                  {t.payment.terms}
+                </Link>
+              </p>
+            </TourPanel>
 
             <TourPanel id="cancellation" label={label('cancellation')}>
               <SectionHeading title={t.cancel.title} className="mb-6 max-lg:hidden" />
