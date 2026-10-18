@@ -130,7 +130,6 @@
     "ツアーはカスタマイズ可能。送迎は1名につき手荷物1個まで考慮"
   ],
   "cancellationPolicy": [
-    "国内線・フェリーのスケジュールは変更される場合があります",
     "Formun Üstü"
   ],
   "gallery": [
@@ -168,5 +167,26 @@
   "related": [],
   "faqs": [],
   "jsonLd": [],
-  "priceSections": []
+  "priceSections": [
+    {
+      "level": 3,
+      "heading": "国内線航空券発行後の変更不可。キャンセル時は100％料金が適用",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "国内線・フェリーのスケジュールは変更される場合があります"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "キャンセルポリシー (Trip Cancellation Policy)",
+      "blocks": []
+    },
+    {
+      "level": 3,
+      "heading": "国内線／フェリーは返金不可（100％キャンセル料）",
+      "blocks": []
+    }
+  ]
 }
