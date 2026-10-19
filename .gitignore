@@ -53,3 +53,24 @@ next-env.d.ts
 # Sanity Studio build output
 /studio/dist
 /studio/.sanity
+
+# Not part of the running site: working material that stays on the developer's computer and is not pushed.
+# Project plan, reports, client documents and Word files
+/docs/
+# Design pictures the client sent
+/references/
+# Scraped content of the old sites (the source of `npm run sanity:import`; the site reads Sanity, not these files)
+/content/scraped/
+# One-off tools: scraping, stock pictures, QA crawls, review exports, icon and image builders, site checks
+/scripts/scrape/
+/scripts/depositphotos/
+/scripts/qa/
+/scripts/i18n/
+/scripts/audit-seo.mjs
+/scripts/build-favicon.mjs
+/scripts/build-ornaments.mjs
+/scripts/check-site.mjs
+/scripts/eps-to-svg.mjs
+/scripts/fetch-images.mjs
+# Word lock files
+~$*
