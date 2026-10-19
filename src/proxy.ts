@@ -2,7 +2,9 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { defaultLocale, locales, hasLocale, htmlLang } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { logicalPath } from '@/i18n/public-paths';
+import { site } from '@/data/site';
 import { isGone } from '@/lib/gone';
+import { japaneseRedirect, oldJapaneseHosts } from '@/lib/old-hosts';
 
 const escapeHtml = (value: string) => value.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
 
@@ -22,7 +24,26 @@ function gone(lang: (typeof locales)[number]) {
  * send crawlers and visitors away from the page they asked for (docs/project-plan.md P2.3, Ek H.4).
  */
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
+  const host = (request.headers.get('host') ?? '').toLowerCase().replace(/:\d+$/, '');
+
+  // The old Japanese site: every address it had goes to its place on this site (P7.5). An address it never had is a 404 in
+  // Japanese, not a page of this site under the old domain.
+  if (oldJapaneseHosts.has(host)) {
+    const target = japaneseRedirect(pathname);
+    return target
+      ? NextResponse.redirect(new URL(target, site.url), 301)
+      : NextResponse.rewrite(new URL('/jp/__not-found__/', request.url));
+  }
+  // One address for the site (P7.10): the bare domain goes to the www one; the production alias of Vercel does too, but only once
+  // the real domain is live (`REDIRECT_VERCEL_ALIAS=1`), so the previews and the Studio keep working until then.
+  if (
+    host === new URL(site.url).host.replace(/^www\./, '') ||
+    (host === 'magnificenttravel.vercel.app' && process.env.REDIRECT_VERCEL_ALIAS === '1')
+  ) {
+    return NextResponse.redirect(new URL(`${pathname}${search}`, site.url), 301);
+  }
+
   const first = pathname.split('/')[1] ?? '';
   const prefixed = hasLocale(first);
   if (isGone(pathname)) {

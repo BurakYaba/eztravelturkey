@@ -43,6 +43,9 @@ const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextCo
     return [
       // D18: the live /en/videos/ page (five YouTube cards) is not rebuilt; its address goes to the blog.
       { source: '/en/videos', destination: '/en/blog/', permanent: true },
+      // D43: Traditional Chinese lives on its own site now and keeps its old addresses there.
+      { source: '/zh', destination: 'https://www.eztravelturkey.com/zh/', permanent: true },
+      { source: '/zh/:path+', destination: 'https://www.eztravelturkey.com/zh/:path+/', permanent: true },
       // P6.14: old addresses that editors typed into a blog post in the Studio.
       ...editor.rules,
     ];
