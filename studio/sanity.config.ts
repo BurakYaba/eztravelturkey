@@ -36,7 +36,7 @@ export default defineConfig({
   dataset: process.env.SANITY_STUDIO_DATASET ?? 'production',
   plugins: [
     // The Studio's own words (menus, buttons, messages) in Turkish; with this plugin installed it is the default language of the
-    // interface (each user can still pick English from the profile menu). The field names and hints are ours, written in the schema.
+    // interface. The field names and hints are ours, written in the schema (also in Turkish).
     trTRLocale(),
     structureTool({ structure, title: 'İçerik' }),
     // Preview of unpublished changes on the real site (docs/project-plan.md P6.5). The site checks a one-time secret that

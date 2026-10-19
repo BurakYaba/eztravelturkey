@@ -1,4 +1,5 @@
 import { draftMode } from 'next/headers';
+import { Suspense } from 'react';
 import { VisualEditingBridge } from './VisualEditingBridge';
 
 /**
@@ -20,7 +21,9 @@ export async function PreviewBar() {
           </button>
         </form>
       </aside>
-      <VisualEditingBridge />
+      <Suspense>
+        <VisualEditingBridge />
+      </Suspense>
     </>
   );
 }
