@@ -5,8 +5,13 @@ import { draftMode } from 'next/headers';
 const projectId = process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
-/** Read-only client. The datasets are public, so no token is needed to read published content. */
-const client = createClient({ projectId, dataset, apiVersion: '2025-01-01', useCdn: false, perspective: 'published' });
+/**
+ * Read-only client. The datasets are public, so no token is needed to read published content.
+ * It reads through Sanity's CDN: those requests are counted in the much larger CDN allowance instead of the API request allowance
+ * (250k a month on the free plan), and Sanity clears the CDN when something is published. Editors' drafts never come from here
+ * (see `draftClient`, which reads without the CDN).
+ */
+const client = createClient({ projectId, dataset, apiVersion: '2025-01-01', useCdn: true, perspective: 'published' });
 
 /**
  * Reads unpublished changes too, for editors in preview (Draft Mode). Needs a token with read access (Viewer is enough);
