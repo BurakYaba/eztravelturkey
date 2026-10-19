@@ -2,24 +2,24 @@ import type { Locale } from './config';
 
 /**
  * The Chinese and Japanese sites keep the addresses of their old pages (docs/project-plan.md D1, Ek B), which differ from the
- * English ones: the Japanese hub is `/jp/目的地/`, the Chinese About page `/zh/about-us/`. The code writes every link and looks
+ * English ones: the Japanese hub is `/jp/目的地/`, the Chinese About page `/cn/about-us/`. The code writes every link and looks
  * up every page with the English ("logical") address; these tables translate it to the public address and back.
  */
 
 /** Name of the destinations folder in the public address and in the CMS paths. */
-export const destinationsRoot: Record<Locale, string> = { en: 'destinations', zh: 'destinations', jp: '目的地' };
+export const destinationsRoot: Record<Locale, string> = { en: 'destinations', cn: 'destinations', jp: '目的地' };
 
 /** Pages written in code that have a different public address in some language. Keys and values have no slashes at the ends. */
 const pageNames: Record<Locale, Record<string, string>> = {
   en: {},
-  zh: { about: 'about-us' },
+  cn: { about: 'about-us' },
   jp: { about: '会社概要', contact: '問い合わせ先' },
 };
 
 /** Country folders of the Japanese site, by the English folder name. */
 const countryFolders: Record<Locale, Record<string, string>> = {
   en: {},
-  zh: {},
+  cn: {},
   jp: {
     'turkey-tours': 'トルコツアー',
     'greece-tours': 'ギリシャツアー',
@@ -80,7 +80,7 @@ export function logicalPath(lang: Locale, path: string): string {
 export const legalHref = (lang: Locale, page: 'terms' | 'privacy'): string =>
   ({
     en: { terms: '/gdpr/terms-conditions', privacy: '/gdpr/privacy-policy' },
-    zh: { terms: '/terms-condition', privacy: '/privacy-policy' },
+    cn: { terms: '/terms-condition', privacy: '/privacy-policy' },
     jp: { terms: '/利用規約およびキャンセルポリシー', privacy: '/プライバシーポリシー' },
   })[lang][page];
 

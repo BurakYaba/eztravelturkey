@@ -17,7 +17,7 @@ import {
 const kindField = (options: { value: string; title: string }[], initial: string, editable: boolean) =>
   defineField({
     name: 'kind',
-    title: 'Kind of page',
+    title: 'Sayfa türü',
     type: 'string',
     options: { list: options, layout: 'radio' },
     initialValue: initial,
@@ -27,13 +27,13 @@ const kindField = (options: { value: string; title: string }[], initial: string,
 
 const kinds = {
   destinationPage: [
-    { value: 'country', title: 'Country' },
-    { value: 'combo', title: 'Multi-country combination' },
-    { value: 'category', title: 'Category (length or package)' },
+    { value: 'country', title: 'Ülke' },
+    { value: 'combo', title: 'Çok ülkeli kombinasyon' },
+    { value: 'category', title: 'Kategori (süre veya paket)' },
   ],
   hubPage: [
-    { value: 'destinations-hub', title: 'Destinations hub' },
-    { value: 'blog-hub', title: 'Blog hub' },
+    { value: 'destinations-hub', title: 'Destinasyonlar ana sayfası' },
+    { value: 'blog-hub', title: 'Blog ana sayfası' },
   ],
 };
 
@@ -55,12 +55,12 @@ function pageType(
       ...pageFields.slice(1).map((field) => replaceFields[field.name] ?? field),
       ...extraFields,
     ],
-    orderings: [{ title: 'Page address', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
+    orderings: [{ title: 'Sayfa adresi', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
     preview: { select: { title: 'title', subtitle: 'path', media: 'mainImage' } },
   });
 }
 
-export const destinationPage = pageType('destinationPage', 'Destination page', 'country', kinds.destinationPage);
+export const destinationPage = pageType('destinationPage', 'Destinasyon sayfası', 'country', kinds.destinationPage);
 /** Posts created before this day were moved from the old site and may stay without an author. */
 const legacyCutoff = '2026-10-19';
 
@@ -76,38 +76,38 @@ export const normalizeOldUrl = (value: string) =>
 const blogFields = [
   defineField({
     name: 'author',
-    title: 'Author',
+    title: 'Yazar',
     type: 'reference',
     to: [{ type: 'author' }],
-    description: 'Shown as the byline and in the author card. Required for new posts (readers and search engines trust a named author).',
+    description: 'Yazının altında imza olarak ve yazar kartında gösterilir. Yeni yazılarda zorunludur (okurlar ve arama motorları adı belli bir yazara güvenir).',
     validation: (rule) =>
       rule.custom((value, context: ValidationContext) => {
         // The 34 posts moved from the old site have no author and are credited to Magnificent Travel; only new posts need one.
         const created = (context.document as { _createdAt?: string } | undefined)?._createdAt ?? '';
-        return value || (created && created < legacyCutoff) ? true : 'Choose the author of this post.';
+        return value || (created && created < legacyCutoff) ? true : 'Bu yazının yazarını seçin.';
       }),
   }),
   defineField({
     name: 'shortAnswer',
-    title: 'Short answer',
+    title: 'Kısa cevap',
     type: 'text',
     rows: 3,
-    description: 'The answer to the question of the post in 40 to 60 words. Shown in a highlighted box before the text.',
-    validation: (rule) => rule.max(400).warning('Keep the short answer under about 60 words.'),
+    description: 'Yazının sorusuna 40-60 kelimelik cevap. Metnin başında vurgulu bir kutuda gösterilir.',
+    validation: (rule) => rule.max(400).warning('Kısa cevabı yaklaşık 60 kelimenin altında tutun.'),
   }),
   defineField({
     name: 'lastUpdated',
-    title: 'Last updated',
+    title: 'Son güncelleme',
     type: 'date',
-    description: 'The day the facts in the post were last checked. Shown on the page and in search results.',
+    description: 'Yazıdaki bilgilerin son kontrol edildiği gün. Sayfada ve arama sonuçlarında gösterilir.',
   }),
   defineField({
     name: 'oldUrls',
-    title: 'Old addresses of this post (redirects)',
+    title: 'Bu yazının eski adresleri (yönlendirme)',
     type: 'array',
     of: [{ type: 'string' }],
     description:
-      'Only when this post replaces a post of the old site: paste the old address, for example /en/blog/turkey/old-name/. Visitors and Google who use it are sent to this post (a permanent redirect). The redirect starts after the next site update, about 5 minutes after you publish.',
+      'Yalnızca bu yazı eski sitedeki bir yazının yerine geçiyorsa: eski adresi yapıştırın, örneğin /en/blog/turkey/old-name/. Bu adresi açan ziyaretçiler ve Google bu yazıya yönlendirilir (kalıcı yönlendirme). Yönlendirme, yayından yaklaşık 5 dakika sonraki site güncellemesiyle başlar.',
     validation: (rule) =>
       rule.custom(async (values: string[] | undefined, context: ValidationContext) => {
         if (!values?.length) {return true;}
@@ -118,63 +118,63 @@ const blogFields = [
         const seen = new Set<string>();
         for (const value of values) {
           const url = normalizeOldUrl(value);
-          const match = /^\/(en|zh|jp)\/(.+)\/$/.exec(url);
-          if (!match) {return `${value}: write the address of the old page, starting with /en/, /zh/ or /jp/.`;}
-          if (url === own.toLowerCase()) {return `${value}: that is the address of this post itself.`;}
-          if (seen.has(url)) {return `${value}: listed twice.`;}
+          const match = /^\/(en|cn|jp)\/(.+)\/$/.exec(url);
+          if (!match) {return `${value}: eski sayfanın adresini /en/, /cn/ veya /jp/ ile başlayacak şekilde yazın.`;}
+          if (url === own.toLowerCase()) {return `${value}: bu, yazının kendi adresi.`;}
+          if (seen.has(url)) {return `${value}: iki kez yazılmış.`;}
           seen.add(url);
           const [, language, path] = match;
           const clash = await client.fetch<{ title: string } | null>(
             '*[defined(path) && language == $language && path == $path && !(_id in [$id, "drafts." + $id])][0]{ title }',
             { language, path, id },
           );
-          if (clash) {return `${value}: a page already exists at this address ("${clash.title}"), so it cannot be redirected.`;}
+          if (clash) {return `${value}: bu adreste zaten bir sayfa var ("${clash.title}"), bu yüzden yönlendirilemez.`;}
           const taken = await client.fetch<{ title: string } | null>(
             '*[_type == "blogPost" && !(_id in [$id, "drafts." + $id]) && $url in oldUrls[]][0]{ title }',
             { url, id },
           );
-          if (taken) {return `${value}: already used by the post "${taken.title}".`;}
+          if (taken) {return `${value}: "${taken.title}" yazısında zaten kullanılıyor.`;}
         }
         return true;
       }),
   }),
 ];
 
-export const blogPost = pageType('blogPost', 'Blog post', 'blog-post', undefined, blogFields, {
+export const blogPost = pageType('blogPost', 'Blog yazısı', 'blog-post', undefined, blogFields, {
   path: { ...pathField, components: { input: BlogPathInput } },
 });
-export const blogCategory = pageType('blogCategory', 'Blog category', 'blog-category');
-export const author = pageType('author', 'Author', 'author');
-export const staticPage = pageType('staticPage', 'Text page (about, legal)', 'static');
-export const hubPage = pageType('hubPage', 'Hub page', 'destinations-hub', kinds.hubPage);
+export const blogCategory = pageType('blogCategory', 'Blog kategorisi', 'blog-category');
+export const author = pageType('author', 'Yazar', 'author');
+export const staticPage = pageType('staticPage', 'Metin sayfası (hakkımızda, yasal)', 'static');
+export const hubPage = pageType('hubPage', 'Ana bölüm sayfası', 'destinations-hub', kinds.hubPage);
 
 /** The home page of a language: its meta texts and the cards (combinations and tours) it features. */
 export const homePage = defineType({
   name: 'homePage',
-  title: 'Home page',
+  title: 'Ana sayfa',
   type: 'document',
   fields: [
     languageField,
-    defineField({ name: 'kind', title: 'Kind of page', type: 'string', initialValue: 'home', readOnly: true }),
+    defineField({ name: 'kind', title: 'Sayfa türü', type: 'string', initialValue: 'home', readOnly: true }),
     titleField,
     metaTitleField,
     metaDescriptionField,
     mainImageField,
     defineField({
       name: 'cards',
-      title: 'Featured cards',
+      title: 'Öne çıkan kartlar',
       type: 'array',
-      description: 'The combinations and tours the home page highlights, in order.',
+      description: 'Ana sayfanın öne çıkardığı kombinasyonlar ve turlar, sırayla.',
       of: [
         defineField({
           name: 'card',
           type: 'object',
           fields: [
-            defineField({ name: 'title', title: 'Title', type: 'string', validation: (rule) => rule.required() }),
-            defineField({ name: 'href', title: 'Link', type: 'string', description: 'Site address such as /destinations/turkey-greece-tours/' }),
-            defineField({ name: 'meta', title: 'Short facts', type: 'array', of: [{ type: 'string' }] }),
-            defineField({ name: 'price', title: 'Price text', type: 'string' }),
-            defineField({ name: 'image', title: 'Picture', type: 'picture' }),
+            defineField({ name: 'title', title: 'Başlık', type: 'string', validation: (rule) => rule.required() }),
+            defineField({ name: 'href', title: 'Bağlantı', type: 'string', description: 'Site adresi, örneğin /destinations/turkey-greece-tours/' }),
+            defineField({ name: 'meta', title: 'Kısa bilgiler', type: 'array', of: [{ type: 'string' }] }),
+            defineField({ name: 'price', title: 'Fiyat metni', type: 'string' }),
+            defineField({ name: 'image', title: 'Görsel', type: 'picture' }),
           ],
           preview: { select: { title: 'title', subtitle: 'href', media: 'image' } },
         }),

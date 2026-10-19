@@ -14,7 +14,7 @@ export function lengthHint(min: number, max: number) {
       <Stack gap={2}>
         {props.renderDefault(props)}
         <Text size={1} style={{ color: length === 0 ? undefined : good ? '#1a7f37' : '#b45309' }} muted={length === 0}>
-          {length} characters (best between {min} and {max})
+          {length} karakter (en uygun: {min}-{max})
         </Text>
       </Stack>
     );

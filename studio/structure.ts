@@ -35,11 +35,11 @@ const byLanguage = (S: Builder, type: string, title: string, orderBy = 'path') =
 const homePages = (S: Builder) =>
   S.listItem()
     .id('homePage')
-    .title('Home page')
+    .title('Ana sayfa')
     .child(
       S.list()
         .id('homePage-languages')
-        .title('Home page')
+        .title('Ana sayfa')
         .items(
           languages.map((language) =>
             S.listItem()
@@ -48,7 +48,7 @@ const homePages = (S: Builder) =>
               .child(
                 S.documentList()
                   .id(`homePage-${language.value}-documents`)
-                  .title(`Home page: ${language.title}`)
+                  .title(`Ana sayfa: ${language.title}`)
                   .schemaType('homePage')
                   .apiVersion('2025-01-01')
                   .filter('_type == "homePage" && language == $language')
@@ -63,13 +63,13 @@ export const structure: StructureResolver = (S) =>
     .id('root')
     .title('Magnificent Travel')
     .items([
-      byLanguage(S, 'tour', 'Tours'),
-      byLanguage(S, 'destinationPage', 'Destination pages'),
-      byLanguage(S, 'blogPost', 'Blog posts'),
-      byLanguage(S, 'blogCategory', 'Blog categories'),
-      byLanguage(S, 'author', 'Authors'),
-      byLanguage(S, 'staticPage', 'Text pages (about, legal)'),
-      byLanguage(S, 'hubPage', 'Hub pages'),
+      byLanguage(S, 'tour', 'Turlar'),
+      byLanguage(S, 'destinationPage', 'Destinasyon sayfaları'),
+      byLanguage(S, 'blogPost', 'Blog yazıları'),
+      byLanguage(S, 'blogCategory', 'Blog kategorileri'),
+      byLanguage(S, 'author', 'Yazarlar'),
+      byLanguage(S, 'staticPage', 'Metin sayfaları (hakkımızda, yasal)'),
+      byLanguage(S, 'hubPage', 'Ana bölüm sayfaları (Destinasyonlar, Blog)'),
       homePages(S),
-      byLanguage(S, 'teamMember', 'Team (About and Contact pages)', 'order'),
+      byLanguage(S, 'teamMember', 'Ekip (Hakkımızda ve İletişim sayfaları)', 'order'),
     ]);

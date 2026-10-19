@@ -47,22 +47,22 @@ type Policies = {
 
 export const policies: Record<Locale, Policies> = {
   en: { payment: paymentSummary, rules: travelRules },
-  zh: {
+  cn: {
     payment: [
-      { label: '訂金', value: '50%', text: '行程預訂確認後，在預訂行程時收取至少50%或全額費用。' },
-      { label: '尾款', value: '50%', text: '全額費用最遲在行程出發15天前付清。' },
-      { label: '可用付款方式', value: 'Visa、Mastercard', text: '我們接受VISA或MASTER信用卡付款。' },
+      { label: '订金', value: '50%', text: '行程预订确认后，在预订行程时收取至少50%或全额费用。' },
+      { label: '尾款', value: '50%', text: '全额费用最迟在行程出发15天前付清。' },
+      { label: '可用付款方式', value: 'Visa、Mastercard', text: '我们接受VISA或MASTER信用卡付款。' },
     ],
     rules: [
       {
         kind: 'passport',
-        title: '護照與簽證',
-        text: '每位旅客須持有效護照，護照有效期須在預計返國日之後至少六 (6) 個月以上，除非目的地國另有規定。旅客須自行負責取得所有必要的簽證、旅行許可、疫苗接種及其他入境文件。',
+        title: '护照与签证',
+        text: '每位旅客须持有效护照，护照有效期须在预计返国日之后至少六 (6) 个月以上，除非目的地国另有规定。旅客须自行负责取得所有必要的签证、旅行许可、疫苗接种及其他入境文件。',
       },
       {
         kind: 'insurance',
-        title: '旅遊保險',
-        text: '我們不負責個人旅遊意外險，強烈建議在貴國購買個人健康險、意外險、行李險以及其他相關保險。',
+        title: '旅游保险',
+        text: '我们不负责个人旅游意外险，强烈建议在贵国购买个人健康险、意外险、行李险以及其他相关保险。',
       },
     ],
   },

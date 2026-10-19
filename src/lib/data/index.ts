@@ -1,5 +1,5 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
-import { defaultLocale, type Locale } from '@/i18n/config';
+import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
 import { formatDate } from '@/i18n/format';
 import { cmsPath, countryFolder, publicPath } from '@/i18n/public-paths';
 import { toursOfCategory } from './duration';
@@ -87,7 +87,9 @@ export async function alternatesOf(lang: Locale, path: string): Promise<Partial<
     '*[_type in $types && defined(translationGroup) && translationGroup == *[_type in $types && language == $lang && path == $path][0].translationGroup]{ language, path }',
     { types: allTypes, lang, path: trim(cmsPath(lang, path)) },
   );
-  return rows.length < 2 ? {} : Object.fromEntries(rows.map((r) => [r.language, hrefOf(r.path).replace(/\/$/, '') || '/']));
+  // Documents of a language this site no longer has (Traditional Chinese moved to its own site) are not counterparts.
+  const siblings = rows.filter((r) => hasLocale(r.language));
+  return siblings.length < 2 ? {} : Object.fromEntries(siblings.map((r) => [r.language, hrefOf(r.path).replace(/\/$/, '') || '/']));
 }
 
 /** Every page that has a counterpart, for the language menu: `{ 'jp:目的地/トルコツアー': { en: '/destinations/turkey-tours', ... } }`. */
@@ -97,10 +99,10 @@ export async function alternatesIndex(): Promise<Record<string, Partial<Record<L
     { types: allTypes },
   );
   const byGroup = new Map<string, Partial<Record<Locale, string>>>();
-  for (const r of rows) {
+  for (const r of rows.filter((row) => hasLocale(row.language))) {
     byGroup.set(r.group, { ...byGroup.get(r.group), [r.language]: `/${trim(r.path)}` });
   }
-  return Object.fromEntries(rows.map((r) => [`${r.language}:/${trim(r.path)}`, byGroup.get(r.group) ?? {}]));
+  return Object.fromEntries(rows.filter((r) => hasLocale(r.language)).map((r) => [`${r.language}:/${trim(r.path)}`, byGroup.get(r.group) ?? {}]));
 }
 
 // ---- tours

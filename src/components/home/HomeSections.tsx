@@ -7,6 +7,7 @@ import { DestinationTile } from '../shared/DestinationTile';
 import { Photo } from '../shared/Photo';
 import { Picture } from '../shared/Picture';
 import { ReviewCards } from '../shared/ReviewCards';
+import { ScrollRail } from '../shared/ScrollRail';
 import { SectionHeading } from '../shared/SectionHeading';
 import { TourCard } from '../tours/TourCard';
 import { TextLink } from '../shared/Button';
@@ -167,7 +168,8 @@ export async function FeaturedTours() {
 export async function MultiCountryRail() {
   const lang = await getLocale();
   const combos = await comboCards(lang);
-  const t = getDictionary(lang).ui.home.multiRail;
+  const { ui, common } = getDictionary(lang);
+  const t = ui.home.multiRail;
   if (combos.length === 0) {
     return null;
   }
@@ -175,14 +177,14 @@ export async function MultiCountryRail() {
     <section className="section-y">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} link={{ href: '/multi-country-tours', label: t.all }} />
+        <ScrollRail previousLabel={common.scrollPrevious} nextLabel={common.scrollNext}>
+          {combos.map((combo) => (
+            <li key={combo.href} className="w-[82%] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]">
+              <ComboCard combo={combo} className="h-full" />
+            </li>
+          ))}
+        </ScrollRail>
       </div>
-      <ul className="no-scrollbar flex snap-x snap-mandatory scroll-px-4 gap-5 overflow-x-auto px-4 pb-4 sm:scroll-px-6 sm:px-6 lg:scroll-px-[max(2rem,calc((100%-80rem)/2+2rem))] lg:px-[max(2rem,calc((100%-80rem)/2+2rem))]">
-        {combos.map((combo) => (
-          <li key={combo.href} className="w-[82%] shrink-0 snap-start sm:w-[22rem]">
-            <ComboCard combo={combo} className="h-full" />
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }

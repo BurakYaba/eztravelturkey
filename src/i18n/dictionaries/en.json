@@ -5,7 +5,9 @@
   },
   "common": {
     "skipToContent": "Skip to content",
-    "homeLabel": "Magnificent Travel, home"
+    "homeLabel": "Magnificent Travel, home",
+    "scrollPrevious": "Previous cards",
+    "scrollNext": "Next cards"
   },
   "countries": {
     "turkey": {

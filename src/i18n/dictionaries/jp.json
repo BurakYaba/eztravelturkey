@@ -5,7 +5,9 @@
   },
   "common": {
     "skipToContent": "本文へスキップ",
-    "homeLabel": "Magnificent Travel、ホームへ"
+    "homeLabel": "Magnificent Travel、ホームへ",
+    "scrollPrevious": "前へ",
+    "scrollNext": "次へ"
   },
   "countries": {
     "turkey": {

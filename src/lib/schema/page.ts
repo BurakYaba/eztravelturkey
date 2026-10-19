@@ -30,7 +30,7 @@ export const tourCard = z.object({
 });
 
 export const scrapedPage = z.object({
-  locale: z.enum(['en', 'zh', 'jp']),
+  locale: z.enum(['en', 'zh', 'cn', 'jp']),
   kind: z.string(),
   sourceUrl: z.string(),
   path: z.string(),

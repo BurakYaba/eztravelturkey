@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState } from 'react';
 import { CaretDown, Check } from '@phosphor-icons/react/dist/ssr';
-import { htmlLang, localeNames, locales } from '@/i18n/config';
+import { externalLocales, htmlLang, localeNames, locales } from '@/i18n/config';
 import { useAlternates, useLocale } from '@/i18n/locale-context';
 import { switchLocaleHref } from '@/i18n/switch';
 import { cn } from '@/lib/utils';
@@ -70,10 +70,25 @@ export function LanguageSwitcher({ label, variant = 'dropdown', className }: Pro
     </li>
   ));
 
+  // Languages that live on another site (Traditional Chinese): a plain link out, in the same list.
+  const external = externalLocales.map((other) => (
+    <li key={other.lang}>
+      <a
+        href={other.href}
+        hrefLang={other.lang}
+        lang={other.lang}
+        onClick={() => setOpen(false)}
+        className="text-navy-900 hover:bg-cream-100 flex items-center gap-3 rounded-md px-3 py-2.5 text-[0.95rem] font-medium transition">
+        <span className="flex-1">{other.name}</span>
+      </a>
+    </li>
+  ));
+  const items = [...options, ...external];
+
   if (variant === 'list') {
     return (
       <nav aria-label={label} className={className}>
-        <ul className="border-cream-200 divide-cream-200 divide-y rounded-lg border bg-white p-1">{options}</ul>
+        <ul className="border-cream-200 divide-cream-200 divide-y rounded-lg border bg-white p-1">{items}</ul>
       </nav>
     );
   }
@@ -97,7 +112,7 @@ export function LanguageSwitcher({ label, variant = 'dropdown', className }: Pro
           'absolute top-full right-0 z-40 w-48 pt-2 transition duration-150',
           open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0',
         )}>
-        <ul className="border-cream-200 shadow-lift overflow-hidden rounded-lg border bg-white p-1.5">{options}</ul>
+        <ul className="border-cream-200 shadow-lift overflow-hidden rounded-lg border bg-white p-1.5">{items}</ul>
       </div>
     </div>
   );

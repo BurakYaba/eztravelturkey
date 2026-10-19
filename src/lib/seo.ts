@@ -8,7 +8,7 @@ import { localePath } from '@/i18n/paths';
 /** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. Japanese and Chinese letters are percent-encoded. */
 export const absoluteUrl = (path = '/') => `${site.url}${encodeURI(path.startsWith('/') ? path : `/${path}`)}`;
 
-const ogLocale: Record<Locale, string> = { en: 'en_US', zh: 'zh_TW', jp: 'ja_JP' };
+const ogLocale: Record<Locale, string> = { en: 'en_US', cn: 'zh_CN', jp: 'ja_JP' };
 
 type MetaInput = {
   title: string;

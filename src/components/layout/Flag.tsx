@@ -16,7 +16,7 @@ export function Flag({ locale, className }: { locale: Locale; className?: string
     );
   }
 
-  if (locale === 'zh') {
+  if (locale === 'cn') {
     return (
       <svg viewBox="0 0 90 60" className={box} aria-hidden>
         <rect width="90" height="60" fill="#fe0000" />

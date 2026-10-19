@@ -39,7 +39,7 @@ function drawBadge() {
 }
 
 /** Tripadvisor's own widget languages. */
-const widgetLang: Record<Locale, string> = { en: 'en_US', zh: 'zh_TW', jp: 'ja' };
+const widgetLang: Record<Locale, string> = { en: 'en_US', cn: 'zh_CN', jp: 'ja' };
 
 /**
  * Tripadvisor's official ratings badge, the same widget (location 5617607) the live site shows in its footer. It is

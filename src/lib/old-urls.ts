@@ -64,7 +64,7 @@ export async function editorRedirects(): Promise<{ rules: EditorRedirect[]; hash
     for (const old of post.oldUrls ?? []) {
       const from = normalizeOldUrl(old);
       // A page that exists wins over a redirect, a repeated address is used once, and a post never redirects to itself.
-      if (!/^\/(en|zh|jp)\/.+\/$/.test(from) || live.has(from) || used.has(from) || from === destination.toLowerCase()) {
+      if (!/^\/(en|cn|jp)\/.+\/$/.test(from) || live.has(from) || used.has(from) || from === destination.toLowerCase()) {
         continue;
       }
       used.add(from);
