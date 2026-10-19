@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 import { editorRedirects } from './src/lib/old-urls';
 
-// The site keeps the old sites' URL structure (docs/project-plan.md D1): language prefix `/en/`, `/zh/`, `/jp/` and a
+// The site keeps the old sites' URL structure (docs/project-plan.md D1): language prefix `/en/`, `/cn/`, `/jp/` and a
 // trailing slash. Redirects from the old addresses are added in P7.
 const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextConfig => ({
   trailingSlash: true,

@@ -4,7 +4,7 @@ import { lengthHint } from '../components/LengthHint';
 /** Languages of the site. Every language has its own documents (docs/project-plan.md D9). */
 export const languages = [
   { title: 'English', value: 'en' },
-  { title: '繁體中文', value: 'zh' },
+  { title: '简体中文', value: 'cn' },
   { title: '日本語', value: 'jp' },
 ];
 
@@ -245,8 +245,8 @@ export const canonicalUrlField = defineField({
   validation: (rule) =>
     rule.custom((value: string | undefined) => {
       if (!value) {return true;}
-      if (/^https:\/\/(www\.)?magnificenttravel\.com\/(en|zh|jp)\//.test(value) || /^\/(en|zh|jp)\//.test(value)) {return true;}
-      return 'Start with /en/, /zh/ or /jp/, or with https://www.magnificenttravel.com/';
+      if (/^https:\/\/(www\.)?magnificenttravel\.com\/(en|cn|jp)\//.test(value) || /^\/(en|cn|jp)\//.test(value)) {return true;}
+      return 'Start with /en/, /cn/ or /jp/, or with https://www.magnificenttravel.com/';
     }),
 });
 

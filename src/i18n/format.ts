@@ -1,6 +1,6 @@
 import type { Locale } from './config';
 
-const numberLocale: Record<Locale, string> = { en: 'en-US', zh: 'zh-TW', jp: 'ja-JP' };
+const numberLocale: Record<Locale, string> = { en: 'en-US', cn: 'zh-CN', jp: 'ja-JP' };
 
 /** 1450 and "EUR" become "€1,450", "US$1,450" or "￥..." according to the language, with no decimals. */
 export function formatPrice(lang: Locale, amount: number, currency: 'EUR' | 'USD'): string {

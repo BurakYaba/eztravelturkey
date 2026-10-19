@@ -42,7 +42,7 @@ const note = (message) => {
 };
 
 console.log(`Dataset ${dataset}`);
-for (const lang of ['en', 'zh', 'jp']) {
+for (const lang of ['en', 'cn', 'jp']) {
   const tours = walk(path.join(root, 'content/scraped', lang, 'tours')).map(readJson);
   const pages = walk(path.join(root, 'content/scraped', lang, 'pages')).map(readJson);
   const stored = await client.fetch(
@@ -62,7 +62,7 @@ for (const lang of ['en', 'zh', 'jp']) {
 
 console.log(`\n${sample} random tours, field by field`);
 const checked = [];
-for (const lang of ['en', 'zh', 'jp']) {
+for (const lang of ['en', 'cn', 'jp']) {
   const files = walk(path.join(root, 'content/scraped', lang, 'tours'));
   const take = Math.round((sample * files.length) / 234) || 1; // 118 + 53 + 63 tours, shared out evenly
   const picked = new Set();

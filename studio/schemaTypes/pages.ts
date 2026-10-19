@@ -118,8 +118,8 @@ const blogFields = [
         const seen = new Set<string>();
         for (const value of values) {
           const url = normalizeOldUrl(value);
-          const match = /^\/(en|zh|jp)\/(.+)\/$/.exec(url);
-          if (!match) {return `${value}: write the address of the old page, starting with /en/, /zh/ or /jp/.`;}
+          const match = /^\/(en|cn|jp)\/(.+)\/$/.exec(url);
+          if (!match) {return `${value}: write the address of the old page, starting with /en/, /cn/ or /jp/.`;}
           if (url === own.toLowerCase()) {return `${value}: that is the address of this post itself.`;}
           if (seen.has(url)) {return `${value}: listed twice.`;}
           seen.add(url);
