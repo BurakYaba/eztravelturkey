@@ -11,13 +11,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "sanity": "latest",
+    "@sanity/locale-tr-tr": "^1.2.38",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sanity": "latest",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "typescript": "^5.9.0",
-    "@types/react": "^19.0.0"
+    "@types/react": "^19.0.0",
+    "typescript": "^5.9.0"
   }
 }
