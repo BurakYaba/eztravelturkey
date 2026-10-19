@@ -1,4 +1,5 @@
 import { defineConfig } from 'sanity';
+import { trTRLocale } from '@sanity/locale-tr-tr';
 import { defineLocations, presentationTool } from 'sanity/presentation';
 import { structureTool } from 'sanity/structure';
 import { schemaTypes } from './schemaTypes';
@@ -19,6 +20,9 @@ export default defineConfig({
   projectId: 'aj0pbi0w',
   dataset: 'production',
   plugins: [
+    // The Studio's own words (menus, buttons, messages) in Turkish; with this plugin installed it is the default language of the
+    // interface (each user can still pick English from the profile menu). The field names and hints are ours, written in the schema.
+    trTRLocale(),
     structureTool({ structure }),
     // Preview of unpublished changes on the real site (docs/project-plan.md P6.5). The site checks a one-time secret that
     // only a signed-in editor can create, then turns on Next.js Draft Mode for that browser.
