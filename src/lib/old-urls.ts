@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import oldBlogUrls from '../data/old-blog-urls.json';
 
 /**
  * Redirects the editors create themselves (docs/project-plan.md P6.14, D36): a blog post lists the old addresses it
@@ -12,6 +13,9 @@ const dataset = process.env.SANITY_DATASET ?? 'production';
 
 /** Vercel allows 1,024 redirects in a deployment; some are kept for the code's own rules. */
 const maxRules = 900;
+
+/** Where an old post that was not moved goes: the blog hub (docs/project-plan.md D12, P7.4). */
+const blogHub = '/en/blog/';
 
 export type EditorRedirect = { source: string; destination: string; permanent: true };
 
@@ -72,10 +76,18 @@ export async function editorRedirects(): Promise<{ rules: EditorRedirect[]; hash
     }
   }
   rules.sort((a, b) => a.source.localeCompare(b.source));
-  const kept = rules.slice(0, maxRules);
-  if (rules.length > maxRules) {
+  // The old posts that were not moved go to the blog hub, unless a page now exists at their address or the editor gave it a
+  // redirect of its own. Taking the existing pages out is what lets a post published again at an old address come back: the
+  // list changes, so the deployment is asked for again (`/api/revalidate/`).
+  const defaults: EditorRedirect[] = (oldBlogUrls as string[])
+    .filter((from) => !live.has(from.toLowerCase()) && !used.has(from.toLowerCase()))
+    .map((from) => ({ source: literal(from.replace(/\/$/, '')), destination: blogHub, permanent: true as const }));
+  // The editors' own redirects come first: when the room runs out, it is the default ones that are left out.
+  const all = [...rules, ...defaults];
+  const kept = all.slice(0, maxRules);
+  if (all.length > maxRules) {
     // eslint-disable-next-line no-console
-    console.warn(`Only the first ${maxRules} editor redirects are used (${rules.length} are listed).`);
+    console.warn(`Only the first ${maxRules} redirects are used (${all.length} are listed).`);
   }
   return { rules: kept, hash: createHash('sha1').update(JSON.stringify(kept)).digest('hex').slice(0, 12) };
 }

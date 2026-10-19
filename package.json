@@ -26,6 +26,7 @@
     "sanity:import": "node --env-file-if-exists=.env.local scripts/sanity/import.mjs",
     "sanity:team": "node --env-file-if-exists=.env.local scripts/sanity/import-team.mjs",
     "audit:seo": "node scripts/audit-seo.mjs",
+    "check:redirects": "node scripts/redirects/check-en.mjs && node scripts/redirects/check-jp.mjs && node scripts/redirects/check-cn.mjs",
     "sanity:categories": "node --env-file-if-exists=.env.local scripts/sanity/import-categories.mjs"
   },
   "dependencies": {

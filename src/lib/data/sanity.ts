@@ -41,7 +41,7 @@ export const contentTag = 'content';
  * One GROQ query. The answer is kept in Next's data cache under the `content` tag, so pages are built from the cache and
  * only a publish in the Studio makes the next request fetch again.
  *
- * Sanity answers 429 when more than 25 requests are in flight and sometimes 5xx for a single request. A static build asks
+ * Sanity answers 429 when more than 25 requests are in flight and sometimes 5xx for a single request (a 502 lasted over a minute once, 2026-10-19). A static build asks
  * for many pages at once, so those answers are tried again a few times with a growing pause instead of failing the build.
  */
 export async function query<T>(groq: string, params: Record<string, unknown> = {}): Promise<T> {
@@ -54,10 +54,10 @@ export async function query<T>(groq: string, params: Record<string, unknown> = {
     } catch (error) {
       const status = (error as { statusCode?: number }).statusCode ?? 0;
       const temporary = status === 0 || status === 429 || status >= 500;
-      if (!temporary || attempt >= 6) {
+      if (!temporary || attempt >= 8) {
         throw error;
       }
-      await new Promise((resolve) => setTimeout(resolve, 250 * attempt * attempt + Math.random() * 250));
+      await new Promise((resolve) => setTimeout(resolve, 400 * attempt * attempt + Math.random() * 400));
     }
   }
 }
