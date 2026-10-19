@@ -14,7 +14,8 @@ import { appendFileSync } from 'node:fs';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 const token = process.env.SANITY_WRITE_TOKEN ?? process.env.SANITY_CLEANUP_TOKEN;
 const remove = process.argv.includes('--delete');
-const graceDays = 7;
+// 7 days unless ORPHAN_GRACE_DAYS says otherwise (only for trying the script on a test dataset).
+const graceDays = Number(process.env.ORPHAN_GRACE_DAYS ?? 7);
 
 if (!token) {
   console.error('Set SANITY_WRITE_TOKEN (or SANITY_CLEANUP_TOKEN) to read the assets.');
