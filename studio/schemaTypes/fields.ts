@@ -10,9 +10,9 @@ export const languages = [
 
 export const languageField = defineField({
   name: 'language',
-  title: 'Language',
+  title: 'Dil',
   type: 'string',
-  description: 'The language this document is written in. Each language has its own documents.',
+  description: 'Bu belgenin yazıldığı dil. Her dilin kendi belgeleri vardır.',
   options: { list: languages, layout: 'radio' },
   validation: (rule) => rule.required(),
 });
@@ -23,15 +23,15 @@ export const languageField = defineField({
  */
 export const pathField = defineField({
   name: 'path',
-  title: 'Page address',
+  title: 'Sayfa adresi',
   type: 'string',
   description:
-    'Address without the language and without slashes at the ends. Copy the pattern of a similar page. Example: blog/turkey/best-time-to-visit-turkey',
+    'Dil kısmı ve baştaki/sondaki eğik çizgiler olmadan adres. Benzer bir sayfanın desenini kopyalayın. Örnek: blog/turkey/best-time-to-visit-turkey',
   validation: (rule) =>
     rule.required().custom(async (value: string | undefined, context: ValidationContext) => {
       if (!value) {return true;}
-      if (/^\/|\/$|\s|\/\//.test(value)) {return 'No spaces, no slash at the start or end, no double slashes.';}
-      if (value !== value.toLowerCase()) {return 'Use lowercase letters only.';}
+      if (/^\/|\/$|\s|\/\//.test(value)) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
+      if (value !== value.toLowerCase()) {return 'Yalnızca küçük harf kullanın.';}
       const doc = context.document as { _id?: string; language?: string } | undefined;
       const id = (doc?._id ?? '').replace(/^drafts\./, '');
       const taken = await context
@@ -40,110 +40,110 @@ export const pathField = defineField({
           'count(*[defined(path) && path == $path && language == $language && !(_id in [$id, "drafts." + $id])])',
           { path: value, language: doc?.language ?? '', id },
         );
-      return taken > 0 ? 'Another page in this language already uses this address.' : true;
+      return taken > 0 ? 'Bu dilde başka bir sayfa bu adresi zaten kullanıyor.' : true;
     }),
 });
 
 /** Links the same page in the three languages: pages with the same value are translations of each other. */
 export const translationGroupField = defineField({
   name: 'translationGroup',
-  title: 'Same page in other languages',
+  title: 'Diğer dillerdeki aynı sayfa',
   type: 'string',
   description:
-    'Pages in different languages that have the same code here are the same page. The language menu and the search engines (hreflang) then point from one to the other. Leave empty when the page has no counterpart.',
+    'Burada aynı kodu taşıyan farklı dillerdeki sayfalar aynı sayfadır. Dil menüsü ve arama motorları (hreflang) bu sayfalar arasında geçiş yapar. Karşılığı olmayan sayfada boş bırakın.',
 });
 
 export const titleField = defineField({
   name: 'title',
-  title: 'Page title (H1)',
+  title: 'Sayfa başlığı (H1)',
   type: 'string',
-  description: 'The main heading of the page.',
+  description: 'Sayfanın ana başlığı.',
   validation: (rule) => rule.required(),
 });
 
 export const metaTitleField = defineField({
   name: 'metaTitle',
-  title: 'Search result title',
+  title: 'Arama sonucu başlığı',
   type: 'string',
-  description: 'Shown in Google. The site name is added after it. About 50 to 60 characters.',
+  description: 'Google\'da görünür. Site adı sonuna eklenir. Yaklaşık 50-60 karakter.',
   components: { input: lengthHint(30, 60) },
-  validation: (rule) => rule.required().max(70).warning('Over about 60 characters, Google may cut the title.'),
+  validation: (rule) => rule.required().max(70).warning('Yaklaşık 60 karakteri aşarsa Google başlığı kesebilir.'),
 });
 
 export const metaDescriptionField = defineField({
   name: 'metaDescription',
-  title: 'Search result description',
+  title: 'Arama sonucu açıklaması',
   type: 'text',
   rows: 3,
-  description: 'Shown in Google under the title. About 120 to 160 characters.',
+  description: 'Google\'da başlığın altında görünür. Yaklaşık 120-160 karakter.',
   components: { input: lengthHint(120, 160) },
-  validation: (rule) => rule.required().max(200).warning('Over about 160 characters, Google may cut the description.'),
+  validation: (rule) => rule.required().max(200).warning('Yaklaşık 160 karakteri aşarsa Google açıklamayı kesebilir.'),
 });
 
 /** A picture. The alt text describes it for people who cannot see it and for search engines. */
 export const picture = defineType({
   name: 'picture',
-  title: 'Picture',
+  title: 'Görsel',
   type: 'image',
   options: { hotspot: true },
   fields: [
     defineField({
       name: 'alt',
-      title: 'Alternative text',
+      title: 'Alternatif metin (görsel açıklaması)',
       type: 'string',
-      description: 'Describe what the picture shows, in a few words. People who cannot see the picture and search engines read it.',
-      validation: (rule) => rule.required().error('Describe the picture in a few words before publishing.'),
+      description: 'Görselde ne olduğunu birkaç kelimeyle yazın. Görseli göremeyen kişiler ve arama motorları bunu okur.',
+      validation: (rule) => rule.required().error('Yayınlamadan önce görseli birkaç kelimeyle tarif edin.'),
     }),
   ],
 });
 
 export const faq = defineType({
   name: 'faq',
-  title: 'Question and answer',
+  title: 'Soru ve cevap',
   type: 'object',
   fields: [
-    defineField({ name: 'q', title: 'Question', type: 'string', validation: (rule) => rule.required() }),
-    defineField({ name: 'a', title: 'Answer', type: 'text', rows: 4, validation: (rule) => rule.required() }),
+    defineField({ name: 'q', title: 'Soru', type: 'string', validation: (rule) => rule.required() }),
+    defineField({ name: 'a', title: 'Cevap', type: 'text', rows: 4, validation: (rule) => rule.required() }),
   ],
   preview: { select: { title: 'q', subtitle: 'a' } },
 });
 
 export const faqsField = defineField({
   name: 'faqs',
-  title: 'Frequently asked questions',
+  title: 'Sık sorulan sorular',
   type: 'array',
   of: [{ type: 'faq' }],
 });
 
 export const mainImageField = defineField({
   name: 'mainImage',
-  title: 'Main picture',
+  title: 'Ana görsel',
   type: 'picture',
-  description: 'Shown at the top of the page and on cards.',
+  description: 'Sayfanın üstünde ve kartlarda gösterilir.',
 });
 
 // ---- the body of a page: sections made of paragraphs, lists, tables and pictures
 
 export const paragraph = defineType({
   name: 'paragraph',
-  title: 'Paragraph',
+  title: 'Paragraf',
   type: 'object',
-  fields: [defineField({ name: 'text', title: 'Text', type: 'text', rows: 4, validation: (rule) => rule.required() })],
+  fields: [defineField({ name: 'text', title: 'Metin', type: 'text', rows: 4, validation: (rule) => rule.required() })],
   preview: {
     select: { title: 'text' },
-    prepare: ({ title }) => ({ title: String(title ?? '').slice(0, 90), subtitle: 'Paragraph' }),
+    prepare: ({ title }) => ({ title: String(title ?? '').slice(0, 90), subtitle: 'Paragraf' }),
   },
 });
 
 export const list = defineType({
   name: 'list',
-  title: 'List',
+  title: 'Liste',
   type: 'object',
   fields: [
-    defineField({ name: 'ordered', title: 'Numbered list', type: 'boolean', initialValue: false }),
+    defineField({ name: 'ordered', title: 'Numaralı liste', type: 'boolean', initialValue: false }),
     defineField({
       name: 'items',
-      title: 'Items',
+      title: 'Maddeler',
       type: 'array',
       of: [{ type: 'string' }],
       validation: (rule) => rule.required().min(1),
@@ -151,15 +151,15 @@ export const list = defineType({
   ],
   preview: {
     select: { items: 'items' },
-    prepare: ({ items }) => ({ title: `${(items as string[] | undefined)?.length ?? 0} items`, subtitle: 'List' }),
+    prepare: ({ items }) => ({ title: `${(items as string[] | undefined)?.length ?? 0} madde`, subtitle: 'Liste' }),
   },
 });
 
 export const tableRow = defineType({
   name: 'tableRow',
-  title: 'Table row',
+  title: 'Tablo satırı',
   type: 'object',
-  fields: [defineField({ name: 'cells', title: 'Cells', type: 'array', of: [{ type: 'string' }] })],
+  fields: [defineField({ name: 'cells', title: 'Hücreler', type: 'array', of: [{ type: 'string' }] })],
   preview: {
     select: { cells: 'cells' },
     prepare: ({ cells }) => ({ title: ((cells as string[] | undefined) ?? []).join(' | ') }),
@@ -168,43 +168,43 @@ export const tableRow = defineType({
 
 export const table = defineType({
   name: 'table',
-  title: 'Table',
+  title: 'Tablo',
   type: 'object',
-  fields: [defineField({ name: 'rows', title: 'Rows', type: 'array', of: [{ type: 'tableRow' }] })],
+  fields: [defineField({ name: 'rows', title: 'Satırlar', type: 'array', of: [{ type: 'tableRow' }] })],
   preview: {
     select: { rows: 'rows' },
-    prepare: ({ rows }) => ({ title: `${(rows as unknown[] | undefined)?.length ?? 0} rows`, subtitle: 'Table' }),
+    prepare: ({ rows }) => ({ title: `${(rows as unknown[] | undefined)?.length ?? 0} satır`, subtitle: 'Tablo' }),
   },
 });
 
 export const imageBlock = defineType({
   name: 'imageBlock',
-  title: 'Picture',
+  title: 'Görsel',
   type: 'object',
-  fields: [defineField({ name: 'image', title: 'Picture', type: 'picture', validation: (rule) => rule.required() })],
+  fields: [defineField({ name: 'image', title: 'Görsel', type: 'picture', validation: (rule) => rule.required() })],
   preview: {
     select: { media: 'image', title: 'image.alt' },
-    prepare: ({ media, title }) => ({ media, title: title ?? 'Picture', subtitle: 'Picture' }),
+    prepare: ({ media, title }) => ({ media, title: title ?? 'Görsel', subtitle: 'Görsel' }),
   },
 });
 
 export const section = defineType({
   name: 'section',
-  title: 'Section',
+  title: 'Bölüm',
   type: 'object',
   fields: [
     defineField({
       name: 'level',
-      title: 'Heading level',
+      title: 'Başlık düzeyi',
       type: 'number',
-      description: '2 for a main section, 3 for a sub-section, 0 for text before the first heading.',
+      description: 'Ana bölüm için 2, alt bölüm için 3, ilk başlıktan önceki metin için 0.',
       options: { list: [0, 2, 3, 4] },
       initialValue: 2,
     }),
-    defineField({ name: 'heading', title: 'Heading', type: 'string' }),
+    defineField({ name: 'heading', title: 'Başlık', type: 'string' }),
     defineField({
       name: 'blocks',
-      title: 'Content',
+      title: 'İçerik',
       type: 'array',
       of: [{ type: 'paragraph' }, { type: 'list' }, { type: 'table' }, { type: 'imageBlock' }],
     }),
@@ -212,41 +212,41 @@ export const section = defineType({
   preview: {
     select: { title: 'heading', blocks: 'blocks' },
     prepare: ({ title, blocks }) => ({
-      title: title || '(no heading)',
-      subtitle: `${(blocks as unknown[] | undefined)?.length ?? 0} blocks`,
+      title: title || '(başlık yok)',
+      subtitle: `${(blocks as unknown[] | undefined)?.length ?? 0} blok`,
     }),
   },
 });
 
 export const sectionsField = defineField({
   name: 'sections',
-  title: 'Page text',
+  title: 'Sayfa metni',
   type: 'array',
-  description: 'The text of the page, section by section.',
+  description: 'Sayfanın metni, bölüm bölüm.',
   of: [{ type: 'section' }],
 });
 
 /** Keeps a page out of search results (Google) and out of the sitemap. The page still opens for people who have the link. */
 export const noindexField = defineField({
   name: 'noindex',
-  title: 'Hide from search engines',
+  title: 'Arama motorlarından gizle',
   type: 'boolean',
-  description: 'Switch on only for a page that should not appear in Google, for example a draft campaign page. Off by default.',
+  description: 'Yalnızca Google\'da görünmesini istemediğiniz sayfada açın, örneğin taslak bir kampanya sayfası. Normalde kapalıdır.',
   initialValue: false,
 });
 
 /** Overrides the address search engines treat as the main one for the page. Normally left empty. */
 export const canonicalUrlField = defineField({
   name: 'canonicalUrl',
-  title: 'Main address for search engines (optional)',
+  title: 'Arama motorları için ana adres (isteğe bağlı)',
   type: 'string',
   description:
-    'Leave empty. Fill in only when the same text exists on another page of the site and that page should be the one Google shows. Write the address as /en/blog/turkey/other-post/ or as a full https://www.magnificenttravel.com/... address.',
+    'Boş bırakın. Yalnızca aynı metin sitede başka bir sayfada da varsa ve Google\'ın o sayfayı göstermesini istiyorsanız doldurun. Adresi /en/blog/turkey/other-post/ biçiminde veya tam https://www.magnificenttravel.com/... adresi olarak yazın.',
   validation: (rule) =>
     rule.custom((value: string | undefined) => {
       if (!value) {return true;}
       if (/^https:\/\/(www\.)?magnificenttravel\.com\/(en|cn|jp)\//.test(value) || /^\/(en|cn|jp)\//.test(value)) {return true;}
-      return 'Start with /en/, /cn/ or /jp/, or with https://www.magnificenttravel.com/';
+      return '/en/, /cn/ veya /jp/ ile ya da https://www.magnificenttravel.com/ ile başlayın.';
     }),
 });
 

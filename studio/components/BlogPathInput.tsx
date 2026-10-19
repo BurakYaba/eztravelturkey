@@ -40,7 +40,7 @@ export function BlogPathInput(props: StringInputProps) {
       {props.renderDefault(props)}
       <Flex gap={2} align="center" wrap="wrap">
         <Select value={chosen} onChange={(event) => setFolder(event.currentTarget.value)} style={{ maxWidth: 240 }}>
-          {folders.length === 0 && <option value="">Choose the language first</option>}
+          {folders.length === 0 && <option value="">Önce dili seçin</option>}
           {folders.map((path) => (
             <option key={path} value={path}>
               {path}
@@ -48,7 +48,7 @@ export function BlogPathInput(props: StringInputProps) {
           ))}
         </Select>
         <Button
-          text="Build address from the title"
+          text="Adresi başlıktan oluştur"
           mode="ghost"
           disabled={!suggestion}
           onClick={() => props.onChange(set(suggestion))}
@@ -56,7 +56,7 @@ export function BlogPathInput(props: StringInputProps) {
       </Flex>
       {suggestion && (
         <Text size={1} muted>
-          Suggestion: {suggestion}
+          Öneri: {suggestion}
         </Text>
       )}
     </Stack>
