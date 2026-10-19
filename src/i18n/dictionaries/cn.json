@@ -5,7 +5,9 @@
   },
   "common": {
     "skipToContent": "跳至主要内容",
-    "homeLabel": "Magnificent Travel，回到首页"
+    "homeLabel": "Magnificent Travel，回到首页",
+    "scrollPrevious": "上一组",
+    "scrollNext": "下一组"
   },
   "countries": {
     "turkey": {

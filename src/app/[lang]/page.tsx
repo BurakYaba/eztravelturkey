@@ -52,8 +52,8 @@ export default async function HomePage() {
     <>
       <Hero />
       <TrustBar className="mt-10" notes />
-      <MultiCountryRail />
       <WhyTravel />
+      <MultiCountryRail />
       <DestinationsRow />
       <WaysToTravel />
       <FeaturedTours />
