@@ -4,7 +4,8 @@ import { ButtonLink } from '../shared/Button';
 import { HeroImage } from './HeroImage';
 import { SearchBar } from './SearchBar';
 
-export async function Hero() {
+/** `title` is the H1 the editors typed in the home page document; without one the dictionary's heading is shown. */
+export async function Hero({ title }: { title?: string }) {
   const { ui, countries } = await getDictionaryForPage();
   const available = await availableCountries(await getLocale());
   const t = ui.home.hero;
@@ -23,7 +24,7 @@ export async function Hero() {
         <div className="container-wide relative pt-6 pb-24 md:flex md:min-h-[540px] md:items-center md:pt-20 md:pb-28 lg:min-h-[600px]">
           <div className="max-w-2xl">
             <p className="eyebrow">{t.eyebrow}</p>
-            <h1 className="h-display mt-3">{t.title}</h1>
+            <h1 className="h-display mt-3">{title ?? t.title}</h1>
             <p className="text-ink/85 mt-4 max-w-xl text-lg md:text-xl">{t.text}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href="/tours" size="lg" arrow>

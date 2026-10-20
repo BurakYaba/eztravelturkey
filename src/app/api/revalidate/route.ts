@@ -1,5 +1,6 @@
 import { timingSafeEqual } from 'node:crypto';
 import { revalidateTag } from 'next/cache';
+import { after } from 'next/server';
 import { contentTag } from '@/lib/data/sanity';
 import { editorRedirects } from '@/lib/old-urls';
 
@@ -15,6 +16,13 @@ export async function POST(request: Request) {
     return Response.json({ ok: false }, { status: 401 });
   }
   revalidateTag(contentTag, { expire: 0 });
+  // The pages read Sanity through its CDN, which shows a published change only after about 6 to 14 seconds (measured 2026-10-20).
+  // A visit inside that time would store the old text until the next publish, so the content is marked stale again once the CDN is
+  // certainly up to date.
+  after(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 20_000));
+    revalidateTag(contentTag, { expire: 0 });
+  });
   return Response.json({ ok: true, revalidated: contentTag, redeploy: await redeployForRedirects() });
 }
 
