@@ -4,6 +4,7 @@ import { defineDocuments, defineLocations, presentationTool } from 'sanity/prese
 import { structureTool } from 'sanity/structure';
 import { schemaTypes } from './schemaTypes';
 import { structure } from './structure';
+import { languageTemplates, templatedTypes, tourInFolder } from './templates';
 
 /** Where the site runs. Change it to the real domain when it is attached; `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the local site. */
 const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://magnificenttravel.vercel.app';
@@ -61,6 +62,15 @@ export default defineConfig({
   scheduledDrafts: { enabled: false },
   // Tasks and comments are also paid features of the trial; the free plan has neither.
   tasks: { enabled: false },
-  document: { comments: { enabled: false } },
-  schema: { types: schemaTypes },
+  document: {
+    comments: { enabled: false },
+    // The lists have their own "+" (structure.ts) that starts the document in the list's language and country; the default one,
+    // which lists the template of every language, is hidden there. The top bar's "+" keeps the per-language templates.
+    newDocumentOptions: (previous, { creationContext }) => (creationContext.type === 'structure' ? [] : previous),
+  },
+  schema: {
+    types: schemaTypes,
+    // The default "new document" of a type has no language; each language has its own (and a tour can start in a country folder).
+    templates: (previous) => [...previous.filter((template) => !templatedTypes.includes(template.schemaType)), ...languageTemplates, tourInFolder],
+  },
 });

@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { autoPathInput } from '../components/AutoPathInput';
 import {
   canonicalUrlField,
   faqsField,
@@ -52,7 +53,7 @@ export const tour = defineType({
   ],
   fields: [
     { ...languageField, group: 'basics' },
-    { ...pathField, group: 'basics' },
+    { ...pathField, group: 'basics', components: { input: autoPathInput('tour') } },
     { ...translationGroupField, group: 'basics' },
     defineField({
       name: 'parent',

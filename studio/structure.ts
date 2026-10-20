@@ -4,6 +4,10 @@ import { tourParents } from './schemaTypes/tour';
 
 type Builder = Parameters<StructureResolver>[0];
 
+/** The "+" of a list: creates a document from one template, with its parameters (language, country). */
+const createItem = (S: Builder, title: string, templateId: string, schemaType: string, parameters: Record<string, string>) =>
+  S.menuItem().title(title).intent({ type: 'create', params: [{ type: schemaType, template: templateId }, parameters] }).showAsAction(true);
+
 /** A list of one document type that opens a language first: Tours, then English, 繁體中文 or 日本語. Every list and item needs an id. */
 const byLanguage = (S: Builder, type: string, title: string, orderBy = 'path') =>
   S.listItem()
@@ -26,6 +30,8 @@ const byLanguage = (S: Builder, type: string, title: string, orderBy = 'path') =
                   .apiVersion('2025-01-01')
                   .filter('_type == $type && language == $language')
                   .params({ type, language: language.value })
+                  .initialValueTemplates([S.initialValueTemplateItem(`${type}-${language.value}`)])
+                  .menuItems([createItem(S, `Yeni ${title.toLowerCase()}`, `${type}-${language.value}`, type, {})])
                   .defaultOrdering([{ field: orderBy, direction: 'asc' }]),
               ),
           ),
@@ -67,14 +73,27 @@ const lengths = [
 const folderTitle = (value: string) =>
   (tourParents.find((p) => p.value === value)?.title ?? value).replace(/^(Çince|Japonca) site: /, '');
 
+/** What "+" creates in a tour list: a tour in the list's language, and in its country when the list has one. */
+const newTour = (S: Builder, language: string, params: Record<string, unknown>) => [
+  typeof params.parent === 'string'
+    ? S.initialValueTemplateItem('tour-in-folder', { language, parent: params.parent })
+    : S.initialValueTemplateItem(`tour-${language}`),
+];
+
 const tourList = (S: Builder, id: string, title: string, language: string, extraFilter: string, params: Record<string, unknown> = {}) =>
-  S.documentList()
+  S.documentTypeList('tour')
     .id(id)
     .title(title)
-    .schemaType('tour')
     .apiVersion('2025-01-01')
     .filter(`_type == "tour" && language == $language${extraFilter ? ` && ${extraFilter}` : ''}`)
     .params({ language, ...params })
+    .initialValueTemplates(newTour(S, language, params))
+    // Without this the "+" also offers the new document of every language (the default of a list of one type).
+    .menuItems([
+      typeof params.parent === 'string'
+        ? createItem(S, 'Yeni tur', 'tour-in-folder', 'tour', { language, parent: params.parent })
+        : createItem(S, 'Yeni tur', `tour-${language}`, 'tour', {}),
+    ])
     .defaultOrdering([
       { field: 'days', direction: 'asc' },
       { field: 'path', direction: 'asc' },
