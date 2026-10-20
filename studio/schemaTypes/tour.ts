@@ -12,7 +12,7 @@ import {
 } from './fields';
 
 /** The folder a tour lives in under /destinations: a country or a multi-country combination. */
-const parents = [
+export const tourParents = [
   { title: 'Türkiye', value: 'turkey-tours' },
   { title: 'Yunanistan', value: 'greece-tours' },
   { title: 'Mısır', value: 'egypt-tours' },
@@ -59,7 +59,7 @@ export const tour = defineType({
       title: 'Ülke veya kombinasyon',
       type: 'string',
       description: 'Turun sitede bulunduğu klasör.',
-      options: { list: parents },
+      options: { list: tourParents },
       validation: (rule) => rule.required(),
       group: 'basics',
     }),
@@ -233,6 +233,12 @@ export const tour = defineType({
   ],
   orderings: [{ title: 'Sayfa adresi', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
   preview: {
-    select: { title: 'title', subtitle: 'path', media: 'gallery.0' },
+    select: { title: 'title', path: 'path', days: 'days', eur: 'price.eur', media: 'gallery.0' },
+    // The length and the price first: in a list of tours that is what tells them apart; the address follows.
+    prepare: ({ title, path, days, eur, media }) => ({
+      title,
+      subtitle: [days ? `${days} gün` : '', eur ? `€${eur}` : '', path].filter(Boolean).join(' · '),
+      media,
+    }),
   },
 });

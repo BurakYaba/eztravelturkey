@@ -12,8 +12,10 @@ export const languageField = defineField({
   name: 'language',
   title: 'Dil',
   type: 'string',
-  description: 'Bu belgenin yazıldığı dil. Her dilin kendi belgeleri vardır.',
+  description: 'Bu belgenin yazıldığı dil. Her dilin kendi belgeleri vardır. Belge kaydedildikten sonra değiştirilemez; başka bir dil için yeni belge açın.',
   options: { list: languages, layout: 'radio' },
+  // Changing it by accident moved a page into another language's list (and would break that language's page when published).
+  readOnly: ({ document }) => Boolean(document?._createdAt),
   validation: (rule) => rule.required(),
 });
 
