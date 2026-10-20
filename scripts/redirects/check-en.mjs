@@ -5,7 +5,7 @@
 // Reads data/inventory/en.csv (the old site's addresses, kept on the developer's computer). For each address it records the
 // status, where a redirect goes and whether that target answers 200 in one step, then prints a table by kind. Writes
 // data/qa/p7-en.csv. Only reads.
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '../..');
@@ -17,6 +17,18 @@ const rows = readFileSync(path.join(root, 'data/inventory/en.csv'), 'utf8')
   .filter(Boolean)
   .map((line) => line.match(/"([^"]*)"/g).map((cell) => cell.slice(1, -1)))
   .map(([url, , , kind, , , israel]) => ({ url, kind, israel: israel === 'true' }));
+
+// The blog list pages (`/en/blog/egypt/2/`) are not in the inventory; the content audit found them (data/audit/crawl-en.csv).
+const crawl = path.join(root, 'data/audit/crawl-en.csv');
+if (existsSync(crawl)) {
+  const known = new Set(rows.map((r) => r.url));
+  for (const line of readFileSync(crawl, 'utf8').split(/\r?\n/).slice(1).filter(Boolean)) {
+    const [url, status] = line.match(/"([^"]*)"/g).map((cell) => cell.slice(1, -1));
+    if (status === '200' && /^\/en\/blog\/[^/]+\/\d+\/$/.test(new URL(url).pathname) && !known.has(url)) {
+      rows.push({ url, kind: 'blog-list-page', israel: /israel/i.test(url) });
+    }
+  }
+}
 
 const ask = async (pathname) => {
   const response = await fetch(base + pathname, { redirect: 'manual' });
