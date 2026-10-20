@@ -8,6 +8,7 @@ import { photoCredits } from '@/data/images';
 import { site } from '@/data/site';
 import { PageSections } from '@/components/pages/PageSections';
 import { getPage } from '@/lib/data';
+import { getSiteSettings } from '@/lib/data/settings';
 import { docMetadata } from '@/lib/page-meta';
 import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo';
 import { format, getDictionary } from '@/i18n/dictionaries';
@@ -22,15 +23,15 @@ export const generateMetadata = docMetadata({
   image: 'istanbul-bosphorus',
 });
 
-const stats = [
-  { value: String(site.founded), label: 'Founded in Istanbul' },
-  { value: site.stats.travelers, label: 'Happy travelers' },
-  { value: site.stats.tours, label: 'Tours completed' },
-  { value: `${site.stats.rating}`, label: `Tripadvisor, ${site.stats.reviews} reviews` },
-];
-
 export default async function AboutPage() {
   const lang = await getLocale();
+  const settings = await getSiteSettings(lang);
+  const stats = [
+    { value: String(settings.founded), label: 'Founded in Istanbul' },
+    { value: settings.stats.travelers, label: 'Happy travelers' },
+    { value: settings.stats.tours, label: 'Tours completed' },
+    { value: `${settings.stats.rating}`, label: `Tripadvisor, ${settings.stats.reviews} reviews` },
+  ];
   // The text of the old About page, as it was. Sections that only hold icons or one-word labels are left out.
   const doc = await getPage(lang, 'about');
   const story = (doc?.sections ?? []).filter((s) => s.blocks.some((b) => b.type === 'p' && b.text.length > 60));
@@ -46,7 +47,7 @@ export default async function AboutPage() {
       <>
         <PageBanner
           title={doc?.title ?? ui.pages.about.bannerTitle}
-          description={format(ui.pages.about.banner, { year: site.founded })}
+          description={format(ui.pages.about.banner, { year: settings.founded })}
           image="istanbul-bosphorus"
           crumbs={localCrumbs}
         />
@@ -77,7 +78,7 @@ export default async function AboutPage() {
     <>
       <PageBanner
         title={doc?.title ?? 'About Magnificent Travel'}
-        description={`An independent Turkish tour operator, creating journeys across the eastern Mediterranean since ${site.founded}.`}
+        description={`An independent Turkish tour operator, creating journeys across the eastern Mediterranean since ${settings.founded}.`}
         image="istanbul-bosphorus"
         crumbs={crumbs}
       />
@@ -112,7 +113,7 @@ export default async function AboutPage() {
             <h2 className="h-section">Licensed and registered</h2>
             <p className="text-ink/90 mt-4 text-lg">
               {site.name} is officially registered as {site.legalName}, operating under Turkish Ministry of Culture and
-              Tourism License No. {site.licenseNo}, and is registered with TURSAB, the Association of Turkish Travel
+              Tourism License No. {settings.licenseNo}, and is registered with TURSAB, the Association of Turkish Travel
               Agencies.
             </p>
             <a
@@ -127,11 +128,11 @@ export default async function AboutPage() {
           <address className="border-cream-200 shadow-card rounded-lg border bg-white p-6 not-italic">
             <h3 className="text-xl">Our office</h3>
             <p className="text-ink mt-2">
-              {site.address.street}
+              {settings.address.street}
               <br />
-              {site.address.district}, {site.address.city} {site.address.postalCode}
+              {settings.address.district}, {settings.address.city} {settings.address.postalCode}
               <br />
-              {site.address.country}
+              {settings.address.country}
             </p>
           </address>
         </div>

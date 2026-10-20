@@ -211,4 +211,7 @@ export const structure: StructureResolver = (S) =>
       byLanguage(S, 'hubPage', 'Ana bölüm sayfaları (Destinasyonlar, Blog)'),
       homePages(S),
       byLanguage(S, 'teamMember', 'Ekip (Hakkımızda ve İletişim sayfaları)', 'order'),
+      S.divider(),
+      byLanguage(S, 'siteSettings', 'Site ayarları (telefon, WhatsApp, adres, sosyal medya)', 'language'),
+      byLanguage(S, 'tourTexts', 'Ortak tur metinleri (ödeme özeti, pasaport ve sigorta)', 'language'),
     ]);

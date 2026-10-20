@@ -2,18 +2,22 @@ import {
   ArrowUpRight,
   EnvelopeSimple,
   FacebookLogo,
+  GlobeSimple,
   InstagramLogo,
   LinkedinLogo,
   MapPin,
   Phone,
   WhatsappLogo,
+  XLogo,
+  YoutubeLogo,
 } from '@phosphor-icons/react/dist/ssr';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { TeamBlock } from '@/components/shared/TeamBlock';
 import { QuoteForm } from '@/components/shared/QuoteForm';
-import { site, whatsappLink } from '@/data/site';
+import { site } from '@/data/site';
 import { getPage } from '@/lib/data';
+import { getSiteSettings, whatsappUrl } from '@/lib/data/settings';
 import { docMetadata } from '@/lib/page-meta';
 import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo';
 import { PageSections } from '@/components/pages/PageSections';
@@ -28,10 +32,6 @@ export const generateMetadata = docMetadata({
   path: '/contact',
   image: 'istanbul-skyline',
 });
-
-const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${site.address.street}, ${site.address.district}, ${site.address.city}`,
-)}`;
 
 export default async function ContactPage() {
   const lang = await getLocale();
@@ -76,18 +76,25 @@ export default async function ContactPage() {
     { name: 'Home', path: '/' },
     { name: 'Contact', path: '/contact' },
   ];
+  const settings = await getSiteSettings(lang);
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${settings.address.street}, ${settings.address.district}, ${settings.address.city}`,
+  )}`;
   const methods = [
-    { icon: WhatsappLogo, label: 'WhatsApp', value: site.whatsapp, href: whatsappLink(), external: true },
-    { icon: Phone, label: 'Phone', value: site.phone, href: site.phoneHref, external: false },
-    ...(site.email
-      ? [{ icon: EnvelopeSimple, label: 'Email', value: site.email, href: `mailto:${site.email}`, external: false }]
+    { icon: WhatsappLogo, label: 'WhatsApp', value: settings.whatsapp, href: whatsappUrl(settings.whatsappNumber), external: true },
+    { icon: Phone, label: 'Phone', value: settings.phone, href: settings.phoneHref, external: false },
+    ...(settings.email
+      ? [{ icon: EnvelopeSimple, label: 'Email', value: settings.email, href: `mailto:${settings.email}`, external: false }]
       : []),
   ];
   const socials = [
-    { label: 'Facebook', href: site.social.facebook, icon: FacebookLogo },
-    { label: 'LinkedIn', href: site.social.linkedin, icon: LinkedinLogo },
-    { label: 'Instagram', href: site.social.instagram, icon: InstagramLogo },
-  ];
+    { label: 'Facebook', href: settings.social.facebook, icon: FacebookLogo },
+    { label: 'LinkedIn', href: settings.social.linkedin, icon: LinkedinLogo },
+    { label: 'Instagram', href: settings.social.instagram, icon: InstagramLogo },
+    { label: 'X', href: settings.social.x, icon: XLogo },
+    { label: 'YouTube', href: settings.social.youtube, icon: YoutubeLogo },
+    ...settings.otherLinks.map((l) => ({ label: l.label, href: l.url, icon: GlobeSimple })),
+  ].filter((s) => s.href);
 
   return (
     <>
@@ -124,9 +131,9 @@ export default async function ContactPage() {
               <div>
                 <h2 className="font-sans text-lg font-semibold tracking-normal">Our office</h2>
                 <p className="text-ink mt-1">
-                  {site.address.street}
+                  {settings.address.street}
                   <br />
-                  {site.address.district}, {site.address.city} {site.address.postalCode}, {site.address.country}
+                  {settings.address.district}, {settings.address.city} {settings.address.postalCode}, {settings.address.country}
                 </p>
                 <a
                   href={mapsHref}
@@ -141,8 +148,8 @@ export default async function ContactPage() {
             <div>
               <h2 className="font-sans text-lg font-semibold tracking-normal">Business details</h2>
               <p className="text-muted mt-1">
-                {site.legalName}, an independent Turkish tour operator since {site.founded}. License No.{' '}
-                {site.licenseNo}.
+                {site.legalName}, an independent Turkish tour operator since {settings.founded}. License No.{' '}
+                {settings.licenseNo}.
               </p>
               <ul className="mt-4 flex gap-3">
                 {socials.map(({ label, href, icon: Icon }) => (

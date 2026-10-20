@@ -15,8 +15,7 @@ import {
   WhatsappLogo,
 } from '@phosphor-icons/react/dist/ssr';
 import type { Icon } from '@phosphor-icons/react';
-import { policies } from '@/data/policies';
-import { whatsappLink } from '@/data/site';
+import { getSiteSettings, getTourTexts, whatsappUrl } from '@/lib/data/settings';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { legalHref } from '@/i18n/public-paths';
 import { getLocale } from '@/i18n/server';
@@ -75,9 +74,11 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { label: t.practical.difficulty, value: tour.facts.difficulty, icon: PersonSimpleWalk },
     ...tour.extraFacts.map((f) => ({ ...f, icon: Info })),
   ].filter((f) => f.value);
-  // Payment terms and the passport and insurance rules: the words of each language's own terms page (src/data/policies.ts).
+  // Payment terms and the passport and insurance rules: written in the Studio ("Ortak tur metinleri"), else the words of each
+  // language's own terms page built into the site (src/data/policies.ts).
   const english = lang === 'en';
-  const { payment: paymentSummary, rules } = policies[lang];
+  const { payment: paymentSummary, rules } = await getTourTexts(lang);
+  const settings = await getSiteSettings(lang);
   const hasInclusions = tour.included.length > 0 || tour.excluded.length > 0;
   const hasPrice = tour.priceEUR !== null || tour.priceUSD !== null;
   // The old pages mix sentences about the price ("Prices are per person, based on a minimum of ...") into the notes.
@@ -113,7 +114,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
               {t.cta.quote}
             </ButtonLink>
             <ButtonAnchor
-              href={whatsappLink(format(card.whatsappAsk, { tour: tour.title }))}
+              href={whatsappUrl(settings.whatsappNumber, format(card.whatsappAsk, { tour: tour.title }))}
               target="_blank"
               rel="noopener noreferrer"
               variant="secondary">

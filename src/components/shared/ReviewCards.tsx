@@ -1,11 +1,12 @@
 import { ArrowUpRight, Star } from '@phosphor-icons/react/dist/ssr';
 import { reviews } from '@/data/reviews';
-import { site } from '@/data/site';
-import { getDictionaryForPage } from '@/i18n/server';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
+import { getSiteSettings } from '@/lib/data/settings';
 import { formatDate } from '@/lib/utils';
 
 export async function ReviewCards() {
   const { ui } = await getDictionaryForPage();
+  const site = await getSiteSettings(await getLocale());
   return (
     <ul className="grid gap-5 md:grid-cols-3">
       {reviews.map((review) => (

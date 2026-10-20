@@ -1,7 +1,7 @@
 import { WhatsappLogo } from '@phosphor-icons/react/dist/ssr';
 import type { ImageId } from '@/data/images';
-import { whatsappLink } from '@/data/site';
-import { getDictionaryForPage } from '@/i18n/server';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
+import { getSiteSettings, whatsappUrl } from '@/lib/data/settings';
 import { ButtonAnchor, ButtonLink } from './Button';
 import { Photo } from './Photo';
 
@@ -13,6 +13,7 @@ type Props = {
 
 export async function QuoteBand({ title, text, image = 'santorini-sunset' }: Props) {
   const { ui } = await getDictionaryForPage();
+  const settings = await getSiteSettings(await getLocale());
   const t = ui.quoteBand;
   return (
     <section className="bg-cream-100 relative isolate overflow-hidden [--veil:var(--color-cream-100)]">
@@ -30,7 +31,7 @@ export async function QuoteBand({ title, text, image = 'santorini-sunset' }: Pro
               {t.plan}
             </ButtonLink>
             <ButtonAnchor
-              href={whatsappLink(t.whatsappMessage)}
+              href={whatsappUrl(settings.whatsappNumber, t.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
               variant="secondary"

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { site } from '@/data/site';
 import { img, type ImageId } from '@/data/images';
 import { defaultLocale, hasLocale, htmlLang, locales, type Locale } from '@/i18n/config';
+import type { SiteSettings } from '@/lib/data/settings';
 import type { ImageRef } from '@/lib/data/types';
 import { localePath } from '@/i18n/paths';
 
@@ -93,7 +94,7 @@ export const localizedMetadata =
 const organizationRef = { '@id': `${site.url}/#organization` };
 const websiteId = (lang: Locale) => `${site.url}/${lang}/#website`;
 
-export const travelAgencyJsonLd = () => ({
+export const travelAgencyJsonLd = (s: SiteSettings) => ({
   '@context': 'https://schema.org',
   '@type': 'TravelAgency',
   '@id': `${site.url}/#organization`,
@@ -102,19 +103,27 @@ export const travelAgencyJsonLd = () => ({
   url: site.url,
   logo: absoluteUrl('/mtlogo.png'),
   image: absoluteUrl(img('hero-istanbul').src),
-  description: `Licensed Turkish tour operator (License No. ${site.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco since ${site.founded}.`,
-  foundingDate: String(site.founded),
-  telephone: site.phone,
-  ...(site.email ? { email: site.email } : {}),
+  description: `Licensed Turkish tour operator (License No. ${s.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco since ${s.founded}.`,
+  foundingDate: String(s.founded),
+  telephone: s.phone,
+  ...(s.email ? { email: s.email } : {}),
   address: {
     '@type': 'PostalAddress',
-    streetAddress: `${site.address.street}, ${site.address.district}`,
-    addressLocality: site.address.city,
-    postalCode: site.address.postalCode,
+    streetAddress: `${s.address.street}, ${s.address.district}`,
+    addressLocality: s.address.city,
+    postalCode: s.address.postalCode,
     addressCountry: 'TR',
   },
   areaServed: ['Turkey', 'Greece', 'Egypt', 'Jordan', 'Morocco'],
-  sameAs: [site.social.facebook, site.social.linkedin, site.social.instagram, site.tripadvisorUrl],
+  sameAs: [
+    s.social.facebook,
+    s.social.linkedin,
+    s.social.instagram,
+    s.social.x,
+    s.social.youtube,
+    s.tripadvisorUrl,
+    ...s.otherLinks.map((l) => l.url),
+  ].filter(Boolean),
 });
 
 export const websiteJsonLd = (lang: Locale) => ({

@@ -12,6 +12,7 @@ import { defaultLocale, hasLocale, htmlLang, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { LocaleProvider } from '@/i18n/locale-context';
 import { alternatesIndex, availableCountries, hasNativeContent } from '@/lib/data';
+import { getSiteSettings } from '@/lib/data/settings';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
 import '../globals.css';
 
@@ -80,7 +81,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
           <main id="main">{children}</main>
           <Footer />
           <WhatsAppButton />
-          <JsonLd data={[travelAgencyJsonLd(), websiteJsonLd(lang)]} />
+          <JsonLd data={[travelAgencyJsonLd(await getSiteSettings(lang)), websiteJsonLd(lang)]} />
         </LocaleProvider>
       </body>
     </html>

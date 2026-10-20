@@ -14,6 +14,8 @@ const types: [string, string][] = [
   ['staticPage', 'Metin sayfası'],
   ['hubPage', 'Ana bölüm sayfası'],
   ['teamMember', 'Ekip üyesi'],
+  ['siteSettings', 'Site ayarları'],
+  ['tourTexts', 'Ortak tur metinleri'],
 ];
 
 /** The document types these templates replace (the default one, without a language, is hidden). */

@@ -12,7 +12,7 @@ import { SectionHeading } from '../shared/SectionHeading';
 import { TourCard } from '../tours/TourCard';
 import { TextLink } from '../shared/Button';
 import { destinations } from '@/data/destinations';
-import { site } from '@/data/site';
+import { getSiteSettings } from '@/lib/data/settings';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { availableCountries, blogPosts, comboCards, featuredTours } from '@/lib/data';
@@ -241,6 +241,7 @@ export async function HubPreview() {
 
 export async function ReviewsSection() {
   const { ui } = await getDictionaryForPage();
+  const site = await getSiteSettings(await getLocale());
   const t = ui.home.reviews;
   return (
     <section className="section-y">
