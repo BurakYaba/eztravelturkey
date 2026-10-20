@@ -26,14 +26,17 @@ const title = 'Magnificent Travel: Turkey, Greece, Egypt, Jordan & Morocco';
 const description =
   'Private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco, planned by a licensed local operator since 1997.';
 
-/** English uses the new title; the Chinese and Japanese home pages keep the title and description of their old pages. */
+/**
+ * The title and description come from the home page document of the language (the Studio's "Ana sayfa"); the texts above are only
+ * the fallback for a document that has none. The big heading in the hero comes from the document's H1 field the same way.
+ */
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const locale = hasLocale(lang) ? lang : defaultLocale;
-  const page = locale === defaultLocale ? undefined : await getPage(locale, '');
+  const page = await getPage(locale, '');
   const own = page && !page.fallback;
   return buildMetadata({
-    title: own ? page.metaTitle : title,
+    title: own && page.metaTitle ? page.metaTitle : title,
     description: own && page.metaDescription ? page.metaDescription : description,
     path: '/',
     lang: locale,
@@ -50,7 +53,7 @@ export default async function HomePage() {
   const faqs = doc?.faqs.length ? doc.faqs : lang === 'en' ? homeFaqs.slice(0, 7) : [];
   return (
     <>
-      <Hero />
+      <Hero title={doc && !doc.fallback && doc.title ? doc.title : undefined} />
       <TrustBar className="mt-10" notes />
       <WhyTravel />
       <MultiCountryRail />
@@ -76,7 +79,7 @@ export default async function HomePage() {
         data={[
           webPageJsonLd(
             lang,
-            doc && !doc.fallback && lang !== 'en' ? doc.metaTitle : title,
+            doc && !doc.fallback && doc.metaTitle ? doc.metaTitle : title,
             '/',
             'WebPage',
             description,

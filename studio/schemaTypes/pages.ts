@@ -1,6 +1,7 @@
 import { defineField, defineType, type ValidationContext } from 'sanity';
 import { BlogPathInput } from '../components/BlogPathInput';
 import {
+  faqsField,
   languageField,
   mainImageField,
   metaDescriptionField,
@@ -156,10 +157,11 @@ export const homePage = defineType({
   fields: [
     languageField,
     defineField({ name: 'kind', title: 'Sayfa türü', type: 'string', initialValue: 'home', readOnly: true }),
-    titleField,
+    { ...titleField, title: 'Ana başlık (H1)', description: 'Ana sayfanın en üstündeki büyük başlık.' },
     metaTitleField,
     metaDescriptionField,
     mainImageField,
+    { ...faqsField, description: 'Ana sayfanın altında görünen sorular.' },
     defineField({
       name: 'cards',
       title: 'Öne çıkan kartlar',
