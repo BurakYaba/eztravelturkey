@@ -1,7 +1,6 @@
 'use client';
 
 import Script from 'next/script';
-import { site } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 
 declare global {
@@ -49,14 +48,14 @@ const widgetLang: Record<Locale, string> = { en: 'en_US', cn: 'zh_CN', jp: 'ja' 
  * from `window.onload`, which has already fired by then, so it is asked to draw explicitly once it has loaded. If the
  * script is blocked, the plain link inside the box stays.
  */
-export function TripadvisorBadge({ lang, label }: { lang: Locale; label: string }) {
+export function TripadvisorBadge({ lang, label, url }: { lang: Locale; label: string; url: string }) {
   return (
     <>
       <div id="TA_cdsratingsonlynarrow461" className="TA_cdsratingsonlynarrow">
         <ul className="TA_links">
           <li>
             <a
-              href={site.tripadvisorUrl}
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/75 transition hover:text-white">

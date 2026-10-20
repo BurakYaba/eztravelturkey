@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/shared/JsonLd';
 import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteForm } from '@/components/shared/QuoteForm';
 import { TrustBar } from '@/components/shared/TrustBar';
-import { site, whatsappLink } from '@/data/site';
+import { getSiteSettings, whatsappUrl } from '@/lib/data/settings';
 import { dictMetadata } from '@/lib/dict-meta';
 import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo';
 import { getDictionary } from '@/i18n/dictionaries';
@@ -19,6 +19,7 @@ const icons = [PaperPlaneTilt, ListChecks, Handshake];
 
 export default async function PlanMyTripPage() {
   const lang = await getLocale();
+  const site = await getSiteSettings(lang);
   const { ui, nav } = getDictionary(lang);
   const t = ui.pages.plan;
   const crumbs = [
@@ -54,7 +55,7 @@ export default async function PlanMyTripPage() {
               <p className="text-muted mt-1">{t.talkText}</p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <ButtonAnchor
-                  href={whatsappLink(ui.quoteBand.whatsappMessage)}
+                  href={whatsappUrl(site.whatsappNumber, ui.quoteBand.whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer">
                   <WhatsappLogo size={20} weight="fill" aria-hidden />

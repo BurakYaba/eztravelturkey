@@ -2,7 +2,7 @@
 
 import { useCallback, useId, useState, type FormEvent, type ReactNode } from 'react';
 import { CheckCircle, WarningCircle, WhatsappLogo } from '@phosphor-icons/react/dist/ssr';
-import { whatsappLink } from '@/data/site';
+import { whatsappUrl } from '@/lib/data/settings-url';
 import type { Dictionary } from '@/i18n/dictionaries';
 import { useLocale } from '@/i18n/locale-context';
 import { format } from '@/i18n/template';
@@ -21,6 +21,8 @@ type Props = {
   destinations: { id: string; name: string }[];
   /** Cloudflare Turnstile site key; without it the form runs on the hidden trap field alone. */
   turnstileSiteKey?: string;
+  /** Digits of the WhatsApp number of the language (Studio: "Site ayarları"). */
+  whatsappNumber: string;
 };
 
 type Status = 'idle' | 'sending' | 'done' | 'error';
@@ -65,6 +67,7 @@ export function QuoteFormClient({
   text,
   destinations,
   turnstileSiteKey,
+  whatsappNumber,
 }: Props) {
   const uid = useId();
   const lang = useLocale();
@@ -161,7 +164,7 @@ export function QuoteFormClient({
         <h3 className="mt-3 text-2xl">{delivered ? text.doneTitle : text.doneTitleLocal}</h3>
         <p className="text-muted mt-2">{delivered ? text.doneText : text.doneTextLocal}</p>
         <ButtonAnchor
-          href={whatsappLink(summary)}
+          href={whatsappUrl(whatsappNumber, summary)}
           target="_blank"
           rel="noopener noreferrer"
           variant={delivered ? 'secondary' : 'primary'}

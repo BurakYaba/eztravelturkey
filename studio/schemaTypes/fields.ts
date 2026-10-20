@@ -12,8 +12,10 @@ export const languageField = defineField({
   name: 'language',
   title: 'Dil',
   type: 'string',
-  description: 'Bu belgenin yazıldığı dil. Her dilin kendi belgeleri vardır.',
+  description: 'Bu belgenin yazıldığı dil. Her dilin kendi belgeleri vardır. Belge kaydedildikten sonra değiştirilemez; başka bir dil için yeni belge açın.',
   options: { list: languages, layout: 'radio' },
+  // Changing it by accident moved a page into another language's list (and would break that language's page when published).
+  readOnly: ({ document }) => Boolean(document?._createdAt),
   validation: (rule) => rule.required(),
 });
 
@@ -31,8 +33,9 @@ export const pathField = defineField({
     rule.required().custom(async (value: string | undefined, context: ValidationContext) => {
       if (!value) {return true;}
       if (/^\/|\/$|\s|\/\//.test(value)) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
-      if (value !== value.toLowerCase()) {return 'Yalnızca küçük harf kullanın.';}
       const doc = context.document as { _id?: string; language?: string } | undefined;
+      // The old Japanese addresses carry capitals (T-01, TM-02): a tour moved from that site could not be published again without this.
+      if (value !== value.toLowerCase() && doc?.language !== 'jp') {return 'Yalnızca küçük harf kullanın.';}
       const id = (doc?._id ?? '').replace(/^drafts\./, '');
       const taken = await context
         .getClient({ apiVersion: '2025-01-01' })
@@ -75,7 +78,8 @@ export const metaDescriptionField = defineField({
   title: 'Arama sonucu açıklaması',
   type: 'text',
   rows: 3,
-  description: 'Google\'da başlığın altında görünür. Yaklaşık 120-160 karakter.',
+  description:
+    'Google\'da başlığın altında görünür. Yaklaşık 120-160 karakter. Boş bırakırsanız sayfanın ilk cümleleri kullanılır; kendiniz yazmanız daha iyidir.',
   components: { input: lengthHint(120, 160) },
   validation: (rule) => rule.required().max(200).warning('Yaklaşık 160 karakteri aşarsa Google açıklamayı kesebilir.'),
 });

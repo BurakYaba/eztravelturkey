@@ -1,5 +1,6 @@
 import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
+import { getSiteSettings } from '@/lib/data/settings';
 import { QuoteFormClient } from './QuoteFormClient';
 
 type Props = {
@@ -13,8 +14,9 @@ type Props = {
 /** The enquiry form. This wrapper hands the client form only the texts it needs, in the page language. */
 export async function QuoteForm(props: Props) {
   const lang = await getLocale();
+  const { whatsappNumber } = await getSiteSettings(lang);
   const { form, countries } = getDictionary(lang);
   const destinations = Object.entries(countries).map(([id, c]) => ({ id, name: c.name }));
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || undefined;
-  return <QuoteFormClient {...props} text={form} destinations={destinations} turnstileSiteKey={turnstileSiteKey} />;
+  return <QuoteFormClient {...props} text={form} destinations={destinations} turnstileSiteKey={turnstileSiteKey} whatsappNumber={whatsappNumber} />;
 }

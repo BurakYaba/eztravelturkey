@@ -234,7 +234,7 @@ export async function getTour(lang: Locale, path: string): Promise<TourRecord | 
     category: raw.category ?? null,
     title: raw.title,
     metaTitle: raw.metaTitle ?? raw.title,
-    metaDescription: raw.metaDescription ?? '',
+    metaDescription: raw.metaDescription || descriptionFrom(card.summary),
     noindex: raw.noindex === true,
     canonical: raw.canonical || null,
     summary: card.summary,
@@ -370,6 +370,19 @@ function updatedOf(date: string | null, sections: PageSection[], lang: Locale): 
   return line && month ? { iso: `${line[2]}-${month}`, label: `${line[1]} ${line[2]}`, inText: true } : null;
 }
 
+/**
+ * The description a page gets in search results when the editor left the field empty: the start of its own text, cut at a word, so a new
+ * page never goes live without one (the editor can still write a better one in the "Arama sonuçları" fields).
+ */
+export function descriptionFrom(text: string, max = 155): string {
+  const flat = text.replace(/\s+/g, ' ').trim();
+  if (flat.length <= max) {
+    return flat;
+  }
+  const cut = flat.slice(0, max);
+  return `${cut.slice(0, Math.max(cut.lastIndexOf(' '), 80)).replace(/[,;:\-–—\s]+$/, '')}…`;
+}
+
 function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
   const sections: PageSection[] = (raw.sections ?? []).map(toSection);
   const cards: CardRecord[] = (raw.cards ?? []).map((c) => ({
@@ -380,6 +393,10 @@ function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
     price: c.price ?? '',
   }));
   const summary = toSummary(raw, lang, fallback);
+  if (!summary.metaDescription) {
+    const firstText = raw.shortAnswer || sections.flatMap((s) => s.blocks).find((b) => b.type === 'p')?.text || '';
+    summary.metaDescription = descriptionFrom(firstText);
+  }
   const firstImage = sections.flatMap((s) => s.blocks).find((b) => b.type === 'image');
   return {
     ...summary,

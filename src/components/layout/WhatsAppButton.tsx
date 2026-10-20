@@ -1,13 +1,14 @@
 import { WhatsappLogo } from '@phosphor-icons/react/dist/ssr';
-import { whatsappLink } from '@/data/site';
-import { getDictionaryForPage } from '@/i18n/server';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
+import { getSiteSettings, whatsappUrl } from '@/lib/data/settings';
 
 export async function WhatsAppButton() {
   const { whatsapp: t } = await getDictionaryForPage();
+  const settings = await getSiteSettings(await getLocale());
   return (
     <aside aria-label={t.aria}>
       <a
-        href={whatsappLink(t.message)}
+        href={whatsappUrl(settings.whatsappNumber, t.message)}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t.aria}

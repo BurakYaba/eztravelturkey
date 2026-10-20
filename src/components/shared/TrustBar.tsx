@@ -1,11 +1,12 @@
 import { CalendarCheck, Headset, ShieldCheck, Star, UsersThree } from '@phosphor-icons/react/dist/ssr';
-import { site } from '@/data/site';
+import { getSiteSettings } from '@/lib/data/settings';
 import { format } from '@/i18n/dictionaries';
-import { getDictionaryForPage } from '@/i18n/server';
+import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { cn } from '@/lib/utils';
 
 export async function TrustBar({ className, notes = false }: { className?: string; notes?: boolean }) {
   const { ui } = await getDictionaryForPage();
+  const site = await getSiteSettings(await getLocale());
   const t = ui.trust;
   const items = [
     {

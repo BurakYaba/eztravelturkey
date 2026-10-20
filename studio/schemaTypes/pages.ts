@@ -1,5 +1,5 @@
 import { defineField, defineType, type ValidationContext } from 'sanity';
-import { BlogPathInput } from '../components/BlogPathInput';
+import { autoPathInput } from '../components/AutoPathInput';
 import {
   faqsField,
   languageField,
@@ -61,7 +61,9 @@ function pageType(
   });
 }
 
-export const destinationPage = pageType('destinationPage', 'Destinasyon sayfası', 'country', kinds.destinationPage);
+export const destinationPage = pageType('destinationPage', 'Destinasyon sayfası', 'country', kinds.destinationPage, [], {
+  path: { ...pathField, components: { input: autoPathInput('destinationPage') } },
+});
 /** Posts created before this day were moved from the old site and may stay without an author. */
 const legacyCutoff = '2026-10-19';
 
@@ -142,11 +144,17 @@ const blogFields = [
 ];
 
 export const blogPost = pageType('blogPost', 'Blog yazısı', 'blog-post', undefined, blogFields, {
-  path: { ...pathField, components: { input: BlogPathInput } },
+  path: { ...pathField, components: { input: autoPathInput('blogPost') } },
 });
-export const blogCategory = pageType('blogCategory', 'Blog kategorisi', 'blog-category');
-export const author = pageType('author', 'Yazar', 'author');
-export const staticPage = pageType('staticPage', 'Metin sayfası (hakkımızda, yasal)', 'static');
+export const blogCategory = pageType('blogCategory', 'Blog kategorisi', 'blog-category', undefined, [], {
+  path: { ...pathField, components: { input: autoPathInput('blogCategory') } },
+});
+export const author = pageType('author', 'Yazar', 'author', undefined, [], {
+  path: { ...pathField, components: { input: autoPathInput('author') } },
+});
+export const staticPage = pageType('staticPage', 'Metin sayfası (hakkımızda, yasal)', 'static', undefined, [], {
+  path: { ...pathField, components: { input: autoPathInput('staticPage') } },
+});
 export const hubPage = pageType('hubPage', 'Ana bölüm sayfası', 'destinations-hub', kinds.hubPage);
 
 /** The home page of a language: its meta texts and the cards (combinations and tours) it features. */
