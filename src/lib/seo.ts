@@ -61,7 +61,11 @@ export function buildMetadata({
     title: isHome || absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
-      canonical: canonicalOverride ? (canonicalOverride.endsWith('/') ? canonicalOverride : `${canonicalOverride}/`) : full,
+      canonical: canonicalOverride
+        ? canonicalOverride.endsWith('/')
+          ? canonicalOverride
+          : `${canonicalOverride}/`
+        : full,
       ...(Object.keys(alternates).length >= 2 ? { languages: hreflangOf(alternates) } : {}),
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
@@ -187,7 +191,16 @@ type TripInput = {
   stops: string[];
 };
 
-export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, priceEUR, priceUSD, stops }: TripInput) => {
+export const touristTripJsonLd = ({
+  lang,
+  name,
+  description,
+  path,
+  imageUrl,
+  priceEUR,
+  priceUSD,
+  stops,
+}: TripInput) => {
   const url = absoluteUrl(localePath(lang, path));
   const offers = (
     [
@@ -238,6 +251,30 @@ export const faqJsonLd = (items: { q: string; a: string }[]) => ({
   })),
 });
 
+/** The address that identifies a person in the structured data: the author page plus `#person`, so a post and the page agree. */
+const personId = (lang: Locale, path: string) => `${absoluteUrl(localePath(lang, path))}#person`;
+
+type AuthorInput = { lang: Locale; name: string; description: string; path: string; imageUrl: string | null };
+
+/** The author's own page: a `ProfilePage` whose main entity is the `Person` the blog posts point at (docs/project-plan.md P8.1). */
+export const authorJsonLd = ({ lang, name, description, path, imageUrl }: AuthorInput) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  name,
+  url: absoluteUrl(localePath(lang, path)),
+  inLanguage: htmlLang[lang],
+  isPartOf: { '@id': websiteId(lang) },
+  mainEntity: {
+    '@type': 'Person',
+    '@id': personId(lang, path),
+    name,
+    url: absoluteUrl(localePath(lang, path)),
+    ...(description ? { description } : {}),
+    ...(imageUrl ? { image: absoluteUrl(imageUrl) } : {}),
+    worksFor: organizationRef,
+  },
+});
+
 type ArticleInput = {
   lang: Locale;
   title: string;
@@ -262,8 +299,13 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, mo
     ...(modified ? { dateModified: modified } : {}),
     inLanguage: htmlLang[lang],
     author: author
-      ? { '@type': 'Person', name: author.name, url: absoluteUrl(localePath(lang, author.path)) }
-      : { '@type': 'Organization', name: site.name, url: site.url },
+      ? {
+          '@type': 'Person',
+          '@id': personId(lang, author.path),
+          name: author.name,
+          url: absoluteUrl(localePath(lang, author.path)),
+        }
+      : organizationRef,
     publisher: organizationRef,
     mainEntityOfPage: url,
   };
@@ -271,8 +313,13 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, mo
 
 /** hreflang of a page that has counterparts: one address per language, and x-default pointing at English when it has the page. */
 export function hreflangOf(alternates: Partial<Record<Locale, string>>): Record<string, string> {
-  const entries = locales.flatMap((lang) => (alternates[lang] ? [[htmlLang[lang], absoluteUrl(localePath(lang, alternates[lang]))] as const] : []));
-  return Object.fromEntries([...entries, ...(alternates.en ? [['x-default', absoluteUrl(localePath('en', alternates.en))] as const] : [])]);
+  const entries = locales.flatMap((lang) =>
+    alternates[lang] ? [[htmlLang[lang], absoluteUrl(localePath(lang, alternates[lang]))] as const] : [],
+  );
+  return Object.fromEntries([
+    ...entries,
+    ...(alternates.en ? [['x-default', absoluteUrl(localePath('en', alternates.en))] as const] : []),
+  ]);
 }
 
 /** All language versions of a path, for hreflang. Pages that exist in only some languages pass `only`. */
