@@ -3,7 +3,7 @@
  * Google Analytics are set up in the Tag Manager container (docs/gtm-ga4-kurulum.md). No names, emails or phone numbers are sent.
  *
  *   page_context  every page and every client-side navigation: lang, content_group, page_path
- *   tour_view     a tour page was opened: tour_title, tour_path, country
+ *   tour_view     a tour page was opened: tour_title, tour_path, lang
  *   form_submit   the quote or contact form was sent: form_type, tour_title
  *   whatsapp_click, phone_click, email_click   a link to WhatsApp, a phone number or an email address was used
  *   cta_click     the "Plan my trip" button was used
