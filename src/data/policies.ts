@@ -89,7 +89,7 @@ export const policies: Record<Locale, Policies> = {
       {
         kind: 'insurance',
         title: '旅行保険',
-        text: 'トルコ旅行は、旅行中の損失や治療費に対して保険を提供しません。旅行者は健康や手荷物の紛失に備えて自身で旅行保険に加入することを推奨します。',
+        text: 'Magnificent Travelは、旅行中の損失や治療費に対して保険を提供しません。旅行者は健康や手荷物の紛失に備えて自身で旅行保険に加入することを推奨します。',
       },
     ],
   },
