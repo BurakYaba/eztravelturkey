@@ -636,16 +636,35 @@ const codePages = [
 /** Pages in the CMS that stay out of the sitemap: the search page is `noindex` and /videos/ redirects to the blog (D18). */
 const notListed = new Set(['/search', '/videos']);
 
-/** Every indexable address of a language that really has content, without the language prefix. Empty until that language has its own content. */
-export async function sitemapPaths(lang: Locale): Promise<string[]> {
+/**
+ * Edits before this moment are not trusted as "last modified": the import wrote the same `_updatedAt` to every document, and
+ * the audit fixes of 2026-10-19 and 2026-10-20 touched many at once. A page edited from this date on gets a real `lastmod`.
+ */
+const trustedEditsFrom = '2026-10-21T00:00:00Z';
+
+export type SitemapEntry = { path: string; lastModified: string | null };
+
+/** Every indexable address of a language that really has content, without the language prefix, with the date of its last real edit when there is one. Empty until that language has its own content. */
+export async function sitemapEntries(lang: Locale): Promise<SitemapEntry[]> {
   if (!(await hasNativeContent(lang))) {
     return [];
   }
-  const stored = await query<string[]>('*[_type in $types && language == $lang && defined(path) && noindex != true].path', {
-    types: allTypes,
-    lang,
-  });
+  const stored = await query<{ path: string; updatedAt: string | null }[]>(
+    '*[_type in $types && language == $lang && defined(path) && noindex != true]{ path, "updatedAt": _updatedAt }',
+    { types: allTypes, lang },
+  );
+  const entries = new Map<string, string | null>([['/', null]]);
   // Code pages are known by their English address; in Chinese and Japanese some have the old site's name (/about-us, /会社概要).
-  const paths = new Set(['/', ...codePages.map((p) => publicPath(lang, p)), ...stored.map((p) => `/${trim(p)}`)]);
-  return [...paths].filter((p) => !notListed.has(p));
+  for (const page of codePages) {
+    entries.set(publicPath(lang, page), null);
+  }
+  for (const { path, updatedAt } of stored) {
+    entries.set(`/${trim(path)}`, updatedAt && updatedAt >= trustedEditsFrom ? updatedAt : null);
+  }
+  return [...entries].filter(([path]) => !notListed.has(path)).map(([path, lastModified]) => ({ path, lastModified }));
+}
+
+/** Every indexable address of a language that really has content, without the language prefix. */
+export async function sitemapPaths(lang: Locale): Promise<string[]> {
+  return (await sitemapEntries(lang)).map((e) => e.path);
 }
