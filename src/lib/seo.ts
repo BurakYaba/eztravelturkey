@@ -61,11 +61,7 @@ export function buildMetadata({
     title: isHome || absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
-      canonical: canonicalOverride
-        ? canonicalOverride.endsWith('/')
-          ? canonicalOverride
-          : `${canonicalOverride}/`
-        : full,
+      canonical: canonicalOverride ? (canonicalOverride.endsWith('/') ? canonicalOverride : `${canonicalOverride}/`) : full,
       ...(Object.keys(alternates).length >= 2 ? { languages: hreflangOf(alternates) } : {}),
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
@@ -191,16 +187,7 @@ type TripInput = {
   stops: string[];
 };
 
-export const touristTripJsonLd = ({
-  lang,
-  name,
-  description,
-  path,
-  imageUrl,
-  priceEUR,
-  priceUSD,
-  stops,
-}: TripInput) => {
+export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, priceEUR, priceUSD, stops }: TripInput) => {
   const url = absoluteUrl(localePath(lang, path));
   const offers = (
     [
@@ -299,12 +286,7 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, mo
     ...(modified ? { dateModified: modified } : {}),
     inLanguage: htmlLang[lang],
     author: author
-      ? {
-          '@type': 'Person',
-          '@id': personId(lang, author.path),
-          name: author.name,
-          url: absoluteUrl(localePath(lang, author.path)),
-        }
+      ? { '@type': 'Person', '@id': personId(lang, author.path), name: author.name, url: absoluteUrl(localePath(lang, author.path)) }
       : organizationRef,
     publisher: organizationRef,
     mainEntityOfPage: url,
@@ -313,13 +295,8 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, mo
 
 /** hreflang of a page that has counterparts: one address per language, and x-default pointing at English when it has the page. */
 export function hreflangOf(alternates: Partial<Record<Locale, string>>): Record<string, string> {
-  const entries = locales.flatMap((lang) =>
-    alternates[lang] ? [[htmlLang[lang], absoluteUrl(localePath(lang, alternates[lang]))] as const] : [],
-  );
-  return Object.fromEntries([
-    ...entries,
-    ...(alternates.en ? [['x-default', absoluteUrl(localePath('en', alternates.en))] as const] : []),
-  ]);
+  const entries = locales.flatMap((lang) => (alternates[lang] ? [[htmlLang[lang], absoluteUrl(localePath(lang, alternates[lang]))] as const] : []));
+  return Object.fromEntries([...entries, ...(alternates.en ? [['x-default', absoluteUrl(localePath('en', alternates.en))] as const] : [])]);
 }
 
 /** All language versions of a path, for hreflang. Pages that exist in only some languages pass `only`. */

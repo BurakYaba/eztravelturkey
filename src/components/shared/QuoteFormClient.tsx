@@ -32,42 +32,7 @@ const fieldBase =
   'w-full rounded-lg border border-navy-900/30 bg-white px-3.5 text-[0.97rem] text-ink placeholder:text-muted/80 transition focus:border-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500/50';
 
 /** Dialing codes of the markets the old forms served; any other code can still be typed. */
-const dialCodes = [
-  '+1',
-  '+44',
-  '+61',
-  '+49',
-  '+33',
-  '+34',
-  '+39',
-  '+31',
-  '+55',
-  '+52',
-  '+886',
-  '+852',
-  '+81',
-  '+82',
-  '+65',
-  '+60',
-  '+66',
-  '+64',
-  '+353',
-  '+41',
-  '+46',
-  '+47',
-  '+45',
-  '+48',
-  '+420',
-  '+30',
-  '+20',
-  '+27',
-  '+90',
-  '+91',
-  '+212',
-  '+962',
-  '+966',
-  '+971',
-];
+const dialCodes = ['+1', '+44', '+61', '+49', '+33', '+34', '+39', '+31', '+55', '+52', '+886', '+852', '+81', '+82', '+65', '+60', '+66', '+64', '+353', '+41', '+46', '+47', '+45', '+48', '+420', '+30', '+20', '+27', '+90', '+91', '+212', '+962', '+966', '+971'];
 
 function Field({
   label,
@@ -267,24 +232,10 @@ export function QuoteFormClient({
 
       <div className={grid}>
         <Field label={text.name} htmlFor={id('name')}>
-          <input
-            id={id('name')}
-            name="name"
-            required
-            minLength={2}
-            autoComplete="name"
-            className={cn(fieldBase, 'h-12')}
-          />
+          <input id={id('name')} name="name" required minLength={2} autoComplete="name" className={cn(fieldBase, 'h-12')} />
         </Field>
         <Field label={text.email} htmlFor={id('email')}>
-          <input
-            id={id('email')}
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            className={cn(fieldBase, 'h-12')}
-          />
+          <input id={id('email')} name="email" type="email" required autoComplete="email" className={cn(fieldBase, 'h-12')} />
         </Field>
       </div>
 
@@ -385,11 +336,7 @@ export function QuoteFormClient({
           {wide && (
             <div className={grid}>
               <Field label={text.style} htmlFor={id('style')}>
-                <select
-                  id={id('style')}
-                  name="style"
-                  defaultValue={text.styleOptions.unsure}
-                  className={cn(fieldBase, 'h-12')}>
+                <select id={id('style')} name="style" defaultValue={text.styleOptions.unsure} className={cn(fieldBase, 'h-12')}>
                   <option value={text.styleOptions.private}>{text.styleOptions.private}</option>
                   <option value={text.styleOptions.smallGroup}>{text.styleOptions.smallGroup}</option>
                   <option value={text.styleOptions.unsure}>{text.styleOptions.unsure}</option>
@@ -432,13 +379,7 @@ export function QuoteFormClient({
       )}
 
       {turnstileSiteKey && armed && (
-        <Turnstile
-          siteKey={turnstileSiteKey}
-          lang={lang}
-          onToken={setToken}
-          onFail={onCheckFail}
-          resetKey={checkRound}
-        />
+        <Turnstile siteKey={turnstileSiteKey} lang={lang} onToken={setToken} onFail={onCheckFail} resetKey={checkRound} />
       )}
 
       {status === 'error' && (
