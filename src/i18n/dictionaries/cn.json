@@ -645,5 +645,12 @@
     "reviews": {
       "readMore": "在 Tripadvisor 阅读更多"
     }
+  },
+  "consent": {
+    "title": "Cookie 与访问统计",
+    "body": "我们使用 Cookie 统计访问情况，以改进本网站。仅在您同意后才会设置。",
+    "accept": "接受",
+    "reject": "拒绝",
+    "privacy": "隐私政策"
   }
 }

@@ -645,5 +645,12 @@
     "reviews": {
       "readMore": "Read more on Tripadvisor"
     }
+  },
+  "consent": {
+    "title": "Cookies and measurement",
+    "body": "We use a cookie to count visits so we can improve this site. It is only set if you accept.",
+    "accept": "Accept",
+    "reject": "Decline",
+    "privacy": "Privacy policy"
   }
 }

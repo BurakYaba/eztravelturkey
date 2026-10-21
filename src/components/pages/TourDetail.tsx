@@ -18,6 +18,7 @@ import type { Icon } from '@phosphor-icons/react';
 import { getSiteSettings, getTourTexts, whatsappUrl } from '@/lib/data/settings';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { legalHref } from '@/i18n/public-paths';
+import { TrackView } from '@/components/analytics/TrackView';
 import { getLocale } from '@/i18n/server';
 import type { TourRecord } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
@@ -103,6 +104,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
 
   return (
     <>
+      <TrackView event="tour_view" params={{ tour_title: tour.title, tour_path: tour.href, lang }} />
       <PageBanner
         title={tour.title}
         description={tour.facts.duration}
