@@ -645,5 +645,12 @@
     "reviews": {
       "readMore": "Tripadvisor で続きを読む"
     }
+  },
+  "consent": {
+    "title": "Cookie とアクセス解析",
+    "body": "サイト改善のため、Cookie を使って訪問数を計測しています。同意いただいた場合のみ設定されます。",
+    "accept": "同意する",
+    "reject": "同意しない",
+    "privacy": "プライバシーポリシー"
   }
 }

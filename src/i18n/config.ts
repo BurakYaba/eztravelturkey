@@ -15,8 +15,10 @@ export const localeNames: Record<Locale, string> = { en: 'English', cn: '简体�
 
 /**
  * Languages that live on another site. The language menu links to them; they are not routes of this site. Traditional
- * Chinese moved to eztravelturkey.com on 2026-10-19 (the client's decision), where it keeps its old `/zh/` addresses.
+ * Chinese moved to eztravelturkey.com on 2026-10-19 (the client's decision), where it keeps its old `/zh/` addresses. The
+ * client does not want a link to that site in the menu (2026-10-21), so the list is empty. To bring the link back, add
+ * `{ name: '繁體中文', lang: 'zh-Hant', href: 'https://www.eztravelturkey.com/zh/' }`.
  */
-export const externalLocales = [{ name: '繁體中文', lang: 'zh-Hant', href: 'https://www.eztravelturkey.com/zh/' }] as const;
+export const externalLocales: readonly { name: string; lang: string; href: string }[] = [];
 
 export const hasLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);

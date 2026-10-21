@@ -34,6 +34,8 @@ const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextCo
       beforeFiles: [
         // The sitemap index. A route folder named sitemap.xml clashes with the sitemap file convention, so it lives apart.
         { source: '/sitemap.xml', destination: '/sitemap-index' },
+        // IndexNow key file (P8.6): `/<key>.txt` answers with the key; any other 32-character name gets a 404 from the route.
+        { source: '/:key([a-f0-9]{32}).txt', destination: '/api/indexnow-key/:key' },
       ],
       afterFiles: [],
       fallback: [],

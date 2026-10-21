@@ -6,11 +6,15 @@ import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { PreviewBar } from '@/components/layout/PreviewBar';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
+import { AnalyticsEvents } from '@/components/analytics/AnalyticsEvents';
+import { AnalyticsScripts } from '@/components/analytics/AnalyticsScripts';
+import { ConsentBanner } from '@/components/analytics/ConsentBanner';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { site } from '@/data/site';
 import { defaultLocale, hasLocale, htmlLang, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { LocaleProvider } from '@/i18n/locale-context';
+import { destinationsRoot, legalHref } from '@/i18n/public-paths';
 import { alternatesIndex, availableCountries, hasNativeContent } from '@/lib/data';
 import { getSiteSettings } from '@/lib/data/settings';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
@@ -59,6 +63,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
   return (
     <html lang={htmlLang[lang]} className={`${playfair.variable} ${hanken.variable}`}>
       <body>
+        <AnalyticsScripts />
         {lang !== 'en' && <CjkFonts lang={lang} />}
         <LocaleProvider lang={lang} alternates={await alternatesIndex()}>
           <a
@@ -81,6 +86,12 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
           <main id="main">{children}</main>
           <Footer />
           <WhatsAppButton />
+          {process.env.NEXT_PUBLIC_GTM_ID && (
+            <>
+              <AnalyticsEvents lang={lang} toursRoot={destinationsRoot[lang]} />
+              <ConsentBanner text={dictionary.consent} privacyHref={legalHref(lang, 'privacy')} />
+            </>
+          )}
           <JsonLd data={[travelAgencyJsonLd(await getSiteSettings(lang)), websiteJsonLd(lang)]} />
         </LocaleProvider>
       </body>

@@ -5,7 +5,7 @@ import { JsonLd } from '@/components/shared/JsonLd';
 import { defaultLocale, hasLocale, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { getPage, alternatesOf, pageSummaries } from '@/lib/data';
-import { breadcrumbJsonLd, buildMetadata, editorSeo } from '@/lib/seo';
+import { authorJsonLd, breadcrumbJsonLd, buildMetadata, editorSeo } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/authors/[name]'>;
 
@@ -48,7 +48,18 @@ export default async function AuthorPage({ params }: Props) {
   return (
     <>
       <ContentPage page={page} crumbs={crumbs} />
-      <JsonLd data={[breadcrumbJsonLd(lang, crumbs)]} />
+      <JsonLd
+        data={[
+          breadcrumbJsonLd(lang, crumbs),
+          authorJsonLd({
+            lang,
+            name: page.title,
+            description: page.metaDescription,
+            path: page.href,
+            imageUrl: page.image?.src ?? null,
+          }),
+        ]}
+      />
     </>
   );
 }

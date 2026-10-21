@@ -6,6 +6,7 @@ import { whatsappUrl } from '@/lib/data/settings-url';
 import type { Dictionary } from '@/i18n/dictionaries';
 import { useLocale } from '@/i18n/locale-context';
 import { format } from '@/i18n/template';
+import { track } from '@/lib/analytics/track';
 import { cn } from '@/lib/utils';
 import { Button, ButtonAnchor } from './Button';
 import { Turnstile } from './Turnstile';
@@ -151,6 +152,7 @@ export function QuoteFormClient({
       setSummary(lines.join(' '));
       setDelivered(Boolean(result.delivered));
       setStatus('done');
+      track('form_submit', { form_type: payload.type, tour_title: payload.tour, lang });
     } catch {
       setError(text.errorNetwork);
       setStatus('error');
