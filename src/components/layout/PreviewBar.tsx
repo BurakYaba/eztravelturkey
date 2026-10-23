@@ -1,6 +1,6 @@
 import { draftMode } from 'next/headers';
 import { Suspense } from 'react';
-import { VisualEditingBridge } from './VisualEditingBridge';
+import { VisualEditingLoader } from './VisualEditingLoader';
 
 /**
  * A bar at the top of every page while an editor looks at unpublished changes (Draft Mode). It is for the editors only
@@ -22,7 +22,7 @@ export async function PreviewBar() {
         </form>
       </aside>
       <Suspense>
-        <VisualEditingBridge />
+        <VisualEditingLoader />
       </Suspense>
     </>
   );

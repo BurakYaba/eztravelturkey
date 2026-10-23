@@ -21,7 +21,8 @@ export function Photo({ id, sizes, className, priority, alt, quality = 75 }: Pro
       fill
       sizes={sizes}
       quality={quality}
-      priority={priority}
+      loading={priority ? 'eager' : undefined}
+      fetchPriority={priority ? 'high' : undefined}
       className={cn('object-cover', className)}
     />
   );
