@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import { editorRedirects } from './src/lib/old-urls';
+import { securityHeaders } from './src/lib/security-headers';
 
 // The site keeps the old sites' URL structure (docs/project-plan.md D1): language prefix `/en/`, `/cn/`, `/jp/` and a
 // trailing slash. Redirects from the old addresses are added in P7.
@@ -15,19 +16,11 @@ const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextCo
     // Tour, destination and blog pictures live in Sanity.
     remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/images/**' }],
   },
+  // Do not announce the framework in every response (Ek H.7).
+  poweredByHeader: false,
   async headers() {
-    // The simple security headers (Ek H.7). A Content-Security-Policy and frame rules need the list of every outside
-    // script the site loads (Turnstile, Tripadvisor, analytics) and come with P9.2.
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=()' },
-        ],
-      },
-    ];
+    // Security headers and the Content-Security-Policy (P9.2): see src/lib/security-headers.ts for what is enforced and what is only reported.
+    return [{ source: '/:path*', headers: securityHeaders(process.env.NODE_ENV === 'production') }];
   },
   async rewrites() {
     return {
