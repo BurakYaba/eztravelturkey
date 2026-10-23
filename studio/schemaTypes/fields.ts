@@ -32,8 +32,12 @@ export const pathField = defineField({
   validation: (rule) =>
     rule.required().custom(async (value: string | undefined, context: ValidationContext) => {
       if (!value) {return true;}
-      if (/^\/|\/$|\s|\/\//.test(value)) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
       const doc = context.document as { _id?: string; language?: string } | undefined;
+      // One imported Japanese tour has a space in its address ("11日間 トルコ＆エジプト周遊ツアー"). The site serves it (the space
+      // becomes %20) and the old-site redirects point to it, but the Studio refused to publish it (2026-10-23). Japanese
+      // addresses may therefore contain a space; every other language still may not.
+      const spaceAllowed = doc?.language === 'jp';
+      if (/^\/|\/$|\/\//.test(value) || (!spaceAllowed && /\s/.test(value))) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
       // The old Japanese addresses carry capitals (T-01, TM-02): a tour moved from that site could not be published again without this.
       if (value !== value.toLowerCase() && doc?.language !== 'jp') {return 'Yalnızca küçük harf kullanın.';}
       const id = (doc?._id ?? '').replace(/^drafts\./, '');
