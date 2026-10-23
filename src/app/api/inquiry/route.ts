@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 import { site } from '@/data/site';
+import { recipients, sendMail } from '@/lib/mail';
+
+/** Two providers may be tried one after the other, each with its own time limit. */
+export const maxDuration = 30;
 
 type Payload = Record<string, unknown>;
 
@@ -103,34 +107,17 @@ export async function POST(request: Request) {
 
   const subject = type === 'contact' ? 'Magnificent Travel - Contact Message' : 'Magnificent Travel - Request a Quote';
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.INQUIRY_TO_EMAIL;
+  const to = recipients(process.env.INQUIRY_TO_EMAIL);
   const from = process.env.INQUIRY_FROM_EMAIL;
 
   // Without an email provider configured, nothing is stored. The client then offers a WhatsApp handoff.
-  if (!apiKey || !to || !from) {
+  if ((!process.env.BREVO_API_KEY && !process.env.RESEND_API_KEY) || to.length === 0 || !from) {
     return NextResponse.json({ ok: true, delivered: false });
   }
 
   const text = [subject, '', ...fields.map(([label, value]) => `${label}: ${value}`)].join('\n');
 
-  try {
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        from: `${site.name} <${from}>`,
-        to: [to],
-        reply_to: email,
-        subject,
-        text,
-      }),
-    });
-    if (!res.ok) {
-      return NextResponse.json({ ok: true, delivered: false });
-    }
-    return NextResponse.json({ ok: true, delivered: true });
-  } catch {
-    return NextResponse.json({ ok: true, delivered: false });
-  }
+  // Brevo first, Resend as the backup (P9.3, D41).
+  const provider = await sendMail({ fromName: site.name, fromEmail: from, to, replyTo: email, subject, text });
+  return NextResponse.json({ ok: true, delivered: provider !== null });
 }

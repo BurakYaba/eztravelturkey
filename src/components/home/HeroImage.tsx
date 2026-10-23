@@ -2,7 +2,7 @@ import { Photo } from '../shared/Photo';
 
 /**
  * The hero photo. It stays still: the scroll parallax was removed (docs/project-plan.md D26) because its script cost
- * more in loading and interaction time than the effect was worth. `priority` makes it the first thing fetched.
+ * more in loading and interaction time than the effect was worth. `priority` loads it at once with the highest fetch priority; it is the largest paint of the page (P9.13).
  */
 export function HeroImage() {
   return (
