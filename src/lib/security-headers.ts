@@ -38,7 +38,7 @@ export const reportOnlyPolicy = join([
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline' ${googleMeasurement.slice(0, 2).join(' ')} https://challenges.cloudflare.com https://www.tripadvisor.com https://static.tacdn.com`,
   "style-src 'self' 'unsafe-inline' https://static.tacdn.com",
-  `img-src 'self' data: blob: https://cdn.sanity.io ${googleMeasurement.join(' ')} https://*.tripadvisor.com https://www.tripadvisor.jp https://www.tripadvisor.cn https://static.tacdn.com`,
+  `img-src 'self' data: blob: https://cdn.sanity.io ${googleMeasurement.join(' ')} https://*.tripadvisor.com https://*.tripadvisor.jp https://*.tripadvisor.cn https://static.tacdn.com`,
   "font-src 'self' data: https://static.tacdn.com",
   `connect-src 'self' ${googleMeasurement.join(' ')} https://${sanityProject}.api.sanity.io wss://${sanityProject}.api.sanity.io`,
   'frame-src https://challenges.cloudflare.com https://www.googletagmanager.com https://www.tripadvisor.com',
