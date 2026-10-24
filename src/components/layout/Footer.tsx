@@ -46,8 +46,9 @@ export async function Footer() {
     { label: t.smallGroupTours, href: '/small-group-tours' },
     { label: t.travelGuides, href: '/blog' },
   ];
-  // Text pages of the old Chinese and Japanese sites that no other page links to (how to book; the Japanese privacy conditions).
-  const extraPages = lang === 'cn' ? ['how-to-book-a-trip'] : lang === 'jp' ? ['個人情報の保護及び利用条件'] : [];
+  // A text page of the old Chinese site that no other page links to (how to book). The old Japanese page "privacy conditions" held
+  // the FAQ and was moved into the FAQ page on 2026-10-24; its old address redirects there.
+  const extraPages = lang === 'cn' ? ['how-to-book-a-trip'] : [];
   const extra = (
     await Promise.all(extraPages.map(async (path) => ({ page: await getPage(lang, path), path })))
   ).flatMap(({ page, path }) => (page && !page.fallback ? [{ label: page.title, href: `/${path}` }] : []));

@@ -1,0 +1,73 @@
+# Hourly check that the site answers (docs/project-plan.md P9.4), without an outside monitoring account.
+#
+# It asks /api/health/ (can the site read its content?) and the three home pages. When something fails twice in a row (a
+# second try 30 seconds later, so a single hiccup does not count) it opens one GitHub issue labelled "uptime"; GitHub mails
+# everyone who watches the repository. When the site answers again, the issue gets a comment and is closed.
+#
+# Address: the repository variable UPTIME_URL (Settings > Secrets and variables > Actions > Variables), for example
+# https://www.magnificenttravel.com after the launch. Without it, the vercel.app address is checked.
+#
+# Cost: hourly is about 720 Actions minutes a month; the free plan has 2000, and CI, the daily backup and the weekly
+# report use some of them. Do not go to every 30 minutes without checking the usage (Settings > Billing).
+name: Uptime
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SITE: ${{ vars.UPTIME_URL || 'https://magnificenttravel.vercel.app' }}
+    steps:
+      - name: Check the site (twice, 30 seconds apart, before calling it down)
+        id: check
+        run: |
+          probe() {
+            local failed=""
+            code=$(curl -s -m 20 -o /dev/null -w '%{http_code}' "$SITE/api/health/") || code=000
+            [ "$code" = "200" ] || failed="$failed /api/health/=$code"
+            for p in en/ cn/ jp/; do
+              code=$(curl -s -m 20 -o /dev/null -w '%{http_code}' "$SITE/$p") || code=000
+              [ "$code" = "200" ] || failed="$failed /$p=$code"
+            done
+            echo "$failed"
+          }
+          first=$(probe)
+          if [ -n "$first" ]; then
+            sleep 30
+            first=$(probe)
+          fi
+          echo "failed=${first# }" >> "$GITHUB_OUTPUT"
+          if [ -n "$first" ]; then echo "DOWN:$first"; else echo "OK"; fi
+
+      - name: Open, update or close the uptime issue
+        uses: actions/github-script@v7
+        env:
+          FAILED: ${{ steps.check.outputs.failed }}
+        with:
+          script: |
+            const failed = process.env.FAILED || '';
+            const site = process.env.SITE;
+            const { owner, repo } = context.repo;
+            const open = (await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: 'uptime' })).data[0];
+            const run = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            if (failed) {
+              const body = `${new Date().toISOString()}: ${site} fails: ${failed}\n\nRun: ${run}`;
+              if (open) {
+                await github.rest.issues.createComment({ owner, repo, issue_number: open.number, body });
+              } else {
+                await github.rest.issues.create({ owner, repo, title: `Site is not answering: ${site}`, labels: ['uptime'], body });
+              }
+              core.setFailed(`Down: ${failed}`);
+            } else if (open) {
+              await github.rest.issues.createComment({ owner, repo, issue_number: open.number, body: `${new Date().toISOString()}: the site answers again.\n\nRun: ${run}` });
+              await github.rest.issues.update({ owner, repo, issue_number: open.number, state: 'closed' });
+            }
