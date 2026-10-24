@@ -54,7 +54,21 @@ const countriesOf = (folder: string) => {
   const english = countryIds.filter((id) => folder.includes(id));
   return english.length > 0 ? english : countryIds.filter((id) => folder.includes(japaneseNames[id]));
 };
-const stylesOf = (groupType: string): TourStyle[] => (/private/i.test(groupType) ? ['private'] : ['small-group']);
+const privateWords = /private|プライベート|专属|私人|包团/i;
+const groupWords = /small|group|少人数|グループ|小团/i;
+/**
+ * The styles a tour's "Grup türü" text names. A tour offered both ways ("Small-group tour; private tour available on request.",
+ * 56 English tours) has both, the one named first first, and shows "Private or small group". The old test only looked for the word
+ * "private" anywhere, so those tours read "Private tour" and could not be changed to anything else by editing the text (2026-10-24).
+ * Text that names neither style, or is empty, is a small-group tour.
+ */
+export const stylesOf = (groupType: string): TourStyle[] => {
+  const privateAt = groupType.search(privateWords);
+  const groupAt = groupType.search(groupWords);
+  if (privateAt === -1) {return ['small-group'];}
+  if (groupAt === -1) {return ['private'];}
+  return privateAt < groupAt ? ['private', 'small-group'] : ['small-group', 'private'];
+};
 const bucketOf = (days: number | null) => (days === null ? null : days <= 5 ? '3-5' : days <= 9 ? '6-9' : '10+');
 
 const trim = (path: string) => path.replace(/^\/+|\/+$/g, '');
@@ -156,8 +170,6 @@ export async function listTours(lang: Locale, filter: TourFilter = {}): Promise<
   if (filter.parent) {conditions.push('parent == $parent');}
   if (filter.category === null) {conditions.push('!defined(category)');}
   else if (filter.category) {conditions.push('category == $category');}
-  if (filter.style === 'private') {conditions.push('facts.groupType match "private*"');}
-  if (filter.style === 'small-group') {conditions.push('!(facts.groupType match "private*")');}
   if (filter.paths) {conditions.push('path in $paths');}
   const rows = await query<RawTourCard[]>(`*[${conditions.join(' && ')}] | order(path asc){ ${tourCardFields} }`, {
     lang: src.lang,
@@ -165,7 +177,8 @@ export async function listTours(lang: Locale, filter: TourFilter = {}): Promise<
     category: filter.category,
     paths: filter.paths?.map(trim),
   });
-  const cards = rows.map(toCard);
+  // The style is decided by `stylesOf` (the same rule that labels the cards), not by a text search in the query.
+  const cards = rows.map(toCard).filter((card) => !filter.style || card.styles.includes(filter.style));
   if (!filter.paths) {return cards;}
   const order = filter.paths.map((p) => hrefOf(trim(p)));
   return cards.sort((a, b) => order.indexOf(a.href) - order.indexOf(b.href));

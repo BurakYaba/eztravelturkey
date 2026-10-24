@@ -150,7 +150,8 @@ export const tour = defineType({
           name: 'groupType',
           title: 'Grup türü',
           type: 'string',
-          description: 'Sitede: Overview sekmesi, "Trip at a glance" kutusu (Travel style) ve tur filtresi. Private (özel) veya Small Group (küçük grup).',
+          description:
+            'Sitede: Overview sekmesi, "Trip at a glance" kutusu (Travel style), tur kartları ve tur filtreleri. Yalnızca özel tur için "Private", yalnızca küçük grup için "Small Group" yazın. İkisi birden sunuluyorsa (örneğin "Small-group tour; private tour available on request.") sitede "Private or small group" görünür ve tur iki listede de yer alır.',
         }),
         defineField({
           name: 'season',
