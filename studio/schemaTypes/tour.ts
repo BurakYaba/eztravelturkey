@@ -38,6 +38,18 @@ export const tourParents = [
   { title: 'Japonca site: コンビネーション', value: 'コンビネーションツアー' },
 ];
 
+/**
+ * The folders each language uses (what the existing tours do): a Japanese tour lives in a Japanese-named folder, the Chinese site has
+ * two combination folders of its own, and the English combinations exist only in English. Picking another language's folder would
+ * give the tour an address no page of that language has.
+ */
+const japaneseFolders = tourParents.filter((p) => /[^ -~]/.test(p.value)).map((p) => p.value);
+const foldersOf: Record<string, string[]> = {
+  en: tourParents.filter((p) => !japaneseFolders.includes(p.value) && !['combination-tours', 'turkey-and-greece-tours'].includes(p.value)).map((p) => p.value),
+  cn: ['turkey-tours', 'greece-tours', 'egypt-tours', 'jordan-tours', 'morocco-tours', 'combination-tours', 'turkey-and-greece-tours'],
+  jp: japaneseFolders,
+};
+
 const stringList = (name: string, title: string, description?: string) =>
   defineField({ name, title, description, type: 'array', of: [{ type: 'string' }] });
 
@@ -78,7 +90,12 @@ export const tour = defineType({
       type: 'string',
       description: 'Turun sitede bulunduğu klasör. Adres ve tur listeleri buna göre oluşur.',
       options: { list: tourParents },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule.required().custom((value: string | undefined, context) => {
+          const language = (context.document as { language?: string } | undefined)?.language;
+          const allowed = language ? foldersOf[language] : undefined;
+          return !value || !allowed || allowed.includes(value) ? true : 'Bu klasör bu dildeki turlar için kullanılmıyor. Listeden bu dile uygun bir klasör seçin (Japonca için "Japonca site", Çince için "Çince site" veya ülke).';
+        }),
       group: 'overview',
       fieldset: 'address',
     }),
@@ -304,7 +321,8 @@ export const tour = defineType({
       fields: [
         defineField({ name: 'eur', title: 'Kişi başı fiyat (EUR)', type: 'number', validation: (rule) => rule.min(0) }),
         defineField({ name: 'usd', title: 'Kişi başı fiyat (USD)', type: 'number', validation: (rule) => rule.min(0) }),
-        defineField({ name: 'unit', title: 'Fiyat birimi', type: 'string', initialValue: 'Per person' }),
+        // Hidden: the site always says "per person" in the language of the page; this field changed nothing on the page.
+        defineField({ name: 'unit', title: 'Fiyat birimi', type: 'string', initialValue: 'Per person', hidden: true }),
         defineField({ name: 'note', title: 'Fiyatın altındaki not', type: 'string' }),
       ],
     }),
