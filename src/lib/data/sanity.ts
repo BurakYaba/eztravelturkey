@@ -42,6 +42,33 @@ async function inDraftMode(): Promise<boolean> {
 /** Tag every content request carries; the Sanity webhook (`/api/revalidate`) clears it when something is published. */
 export const contentTag = 'content';
 
+/** The same dataset without the CDN: it answers with what was just published, at once. */
+const freshClient = createClient({ projectId, dataset, apiVersion: '2025-01-01', useCdn: false, perspective: 'published' });
+
+/**
+ * A short text that changes whenever something is published, changed or deleted: how many documents there are and when the
+ * newest was updated. Read without the CDN and kept under the `content` tag, so it is read again only after a publish.
+ *
+ * Why it exists: Sanity's CDN keeps answering a query it has seen with the old result for a while after a publish (measured
+ * 2026-10-25: about 2 minutes, while the API itself had the new text after 1 second). The webhook cleared the site's cache at
+ * once, the page was built again from the CDN's old answer, and that old text stayed until the next publish: editors published
+ * and the site did not change. Every content query carries this text as a comment, so after a publish the CDN has never seen the
+ * query and takes the answer from the dataset itself.
+ */
+async function contentVersion(): Promise<string> {
+  try {
+    const { n, t } = await freshClient.fetch<{ n: number; t: string | null }>(
+      '{ "n": count(*), "t": *[defined(_updatedAt)] | order(_updatedAt desc)[0]._updatedAt }',
+      {},
+      { cache: 'force-cache', next: { tags: [contentTag] } },
+    );
+    return `${n}-${t ?? ''}`;
+  } catch {
+    // Without it the CDN is used as before (it catches up on its own); a page must not fail because of this.
+    return '';
+  }
+}
+
 /**
  * One GROQ query. The answer is kept in Next's data cache under the `content` tag, so pages are built from the cache and
  * only a publish in the Studio makes the next request fetch again.
@@ -51,11 +78,14 @@ export const contentTag = 'content';
  */
 export async function query<T>(groq: string, params: Record<string, unknown> = {}): Promise<T> {
   const drafts = await inDraftMode();
+  // A GROQ comment: it changes the query's address (so the CDN cannot answer from before the publish) and nothing else.
+  const version = drafts ? '' : await contentVersion();
+  const versioned = version ? `${groq}\n// ${version}` : groq;
   for (let attempt = 1; ; attempt++) {
     try {
       return drafts
         ? await draftClient!.fetch<T>(groq, params, { cache: 'no-store' })
-        : await client.fetch<T>(groq, params, { cache: 'force-cache', next: { tags: [contentTag] } });
+        : await client.fetch<T>(versioned, params, { cache: 'force-cache', next: { tags: [contentTag] } });
     } catch (error) {
       const status = (error as { statusCode?: number }).statusCode ?? 0;
       const temporary = status === 0 || status === 429 || status >= 500;

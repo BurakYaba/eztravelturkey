@@ -99,8 +99,10 @@ export const picture = defineType({
       name: 'alt',
       title: 'Alternatif metin (görsel açıklaması)',
       type: 'string',
-      description: 'Görselde ne olduğunu birkaç kelimeyle yazın. Görseli göremeyen kişiler ve arama motorları bunu okur.',
-      validation: (rule) => rule.required().error('Yayınlamadan önce görseli birkaç kelimeyle tarif edin.'),
+      description: 'Görselde ne olduğunu birkaç kelimeyle yazın. Görseli göremeyen kişiler ve arama motorları bunu okur. Önerilir, zorunlu değil.',
+      // A warning, not an error: a picture without a description is drawn as a decorative one, and an error here stopped the editors
+      // from publishing a page whose gallery had a new photo (2026-10-25).
+      validation: (rule) => rule.required().warning('Görseli birkaç kelimeyle tarif edin (arama motorları ve ekran okuyucular bunu okur). Boş kalırsa sayfa yine yayınlanır.'),
     }),
   ],
 });

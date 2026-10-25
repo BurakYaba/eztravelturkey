@@ -82,13 +82,18 @@ const blogFields = [
     title: 'Yazar',
     type: 'reference',
     to: [{ type: 'author' }],
-    description: 'Yazının altında imza olarak ve yazar kartında gösterilir. Yeni yazılarda zorunludur (okurlar ve arama motorları adı belli bir yazara güvenir).',
+    description:
+      'Yazının altında imza olarak ve yazar kartında gösterilir. Seçmezseniz yazıda imza görünmez ve arama motorlarına yazar olarak "Magnificent Travel" bildirilir; yazıyı yazan veya inceleyen bir kişi varsa seçmeniz önerilir (okurlar ve arama motorları adı belli bir yazara güvenir).',
     validation: (rule) =>
-      rule.custom((value, context: ValidationContext) => {
-        // The 34 posts moved from the old site have no author and are credited to Magnificent Travel; only new posts need one.
-        const created = (context.document as { _createdAt?: string } | undefined)?._createdAt ?? '';
-        return value || (created && created < legacyCutoff) ? true : 'Bu yazının yazarını seçin.';
-      }),
+      rule
+        .custom((value, context: ValidationContext) => {
+          // The posts moved from the old site have no author and are credited to Magnificent Travel (structured data). A new post without
+          // one is allowed too (only a warning): the site does the same for it, and as an error this stopped the editors from publishing a new post,
+          // since the only author record is one person's (2026-10-25).
+          const created = (context.document as { _createdAt?: string } | undefined)?._createdAt ?? '';
+          return value || (created && created < legacyCutoff) ? true : 'Yazar seçilmedi: yazıda imza görünmez. Yayınlanabilir.';
+        })
+        .warning(),
   }),
   defineField({
     name: 'shortAnswer',
@@ -174,6 +179,9 @@ export const homePage = defineType({
       name: 'cards',
       title: 'Öne çıkan kartlar',
       type: 'array',
+      // Hidden: the home page draws its cards from the tours and combinations themselves, not from this list, so editing it
+      // changed nothing on the site.
+      hidden: true,
       description: 'Ana sayfanın öne çıkardığı kombinasyonlar ve turlar, sırayla.',
       of: [
         defineField({

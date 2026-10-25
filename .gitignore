@@ -53,6 +53,7 @@ next-env.d.ts
 # Sanity Studio build output
 /studio/dist
 /studio/.sanity
+/studio/schema-extract.json
 
 # Not part of the running site: working material that stays on the developer's computer and is not pushed.
 # Project plan, reports, client documents and Word files
