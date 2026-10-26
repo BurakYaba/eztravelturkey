@@ -41,6 +41,13 @@ const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextCo
       // D43: Traditional Chinese lives on its own site now and keeps its old addresses there.
       { source: '/zh', destination: 'https://www.eztravelturkey.com/zh/', permanent: true },
       { source: '/zh/:path+', destination: 'https://www.eztravelturkey.com/zh/:path+/', permanent: true },
+      // The old 5-day Istanbul + Cappadocia page (in the 2-5 day folder, slug ending -06-days) was a second copy of the 6-day tour; the client
+      // chose to keep the page in the 6-9 day folder (2026-10-26), so the old address goes there.
+      {
+        source: '/cn/destinations/turkey-tours/02-to-05-days-tours/istanbul-cappadocia-tour-06-days',
+        destination: '/cn/destinations/turkey-tours/06-to-09-days-tours/istanbul-cappadocia-06-days/',
+        permanent: true,
+      },
       // P6.14: old addresses that editors typed into a blog post in the Studio.
       ...editor.rules,
     ];
