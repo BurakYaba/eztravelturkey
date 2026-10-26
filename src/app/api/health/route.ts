@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { mailProvider } from '@/lib/mail';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,7 +22,7 @@ export async function GET() {
   } catch {
     sanity = false;
   }
-  const mail = process.env.BREVO_API_KEY ? 'brevo' : process.env.RESEND_API_KEY ? 'resend' : 'none';
+  const mail = mailProvider();
   return NextResponse.json(
     {
       ok: sanity,
