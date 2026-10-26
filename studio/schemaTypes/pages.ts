@@ -1,5 +1,6 @@
 import { defineField, defineType, type ValidationContext } from 'sanity';
 import { autoPathInput } from '../components/AutoPathInput';
+import { infoNote } from '../components/InfoNote';
 import {
   faqsField,
   languageField,
@@ -38,6 +39,54 @@ const kinds = {
   ],
 };
 
+/**
+ * Pages whose layout is written in the site's code (About, Contact, FAQ, the destinations hub, the home page): the Studio holds their
+ * texts, but only some of them show on the page. The field audit (scripts/sanity/field-audit.mjs, 2026-10-25) found what does not show;
+ * a note says so on the page itself, and the fields that do nothing are hidden, so an editor is never left wondering why a change
+ * does not appear.
+ */
+const aboutPaths = ['about', '会社概要'];
+const contactPaths = ['contact', '問い合わせ先'];
+const hubPaths = ['destinations', '目的地'];
+const codedPaths = [...aboutPaths, ...contactPaths, 'faq'];
+const pathIn = (paths: string[]) => ({ document }: { document?: unknown }) => paths.includes((document as { path?: string } | undefined)?.path ?? '');
+const pathNotIn = (paths: string[]) => (context: { document?: unknown }) => !pathIn(paths)(context);
+
+const note = (name: string, paths: string[], lines: string[]) =>
+  defineField({ name, title: 'Bu sayfa nasıl oluşuyor?', type: 'string', hidden: pathNotIn(paths), components: { input: infoNote(lines) } });
+
+const pageNotes = [
+  note('aboutNote', aboutPaths, [
+    'Bu sayfanın tasarımı kodla hazırlanmıştır. "Sayfa metni"ndeki bölümlerden yalnızca yazı (paragraf, liste veya tablo) içerenler sitede görünür; yalnızca görselden oluşan bölümler (örneğin "Since 1997" rozetleri) sitede başka bir yerden gelir ve burada düzenlenmez.',
+    'Ekip kartları "Ekip" belgelerinden, güven rakamları (kuruluş yılı, belge numarası) "Site ayarları"ndan gelir.',
+  ]),
+  note('contactNote', contactPaths, [
+    'Bu sayfanın tasarımı kodla hazırlanmıştır. "Sayfa metni"nden yalnızca maddeli liste içeren bölümler sitede görünür; diğer bölümler görünmez.',
+    'Telefon, WhatsApp, e-posta, adres ve sosyal medya bağlantıları için "Site ayarları" belgesini düzenleyin: sitede her yerde oradan gelir.',
+  ]),
+  note('hubNote', hubPaths, [
+    'Ülke ve kombinasyon kartları kodla oluşturulur. "Sayfa metni"nden yalnızca sayfanın sonundaki rehber bölümleri sitede görünür (başlığında "packages", "vacations" veya "holidays" geçmeyen son bölümler); baştaki bölümler görünmez. "Sık sorulan sorular" görünür.',
+  ]),
+];
+
+/** English description of a page drawn in code: the site uses it only when it is 120 to 160 characters long (docs/project-plan.md Ek H.3). */
+const codedMetaDescription = (paths: string[]) =>
+  defineField({
+    ...metaDescriptionField,
+    validation: (rule) => [
+      rule.required().max(200).warning('Yaklaşık 160 karakteri aşarsa Google açıklamayı kesebilir.'),
+      rule
+        .custom((value: string | undefined, context: ValidationContext) => {
+          const doc = context.document as { language?: string; path?: string } | undefined;
+          if (!value || doc?.language !== 'en' || !paths.includes(doc.path ?? '')) {return true;}
+          return value.length >= 120 && value.length <= 160
+            ? true
+            : 'Bu sayfada İngilizce açıklama yalnızca 120-160 karakter arasındaysa sitede kullanılır. Şu an sitede kodla yazılmış açıklama görünüyor.';
+        })
+        .warning(),
+    ],
+  });
+
 function pageType(
   name: string,
   title: string,
@@ -46,6 +95,9 @@ function pageType(
   extraFields: ReturnType<typeof defineField>[] = [],
   replaceFields: Record<string, ReturnType<typeof defineField>> = {},
 ) {
+  const body = pageFields.slice(1).map((field) => replaceFields[field.name] ?? field);
+  // the notes sit right under the title, before the texts they talk about
+  body.splice(body.findIndex((field) => field.name === 'title') + 1, 0, ...(name === 'staticPage' || name === 'hubPage' ? pageNotes : []));
   return defineType({
     name,
     title,
@@ -53,7 +105,7 @@ function pageType(
     fields: [
       pageFields[0]!,
       kindField(kindOptions ?? [{ value: kind, title }], kind, Boolean(kindOptions)),
-      ...pageFields.slice(1).map((field) => replaceFields[field.name] ?? field),
+      ...body,
       ...extraFields,
     ],
     orderings: [{ title: 'Sayfa adresi', name: 'path', by: [{ field: 'path', direction: 'asc' }] }],
@@ -159,8 +211,15 @@ export const author = pageType('author', 'Yazar', 'author', undefined, [], {
 });
 export const staticPage = pageType('staticPage', 'Metin sayfası (hakkımızda, yasal)', 'static', undefined, [], {
   path: { ...pathField, components: { input: autoPathInput('staticPage') } },
+  // About, Contact and FAQ draw their own layout: the picture and (in English) a description outside 120-160 characters do nothing there.
+  mainImage: { ...mainImageField, hidden: pathIn(codedPaths) },
+  metaDescription: codedMetaDescription(['about', 'contact', 'faq']),
 });
-export const hubPage = pageType('hubPage', 'Ana bölüm sayfası', 'destinations-hub', kinds.hubPage);
+export const hubPage = pageType('hubPage', 'Ana bölüm sayfası', 'destinations-hub', kinds.hubPage, [], {
+  // The hubs draw a banner from the code: this picture is never shown.
+  mainImage: { ...mainImageField, hidden: true },
+  metaDescription: codedMetaDescription(['destinations']),
+});
 
 /** The home page of a language: its meta texts and the cards (combinations and tours) it features. */
 export const homePage = defineType({
@@ -171,9 +230,20 @@ export const homePage = defineType({
     languageField,
     defineField({ name: 'kind', title: 'Sayfa türü', type: 'string', initialValue: 'home', readOnly: true }),
     { ...titleField, title: 'Ana başlık (H1)', description: 'Ana sayfanın en üstündeki büyük başlık.' },
+    defineField({
+      name: 'homeNote',
+      title: 'Bu sayfa nasıl oluşuyor?',
+      type: 'string',
+      components: {
+        input: infoNote([
+          'Ana sayfanın tasarımı kodla hazırlanmıştır. Burada yalnızca ana başlık (H1), arama sonucu başlığı ve açıklaması ile sayfanın altındaki "Sık sorulan sorular" düzenlenir. Öne çıkan turlar ve destinasyonlar turlardan ve ülke sayfalarından otomatik gelir.',
+        ]),
+      },
+    }),
     metaTitleField,
     metaDescriptionField,
-    mainImageField,
+    // Hidden: the home page's pictures come from the code; this one is never shown.
+    { ...mainImageField, hidden: true },
     { ...faqsField, description: 'Ana sayfanın altında görünen sorular.' },
     defineField({
       name: 'cards',
