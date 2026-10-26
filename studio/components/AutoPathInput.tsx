@@ -1,6 +1,6 @@
 import { Box, Card, Checkbox, Flex, Select, Stack, Text } from '@sanity/ui';
 import { useEffect, useMemo, useState } from 'react';
-import { set, unset, useClient, useFormValue, type StringInputProps } from 'sanity';
+import { set, unset, useClient, useEditState, useFormValue, type StringInputProps } from 'sanity';
 
 /**
  * The page address (`path`) of a new page is made from the page's title and folder, so the editor never has to know the pattern:
@@ -75,20 +75,16 @@ function AutoPathInput(props: StringInputProps & { kind: PathKind }) {
   const category = (useFormValue(['category']) as string | undefined) ?? '';
   const pageKind = (useFormValue(['kind']) as string | undefined) ?? '';
 
-  const [published, setPublished] = useState<boolean | null>(null);
+  // Whether the page is published, live: read once when the form opened, a page published during this very session still looked new,
+  // kept following the title and moved to a new address at the next publish (found 2026-10-25 on the hosted Studio: the old address
+  // answered 404). `ready` is false until the Studio knows; the address is left alone until then.
+  const editState = useEditState(id, props.schemaType.name);
+  const published: boolean | null = editState.ready ? Boolean(editState.published) : null;
   const [unlocked, setUnlocked] = useState(false);
   const [manual, setManual] = useState(false);
   const [folders, setFolders] = useState<string[]>([]);
   const [folder, setFolder] = useState('');
   const [taken, setTaken] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (!id) {return;}
-    client
-      .fetch<boolean>('defined(*[_id == $id][0])', { id })
-      .then(setPublished)
-      .catch(() => setPublished(false));
-  }, [client, id]);
 
   useEffect(() => {
     if (kind !== 'blogPost') {return;}
