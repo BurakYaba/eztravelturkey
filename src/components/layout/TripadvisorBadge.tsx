@@ -37,8 +37,12 @@ function drawBadge() {
   window.taValidate?.();
 }
 
-/** Tripadvisor's own widget languages. */
-const widgetLang: Record<Locale, string> = { en: 'en_US', cn: 'zh_CN', jp: 'ja' };
+/**
+ * Tripadvisor's own widget languages. Simplified Chinese is `zh`, not `zh_CN`: `zh_CN` makes the widget load its logo from
+ * www.tripadvisor.cn, which answers 404 (checked 2026-10-26), so the badge showed a broken image. `zh` uses cn.tripadvisor.com,
+ * which the CSP already allows (`https://*.tripadvisor.com`).
+ */
+const widgetLang: Record<Locale, string> = { en: 'en_US', cn: 'zh', jp: 'ja' };
 
 /**
  * Tripadvisor's official ratings badge, the same widget (location 5617607) the live site shows in its footer. It is
