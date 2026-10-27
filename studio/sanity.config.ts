@@ -6,8 +6,8 @@ import { schemaTypes } from './schemaTypes';
 import { structure } from './structure';
 import { languageTemplates, templatedTypes, tourInFolder } from './templates';
 
-/** Where the site runs. Change it to the real domain when it is attached; `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the local site. */
-const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://magnificenttravel.vercel.app';
+/** Where the site runs: the real domain (since the launch, 2026-10-27). `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the local site. */
+const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.magnificenttravel.com';
 
 /** The address a document has on the site: language, then the path the editor sees in the "Page address" field. */
 const locationOf = (doc: { title?: string; language?: string; path?: string } | null) =>
