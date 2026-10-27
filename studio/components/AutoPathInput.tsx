@@ -12,7 +12,7 @@ import { set, unset, useClient, useEditState, useFormValue, type StringInputProp
  */
 export type PathKind = 'tour' | 'blogPost' | 'blogCategory' | 'author' | 'staticPage' | 'destinationPage';
 
-const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://magnificenttravel.vercel.app';
+const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.magnificenttravel.com';
 
 /** `Best of Istanbul: 10 tips!` becomes `best-of-istanbul-10-tips`. Japanese titles are used as they are (the old Japanese site did the same). */
 export const slugOf = (title: string, language: string) => {
