@@ -9,6 +9,7 @@ import { simpleParser } from 'mailparser';
 import http from 'node:http';
 import net from 'node:net';
 import { spawn } from 'node:child_process';
+import fs from 'node:fs';
 
 const withRoute = process.argv.includes('--route');
 let failed = 0;
@@ -101,6 +102,7 @@ const job = (extra = {}) => ({
   replyTo: 'visitor@example.com',
   subject: 'Magnificent Travel - Request a Quote',
   text: 'Tour: 7 Days Turkey\nName: Ayşe Yılmaz\nNotes: 日本語 中文 Türkçe ğüşiöç',
+  html: '<p>HTML <b>part</b> 日本語 Türkçe</p>',
   ...extra,
 });
 
@@ -130,6 +132,7 @@ check((await sendMail(job())) === 'smtp', 'mail accepted by smtp');
   check(got?.mail.replyTo?.value[0].address === 'visitor@example.com', 'Reply-To is the visitor', JSON.stringify(got?.mail.replyTo?.value));
   check(got?.mail.subject === 'Magnificent Travel - Request a Quote', 'subject');
   check(got?.mail.text?.includes('Ayşe Yılmaz') && got.mail.text.includes('日本語 中文 Türkçe ğüşiöç'), 'Turkish, Chinese and Japanese characters arrive intact', JSON.stringify(got?.mail.text));
+  check(got?.mail.html?.includes('<b>part</b>') && got.mail.html.includes('日本語 Türkçe'), 'the HTML part arrives next to the plain text', JSON.stringify(got?.mail.html));
   check(calls.brevo.length === 0 && calls.resend.length === 0, 'the backups were not used');
 }
 
@@ -146,12 +149,14 @@ env(smtpEnv(4465, { SMTP_SECURE: 'true', BREVO_API_KEY: 'bk', RESEND_API_KEY: 'r
 check((await sendMail(job())) === 'brevo', 'a refused login goes to Brevo');
 check(inbox.length === 0 && calls.brevo.length === 1, 'nothing in the SMTP inbox, one Brevo request');
 check(calls.brevo[0]?.to?.length === 4 && calls.brevo[0]?.sender?.email === USER, 'the same four recipients and sender reach Brevo');
+check(calls.brevo[0]?.htmlContent?.includes('<b>part</b>') && calls.brevo[0]?.textContent?.includes('Ayşe'), 'Brevo gets the HTML and the plain text');
 
 reset();
 smtpMode.failAuth = true;
 backupStatus.brevo = 500;
 env(smtpEnv(4465, { SMTP_SECURE: 'true', BREVO_API_KEY: 'bk', RESEND_API_KEY: 'rk' }));
 check((await sendMail(job())) === 'resend', 'SMTP and Brevo failing go to Resend');
+check(calls.resend[0]?.html?.includes('<b>part</b>') && calls.resend[0]?.text?.includes('Ayşe'), 'Resend gets the HTML and the plain text');
 
 reset();
 smtpMode.failAuth = true;
@@ -229,7 +234,7 @@ if (withRoute) {
     const health = await (await fetch(`${base}/api/health/`)).json();
     check(health.config.mail === 'smtp' && health.config.mailRecipients === true, 'health check reports mail: smtp', JSON.stringify(health.config));
     const post = (body) => fetch(`${base}/api/inquiry/`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).then((r) => r.json());
-    const form = { type: 'quote', tour: '7 Days Turkey', name: 'Ayşe Yılmaz', email: 'visitor@example.com', phoneCode: '+90', phone: '5324935198', adults: '2', message: '日本語 Türkçe', source: '/en/destinations/turkey-tours/' };
+    const form = { type: 'quote', tour: '7 Days Turkey', name: 'Ayşe Yılmaz', email: 'visitor@example.com', phoneCode: '+90', phone: '5324935198', nationality: 'Türkiye', adults: '2', children: '0', startDate: '2026-10-31', endDate: '2026-11-08', style: 'Private tour', hotelClass: '4 stars', budget: '1000', currency: 'EUR', message: '日本語 Türkçe\nSecond line <script>alert(1)</script> & "quotes"', source: '/en/destinations/turkey-tours/' };
     const answer = await post(form);
     check(answer.ok === true && answer.delivered === true, 'a filled form is answered delivered:true', JSON.stringify(answer));
     const got = inbox.find((m) => m.mail.subject === 'Magnificent Travel - Request a Quote');
@@ -237,6 +242,15 @@ if (withRoute) {
     check(got?.envelopeTo.length === 4, 'to the four recipients', JSON.stringify(got?.envelopeTo));
     check(got?.mail.text?.includes('Tour: 7 Days Turkey') && got.mail.text.includes('Name: Ayşe Yılmaz') && got.mail.text.includes('日本語 Türkçe'), 'the form fields are in the text', got?.mail.text);
     check(got?.mail.replyTo?.value[0].address === 'visitor@example.com', 'Reply-To is the visitor');
+    const html = got?.mail.html || '';
+    if (process.env.MAIL_HTML_OUT) {fs.writeFileSync(process.env.MAIL_HTML_OUT, html);}
+    check(html.includes('<strong style="font-size:16px;">7 Days Turkey</strong>') && html.includes('Ayşe Yılmaz') && html.includes('日本語 Türkçe'), 'the HTML part has the tour, the name and the non-Latin text');
+    check(html.includes('href="mailto:visitor@example.com"') && html.includes('href="tel:+905324935198"') && html.includes('href="https://wa.me/905324935198"'), 'mail, phone and WhatsApp are links');
+    check(html.includes('href="https://www.magnificenttravel.com/en/destinations/turkey-tours/"'), 'the page the form was sent from is a link');
+    check(!html.includes('<script') && html.includes('&lt;script&gt;alert(1)&lt;/script&gt;') && html.includes('&amp; &quot;quotes&quot;'), 'what the visitor typed is escaped (no script, no raw markup)');
+    check(html.includes('Second line') && html.includes('<br>'), 'line breaks in the notes are kept');
+    check(html.includes('1000 EUR') && html.includes('Private tour') && html.includes('4 stars'), 'budget with currency, travel style and hotel category are there');
+    check(Boolean(got?.mail.text?.includes('Budget per Person: 1000')) && got.mail.text.includes('Second line <script>'), 'the plain-text version keeps every field');
     check(calls.brevo.length === 0, 'Brevo was not used');
     const honey = await post({ ...form, website: 'http://spam.example' });
     check(honey.delivered === true && inbox.length === 1, 'the hidden trap field sends nothing');

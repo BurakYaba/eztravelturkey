@@ -38,7 +38,7 @@ const healthRes = await get(`${base}/api/health/`);
 ok(healthRes.status === 200, 'health: the site can read its content (/api/health/)', `answered ${healthRes.status}`);
 const health = healthRes.status === 200 ? JSON.parse(await healthRes.text()) : { config: {} };
 const c = health.config ?? {};
-setting(c.mail && c.mail !== 'none', 'mail provider configured (Brevo or Resend)');
+setting(c.mail && c.mail !== 'none', 'mail provider configured (SMTP, Brevo or Resend)');
 setting(c.mailRecipients, 'enquiry recipients and sender configured (INQUIRY_TO_EMAIL, INQUIRY_FROM_EMAIL)');
 setting(c.turnstile, 'bot check keys configured (Turnstile)');
 setting(c.revalidateSecret, 'revalidate secret configured (Sanity webhook)');

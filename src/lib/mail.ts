@@ -32,9 +32,23 @@ export type MailJob = {
   replyTo: string;
   subject: string;
   text: string;
+  /** The same message laid out for mail programs; the text stays as the plain version every provider also sends. */
+  html?: string;
 };
 
 export type MailProvider = 'smtp' | 'brevo' | 'resend';
+
+/**
+ * Why a provider failed, for the server log (Vercel > Logs): the form answers `delivered:false` and the visitor is sent to WhatsApp, so
+ * without this a refused login or a full mailbox would leave no trace. Only the error code and the first line are written, never the
+ * message or any setting.
+ */
+function logFailure(provider: MailProvider, error: unknown) {
+  const { code, responseCode } = (error ?? {}) as { code?: string; responseCode?: number };
+  const reason = String((error as Error | undefined)?.message ?? error).split('\n')[0]?.slice(0, 120);
+  // eslint-disable-next-line no-console
+  console.error(`mail: ${provider} failed`, code ?? '', responseCode ?? '', reason);
+}
 
 /** The first configured provider (the one tried first), or 'none': for the form's answer and the health check. */
 export function mailProvider(): MailProvider | 'none' {
@@ -76,6 +90,7 @@ async function viaSmtp(job: MailJob): Promise<boolean> {
       replyTo: job.replyTo,
       subject: job.subject,
       text: job.text,
+      ...(job.html ? { html: job.html } : {}),
     });
     // `rejected` lists recipients the server refused; the mail counts as sent when at least one recipient took it.
     return result.accepted.length > 0;
@@ -94,6 +109,7 @@ async function viaBrevo(job: MailJob, apiKey: string): Promise<boolean> {
       replyTo: { email: job.replyTo },
       subject: job.subject,
       textContent: job.text,
+      ...(job.html ? { htmlContent: job.html } : {}),
     }),
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
@@ -110,6 +126,7 @@ async function viaResend(job: MailJob, apiKey: string, idempotencyKey: string): 
       reply_to: job.replyTo,
       subject: job.subject,
       text: job.text,
+      ...(job.html ? { html: job.html } : {}),
     }),
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
@@ -127,7 +144,9 @@ export async function sendMail(job: MailJob): Promise<MailProvider | null> {
       if (await viaSmtp(job)) {
         return 'smtp';
       }
-    } catch {
+      logFailure('smtp', 'no recipient accepted the mail');
+    } catch (error) {
+      logFailure('smtp', error);
       // Fall through to the backups.
     }
   }
@@ -136,7 +155,9 @@ export async function sendMail(job: MailJob): Promise<MailProvider | null> {
       if (await viaBrevo(job, brevoKey)) {
         return 'brevo';
       }
-    } catch {
+      logFailure('brevo', 'the answer was an error status');
+    } catch (error) {
+      logFailure('brevo', error);
       // Fall through to the backup.
     }
   }
@@ -145,7 +166,9 @@ export async function sendMail(job: MailJob): Promise<MailProvider | null> {
       if (await viaResend(job, resendKey, idempotencyKey)) {
         return 'resend';
       }
-    } catch {
+      logFailure('resend', 'the answer was an error status');
+    } catch (error) {
+      logFailure('resend', error);
       // All failed.
     }
   }

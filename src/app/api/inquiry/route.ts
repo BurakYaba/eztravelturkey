@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { site } from '@/data/site';
+import { buildInquiryEmail } from '@/lib/inquiry-email';
 import { mailProvider, recipients, sendMail } from '@/lib/mail';
 
 /** Up to three providers may be tried one after the other, each with its own time limit. */
@@ -102,8 +103,8 @@ export async function POST(request: Request) {
   }
 
   const fields = labels
-    .map(([key, label]) => [label, clean(body[key])] as const)
-    .filter(([, value]) => value);
+    .map(([key, label]) => ({ key, label, value: clean(body[key]) }))
+    .filter(({ value }) => value);
 
   const subject = type === 'contact' ? 'Magnificent Travel - Contact Message' : 'Magnificent Travel - Request a Quote';
 
@@ -115,9 +116,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, delivered: false });
   }
 
-  const text = [subject, '', ...fields.map(([label, value]) => `${label}: ${value}`)].join('\n');
+  const { text, html } = buildInquiryEmail(subject, fields, email);
 
   // The mailbox's SMTP first, then Brevo, then Resend (P9.3, D41).
-  const provider = await sendMail({ fromName: site.name, fromEmail: from, to, replyTo: email, subject, text });
+  const provider = await sendMail({ fromName: site.name, fromEmail: from, to, replyTo: email, subject, text, html });
   return NextResponse.json({ ok: true, delivered: provider !== null });
 }
