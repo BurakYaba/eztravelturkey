@@ -42,7 +42,7 @@ function smtpServer({ secure, port }) {
     },
     onData(stream, session, done) {
       simpleParser(stream).then((mail) => {
-        inbox.push({ mail, envelopeTo: session.envelope.rcptTo.map((r) => r.address), envelopeFrom: session.envelope.mailFrom.address, port });
+        inbox.push({ mail, envelopeTo: session.envelope.rcptTo.map((r) => r.address), envelopeFrom: session.envelope.mailFrom.address, hello: session.hostNameAppearsAs, port });
         done();
       }, done);
     },
@@ -133,6 +133,7 @@ check((await sendMail(job())) === 'smtp', 'mail accepted by smtp');
   check(got?.mail.subject === 'Magnificent Travel - Request a Quote', 'subject');
   check(got?.mail.text?.includes('Ayşe Yılmaz') && got.mail.text.includes('日本語 中文 Türkçe ğüşiöç'), 'Turkish, Chinese and Japanese characters arrive intact', JSON.stringify(got?.mail.text));
   check(got?.mail.html?.includes('<b>part</b>') && got.mail.html.includes('日本語 Türkçe'), 'the HTML part arrives next to the plain text', JSON.stringify(got?.mail.html));
+  check(got?.hello === 'magnificenttravel.com', 'the server introduces itself with the sender\'s domain, not the machine name', String(got?.hello));
   check(calls.brevo.length === 0 && calls.resend.length === 0, 'the backups were not used');
 }
 
