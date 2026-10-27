@@ -12,9 +12,10 @@ export const site = {
   // The live site hides its address behind an email obfuscator. Set NEXT_PUBLIC_CONTACT_EMAIL to show one.
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
   address: {
-    street: 'Küçükayasofya Mah. Gelinlik Sok. No:1/3',
-    district: 'Sultanahmet, Fatih',
-    city: 'Istanbul',
+    // The address of the Google Business Profile (the client's decision, 2026-10-27): Küçük Ayasofya, Gelinlik Sokağı No:3 / A, 34122 Fatih/İstanbul.
+    street: 'Küçük Ayasofya, Gelinlik Sokağı No:3 / A',
+    district: 'Fatih',
+    city: 'İstanbul',
     postalCode: '34122',
     country: 'Turkey',
   },
