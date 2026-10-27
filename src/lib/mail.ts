@@ -77,6 +77,10 @@ async function viaSmtp(job: MailJob): Promise<boolean> {
     port,
     secure,
     auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+    // The name this server gives itself to the mail server (EHLO). Left alone it is the machine's own name, an internal name on Vercel
+    // that is no domain at all; spam filters count that against a mail (the first live HTML mail landed in the spam folder, 2026-10-27).
+    // The sender's own domain is a valid name that matches the mail's SPF and DKIM.
+    name: job.fromEmail.split('@')[1] || undefined,
     connectionTimeout: SMTP_TIMEOUT_MS,
     greetingTimeout: SMTP_TIMEOUT_MS,
     socketTimeout: SMTP_TIMEOUT_MS,
@@ -92,6 +96,9 @@ async function viaSmtp(job: MailJob): Promise<boolean> {
       text: job.text,
       ...(job.html ? { html: job.html } : {}),
     });
+    // What the server answered, for the log (Vercel > Logs): the mail's queue number lets the mailbox provider trace it.
+    // eslint-disable-next-line no-console
+    console.info('mail: smtp accepted', `${result.accepted.length} accepted, ${result.rejected.length} rejected`, String(result.response).slice(0, 120));
     // `rejected` lists recipients the server refused; the mail counts as sent when at least one recipient took it.
     return result.accepted.length > 0;
   } finally {
