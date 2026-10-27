@@ -16,8 +16,13 @@
  * `<script src="https://evil.example">`.
  */
 
-/** Where the Studio is hosted; its preview (Presentation) tool shows the site in a frame and needs permission. */
-const studioOrigins = ['https://magnificenttravel.sanity.studio', 'http://localhost:3333'];
+/**
+ * Where the Studio is shown; its preview (Presentation) tool shows the site in a frame and needs permission. Since the launch the
+ * hosted Studio opens inside Sanity's own dashboard (https://www.sanity.io/@<organisation>/studio/<id>), so the page at the top of the
+ * frame chain is www.sanity.io: a frame is allowed only when every page above it is on this list (the preview was blocked on
+ * 2026-10-27 with only the .sanity.studio address here).
+ */
+const studioOrigins = ['https://magnificenttravel.sanity.studio', 'https://www.sanity.io', 'https://sanity.io', 'http://localhost:3333'];
 
 const sanityProject = 'aj0pbi0w';
 
