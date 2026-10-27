@@ -32,6 +32,8 @@ export type MailJob = {
   replyTo: string;
   subject: string;
   text: string;
+  /** The same message laid out for mail programs; the text stays as the plain version every provider also sends. */
+  html?: string;
 };
 
 export type MailProvider = 'smtp' | 'brevo' | 'resend';
@@ -88,6 +90,7 @@ async function viaSmtp(job: MailJob): Promise<boolean> {
       replyTo: job.replyTo,
       subject: job.subject,
       text: job.text,
+      ...(job.html ? { html: job.html } : {}),
     });
     // `rejected` lists recipients the server refused; the mail counts as sent when at least one recipient took it.
     return result.accepted.length > 0;
@@ -106,6 +109,7 @@ async function viaBrevo(job: MailJob, apiKey: string): Promise<boolean> {
       replyTo: { email: job.replyTo },
       subject: job.subject,
       textContent: job.text,
+      ...(job.html ? { htmlContent: job.html } : {}),
     }),
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
@@ -122,6 +126,7 @@ async function viaResend(job: MailJob, apiKey: string, idempotencyKey: string): 
       reply_to: job.replyTo,
       subject: job.subject,
       text: job.text,
+      ...(job.html ? { html: job.html } : {}),
     }),
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
