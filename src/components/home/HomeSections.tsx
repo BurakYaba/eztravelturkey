@@ -14,6 +14,7 @@ import { TextLink } from '../shared/Button';
 import { destinations } from '@/data/destinations';
 import { getSiteSettings } from '@/lib/data/settings';
 import { format, getDictionary } from '@/i18n/dictionaries';
+import { multiCountryHref } from '@/i18n/public-paths';
 import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { availableCountries, blogPosts, comboCards, featuredTours } from '@/lib/data';
 
@@ -55,7 +56,8 @@ export async function WhyTravel() {
 export async function DestinationsRow() {
   const { ui, countries } = await getDictionaryForPage();
   const t = ui.home.destinations;
-  const available = await availableCountries(await getLocale());
+  const lang = await getLocale();
+  const available = await availableCountries(lang);
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
@@ -74,7 +76,7 @@ export async function DestinationsRow() {
               </li>
             ))}
           <li className="reveal">
-            <DestinationTile href="/multi-country-tours" title={t.multi} note={t.multiNote} image="santorini-domes" />
+            <DestinationTile href={multiCountryHref(lang)} title={t.multi} note={t.multiNote} image="santorini-domes" />
           </li>
         </ul>
       </div>
@@ -83,6 +85,7 @@ export async function DestinationsRow() {
 }
 
 export async function WaysToTravel() {
+  const lang = await getLocale();
   const { ui } = await getDictionaryForPage();
   const t = ui.home.ways;
   const tile =
@@ -120,7 +123,7 @@ export async function WaysToTravel() {
               <span className="mt-1 block text-white/90">{t.smallText}</span>
             </span>
           </Link>
-          <Link href="/multi-country-tours" className={`${tile} reveal min-h-56 lg:col-span-3`}>
+          <Link href={multiCountryHref(lang)} className={`${tile} reveal min-h-56 lg:col-span-3`}>
             <Photo
               id="mykonos"
               sizes="(min-width: 1024px) 60vw, 100vw"
@@ -176,7 +179,7 @@ export async function MultiCountryRail() {
   return (
     <section className="section-y">
       <div className="container-x">
-        <SectionHeading title={t.title} description={t.text} link={{ href: '/multi-country-tours', label: t.all }} />
+        <SectionHeading title={t.title} description={t.text} link={{ href: multiCountryHref(lang), label: t.all }} />
         <ScrollRail previousLabel={common.scrollPrevious} nextLabel={common.scrollNext}>
           {combos.map((combo) => (
             <li key={combo.href} className="w-[82%] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]">

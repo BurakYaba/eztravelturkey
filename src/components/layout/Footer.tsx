@@ -13,7 +13,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
 import { format } from '@/i18n/dictionaries';
-import { legalHref } from '@/i18n/public-paths';
+import { legalHref, multiCountryHref } from '@/i18n/public-paths';
 import { availableCountries, getPage } from '@/lib/data';
 import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { site } from '@/data/site';
@@ -39,7 +39,7 @@ export async function Footer() {
   const available = await availableCountries(lang);
   const explore = [
     { label: t.allTours, href: '/tours' },
-    { label: t.multiCountry, href: '/multi-country-tours' },
+    { label: t.multiCountry, href: multiCountryHref(lang) },
     { label: t.privateTours, href: '/private-tours' },
     { label: t.smallGroupTours, href: '/small-group-tours' },
     { label: t.travelGuides, href: '/blog' },

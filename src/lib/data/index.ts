@@ -669,7 +669,10 @@ export async function sitemapEntries(lang: Locale): Promise<SitemapEntry[]> {
   const entries = new Map<string, string | null>([['/', null]]);
   // Code pages are known by their English address; in Chinese and Japanese some have the old site's name (/about-us, /会社概要).
   for (const page of codePages) {
-    entries.set(publicPath(lang, page), null);
+    // Chinese and Japanese send /multi-country-tours to their combination tours page (multiCountryHref), so it is not listed.
+    if (page !== '/multi-country-tours' || lang === 'en') {
+      entries.set(publicPath(lang, page), null);
+    }
   }
   for (const { path, updatedAt } of stored) {
     entries.set(`/${trim(path)}`, updatedAt && updatedAt >= trustedEditsFrom ? updatedAt : null);

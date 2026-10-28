@@ -1,6 +1,6 @@
 import { hasLocale, type Locale } from './config';
 import { localizeHref, stripLocale } from './paths';
-import { logicalPath } from './public-paths';
+import { logicalPath, multiCountryHref } from './public-paths';
 
 /** Pages every language has under the same address (the shared site chrome). */
 const sharedPaths = new Set([
@@ -33,6 +33,9 @@ export function switchLocaleHref(to: Locale, from: Locale, pathname: string, alt
     return `/${to}${alt === '/' ? '' : alt}/`;
   }
   const logical = logicalPath(from, path);
+  if (logical === '/multi-country-tours') {
+    return localizeHref(to, multiCountryHref(to));
+  }
   return localizeHref(to, sharedPaths.has(logical) ? logical : '/destinations');
 }
 

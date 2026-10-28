@@ -65,6 +65,16 @@ export function cmsPath(lang: Locale, path: string): string {
 /** The folder of a country under the destinations hub: `turkey-tours`, and `トルコツアー` on the Japanese site. */
 export const countryFolder = (lang: Locale, id: string): string => countryFolders[lang][`${id}-tours`] ?? `${id}-tours`;
 
+/**
+ * The page that lists the multi-country trips. English has a listing of its combination pages (`/multi-country-tours`); the old
+ * Chinese and Japanese sites had none, only the "combination tours" page that holds the tours, so every link goes there and
+ * `/multi-country-tours` redirects to it (src/proxy.ts). Written as a logical address, like every link of the code.
+ * To give those languages the English structure, return `/multi-country-tours` for them again and remove the redirect.
+ */
+const combinationFolder: Partial<Record<Locale, string>> = { cn: 'combination-tours', jp: 'コンビネーションツアー' };
+export const multiCountryHref = (lang: Locale): string =>
+  combinationFolder[lang] ? `/destinations/${combinationFolder[lang]}` : '/multi-country-tours';
+
 /** The English address of a page written in code, from its public address (`/about-us` in Chinese is `/about`). Other addresses are returned unchanged. */
 export function logicalPath(lang: Locale, path: string): string {
   const parts = path.split('/');
