@@ -18,12 +18,10 @@ import { availableCountries, getPage } from '@/lib/data';
 import { getDictionaryForPage, getLocale } from '@/i18n/server';
 import { site } from '@/data/site';
 import { getSiteSettings, whatsappUrl } from '@/lib/data/settings';
-import { cn } from '@/lib/utils';
 import { Logo } from './Logo';
 import { TripadvisorBadge } from './TripadvisorBadge';
 
 const linkClass = 'inline-block py-1.5 text-white/75 transition hover:text-white';
-const webcraft = 'https://www.webcraft.tr';
 
 export async function Footer() {
   const lang = await getLocale();
@@ -182,19 +180,6 @@ export async function Footer() {
             </li>
             <li>{t.cards}</li>
           </ul>
-          <p className="lg:text-right">
-            <a href={`${webcraft}/hizmetler/web-tasarim`} target="_blank" rel="noopener" className={linkClass}>
-              {t.credit.webDesign}
-            </a>{' '}
-            {t.credit.and}{' '}
-            <a href={`${webcraft}/hizmetler/seo-hizmeti`} target="_blank" rel="noopener" className={linkClass}>
-              {t.credit.seo}
-            </a>
-            :{' '}
-            <a href={`${webcraft}/`} target="_blank" rel="noopener" className={cn(linkClass, 'font-semibold')}>
-              Webcraft
-            </a>
-          </p>
         </div>
       </div>
     </footer>
