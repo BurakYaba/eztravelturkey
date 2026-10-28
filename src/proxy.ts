@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { defaultLocale, locales, hasLocale, htmlLang } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { logicalPath } from '@/i18n/public-paths';
+import { localizeHref } from '@/i18n/paths';
+import { logicalPath, multiCountryHref } from '@/i18n/public-paths';
 import { site } from '@/data/site';
 import { isGone } from '@/lib/gone';
 import { japaneseRedirect, oldJapaneseHosts } from '@/lib/old-hosts';
@@ -59,6 +60,13 @@ export function proxy(request: NextRequest) {
       // an address that is not valid UTF-8 simply is not an alias
     }
     const logical = logicalPath(first, body);
+    // The old Chinese and Japanese sites had no multi-country listing; their "combination tours" page is that page. A temporary redirect,
+    // so the English structure can come back when those languages have combination pages of their own (multiCountryHref).
+    if (first !== defaultLocale && logical.replace(/\/+$/, '') === '/multi-country-tours') {
+      const target = request.nextUrl.clone();
+      target.pathname = localizeHref(first, multiCountryHref(first));
+      return NextResponse.redirect(target, 302);
+    }
     if (logical !== body) {
       const url = request.nextUrl.clone();
       url.pathname = `/${first}${logical}`;

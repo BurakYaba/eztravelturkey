@@ -4,7 +4,7 @@ import { Link } from '@/i18n/link';
 import { usePathname } from 'next/navigation';
 import { useLocale } from '@/i18n/locale-context';
 import { stripLocale } from '@/i18n/paths';
-import { logicalPath } from '@/i18n/public-paths';
+import { logicalPath, multiCountryHref } from '@/i18n/public-paths';
 import { useEffect, useRef, useState } from 'react';
 import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
@@ -167,7 +167,7 @@ export function Header({ nav, countries, homeLabel, available }: Props) {
     { label: nav.allTours, href: '/tours' },
   ];
   const primary = [
-    { label: nav.multiCountry, href: '/multi-country-tours' },
+    { label: nav.multiCountry, href: multiCountryHref(lang) },
     { label: nav.about, href: '/about' },
     { label: nav.travelGuides, href: '/blog' },
     { label: nav.contact, href: '/contact' },

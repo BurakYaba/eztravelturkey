@@ -1,6 +1,7 @@
 import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import { ButtonLink } from '@/components/shared/Button';
 import { Link } from '@/i18n/link';
+import { multiCountryHref } from '@/i18n/public-paths';
 import { getLocale } from '@/i18n/server';
 import { getDictionary } from '@/i18n/dictionaries';
 
@@ -12,7 +13,7 @@ export default async function NotFound() {
   const popular = [
     { label: dict.nav.destinations, href: '/destinations' },
     { label: dict.nav.allTours, href: '/tours' },
-    { label: dict.nav.multiCountry, href: '/multi-country-tours' },
+    { label: dict.nav.multiCountry, href: multiCountryHref(lang) },
     { label: dict.nav.travelGuides, href: '/blog' },
     { label: dict.nav.contact, href: '/contact' },
   ];

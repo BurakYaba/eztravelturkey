@@ -5,6 +5,7 @@ import { useId, type FormEvent, type ReactNode } from 'react';
 import { CalendarBlank, CaretDown, Compass, MapPin, MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import { useLocale } from '@/i18n/locale-context';
 import { localizeHref } from '@/i18n/paths';
+import { multiCountryHref } from '@/i18n/public-paths';
 import { Button } from '../shared/Button';
 
 function Select({
@@ -76,7 +77,7 @@ export function SearchBar({ text, countries }: { text: Text; countries: { id: st
     const data = new FormData(e.currentTarget);
     const destination = String(data.get('destination') ?? '');
     if (destination === 'multi') {
-      router.push(localizeHref(lang, '/multi-country-tours'));
+      router.push(localizeHref(lang, multiCountryHref(lang)));
       return;
     }
     const params = new URLSearchParams();

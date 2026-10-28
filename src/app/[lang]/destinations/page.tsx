@@ -14,6 +14,7 @@ import { docMetadata } from '@/lib/page-meta';
 import { homeFaqs } from '@/data/faqs';
 import { breadcrumbJsonLd, collectionPageJsonLd, faqJsonLd, itemListJsonLd } from '@/lib/seo';
 import { format, getDictionary } from '@/i18n/dictionaries';
+import { multiCountryHref } from '@/i18n/public-paths';
 import { getLocale } from '@/i18n/server';
 
 const description =
@@ -76,7 +77,7 @@ export default async function DestinationsPage() {
             ))}
             <li className="reveal">
               <DestinationTile
-                href="/multi-country-tours"
+                href={multiCountryHref(lang)}
                 title={ui.home.destinations.multi}
                 note={ui.home.destinations.multiNote}
                 image="santorini-domes"
@@ -93,7 +94,7 @@ export default async function DestinationsPage() {
             <SectionHeading
               title={t.comboTitle}
               description={t.comboText}
-              link={{ href: '/multi-country-tours', label: t.comboLink }}
+              link={{ href: multiCountryHref(lang), label: t.comboLink }}
             />
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {combos.map((c) => (
