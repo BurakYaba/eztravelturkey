@@ -1,9 +1,9 @@
 import { defineCliConfig } from 'sanity/cli';
 
 export default defineCliConfig({
-  api: { projectId: 'aj0pbi0w', dataset: 'production' },
-  // The Studio is hosted by Sanity at https://magnificenttravel.sanity.studio (`npm run deploy`).
-  studioHost: 'magnificenttravel',
-  // Id of the deployed Studio, so `npm run deploy` does not ask for it.
-  deployment: { appId: 'bk0ghiswfjo9hglqeba6cyjb' },
+  api: { projectId: '91izz3mt', dataset: 'production' },
+  // The Studio is hosted by Sanity at https://eztravelturkey.sanity.studio (`npm run deploy`). It has no `deployment.appId` until
+  // the first deploy has created it; add the id that deploy prints. NEVER copy the id of the main project's Studio here: a deploy
+  // would overwrite the Studio of magnificenttravel.com.
+  studioHost: 'eztravelturkey',
 });

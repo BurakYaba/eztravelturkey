@@ -12,8 +12,9 @@
 name: Uptime
 
 on:
-  schedule:
-    - cron: '7 * * * *'
+  # Switched off until the site is live and UPTIME_URL is set (it would check the wrong site); then restore the schedule.
+  # schedule:
+  #   - cron: '7 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      SITE: ${{ vars.UPTIME_URL || 'https://magnificenttravel.vercel.app' }}
+      SITE: ${{ vars.UPTIME_URL || 'https://eztravelturkey.vercel.app' }}
     steps:
       - name: Check the site (twice, 30 seconds apart, before calling it down)
         id: check

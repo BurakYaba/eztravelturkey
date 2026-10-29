@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/shared/JsonLd';
 import { defaultLocale, hasLocale, locales } from '@/i18n/config';
 import { decodeSegments } from '@/i18n/public-paths';
 import { destinationCrumbs } from '@/lib/crumbs';
-import { destinationParams, alternatesOf, resolveDestination } from '@/lib/data';
+import { destinationParams, resolveDestination } from '@/lib/data';
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -40,7 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${record.path}`,
     lang,
     canonicalLang: record.fallback ? defaultLocale : lang,
-    alternates: await alternatesOf(lang, record.path),
     picture: match.type === 'tour' ? match.tour.image : match.page.image,
     type: 'website',
     ...editorSeo(record),

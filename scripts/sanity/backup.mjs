@@ -12,7 +12,7 @@ import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { createGunzip, createGzip } from 'node:zlib';
 
-const projectId = process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w';
+const projectId = process.env.SANITY_PROJECT_ID ?? '91izz3mt';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 const token = process.env.SANITY_BACKUP_TOKEN ?? process.env.SANITY_WRITE_TOKEN;
 const stamp = new Date().toISOString().slice(0, 10);

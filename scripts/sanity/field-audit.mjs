@@ -20,7 +20,7 @@ const base = (process.argv.find((a) => a.startsWith('--base='))?.slice(7) ?? 'ht
 const stateFile = path.join(os.tmpdir(), 'field-audit-state.json');
 const token = process.env.SANITY_WRITE_TOKEN;
 if (!token) {throw new Error('SANITY_WRITE_TOKEN is missing');}
-const make = (dataset) => createClient({ projectId: 'aj0pbi0w', dataset, apiVersion: '2025-01-01', token, useCdn: false, perspective: 'raw' });
+const make = (dataset) => createClient({ projectId: '91izz3mt', dataset, apiVersion: '2025-01-01', token, useCdn: false, perspective: 'raw' });
 const staging = make('staging');
 const production = make('production');
 

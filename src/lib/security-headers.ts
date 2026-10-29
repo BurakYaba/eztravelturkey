@@ -22,9 +22,9 @@
  * frame chain is www.sanity.io: a frame is allowed only when every page above it is on this list (the preview was blocked on
  * 2026-10-27 with only the .sanity.studio address here).
  */
-const studioOrigins = ['https://magnificenttravel.sanity.studio', 'https://www.sanity.io', 'https://sanity.io', 'http://localhost:3333'];
+const studioOrigins = ['https://eztravelturkey.sanity.studio', 'https://www.sanity.io', 'https://sanity.io', 'http://localhost:3333'];
 
-const sanityProject = 'aj0pbi0w';
+const sanityProject = '91izz3mt';
 
 const join = (directives: string[]) => directives.join('; ');
 
@@ -55,9 +55,9 @@ export const reportOnlyPolicy = join([
 ]);
 
 /**
- * HSTS without `includeSubDomains` and `preload`: the mail server lives on `mail.magnificenttravel.com` (P9.12) and must
+ * HSTS without `includeSubDomains` and `preload`: the mail server lives on `mail.eztravelturkey.com` (P9.12) and must
  * stay reachable over plain connections until it has a certificate. Vercel adds its own header on `*.vercel.app`; on the
- * real domain, check the answer with `curl -I https://www.magnificenttravel.com` after the DNS move (P10 launch check).
+ * real domain, check the answer with `curl -I https://www.eztravelturkey.com` after the DNS move (P10 launch check).
  */
 export const hsts = 'max-age=63072000';
 

@@ -91,7 +91,7 @@ export const siteSettings = defineType({
     defineField({ name: 'travelers', title: 'Yolcu sayısı', type: 'string', fieldset: 'trust', description: 'Örneğin 35,000+.' }),
     defineField({ name: 'tours', title: 'Düzenlenen tur sayısı', type: 'string', fieldset: 'trust', description: 'Örneğin 2,500+.' }),
   ],
-  preview: { select: { title: 'language' }, prepare: ({ title }) => ({ title: `Site ayarları: ${title === 'en' ? 'English' : title === 'cn' ? '简体中文' : title === 'jp' ? '日本語' : title}` }) },
+  preview: { select: { title: 'language' }, prepare: ({ title }) => ({ title: `Site ayarları: ${title === 'zh' ? '繁體中文' : title}` }) },
 });
 
 /**
@@ -153,5 +153,5 @@ export const tourTexts = defineType({
       ],
     }),
   ],
-  preview: { select: { title: 'language' }, prepare: ({ title }) => ({ title: `Ortak tur metinleri: ${title === 'en' ? 'English' : title === 'cn' ? '简体中文' : title === 'jp' ? '日本語' : title}` }) },
+  preview: { select: { title: 'language' }, prepare: ({ title }) => ({ title: `Ortak tur metinleri: ${title === 'zh' ? '繁體中文' : title}` }) },
 });

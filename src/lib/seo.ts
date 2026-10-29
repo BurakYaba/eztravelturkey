@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { site } from '@/data/site';
 import { img, type ImageId } from '@/data/images';
-import { defaultLocale, hasLocale, htmlLang, locales, type Locale } from '@/i18n/config';
+import { defaultLocale, hasLocale, htmlLang, type Locale } from '@/i18n/config';
 import type { SiteSettings } from '@/lib/data/settings';
 import type { ImageRef } from '@/lib/data/types';
 import { localePath } from '@/i18n/paths';
@@ -9,7 +9,7 @@ import { localePath } from '@/i18n/paths';
 /** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. Japanese and Chinese letters are percent-encoded. */
 export const absoluteUrl = (path = '/') => `${site.url}${encodeURI(path.startsWith('/') ? path : `/${path}`)}`;
 
-const ogLocale: Record<Locale, string> = { en: 'en_US', cn: 'zh_CN', jp: 'ja_JP' };
+const ogLocale: Record<Locale, string> = { zh: 'zh_TW' };
 
 type MetaInput = {
   title: string;
@@ -19,8 +19,6 @@ type MetaInput = {
   lang?: Locale;
   /** Language whose address is the canonical one. Pages that only stand in for another language's text point there. */
   canonicalLang?: Locale;
-  /** The same page in the languages that really have it (paths without the language prefix); hreflang is written only when there are at least two. */
-  alternates?: Partial<Record<Locale, string>>;
   image?: ImageId;
   /** A scraped picture; wins over `image`. */
   picture?: ImageRef | null;
@@ -45,7 +43,6 @@ export function buildMetadata({
   path,
   lang = defaultLocale,
   canonicalLang,
-  alternates = {},
   image = 'hero-istanbul',
   picture: scraped,
   type = 'website',
@@ -55,14 +52,17 @@ export function buildMetadata({
 }: MetaInput): Metadata {
   const picture = scraped ?? img(image);
   const full = localePath(canonicalLang ?? lang, path);
+  const canonical = canonicalOverride ? (canonicalOverride.endsWith('/') ? canonicalOverride : `${canonicalOverride}/`) : full;
+  const canonicalUrl = canonical.startsWith('http') ? canonical : absoluteUrl(canonical);
   const isHome = path === '/';
   const fullTitle = isHome || absoluteTitle ? title : `${title} | ${site.name}`;
   return {
     title: isHome || absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
-      canonical: canonicalOverride ? (canonicalOverride.endsWith('/') ? canonicalOverride : `${canonicalOverride}/`) : full,
-      ...(Object.keys(alternates).length >= 2 ? { languages: hreflangOf(alternates) } : {}),
+      canonical,
+      // One language: the page names itself for its language and as the default (`hreflang`).
+      languages: { [htmlLang[lang]]: canonicalUrl, 'x-default': canonicalUrl },
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
@@ -101,7 +101,7 @@ export const travelAgencyJsonLd = (s: SiteSettings) => ({
   name: site.name,
   legalName: site.legalName,
   url: site.url,
-  logo: absoluteUrl('/mtlogo.png'),
+  logo: absoluteUrl('/images/logo.png'),
   image: absoluteUrl(img('hero-istanbul').src),
   description: `Licensed Turkish tour operator (License No. ${s.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco since ${s.founded}.`,
   foundingDate: String(s.founded),
@@ -292,15 +292,3 @@ export const blogPostingJsonLd = ({ lang, title, description, path, imageUrl, mo
     mainEntityOfPage: url,
   };
 };
-
-/** hreflang of a page that has counterparts: one address per language, and x-default pointing at English when it has the page. */
-export function hreflangOf(alternates: Partial<Record<Locale, string>>): Record<string, string> {
-  const entries = locales.flatMap((lang) => (alternates[lang] ? [[htmlLang[lang], absoluteUrl(localePath(lang, alternates[lang]))] as const] : []));
-  return Object.fromEntries([...entries, ...(alternates.en ? [['x-default', absoluteUrl(localePath('en', alternates.en))] as const] : [])]);
-}
-
-/** All language versions of a path, for hreflang. Pages that exist in only some languages pass `only`. */
-export function languageAlternates(path: string, only: readonly Locale[] = locales): Record<string, string> {
-  const entries = only.map((lang) => [htmlLang[lang], absoluteUrl(localePath(lang, path))] as const);
-  return Object.fromEntries([...entries, ['x-default', absoluteUrl(localePath(defaultLocale, path))]]);
-}

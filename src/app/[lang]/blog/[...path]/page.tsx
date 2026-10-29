@@ -8,7 +8,8 @@ import { PageBanner } from '@/components/shared/PageBanner';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { defaultLocale, hasLocale, locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { blogCategories, blogPosts, getPage, alternatesOf, type PageRecord } from '@/lib/data';
+import { decodeSegments } from '@/i18n/public-paths';
+import { blogCategories, blogPosts, getPage, type PageRecord } from '@/lib/data';
 import { blogPostingJsonLd, breadcrumbJsonLd, buildMetadata, collectionPageJsonLd, editorSeo, itemListJsonLd } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/blog/[...path]'>;
@@ -20,7 +21,9 @@ export async function generateStaticParams() {
   return lists.flatMap(({ lang, pages }) => pages.map((p) => ({ lang, path: p.path.split('/').slice(1) })));
 }
 
-async function lookup(lang: Locale, path: string[]): Promise<PageRecord | undefined> {
+async function lookup(lang: Locale, encoded: string[]): Promise<PageRecord | undefined> {
+  // The addresses of the posts are Chinese, so a segment arrives percent-encoded.
+  const path = decodeSegments(encoded);
   if (path.length > 2) {
     return undefined;
   }
@@ -41,7 +44,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternates: await alternatesOf(lang, page.path),
     picture: page.image,
     type: page.kind === 'blog-post' ? 'article' : 'website',
     ...editorSeo(page),

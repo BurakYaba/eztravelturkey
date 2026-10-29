@@ -9,7 +9,7 @@
 import { createClient } from '@sanity/client';
 
 const token = process.env.SANITY_WRITE_TOKEN;
-const make = (dataset) => createClient({ projectId: 'aj0pbi0w', dataset, apiVersion: '2025-01-01', token, useCdn: false, perspective: 'raw' });
+const make = (dataset) => createClient({ projectId: '91izz3mt', dataset, apiVersion: '2025-01-01', token, useCdn: false, perspective: 'raw' });
 const production = make('production');
 const staging = make('staging');
 if (!token) {throw new Error('SANITY_WRITE_TOKEN is missing');}

@@ -23,7 +23,7 @@ if (!token) {
 }
 
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w',
+  projectId: process.env.SANITY_PROJECT_ID ?? '91izz3mt',
   dataset,
   token,
   apiVersion: '2025-01-01',

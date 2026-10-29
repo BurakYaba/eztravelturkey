@@ -4,7 +4,7 @@ import { ContentPage } from '@/components/pages/ContentPage';
 import { JsonLd } from '@/components/shared/JsonLd';
 import { defaultLocale, hasLocale, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { getPage, alternatesOf, pageSummaries } from '@/lib/data';
+import { getPage, pageSummaries } from '@/lib/data';
 import { authorJsonLd, breadcrumbJsonLd, buildMetadata, editorSeo } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/authors/[name]'>;
@@ -29,7 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.path}`,
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternates: await alternatesOf(lang, page.path),
     picture: page.image,
     ...editorSeo(page),
   });

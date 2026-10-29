@@ -1,5 +1,5 @@
 {
-  "name": "magnificent-travel",
+  "name": "eztravelturkey",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -60,6 +60,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.0",
     "mailparser": "^3.12.4",
+    "node-html-parser": "^9.0.5",
     "opencc-js": "^1.4.2",
     "postcss": "^8.0.9",
     "prettier": "^3.6.2",

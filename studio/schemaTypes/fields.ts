@@ -3,9 +3,7 @@ import { lengthHint } from '../components/LengthHint';
 
 /** Languages of the site. Every language has its own documents (docs/project-plan.md D9). */
 export const languages = [
-  { title: 'English', value: 'en' },
-  { title: '简体中文', value: 'cn' },
-  { title: '日本語', value: 'jp' },
+  { title: '繁體中文', value: 'zh' },
 ];
 
 export const languageField = defineField({
@@ -33,13 +31,8 @@ export const pathField = defineField({
     rule.required().custom(async (value: string | undefined, context: ValidationContext) => {
       if (!value) {return true;}
       const doc = context.document as { _id?: string; language?: string } | undefined;
-      // One imported Japanese tour has a space in its address ("11日間 トルコ＆エジプト周遊ツアー"). The site serves it (the space
-      // becomes %20) and the old-site redirects point to it, but the Studio refused to publish it (2026-10-23). Japanese
-      // addresses may therefore contain a space; every other language still may not.
-      const spaceAllowed = doc?.language === 'jp';
-      if (/^\/|\/$|\/\//.test(value) || (!spaceAllowed && /\s/.test(value))) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
-      // The old Japanese addresses carry capitals (T-01, TM-02): a tour moved from that site could not be published again without this.
-      if (value !== value.toLowerCase() && doc?.language !== 'jp') {return 'Yalnızca küçük harf kullanın.';}
+      if (/^\/|\/$|\/\//.test(value) || /\s/.test(value)) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
+      if (value !== value.toLowerCase()) {return 'Yalnızca küçük harf kullanın.';}
       const id = (doc?._id ?? '').replace(/^drafts\./, '');
       const taken = await context
         .getClient({ apiVersion: '2025-01-01' })
@@ -56,6 +49,8 @@ export const translationGroupField = defineField({
   name: 'translationGroup',
   title: 'Diğer dillerdeki aynı sayfa',
   type: 'string',
+  // The site has one language: nothing to link. The field stays in the schema so that old values do not become unknown fields.
+  hidden: true,
   description:
     'Burada aynı kodu taşıyan farklı dillerdeki sayfalar aynı sayfadır. Dil menüsü ve arama motorları (hreflang) bu sayfalar arasında geçiş yapar. Karşılığı olmayan sayfada boş bırakın.',
 });
@@ -251,12 +246,12 @@ export const canonicalUrlField = defineField({
   title: 'Arama motorları için ana adres (isteğe bağlı)',
   type: 'string',
   description:
-    'Boş bırakın. Yalnızca aynı metin sitede başka bir sayfada da varsa ve Google\'ın o sayfayı göstermesini istiyorsanız doldurun. Adresi /en/blog/turkey/other-post/ biçiminde veya tam https://www.magnificenttravel.com/... adresi olarak yazın.',
+    'Boş bırakın. Yalnızca aynı metin sitede başka bir sayfada da varsa ve Google\'ın o sayfayı göstermesini istiyorsanız doldurun. Adresi /zh/blog/turkey/other-post/ biçiminde veya tam https://www.eztravelturkey.com/zh/... adresi olarak yazın.',
   validation: (rule) =>
     rule.custom((value: string | undefined) => {
       if (!value) {return true;}
-      if (/^https:\/\/(www\.)?magnificenttravel\.com\/(en|cn|jp)\//.test(value) || /^\/(en|cn|jp)\//.test(value)) {return true;}
-      return '/en/, /cn/ veya /jp/ ile ya da https://www.magnificenttravel.com/ ile başlayın.';
+      if (/^https:\/\/(www\.)?eztravelturkey\.com\/zh\//.test(value) || /^\/zh\//.test(value)) {return true;}
+      return '/zh/ ile ya da https://www.eztravelturkey.com/zh/ ile başlayın.';
     }),
 });
 

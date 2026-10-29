@@ -2,8 +2,8 @@ import type { NextConfig } from 'next';
 import { editorRedirects } from './src/lib/old-urls';
 import { securityHeaders } from './src/lib/security-headers';
 
-// The site keeps the old sites' URL structure (docs/project-plan.md D1): language prefix `/en/`, `/cn/`, `/jp/` and a
-// trailing slash. Redirects from the old addresses are added in P7.
+// The site keeps the old eztravelturkey.com URL structure: language prefix `/zh/` and a trailing slash. Redirects from the old
+// addresses (the `/cn/` pages, the WordPress blog) are added with the launch redirects.
 const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextConfig => ({
   trailingSlash: true,
   // The fingerprint of the editors' redirects this build was made with; `/api/revalidate/` compares it with the CMS (P6.14).
@@ -36,18 +36,6 @@ const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextCo
   },
   async redirects() {
     return [
-      // D18: the live /en/videos/ page (five YouTube cards) is not rebuilt; its address goes to the blog.
-      { source: '/en/videos', destination: '/en/blog/', permanent: true },
-      // D43: Traditional Chinese lives on its own site now and keeps its old addresses there.
-      { source: '/zh', destination: 'https://www.eztravelturkey.com/zh/', permanent: true },
-      { source: '/zh/:path+', destination: 'https://www.eztravelturkey.com/zh/:path+/', permanent: true },
-      // The old 5-day Istanbul + Cappadocia page (in the 2-5 day folder, slug ending -06-days) was a second copy of the 6-day tour; the client
-      // chose to keep the page in the 6-9 day folder (2026-10-26), so the old address goes there.
-      {
-        source: '/cn/destinations/turkey-tours/02-to-05-days-tours/istanbul-cappadocia-tour-06-days',
-        destination: '/cn/destinations/turkey-tours/06-to-09-days-tours/istanbul-cappadocia-06-days/',
-        permanent: true,
-      },
       // P6.14: old addresses that editors typed into a blog post in the Studio.
       ...editor.rules,
     ];

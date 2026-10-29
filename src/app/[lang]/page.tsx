@@ -14,17 +14,11 @@ import { JsonLd } from '@/components/shared/JsonLd';
 import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { TrustBar } from '@/components/shared/TrustBar';
-import { homeFaqs } from '@/data/faqs';
 import { defaultLocale, hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { alternatesOf, getPage } from '@/lib/data';
+import { getPage } from '@/lib/data';
 import { buildMetadata, faqJsonLd, webPageJsonLd } from '@/lib/seo';
 import { getLocale } from '@/i18n/server';
-
-// English: brand first, all five countries, under 60 characters (P3.12: the old title was 86 and left Morocco out).
-const title = 'Magnificent Travel: Turkey, Greece, Egypt, Jordan & Morocco';
-const description =
-  'Private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco, planned by a licensed local operator since 1997.';
 
 /**
  * The title and description come from the home page document of the language (the Studio's "Ana sayfa"); the texts above are only
@@ -35,22 +29,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const locale = hasLocale(lang) ? lang : defaultLocale;
   const page = await getPage(locale, '');
   const own = page && !page.fallback;
+  const { meta } = getDictionary(locale);
   return buildMetadata({
-    title: own && page.metaTitle ? page.metaTitle : title,
-    description: own && page.metaDescription ? page.metaDescription : description,
+    title: own && page.metaTitle ? page.metaTitle : meta.defaultTitle,
+    description: own && page.metaDescription ? page.metaDescription : meta.defaultDescription,
     path: '/',
     lang: locale,
     absoluteTitle: true,
-    alternates: await alternatesOf(locale, ''),
   });
 }
 
 export default async function HomePage() {
   const lang = await getLocale();
-  const { ui } = getDictionary(lang);
-  // The questions of the old home page (the CMS copy). English falls back to the first draft's seven; the other languages show none without their own.
+  const { ui, meta } = getDictionary(lang);
+  // The questions of the old home page (the CMS copy).
   const doc = await getPage(lang, '');
-  const faqs = doc?.faqs.length ? doc.faqs : lang === 'en' ? homeFaqs.slice(0, 7) : [];
+  const faqs = doc?.faqs ?? [];
   return (
     <>
       <Hero title={doc && !doc.fallback && doc.title ? doc.title : undefined} />
@@ -79,10 +73,10 @@ export default async function HomePage() {
         data={[
           webPageJsonLd(
             lang,
-            doc && !doc.fallback && doc.metaTitle ? doc.metaTitle : title,
+            doc && !doc.fallback && doc.metaTitle ? doc.metaTitle : meta.defaultTitle,
             '/',
             'WebPage',
-            description,
+            doc?.metaDescription || meta.defaultDescription,
           ),
           ...(faqs.length > 0 ? [faqJsonLd(faqs)] : []),
         ]}

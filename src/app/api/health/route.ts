@@ -3,7 +3,7 @@ import { mailProvider } from '@/lib/mail';
 
 export const dynamic = 'force-dynamic';
 
-const projectId = process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w';
+const projectId = process.env.SANITY_PROJECT_ID ?? '91izz3mt';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
 /**

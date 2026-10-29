@@ -28,8 +28,8 @@ declare global {
   }
 }
 
-/** Cloudflare's own codes for the three site languages. */
-const widgetLanguage: Record<Locale, string> = { en: 'en', cn: 'zh-cn', jp: 'ja' };
+/** Cloudflare's own code for the site language. */
+const widgetLanguage: Record<Locale, string> = { zh: 'zh-tw' };
 
 type Props = {
   siteKey: string;

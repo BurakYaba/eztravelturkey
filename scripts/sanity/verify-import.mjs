@@ -16,7 +16,7 @@ const random = () => ((seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w',
+  projectId: process.env.SANITY_PROJECT_ID ?? '91izz3mt',
   dataset,
   apiVersion: '2025-01-01',
   useCdn: false,
@@ -42,7 +42,7 @@ const note = (message) => {
 };
 
 console.log(`Dataset ${dataset}`);
-for (const lang of ['en', 'cn', 'jp']) {
+for (const lang of ['en', 'zh', 'jp']) {
   const tours = walk(path.join(root, 'content/scraped', lang, 'tours')).map(readJson);
   const pages = walk(path.join(root, 'content/scraped', lang, 'pages')).map(readJson);
   const stored = await client.fetch(
@@ -62,7 +62,7 @@ for (const lang of ['en', 'cn', 'jp']) {
 
 console.log(`\n${sample} random tours, field by field`);
 const checked = [];
-for (const lang of ['en', 'cn', 'jp']) {
+for (const lang of ['en', 'zh', 'jp']) {
   const files = walk(path.join(root, 'content/scraped', lang, 'tours'));
   const take = Math.round((sample * files.length) / 234) || 1; // 118 + 53 + 63 tours, shared out evenly
   const picked = new Set();

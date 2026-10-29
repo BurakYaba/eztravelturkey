@@ -11,35 +11,35 @@ const countryOrder: CountryId[] = ['turkey', 'greece', 'egypt', 'jordan', 'moroc
 
 /**
  * `/llms.txt`: a plain Markdown summary of the site for AI assistants (docs/project-plan.md P8.3, decision 2026-10-21: made and
- * kept up to date). Built from the CMS on every revalidation, so a new tour appears here without anyone editing a file. English
- * only: the other languages are reached from the language menu. Google says this file does not change how it ranks pages; it
- * costs nothing to keep and some assistants read it.
+ * kept up to date). Built from the CMS on every revalidation, so a new tour appears here without anyone editing a file. Written in
+ * Traditional Chinese, the language of the site. Google says this file does not change how it ranks pages; it costs nothing to
+ * keep and some assistants read it.
  */
 export async function GET() {
-  const lang = 'en';
+  const lang = 'zh';
   const { countries, meta } = getDictionary(lang);
   const s = await getSiteSettings(lang);
   const [tours, combos, categories] = await Promise.all([allTours(lang), comboCards(lang), blogCategories(lang)]);
   const link = (title: string, href: string, note?: string) =>
-    `- [${title}](${absoluteUrl(localePath(lang, href))})${note ? `: ${note}` : ''}`;
+    `- [${title}](${absoluteUrl(localePath(lang, href))})${note ? `：${note}` : ''}`;
   const price = (eur: number | null, usd: number | null) =>
-    [eur === null ? '' : `from €${eur}`, usd === null ? '' : `from $${usd}`].filter(Boolean).join(' / ');
+    [eur === null ? '' : `€${eur} 起`, usd === null ? '' : `US$${usd} 起`].filter(Boolean).join(' / ');
 
   const lines: string[] = [
-    '# Magnificent Travel',
+    '# Eztravel Turkey（土耳其易遊網）',
     '',
-    `> ${meta.defaultDescription} Licensed by TÜRSAB (License No. ${s.licenseNo}), based in Istanbul, operating since ${s.founded}.`,
+    `> ${meta.defaultDescription} 持有土耳其旅行社協會（TÜRSAB）執照（執照號碼 ${s.licenseNo}），總部位於伊斯坦堡，自 ${s.founded} 年起營運。`,
     '',
-    'Prices on the site are starting prices per person; the final price depends on dates, hotels and group size. Every tour page has an enquiry form. Also available in Simplified Chinese (/cn/) and Japanese (/jp/).',
+    '行程價格為每人起價，實際價格依日期、飯店與團體人數而定。每個行程頁面都有詢價表單。',
     '',
-    '## Company',
+    '## 公司',
     '',
-    link('About us', '/about', 'who we are, licence, team'),
-    link('Contact', '/contact', [s.phone, s.email].filter(Boolean).join(', ')),
-    link('Plan my trip', '/plan-my-trip', 'request a tailor-made quote'),
-    link('FAQ', '/faq'),
+    link('關於我們', '/about', '公司介紹、執照、團隊'),
+    link('聯繫我們', '/contact', [s.phone, s.email].filter(Boolean).join('、')),
+    link('規劃我的旅程', '/plan-my-trip', '索取客製化報價'),
+    link('常見問題', '/faq'),
     '',
-    '## Multi-country tours',
+    '## 多國組合行程',
     '',
     ...combos.map((c) => link(c.title, c.href, c.price || undefined)),
     '',
@@ -53,12 +53,12 @@ export async function GET() {
       continue;
     }
     lines.push(
-      `## ${countries[id].name} tours`,
+      `## ${countries[id].name}行程`,
       '',
-      link(`All ${countries[id].name} tours`, `/destinations/${id}-tours`),
+      link(`所有${countries[id].name}行程`, `/destinations/${id}-tours`),
     );
     lines.push(
-      ...list.map((t) => link(t.title, t.href, [t.duration, price(t.priceEUR, t.priceUSD)].filter(Boolean).join(', '))),
+      ...list.map((t) => link(t.title, t.href, [t.duration, price(t.priceEUR, t.priceUSD)].filter(Boolean).join('，'))),
       '',
     );
   }
@@ -66,17 +66,17 @@ export async function GET() {
   const multi = tours.filter((t) => t.countries.length > 1).sort((a, b) => (a.days ?? 0) - (b.days ?? 0));
   if (multi.length > 0) {
     lines.push(
-      '## Tours that combine countries',
+      '## 多國串連行程',
       '',
       ...multi.map((t) =>
-        link(t.title, t.href, [t.duration, price(t.priceEUR, t.priceUSD)].filter(Boolean).join(', ')),
+        link(t.title, t.href, [t.duration, price(t.priceEUR, t.priceUSD)].filter(Boolean).join('，')),
       ),
       '',
     );
   }
 
   if (categories.length > 0) {
-    lines.push('## Travel guides (blog)', '', ...categories.map((c) => link(c.title, c.href)), '');
+    lines.push('## 旅遊指南（部落格）', '', ...categories.map((c) => link(c.title, c.href)), '');
   }
 
   return new Response(`${lines.join('\n')}\n`, {

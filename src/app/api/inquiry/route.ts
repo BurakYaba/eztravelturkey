@@ -106,7 +106,7 @@ export async function POST(request: Request) {
     .map(([key, label]) => ({ key, label, value: clean(body[key]) }))
     .filter(({ value }) => value);
 
-  const subject = type === 'contact' ? 'Magnificent Travel - Contact Message' : 'Magnificent Travel - Request a Quote';
+  const subject = type === 'contact' ? 'Eztravel Turkey - Contact Message' : 'Eztravel Turkey - Request a Quote';
 
   const to = recipients(process.env.INQUIRY_TO_EMAIL);
   const from = process.env.INQUIRY_FROM_EMAIL;

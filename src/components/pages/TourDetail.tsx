@@ -75,9 +75,8 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
     { label: t.practical.difficulty, value: tour.facts.difficulty, icon: PersonSimpleWalk },
     ...tour.extraFacts.map((f) => ({ ...f, icon: Info })),
   ].filter((f) => f.value);
-  // Payment terms and the passport and insurance rules: written in the Studio ("Ortak tur metinleri"), else the words of each
-  // language's own terms page built into the site (src/data/policies.ts).
-  const english = lang === 'en';
+  // Payment terms and the passport and insurance rules: written in the Studio ("Ortak tur metinleri"), else the words of the
+  // terms page built into the site (src/data/policies.ts).
   const { payment: paymentSummary, rules } = await getTourTexts(lang);
   const settings = await getSiteSettings(lang);
   const hasInclusions = tour.included.length > 0 || tour.excluded.length > 0;
@@ -130,7 +129,7 @@ export async function TourDetail({ tour, crumbs }: { tour: TourRecord; crumbs: C
       {/* The old Chinese and Japanese tour pages opened on the itinerary and have no overview text beyond one sentence: they open there too. */}
       <TourTabsProvider
         tabs={tabs}
-        initial={!english && tour.summary.length < 200 && tour.itinerary.length > 0 ? 'itinerary' : undefined}>
+        initial={tour.summary.length < 200 && tour.itinerary.length > 0 ? 'itinerary' : undefined}>
         <TourTabs tabs={tabs} label={t.sectionsLabel} />
 
         <div className="container-wide grid gap-10 pb-16 lg:grid-cols-[minmax(0,1fr)_22rem] xl:grid-cols-[minmax(0,1fr)_24rem]">

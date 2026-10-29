@@ -53,11 +53,10 @@ const fields = `language, phone, whatsapp, email, street, district, city, postal
 const digits = (value: string) => value.replace(/\D/g, '');
 
 export async function getSiteSettings(lang: Locale): Promise<SiteSettings> {
-  const docs = await query<Raw[]>(`*[_type == "siteSettings" && language in [$lang, "en"]]{ ${fields} }`, { lang });
+  const docs = await query<Raw[]>(`*[_type == "siteSettings" && language == $lang]{ ${fields} }`, { lang });
   const own = docs.find((d) => d.language === lang);
-  const english = docs.find((d) => d.language === 'en');
   const text = <K extends keyof Raw>(key: K, fallback: string): string => {
-    for (const doc of [own, english]) {
+    for (const doc of [own]) {
       const value = doc?.[key];
       if (typeof value === 'string' && value.trim()) {
         return value.trim();
@@ -66,7 +65,7 @@ export async function getSiteSettings(lang: Locale): Promise<SiteSettings> {
     return fallback;
   };
   const number = <K extends keyof Raw>(key: K, fallback: number): number => {
-    for (const doc of [own, english]) {
+    for (const doc of [own]) {
       const value = doc?.[key];
       if (typeof value === 'number') {
         return value;
@@ -78,8 +77,8 @@ export async function getSiteSettings(lang: Locale): Promise<SiteSettings> {
   const phone = text('phone', site.phone);
   const whatsapp = text('whatsapp', site.whatsapp);
   const founded = number('founded', site.founded);
-  // the other links of the language, or else those of English
-  const other = (own?.otherLinks?.length ? own.otherLinks : english?.otherLinks) ?? [];
+  // the other links of the settings document, or else the built-in ones (Weibo)
+  const other = own?.otherLinks?.length ? own.otherLinks : site.otherLinks;
   return {
     phone,
     phoneHref: phone === site.phone ? site.phoneHref : `tel:+${digits(phone)}`,
@@ -97,7 +96,7 @@ export async function getSiteSettings(lang: Locale): Promise<SiteSettings> {
       facebook: text('facebook', site.social.facebook),
       instagram: text('instagram', site.social.instagram),
       linkedin: text('linkedin', site.social.linkedin),
-      x: text('x', ''),
+      x: text('x', site.social.x),
       youtube: text('youtube', ''),
     },
     otherLinks: other.filter((l): l is { label: string; url: string } => Boolean(l.label && l.url)),

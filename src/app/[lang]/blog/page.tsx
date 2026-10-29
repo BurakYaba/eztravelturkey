@@ -9,7 +9,7 @@ import { QuoteBand } from '@/components/shared/QuoteBand';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { defaultLocale, hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { blogCategories, blogPosts, getPage, alternatesOf } from '@/lib/data';
+import { blogCategories, blogPosts, getPage } from '@/lib/data';
 import { breadcrumbJsonLd, buildMetadata, collectionPageJsonLd, itemListJsonLd } from '@/lib/seo';
 
 type Props = PageProps<'/[lang]/blog'>;
@@ -27,7 +27,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/blog',
     lang,
     canonicalLang: page.fallback ? defaultLocale : lang,
-    alternates: await alternatesOf(lang, 'blog'),
   });
 }
 

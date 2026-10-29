@@ -1,24 +1,16 @@
 /**
- * The three languages of the site. The URL prefix is the old sites' prefix (docs/project-plan.md D1): English `/en/`,
- * Simplified Chinese `/cn/`, Japanese `/jp/`. Traditional Chinese has its own site (eztravelturkey.com, see `externalLocales`). `htmlLang` is the BCP 47 tag used for the `lang` attribute, hreflang
- * and structured data.
+ * The one language of the site: Traditional Chinese, under the `/zh/` prefix the old eztravelturkey.com used (its addresses are
+ * kept). `htmlLang` is the BCP 47 tag used for the `lang` attribute, hreflang and structured data. The code still carries the
+ * language as a parameter (routes are `/[lang]/...`), so a second language could be added later by extending this list.
  */
-export const locales = ['en', 'cn', 'jp'] as const;
+export const locales = ['zh'] as const;
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = 'zh';
 
-export const htmlLang: Record<Locale, string> = { en: 'en', cn: 'zh-Hans', jp: 'ja' };
+export const htmlLang: Record<Locale, string> = { zh: 'zh-Hant' };
 
-/** Name of each language written in that language, for the language switcher. */
-export const localeNames: Record<Locale, string> = { en: 'English', cn: '简体中文', jp: '日本語' };
-
-/**
- * Languages that live on another site. The language menu links to them; they are not routes of this site. Traditional
- * Chinese moved to eztravelturkey.com on 2026-10-19 (the client's decision), where it keeps its old `/zh/` addresses. The
- * client does not want a link to that site in the menu (2026-10-21), so the list is empty. To bring the link back, add
- * `{ name: '繁體中文', lang: 'zh-Hant', href: 'https://www.eztravelturkey.com/zh/' }`.
- */
-export const externalLocales: readonly { name: string; lang: string; href: string }[] = [];
+/** Name of each language written in that language. */
+export const localeNames: Record<Locale, string> = { zh: '繁體中文' };
 
 export const hasLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);

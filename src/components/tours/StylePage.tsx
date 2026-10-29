@@ -41,7 +41,7 @@ export async function StylePage({ style, path, image }: Props) {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading
-            title={format(common.how, { title: lang === 'en' ? text.title.toLowerCase() : text.title })}
+            title={format(common.how, { title: text.title })}
           />
           <ul className="grid gap-x-10 gap-y-7 md:grid-cols-2">
             {text.points.map((p) => (
@@ -56,7 +56,7 @@ export async function StylePage({ style, path, image }: Props) {
       <section className="section-y bg-cream-100/60">
         <div className="container-x">
           <SectionHeading
-            title={format(common.available, { title: lang === 'en' ? text.title.toLowerCase() : text.title })}
+            title={format(common.available, { title: text.title })}
           />
           <Suspense fallback={<TourGrid tours={list} lang={lang} text={dictionary.card} />}>
             <ToursBrowser

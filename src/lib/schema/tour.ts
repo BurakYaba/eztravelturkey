@@ -26,7 +26,7 @@ export const itineraryDay = z.object({
 export const faqItem = z.object({ q: z.string(), a: z.string() });
 
 export const scrapedTour = z.object({
-  locale: z.enum(['en', 'zh', 'cn', 'jp']),
+  locale: z.enum(['en', 'zh', 'jp']),
   sourceUrl: z.string(),
   /** Path after the locale prefix, without slashes at both ends: destinations/turkey-tours/03-to-05-days-tours/<slug>. */
   path: z.string(),

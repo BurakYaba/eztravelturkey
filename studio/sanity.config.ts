@@ -7,7 +7,7 @@ import { structure } from './structure';
 import { languageTemplates, templatedTypes, tourInFolder } from './templates';
 
 /** Where the site runs: the real domain (since the launch, 2026-10-27). `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the local site. */
-const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.magnificenttravel.com';
+const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.eztravelturkey.com';
 
 /** The address a document has on the site: language, then the path the editor sees in the "Page address" field. */
 const locationOf = (doc: { title?: string; language?: string; path?: string } | null) =>
@@ -31,8 +31,8 @@ const mainDocuments = defineDocuments([
 
 export default defineConfig({
   name: 'default',
-  title: 'Magnificent Travel',
-  projectId: 'aj0pbi0w',
+  title: 'Eztravel Turkey',
+  projectId: '91izz3mt',
   // The published Studio edits `production`; `SANITY_STUDIO_DATASET=staging npm run dev` tries things on the test copy instead.
   dataset: process.env.SANITY_STUDIO_DATASET ?? 'production',
   plugins: [

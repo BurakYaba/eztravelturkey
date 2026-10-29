@@ -1,5 +1,4 @@
 import { createHash } from 'node:crypto';
-import oldBlogUrls from '../data/old-blog-urls.json';
 
 /**
  * Redirects the editors create themselves (docs/project-plan.md P6.14, D36): a blog post lists the old addresses it
@@ -8,20 +7,17 @@ import oldBlogUrls from '../data/old-blog-urls.json';
  * (`/api/revalidate/`) when the list changed. Depends on nothing but `fetch`, because `next.config.ts` loads it.
  */
 
-const projectId = process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w';
+const projectId = process.env.SANITY_PROJECT_ID ?? '91izz3mt';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
 /** Vercel allows 1,024 redirects in a deployment; some are kept for the code's own rules. */
 const maxRules = 900;
 
-/** Where an old post that was not moved goes: the blog hub (docs/project-plan.md D12, P7.4). */
-const blogHub = '/en/blog/';
-
 export type EditorRedirect = { source: string; destination: string; permanent: true };
 
 type Row = { language: string; path: string; oldUrls?: string[] | null };
 
-/** `https://www.x.com/EN/Blog/a/?b=1` becomes `/en/blog/a/`: what the Studio's validation also does. */
+/** `https://www.x.com/ZH/Blog/a/?b=1` becomes `/zh/blog/a/`: what the Studio's validation also does. */
 export const normalizeOldUrl = (value: string) =>
   `/${value
     .trim()
@@ -68,7 +64,7 @@ export async function editorRedirects(): Promise<{ rules: EditorRedirect[]; hash
     for (const old of post.oldUrls ?? []) {
       const from = normalizeOldUrl(old);
       // A page that exists wins over a redirect, a repeated address is used once, and a post never redirects to itself.
-      if (!/^\/(en|cn|jp)\/.+\/$/.test(from) || live.has(from) || used.has(from) || from === destination.toLowerCase()) {
+      if (!/^\/zh\/.+\/$/.test(from) || live.has(from) || used.has(from) || from === destination.toLowerCase()) {
         continue;
       }
       used.add(from);
@@ -76,14 +72,7 @@ export async function editorRedirects(): Promise<{ rules: EditorRedirect[]; hash
     }
   }
   rules.sort((a, b) => a.source.localeCompare(b.source));
-  // The old posts that were not moved go to the blog hub, unless a page now exists at their address or the editor gave it a
-  // redirect of its own. Taking the existing pages out is what lets a post published again at an old address come back: the
-  // list changes, so the deployment is asked for again (`/api/revalidate/`).
-  const defaults: EditorRedirect[] = (oldBlogUrls as string[])
-    .filter((from) => !live.has(from.toLowerCase()) && !used.has(from.toLowerCase()))
-    .map((from) => ({ source: literal(from.replace(/\/$/, '')), destination: blogHub, permanent: true as const }));
-  // The editors' own redirects come first: when the room runs out, it is the default ones that are left out.
-  const all = [...rules, ...defaults];
+  const all = rules;
   const kept = all.slice(0, maxRules);
   if (all.length > maxRules) {
     // eslint-disable-next-line no-console

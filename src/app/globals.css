@@ -259,25 +259,18 @@
   text-underline-offset: 3px;
 }
 
-/* Chinese and Japanese pages: their own fonts, looser lines, no tight letter spacing (docs/project-plan.md P2.10). */
-html:lang(zh-Hans) {
-  --font-display: var(--font-noto-serif-sc), 'Noto Serif SC', 'SimSun', serif;
-  --font-sans: var(--font-noto-sans-sc), 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+/* Traditional Chinese pages: their own fonts, looser lines, no tight letter spacing (docs/project-plan.md P2.10). */
+html:lang(zh-Hant) {
+  --font-display: var(--font-noto-serif-tc), 'Noto Serif TC', 'PMingLiU', serif;
+  --font-sans: var(--font-noto-sans-tc), 'Noto Sans TC', 'Microsoft JhengHei', system-ui, sans-serif;
 }
 
-html:lang(ja) {
-  --font-display: var(--font-noto-serif-jp), 'Noto Serif JP', 'Yu Mincho', serif;
-  --font-sans: var(--font-noto-sans-jp), 'Noto Sans JP', 'Yu Gothic', system-ui, sans-serif;
-}
-
-html:lang(zh-Hans) body,
-html:lang(ja) body {
+html:lang(zh-Hant) body {
   line-height: 1.85;
   line-break: strict;
 }
 
-html:lang(zh-Hans) :is(h1, h2, h3, h4),
-html:lang(ja) :is(h1, h2, h3, h4) {
+html:lang(zh-Hant) :is(h1, h2, h3, h4) {
   letter-spacing: 0;
   line-height: 1.35;
   line-break: strict;

@@ -12,24 +12,25 @@ type Props = {
   label?: string;
 };
 
-// public/images/logo.png is public/mtlogo.png with its transparent margins trimmed (502 x 282).
+// public/images/logo.png is the logo of the old eztravelturkey.com (300 x 61, transparent; a temporary choice of the owner,
+// 2026-10-29; the file is small, so a sharper one should replace it).
 const sizes = {
-  sm: 'h-12',
-  md: 'h-[4.5rem]',
-  lg: 'h-24',
+  sm: 'h-8',
+  md: 'h-11',
+  lg: 'h-14',
 };
-// The width each height gives (the logo is 502 x 282): the browser then fetches a picture of about that width instead of the
-// 640 or 1080 pixel one a plain width/height pair asks for (the home page spent 33 KB of its first seconds on the logo).
-const widths = { sm: 86, md: 128, lg: 171 };
+// The width each height gives (the logo is 300 x 61): the browser then fetches a picture of about that width instead of a larger
+// one a plain width/height pair asks for.
+const widths = { sm: 157, md: 216, lg: 275 };
 
-export function Logo({ className, light = false, size = 'md', priority, label = 'Magnificent Travel, home' }: Props) {
+export function Logo({ className, light = false, size = 'md', priority, label = 'Eztravel Turkey，回到首頁' }: Props) {
   return (
     <Link href="/" aria-label={label} className={cn('inline-flex shrink-0', className)}>
       <Image
         src="/images/logo.png"
-        alt="Magnificent Travel"
-        width={502}
-        height={282}
+        alt="Eztravel Turkey"
+        width={300}
+        height={61}
         sizes={`${widths[size]}px`}
         loading={priority ? 'eager' : undefined}
         className={cn('w-auto', sizes[size], light && 'brightness-0 invert')}

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import type { ImageId } from '@/data/images';
 import { defaultLocale, hasLocale } from '@/i18n/config';
 import { getDictionary, type Dictionary } from '@/i18n/dictionaries';
-import { alternatesOf } from '@/lib/data';
 import { buildMetadata } from '@/lib/seo';
 
 /**
@@ -24,6 +23,5 @@ export const dictMetadata =
       path: input.path,
       lang: locale,
       image: input.image,
-      alternates: await alternatesOf(locale, input.path.replace(/^\//, '')),
     });
   };

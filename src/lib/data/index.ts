@@ -1,5 +1,5 @@
 import type { CountryId, Faq, TourStyle } from '@/data/types';
-import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 import { formatDate } from '@/i18n/format';
 import { cmsPath, countryFolder, publicPath } from '@/i18n/public-paths';
 import { toursOfCategory } from './duration';
@@ -81,42 +81,9 @@ export function hasNativeContent(lang: Locale): Promise<boolean> {
   return query<boolean>('count(*[_type in $types && language == $lang]) > 0', { types: allTypes, lang });
 }
 
-/** The language whose documents answer a request, and whether it is the English stand-in. */
+/** The language whose documents answer a request. The site has one language, so there is no stand-in (`fallback` is always false). */
 async function source(lang: Locale): Promise<{ lang: Locale; fallback: boolean }> {
-  return (await hasNativeContent(lang)) ? { lang, fallback: false } : { lang: defaultLocale, fallback: true };
-}
-
-/**
- * The same page in the other languages, from the code the editor or the import gave all of them (`translationGroup`).
- * `{ en: 'about', zh: 'about-us' }`: paths without the language prefix. Empty when the page has no counterpart (D11): the
- * switcher then falls back to the hub, and no hreflang is written.
- */
-export async function alternatesOf(lang: Locale, path: string): Promise<Partial<Record<Locale, string>>> {
-  // The home pages of the languages are each other's counterpart.
-  if (trim(path) === '') {
-    const homes = await query<Locale[]>('*[_type == "homePage"].language', {});
-    return homes.length < 2 ? {} : Object.fromEntries(homes.map((l) => [l, '/']));
-  }
-  const rows = await query<{ language: Locale; path: string }[]>(
-    '*[_type in $types && defined(translationGroup) && translationGroup == *[_type in $types && language == $lang && path == $path][0].translationGroup]{ language, path }',
-    { types: allTypes, lang, path: trim(cmsPath(lang, path)) },
-  );
-  // Documents of a language this site no longer has (Traditional Chinese moved to its own site) are not counterparts.
-  const siblings = rows.filter((r) => hasLocale(r.language));
-  return siblings.length < 2 ? {} : Object.fromEntries(siblings.map((r) => [r.language, hrefOf(r.path).replace(/\/$/, '') || '/']));
-}
-
-/** Every page that has a counterpart, for the language menu: `{ 'jp:目的地/トルコツアー': { en: '/destinations/turkey-tours', ... } }`. */
-export async function alternatesIndex(): Promise<Record<string, Partial<Record<Locale, string>>>> {
-  const rows = await query<{ language: Locale; path: string; group: string }[]>(
-    '*[_type in $types && defined(translationGroup) && defined(path)]{ language, path, "group": translationGroup }',
-    { types: allTypes },
-  );
-  const byGroup = new Map<string, Partial<Record<Locale, string>>>();
-  for (const r of rows.filter((row) => hasLocale(row.language))) {
-    byGroup.set(r.group, { ...byGroup.get(r.group), [r.language]: `/${trim(r.path)}` });
-  }
-  return Object.fromEntries(rows.filter((r) => hasLocale(r.language)).map((r) => [`${r.language}:/${trim(r.path)}`, byGroup.get(r.group) ?? {}]));
+  return { lang, fallback: false };
 }
 
 // ---- tours
@@ -574,17 +541,16 @@ export async function searchEntries(lang: Locale): Promise<SearchEntry[]> {
 
 // ---- team
 
-/** The people on the About and Contact pages, in the order set in Studio. A language without its own list shows the English one. */
+/** The people on the About and Contact pages, in the order set in Studio. */
 type RawMember = Omit<TeamMember, 'profileHref' | 'photo'> & { photo: unknown; profile?: string | null };
 
 export async function teamMembers(lang: Locale): Promise<TeamMember[]> {
   const own = await query<RawMember[]>(TEAM_QUERY, { lang });
-  const rows = own.length > 0 || lang === defaultLocale ? own : await query<RawMember[]>(TEAM_QUERY, { lang: defaultLocale });
-  return rows.map(({ profile, ...r }) => ({
+  return own.map(({ profile, ...r }) => ({
     ...r,
     photo: image(r.photo as unknown as RawImage),
-    // A team member who also has an author page links to it, so the page is reachable from the site (the author pages are English only).
-    profileHref: profile && lang === defaultLocale ? hrefOf(profile) : null,
+    // A team member who also has an author page links to it, so the page is reachable from the site.
+    profileHref: profile ? hrefOf(profile) : null,
   }));
 }
 
@@ -637,7 +603,6 @@ export async function toursAbout(lang: Locale, folder: string, limit = 3): Promi
 const codePages = [
   '/destinations',
   '/tours',
-  '/multi-country-tours',
   '/private-tours',
   '/small-group-tours',
   '/plan-my-trip',
@@ -667,12 +632,9 @@ export async function sitemapEntries(lang: Locale): Promise<SitemapEntry[]> {
     { types: allTypes, lang },
   );
   const entries = new Map<string, string | null>([['/', null]]);
-  // Code pages are known by their English address; in Chinese and Japanese some have the old site's name (/about-us, /会社概要).
+  // Code pages are known by the code's address; some have the old site's name (/about-us).
   for (const page of codePages) {
-    // Chinese and Japanese send /multi-country-tours to their combination tours page (multiCountryHref), so it is not listed.
-    if (page !== '/multi-country-tours' || lang === 'en') {
-      entries.set(publicPath(lang, page), null);
-    }
+    entries.set(publicPath(lang, page), null);
   }
   for (const { path, updatedAt } of stored) {
     entries.set(`/${trim(path)}`, updatedAt && updatedAt >= trustedEditsFrom ? updatedAt : null);

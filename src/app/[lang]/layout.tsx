@@ -15,7 +15,7 @@ import { defaultLocale, hasLocale, htmlLang, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { LocaleProvider } from '@/i18n/locale-context';
 import { destinationsRoot, legalHref } from '@/i18n/public-paths';
-import { alternatesIndex, availableCountries, hasNativeContent } from '@/lib/data';
+import { availableCountries } from '@/lib/data';
 import { getSiteSettings } from '@/lib/data/settings';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
 import '../globals.css';
@@ -64,19 +64,14 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
     <html lang={htmlLang[lang]} className={`${playfair.variable} ${hanken.variable}`}>
       <body>
         <AnalyticsScripts />
-        {lang !== 'en' && <CjkFonts lang={lang} />}
-        <LocaleProvider lang={lang} alternates={await alternatesIndex()}>
+        <CjkFonts lang={lang} />
+        <LocaleProvider lang={lang}>
           <a
             href="#main"
             className="focus:bg-navy-900 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:px-4 focus:py-2 focus:text-white">
             {dictionary.common.skipToContent}
           </a>
           <PreviewBar />
-          {!(await hasNativeContent(lang)) && (
-            <p role="note" className="bg-gold-100 text-navy-900 px-4 py-2 text-center text-sm font-medium">
-              {dictionary.preview.notice}
-            </p>
-          )}
           <Header
             nav={dictionary.nav}
             countries={dictionary.countries}

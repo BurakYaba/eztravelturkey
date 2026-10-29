@@ -1,16 +1,16 @@
 export const site = {
-  name: 'Magnificent Travel',
+  name: 'Eztravel Turkey',
   legalName: 'Macera Tur Turizm Seyahat Acentası Ltd.',
-  tagline: 'Tailor-made journeys since 1997',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.magnificenttravel.com',
+  tagline: '自 1997 年起的客製化旅程',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.eztravelturkey.com',
   licenseNo: '3217',
   founded: 1997,
   phone: '+90 (212) 458 65 65',
   phoneHref: 'tel:+902124586565',
   whatsapp: '+90 (532) 493 51 98',
   whatsappNumber: '905324935198',
-  // The live site hides its address behind an email obfuscator. Set NEXT_PUBLIC_CONTACT_EMAIL to show one.
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
+  // The mailbox of the site (owner opens it at Hostinger); the Studio's site settings can override it.
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'support@eztravelturkey.com',
   address: {
     // The address of the Google Business Profile (the client's decision, 2026-10-27): Küçük Ayasofya, Gelinlik Sokağı No:3 / A, 34122 Fatih/İstanbul.
     street: 'Küçük Ayasofya, Gelinlik Sokağı No:3 / A',
@@ -19,11 +19,14 @@ export const site = {
     postalCode: '34122',
     country: 'Turkey',
   },
+  // The accounts of the old eztravelturkey.com (the owner's decision, 2026-10-29), not those of magnificenttravel.com. No LinkedIn.
   social: {
-    facebook: 'https://www.facebook.com/Magnificenttravel',
-    linkedin: 'https://www.linkedin.com/company/magnificent-travel-tours/',
-    instagram: 'https://instagram.com/magnificenttourism',
+    facebook: 'https://www.facebook.com/easytravelturkey',
+    linkedin: '',
+    instagram: 'https://instagram.com/eztravelturkey',
+    x: 'https://twitter.com/Eztravelturkey',
   },
+  otherLinks: [{ label: '微博', url: 'https://weibo.com/3014513713' }],
   tripadvisorUrl:
     'https://www.tripadvisor.com/Attraction_Review-g293974-d5617607-Reviews-Magnificent_Travel_Private_day_tours-Istanbul.html',
   tursabUrl: 'https://www.tursab.org.tr/tr/ddsv',

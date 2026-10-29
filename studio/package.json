@@ -1,8 +1,8 @@
 {
-  "name": "magnificent-travel-studio",
+  "name": "eztravelturkey-studio",
   "private": true,
   "version": "1.0.0",
-  "description": "Sanity Studio for the Magnificent Travel site (the editors' admin panel).",
+  "description": "Sanity Studio for the Eztravel Turkey site (the editors' admin panel).",
   "type": "module",
   "scripts": {
     "dev": "sanity dev",

@@ -12,13 +12,10 @@ import { set, unset, useClient, useEditState, useFormValue, type StringInputProp
  */
 export type PathKind = 'tour' | 'blogPost' | 'blogCategory' | 'author' | 'staticPage' | 'destinationPage';
 
-const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.magnificenttravel.com';
+const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.eztravelturkey.com';
 
-/** `Best of Istanbul: 10 tips!` becomes `best-of-istanbul-10-tips`. Japanese titles are used as they are (the old Japanese site did the same). */
-export const slugOf = (title: string, language: string) => {
-  if (language === 'jp') {
-    return title.trim().replace(/[\s/\\?#%]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
-  }
+/** `Best of Istanbul: 10 tips!` becomes `best-of-istanbul-10-tips`. */
+export const slugOf = (title: string) => {
   return title
     .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '')
@@ -32,17 +29,17 @@ export const slugOf = (title: string, language: string) => {
 type Parts = { title: string; language: string; parent: string; category: string; pageKind: string; folder: string };
 
 /** The address a page would get, or '' when something it needs is missing. */
-export function addressFor(kind: PathKind, { title, language, parent, category, pageKind, folder }: Parts): { path: string; missing: string } {
-  const slug = slugOf(title, language);
+export function addressFor(kind: PathKind, { title, parent, category, pageKind, folder }: Parts): { path: string; missing: string } {
+  const slug = slugOf(title);
   if (!title.trim()) {return { path: '', missing: 'Önce başlığı yazın.' };}
   // A title in Chinese leaves only its digits behind ("8"); that is no address, so the editor writes one.
-  if (!slug || (language !== 'jp' && !/[a-z]/.test(slug))) {
+  if (!slug || !/[a-z]/.test(slug)) {
     return { path: '', missing: 'Başlık Latin harfi içermiyor; adresi "Adresi kendim yazacağım" ile elle yazın (örneğin egypt-classic-8-days).' };
   }
   switch (kind) {
     case 'tour': {
       if (!parent) {return { path: '', missing: 'Önce "Ülke veya kombinasyon" alanını seçin.' };}
-      const root = language === 'jp' ? '目的地' : 'destinations';
+      const root = 'destinations';
       return { path: [root, parent, category.trim(), slug].filter(Boolean).join('/'), missing: '' };
     }
     case 'blogPost':
@@ -54,7 +51,7 @@ export function addressFor(kind: PathKind, { title, language, parent, category, 
     case 'destinationPage':
       return pageKind === 'category'
         ? { path: '', missing: 'Kategori sayfalarında adresi elle yazın (ülke klasörü/kategori).' }
-        : { path: `${language === 'jp' ? '目的地' : 'destinations'}/${slug}`, missing: '' };
+        : { path: `destinations/${slug}`, missing: '' };
     default:
       return { path: slug, missing: '' };
   }

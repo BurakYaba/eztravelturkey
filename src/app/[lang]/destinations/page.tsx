@@ -11,18 +11,12 @@ import { destinations } from '@/data/destinations';
 import { PageSections } from '@/components/pages/PageSections';
 import { availableCountries, comboCards, getPage } from '@/lib/data';
 import { docMetadata } from '@/lib/page-meta';
-import { homeFaqs } from '@/data/faqs';
 import { breadcrumbJsonLd, collectionPageJsonLd, faqJsonLd, itemListJsonLd } from '@/lib/seo';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { multiCountryHref } from '@/i18n/public-paths';
 import { getLocale } from '@/i18n/server';
 
-const description =
-  'Tours in Turkey, Greece, Egypt, Jordan and Morocco, plus multi-country combinations, from a licensed local operator since 1997.';
-
 export const generateMetadata = docMetadata({
-  title: 'Destinations',
-  description,
   path: '/destinations',
   image: 'istanbul-skyline',
   dictionary: (d) => d.ui.pages.hub,
@@ -33,7 +27,7 @@ export default async function DestinationsPage() {
   const { ui, nav, countries, footer } = getDictionary(lang);
   const t = ui.pages.hub;
   // The old hub page's own text: the guide sections at the end (the country and combination cards before them are drawn by the tiles above),
-  // and its ten questions. The old Chinese and Japanese hubs were the home page with no text of their own.
+  // and its questions.
   const doc = await getPage(lang, 'destinations');
   const sections = doc?.sections ?? [];
   let from = sections.length;
@@ -41,11 +35,7 @@ export default async function DestinationsPage() {
     from--;
   }
   const guide = sections.slice(from);
-  const faqs = doc?.faqs.length
-    ? doc.faqs
-    : lang === 'en'
-      ? [0, 1, 5, 7, 12, 13].map((i) => homeFaqs[i]).filter((f) => f !== undefined)
-      : [];
+  const faqs = doc?.faqs ?? [];
   const combos = await comboCards(lang);
   const available = (await availableCountries(lang))
     .map((id) => destinations.find((d) => d.id === id))

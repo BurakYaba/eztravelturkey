@@ -17,7 +17,7 @@ const root = path.resolve(import.meta.dirname, '../..');
 const [mode] = process.argv.slice(2);
 const arg = (name) => process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w',
+  projectId: process.env.SANITY_PROJECT_ID ?? '91izz3mt',
   dataset: process.env.SANITY_DATASET ?? 'production',
   token: process.env.SANITY_WRITE_TOKEN,
   apiVersion: '2025-01-01',

@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client';
 import { draftMode } from 'next/headers';
 
 // The project id is public (it is in every picture address), so it is the default and nothing has to be set to build.
-const projectId = process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w';
+const projectId = process.env.SANITY_PROJECT_ID ?? '91izz3mt';
 const dataset = process.env.SANITY_DATASET ?? 'production';
 
 /**

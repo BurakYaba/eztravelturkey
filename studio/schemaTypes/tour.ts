@@ -13,42 +13,16 @@ import {
   translationGroupField,
 } from './fields';
 
-/** The folder a tour lives in under /destinations: a country or a multi-country combination. */
+/** The folder a tour lives in under /destinations: a country or a combination (the folders of the old eztravelturkey.com). */
 export const tourParents = [
   { title: 'Türkiye', value: 'turkey-tours' },
-  { title: 'Yunanistan', value: 'greece-tours' },
+  { title: 'Türkiye ve Yunanistan', value: 'turkey-and-greece-tours' },
+  { title: 'Kombinasyonlar (çok ülkeli)', value: 'combination-tours' },
   { title: 'Mısır', value: 'egypt-tours' },
+  { title: 'Yunanistan', value: 'greece-tours' },
   { title: 'Ürdün', value: 'jordan-tours' },
   { title: 'Fas', value: 'morocco-tours' },
-  { title: 'Kombinasyon: Türkiye ve Yunanistan', value: 'turkey-greece-tours' },
-  { title: 'Kombinasyon: Türkiye ve Mısır', value: 'turkey-and-egypt-tours' },
-  { title: 'Kombinasyon: Türkiye ve Ürdün', value: 'turkey-and-jordan-tours' },
-  { title: 'Kombinasyon: Yunanistan ve Mısır', value: 'greece-and-egypt-tours' },
-  { title: 'Kombinasyon: Yunanistan ve Ürdün', value: 'greece-and-jordan-tours' },
-  { title: 'Kombinasyon: Türkiye, Yunanistan ve Mısır', value: 'turkey-greece-and-egypt-tours' },
-  // Çince site
-  { title: 'Çince site: kombinasyonlar', value: 'combination-tours' },
-  { title: 'Çince site: Türkiye ve Yunanistan', value: 'turkey-and-greece-tours' },
-  // Japanese site
-  { title: 'Japonca site: トルコ', value: 'トルコツアー' },
-  { title: 'Japonca site: ギリシャ', value: 'ギリシャツアー' },
-  { title: 'Japonca site: エジプト', value: 'エジプトツアー' },
-  { title: 'Japonca site: ヨルダン', value: 'ヨルダンツアー' },
-  { title: 'Japonca site: モロッコ', value: 'モロッコツアー' },
-  { title: 'Japonca site: コンビネーション', value: 'コンビネーションツアー' },
 ];
-
-/**
- * The folders each language uses (what the existing tours do): a Japanese tour lives in a Japanese-named folder, the Chinese site has
- * two combination folders of its own, and the English combinations exist only in English. Picking another language's folder would
- * give the tour an address no page of that language has.
- */
-const japaneseFolders = tourParents.filter((p) => /[^ -~]/.test(p.value)).map((p) => p.value);
-const foldersOf: Record<string, string[]> = {
-  en: tourParents.filter((p) => !japaneseFolders.includes(p.value) && !['combination-tours', 'turkey-and-greece-tours'].includes(p.value)).map((p) => p.value),
-  cn: ['turkey-tours', 'greece-tours', 'egypt-tours', 'jordan-tours', 'morocco-tours', 'combination-tours', 'turkey-and-greece-tours'],
-  jp: japaneseFolders,
-};
 
 const stringList = (name: string, title: string, description?: string) =>
   defineField({ name, title, description, type: 'array', of: [{ type: 'string' }] });
@@ -90,12 +64,7 @@ export const tour = defineType({
       type: 'string',
       description: 'Turun sitede bulunduğu klasör. Adres ve tur listeleri buna göre oluşur.',
       options: { list: tourParents },
-      validation: (rule) =>
-        rule.required().custom((value: string | undefined, context) => {
-          const language = (context.document as { language?: string } | undefined)?.language;
-          const allowed = language ? foldersOf[language] : undefined;
-          return !value || !allowed || allowed.includes(value) ? true : 'Bu klasör bu dildeki turlar için kullanılmıyor. Listeden bu dile uygun bir klasör seçin (Japonca için "Japonca site", Çince için "Çince site" veya ülke).';
-        }),
+      validation: (rule) => rule.required(),
       group: 'overview',
       fieldset: 'address',
     }),

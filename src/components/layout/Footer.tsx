@@ -46,7 +46,7 @@ export async function Footer() {
   ];
   // A text page of the old Chinese site that no other page links to (how to book). The old Japanese page "privacy conditions" held
   // the FAQ and was moved into the FAQ page on 2026-10-24; its old address redirects there.
-  const extraPages = lang === 'cn' ? ['how-to-book-a-trip'] : [];
+  const extraPages = lang === 'zh' ? ['how-to-book-a-trip'] : [];
   const extra = (
     await Promise.all(extraPages.map(async (path) => ({ page: await getPage(lang, path), path })))
   ).flatMap(({ page, path }) => (page && !page.fallback ? [{ label: page.title, href: `/${path}` }] : []));
@@ -57,9 +57,7 @@ export async function Footer() {
     { label: t.planMyTrip, href: '/plan-my-trip' },
     { label: t.terms, href: legalHref(lang, 'terms') },
     { label: t.privacy, href: legalHref(lang, 'privacy') },
-    // The old English site links the Turkish distance sales agreement from every page (a Turkish tour operator's legal text); the Chinese and Japanese sites never had it.
     ...extra,
-    ...(lang === 'en' ? [{ label: t.distanceSales, href: '/gdpr/mesafeli-satis-sozlesmesi' }] : []),
   ];
   return (
     <footer className="bg-navy-950 text-white">

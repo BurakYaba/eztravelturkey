@@ -16,7 +16,7 @@ const dataset = process.env.SANITY_DATASET ?? 'production';
 const people = JSON.parse(readFileSync(path.join(import.meta.dirname, 'team.json'), 'utf8'));
 
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w',
+  projectId: process.env.SANITY_PROJECT_ID ?? '91izz3mt',
   dataset,
   token: process.env.SANITY_WRITE_TOKEN,
   apiVersion: '2025-01-01',

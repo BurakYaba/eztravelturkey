@@ -5,8 +5,9 @@
 name: Sanity unused assets
 
 on:
-  schedule:
-    - cron: '30 4 * * 1'
+  # Switched off until the repository secret(s) named above are set (without them every run fails); then restore the schedule.
+  # schedule:
+  #   - cron: '30 4 * * 1'
   workflow_dispatch:
     inputs:
       delete:

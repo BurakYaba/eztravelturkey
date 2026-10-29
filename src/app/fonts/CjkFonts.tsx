@@ -3,17 +3,15 @@
 import { useEffect } from 'react';
 
 /**
- * Chinese and Japanese pages draw their text with Noto fonts, whose stylesheets together weigh about 1 MB. Put in the
- * layout they would be part of the first, render-blocking CSS of every page, English ones included (measured: the LCP
- * of the English home page waited about 1.6 s for them). Loaded from here, in the browser and only for these two
- * languages, they cost the other pages nothing; cn and jp text first shows in the system's own CJK font and switches
- * when the web font has arrived (`display: swap`, as it did before).
+ * The pages draw their Chinese text with Noto Sans TC and Noto Serif TC, whose stylesheets together weigh about 1 MB. Put in the
+ * layout they would be part of the first, render-blocking CSS of every page. Loaded from here, in the browser, they cost the
+ * first paint nothing; the text first shows in the system's own Chinese font and switches when the web font has arrived
+ * (`display: swap`).
  */
-export function CjkFonts({ lang }: { lang: 'cn' | 'jp' }) {
+export function CjkFonts({ lang }: { lang: 'zh' }) {
   useEffect(() => {
     let cancelled = false;
-    const load = lang === 'cn' ? import('./cn') : import('./jp');
-    load.then(({ fontClasses }) => {
+    import('./zh').then(({ fontClasses }) => {
       if (!cancelled) {
         document.documentElement.classList.add(...fontClasses);
       }

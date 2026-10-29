@@ -16,7 +16,7 @@ const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
 const named = new Map(schema.map((entry) => [entry.name, entry]));
 
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID ?? 'aj0pbi0w',
+  projectId: process.env.SANITY_PROJECT_ID ?? '91izz3mt',
   dataset: process.env.SANITY_DATASET ?? 'production',
   token: process.env.SANITY_WRITE_TOKEN ?? process.env.SANITY_API_KEY,
   apiVersion: '2025-01-01',
