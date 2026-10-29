@@ -50,7 +50,7 @@ for (const person of people) {
     language: person.language,
     name: person.name,
     role: person.role,
-    email: person.email,
+    ...(person.email ? { email: person.email } : {}),
     hours: person.hours,
     timezone: person.timezone,
     order: person.order,

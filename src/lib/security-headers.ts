@@ -7,7 +7,7 @@
  *    site from being framed by other sites (only the Studio's preview tool may frame it), stop `<base>` and `<object>`
  *    injection, and keep forms posting to the site itself.
  * 2. `reportOnlyPolicy`: the full allow-list of scripts, images, connections and frames. It is only reported, not enforced,
- *    until the Tag Manager container (`GTM-55HWFMHR`) has been reviewed: a tag in it that loads from a host missing here
+ *    until the Tag Manager container (`GTM-WZNLSJW8`) has been reviewed: a tag in it that loads from a host missing here
  *    would silently stop working. Violations are posted to `/api/csp-report/` and appear in the Vercel logs as `[csp]`.
  *    When the logs stay quiet for a week of real traffic, move this policy into `enforcedPolicy`.
  *
