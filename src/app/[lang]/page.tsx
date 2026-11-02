@@ -47,7 +47,10 @@ export default async function HomePage() {
   const faqs = doc?.faqs ?? [];
   return (
     <>
-      <Hero title={doc && !doc.fallback && doc.title ? doc.title : undefined} />
+      <Hero
+        title={doc && !doc.fallback && doc.title ? doc.title : undefined}
+        text={doc && !doc.fallback && doc.heroText ? doc.heroText : undefined}
+      />
       <TrustBar className="mt-10" notes />
       <WhyTravel />
       <MultiCountryRail />

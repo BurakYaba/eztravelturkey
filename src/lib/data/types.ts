@@ -150,6 +150,8 @@ export type PageRecord = PageSummary & {
   updated: { iso: string; label: string; inText: boolean } | null;
   /** The answer in a nutshell, shown in a box before the text (blog posts). */
   shortAnswer: string;
+  /** The paragraph under the big heading of the home page, typed in the Studio; empty means the dictionary's text. */
+  heroText: string;
   author: PostAuthor | null;
   sections: PageSection[];
   cards: CardRecord[];

@@ -280,6 +280,7 @@ type RawSection = { level?: number; heading?: string; blocks?: RawBlock[] };
 type RawPage = RawPageSummary & {
   lastUpdated?: string | null;
   shortAnswer?: string;
+  heroText?: string;
   author?: { title?: string; path?: string; image?: RawImage } | null;
   sections?: RawSection[];
   cards?: { title: string; href: string; meta?: string[]; price?: string; image?: RawImage }[];
@@ -287,7 +288,7 @@ type RawPage = RawPageSummary & {
 };
 
 const summaryFields = `kind, path, title, metaTitle, metaDescription, noindex, "canonical": canonicalUrl, "image": mainImage{ ${img} }`;
-const pageFields = `${summaryFields}, lastUpdated, shortAnswer, "author": author->{ title, path, "image": mainImage{ ${img} } }, sections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cards[]{ title, href, meta, price, "image": image{ ${img} } }, faqs[]{ q, a }`;
+const pageFields = `${summaryFields}, lastUpdated, shortAnswer, heroText, "author": author->{ title, path, "image": mainImage{ ${img} } }, sections[]{ level, heading, blocks[]{ _type, text, ordered, items, "rows": rows[].cells, "image": image{ ${img} } } }, cards[]{ title, href, meta, price, "image": image{ ${img} } }, faqs[]{ q, a }`;
 
 const toSection = (s: RawSection): PageSection => ({
   level: s.level ?? 2,
@@ -383,6 +384,7 @@ function toPage(raw: RawPage, lang: Locale, fallback: boolean): PageRecord {
     lastUpdated: raw.lastUpdated ?? null,
     updated: updatedOf(raw.lastUpdated ?? null, sections, lang),
     shortAnswer: raw.shortAnswer ?? '',
+    heroText: raw.heroText?.trim() || '',
     author: raw.author?.title && raw.author.path ? { name: raw.author.title, href: hrefOf(raw.author.path), image: image(raw.author.image) } : null,
     sections,
     cards,

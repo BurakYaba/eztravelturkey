@@ -231,12 +231,21 @@ export const homePage = defineType({
     defineField({ name: 'kind', title: 'Sayfa türü', type: 'string', initialValue: 'home', readOnly: true }),
     { ...titleField, title: 'Ana başlık (H1)', description: 'Ana sayfanın en üstündeki büyük başlık.' },
     defineField({
+      name: 'heroText',
+      title: 'Giriş metni (ana başlığın altındaki paragraf)',
+      type: 'text',
+      rows: 3,
+      description:
+        'Ana başlığın hemen altında, ilk ekranda görünen kısa paragraf. Boş bırakırsanız sitenin kendi metni gösterilir. Bu, "Arama sonucu açıklaması" alanından ayrıdır: o yalnızca Google sonuçlarında görünür.',
+      validation: (rule) => rule.max(400).warning('Giriş metnini yaklaşık 200 karakterin altında tutun; uzun metin ilk ekranı doldurur.'),
+    }),
+    defineField({
       name: 'homeNote',
       title: 'Bu sayfa nasıl oluşuyor?',
       type: 'string',
       components: {
         input: infoNote([
-          'Ana sayfanın tasarımı kodla hazırlanmıştır. Burada yalnızca ana başlık (H1), arama sonucu başlığı ve açıklaması ile sayfanın altındaki "Sık sorulan sorular" düzenlenir. Öne çıkan turlar ve destinasyonlar turlardan ve ülke sayfalarından otomatik gelir.',
+          'Ana sayfanın tasarımı kodla hazırlanmıştır. Burada yalnızca ana başlık (H1), başlığın altındaki giriş metni, arama sonucu başlığı ve açıklaması (Google sonuçlarında görünen) ile sayfanın altındaki "Sık sorulan sorular" düzenlenir. Öne çıkan turlar ve destinasyonlar turlardan ve ülke sayfalarından otomatik gelir.',
         ]),
       },
     }),

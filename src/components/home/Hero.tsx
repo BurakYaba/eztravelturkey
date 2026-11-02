@@ -4,8 +4,11 @@ import { ButtonLink } from '../shared/Button';
 import { HeroImage } from './HeroImage';
 import { SearchBar } from './SearchBar';
 
-/** `title` is the H1 the editors typed in the home page document; without one the dictionary's heading is shown. */
-export async function Hero({ title }: { title?: string }) {
+/**
+ * `title` is the H1 and `text` the paragraph under it, both typed in the home page document in the Studio; without them the
+ * dictionary's words are shown.
+ */
+export async function Hero({ title, text }: { title?: string; text?: string }) {
   const { ui, countries } = await getDictionaryForPage();
   const available = await availableCountries(await getLocale());
   const t = ui.home.hero;
@@ -25,7 +28,7 @@ export async function Hero({ title }: { title?: string }) {
           <div className="max-w-2xl">
             <p className="eyebrow">{t.eyebrow}</p>
             <h1 className="h-display mt-3">{title ?? t.title}</h1>
-            <p className="text-ink/85 mt-4 max-w-xl text-lg md:text-xl">{t.text}</p>
+            <p className="text-ink/85 mt-4 max-w-xl text-lg md:text-xl">{text || t.text}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href="/tours" size="lg" arrow>
                 {t.explore}
