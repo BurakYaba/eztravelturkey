@@ -6,6 +6,7 @@ import { site } from '@/data/site';
 import { isGone } from '@/lib/gone';
 import { oldBlogRedirect } from '@/lib/old-blog';
 import { simplifiedChineseRedirect, simplifiedChineseSite } from '@/lib/old-cn';
+import { oldZhRedirect } from '@/lib/old-zh';
 
 const escapeHtml = (value: string) => value.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
 
@@ -55,6 +56,14 @@ export function proxy(request: NextRequest) {
     return gone(defaultLocale);
   }
   if (hasLocale(first)) {
+    // Old /zh/ addresses that are no pages any more (the tabs of a tour page and the like) go to the page that holds the content.
+    // The redirect stays on the host of the request, so a preview keeps working.
+    const oldTarget = oldZhRedirect(pathname);
+    if (oldTarget) {
+      const url = request.nextUrl.clone();
+      url.pathname = oldTarget;
+      return NextResponse.redirect(url, 301);
+    }
     // The pages keep their old addresses (/zh/about-us/); the routes know them by the code's names, so the request is served by
     // that route while the visitor's address stays as it is.
     let body = pathname.slice(first.length + 1) || '/';
