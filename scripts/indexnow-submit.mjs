@@ -1,8 +1,9 @@
 // Tells Bing, Yandex and the other IndexNow search engines about every address in the sitemaps (docs/project-plan.md P8.6).
 // Google does not use IndexNow. Run once on launch day, and again after a big change.
-// Usage: INDEXNOW_KEY=<key> node scripts/indexnow-submit.mjs [base]     (default base: https://www.magnificenttravel.com)
+// Usage: node --env-file=.env.local scripts/indexnow-submit.mjs [base]     (default base: https://www.eztravelturkey.com)
+//        or INDEXNOW_KEY=<key> node scripts/indexnow-submit.mjs [base]
 // The same key must be set as INDEXNOW_KEY on Vercel, so that <base>/<key>.txt answers with the key (src/app/api/indexnow-key).
-const base = (process.argv[2] ?? 'https://www.magnificenttravel.com').replace(/\/$/, '');
+const base = (process.argv[2] ?? 'https://www.eztravelturkey.com').replace(/\/$/, '');
 const key = process.env.INDEXNOW_KEY;
 if (!key) {
   console.error('Set INDEXNOW_KEY first (8 to 128 letters, digits or dashes; for example 32 random hex characters).');
