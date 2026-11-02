@@ -4,7 +4,7 @@ import { Link } from '@/i18n/link';
 import { usePathname } from 'next/navigation';
 import { useLocale } from '@/i18n/locale-context';
 import { stripLocale } from '@/i18n/paths';
-import { logicalPath, multiCountryHref } from '@/i18n/public-paths';
+import { logicalPath, multiCountryHref, turkeyGreeceHref } from '@/i18n/public-paths';
 import { useEffect, useRef, useState } from 'react';
 import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr';
 import { destinations } from '@/data/destinations';
@@ -13,7 +13,8 @@ import { cn } from '@/lib/utils';
 import { ButtonLink } from '../shared/Button';
 import { Logo } from './Logo';
 
-type DropItem = { label: string; href: string; note?: string };
+/** `separated` draws a line above the item, to start a new group in the list. */
+type DropItem = { label: string; href: string; note?: string; separated?: boolean };
 
 type Props = {
   nav: Dictionary['nav'];
@@ -97,7 +98,7 @@ function Dropdown({
         )}>
         <ul className="border-cream-200 shadow-lift overflow-hidden rounded-lg border bg-white p-2">
           {items.map((item) => (
-            <li key={item.href}>
+            <li key={item.href} className={cn(item.separated && 'border-cream-200 mt-1 border-t pt-1')}>
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -158,7 +159,9 @@ export function Header({ nav, countries, homeLabel, available }: Props) {
         const country = countryLabel(countries, d.id);
         return { label: country.name, href: `/destinations/${d.id}-tours`, note: country.tagline };
       }),
-    { label: nav.allDestinations, href: '/destinations' },
+    // The Turkey and Greece page, which the old menu linked to, under the countries; All destinations stays last.
+    { label: nav.turkeyGreece, href: turkeyGreeceHref(lang), separated: true },
+    { label: nav.allDestinations, href: '/destinations', separated: true },
   ];
   const styleItems: DropItem[] = [
     { label: nav.privateTours, href: '/private-tours', note: nav.privateNote },
@@ -280,7 +283,7 @@ export function Header({ nav, countries, homeLabel, available }: Props) {
                 <div className="acc-panel" data-open={open}>
                   <ul className="overflow-hidden">
                     {group.items.map((item) => (
-                      <li key={item.href}>
+                      <li key={item.href} className={cn(item.separated && 'border-cream-200 mt-1 border-t pt-1')}>
                         <Link
                           href={item.href}
                           tabIndex={open ? 0 : -1}

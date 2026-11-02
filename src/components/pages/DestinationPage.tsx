@@ -3,11 +3,12 @@ import { Link } from '@/i18n/link';
 import { format, getDictionary } from '@/i18n/dictionaries';
 import { formatPrice } from '@/i18n/format';
 import { getLocale } from '@/i18n/server';
-import { availableCountries, blogsAbout, countriesIn, toursOfCategory } from '@/lib/data';
+import { availableCountries, blogsAbout, comboCards, countriesIn, toursOfCategory } from '@/lib/data';
 import type { PageRecord, PageSummary, TourCardData } from '@/lib/data/types';
 import { Accordion } from '../shared/Accordion';
 import { browserText } from '../tours/browser-text';
 import type { Crumb } from '../shared/Breadcrumbs';
+import { ComboCard } from '../shared/ComboCard';
 import { MultiCountryCta } from '../shared/MultiCountryCta';
 import { PageBanner } from '../shared/PageBanner';
 import { Picture } from '../shared/Picture';
@@ -62,6 +63,8 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
         ]
       : []),
   ];
+  // A combination page points to the other combination pages (Turkey and Greece, the multi-country page), as the old site's menu did.
+  const otherCombos = page.kind === 'combo' ? (await comboCards(lang)).filter((c) => c.href !== page.href) : [];
   const guides = await blogsAbout(lang, folder, 3);
   const guideCountry = ids.length === 1 ? getDictionary(lang).countries[ids[0] as 'turkey']?.name : undefined;
   return (
@@ -134,6 +137,21 @@ export async function DestinationPage({ page, tours, categories = [], crumbs, cr
                 ))}
               </ul>
             )}
+          </div>
+        </section>
+      )}
+
+      {otherCombos.length > 0 && (
+        <section className="section-y pt-0">
+          <div className="container-x">
+            <SectionHeading title={t.byCountryPair} />
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {otherCombos.map((combo) => (
+                <li key={combo.href}>
+                  <ComboCard combo={combo} className="h-full" />
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}

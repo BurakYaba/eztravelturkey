@@ -49,6 +49,7 @@
     "closeMenu": "關閉選單",
     "destinations": "旅遊目的地",
     "allDestinations": "所有目的地",
+    "turkeyGreece": "土耳其與希臘",
     "tourStyles": "旅遊方式",
     "allTours": "所有行程",
     "privateTours": "專屬包團",
@@ -289,6 +290,7 @@
     "fromPrice": "行程起價",
     "guides": "旅遊指南：{country}",
     "moreGuides": "所有旅遊指南",
+    "byCountryPair": "依國家組合瀏覽",
     "allTours": "所有行程"
   },
   "team": {

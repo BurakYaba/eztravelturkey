@@ -61,6 +61,13 @@ export const legalHref = (lang: Locale, page: 'terms' | 'privacy'): string =>
     zh: { terms: '/terms-condition', privacy: '/privacy-policy' },
   })[lang][page];
 
+/**
+ * The Turkey and Greece combination page, which the old eztravelturkey.com menu linked to directly: a folder of its own next to the
+ * multi-country page. Written as a logical address, like every link of the code.
+ */
+const turkeyGreeceFolder: Record<Locale, string> = { zh: 'turkey-and-greece-tours' };
+export const turkeyGreeceHref = (lang: Locale): string => `/destinations/${turkeyGreeceFolder[lang]}`;
+
 /** Route parameters with Chinese letters may arrive percent-encoded; the CMS paths are plain text. */
 export const decodeSegments = (segments: string[]): string[] =>
   segments.map((s) => {
