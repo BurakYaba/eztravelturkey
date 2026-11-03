@@ -5,10 +5,9 @@
 name: Sanity backup
 
 on:
-  # Switched off until the repository secret(s) named above are set (without them every run fails); then restore the schedule.
-  # schedule:
-  #   # Every day at 03:15 UTC. On Sundays the pictures are saved as well.
-  #   - cron: '15 3 * * *'
+  schedule:
+    # Every day at 03:15 UTC. On Sundays the pictures are saved as well.
+    - cron: '15 3 * * *'
   workflow_dispatch:
     inputs:
       pictures:
