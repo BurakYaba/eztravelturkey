@@ -32,8 +32,16 @@ export const pathField = defineField({
       if (!value) {return true;}
       const doc = context.document as { _id?: string; language?: string } | undefined;
       if (/^\/|\/$|\/\//.test(value) || /\s/.test(value)) {return 'Boşluk, baştaki veya sondaki eğik çizgi ve çift eğik çizgi kullanmayın.';}
-      if (value !== value.toLowerCase()) {return 'Yalnızca küçük harf kullanın.';}
       const id = (doc?._id ?? '').replace(/^drafts\./, '');
+      if (value !== value.toLowerCase()) {
+        // A page that came from the old site can already be published at an address with capitals (the old address must stay as it
+        // is, and only that exact spelling opens): keep it valid while it is unchanged; any other address must be lower case.
+        const published = await context
+          .getClient({ apiVersion: '2025-01-01' })
+          .withConfig({ perspective: 'raw' })
+          .fetch<string | null>('*[_id == $id][0].path', { id });
+        if (published !== value) {return 'Yalnızca küçük harf kullanın.';}
+      }
       const taken = await context
         .getClient({ apiVersion: '2025-01-01' })
         .fetch<number>(
