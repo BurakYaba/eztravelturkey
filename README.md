@@ -55,6 +55,10 @@ cd studio && npm install && npm run dev      # the Studio, http://localhost:3333
 
 If a local page answers 500 with a JSON error, delete `.next/dev/cache/fetch-cache`: a half-written cache file does that.
 
+In `npm run dev` the Chinese web fonts are not loaded (the system's Chinese font shows): dev would download every slice of both fonts at
+once and its 3 second limit per request times out in bursts ("Request timed out after 3000ms"). Production and `npm run build` load them.
+The first page of a cold `npm run dev` still takes about 30 seconds to compile; later pages are fast.
+
 ## Settings (environment variables, `.env.example`)
 
 | Variable | What for | Where it is set |
