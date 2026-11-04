@@ -36,7 +36,7 @@ Built with Next.js 16 (App Router, ISR), React 19, TypeScript, Tailwind CSS 4, S
 | `/zh/...` pages that still exist (73) | served as before | the routes |
 | `/zh/...` tour tabs, misspelled twins, `/zh/search/` (321) | 301 to the page that holds the content | `src/lib/old-zh.ts`, `src/data/redirects-zh.json` |
 | `/cn/...` (Simplified Chinese, 399) | 301 to magnificenttravel.com | `src/lib/old-cn.ts`, `src/data/redirects-cn.json` |
-| the WordPress blog `eztravelturkey.com/blog/...` (188 posts) | 301 to `/zh/blog/<country>/<post>/` in one step, also on the bare domain | `src/lib/old-blog.ts`, `src/data/redirects-blog.json` |
+| the WordPress blog `eztravelturkey.com/blog/...` (188 posts; 90 kept) | 301 to `/zh/blog/<country>/<post>/` in one step for a kept post, to the blog hub for a removed one; also on the bare domain | `src/lib/old-blog.ts`, `src/data/redirects-blog.json` |
 | `/sitemap.xml/` | 308 to `/sitemap.xml` | Next.js |
 
 The tables are built from files in `data/` (not in git) by `scripts/redirects/build-zh-lookup.mjs`, `build-cn-lookup.mjs` and
