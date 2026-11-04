@@ -1,4 +1,5 @@
 import redirects from '@/data/redirects-cn.json';
+import { tourTabName } from '@/lib/old-zh';
 
 /**
  * The old eztravelturkey.com also had Simplified Chinese pages under `/cn/` (230 addresses). Simplified Chinese now lives on
@@ -30,5 +31,25 @@ export const normalizeOldPath = (pathname: string) =>
 export const simplifiedChineseRedirect = (pathname: string): string | null => {
   const key = normalizeOldPath(pathname);
   // The old Simplified Chinese home page (`/cn/`) is not in the table.
-  return key === '' ? '/cn/' : ((redirects as Record<string, string>)[key] ?? null);
+  if (key === '') {
+    return '/cn/';
+  }
+  // The old site had some pages under two names; the table keeps one of them.
+  const names = [
+    key,
+    key.replace(/^destinations\/turkey-tours\/10-days-or-more(?=\/|$)/, 'destinations/turkey-tours/10-days-or-longer'),
+    key.replace(/^destinations\/egypt-tours\/egypt-cultural-trip-8-days(?=\/|$)/, 'destinations/egypt-tours/8-egypt-cultural-trip-8-days'),
+  ];
+  const table = redirects as Record<string, string>;
+  for (const name of names) {
+    if (table[name]) {
+      return table[name];
+    }
+    // A tour tab spelled in a way the table lacks goes where its tour page goes.
+    const slash = name.lastIndexOf('/');
+    if (slash > 0 && tourTabName.test(name.slice(slash + 1)) && table[name.slice(0, slash)]) {
+      return table[name.slice(0, slash)];
+    }
+  }
+  return null;
 };
