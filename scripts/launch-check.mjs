@@ -103,7 +103,7 @@ for (const loc of [...indexText.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1
     sitemapUrls.push(...[...(await res.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
   }
 }
-ok(sitemapUrls.length > 250, `the sitemap lists ${sitemapUrls.length} addresses (about 270 expected)`, 'far fewer than expected');
+ok(sitemapUrls.length > 120, `the sitemap lists ${sitemapUrls.length} addresses (about 170 expected after the blog was reduced on 2026-11-04)`, 'far fewer than expected');
 ok(sitemapUrls.every((u) => u.startsWith(publicOrigin)), `every sitemap address is on ${publicOrigin}`, 'an address is on another host');
 ok((await get(`${base}/llms.txt`)).status === 200, 'llms.txt answers 200');
 if (process.env.INDEXNOW_KEY) {
