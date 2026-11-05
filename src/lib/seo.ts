@@ -103,7 +103,7 @@ export const travelAgencyJsonLd = (s: SiteSettings) => ({
   url: site.url,
   logo: absoluteUrl('/images/logo.png'),
   image: absoluteUrl(img('hero-istanbul').src),
-  description: `Licensed Turkish tour operator (License No. ${s.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt, Jordan and Morocco since ${s.founded}.`,
+  description: `Licensed Turkish tour operator (License No. ${s.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt and Jordan since ${s.founded}.`,
   foundingDate: String(s.founded),
   telephone: s.phone,
   ...(s.email ? { email: s.email } : {}),
@@ -114,7 +114,7 @@ export const travelAgencyJsonLd = (s: SiteSettings) => ({
     postalCode: s.address.postalCode,
     addressCountry: 'TR',
   },
-  areaServed: ['Turkey', 'Greece', 'Egypt', 'Jordan', 'Morocco'],
+  areaServed: ['Turkey', 'Greece', 'Egypt', 'Jordan'],
   sameAs: [
     s.social.facebook,
     s.social.linkedin,
