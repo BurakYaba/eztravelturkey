@@ -7,12 +7,10 @@ import { structure } from './structure';
 import { languageTemplates, templatedTypes, tourInFolder } from './templates';
 
 /**
- * Where the site runs. Until the domain points at this site (the name servers still sit at the old host), the preview must use the
- * Vercel address: `www.eztravelturkey.com` is still the old site, which has no draft mode. AT THE LAUNCH change this to
- * `https://www.eztravelturkey.com` and deploy the Studio again. `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the
- * local site.
+ * Where the site runs: the real domain (since the launch on 2026-11-06; the `*.vercel.app` address now redirects to it, so it
+ * cannot show drafts). `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the local site.
  */
-const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://eztravelturkey.vercel.app';
+const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.eztravelturkey.com';
 
 /** The address a document has on the site: language, then the path the editor sees in the "Page address" field. */
 const locationOf = (doc: { title?: string; language?: string; path?: string } | null) =>
