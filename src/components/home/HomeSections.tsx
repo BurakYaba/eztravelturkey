@@ -58,23 +58,27 @@ export async function DestinationsRow() {
   const t = ui.home.destinations;
   const lang = await getLocale();
   const available = await availableCountries(lang);
+  const tiles = destinations.filter((d) => available.includes(d.id));
+  // One column per tile on wide screens (the countries plus the multi-country tile), so the row fills the width whatever the number
+  // of countries is; Tailwind needs the whole class names here.
+  const wide =
+    ({ 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' } as Record<number, string>)[tiles.length + 1] ??
+    'lg:grid-cols-6';
   return (
     <section className="section-y bg-cream-100/60">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} link={{ href: '/destinations', label: t.all }} />
-        <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-          {destinations
-            .filter((d) => available.includes(d.id))
-            .map((d) => (
-              <li key={d.id} className="reveal">
-                <DestinationTile
-                  href={`/destinations/${d.id}-tours`}
-                  title={countries[d.id].name}
-                  note={countries[d.id].tagline}
-                  image={d.image}
-                />
-              </li>
-            ))}
+        <ul className={`grid grid-cols-2 gap-4 md:grid-cols-3 ${wide}`}>
+          {tiles.map((d) => (
+            <li key={d.id} className="reveal">
+              <DestinationTile
+                href={`/destinations/${d.id}-tours`}
+                title={countries[d.id].name}
+                note={countries[d.id].tagline}
+                image={d.image}
+              />
+            </li>
+          ))}
           <li className="reveal">
             <DestinationTile href={multiCountryHref(lang)} title={t.multi} note={t.multiNote} image="multi-country" />
           </li>
@@ -182,7 +186,9 @@ export async function MultiCountryRail() {
         <SectionHeading title={t.title} description={t.text} link={{ href: multiCountryHref(lang), label: t.all }} />
         <ScrollRail previousLabel={common.scrollPrevious} nextLabel={common.scrollNext}>
           {combos.map((combo) => (
-            <li key={combo.href} className="w-[82%] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]">
+            <li
+              key={combo.href}
+              className="w-[82%] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]">
               <ComboCard combo={combo} className="h-full" />
             </li>
           ))}
