@@ -1,6 +1,6 @@
 # Hourly check that the site answers (docs/project-plan.md P9.4), without an outside monitoring account.
 #
-# It asks /api/health/ (can the site read its content?) and the three home pages. When something fails twice in a row (a
+# It asks /api/health/ (can the site read its content?) and the home page /zh/. When something fails twice in a row (a
 # second try 30 seconds later, so a single hiccup does not count) it opens one GitHub issue labelled "uptime"; GitHub mails
 # everyone who watches the repository. When the site answers again, the issue gets a comment and is closed.
 #
@@ -12,9 +12,8 @@
 name: Uptime
 
 on:
-  # Switched off until the site is live and UPTIME_URL is set (it would check the wrong site); then restore the schedule.
-  # schedule:
-  #   - cron: '7 * * * *'
+  schedule:
+    - cron: '7 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -35,7 +34,7 @@ jobs:
             local failed=""
             code=$(curl -s -m 20 -o /dev/null -w '%{http_code}' "$SITE/api/health/") || code=000
             [ "$code" = "200" ] || failed="$failed /api/health/=$code"
-            for p in en/ cn/ jp/; do
+            for p in zh/; do
               code=$(curl -s -m 20 -o /dev/null -w '%{http_code}' "$SITE/$p") || code=000
               [ "$code" = "200" ] || failed="$failed /$p=$code"
             done
