@@ -70,7 +70,7 @@ export default async function DestinationsPage() {
                 href={multiCountryHref(lang)}
                 title={ui.home.destinations.multi}
                 note={ui.home.destinations.multiNote}
-                image="santorini-domes"
+                image="multi-country"
                 sizes="(min-width: 768px) 33vw, 50vw"
                 className="aspect-[4/5]"
               />

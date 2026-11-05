@@ -76,7 +76,7 @@ export async function DestinationsRow() {
               </li>
             ))}
           <li className="reveal">
-            <DestinationTile href={multiCountryHref(lang)} title={t.multi} note={t.multiNote} image="santorini-domes" />
+            <DestinationTile href={multiCountryHref(lang)} title={t.multi} note={t.multiNote} image="multi-country" />
           </li>
         </ul>
       </div>

@@ -53,8 +53,8 @@ export default async function HomePage() {
       />
       <TrustBar className="mt-10" notes />
       <WhyTravel />
-      <MultiCountryRail />
       <DestinationsRow />
+      <MultiCountryRail />
       <WaysToTravel />
       <FeaturedTours />
       <HubPreview />
