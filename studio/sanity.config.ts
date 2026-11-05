@@ -7,7 +7,7 @@ import { structure } from './structure';
 import { languageTemplates, templatedTypes, tourInFolder } from './templates';
 
 /**
- * Where the site runs: the real domain (since the launch on 2026-11-06; the `*.vercel.app` address now redirects to it, so it
+ * Where the site runs: the real domain (since the launch on 2026-11-05; the `*.vercel.app` address now redirects to it, so it
  * cannot show drafts). `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` previews the local site.
  */
 const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN ?? 'https://www.eztravelturkey.com';
