@@ -68,7 +68,14 @@ export async function editorRedirects(): Promise<{ rules: EditorRedirect[]; hash
         continue;
       }
       used.add(from);
-      rules.push({ source: literal(from.replace(/\/$/, '')), destination, permanent: true });
+      // Browsers and Google send a Chinese address percent-encoded (`%E5%9C%A8...`), which a rule written with the characters
+      // themselves does not match; so the encoded form is the rule, and the plain form is kept as well.
+      const path = from.replace(/\/$/, '');
+      const encoded = encodeURI(path);
+      rules.push({ source: literal(encoded), destination, permanent: true });
+      if (encoded !== path) {
+        rules.push({ source: literal(path), destination, permanent: true });
+      }
     }
   }
   rules.sort((a, b) => a.source.localeCompare(b.source));
