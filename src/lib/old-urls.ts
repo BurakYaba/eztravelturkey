@@ -72,9 +72,11 @@ export async function editorRedirects(): Promise<{ rules: EditorRedirect[]; hash
       // themselves does not match; so the encoded form is the rule, and the plain form is kept as well.
       const path = from.replace(/\/$/, '');
       const encoded = encodeURI(path);
-      rules.push({ source: literal(encoded), destination, permanent: true });
+      // The destination is percent-encoded too: on Vercel the `Location` header would otherwise carry the raw characters.
+      const target = encodeURI(destination);
+      rules.push({ source: literal(encoded), destination: target, permanent: true });
       if (encoded !== path) {
-        rules.push({ source: literal(path), destination, permanent: true });
+        rules.push({ source: literal(path), destination: target, permanent: true });
       }
     }
   }
