@@ -178,7 +178,7 @@ const blogFields = [
         const seen = new Set<string>();
         for (const value of values) {
           const url = normalizeOldUrl(value);
-          const match = /^\/zh\/(.+)\/$/.exec(url);
+          const match = /^\/(zh)\/(.+)\/$/.exec(url);
           if (!match) {return `${value}: eski sayfanın adresini /zh/ ile başlayacak şekilde yazın.`;}
           if (url === own.toLowerCase()) {return `${value}: bu, yazının kendi adresi.`;}
           if (seen.has(url)) {return `${value}: iki kez yazılmış.`;}
