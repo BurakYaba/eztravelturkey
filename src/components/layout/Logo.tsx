@@ -12,16 +12,16 @@ type Props = {
   label?: string;
 };
 
-// public/images/logo.png is the round "Magnificent Travel 中文" logo the owner supplied on 2026-11-02 (mtlogo.png, 1254 x 1254),
-// its transparent margins trimmed and scaled to 512 x 490. It is a round emblem, so it needs more height than a wide logo.
+// public/images/logo.png is the "Magnificent Travel 中文" logo the owner supplied on 2026-11-07 (eztravellogo.png, 1536 x 1024), its transparent
+// margins trimmed and scaled to 640 x 404. It is a wide logo; the original files are kept in data/brand/ (not in git).
 const sizes = {
   sm: 'h-12',
-  md: 'h-16',
+  md: 'h-[68px]',
   lg: 'h-24',
 };
-// The width each height gives (the logo is 512 x 490): the browser then fetches a picture of about that width instead of a larger
+// The width each height gives (the logo is 640 x 404): the browser then fetches a picture of about that width instead of a larger
 // one a plain width/height pair asks for.
-const widths = { sm: 50, md: 67, lg: 100 };
+const widths = { sm: 76, md: 108, lg: 152 };
 
 export function Logo({ className, light = false, size = 'md', priority, label = 'Eztravel Turkey，回到首頁' }: Props) {
   return (
@@ -29,8 +29,8 @@ export function Logo({ className, light = false, size = 'md', priority, label = 
       <Image
         src="/images/logo.png"
         alt="Eztravel Turkey"
-        width={512}
-        height={490}
+        width={640}
+        height={404}
         sizes={`${widths[size]}px`}
         loading={priority ? 'eager' : undefined}
         className={cn('w-auto', sizes[size], light && 'brightness-0 invert')}
