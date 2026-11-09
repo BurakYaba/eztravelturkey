@@ -132,28 +132,30 @@ export async function Footer() {
             {t.contactHeading}
           </h2>
           <ul className="space-y-3.5 text-white/85">
-            <li className="flex gap-3">
-              <WhatsappLogo size={22} className="text-gold-500 mt-0.5 shrink-0" aria-hidden />
+            <li className="flex items-center gap-3">
+              <WhatsappLogo size={22} className="text-gold-500 shrink-0" aria-hidden />
               <a href={whatsappUrl(settings.whatsappNumber)} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 {format(t.whatsapp, { number: settings.whatsapp })}
               </a>
             </li>
-            <li className="flex gap-3">
-              <Phone size={22} className="text-gold-500 mt-0.5 shrink-0" aria-hidden />
+            <li className="flex items-center gap-3">
+              <Phone size={22} className="text-gold-500 shrink-0" aria-hidden />
               <a href={settings.phoneHref} className={linkClass}>
                 {settings.phone}
               </a>
             </li>
             {settings.email && (
-              <li className="flex gap-3">
-                <EnvelopeSimple size={22} className="text-gold-500 mt-0.5 shrink-0" aria-hidden />
+              <li className="flex items-center gap-3">
+                <EnvelopeSimple size={22} className="text-gold-500 shrink-0" aria-hidden />
                 <a href={`mailto:${settings.email}`} className={linkClass}>
                   {settings.email}
                 </a>
               </li>
             )}
-            <li className="flex gap-3">
-              <MapPin size={22} className="text-gold-500 mt-0.5 shrink-0" aria-hidden />
+            <li className="flex items-start gap-3">
+              <span className="flex h-[1lh] shrink-0 items-center">
+                <MapPin size={22} className="text-gold-500" aria-hidden />
+              </span>
               <address className="text-white/75 not-italic">
                 {settings.address.street}
                 <br />
