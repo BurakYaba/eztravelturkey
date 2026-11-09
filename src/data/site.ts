@@ -10,7 +10,7 @@ export const site = {
   whatsapp: '+90 (532) 493 51 98',
   whatsappNumber: '905324935198',
   // The mailbox of the site (owner opens it at Hostinger); the Studio's site settings can override it.
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'support@eztravelturkey.com',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'service@eztravelturkey.com',
   address: {
     // The address of the Google Business Profile (the client's decision, 2026-10-27): Küçük Ayasofya, Gelinlik Sokağı No:3 / A, 34122 Fatih/İstanbul.
     street: 'Küçük Ayasofya, Gelinlik Sokağı No:3 / A',
