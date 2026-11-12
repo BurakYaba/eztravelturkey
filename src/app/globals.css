@@ -261,7 +261,8 @@
 
 /* Traditional Chinese pages: their own fonts, looser lines, no tight letter spacing (docs/project-plan.md P2.10). */
 html:lang(zh-Hant) {
-  --font-display: var(--font-noto-serif-tc), 'Noto Serif TC', 'PMingLiU', serif;
+  /* 'Noto Serif TC' is declared by the stylesheet that src/app/fonts/CjkFonts.tsx loads after the page; until it has arrived the next name is used. */
+  --font-display: 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
   /* Body text: Latin letters in Hanken Grotesk (already loaded), Chinese in the visitor's own font: no CJK download. */
   --font-sans: var(--font-hanken), 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', 'Noto Sans TC', system-ui, sans-serif;
 }

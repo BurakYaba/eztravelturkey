@@ -26,12 +26,12 @@ export function CjkFonts({ lang }: { lang: 'zh' }) {
     }
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout> | undefined;
+    // Importing the module is enough: it brings the stylesheet that declares the 'Noto Serif TC' face, which the heading font stack in
+    // globals.css already names. A class on <html> would restyle the whole page; this only re-lays out the headings.
     const apply = () => {
-      import('./zh').then(({ fontClasses }) => {
-        if (!cancelled) {
-          document.documentElement.classList.add(...fontClasses);
-        }
-      });
+      if (!cancelled) {
+        void import('./zh');
+      }
     };
     const schedule = () => {
       timer = setTimeout(() => {
