@@ -2,8 +2,10 @@
 
 import { useEffect } from 'react';
 
-/** How long after the page has loaded the heading font is requested. See below. */
-const DELAY_MS = 2500;
+/** How long after the last largest-paint candidate (and after the page has loaded) the heading font is requested. See below. */
+const DELAY_MS = 2000;
+/** The font is requested at the latest this long after the page has loaded, whatever the paint events do. */
+const LATEST_MS = 8000;
 
 /**
  * The headings are drawn with Noto Serif TC; the body text uses the visitor's own Chinese font (PingFang TC, Microsoft JhengHei, Noto Sans
@@ -26,33 +28,59 @@ export function CjkFonts({ lang }: { lang: 'zh' }) {
     }
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout> | undefined;
+    let latest: ReturnType<typeof setTimeout> | undefined;
+    let loaded = document.readyState === 'complete';
+    let observer: PerformanceObserver | undefined;
     // Importing the module is enough: it brings the stylesheet that declares the 'Noto Serif TC' face, which the heading font stack in
     // globals.css already names. A class on <html> would restyle the whole page; this only re-lays out the headings.
     const apply = () => {
-      if (!cancelled) {
-        void import('./zh');
+      if (cancelled) {
+        return;
+      }
+      cancelled = true;
+      observer?.disconnect();
+      clearTimeout(timer);
+      clearTimeout(latest);
+      void import('./zh');
+    };
+    const whenIdle = () => {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(apply, { timeout: 4000 });
+      } else {
+        apply();
       }
     };
-    const schedule = () => {
-      timer = setTimeout(() => {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(apply, { timeout: 4000 });
-        } else {
-          apply();
-        }
-      }, DELAY_MS);
+    // Every new largest-paint candidate (the headline text, then the hero picture) pushes the request back: the font starts
+    // DELAY_MS after the last one, so it can never be counted as something the hero picture waited for.
+    const arm = () => {
+      if (!loaded || cancelled) {
+        return;
+      }
+      clearTimeout(timer);
+      timer = setTimeout(whenIdle, DELAY_MS);
     };
-    if (document.readyState === 'complete') {
-      schedule();
+    try {
+      observer = new PerformanceObserver(arm);
+      observer.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch {
+      // No such entries (Safari, old browsers): the load event alone decides.
+    }
+    const onLoad = () => {
+      loaded = true;
+      arm();
+      latest = setTimeout(apply, LATEST_MS);
+    };
+    if (loaded) {
+      onLoad();
     } else {
-      window.addEventListener('load', schedule, { once: true });
+      window.addEventListener('load', onLoad, { once: true });
     }
     return () => {
       cancelled = true;
-      window.removeEventListener('load', schedule);
-      if (timer) {
-        clearTimeout(timer);
-      }
+      observer?.disconnect();
+      window.removeEventListener('load', onLoad);
+      clearTimeout(timer);
+      clearTimeout(latest);
     };
   }, [lang]);
   return null;

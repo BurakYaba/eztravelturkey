@@ -11,7 +11,7 @@ export function HeroImage() {
         id="hero-istanbul"
         sizes="100vw"
         priority
-        quality={85}
+        quality={75}
         className="object-[72%_50%] md:object-[70%_50%]"
       />
     </div>
