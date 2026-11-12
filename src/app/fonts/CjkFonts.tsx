@@ -24,9 +24,13 @@ export function CjkFonts({ lang }: { lang: 'zh' }) {
     }
     // Importing the module is enough: it brings the stylesheet that declares the 'Noto Serif TC' face, which the heading font stack in
     // globals.css already names. A class on <html> would restyle the whole page; this only re-lays out the headings.
-    return afterLargestPaint(() => {
-      void import('./zh');
-    }, 2000, 8000);
+    return afterLargestPaint(
+      () => {
+        void import('./zh');
+      },
+      2000,
+      8000,
+    );
   }, [lang]);
   return null;
 }

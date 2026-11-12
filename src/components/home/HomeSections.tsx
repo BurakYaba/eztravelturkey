@@ -28,7 +28,12 @@ export async function WhyTravel() {
     <section className="section-y">
       <div className="container-x grid items-center gap-10 lg:grid-cols-[5fr_7fr] lg:gap-14">
         <div className="reveal shadow-card relative aspect-[4/5] overflow-hidden rounded-lg max-lg:aspect-[16/10]">
-          <Photo id="cappadocia-valley" sizes="(min-width: 1024px) 40vw, 100vw" className="object-[80%_75%]" />
+          <Photo
+            id="cappadocia-valley"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            quality={60}
+            className="object-[80%_75%]"
+          />
         </div>
         <div>
           <h2 className="h-section">{t.title}</h2>
@@ -189,7 +194,12 @@ export async function MultiCountryRail() {
             <li
               key={combo.href}
               className="w-[82%] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]">
-              <ComboCard combo={combo} className="h-full" />
+              <ComboCard
+                combo={combo}
+                className="h-full"
+                sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 82vw"
+                quality={60}
+              />
             </li>
           ))}
         </ScrollRail>

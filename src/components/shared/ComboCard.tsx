@@ -6,7 +6,18 @@ import { getDictionaryForPage } from '@/i18n/server';
 import { Picture } from './Picture';
 
 /** A multi-country combination, from the card the old site showed for it. */
-export async function ComboCard({ combo, className }: { combo: CardRecord; className?: string }) {
+export async function ComboCard({
+  combo,
+  className,
+  sizes = '(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw',
+  quality,
+}: {
+  combo: CardRecord;
+  className?: string;
+  /** The picture's `sizes`: a card in a narrow rail is narrower than the screen. */
+  sizes?: string;
+  quality?: number;
+}) {
   const { card, ui } = await getDictionaryForPage();
   return (
     <article
@@ -19,7 +30,8 @@ export async function ComboCard({ combo, className }: { combo: CardRecord; class
           <Picture
             image={combo.image}
             alt=""
-            sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+            sizes={sizes}
+            quality={quality}
             className="transition duration-500 group-hover:scale-105"
           />
         )}
