@@ -262,7 +262,8 @@
 /* Traditional Chinese pages: their own fonts, looser lines, no tight letter spacing (docs/project-plan.md P2.10). */
 html:lang(zh-Hant) {
   --font-display: var(--font-noto-serif-tc), 'Noto Serif TC', 'PMingLiU', serif;
-  --font-sans: var(--font-noto-sans-tc), 'Noto Sans TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  /* Body text: Latin letters in Hanken Grotesk (already loaded), Chinese in the visitor's own font: no CJK download. */
+  --font-sans: var(--font-hanken), 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', 'Noto Sans TC', system-ui, sans-serif;
 }
 
 html:lang(zh-Hant) body {
