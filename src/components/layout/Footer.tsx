@@ -97,14 +97,14 @@ export async function Footer() {
               .filter((d) => available.includes(d.id))
               .map((d) => (
                 <li key={d.id}>
-                  <Link href={`/destinations/${d.id}-tours`} className={linkClass}>
+                  <Link href={`/destinations/${d.id}-tours`} prefetch={false} className={linkClass}>
                     {format(t.countryTours, { country: countries[d.id as keyof typeof countries]?.name ?? d.name })}
                   </Link>
                 </li>
               ))}
             {explore.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={linkClass}>
+                <Link href={item.href} prefetch={false} className={linkClass}>
                   {item.label}
                 </Link>
               </li>
@@ -119,7 +119,7 @@ export async function Footer() {
           <ul className="space-y-2.5">
             {company.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={linkClass}>
+                <Link href={item.href} prefetch={false} className={linkClass}>
                   {item.label}
                 </Link>
               </li>
@@ -134,7 +134,11 @@ export async function Footer() {
           <ul className="space-y-3.5 text-white/85">
             <li className="flex items-center gap-3">
               <WhatsappLogo size={22} className="text-gold-500 shrink-0" aria-hidden />
-              <a href={whatsappUrl(settings.whatsappNumber)} target="_blank" rel="noopener noreferrer" className={linkClass}>
+              <a
+                href={whatsappUrl(settings.whatsappNumber)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}>
                 {format(t.whatsapp, { number: settings.whatsapp })}
               </a>
             </li>
@@ -159,7 +163,8 @@ export async function Footer() {
               <address className="text-white/75 not-italic">
                 {settings.address.street}
                 <br />
-                {settings.address.district}, {settings.address.city} {settings.address.postalCode}, {settings.address.country}
+                {settings.address.district}, {settings.address.city} {settings.address.postalCode},{' '}
+                {settings.address.country}
               </address>
             </li>
           </ul>

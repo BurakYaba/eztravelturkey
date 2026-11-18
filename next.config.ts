@@ -20,7 +20,20 @@ const nextConfig = (editor: Awaited<ReturnType<typeof editorRedirects>>): NextCo
   poweredByHeader: false,
   async headers() {
     // Security headers and the Content-Security-Policy (P9.2): see src/lib/security-headers.ts for what is enforced and what is only reported.
-    return [{ source: '/:path*', headers: securityHeaders(process.env.NODE_ENV === 'production') }];
+    return [
+      { source: '/:path*', headers: securityHeaders(process.env.NODE_ENV === 'production') },
+      // Pictures in public/images keep their names when one is replaced (the logo was, several times): a day, and the old one may be shown
+      // for a week while the new one is fetched. Without this they were checked again on every visit (max-age=0).
+      {
+        source: '/images/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }],
+      },
+      // The hero files carry a hash of their content in the name: they never change under the same address. Last, so it wins.
+      {
+        source: '/images/hero/:file',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+    ];
   },
   async rewrites() {
     return {

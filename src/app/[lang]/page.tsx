@@ -60,7 +60,7 @@ export default async function HomePage() {
       <HubPreview />
       <ReviewsSection />
       {faqs.length > 0 && (
-        <section className="section-y bg-cream-100/60">
+        <section className="defer-render section-y bg-cream-100/60">
           <div className="container-x max-w-3xl">
             <SectionHeading
               title={ui.home.faq.title}

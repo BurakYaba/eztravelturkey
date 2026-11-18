@@ -16,7 +16,7 @@ export async function QuoteBand({ title, text, image = 'santorini-sunset' }: Pro
   const settings = await getSiteSettings(await getLocale());
   const t = ui.quoteBand;
   return (
-    <section className="bg-cream-100 relative isolate overflow-hidden [--veil:var(--color-cream-100)]">
+    <section className="defer-render bg-cream-100 relative isolate overflow-hidden [--veil:var(--color-cream-100)]">
       <div className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[68%]">
         <Photo id={image} sizes="(min-width: 1024px) 68vw, 100vw" />
         <div aria-hidden className="bg-cream-50/85 absolute inset-0 lg:hidden" />

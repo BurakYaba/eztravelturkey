@@ -70,7 +70,7 @@ export async function DestinationsRow() {
     ({ 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' } as Record<number, string>)[tiles.length + 1] ??
     'lg:grid-cols-6';
   return (
-    <section className="section-y bg-cream-100/60">
+    <section className="defer-render section-y bg-cream-100/60">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} link={{ href: '/destinations', label: t.all }} />
         <ul className={`grid grid-cols-2 gap-4 md:grid-cols-3 ${wide}`}>
@@ -101,7 +101,7 @@ export async function WaysToTravel() {
     'group relative block overflow-hidden rounded-lg bg-navy-900 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lift';
   const overlay = 'absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent';
   return (
-    <section className="section-y">
+    <section className="defer-render section-y">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} />
         <div className="grid gap-4 lg:grid-cols-5 lg:grid-rows-2">
@@ -162,7 +162,7 @@ export async function FeaturedTours() {
     return null;
   }
   return (
-    <section className="section-y bg-cream-100/60">
+    <section className="defer-render section-y bg-cream-100/60">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} link={{ href: '/tours', label: t.all }} />
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -186,7 +186,7 @@ export async function MultiCountryRail() {
     return null;
   }
   return (
-    <section className="section-y">
+    <section className="defer-render section-y">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} link={{ href: multiCountryHref(lang), label: t.all }} />
         <ScrollRail previousLabel={common.scrollPrevious} nextLabel={common.scrollNext}>
@@ -217,7 +217,7 @@ export async function HubPreview() {
   }
   const side = rest.slice(0, 2);
   return (
-    <section className="section-y bg-cream-100/60">
+    <section className="defer-render section-y bg-cream-100/60">
       <div className="container-x">
         <SectionHeading title={t.title} description={t.text} link={{ href: '/blog', label: t.all }} />
         <div className="grid gap-6 lg:grid-cols-5">
@@ -263,7 +263,7 @@ export async function ReviewsSection() {
   const site = await getSiteSettings(await getLocale());
   const t = ui.home.reviews;
   return (
-    <section className="section-y">
+    <section className="defer-render section-y">
       <div className="container-x">
         <SectionHeading
           title={t.title}

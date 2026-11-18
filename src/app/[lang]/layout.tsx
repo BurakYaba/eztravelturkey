@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import { Hanken_Grotesk, Playfair_Display } from 'next/font/google';
-import { CjkFonts } from '../fonts/CjkFonts';
+import { Hanken_Grotesk } from 'next/font/google';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { PreviewBar } from '@/components/layout/PreviewBar';
@@ -19,12 +18,6 @@ import { availableCountries } from '@/lib/data';
 import { getSiteSettings } from '@/lib/data/settings';
 import { travelAgencyJsonLd, websiteJsonLd } from '@/lib/seo';
 import '../globals.css';
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-});
 
 const hanken = Hanken_Grotesk({
   subsets: ['latin'],
@@ -61,10 +54,9 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
   }
   const dictionary = getDictionary(lang);
   return (
-    <html lang={htmlLang[lang]} className={`${playfair.variable} ${hanken.variable}`}>
+    <html lang={htmlLang[lang]} className={hanken.variable}>
       <body>
         <AnalyticsScripts />
-        <CjkFonts lang={lang} />
         <LocaleProvider lang={lang}>
           <a
             href="#main"
