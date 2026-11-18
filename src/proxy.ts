@@ -41,7 +41,9 @@ export function proxy(request: NextRequest) {
     host === new URL(site.url).host.replace(/^www\./, '') ||
     (host === 'eztravelturkey.vercel.app' && process.env.REDIRECT_VERCEL_ALIAS === '1')
   ) {
-    return NextResponse.redirect(new URL(`${pathname}${search}`, site.url), 301);
+    // The home page goes to `/zh/` in the same step (otherwise: bare domain -> www -> /zh/, one more round trip for whoever types the name).
+    const target = pathname === '/' ? `/${defaultLocale}/` : pathname;
+    return NextResponse.redirect(new URL(`${target}${search}`, site.url), 301);
   }
 
   const first = pathname.split('/')[1] ?? '';
