@@ -65,7 +65,7 @@ export async function BlogPost({ page, crumbs }: { page: PageRecord; crumbs: Cru
         {...(isMap ? { image: bannerPhoto[folder] ?? 'hero-istanbul' } : { picture: page.image })}
         crumbs={crumbs}
       />
-      <article className="section-y">
+      <article className="section-y" data-track-placement="body">
         <div className="container-x max-w-3xl">
           {page.shortAnswer && (
             <aside className="border-gold-500/40 bg-cream-50 mb-10 flex gap-4 rounded-lg border p-5">
@@ -110,7 +110,7 @@ export async function BlogPost({ page, crumbs }: { page: PageRecord; crumbs: Cru
       </article>
 
       {tours.length > 0 && country && (
-        <section className="section-y bg-cream-100/60">
+        <section className="section-y bg-cream-100/60" data-track-placement="related_tours">
           <div className="container-x">
             <SectionHeading
               title={format(t.toursIn, { country })}

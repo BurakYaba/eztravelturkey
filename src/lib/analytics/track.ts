@@ -7,9 +7,17 @@
  *   form_submit   the quote or contact form was sent: form_type, tour_title
  *   whatsapp_click, phone_click, email_click   a link to WhatsApp, a phone number or an email address was used
  *   cta_click     the "Plan my trip" button was used
+ *   blog_tour_click  a link to a tour or destination page was used on a blog page: from_path, to_path, placement (body, related_tours, nav, footer, other)
  */
 export type AnalyticsEvent =
-  'page_context' | 'tour_view' | 'form_submit' | 'whatsapp_click' | 'phone_click' | 'email_click' | 'cta_click';
+  | 'page_context'
+  | 'tour_view'
+  | 'form_submit'
+  | 'whatsapp_click'
+  | 'phone_click'
+  | 'email_click'
+  | 'cta_click'
+  | 'blog_tour_click';
 
 type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 
