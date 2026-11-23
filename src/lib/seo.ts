@@ -207,13 +207,16 @@ export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, pri
       url,
       priceCurrency: currency,
       price: String(price),
-      description: 'Starting price per person. Final price depends on dates, hotels and group size.',
+      description: '起價為每人費用，實際價格依出發日期、飯店與團體人數而定。',
       availability: 'https://schema.org/InStock',
       seller: organizationRef,
     }));
   return {
     '@context': 'https://schema.org',
-    '@type': 'TouristTrip',
+    // A trip with a price is also a `Product` (Google's product snippets and Ahrefs' AI Discoverability check look for it); the price
+    // is printed on the page, as Google requires. Without a price the page stays a plain `TouristTrip`, since a `Product` with no
+    // offer, rating or review only draws warnings.
+    '@type': offers.length === 0 ? 'TouristTrip' : ['TouristTrip', 'Product'],
     name,
     description,
     url,
@@ -230,7 +233,7 @@ export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, pri
         item: { '@type': 'Place', name: stop },
       })),
     },
-    ...(offers.length === 0 ? {} : { offers }),
+    ...(offers.length === 0 ? {} : { brand: organizationRef, offers }),
   };
 };
 
