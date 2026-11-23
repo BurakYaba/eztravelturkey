@@ -6,8 +6,13 @@ import type { SiteSettings } from '@/lib/data/settings';
 import type { ImageRef } from '@/lib/data/types';
 import { localePath } from '@/i18n/paths';
 
-/** Absolute URL of a path that already carries its language prefix, for example `/en/tours/`. Japanese and Chinese letters are percent-encoded. */
-export const absoluteUrl = (path = '/') => `${site.url}${encodeURI(path.startsWith('/') ? path : `/${path}`)}`;
+/**
+ * Absolute URL of a path that already carries its language prefix, for example `/zh/tours/`. Chinese letters are percent-encoded.
+ * An address that is already absolute (a Sanity CDN picture) is returned as it is; prefixing it with the site address broke
+ * every `og:image` and structured-data `image` that came from the CMS.
+ */
+export const absoluteUrl = (path = '/') =>
+  /^https?:\/\//i.test(path) ? path : `${site.url}${encodeURI(path.startsWith('/') ? path : `/${path}`)}`;
 
 const ogLocale: Record<Locale, string> = { zh: 'zh_TW' };
 
@@ -96,14 +101,15 @@ const websiteId = (lang: Locale) => `${site.url}/${lang}/#website`;
 
 export const travelAgencyJsonLd = (s: SiteSettings) => ({
   '@context': 'https://schema.org',
-  '@type': 'TravelAgency',
+  // `TravelAgency` is a kind of `Organization`; naming both lets checkers that only look for `Organization` (Ahrefs) find it.
+  '@type': ['TravelAgency', 'Organization'],
   '@id': `${site.url}/#organization`,
   name: site.name,
   legalName: site.legalName,
   url: site.url,
   logo: absoluteUrl('/images/logo.png'),
   image: absoluteUrl(img('hero-istanbul').src),
-  description: `Licensed Turkish tour operator (License No. ${s.licenseNo}) organizing private, small group and multi-country tours across Turkey, Greece, Egypt and Jordan since ${s.founded}.`,
+  description: `${s.founded} 年創立的土耳其合法旅行社，持有土耳其旅行社協會（TÜRSAB）執照（執照號碼 ${s.licenseNo}），提供土耳其、希臘、埃及與約旦的專屬包團、小團與多國旅遊行程。`,
   foundingDate: String(s.founded),
   telephone: s.phone,
   ...(s.email ? { email: s.email } : {}),
@@ -211,7 +217,7 @@ export const touristTripJsonLd = ({ lang, name, description, path, imageUrl, pri
     name,
     description,
     url,
-    inLanguage: htmlLang[lang],
+    // No `inLanguage` here: `TouristTrip` does not define it (schema.org validation error); the `WebPage` of the same page carries it.
     image: absoluteUrl(imageUrl),
     touristType: 'Cultural tourism',
     provider: organizationRef,
