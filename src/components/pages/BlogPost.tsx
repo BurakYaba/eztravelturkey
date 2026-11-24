@@ -5,7 +5,8 @@ import type { ImageId } from '@/data/images';
 import { getDictionary } from '@/i18n/dictionaries';
 import { getLocale } from '@/i18n/server';
 import { format } from '@/i18n/template';
-import { blogPosts, countriesIn, toursAbout, type PageRecord } from '@/lib/data';
+import { combinationHref } from '@/i18n/public-paths';
+import { blogContext, type PageRecord } from '@/lib/data';
 import { Accordion } from '../shared/Accordion';
 import type { Crumb } from '../shared/Breadcrumbs';
 import { TextLink } from '../shared/Button';
@@ -35,15 +36,12 @@ export async function BlogPost({ page, crumbs }: { page: PageRecord; crumbs: Cru
   const dict = getDictionary(lang);
   const { blog: t, card, countries } = dict;
 
+  // What the post is about comes from the countries ticked in the Studio (post, then category), not from the folder in its address: a
+  // category about two countries, or a post moved between categories, keeps its tours and guides.
   const folder = page.path.split('/')[1] ?? '';
-  const countryId = countriesIn(folder)[0];
-  const country = countryId ? countries[countryId as keyof typeof countries]?.name : undefined;
-  const [tours, guides] = await Promise.all([
-    toursAbout(lang, `${folder}-tours`, 3),
-    blogPosts(lang).then((all) =>
-      all.filter((p) => p.path.startsWith(`blog/${folder}/`) && p.path !== page.path).slice(0, 3),
-    ),
-  ]);
+  const { countries: countryIds, maps, tours, guides } = await blogContext(lang, page.path);
+  const country = countryIds.map((id) => countries[id as keyof typeof countries]?.name).filter(Boolean).join(t.countryJoin);
+  const toursHref = countryIds.length === 1 ? `/destinations/${countryIds[0]}-tours` : combinationHref(lang, countryIds);
 
   const isMap = (page.path.split('/').pop() ?? '').startsWith('map-of-');
   const byline = page.author
@@ -86,6 +84,19 @@ export async function BlogPost({ page, crumbs }: { page: PageRecord; crumbs: Cru
             </div>
           )}
 
+          {maps.length > 0 && (
+            <aside className="border-gold-500/40 bg-cream-50 mt-12 rounded-lg border p-5">
+              <p className="text-ink/90 leading-relaxed">{t.mapIntro}</p>
+              <ul className="mt-2 flex flex-wrap gap-x-8">
+                {maps.map((item) => (
+                  <li key={item.href}>
+                    <TextLink href={item.href}>{item.title}</TextLink>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+
           {page.author && (
             <aside className="border-cream-200 shadow-card mt-12 flex items-center gap-5 rounded-lg border bg-white p-5">
               {page.author.image && (
@@ -114,7 +125,7 @@ export async function BlogPost({ page, crumbs }: { page: PageRecord; crumbs: Cru
           <div className="container-x">
             <SectionHeading
               title={format(t.toursIn, { country })}
-              link={{ href: `/destinations/${countryId}-tours`, label: format(t.allToursIn, { country }) }}
+              link={{ href: toursHref, label: format(t.allToursIn, { country }) }}
             />
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {tours.map((tour) => (

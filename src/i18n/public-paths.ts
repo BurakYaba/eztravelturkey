@@ -68,6 +68,15 @@ export const legalHref = (lang: Locale, page: 'terms' | 'privacy'): string =>
 const turkeyGreeceFolder: Record<Locale, string> = { zh: 'turkey-and-greece-tours' };
 export const turkeyGreeceHref = (lang: Locale): string => `/destinations/${turkeyGreeceFolder[lang]}`;
 
+/**
+ * The page of the tours that visit all of the given countries (two or more): the Turkey and Greece page for that pair (the old site has
+ * one), else the page that lists the multi-country trips. Written as a logical address, like every link of the code.
+ */
+export function combinationHref(lang: Locale, countries: readonly string[]): string {
+  const key = [...countries].sort().join('+');
+  return key === 'greece+turkey' ? turkeyGreeceHref(lang) : multiCountryHref(lang);
+}
+
 /** Route parameters with Chinese letters may arrive percent-encoded; the CMS paths are plain text. */
 export const decodeSegments = (segments: string[]): string[] =>
   segments.map((s) => {

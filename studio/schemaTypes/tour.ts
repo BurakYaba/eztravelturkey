@@ -12,6 +12,7 @@ import {
   titleField,
   translationGroupField,
 } from './fields';
+import { countryOptions } from './pages';
 
 /** The folder a tour lives in under /destinations: a country or a combination (the folders of the old eztravelturkey.com). */
 export const tourParents = [
@@ -85,6 +86,32 @@ export const tour = defineType({
       description: 'Sitede: sayfanın altındaki "Related Tours" bölümü.',
       group: 'settings',
       of: [{ type: 'reference', to: [{ type: 'tour' }], weak: true }],
+    }),
+
+    defineField({
+      name: 'countries',
+      title: 'Ülkeler',
+      type: 'array',
+      description:
+        'Turun gittiği ülkeler. Tek ülkelik turda o ülkeyi, kombinasyon turunda gittiği TÜM ülkeleri işaretleyin (örneğin Mısır ve Ürdün turunda ikisini de). Sitede: tur listelerindeki ülke filtresi, ülke sekmeleri ve blog yazılarının altındaki "ilgili turlar"; tur, işaretlediğiniz her ülkenin filtresinde görünür. En az bir ülke seçilmeden tur yayınlanamaz.',
+      of: [{ type: 'string' }],
+      options: { list: countryOptions, layout: 'grid' },
+      group: 'overview',
+      validation: (rule) => [
+        rule.required().min(1).error('Turun gittiği en az bir ülkeyi seçin. Seçilmezse tur ülke filtrelerinde görünmez.'),
+        rule.unique(),
+        rule
+          .custom((value: string[] | undefined, context) => {
+            const document = context.document as { parent?: string; category?: string } | undefined;
+            const folder = `${document?.parent ?? ''} ${document?.category ?? ''}`;
+            const expected = countryOptions.filter((c) => folder.includes(c.value));
+            const missing = expected.filter((c) => !(value ?? []).includes(c.value));
+            return !value || missing.length === 0
+              ? true
+              : `Klasör ${missing.map((c) => c.title).join(', ')} ülkesini içeriyor ama burada seçili değil. Doğruysa bu uyarıyı yok sayabilirsiniz.`;
+          })
+          .warning(),
+      ],
     }),
 
     // ---- Genel bakış · Overview

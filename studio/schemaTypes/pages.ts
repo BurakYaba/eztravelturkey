@@ -127,6 +127,42 @@ export const normalizeOldUrl = (value: string) =>
     .replace(/[?#].*$/, '')
     .replace(/^\/+|\/+$/g, '')}/`.toLowerCase();
 
+/** The countries of the site, as on the tours. */
+export const countryOptions = [
+  { title: 'Türkiye', value: 'turkey' },
+  { title: 'Yunanistan', value: 'greece' },
+  { title: 'Mısır', value: 'egypt' },
+  { title: 'Ürdün', value: 'jordan' },
+  { title: 'Fas', value: 'morocco' },
+];
+
+/** The countries the folder of a blog category names: `blog/turkey-greece` two, `blog/turkey` one. */
+const folderCountries = (path: string | undefined) => countryOptions.filter((c) => (path ?? '').split('/')[1]?.includes(c.value));
+
+/** What the site shows from the countries: tours of those countries and guides about them, under every post of the category. */
+const categoryCountriesField = defineField({
+  name: 'countries',
+  title: 'Ülkeler',
+  type: 'array',
+  description:
+    'Bu kategorinin hangi ülkelerle ilgili olduğu. Tek ülkelik kategoride o ülkeyi, birden çok ülkeyi kapsayan kategoride (örneğin Türkiye ve Yunanistan) hepsini işaretleyin. Sitede: kategorideki her yazının altındaki turlar ve rehberler bu ülkelere göre gelir. En az bir ülke seçilmeden kategori yayınlanamaz.',
+  of: [{ type: 'string' }],
+  options: { list: countryOptions, layout: 'grid' },
+  validation: (rule) => [
+    rule.required().min(1).error('Kategorinin ilgili olduğu en az bir ülkeyi seçin. Seçilmezse yazıların altında tur ve rehber bölümleri çıkmaz.'),
+    rule.unique(),
+    rule
+      .custom((value: string[] | undefined, context: ValidationContext) => {
+        const expected = folderCountries((context.document as { path?: string } | undefined)?.path);
+        const missing = expected.filter((c) => !(value ?? []).includes(c.value));
+        return !value || missing.length === 0
+          ? true
+          : `Kategori adresi ${missing.map((c) => c.title).join(', ')} ülkesini içeriyor ama burada seçili değil. Doğruysa bu uyarıyı yok sayabilirsiniz.`;
+      })
+      .warning(),
+  ],
+});
+
 /** Fields only blog posts have: who wrote it, the answer in a nutshell and when the facts were last checked. */
 const blogFields = [
   defineField({
@@ -162,6 +198,58 @@ const blogFields = [
     description: 'Yazıdaki bilgilerin son kontrol edildiği gün. Sayfada ve arama sonuçlarında gösterilir.',
   }),
   defineField({
+    name: 'countries',
+    title: 'Ülkeler (isteğe bağlı)',
+    type: 'array',
+    description:
+      'Boş bırakırsanız yazı kategorisinin ülkelerini kullanır (çoğu yazı için doğrusu budur). Yalnızca yazı kategorisinden başka ülkeleri de ilgilendiriyorsa doldurun; örneğin "turkey" klasöründeki bir Türkiye ve Yunanistan yazısında ikisini de işaretleyin. Sitede: yazının altındaki turlar ve rehberler bu ülkelere göre gelir; yazı o ülkelerin sayfalarındaki rehber listelerinde de görünür.',
+    of: [{ type: 'string' }],
+    options: { list: countryOptions, layout: 'grid' },
+    validation: (rule) => rule.unique(),
+  }),
+  defineField({
+    name: 'relatedPosts',
+    title: 'İlgili yazılar (isteğe bağlı)',
+    type: 'array',
+    description:
+      'Boş bırakırsanız sitede aynı kategorideki ve aynı ülkelerle ilgili yazılar otomatik gösterilir. Belirli yazıları öne çıkarmak isterseniz buradan seçin (en fazla 6, sırayla gösterilir). Sitede: yazının altındaki "旅遊指南" kartları. Yazının adresi değişse de bağlantı bozulmaz.',
+    of: [
+      {
+        type: 'reference',
+        to: [{ type: 'blogPost' }],
+        weak: true,
+        options: {
+          filter: ({ document }: { document: { language?: string; _id?: string } }) => ({
+            filter: 'language == $language && !(_id in [$id, "drafts." + $id])',
+            params: { language: document?.language ?? 'zh', id: (document?._id ?? '').replace(/^drafts./, '') },
+          }),
+        },
+      },
+    ],
+    validation: (rule) => [rule.max(6).warning('En fazla 6 yazı gösterilir.'), rule.unique()],
+  }),
+  defineField({
+    name: 'relatedTours',
+    title: 'İlgili turlar (isteğe bağlı)',
+    type: 'array',
+    description:
+      'Boş bırakırsanız sitede yazının konusuna uygun turlar otomatik gösterilir (yazının başlığında geçen şehirleri gezen turlar; konusu belli bir şehir olmayan yazılarda ülkenin turları). Belirli turları göstermek isterseniz buradan seçin (en fazla 6, sırayla gösterilir). Sitede: yazının altındaki tur kartları.',
+    of: [
+      {
+        type: 'reference',
+        to: [{ type: 'tour' }],
+        weak: true,
+        options: {
+          filter: ({ document }: { document: { language?: string } }) => ({
+            filter: 'language == $language',
+            params: { language: document?.language ?? 'zh' },
+          }),
+        },
+      },
+    ],
+    validation: (rule) => [rule.max(6).warning('En fazla 6 tur gösterilir.'), rule.unique()],
+  }),
+  defineField({
     name: 'oldUrls',
     title: 'Bu yazının eski adresleri (yönlendirme)',
     type: 'array',
@@ -170,10 +258,27 @@ const blogFields = [
       'Yalnızca bu yazı eski sitedeki bir yazının yerine geçiyorsa: eski adresi yapıştırın, örneğin /en/blog/turkey/old-name/. Bu adresi açan ziyaretçiler ve Google bu yazıya yönlendirilir (kalıcı yönlendirme). Yönlendirme, yayından yaklaşık 5 dakika sonraki site güncellemesiyle başlar.',
     validation: (rule) =>
       rule.custom(async (values: string[] | undefined, context: ValidationContext) => {
-        if (!values?.length) {return true;}
         const doc = context.document as { _id?: string; language?: string; path?: string } | undefined;
         const id = (doc?._id ?? '').replace(/^drafts\./, '');
-        const own = `/${doc?.language ?? 'en'}/${doc?.path ?? ''}/`;
+        // A post that is already published and whose address was changed must list the address it had: without it the old address
+        // answers 404 and the links and Google results that point to it are lost. Read from the published copy (`raw` on purpose: with
+        // the Studio's default perspective the draft is laid over the published copy, so the "published" path would be the draft's own
+        // and the check would never fire). Where the published copy cannot be read, the check lets the post through.
+        if (id && doc?.path) {
+          const publishedPath = await context
+            .getClient({ apiVersion: '2025-01-01' })
+            .withConfig({ perspective: 'raw', useCdn: false })
+            .fetch<string | null>('*[_id == $id][0].path', { id })
+            .catch(() => null);
+          if (publishedPath && publishedPath !== doc.path) {
+            const before = normalizeOldUrl(`/${doc.language ?? 'zh'}/${publishedPath}`);
+            if (!(values ?? []).some((value) => normalizeOldUrl(value) === before)) {
+              return `Yazının adresi değişti. Eski adresi bu listeye ekleyin, yoksa eski adres açılmaz ve ona gelen bağlantılar ile Google sonuçları kaybolur: ${before}`;
+            }
+          }
+        }
+        if (!values?.length) {return true;}
+        const own = `/${doc?.language ?? 'zh'}/${doc?.path ?? ''}/`;
         const client = context.getClient({ apiVersion: '2025-01-01' });
         const seen = new Set<string>();
         for (const value of values) {
@@ -203,7 +308,7 @@ const blogFields = [
 export const blogPost = pageType('blogPost', 'Blog yazısı', 'blog-post', undefined, blogFields, {
   path: { ...pathField, components: { input: autoPathInput('blogPost') } },
 });
-export const blogCategory = pageType('blogCategory', 'Blog kategorisi', 'blog-category', undefined, [], {
+export const blogCategory = pageType('blogCategory', 'Blog kategorisi', 'blog-category', undefined, [categoryCountriesField], {
   path: { ...pathField, components: { input: autoPathInput('blogCategory') } },
 });
 export const author = pageType('author', 'Yazar', 'author', undefined, [], {
