@@ -124,6 +124,15 @@ export type PageSummary = Common & {
   canonical: string | null;
   /** Main picture (blog posts and listings use it as the card image). */
   image: ImageRef | null;
+  /**
+   * Blog posts only: the countries the post is about. The ones ticked on the post, else the ones ticked on its category, else what the
+   * category folder names. Tours, guides and cards about "the same country" are chosen from this, never from the address.
+   */
+  countries?: CountryId[];
+  /** Blog posts only: the posts the editor chose in "İlgili yazılar", as addresses without language. Empty when none were chosen. */
+  relatedPaths?: string[];
+  /** Blog posts only: the tours the editor chose in "İlgili turlar", as addresses without language. Empty when none were chosen. */
+  relatedTourPaths?: string[];
 };
 
 /** A person on the About and Contact pages. */

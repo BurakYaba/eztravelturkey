@@ -1,5 +1,5 @@
 import { Box, Card, Checkbox, Flex, Select, Stack, Text } from '@sanity/ui';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { set, unset, useClient, useEditState, useFormValue, type StringInputProps } from 'sanity';
 
 /**
@@ -9,6 +9,10 @@ import { set, unset, useClient, useEditState, useFormValue, type StringInputProp
  *   blog topic  blog/<title>        author  authors/<title>        text page  <title>
  * It follows the title while the page has not been published. A published page keeps its address (changing it breaks the links
  * to it); the editor can still unlock it on purpose. It can also be written by hand at any time.
+ *
+ * A draft that already HAS an address when it is opened keeps it: drafts made by a script at an old address lost that address the moment
+ * someone opened them, because the title gave a different one, and the posts then went live at new addresses. Only a page that starts
+ * without an address follows its title; so does a copy whose address another page already uses.
  */
 export type PathKind = 'tour' | 'blogPost' | 'blogCategory' | 'author' | 'staticPage' | 'destinationPage';
 
@@ -82,6 +86,9 @@ function AutoPathInput(props: StringInputProps & { kind: PathKind }) {
   const [folders, setFolders] = useState<string[]>([]);
   const [folder, setFolder] = useState('');
   const [taken, setTaken] = useState<string[]>([]);
+  // Whether the page began with an address: if it did, the address is kept (see the note above).
+  const startedEmpty = useRef(!value);
+  const [valueTaken, setValueTaken] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (kind !== 'blogPost') {return;}
@@ -124,8 +131,27 @@ function AutoPathInput(props: StringInputProps & { kind: PathKind }) {
     return wanted.path;
   }, [wanted.path, taken]);
 
+  // Is the address this draft came with already used by another page (a copy)? Then it follows its title like a new page.
+  useEffect(() => {
+    if (!value || startedEmpty.current) {return;}
+    client
+      .fetch<boolean>('count(*[defined(path) && language == $language && path == $value && !(_id in [$id, "drafts." + $id])]) > 0', { language, value, id })
+      .then(setValueTaken)
+      .catch(() => setValueTaken(false));
+  }, [client, value, language, id]);
+
   const locked = published === true && !unlocked;
-  const auto = published === false && !manual;
+  const keepsAddress = published === false && !manual && !startedEmpty.current && valueTaken !== true;
+  const auto = published === false && !manual && !keepsAddress;
+
+  // A published post moved to another folder keeps its last part and changes only the folder (blog/turkey/x -> blog/turkey-greece/x).
+  // The old address must then go into "eski adresler"; the field checks it and says which address to paste.
+  const pickFolder = (path: string) => {
+    setFolder(path);
+    if (published === true && unlocked && path && value) {
+      onChange(set(`${path}/${value.split('/').slice(2).join('/')}`));
+    }
+  };
 
   // Follows the title (and folder) while the page is new; a short pause so it does not change on every key.
   useEffect(() => {
@@ -143,12 +169,12 @@ function AutoPathInput(props: StringInputProps & { kind: PathKind }) {
 
   return (
     <Stack gap={3}>
-      {kind === 'blogPost' && auto && (
+      {kind === 'blogPost' && (auto || (published === true && unlocked)) && (
         <Flex align="center" gap={2}>
           <Text size={1} muted>
             Blog klasörü:
           </Text>
-          <Select value={chosenFolder} onChange={(event) => setFolder(event.currentTarget.value)} style={{ maxWidth: 260 }}>
+          <Select value={chosenFolder} onChange={(event) => pickFolder(event.currentTarget.value)} style={{ maxWidth: 260 }}>
             <option value="">— klasör seçin —</option>
             {folders.map((path) => (
               <option key={path} value={path}>
@@ -177,6 +203,12 @@ function AutoPathInput(props: StringInputProps & { kind: PathKind }) {
       {!value && wanted.missing && (
         <Text size={1} muted>
           {wanted.missing}
+        </Text>
+      )}
+
+      {keepsAddress && value && (
+        <Text size={1} muted>
+          Bu taslağın adresi hazır; başlığı değiştirseniz de bu adres kalır. Başka bir adres yazmak için aşağıdaki kutuyu işaretleyin.
         </Text>
       )}
 

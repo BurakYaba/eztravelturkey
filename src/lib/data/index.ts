@@ -54,6 +54,20 @@ const countriesOf = (folder: string) => {
   const english = countryIds.filter((id) => folder.includes(id));
   return english.length > 0 ? english : countryIds.filter((id) => folder.includes(japaneseNames[id]));
 };
+/**
+ * For a tour whose folder names no country: a combination tour that sits directly in the combination folder (Egypt and Jordan, Athens and
+ * Cairo ...). Without a country such a tour is left out of every country filter and cannot be picked as "the tours that visit both". The
+ * country names, and the best-known cities and sights of the routes (Traditional Chinese, as the routes are typed), in its title and route
+ * say which countries it visits.
+ */
+const namesInTitle: Record<CountryId, string[]> = {
+  turkey: ['turkey', '土耳其', '伊斯坦堡', '卡帕多奇亞', '艾菲索斯', '以弗所', '棉花堡', '庫薩達斯', '庫夏達斯', '伊茲密爾'],
+  greece: ['greece', '希臘', '雅典', '米克諾斯', '米科諾斯', '聖托里尼', '克里特', '梅特歐拉', '德爾菲', '岱爾菲'],
+  egypt: ['egypt', '埃及', '開羅', '尼羅河', '孟菲斯', '薩卡拉', '吉薩', '亞斯文', '盧克索', '盧索克', '艾德夫'],
+  jordan: ['jordan', '約旦', '安曼', '佩特拉', '瓦迪拉姆', '瓦地倫', '傑拉什', '阿傑隆'],
+  morocco: ['morocco', '摩洛哥', '馬拉喀什', '卡薩布蘭卡'],
+};
+const countriesNamedIn = (text: string) => countryIds.filter((id) => namesInTitle[id].some((word) => text.toLowerCase().includes(word)));
 const privateWords = /private|プライベート|专属|私人|包团/i;
 const groupWords = /small|group|少人数|グループ|小团/i;
 /**
@@ -94,6 +108,8 @@ type RawTourCard = {
   summary?: string;
   parent: string;
   category?: string | null;
+  /** The "Ülkeler" field of the Studio: the countries the editor ticked. */
+  countries?: string[] | null;
   days?: number | null;
   nights?: number | null;
   duration?: string;
@@ -104,7 +120,21 @@ type RawTourCard = {
   image?: RawImage;
 };
 
-const tourCardFields = `path, title, summary, parent, category, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": coalesce(heroImage, gallery[0]){ ${img} }`;
+const tourCardFields = `path, title, summary, parent, category, countries, days, nights, "duration": facts.duration, "groupType": facts.groupType, "priceEUR": price.eur, "priceUSD": price.usd, route, "image": coalesce(heroImage, gallery[0]){ ${img} }`;
+
+/**
+ * The countries of a tour. First the ones the editor ticked in the Studio ("Ülkeler", required for every tour). A tour that has none yet
+ * (a draft made before the field existed, or an old document) falls back to its folder, and then to what its title and route name, so a
+ * tour is never left out of the country filters. The result keeps the usual order of the countries.
+ */
+function countriesOfTour(raw: RawTourCard): CountryId[] {
+  const chosen = countryIds.filter((id) => raw.countries?.includes(id));
+  if (chosen.length > 0) {
+    return chosen;
+  }
+  const fromFolder = countriesOf(`${raw.parent} ${raw.category ?? ''}`);
+  return fromFolder.length > 0 ? fromFolder : countriesNamedIn(`${raw.title} ${(raw.route ?? []).join(' ')}`);
+}
 
 function toCard(raw: RawTourCard): TourCardData {
   const days = raw.days ?? null;
@@ -117,7 +147,7 @@ function toCard(raw: RawTourCard): TourCardData {
     days,
     nights: raw.nights ?? null,
     styles: stylesOf(raw.groupType ?? ''),
-    countries: countriesOf(`${raw.parent} ${raw.category ?? ''}`),
+    countries: countriesOfTour(raw),
     bucket: bucketOf(days),
     // The old site printed "From: €0" on one tour; a price of zero means no price was set.
     priceEUR: raw.priceEUR && raw.priceEUR > 0 ? raw.priceEUR : null,
@@ -503,7 +533,44 @@ export async function featuredTours(lang: Locale): Promise<TourCardData[]> {
 
 // ---- blog
 
-export const blogPosts = (lang: Locale) => pageSummaries(lang, 'blog-post');
+type RawBlogPost = RawPageSummary & {
+  /** The "Ülkeler" ticked on the post (optional), and on its category. */
+  countries?: string[] | null;
+  categoryCountries?: string[] | null;
+  relatedPaths?: (string | null)[] | null;
+  relatedTourPaths?: (string | null)[] | null;
+};
+
+const inCountryOrder = (list: readonly string[] | null | undefined): CountryId[] => countryIds.filter((id) => list?.includes(id));
+
+/**
+ * The countries a blog post is about. What the editor ticked on the post wins (a guide filed under Turkey that is about Turkey and
+ * Greece), then what was ticked on its category, and only for a category that has nothing yet the old rule: the country names in the
+ * category folder. So a new category or a moved post never loses its tours and guides because of where it sits in the address.
+ */
+function countriesOfPost(raw: RawBlogPost): CountryId[] {
+  const own = inCountryOrder(raw.countries);
+  if (own.length > 0) {
+    return own;
+  }
+  const ofCategory = inCountryOrder(raw.categoryCountries);
+  return ofCategory.length > 0 ? ofCategory : countriesOf((raw.path ?? '').split('/')[1] ?? '');
+}
+
+/** Every blog post of a language, in path order, each with the countries it is about and the posts and tours the editor chose to relate to it. */
+export async function blogPosts(lang: Locale): Promise<PageSummary[]> {
+  const src = await source(lang);
+  const rows = await query<RawBlogPost[]>(
+    `*[_type == "blogPost" && language == $lang && kind == "blog-post"] | order(path asc){ ${summaryFields}, countries, "categoryCountries": *[_type == "blogCategory" && language == ^.language && path == "blog/" + string::split(^.path, "/")[1]][0].countries, "relatedPaths": relatedPosts[]->path, "relatedTourPaths": relatedTours[]->path }`,
+    { lang: src.lang },
+  );
+  return rows.map((raw) => ({
+    ...toSummary(raw, lang, src.fallback),
+    countries: countriesOfPost(raw),
+    relatedPaths: (raw.relatedPaths ?? []).filter((p): p is string => Boolean(p)),
+    relatedTourPaths: (raw.relatedTourPaths ?? []).filter((p): p is string => Boolean(p)),
+  }));
+}
 export const blogCategories = (lang: Locale) => pageSummaries(lang, 'blog-category');
 /** `blog/egypt/map-of-egypt` belongs to the `egypt` category. */
 export const categoryOfPost = (post: { path: string }) => post.path.split('/')[1] ?? '';
@@ -576,7 +643,11 @@ export async function availableCountries(lang: Locale): Promise<CountryId[]> {
   return ids.length > 0 ? ids : countryIds;
 }
 
-/** Blog posts about the countries of a folder (a country, a combination), a few of each, newest guides first as the hub orders them. */
+/**
+ * Blog posts about the countries of a folder (a country, a combination), a few of each. A post about all of the countries comes first
+ * (the combination page shows the guides about the combination), then each country's own category, then posts of other categories
+ * that name the country too.
+ */
 export async function blogsAbout(lang: Locale, folder: string, limit = 3): Promise<PageSummary[]> {
   const ids = countriesIn(folder);
   if (ids.length === 0) {
@@ -584,19 +655,122 @@ export async function blogsAbout(lang: Locale, folder: string, limit = 3): Promi
   }
   const posts = (await blogPosts(lang)).filter((p) => p.image);
   const perCountry = Math.max(1, Math.ceil(limit / ids.length));
-  return ids
-    .flatMap((id) => posts.filter((p) => p.path.startsWith(`blog/${id}/`)).slice(0, perCountry))
-    .slice(0, limit);
+  const about = (id: CountryId) => [
+    ...posts.filter((p) => p.path.startsWith(`blog/${id}/`)),
+    ...posts.filter((p) => !p.path.startsWith(`blog/${id}/`) && p.countries?.includes(id)),
+  ];
+  const ofAll = ids.length > 1 ? posts.filter((p) => ids.every((id) => p.countries?.includes(id))) : [];
+  const picked = [...ofAll, ...ids.flatMap((id) => about(id).slice(0, perCountry))];
+  return [...new Map(picked.map((p) => [p.path, p])).values()].slice(0, limit);
 }
 
-/** A few tours of the countries a blog post or folder is about, for the "tours in {country}" block. */
-export async function toursAbout(lang: Locale, folder: string, limit = 3): Promise<TourCardData[]> {
-  const ids = countriesIn(folder);
-  if (ids.length !== 1) {
+/** The tours a blog post may show: those of its country's own folder for one country; for two or more, the tours that visit all of them. */
+async function tourPool(lang: Locale, ids: readonly CountryId[]): Promise<TourCardData[]> {
+  if (ids.length === 0) {
     return [];
   }
-  const tours = (await toursUnder(lang, countryFolder(lang, ids[0]!))).filter((t) => t.image);
-  return tours.slice(0, limit);
+  if (ids.length === 1) {
+    return (await toursUnder(lang, countryFolder(lang, ids[0]!))).filter((t) => t.image);
+  }
+  const visiting = (await allTours(lang)).filter((t) => t.image && ids.every((id) => t.countries.includes(id)));
+  // the tours that visit exactly those countries first
+  return [...visiting.filter((t) => t.countries.length === ids.length), ...visiting.filter((t) => t.countries.length > ids.length)];
+}
+
+/**
+ * The tours shown under a blog post.
+ * 1. The ones the editor chose in the Studio ("İlgili turlar"), in that order, up to six.
+ * 2. Otherwise tours that visit the places the post names: a tour scores one point for each city of its route that the post's title or
+ *    address names (Cappadocia, Athens, Petra ...), and among equal scores the more focused tour (a larger share of its route named) comes first.
+ * 3. A post that names no place of any tour (weather, currency, a map) takes its turn in a round robin: the posts about the same countries,
+ *    in address order, get the tours of that country three at a time (post 1 tours 1-3, post 2 tours 4-6 ...), shifting by one tour each time
+ *    the list wraps around, so neighbours do not repeat each other. That is variety, not relevance.
+ */
+export async function toursForPost(
+  lang: Locale,
+  post: { path: string; title: string; metaTitle?: string } | undefined,
+  ids: readonly CountryId[],
+  chosenPaths: readonly string[] = [],
+  /** The place of the post among the posts about the same countries (0 for the first), for the round robin. */
+  turn = 0,
+  limit = 3,
+): Promise<TourCardData[]> {
+  if (chosenPaths.length > 0) {
+    const chosen = await listTours(lang, { paths: [...chosenPaths] });
+    if (chosen.length > 0) {
+      return chosen.slice(0, 6);
+    }
+  }
+  const all = await tourPool(lang, ids);
+  // for a post about two or more countries, the tours that visit exactly those countries (when there are enough of them) and not more
+  const exact = ids.length > 1 ? all.filter((t) => t.countries.length === ids.length) : all;
+  const pool = exact.length >= limit ? exact : all;
+  if (pool.length === 0 || !post) {
+    return pool.slice(0, limit);
+  }
+  const text = `${post.title} ${post.metaTitle ?? ''} ${post.path.split('/').slice(2).join(' ').replace(/-/g, ' ')}`.toLowerCase();
+  const scored = pool
+    .map((tour, order) => {
+      // a city counts once, even when the route returns to it (Istanbul at the start and at the end)
+      // the routes were typed with stray spaces ("雅典 "), so each city is trimmed
+      const route = [...new Set(tour.route.map((city) => city.trim()).filter(Boolean))];
+      const named = route.filter((city) => text.includes(city.toLowerCase()));
+      return { tour, order, score: named.length, share: named.length / Math.max(route.length, 1) };
+    })
+    .filter((x) => x.score > 0)
+    .sort((x, y) => y.score - x.score || y.share - x.share || x.order - y.order);
+  const picked = scored.slice(0, limit).map((x) => x.tour);
+  if (picked.length >= limit) {
+    return picked;
+  }
+  const rest = pool.filter((t) => !picked.includes(t));
+  const skipped = turn * limit;
+  const start = rest.length > 0 ? (skipped + Math.floor(skipped / rest.length)) % rest.length : 0;
+  const filler = [...rest.slice(start), ...rest.slice(0, start)].slice(0, limit - picked.length);
+  return [...picked, ...filler];
+}
+
+/** `map-of-egypt` is the map post of a country: every guide about the country links to it. */
+const isMapSlug = (slug: string): boolean => slug.startsWith('map-of-');
+
+/** What a blog post page needs to know about its place among the posts. */
+export type BlogContext = {
+  /** The countries the post is about, in the usual order. */
+  countries: CountryId[];
+  /** The guides shown under it: the ones the editor chose, else other posts of its category, then posts about the same countries. */
+  guides: PageSummary[];
+  /** The tours shown under it: the ones the editor chose, else tours that visit the places the post names, else a rotating pick of its country's tours. */
+  tours: TourCardData[];
+  /** The map post of each country the post is about (not for a map post itself): every guide links to the maps of its countries. */
+  maps: PageSummary[];
+};
+
+export async function blogContext(lang: Locale, path: string, limit = 3): Promise<BlogContext> {
+  const posts = await blogPosts(lang);
+  const me = posts.find((p) => p.path === path);
+  const countries = me?.countries ?? countriesIn(path.split('/')[1] ?? '');
+  const byPath = new Map(posts.map((p) => [p.path, p]));
+  // the posts about the same countries, in address order: the turns of the tour round robin
+  const sameCountries = posts.filter((p) => (p.countries ?? []).join('+') === countries.join('+'));
+  const chosen = (me?.relatedPaths ?? []).map((p) => byPath.get(p)).filter((p): p is PageSummary => Boolean(p) && p?.path !== path);
+  const others = posts.filter((p) => p.path !== path);
+  const folder = path.split('/').slice(0, 2).join('/');
+  const automatic = [
+    ...others.filter((p) => p.path.startsWith(`${folder}/`)),
+    // posts about all the same countries before posts that share only some of them
+    ...others.filter((p) => !p.path.startsWith(`${folder}/`) && countries.length > 0 && countries.every((id) => p.countries?.includes(id))),
+    ...others.filter((p) => !p.path.startsWith(`${folder}/`) && countries.some((id) => p.countries?.includes(id)) && !countries.every((id) => p.countries?.includes(id))),
+  ];
+  const isMap = isMapSlug(path.split('/')[2] ?? '');
+  const maps = isMap
+    ? []
+    : countries.flatMap((id) => posts.filter((p) => p.path.startsWith(`blog/${id}/`) && isMapSlug(p.path.split('/')[2] ?? '')).slice(0, 1));
+  return {
+    countries,
+    maps,
+    tours: await toursForPost(lang, me, countries, me?.relatedTourPaths ?? [], Math.max(0, sameCountries.findIndex((p) => p.path === path))),
+    guides: (chosen.length > 0 ? chosen : [...new Map(automatic.map((p) => [p.path, p])).values()]).slice(0, chosen.length > 0 ? 6 : limit),
+  };
 }
 
 // ---- sitemap

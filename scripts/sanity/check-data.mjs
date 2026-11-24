@@ -140,6 +140,52 @@ for (const doc of docs) {
   check(doc, definition, doc, '');
 }
 
+const countryIds = ['turkey', 'greece', 'egypt', 'jordan', 'morocco'];
+const siteLanguages = ['zh'];
+
+// every blog category names its countries ("Ülkeler"): the tours and guides under a post come from them (a category about two countries
+// showed neither while the countries were guessed from the folder name). A post may name its own; every country must be one the site
+// knows, and every post must sit in a category that exists, or it would have no countries at all.
+{
+  const categories = new Map(docs.filter((d) => d._type === 'blogCategory' && !d._id.startsWith('drafts.')).map((d) => [`${d.language} ${d.path}`, d]));
+  for (const doc of docs) {
+    if (!['blogCategory', 'blogPost'].includes(doc._type) || doc._id.startsWith('drafts.') || !siteLanguages.includes(doc.language)) {continue;}
+    if (doc._type === 'blogCategory' && (!Array.isArray(doc.countries) || doc.countries.length === 0)) {
+      report(doc, '.countries', 'blog category has no countries (Ülkeler): the tours and guides under its posts come from the folder name only');
+    }
+    for (const id of doc.countries ?? []) {
+      if (!countryIds.includes(id)) {report(doc, '.countries', `unknown country "${id}"`);}
+    }
+    if (doc._type === 'blogPost') {
+      const folder = (doc.path ?? '').split('/').slice(0, 2).join('/');
+      if (!categories.has(`${doc.language} ${folder}`)) {report(doc, '.path', `no blog category "${folder}" in ${doc.language}: the post has no category page and no countries`);}
+      for (const field of ['relatedPosts', 'relatedTours']) {
+        for (const ref of doc[field] ?? []) {
+          const target = docs.find((d) => d._id === ref._ref);
+          if (target && target.language !== doc.language) {report(doc, `.${field}`, `related item ${ref._ref} is in another language (${target.language})`);}
+        }
+      }
+    }
+  }
+}
+
+// every tour names its countries ("Ülkeler"): a tour without any is left out of the country filters of the site and cannot be shown under a
+// blog post about two countries. Only published tours: a draft without them is asked for the countries by the Studio when it is published.
+for (const doc of docs) {
+  if (doc._type !== 'tour' || doc._id.startsWith('drafts.') || !siteLanguages.includes(doc.language)) {continue;}
+  const chosen = doc.countries;
+  if (!Array.isArray(chosen) || chosen.length === 0) {
+    report(doc, '.countries', 'tour has no countries (Ülkeler): it is left out of the country filters');
+    continue;
+  }
+  for (const id of chosen) {
+    if (!countryIds.includes(id)) {report(doc, '.countries', `unknown country "${id}"`);}
+  }
+  const named = countryIds.filter((id) => `${doc.parent ?? ''} ${doc.category ?? ''}`.includes(id));
+  const missing = named.filter((id) => !chosen.includes(id));
+  if (missing.length > 0) {report(doc, '.countries', `its folder names ${missing.join(', ')} but Ülkeler does not include it`);}
+}
+
 // two pages, one address, one language (drafts of the same page do not count twice)
 const seen = new Map();
 for (const doc of docs) {

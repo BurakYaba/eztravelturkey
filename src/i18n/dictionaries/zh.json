@@ -310,6 +310,8 @@
     "allToursIn": "所有{country}行程",
     "guidesFor": "旅遊指南：{country}",
     "allGuides": "所有旅遊指南",
+    "countryJoin": "、",
+    "mapIntro": "在地圖上查看本文提到的地方：",
     "categories": "依國家瀏覽指南",
     "featured": "地圖"
   },
