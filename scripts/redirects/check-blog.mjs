@@ -44,6 +44,10 @@ for (const [from, wanted] of [
   ['/blog/category/turkey-travel-information/', '/zh/blog/turkey/'],
   ['/blog/feed/', '/zh/blog/'],
   ['/blog/page/2/', '/zh/blog/'],
+  // this site's own addresses without the /zh prefix
+  ['/blog/turkey/', '/zh/blog/turkey/'],
+  ['/blog/turkey-greece/', '/zh/blog/turkey-greece/'],
+  ['/blog/egypt/%E9%87%91%E5%AD%97%E5%A1%94-pyramids/', '/zh/blog/egypt/金字塔-pyramids/'],
 ]) {
   const response = await fetch(base + from, { redirect: 'manual' });
   const to = decodeURIComponent(new URL(response.headers.get('location') ?? '/', base).pathname);

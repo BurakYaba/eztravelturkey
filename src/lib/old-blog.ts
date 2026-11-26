@@ -17,7 +17,14 @@ const decode = (segment: string) => {
   }
 };
 
-/** Where an address under `/blog/` goes, or `null` when the path is not an address of the old blog. */
+/**
+ * The category folders of this site's blog. `/blog/<category>/` and `/blog/<category>/<post>/` are addresses of this site that
+ * lack the `/zh` prefix (search engines read such paths out of the page data), not addresses of the old blog, whose posts sat
+ * directly under `/blog/`. Add a folder here when a blog category is added in the Studio.
+ */
+const siteCategories = new Set(['egypt', 'greece', 'jordan', 'turkey', 'turkey-egypt', 'turkey-greece']);
+
+/** Where an address under `/blog/` goes, or `null` when the path is not under `/blog/`. */
 export function oldBlogRedirect(pathname: string): string | null {
   const parts = pathname.split('/').filter(Boolean).map(decode);
   if (parts[0]?.toLowerCase() !== 'blog') {
@@ -25,6 +32,9 @@ export function oldBlogRedirect(pathname: string): string | null {
   }
   const rest = parts.slice(1).map((p) => p.trim().toLowerCase());
   const { posts, categories } = redirects as { posts: Record<string, string>; categories: Record<string, string> };
+  if (rest.length <= 2 && siteCategories.has(rest[0] ?? '')) {
+    return `/zh/blog/${rest.map(encodeURIComponent).join('/')}/`;
+  }
   if (rest.length === 1 && posts[rest[0]!]) {
     return posts[rest[0]!]!;
   }
